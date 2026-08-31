@@ -213,9 +213,22 @@ const crumbs = (items) => ({
  */
 const FONT_CSS = readFileSync(join(root, 'static/fonts.css'), 'utf8').trim();
 
-// Only the two faces above the fold on every page: the body weight and the
-// headline weight. Preloading more competes with them for bandwidth.
-const FONT_PRELOAD = ['plus-jakarta-sans-400', 'plus-jakarta-sans-700']
+// Every face the hero actually uses.
+//
+// ⚠️ Two was too few, and the waterfall showed it: 500, 600 and the Newsreader
+// italic were only discovered during layout and landed at 256 to 357ms, well
+// after first paint, so the hero visibly re-rendered as each one swapped in.
+// The homepage above the fold needs 400 (lead), 600 (eyebrow, buttons, bold
+// spans), 700 (wordmark, headline) and both Newsreader italics (the "US" and
+// the third headline line). They are the same bytes either way; preloading
+// only decides whether they arrive together or in a queue.
+//
+// 500 is left out on purpose. It is the nav only, and it is the one weight
+// that can swap late without anyone noticing.
+const FONT_PRELOAD = [
+  'plus-jakarta-sans-400', 'plus-jakarta-sans-600', 'plus-jakarta-sans-700',
+  'newsreader-300-italic', 'newsreader-400-italic',
+]
   .map((f) => `<link rel="preload" href="${'${BASE}'}/fonts/${f}.woff2" as="font" type="font/woff2" crossorigin>`)
   .join('\n');
 
