@@ -262,7 +262,30 @@ const ANALYTICS = `<script async src="https://www.googletagmanager.com/gtag/js?i
   gtag('config', 'G-V79KZPESPX');
 </script>`;
 
-function shell({ title, description, path, helmet, body, published, jsonld, image }) {
+/*
+ * Robots directives.
+ *
+ * ⚠️ THERE WAS NO ROBOTS TAG AT ALL, and shell() was already being passed
+ * noindex:true for the 404 page with nothing rendering it. The 404 has been
+ * indexable this whole time.
+ *
+ * index, follow is the default and is stated only to be explicit. The other
+ * three are NOT defaults and each buys something:
+ *
+ *   max-image-preview:large   A large thumbnail in results and Discover
+ *                             instead of the small default. This is what makes
+ *                             og.png and the topic cards actually appear at a
+ *                             useful size rather than as a tiny square.
+ *   max-snippet:-1            No cap on snippet length, so the answer-first
+ *                             opening sentences can be quoted in full. Writing
+ *                             them that way is pointless if they get truncated.
+ *   max-video-preview:-1      No cap on video previews. Nothing here has video;
+ *                             harmless now and correct if that changes.
+ *
+ * The 404 gets noindex, follow rather than bare noindex: keep it out of the
+ * index, but keep following its links to real pages.
+ */
+function shell({ title, description, path, helmet, body, published, jsonld, image, noindex }) {
   const card = image || '/og.png';
   // Strip the design's Google Fonts hotlink and its preconnects.
   helmet = helmet
@@ -277,6 +300,7 @@ function shell({ title, description, path, helmet, body, published, jsonld, imag
 <meta name="description" content="${esc(description)}">
 <meta name="theme-color" content="#F7F5EF">
 <link rel="canonical" href="${ORIGIN}${path}">
+<meta name="robots" content="${noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'}">
 <meta property="og:site_name" content="EvenUS">
 <meta property="og:type" content="${published ? 'article' : 'website'}">
 <meta property="og:title" content="${esc(title)}">
@@ -922,7 +946,7 @@ The blog holds ${posts.length} pieces. ${pillars.length} are written by a person
   emit('404.html', shell({
     title: 'Page not found',
     description: 'That page does not exist.',
-    path: '/404.html', helmet: r.helmet,
+    path: '/404.html', helmet: r.helmet, noindex: true,
     body: `<div style="min-height:70vh;display:flex;align-items:center;justify-content:center;padding:80px 28px">
   <div style="max-width:560px;text-align:center">
     <h1 style="margin:0;font-size:clamp(30px,4.4vw,54px);line-height:1.06;letter-spacing:-.035em;font-weight:700">That page isn't here.</h1>
