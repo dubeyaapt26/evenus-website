@@ -204,7 +204,7 @@ posts.sort((a, b) => (b.iso || '0000').localeCompare(a.iso || '0000'));
   const body = routes(hookHome(r.body));
   pageAt('/', shell({
     title: 'EvenUS',
-    description: 'EvenUS measures how money, time and mental load are actually shared between two people — and suggests one thing to swap each week.',
+    description: 'EvenUS measures how money, time and mental load are actually shared between two people, and suggests one thing to swap each week.',
     path: '/', helmet: r.helmet, body,
   }));
 }
@@ -414,8 +414,9 @@ console.log('  ✅ no prototype runtime left in the output');
 {
   let em = 0, structural = new Map();
   for (const rel of written.filter((r) => r.endsWith('.html'))) {
-    const t = readFileSync(join(out, rel), 'utf8').replace(/<[^>]+>/g, ' ');
-    em += (t.match(/\u2014/g) || []).length;
+    const raw = readFileSync(join(out, rel), 'utf8');
+    em += (raw.match(/\u2014/g) || []).length;
+    const t = raw.replace(/<[^>]+>/g, ' ');
     for (const [re, name] of STRUCTURAL) {
       const n = (t.match(re) || []).length;
       if (n) structural.set(name, (structural.get(name) || 0) + n);
