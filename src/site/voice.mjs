@@ -71,10 +71,41 @@ function fixDashes(s) {
 export function cleanCopy(html) {
   let s = fixDashes(html);
   for (const [re, to] of VOCABULARY) s = s.replace(re, to);
+  for (const [re, to] of STRUCTURES) s = s.replace(re, to);
+  // A paragraph emptied of its filler must not be left as an empty tag.
+  s = s.replace(/<p>\s*<\/p>/g, '').replace(/<(h[234])>\s*<\/\1>/g, '');
+  // A sentence that lost its opener may now start mid-flow.
+  s = s.replace(/(<p>)\s*([a-z])/g, (m, tag, c) => tag + c.toUpperCase());
   // A sentence that began "And " after losing "Furthermore," may now double up.
   s = s.replace(/\bAnd and\b/g, 'And').replace(/\band and\b/g, 'and');
   return s;
 }
+
+/**
+ * The three formulaic structures, removed rather than reworded.
+ *
+ * ⚠️ DELETION IS THE RIGHT FIX HERE, not substitution. "Ready to build a system
+ * that works? Let's dive in." is a filler CTA that carries no information — the
+ * paragraph reads better without it than with any rewrite of it. Same for "In
+ * this guide you'll get…", which announces what the next 1,400 words are about
+ * to do anyway.
+ *
+ * Only the clause goes. Nothing that carries meaning is touched, and anything
+ * ambiguous is left for a person — which is why the count never reaches zero.
+ */
+const STRUCTURES = [
+  // "Ready to …? Let's dive in." — a whole sentence, and sometimes two.
+  [/\s*Ready to [^.?!]{3,80}\?(\s*(Let'?s (dive in|get started|begin)|Here'?s how)\.)?/gi, ''],
+  [/\s*Let'?s (dive in|dive right in|get started|begin)\.\s*/gi, ' '],
+  // "In this guide, you'll learn …" openers.
+  [/\bIn this (guide|article|post),?\s+(you'?ll|we'?ll|I'?ll)\s+(get|learn|discover|explore|cover|walk through|show you|find)\b[^.]*\.\s*/gi, ''],
+  [/\bIn this (guide|article|post),?\s*/gi, ''],
+  // "The result?" as a rhetorical hinge.
+  [/\bThe result\?\s*/g, 'The result is that '],
+  [/\bThe answer\?\s*/g, 'The answer is '],
+  [/\bThe problem\?\s*/g, 'The problem is '],
+  [/\bHere'?s the (thing|deal)[:,.]?\s*/gi, ''],
+];
 
 /** Structural tells this file will not touch. Reported so they are not forgotten. */
 export const STRUCTURAL = [

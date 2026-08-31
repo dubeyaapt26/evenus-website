@@ -92,7 +92,74 @@ const A11Y = `
   }
 </style>`;
 
-function shell({ title, description, path, helmet, body, published }) {
+// --- Structured data --------------------------------------------------------
+//
+// The machine-readable half of the on-page work. ⚠️ It must agree with what is
+// visible: a FAQPage block whose answers differ from the text on screen is a
+// manual-action risk, not a clever trick. So the FAQ entries are LIFTED FROM
+// THE RENDERED PAGE rather than written out a second time.
+
+const ld = (obj) => `<script type="application/ld+json">${JSON.stringify(obj)}</script>`;
+
+const ORG = {
+  '@type': 'Organization',
+  '@id': `${ORIGIN}/#organization`,
+  name: 'EvenUS',
+  url: ORIGIN,
+  email: 'support@evenus.app',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'C-1604, Assotech Blith, Sector 99',
+    addressLocality: 'Gurgaon',
+    addressRegion: 'Haryana',
+    addressCountry: 'IN',
+  },
+};
+
+const APP = {
+  '@type': 'SoftwareApplication',
+  '@id': `${ORIGIN}/#app`,
+  name: 'EvenUS',
+  applicationCategory: 'LifestyleApplication',
+  applicationSubCategory: 'Household management',
+  operatingSystem: 'iOS, Android',
+  url: ORIGIN,
+  publisher: { '@id': `${ORIGIN}/#organization` },
+  description:
+    'A mobile app for couples that measures how fairly money, time and mental load are shared in a household, then suggests one specific task to swap each week.',
+  featureList: [
+    'Discretionary time measurement',
+    'Mental load tracking',
+    'Income-proportional bill splitting',
+    'Weekly chore swap suggestion',
+    'Private weekly check-ins',
+  ],
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD', availability: 'https://schema.org/LimitedAvailability' },
+};
+
+/** Pulls the visible accordion Q&A off a rendered page. */
+function faqFrom(html) {
+  const pairs = [];
+  const re = /<button data-accordion[^>]*>\s*<span>([\s\S]*?)<\/span>[\s\S]*?<\/button>\s*<div[^>]*>([\s\S]*?)<\/div>/g;
+  let m;
+  const strip = (x) => x.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+  while ((m = re.exec(html))) {
+    const q = strip(m[1]), a = strip(m[2]);
+    if (q && a) pairs.push({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } });
+  }
+  return pairs.length ? { '@type': 'FAQPage', mainEntity: pairs } : null;
+}
+
+const graph = (...nodes) => ld({ '@context': 'https://schema.org', '@graph': nodes.filter(Boolean) });
+
+const crumbs = (items) => ({
+  '@type': 'BreadcrumbList',
+  itemListElement: items.map((it, i) => ({
+    '@type': 'ListItem', position: i + 1, name: it.name, item: ORIGIN + it.path,
+  })),
+});
+
+function shell({ title, description, path, helmet, body, published, jsonld }) {
   const full = path === '/' ? 'EvenUS · A fairer share of everything.' : `${title} · EvenUS`;
   return `<!doctype html>
 <html lang="en">
@@ -112,6 +179,7 @@ ${published ? `<meta property="article:published_time" content="${published}">` 
 <link rel="icon" href="${url('/favicon.svg')}" type="image/svg+xml">
 ${helmet}
 ${A11Y}
+${jsonld || ''}
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -177,7 +245,9 @@ mkdirSync(out, { recursive: true });
 
 // --- Posts -----------------------------------------------------------------
 const CURATED = curated(join(design, 'Blog.dc.html'));
+const catSlug = (c) => c.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const posts = [];
+const urlsExtra = [];
 for (const f of readdirSync(join(here, 'recovered/blog')).filter((n) => n.endsWith('.html'))) {
   const slug = f.replace(/\.html$/, '');
   const p = extractPost(readFileSync(join(here, 'recovered/blog', f), 'utf8'));
@@ -206,6 +276,10 @@ posts.sort((a, b) => (b.iso || '0000').localeCompare(a.iso || '0000'));
     title: 'EvenUS',
     description: 'EvenUS measures how money, time and mental load are actually shared between two people, and suggests one thing to swap each week.',
     path: '/', helmet: r.helmet, body,
+    jsonld: graph(ORG, APP, {
+      '@type': 'WebSite', '@id': `${ORIGIN}/#website`, url: ORIGIN, name: 'EvenUS',
+      publisher: { '@id': `${ORIGIN}/#organization` },
+    }, faqFrom(body)),
   }));
 }
 
@@ -244,8 +318,16 @@ posts.sort((a, b) => (b.iso || '0000').localeCompare(a.iso || '0000'));
 
   pageAt('/blog/', shell({
     title: 'Blog',
-    description: 'Writing on mental load, money and how households actually run.',
+    description: 'Writing on the mental load, splitting money fairly and dividing housework without an argument. ' + posts.length + ' pieces.',
     path: '/blog/', helmet: r.helmet, body,
+    jsonld: graph(ORG, crumbs([{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog/' }]), {
+      '@type': 'Blog', '@id': `${ORIGIN}/blog/#blog`, url: `${ORIGIN}/blog/`, name: 'The EvenUS blog',
+      publisher: { '@id': `${ORIGIN}/#organization` },
+      blogPost: posts.slice(0, 40).map((p) => ({
+        '@type': 'BlogPosting', headline: p.title, url: ORIGIN + p.path,
+        datePublished: p.iso || undefined, articleSection: p.cat,
+      })),
+    }),
   }));
 }
 
@@ -259,7 +341,11 @@ const PAGES = [
 ];
 for (const [file, path, title, description, transform] of PAGES) {
   const r = renderDC(design, file, {}, {}, transform);
-  pageAt(path, shell({ title, description, path, helmet: r.helmet, body: routes(stripPrototypeHandlers(r.body)) }));
+  const body = routes(stripPrototypeHandlers(r.body));
+  pageAt(path, shell({
+    title, description, path, helmet: r.helmet, body,
+    jsonld: graph(ORG, crumbs([{ name: 'Home', path: '/' }, { name: title, path }]), faqFrom(body)),
+  }));
 }
 
 // --- Blog posts ------------------------------------------------------------
@@ -275,14 +361,34 @@ for (const [file, path, title, description, transform] of PAGES) {
   const footer = /<footer[\s\S]*?<\/footer>/.exec(chrome.body)?.[0] ?? '';
   if (!header || !footer) throw new Error('article: could not lift the shared chrome');
 
+  const related = (p) => {
+    const siblings = posts.filter((q) => q.cat === p.cat && q.slug !== p.slug).slice(0, 3);
+    if (!siblings.length) return '';
+    return `<section style="max-width:1180px;margin:0 auto;padding:clamp(56px,7vw,88px) 28px 0">
+      <div style="font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#8A8F89">More on ${esc(p.cat.toLowerCase())}</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:24px">
+        ${siblings.map((q) => `<a href="${url(q.path)}" style="display:block;background:#fff;border:1px solid #EDE8DC;border-radius:22px;padding:26px;color:#1B1F1D">
+          <div style="font-size:12.5px;color:#A9AEA8;margin-bottom:10px">${esc(q.read)} read</div>
+          <div style="font-size:18px;font-weight:700;letter-spacing:-.02em;line-height:1.25;margin-bottom:8px;text-wrap:pretty">${esc(q.title)}</div>
+          <div style="font-size:14.5px;line-height:1.55;color:#5E645F;text-wrap:pretty">${esc(q.excerpt)}</div>
+        </a>`).join('')}
+      </div>
+    </section>`;
+  };
+
   for (const p of posts) {
     const body = `<div style="min-height:100vh;background:#F7F5EF;overflow-x:hidden">
 ${routes(stripPrototypeHandlers(header))}
   <article>
     <section style="max-width:1180px;margin:0 auto;padding:clamp(48px,7vw,88px) 28px clamp(24px,3vw,36px)">
       <div style="max-width:820px">
+        <nav aria-label="Breadcrumb" style="font-size:12.5px;color:#8A8F89;margin-bottom:18px">
+          <a href="${url('/')}" style="color:#8A8F89">Home</a> ·
+          <a href="${url('/blog/')}" style="color:#8A8F89">Blog</a> ·
+          <a href="${url(`/blog/topic/${catSlug(p.cat)}/`)}" style="color:#8A8F89">${esc(p.cat)}</a>
+        </nav>
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:22px">
-          <span style="font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#2E6A5C;background:#E7F2EE;border:1px solid #CFE6DE;padding:5px 10px;border-radius:99px">${esc(p.cat)}</span>
+          <a href="${url(`/blog/topic/${catSlug(p.cat)}/`)}" style="font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#2E6A5C;background:#E7F2EE;border:1px solid #CFE6DE;padding:5px 10px;border-radius:99px">${esc(p.cat)}</a>
           <span style="font-size:12.5px;color:#A9AEA8">${esc(p.read)} read</span>
         </div>
         <h1 style="margin:0;font-size:clamp(30px,4.4vw,54px);line-height:1.06;letter-spacing:-.035em;font-weight:700;text-wrap:balance">${esc(p.title)}</h1>
@@ -307,6 +413,8 @@ ${p.html}
     </div>
   </section>
 
+  ${related(p)}
+
   <div style="max-width:1180px;margin:0 auto;padding:clamp(40px,5vw,64px) 28px 0">
     <a href="${url('/blog/')}" style="font-size:14.5px;font-weight:600;color:#2E6A5C">← All writing</a>
   </div>
@@ -316,7 +424,119 @@ ${routes(stripPrototypeHandlers(footer))}
     pageAt(p.path, shell({
       title: p.title, description: p.excerpt, path: p.path,
       helmet: chrome.helmet, body, published: p.iso || undefined,
+      jsonld: graph(ORG,
+        crumbs([
+          { name: 'Home', path: '/' },
+          { name: 'Blog', path: '/blog/' },
+          { name: p.cat, path: `/blog/topic/${catSlug(p.cat)}/` },
+          { name: p.title, path: p.path },
+        ]),
+        {
+          '@type': 'BlogPosting',
+          '@id': ORIGIN + p.path + '#article',
+          headline: p.title,
+          description: p.excerpt,
+          articleSection: p.cat,
+          wordCount: p.words,
+          datePublished: p.iso || undefined,
+          dateModified: p.iso || undefined,
+          inLanguage: 'en',
+          isPartOf: { '@id': `${ORIGIN}/blog/#blog` },
+          mainEntityOfPage: { '@type': 'WebPage', '@id': ORIGIN + p.path },
+          author: { '@id': `${ORIGIN}/#organization` },
+          publisher: { '@id': `${ORIGIN}/#organization` },
+        }),
     }));
+  }
+}
+
+// --- Topic hubs -------------------------------------------------------------
+//
+// One page per category, linked from every article's breadcrumb and chip.
+//
+// ⚠️ These are not decoration. 115 posts with no path between them are 115
+// orphans to a crawler, and the blog index alone does not group them by
+// subject. A hub per topic gives each cluster a single page to rank, and gives
+// every post in it an internal link from something other than a 115-row list.
+{
+  const cats = [...new Set(posts.map((p) => p.cat))];
+  const chrome = renderDC(design, 'Blog.dc.html', { cats: [], posts: [] });
+  const header = /<header[\s\S]*?<\/header>/.exec(chrome.body)[0];
+  const footer = /<footer[\s\S]*?<\/footer>/.exec(chrome.body)[0];
+
+  const BLURB = {
+    'Mental load': 'The planning, the remembering and the noticing. Why the work that leaves no trace is the work that exhausts people, and what to do about it.',
+    'Money': 'Splitting bills when incomes differ, joint accounts versus separate ones, and the arguments that are never really about the money.',
+    'Using EvenUS': 'How the app measures a household, what the fairness score is built from, and how to set it up with your partner.',
+    'Life changes': 'A new baby, a job loss, a diagnosis, an empty house. The arrangement that worked before rarely survives, and planning for that is the work.',
+    'Reviews': 'How EvenUS compares to chore apps, shared-budget apps and a spreadsheet, and where each of them stops being useful.',
+  };
+
+  for (const cat of cats) {
+    const slug = catSlug(cat);
+    const path = `/blog/topic/${slug}/`;
+    const inCat = posts.filter((p) => p.cat === cat);
+    const rows = inCat.map((p) => `        <a href="${url(p.path)}" style="display:grid;grid-template-columns:minmax(0,1fr);gap:10px;padding:26px 0;border-bottom:1px solid #E9E4D8;color:#1B1F1D;text-decoration:none">
+          <div style="display:flex;align-items:center;gap:12px">
+            <span style="font-size:12.5px;color:#A9AEA8">${esc(p.read)} read</span>
+          </div>
+          <div style="font-size:clamp(19px,2.1vw,25px);font-weight:700;letter-spacing:-.025em;line-height:1.22;max-width:820px;text-wrap:pretty">${esc(p.title)}</div>
+          <div style="font-size:15px;line-height:1.6;color:#5E645F;max-width:760px;text-wrap:pretty">${esc(p.excerpt)}</div>
+        </a>`).join('\n');
+
+    const others = cats.filter((c) => c !== cat).map((c) =>
+      `<a href="${url(`/blog/topic/${catSlug(c)}/`)}" style="font-size:13px;font-weight:600;padding:10px 18px;border-radius:99px;border:1px solid #DAD4C6;color:#5E645F">${esc(c)}</a>`
+    ).join('');
+
+    const body = `<div style="min-height:100vh;background:#F7F5EF;overflow-x:hidden">
+${routes(stripPrototypeHandlers(header))}
+  <section style="max-width:1180px;margin:0 auto;padding:clamp(48px,7vw,88px) 28px clamp(24px,3vw,32px)">
+    <nav aria-label="Breadcrumb" style="font-size:12.5px;color:#8A8F89;margin-bottom:18px">
+      <a href="${url('/')}" style="color:#8A8F89">Home</a> ·
+      <a href="${url('/blog/')}" style="color:#8A8F89">Blog</a>
+    </nav>
+    <h1 style="margin:0;font-size:clamp(34px,5vw,64px);line-height:1.03;letter-spacing:-.035em;font-weight:700;text-wrap:balance">${esc(cat)}</h1>
+    <p style="margin:20px 0 0;max-width:620px;font-size:17.5px;line-height:1.6;color:#5E645F;text-wrap:pretty">${esc(BLURB[cat] || '')}</p>
+    <p style="margin:16px 0 0;font-size:13.5px;color:#8A8F89">${inCat.length} ${inCat.length === 1 ? 'piece' : 'pieces'}</p>
+  </section>
+
+  <section style="max-width:1180px;margin:0 auto;padding:0 28px">
+    <div style="display:flex;flex-wrap:wrap;gap:9px;padding-bottom:32px;border-bottom:1px solid #E4DFD3">
+      <a href="${url('/blog/')}" style="font-size:13px;font-weight:600;padding:10px 18px;border-radius:99px;border:1px solid #DAD4C6;color:#5E645F">All</a>
+      ${others}
+    </div>
+  </section>
+
+  <section style="max-width:1180px;margin:0 auto;padding:clamp(36px,4vw,56px) 28px clamp(64px,8vw,110px)">
+    <div style="display:flex;flex-direction:column">
+${rows}
+    </div>
+  </section>
+${routes(stripPrototypeHandlers(footer))}
+</div>`;
+
+    pageAt(path, shell({
+      title: cat,
+      description: BLURB[cat] || `${inCat.length} pieces on ${cat.toLowerCase()}.`,
+      path, helmet: chrome.helmet, body,
+      jsonld: graph(ORG,
+        crumbs([{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog/' }, { name: cat, path }]),
+        {
+          '@type': 'CollectionPage',
+          '@id': ORIGIN + path,
+          name: `${cat} · EvenUS`,
+          description: BLURB[cat] || '',
+          isPartOf: { '@id': `${ORIGIN}/blog/#blog` },
+          mainEntity: {
+            '@type': 'ItemList',
+            numberOfItems: inCat.length,
+            itemListElement: inCat.slice(0, 40).map((p, i) => ({
+              '@type': 'ListItem', position: i + 1, url: ORIGIN + p.path, name: p.title,
+            })),
+          },
+        }),
+    }));
+    urlsExtra.push({ loc: path, pri: '0.8' });
   }
 }
 
@@ -353,6 +573,7 @@ const urls = [
   { loc: '/', pri: '1.0' }, { loc: '/blog/', pri: '0.9' }, { loc: '/support/', pri: '0.7' },
   { loc: '/privacy/', pri: '0.4' }, { loc: '/terms/', pri: '0.4' },
   { loc: '/disclaimer/', pri: '0.3' }, { loc: '/delete-account/', pri: '0.5' },
+  ...urlsExtra,
   ...posts.map((p) => ({ loc: p.path, pri: '0.7', lastmod: p.iso })),
 ];
 emit('sitemap.xml',
