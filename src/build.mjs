@@ -94,8 +94,35 @@ const A11Y = `
     outline: 2px solid #2E6A5C; outline-offset: 2px; border-radius: 4px;
   }
   .skip { position:absolute; left:-9999px; }
+  /* Nav and footer links render at 18px tall, below the 24px WCAG 2.2 minimum
+     target size and awkward to hit on a phone. inline-flex with a min-height
+     grows the hit area without moving the text, so nothing shifts visually.
+     Covers breadcrumbs too, which live in a bare <nav> rather than the header.
+     ⚠️ Deliberately NOT applied to links inside prose: a 32px box around every
+     inline link in a paragraph would wreck the line rhythm, and WCAG 2.5.8
+     exempts targets inside a sentence for exactly that reason. */
+  nav a, .site-foot a, footer a, .skip {
+    display: inline-flex; align-items: center; min-height: 32px;
+  }
   .skip:focus { left:16px; top:16px; z-index:99; background:#fff; color:#1B1F1D;
     padding:12px 18px; border-radius:99px; border:1px solid #DAD4C6; font-weight:600; }
+  /* ⚠️ THE ONE MEDIA QUERY ON THE SITE, and it is a deliberate exception to the
+     handoff's "no media queries anywhere" rule. Stated rather than smuggled in.
+
+     The header holds a wordmark, up to six nav links and a CTA in a single
+     non-wrapping row. Below roughly 760px that cannot fit, so the row now
+     wraps — but the header is position:sticky, and a wrapped sticky header
+     occupies about 280px of a 667px phone viewport for the entire scroll.
+
+     Nothing intrinsic fixes that: the problem is not the width, it is that
+     sticky and wrapped are incompatible. Dropping the nav instead would cost
+     navigation, and there is no hamburger in the design to fall back on. So
+     the header simply stops being sticky once it wraps. Every link survives,
+     it is seen once at the top, and it scrolls away like ordinary content. */
+  @media (max-width: 760px) {
+    header[style*="sticky"] { position: static !important; }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     *, *::before, *::after {
@@ -439,7 +466,7 @@ for (const [file, path, title, description, transform] of PAGES) {
     if (!siblings.length) return '';
     return `<section style="max-width:1180px;margin:0 auto;padding:clamp(56px,7vw,88px) 28px 0">
       <div style="font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#8A8F89">More on ${esc(p.cat.toLowerCase())}</div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:24px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr));gap:20px;margin-top:24px">
         ${siblings.map((q) => `<a href="${url(q.path)}" style="display:block;background:#fff;border:1px solid #EDE8DC;border-radius:22px;padding:26px;color:#1B1F1D">
           <div style="font-size:12.5px;color:#A9AEA8;margin-bottom:10px">${esc(q.read)} read</div>
           <div style="font-size:18px;font-weight:700;letter-spacing:-.02em;line-height:1.25;margin-bottom:8px;text-wrap:pretty">${esc(q.title)}</div>
