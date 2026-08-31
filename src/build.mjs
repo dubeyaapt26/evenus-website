@@ -36,6 +36,19 @@ const root = join(here, '..');
 const design = join(root, 'handoff');
 const out = join(root, 'dist');
 const ORIGIN = 'https://evenus.app';
+
+/**
+ * IndexNow host key. The file static/933366c16ba079aa7ebb6a1031579fa3.txt serves it, and
+ * static/ is copied into the build, so the key stays published as long as the
+ * site deploys.
+ *
+ * ⚠️ INDEXNOW DOES NOT NOTIFY GOOGLE. It reaches Bing, Yandex, Seznam, Naver
+ * and Yep. Google ran a test and has not adopted it, so nothing here shortens
+ * the path into Google's index — use Search Console for that. It is still
+ * worth having, because Bing's index is what Microsoft Copilot answers from,
+ * which makes it part of the AI-visibility work rather than the SEO work.
+ */
+const INDEXNOW_KEY = '933366c16ba079aa7ebb6a1031579fa3';
 const BASE = (process.env.BASE_PATH || '').replace(/\/$/, '');
 
 const url = (p) => BASE + p;
