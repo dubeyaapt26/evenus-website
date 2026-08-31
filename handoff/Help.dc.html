@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior:smooth; }
+  body { margin:0; background:#F7F5EF; color:#1B1F1D; font-family:'Plus Jakarta Sans',system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+  a { color:#2E6A5C; }
+  a:hover { color:#1B1F1D; }
+  ::selection { background:#DCEFE9; }
+</style>
+</helmet>
+
+<dc-import name="SiteHeader" active="help" hint-size="100%,66px"></dc-import>
+
+<main style="min-height:100vh;background:#F7F5EF">
+  <section style="max-width:1180px;margin:0 auto;padding:clamp(52px,7vw,96px) 28px clamp(40px,5vw,64px)">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,5vw,64px);align-items:end">
+      <div>
+        <div style="font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#8A8F89">Support</div>
+        <h1 style="margin:16px 0 0;font-size:clamp(38px,5vw,64px);line-height:1.03;letter-spacing:-.035em;font-weight:700">Help with EvenUS</h1>
+      </div>
+      <div style="background:#fff;border:1px solid #EDE8DC;border-radius:24px;padding:26px 26px 28px">
+        <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#2E6A5C">Getting in touch</div>
+        <div style="margin:14px 0 0;font-size:17px;line-height:1.55;color:#1B1F1D">Email <span style="font-weight:700;background:#FBE3D9;padding:2px 8px;border-radius:6px">support@evenus.app</span>. One person reads it, usually within two working days.</div>
+        <div style="margin:14px 0 0;font-size:14.5px;line-height:1.6;color:#5E645F">Say which phone you are on and what you were doing when it went wrong — it saves a round trip.</div>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width:1180px;margin:0 auto;padding:0 28px clamp(64px,8vw,110px)">
+    <h2 style="margin:0 0 8px;font-size:clamp(24px,2.8vw,34px);letter-spacing:-.03em;font-weight:700">The questions that come up most</h2>
+
+    <div style="margin-top:28px;border-top:1px solid #E4DFD3">
+      <sc-for list="{{ items }}" as="it" hint-placeholder-count="6">
+        <div style="border-bottom:1px solid #E4DFD3">
+          <button onClick="{{ it.toggle }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;background:none;border:none;padding:26px 4px;text-align:left;cursor:pointer;font-family:inherit;font-size:clamp(17px,1.8vw,20px);font-weight:600;color:#1B1F1D;letter-spacing:-.015em">
+            <span>{{ it.q }}</span>
+            <span style="flex:0 0 auto;width:28px;height:28px;border-radius:50%;background:#EFEBE1;color:#5E645F;display:flex;align-items:center;justify-content:center;font-size:16px">{{ it.mark }}</span>
+          </button>
+          <sc-if value="{{ it.open }}" hint-placeholder-val="{{ false }}">
+            <div style="padding:0 0 30px 4px;max-width:760px">
+              <sc-for list="{{ it.body }}" as="para" hint-placeholder-count="2">
+                <p style="margin:0 0 12px;font-size:16px;line-height:1.68;color:#4B504B;text-wrap:pretty">{{ para }}</p>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="margin-top:56px;background:#1B1F1D;color:#F7F5EF;border-radius:26px;padding:clamp(30px,4vw,44px)">
+      <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8FD0BE">Reporting something that is wrong</div>
+      <p style="margin:16px 0 0;max-width:680px;font-size:clamp(17px,1.9vw,21px);line-height:1.55;letter-spacing:-.01em;text-wrap:pretty">If EvenUS has shown you something that reads as blame, or a suggestion that landed badly, please send it to <span style="font-weight:700;color:#8FD0BE">support@evenus.app</span> with a screenshot.</p>
+      <p style="margin:14px 0 0;max-width:680px;font-size:15.5px;line-height:1.6;color:rgba(247,245,239,.62)">That is the failure this product cares most about and the reports are read individually.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:20px">
+      <a href="Privacy.dc.html" style="background:#fff;border:1px solid #EDE8DC;border-radius:22px;padding:24px;text-decoration:none;color:#1B1F1D" style-hover="border-color:#CFE6DE">
+        <div style="font-size:16.5px;font-weight:700;letter-spacing:-.02em">Privacy Policy</div>
+        <div style="font-size:14px;color:#5E645F;margin-top:6px;line-height:1.5">What is stored, what is never seen.</div>
+      </a>
+      <a href="Delete%20Account.dc.html" style="background:#fff;border:1px solid #EDE8DC;border-radius:22px;padding:24px;text-decoration:none;color:#1B1F1D" style-hover="border-color:#CFE6DE">
+        <div style="font-size:16.5px;font-weight:700;letter-spacing:-.02em">Delete your account</div>
+        <div style="font-size:14px;color:#5E645F;margin-top:6px;line-height:1.5">No partner approval needed.</div>
+      </a>
+      <a href="Terms.dc.html" style="background:#fff;border:1px solid #EDE8DC;border-radius:22px;padding:24px;text-decoration:none;color:#1B1F1D" style-hover="border-color:#CFE6DE">
+        <div style="font-size:16.5px;font-weight:700;letter-spacing:-.02em">Terms of Use</div>
+        <div style="font-size:14px;color:#5E645F;margin-top:6px;line-height:1.5">The agreement between you and EvenUS.</div>
+      </a>
+    </div>
+  </section>
+</main>
+
+<dc-import name="SiteFooter" hint-size="100%,140px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const QA = [
+  ["My partner hasn't appeared yet", [
+    "EvenUS needs both of you. Until the second person joins, the household is there but most screens have only half the picture.",
+    "Open Invite and send the code again, or share the link. The code does not expire. If they have already signed up on their own, they can enter the code from Setup \u2192 Join a household rather than creating a second household."
+  ]],
+  ["We each created a household by mistake", [
+    "Whoever has less in theirs should delete their account and join the other with the code. Profile \u2192 Delete account. Nothing in the household you are joining is affected."
+  ]],
+  ["A reminder never arrived", [
+    "Reminders are set on a chore, not on a person, and they go only to whoever owns that chore. Check three things: the chore has an owner, the reminder is on, and notifications are allowed for EvenUS in your phone's settings.",
+    "Everything else in the app works normally without notification permission."
+  ]],
+  ["Why can't I see my partner's check-in answers?", [
+    "Because they are private. Both of you answer the weekly questions separately and neither of you sees the other's answers \u2014 the app uses them to work out where the two of you see things differently, and shows that, without quoting anyone.",
+    "That is the design, not a fault."
+  ]],
+  ["Can I edit something my partner logged?", [
+    "No. Neither of you can change or remove the other's entries. An app where you can correct each other's records becomes an argument with a database attached.",
+    "If something is genuinely wrong, the person who logged it can fix it."
+  ]],
+  ["Deleting your account", [
+    "Profile \u2192 Delete account, or see the Deleting your account page. You do not need your partner's agreement and they are not asked to approve it."
+  ]]
+];
+
+class Component extends DCLogic {
+  state = { open: 0 };
+  renderVals() {
+    return {
+      items: QA.map(([q, body], i) => ({
+        q, body,
+        open: this.state.open === i,
+        mark: this.state.open === i ? "\u2212" : "+",
+        toggle: () => this.setState(s => ({ open: s.open === i ? -1 : i }))
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>

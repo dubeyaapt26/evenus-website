@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior:smooth; }
+  body { margin:0; background:#F7F5EF; color:#1B1F1D; font-family:'Plus Jakarta Sans',system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+  a { color:#2E6A5C; }
+  a:hover { color:#1B1F1D; }
+  ::selection { background:#DCEFE9; }
+</style>
+</helmet>
+
+<dc-import name="SiteHeader" hint-size="100%,66px"></dc-import>
+
+<main style="min-height:100vh;background:#F7F5EF">
+  <section style="max-width:1180px;margin:0 auto;padding:clamp(52px,7vw,92px) 28px clamp(30px,4vw,52px)">
+    <div style="font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#8A8F89">Legal</div>
+    <h1 style="margin:16px 0 0;max-width:760px;font-size:clamp(38px,5vw,62px);line-height:1.03;letter-spacing:-.035em;font-weight:700">Privacy Policy</h1>
+    <p style="margin:16px 0 0;font-size:14px;color:#8A8F89">Last updated: 16 August 2026</p>
+  </section>
+
+  <section style="max-width:1180px;margin:0 auto;padding:0 28px clamp(70px,9vw,120px)">
+    <div style="display:flex;flex-wrap:wrap;gap:clamp(30px,4vw,64px);align-items:flex-start">
+
+      <div style="flex:1 1 240px;max-width:300px">
+        <div style="position:sticky;top:96px">
+          <div style="font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#8A8F89;padding-bottom:14px;border-bottom:1px solid #E4DFD3">On this page</div>
+          <div style="display:flex;flex-direction:column;gap:11px;padding-top:16px;font-size:14px">
+            <a href="#short" style="color:#5E645F;text-decoration:none" style-hover="color:#1B1F1D">The short version</a>
+            <a href="#collect" style="color:#5E645F;text-decoration:none" style-hover="color:#1B1F1D">What we collect, and why</a>
+            <a href="#partner" style="color:#5E645F;text-decoration:none" style-hover="color:#1B1F1D">What your partner can see</a>
+            <a href="#reminders" style="color:#5E645F;text-decoration:none" style-hover="color:#1B1F1D">Reminders</a>
+            <a href="#basis" style="color:#5E645F;text-decoration:none" style-hover="color:#1B1F1D">Legal basis (UK/EU)</a>
+            <a href="#held" style="color:#5E645F;text-decoration:none" style-hover="color:#1B1F1D">Where your data is held</a>
+            <a href="#keep" style="color:#5E645F;text-decoration:none" style-hover="color:#1B1F1D">How long we keep it</a>
+            <a href="#delete" style="color:#5E645F;text-decoration:none" style-hover="color:#1B1F1D">Deleting your account</a>
+            <a href="#rights" style="color:#5E645F;text-decoration:none" style-hover="color:#1B1F1D">Your rights</a>
+            <a href="#children" style="color:#5E645F;text-decoration:none" style-hover="color:#1B1F1D">Children</a>
+            <a href="#payments" style="color:#5E645F;text-decoration:none" style-hover="color:#1B1F1D">Payments</a>
+            <a href="#contact" style="color:#5E645F;text-decoration:none" style-hover="color:#1B1F1D">Contact</a>
+          </div>
+        </div>
+      </div>
+
+      <div style="flex:999 1 520px;min-width:0;max-width:780px">
+
+        <p style="margin:0;font-size:17px;line-height:1.65;color:#4B504B;text-wrap:pretty">EvenUS is an app for two people who live together. It compares how money, time and household work are shared between you, and suggests one thing to try each week.</p>
+
+        <h2 id="short" style="margin:52px 0 0;font-size:clamp(24px,2.6vw,32px);letter-spacing:-.03em;font-weight:700;scroll-margin-top:100px">The short version</h2>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-top:22px">
+          <div style="background:#fff;border:1px solid #EDE8DC;border-radius:18px;padding:18px 20px;font-size:15.5px;line-height:1.6;color:#4B504B"><strong style="color:#1B1F1D">Your household's data is visible only to the two of you.</strong> Nobody at [COMPANY NAME] can read your incomes, expenses, or chore history.</div>
+          <div style="background:#fff;border:1px solid #EDE8DC;border-radius:18px;padding:18px 20px;font-size:15.5px;line-height:1.6;color:#4B504B"><strong style="color:#1B1F1D">We never tell one partner what the other did or didn't do.</strong> There is no notification for that, and no setting to enable one.</div>
+          <div style="background:#fff;border:1px solid #EDE8DC;border-radius:18px;padding:18px 20px;font-size:15.5px;line-height:1.6;color:#4B504B"><strong style="color:#1B1F1D">Your weekly check-in answers are private from your partner</strong>, permanently and by design. They are enforced as private in the database rules, not just hidden in the app.</div>
+          <div style="background:#fff;border:1px solid #EDE8DC;border-radius:18px;padding:18px 20px;font-size:15.5px;line-height:1.6;color:#4B504B"><strong style="color:#1B1F1D">We do not sell your data, and we do not show ads.</strong></div>
+          <div style="background:#fff;border:1px solid #EDE8DC;border-radius:18px;padding:18px 20px;font-size:15.5px;line-height:1.6;color:#4B504B"><strong style="color:#1B1F1D">There is no analytics SDK in this app.</strong> No third-party tracker, no advertising identifier, no automatic screen recording.</div>
+        </div>
+
+        <h2 style="margin:52px 0 0;font-size:clamp(24px,2.6vw,32px);letter-spacing:-.03em;font-weight:700">Who we are</h2>
+        <p style="margin:16px 0 0;font-size:16.5px;line-height:1.68;color:#4B504B">[COMPANY NAME], [COMPANY ADDRESS]. Contact: <a href="mailto:support@evenus.app">support@evenus.app</a>.</p>
+        <p style="margin:12px 0 0;font-size:16.5px;line-height:1.68;color:#4B504B">For UK/EU purposes, [COMPANY NAME] is the data controller for the information described below.</p>
+
+        <h2 id="collect" style="margin:52px 0 0;font-size:clamp(24px,2.6vw,32px);letter-spacing:-.03em;font-weight:700;scroll-margin-top:100px">What we collect, and why</h2>
+        <h3 style="margin:28px 0 0;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#2E6A5C">You give us</h3>
+        <div style="display:flex;flex-direction:column;margin-top:16px;border-top:1px solid #E4DFD3">
+          <sc-for list="{{ given }}" as="r" hint-placeholder-count="10">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:6px 24px;padding:20px 0;border-bottom:1px solid #E9E4D8">
+              <div style="font-size:15.5px;font-weight:600;letter-spacing:-.01em">{{ r.what }}</div>
+              <div style="min-width:0">
+                <div style="font-size:14.5px;line-height:1.6;color:#5E645F;text-wrap:pretty">{{ r.why }}</div>
+                <div style="font-size:13px;line-height:1.55;color:#2E6A5C;margin-top:8px;text-wrap:pretty"><span style="color:#A9AEA8">Visible to · </span>{{ r.who }}</div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+
+        <h3 style="margin:38px 0 0;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#2E6A5C">Collected automatically</h3>
+        <div style="display:flex;flex-direction:column;margin-top:16px;border-top:1px solid #E4DFD3">
+          <sc-for list="{{ auto }}" as="r" hint-placeholder-count="4">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:6px 24px;padding:20px 0;border-bottom:1px solid #E9E4D8">
+              <div style="font-size:15.5px;font-weight:600;letter-spacing:-.01em">{{ r.what }}</div>
+              <div style="font-size:14.5px;line-height:1.6;color:#5E645F;text-wrap:pretty">{{ r.why }}</div>
+            </div>
+          </sc-for>
+        </div>
+
+        <h3 style="margin:38px 0 12px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#A9583C">We do not collect</h3>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <sc-for list="{{ never }}" as="n" hint-placeholder-count="9">
+            <span style="font-size:13.5px;font-weight:500;color:#A9583C;background:#FBE3D9;border:1px solid #F2D3C5;padding:8px 14px;border-radius:99px">{{ n }}</span>
+          </sc-for>
+        </div>
+        <p style="margin:16px 0 0;font-size:15px;line-height:1.65;color:#5E645F">There is no third-party analytics or advertising SDK in this app.</p>
+
+        <h2 id="partner" style="margin:52px 0 0;font-size:clamp(24px,2.6vw,32px);letter-spacing:-.03em;font-weight:700;scroll-margin-top:100px">What your partner can and cannot see</h2>
+        <p style="margin:16px 0 0;font-size:16.5px;line-height:1.68;color:#4B504B">This deserves its own section, because it is the question most people actually have.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:24px">
+          <div style="background:#fff;border:1px solid #CFE6DE;border-radius:22px;padding:24px">
+            <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#2E6A5C">Your partner CAN see</div>
+            <p style="margin:14px 0 0;font-size:15px;line-height:1.65;color:#4B504B;text-wrap:pretty">Every shared expense and bill, every chore and completion, your name, your working hours, your income share, your financial obligations, the household's scores and history, and every change either of you makes to a setting that affects the score.</p>
+          </div>
+          <div style="background:#fff;border:1px solid #F2D3C5;border-radius:22px;padding:24px">
+            <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#A9583C">Your partner CANNOT see</div>
+            <p style="margin:14px 0 0;font-size:15px;line-height:1.65;color:#4B504B;text-wrap:pretty">Your weekly check-in answers, your individual mental-load answers before you have both answered, your password, or your notification settings. If you turn on "hide my exact income" they see the resulting percentage and not the figure itself.</p>
+          </div>
+        </div>
+        <div style="margin-top:14px;background:#1B1F1D;color:#F7F5EF;border-radius:22px;padding:24px">
+          <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8FD0BE">What we will never send</div>
+          <p style="margin:12px 0 0;font-size:16px;line-height:1.6;text-wrap:pretty">A notification telling one partner what the other did or didn't do. That notification does not exist in the app and there is no setting to turn it on.</p>
+        </div>
+
+        <h2 id="reminders" style="margin:52px 0 0;font-size:clamp(24px,2.6vw,32px);letter-spacing:-.03em;font-weight:700;scroll-margin-top:100px">Reminders</h2>
+        <p style="margin:16px 0 0;font-size:16.5px;line-height:1.68;color:#4B504B;text-wrap:pretty">You can set a reminder on a shared chore, and either partner can set one on any chore. <strong style="color:#1B1F1D">The notification goes only to the person who owns that chore, and it never says who set it.</strong> The owner can switch any reminder off, immediately, and we do not tell the person who set it. Reminders are scheduled on your own device and are not sent through our servers.</p>
+
+        <h2 id="basis" style="margin:52px 0 0;font-size:clamp(24px,2.6vw,32px);letter-spacing:-.03em;font-weight:700;scroll-margin-top:100px">Legal basis (UK/EU)</h2>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-top:20px">
+          <div style="font-size:16px;line-height:1.65;color:#4B504B"><strong style="color:#1B1F1D">Contract</strong> — account data, household data, and everything needed to provide the service you asked for.</div>
+          <div style="font-size:16px;line-height:1.65;color:#4B504B"><strong style="color:#1B1F1D">Legitimate interests</strong> — security, abuse prevention, and fixing crashes.</div>
+          <div style="font-size:16px;line-height:1.65;color:#4B504B"><strong style="color:#1B1F1D">Consent</strong> — push notifications, and a profile photo if you add one. You can withdraw either at any time in the app or your device settings.</div>
+        </div>
+
+        <h2 id="held" style="margin:52px 0 0;font-size:clamp(24px,2.6vw,32px);letter-spacing:-.03em;font-weight:700;scroll-margin-top:100px">Where your data is held</h2>
+        <p style="margin:16px 0 0;font-size:16.5px;line-height:1.68;color:#4B504B">On Google Firebase (Firestore, Authentication, Cloud Storage, Cloud Functions) in the <strong style="color:#1B1F1D">United States</strong>, region <span style="font-family:ui-monospace,monospace;font-size:14.5px;background:#EFEBE1;padding:2px 7px;border-radius:6px">us-central1</span>.</p>
+        <p style="margin:12px 0 0;font-size:16.5px;line-height:1.68;color:#4B504B">If you are in the UK or EU, this is a transfer outside your jurisdiction. It is covered by Google's Standard Contractual Clauses; see Google's Cloud Privacy Notice.</p>
+
+        <h2 id="keep" style="margin:52px 0 0;font-size:clamp(24px,2.6vw,32px);letter-spacing:-.03em;font-weight:700;scroll-margin-top:100px">How long we keep it</h2>
+        <div style="display:flex;flex-direction:column;gap:14px;margin-top:20px">
+          <div style="font-size:16px;line-height:1.65;color:#4B504B"><strong style="color:#1B1F1D">While your account exists</strong>, we keep your household data so your history stays accurate. A fairness app that quietly changed last month's numbers would be worthless.</div>
+          <div style="font-size:16px;line-height:1.65;color:#4B504B"><strong style="color:#1B1F1D">When you delete your account</strong>, your identity, your private check-ins, your own mental-load answers, and your recorded obligations are deleted immediately.</div>
+          <div style="font-size:16px;line-height:1.65;color:#4B504B"><strong style="color:#1B1F1D">Shared household history is not deleted while your partner still uses it.</strong> Your name is replaced with "Former member". This is deliberate: erasing your side of a shared expense would silently rewrite every past split and score that the person you lived with still relies on.</div>
+          <div style="font-size:16px;line-height:1.65;color:#4B504B"><strong style="color:#1B1F1D">If you were the last member</strong>, the entire household and everything in it is deleted.</div>
+          <div style="font-size:16px;line-height:1.65;color:#4B504B">Backups and server logs may persist for up to 30 days.</div>
+        </div>
+
+        <h2 id="delete" style="margin:52px 0 0;font-size:clamp(24px,2.6vw,32px);letter-spacing:-.03em;font-weight:700;scroll-margin-top:100px">Deleting your account</h2>
+        <p style="margin:16px 0 0;font-size:16.5px;line-height:1.68;color:#4B504B">In the app: <strong style="color:#1B1F1D">Profile → Delete account.</strong> It takes effect immediately and does not need your partner's permission.</p>
+        <p style="margin:12px 0 0;font-size:16.5px;line-height:1.68;color:#4B504B">You can also request deletion by emailing <a href="mailto:support@evenus.app">support@evenus.app</a> from your registered address. We will action it within 30 days. Web instructions: <a href="Delete%20Account.dc.html">evenus.app/delete-account</a>.</p>
+
+        <h2 id="rights" style="margin:52px 0 0;font-size:clamp(24px,2.6vw,32px);letter-spacing:-.03em;font-weight:700;scroll-margin-top:100px">Your rights</h2>
+        <p style="margin:16px 0 0;font-size:16.5px;line-height:1.68;color:#4B504B;text-wrap:pretty">Access, correction, deletion, portability, restriction, objection, and the right to withdraw consent. In the app you can already <strong style="color:#1B1F1D">export all your data</strong> (Profile → Export) and <strong style="color:#1B1F1D">delete your account</strong>. For anything else, email <a href="mailto:support@evenus.app">support@evenus.app</a>.</p>
+        <p style="margin:12px 0 0;font-size:16.5px;line-height:1.68;color:#4B504B">You have the right to complain to your data protection authority — in the UK, the Information Commissioner's Office (ico.org.uk).</p>
+
+        <h2 id="children" style="margin:52px 0 0;font-size:clamp(24px,2.6vw,32px);letter-spacing:-.03em;font-weight:700;scroll-margin-top:100px">Children</h2>
+        <p style="margin:16px 0 0;font-size:16.5px;line-height:1.68;color:#4B504B;text-wrap:pretty">EvenUS is for adults aged 18 and over. You may record details about children in your household — first name, birth date, living arrangements — because those change the household's workload and costs. <strong style="color:#1B1F1D">Children do not have accounts and cannot use the app.</strong> We do not knowingly collect data directly from anyone under 18.</p>
+
+        <h2 id="payments" style="margin:52px 0 0;font-size:clamp(24px,2.6vw,32px);letter-spacing:-.03em;font-weight:700;scroll-margin-top:100px">Payments</h2>
+        <p style="margin:16px 0 0;font-size:16.5px;line-height:1.68;color:#4B504B">The app is currently free. If paid features are introduced, payment is handled by <strong style="color:#1B1F1D">Apple</strong> or <strong style="color:#1B1F1D">Google</strong> under their own terms. <strong style="color:#1B1F1D">We never see or store your card details.</strong></p>
+
+        <h2 style="margin:52px 0 0;font-size:clamp(24px,2.6vw,32px);letter-spacing:-.03em;font-weight:700">Changes</h2>
+        <p style="margin:16px 0 0;font-size:16.5px;line-height:1.68;color:#4B504B">If we change this policy materially we will tell you in the app before the change takes effect. The date at the top always reflects the current version.</p>
+
+        <div id="contact" style="margin-top:52px;background:#fff;border:1px solid #EDE8DC;border-radius:24px;padding:28px;scroll-margin-top:100px">
+          <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8A8F89">Contact</div>
+          <div style="margin-top:12px;font-size:18px;font-weight:600"><a href="mailto:support@evenus.app">support@evenus.app</a></div>
+          <div style="margin-top:6px;font-size:15px;color:#5E645F">[COMPANY NAME], [COMPANY ADDRESS]</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<dc-import name="SiteFooter" hint-size="100%,140px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      given: [
+        { what: "Name, email address", why: "To create your account and connect you to your partner", who: "You, your partner (name only)" },
+        { what: "Income and paid working hours", why: "Direct inputs to the fairness calculation \u2014 it cannot work without them", who: "You and your partner. You can hide the exact figure so your partner sees only the resulting share" },
+        { what: "Expenses, bills, and how they're split", why: "The money side of the calculation", who: "Both partners" },
+        { what: "Chores, who owns them, and completions", why: "The time and effort side", who: "Both partners" },
+        { what: "Children's first names, birth dates, living arrangements", why: "Children change both the workload and the cost split. Blended families need this to produce a number that isn't wrong", who: "Both partners" },
+        { what: "Financial obligations (child support, maintenance, loans, family support)", why: "Money committed before this household sees it. Without this the app would wrongly show someone as contributing less", who: "The amount and type are visible to both partners, because they change the fair share. Only you can edit your own" },
+        { what: "Weekly check-in answers", why: "To compare what the app calculates against what you actually felt", who: "You only. Your partner can never read these, and neither can we in any identifiable form" },
+        { what: "Mental-load domain answers", why: "To find where you and your partner disagree about who carries what", who: "Only the summary is shared, and only once you have both answered" },
+        { what: "Appreciation notes you write", why: "To send to your partner", who: "Both partners" },
+        { what: "Profile photo, if you add one", why: "Display only", who: "Both partners" }
+      ],
+      auto: [
+        { what: "Authentication tokens and session data", why: "To keep you signed in" },
+        { what: "A push notification token, if you allow notifications", why: "To deliver your weekly summary and reminders" },
+        { what: "Crash and error reports", why: "To fix what breaks. Amounts, email addresses, names and household identifiers are stripped out on your device before a report is sent" },
+        { what: "Standard server logs from our hosting provider (Google Firebase), including IP address", why: "Security and abuse prevention. Retained per Google's defaults" }
+      ],
+      never: ["Location", "Contacts", "Calendar", "Photos you didn't choose", "Browsing history", "App-usage history", "Bank or card details", "Advertising identifiers"]
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior:smooth; }
+  body { margin:0; background:#F7F5EF; color:#1B1F1D; font-family:'Plus Jakarta Sans',system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+  a { color:#2E6A5C; }
+  a:hover { color:#1B1F1D; }
+  ::selection { background:#DCEFE9; }
+</style>
+</helmet>
+
+<dc-import name="SiteHeader" hint-size="100%,66px"></dc-import>
+
+<main style="min-height:100vh;background:#F7F5EF">
+  <section style="max-width:1180px;margin:0 auto;padding:clamp(52px,7vw,92px) 28px clamp(30px,4vw,52px)">
+    <div style="font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#8A8F89">Legal</div>
+    <h1 style="margin:16px 0 0;font-size:clamp(38px,5vw,62px);line-height:1.03;letter-spacing:-.035em;font-weight:700">Terms of Use</h1>
+    <p style="margin:16px 0 0;font-size:14px;color:#8A8F89">Last updated: 16 August 2026</p>
+  </section>
+
+  <section style="max-width:1180px;margin:0 auto;padding:0 28px clamp(70px,9vw,120px)">
+    <div style="display:flex;flex-wrap:wrap;gap:clamp(30px,4vw,64px);align-items:flex-start">
+
+      <div style="flex:1 1 240px;max-width:300px">
+        <div style="position:sticky;top:96px">
+          <div style="font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#8A8F89;padding-bottom:14px;border-bottom:1px solid #E4DFD3">Sections</div>
+          <div style="display:flex;flex-direction:column;gap:11px;padding-top:16px;font-size:14px">
+            <sc-for list="{{ toc }}" as="t" hint-placeholder-count="12">
+              <a href="{{ t.href }}" style="color:#5E645F;text-decoration:none" style-hover="color:#1B1F1D"><span style="color:#B4B8B2;margin-right:8px">{{ t.n }}</span>{{ t.label }}</a>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+
+      <div style="flex:999 1 520px;min-width:0;max-width:780px">
+        <sc-for list="{{ sections }}" as="s" hint-placeholder-count="12">
+          <div id="{{ s.id }}" style="padding-bottom:44px;scroll-margin-top:100px">
+            <div style="display:flex;align-items:baseline;gap:14px">
+              <span style="font-size:13px;font-weight:700;color:#2E6A5C;letter-spacing:.04em">{{ s.n }}</span>
+              <h2 style="margin:0;font-size:clamp(23px,2.5vw,30px);letter-spacing:-.03em;font-weight:700;text-wrap:balance">{{ s.title }}</h2>
+            </div>
+            <div style="margin-top:16px;display:flex;flex-direction:column;gap:13px">
+              <sc-for list="{{ s.body }}" as="p" hint-placeholder-count="2">
+                <p style="margin:0;font-size:16.5px;line-height:1.68;color:#4B504B;text-wrap:pretty">{{ p }}</p>
+              </sc-for>
+            </div>
+            <sc-if value="{{ s.hasList }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top:16px;display:flex;flex-direction:column;gap:10px">
+                <sc-for list="{{ s.list }}" as="li" hint-placeholder-count="3">
+                  <div style="display:flex;gap:12px;align-items:flex-start">
+                    <span style="flex:0 0 auto;width:5px;height:5px;border-radius:50%;background:#6FB3A2;margin-top:10px;display:block"></span>
+                    <span style="font-size:16px;line-height:1.65;color:#4B504B;text-wrap:pretty">{{ li }}</span>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+
+        <div style="background:#fff;border:1px solid #EDE8DC;border-radius:24px;padding:28px">
+          <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8A8F89">Contact</div>
+          <div style="margin-top:12px;font-size:18px;font-weight:600"><a href="mailto:support@evenus.app">support@evenus.app</a></div>
+          <div style="margin-top:6px;font-size:15px;color:#5E645F">[COMPANY NAME], [COMPANY ADDRESS]</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<dc-import name="SiteFooter" hint-size="100%,140px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const S = [
+  ["What EvenUS is", [
+    "An app for two adults sharing a home. You each record what you earn, what you spend, and what you do around the house. EvenUS compares those and offers one suggestion a week for something you might swap.",
+    "You need an account each. One shared login will not work, and is not supported."
+  ]],
+  ["Who can use it", [
+    "You must be 18 or over and legally able to enter a contract. Do not create an account for anyone else, or add someone to a household without their knowledge."
+  ]],
+  ["Your account", [
+    "Keep your password to yourself. You are responsible for what happens under your login. Tell us at support@evenus.app if you think someone else has access."
+  ]],
+  ["What EvenUS is not", [
+    "EvenUS is not financial advice. It does not tell you how to split your money, what is fair, or what you should do. It describes what you have recorded and suggests one thing to try. Every decision is yours.",
+    "EvenUS is not legal advice. Where you record child support, maintenance, or other obligations, the app treats them as fixed facts that change your available income. It does not calculate what any obligation should be, never suggests changing one, and is not a substitute for a solicitor or a court.",
+    "EvenUS is not therapy, counselling, or a relationship service. It is a measurement and suggestion tool. It cannot assess a relationship and does not try to.",
+    "If your relationship is in serious difficulty, or if you feel unsafe, please speak to a qualified professional. Data showing an imbalance can confirm something painful, and confirmation is not the same as help.",
+    "The numbers depend entirely on what you both enter. Incomplete or inaccurate entries produce incomplete or inaccurate results. Nothing is verified against a bank, an employer, or any other source."
+  ]],
+  ["Using it properly", [
+    "Do not use EvenUS to harass, coerce, monitor, or control another person. Do not try to access another household's data, reverse engineer the service, or overload it.",
+    "We may suspend or close an account we reasonably believe is being used to control or intimidate someone."
+  ]],
+  ["Your content", [
+    "What you enter stays yours. You grant us only the permission needed to store it, show it to you and your partner, and run the service. We do not sell it or use it for advertising.",
+    "Both partners can see and use shared household data. You cannot withdraw your partner's access to the shared history of a household you both used \u2014 see the Privacy Policy on why deletion works the way it does."
+  ]],
+  ["Ending a household", [
+    "Either of you can leave at any time, and neither needs the other's permission.",
+    "Shared history stays with the household, not with whoever leaves. Your name becomes \u201cFormer member\u201d and your private answers are deleted. If you were the last member, everything is deleted.",
+    "We are not a party to anything between you and the person you shared a home with, and we will not adjudicate a dispute between you or take a side. We do not provide data from your household as evidence in a dispute between you, except where we are legally required to. Either of you can export your own copy at any time."
+  ]],
+  ["Payment", [
+    "The app is free at the time of writing. If paid features are introduced:"
+  ], [
+    "prices and what you get will be stated clearly before you pay",
+    "one subscription covers both partners \u2014 you are never charged twice for one household",
+    "billing is handled entirely by Apple or Google, under their terms",
+    "refunds are handled by Apple or Google, not by us; cancel through your App Store or Play Store account",
+    "anything already free stays free for anyone who had it"
+  ]],
+  ["Availability", [
+    "We try to keep it running and make no promise that it always will. It may be unavailable for maintenance, and features may change or be withdrawn. If we shut the service down we will give at least 30 days' notice and you will be able to export your data."
+  ]],
+  ["Liability", [
+    "To the fullest extent the law allows, EvenUS is provided \u201cas is\u201d, and [COMPANY NAME] is not liable for indirect or consequential loss, lost data, or any decision you take based on what the app shows you.",
+    "Nothing here limits liability for death or personal injury caused by negligence, for fraud, or for anything else that cannot lawfully be excluded. If you are a consumer, your statutory rights are unaffected."
+  ]],
+  ["Changes", [
+    "We may update these terms. Material changes will be shown in the app before they take effect. Continuing to use EvenUS after that means you accept them."
+  ]],
+  ["Law", [
+    "Governed by the laws of [JURISDICTION]. If you are a consumer, you keep the protection of the mandatory laws of the country you live in."
+  ]]
+];
+
+class Component extends DCLogic {
+  renderVals() {
+    const sections = S.map(([title, body, list], i) => ({
+      id: "s" + (i + 1), n: String(i + 1).padStart(2, "0"), title, body,
+      list: list || [], hasList: !!list
+    }));
+    return {
+      sections,
+      toc: sections.map(s => ({ href: "#" + s.id, n: s.n, label: s.title }))
+    };
+  }
+}
+</script>
+</body>
+</html>

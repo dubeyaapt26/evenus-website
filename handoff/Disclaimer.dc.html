@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior:smooth; }
+  body { margin:0; background:#F7F5EF; color:#1B1F1D; font-family:'Plus Jakarta Sans',system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+  a { color:#2E6A5C; }
+  a:hover { color:#1B1F1D; }
+  ::selection { background:#DCEFE9; }
+</style>
+</helmet>
+
+<dc-import name="SiteHeader" hint-size="100%,66px"></dc-import>
+
+<main style="min-height:100vh;background:#F7F5EF">
+  <section style="max-width:900px;margin:0 auto;padding:clamp(52px,7vw,96px) 28px clamp(24px,3vw,40px)">
+    <div style="font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#8A8F89">Legal</div>
+    <h1 style="margin:16px 0 0;font-size:clamp(38px,5vw,62px);line-height:1.03;letter-spacing:-.035em;font-weight:700">Disclaimer</h1>
+    <p style="margin:16px 0 0;font-size:14px;color:#8A8F89">Last updated 31 August 2026</p>
+    <p style="margin:26px 0 0;max-width:660px;font-size:clamp(17px,1.9vw,20px);line-height:1.6;color:#4B504B;text-wrap:pretty">EvenUS measures how a household's money, time and unpaid work are shared, and suggests one thing a week that might help. That is all it does, and this page is about the things it deliberately is not.</p>
+  </section>
+
+  <section style="max-width:900px;margin:0 auto;padding:0 28px clamp(70px,9vw,120px)">
+
+    <div style="margin-top:36px;padding-top:36px;border-top:1px solid #E4DFD3">
+      <h2 style="margin:0;font-size:clamp(24px,2.7vw,33px);letter-spacing:-.03em;font-weight:700">It is not financial advice</h2>
+      <p style="margin:18px 0 0;font-size:16.5px;line-height:1.68;color:#4B504B;text-wrap:pretty">EvenUS records what you tell it and does arithmetic on it. It does not advise you on budgeting, debt, savings, investment, tax or insurance, and nothing it shows should be read as a recommendation to do or not do any of those.</p>
+      <p style="margin:13px 0 0;font-size:16.5px;line-height:1.68;color:#4B504B;text-wrap:pretty">It is not a bank, a lender, a broker, an adviser or a payment service. It never holds, moves or transfers money. "Settle up" <strong style="color:#1B1F1D">records that a transfer happened between the two of you</strong> — you make the actual transfer yourselves, however you already do.</p>
+      <p style="margin:13px 0 0;font-size:16.5px;line-height:1.68;color:#4B504B;text-wrap:pretty">[COMPANY NAME] is not regulated as a financial institution in any jurisdiction, and does not hold itself out as one. For advice about your own finances, speak to someone qualified in your country.</p>
+    </div>
+
+    <div style="margin-top:36px;padding-top:36px;border-top:1px solid #E4DFD3">
+      <h2 style="margin:0;font-size:clamp(24px,2.7vw,33px);letter-spacing:-.03em;font-weight:700">It is not therapy, counselling or a medical service</h2>
+      <p style="margin:18px 0 0;font-size:16.5px;line-height:1.68;color:#4B504B;text-wrap:pretty">EvenUS is a household tool. It is not couples counselling, not mediation, not mental-health treatment, and no clinician reviews anything you put into it.</p>
+      <div style="margin-top:20px;background:#1B1F1D;color:#F7F5EF;border-radius:22px;padding:26px 28px">
+        <p style="margin:0;font-size:clamp(17px,1.9vw,20px);line-height:1.55;font-weight:600;letter-spacing:-.01em;text-wrap:pretty">If a conversation at home has stopped being safe, this app is the wrong thing.</p>
+        <p style="margin:12px 0 0;font-size:15.5px;line-height:1.65;color:rgba(247,245,239,.7);text-wrap:pretty">No score, chart or weekly suggestion is a substitute for a counsellor, a doctor, or a domestic-abuse service. If you are in immediate danger, contact your local emergency number.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:36px;padding-top:36px;border-top:1px solid #E4DFD3">
+      <h2 style="margin:0;font-size:clamp(24px,2.7vw,33px);letter-spacing:-.03em;font-weight:700">The numbers are a starting point, not a verdict</h2>
+      <p style="margin:18px 0 0;font-size:16.5px;line-height:1.68;color:#4B504B;text-wrap:pretty">Every figure in EvenUS comes from what the two of you enter. Estimates of how long a task takes are estimates. A week nobody had time to log looks like a week nobody did anything.</p>
+      <p style="margin:13px 0 0;font-size:16.5px;line-height:1.68;color:#4B504B;text-wrap:pretty">The app is built to be honest about this — it flags thin data rather than scoring it confidently — but a number on a screen is only ever a reason to talk, not a finding about a person. <strong style="color:#1B1F1D">EvenUS does not decide who is right.</strong> Where the two of you disagree, it shows the disagreement; it does not resolve it.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:36px">
+      <div style="background:#fff;border:1px solid #EDE8DC;border-radius:22px;padding:26px">
+        <h3 style="margin:0;font-size:17.5px;font-weight:700;letter-spacing:-.02em">No guarantee of a result</h3>
+        <p style="margin:10px 0 0;font-size:15px;line-height:1.62;color:#5E645F;text-wrap:pretty">We do not promise EvenUS will reduce arguments, improve a relationship, or change how anything is shared in your home. It is a tool. What happens after it tells you something is between the two of you.</p>
+      </div>
+      <div style="background:#fff;border:1px solid #EDE8DC;border-radius:22px;padding:26px">
+        <h3 style="margin:0;font-size:17.5px;font-weight:700;letter-spacing:-.02em">Third parties</h3>
+        <p style="margin:10px 0 0;font-size:15px;line-height:1.62;color:#5E645F;text-wrap:pretty">Pages here may link to other sites. We do not control them and are not responsible for what they say or do.</p>
+      </div>
+      <div style="background:#fff;border:1px solid #EDE8DC;border-radius:22px;padding:26px">
+        <h3 style="margin:0;font-size:17.5px;font-weight:700;letter-spacing:-.02em">Availability</h3>
+        <p style="margin:10px 0 0;font-size:15px;line-height:1.62;color:#5E645F;text-wrap:pretty">The service is provided as-is. We do not guarantee it will be uninterrupted, error-free, or that data you enter will never be lost — keep your own record of anything that matters. See the <a href="Terms.dc.html">Terms of use</a> for the full position.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:36px;background:#fff;border:1px solid #EDE8DC;border-radius:24px;padding:28px">
+      <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8A8F89">Questions</div>
+      <div style="margin-top:12px;font-size:18px;font-weight:600"><a href="mailto:support@evenus.app">support@evenus.app</a></div>
+    </div>
+  </section>
+</main>
+
+<dc-import name="SiteFooter" hint-size="100%,140px"></dc-import>
+
+</x-dc>
+</body>
+</html>

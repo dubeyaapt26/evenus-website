@@ -1,365 +1,423 @@
 // ---------------------------------------------------------------------------
-// Builds the whole of evenus.app as static files.
+// Builds evenus.app from the design handoff.
 //
-//   node scripts/build-site.mjs        (or: npm run site)
+//   node src/build.mjs        ->  dist/
+//   BASE_PATH=/repo node src/build.mjs   (GitHub project site)
 //
-// Output lands in public/ — drop it on any static host. No framework, no build
-// step, no database, one webfont request and nothing else. The old site was
-// WordPress with Elementor; this replaces it outright and imports only the
-// prose, never the markup. See scripts/site/wordpress.mjs for how, and the
-// footprint assertion at the bottom of this file for the proof.
+// The .dc.html prototypes in handoff/ are the source of truth for markup and
+// copy. They are RENDERED (src/dc/render.mjs), not transcribed — the handoff
+// asks for pixel-for-pixel and the surest way to hit that is to use the
+// designer's own markup rather than a retyping of it.
 //
-// ⚠️ THE FOUR LEGAL PAGES ARE THE POINT. Both stores gate submission on them,
-// and Play additionally requires the account-deletion page to load FOR SOMEONE
-// WITH NO ACCOUNT. Everything else here is a website; those four are a
-// dependency of shipping.
+// What is NOT carried over is the prototype runtime. Every interaction is
+// reimplemented in src/dc/site.js as plain DOM code, and src/dc/hooks.mjs
+// annotates the rendered markup for it — with each anchor asserted, so a design
+// change that moves an element fails the build instead of silently killing the
+// calculator.
 //
-// Blog source: ../evenus-site-recovered/pages/blog/*.html, pulled out of the
-// Internet Archive after the original host was deleted. If that folder is
-// absent the site still builds — minus the blog — so a fresh clone works.
+// ⚠️ Two things the handoff does not contain and this build adds:
+//   1. A blog POST template. The bundle has a blog index but no article page.
+//      One is composed here from the system's own parts.
+//   2. Real content. The index ships 32 placeholder posts; the site has 115
+//      recovered ones, so the design's <sc-for> is driven with those instead.
 // ---------------------------------------------------------------------------
 
-import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { layout, mark, esc, SITE, PALETTE, BASE, href } from './site/layout.mjs';
-import { render } from './site/markdown.mjs';
+import { renderDC } from './dc/render.mjs';
+import { hookHome, stripPrototypeHandlers } from './dc/hooks.mjs';
 import { extractPost, FOOTPRINTS } from './site/wordpress.mjs';
+import { CATEGORIES, curated, categoryFor, readTime } from './dc/blogdata.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const root = join(here, '..');
+const design = join(root, 'handoff');
 const out = join(root, 'dist');
-const legalDir = join(here, 'legal');
-const blogSrc = join(here, 'recovered/blog');
+const ORIGIN = 'https://evenus.app';
+const BASE = (process.env.BASE_PATH || '').replace(/\/$/, '');
+
+const url = (p) => BASE + p;
+const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;')
+  .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
 const written = [];
-
-function write(path, html) {
+function emit(path, body) {
   const file = join(out, path);
   mkdirSync(dirname(file), { recursive: true });
-  writeFileSync(file, withBase(html));
+  writeFileSync(file, path.endsWith('.html') ? withBase(body) : body);
   written.push(path);
 }
 
 /**
  * Adds the base path to every root-relative link, at the LAST possible moment.
  *
- * ⚠️ Prefixing only where links are authored is not enough, and that is the
- * whole reason this exists. Links also arrive from two places no template
- * controls: markdown documents in src/legal, and the recovered blog posts,
- * whose internal cross-references were rewritten to /blog/<slug>/ on the way
- * in. Four such links were already missing the prefix — every one of them a
- * 404 that appears only after deploying to a project site.
+ * ⚠️ Prefixing where links are authored is not enough, and that is the whole
+ * reason this exists. Links also arrive from the recovered posts' own
+ * cross-references, which no template controls — /blog/<slug>/ links written by
+ * the original author and rewritten on import. Those 404 on a project site.
  *
- * Idempotent: a link that already carries the base is left alone, so this is
- * safe to apply to output that was partly prefixed upstream.
+ * Idempotent: anything already carrying the base is left alone.
  */
 function withBase(html) {
   if (!BASE) return html;
   return html.replace(
     /(href|src)="(\/[^"]*)"/g,
-    (m, attr, url) =>
-      url === BASE || url.startsWith(`${BASE}/`) ? m : `${attr}="${BASE}${url}"`
+    (m, attr, u) => (u === BASE || u.startsWith(`${BASE}/`) ? m : `${attr}="${BASE}${u}"`)
   );
 }
+const pageAt = (u, html) =>
+  emit(u === '/' ? 'index.html' : `${u.replace(/^\/|\/$/g, '')}/index.html`, html);
 
-/** Clean URLs: /privacy/ is served from privacy/index.html by every static host. */
-const pageAt = (urlPath, html) =>
-  write(urlPath === '/' ? 'index.html' : `${urlPath.replace(/^\/|\/$/g, '')}/index.html`, html);
-
-// ---------------------------------------------------------------------------
-// Homepage
+// --- Head ------------------------------------------------------------------
 //
-// ⚠️ THE OLD HEADLINE IS NOT COMING BACK. It read "No More Money Fights. Just
-// Fairness & Love." CLAUDE.md §1 is explicit that this product does not claim
-// to prevent fights, save relationships or fix conflict — for a couple already
-// in real trouble, hard data confirming an imbalance can accelerate an ending.
-// The honest claim is the one below.
-//
-// It also does not say "download on the App Store". It is not on either store
-// yet, and the old site said it was.
-// ---------------------------------------------------------------------------
-function homepage() {
-  const body = `
-<div class="wrap">
-  <section class="hero">
-    <div class="eyebrow">For two people who live together</div>
-    <h1>The fight isn’t really about the dishes.</h1>
-    <p class="lede">EvenUS works out how money, time and the planning nobody
-    sees are actually shared in your home — then suggests <strong>one thing</strong>
-    to swap this week.</p>
-  </section>
-
-  <div class="note">
-    <p><strong>Built for the partner who wants to help and doesn’t know what
-    “help” means.</strong></p>
-    <p>Asking <em>“what can I do?”</em> hands the planning straight back to
-    whoever is already carrying it. Answering that question — specifically,
-    with a reason — is the whole product. The measuring exists so there is
-    something real to answer with.</p>
-  </div>
-
-  <h2>How it works</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>It measures discretionary time</h3>
-      <p>Not who did more chores. Hours that are genuinely your own, once sleep,
-      paid work, commuting and the housework are out. That is why it handles
-      “works more but earns less” without a special case.</p>
-    </div>
-    <div class="card">
-      <h3>Money is a separate question</h3>
-      <p>Four ways to split — proportional, residual, equal remainder, equal.
-      Hours are never priced. Putting an hourly rate on domestic work is a claim
-      this app has no business making.</p>
-    </div>
-    <div class="card">
-      <h3>One suggestion a week</h3>
-      <p>With the reason attached: <em>you have a free Saturday morning, so
-      taking this one would help more than you’d think.</em> Not a list. Not a
-      backlog. One.</p>
-    </div>
-    <div class="card">
-      <h3>Both of you answer privately</h3>
-      <p>Two quick questions each week, and neither of you sees the other’s
-      answers. Where you see things differently, EvenUS shows the gap — without
-      taking a side on who is right.</p>
-    </div>
-  </div>
-
-  <h2>What it will never do</h2>
-  <p>Some of these get asked for. They are refusals, not gaps:</p>
-  <ul>
-    <li><strong>No streaks, badges, points or leaderboards.</strong> A streak
-    punishes whoever had a hard week.</li>
-    <li><strong>No nudge button.</strong> Reminding your partner is not this
-    app’s job. A reminder belongs to a task, and goes only to whoever owns it —
-    never labelled with who set it.</li>
-    <li><strong>No notification about what your partner didn’t do.</strong>
-    That notification does not exist here.</li>
-    <li><strong>No public score, ever.</strong> Nothing is shareable, and there
-    is no feed.</li>
-    <li><strong>No reading your location, calendar or screen time.</strong>
-    Surveillance between partners is the opposite of the point.</li>
-  </ul>
-  <p>And if the picture stays bad for a couple of months, EvenUS stops
-  suggesting things, says so once, points toward someone qualified, and goes
-  quiet. A tool that keeps chirping at that stage has become a weapon.</p>
-
-  <div class="note">
-    <p><strong>EvenUS is in closed testing and is not on the app stores yet.</strong>
-    It is free while that lasts. If you would like to try it with your partner,
-    email <a href="${href('/support/')}">us</a> and we will send you a link.</p>
-  </div>
-
-  <h2>Reading</h2>
-  <p>Writing on mental load, splitting money fairly and dividing housework
-  without it turning into an argument — <a href="${href('/blog/')}">the blog</a>.</p>
-</div>`;
-  pageAt('/', layout({
-    title: SITE.name,
-    description:
-      'EvenUS measures how money, time and mental load are actually shared between two people — and suggests one thing to swap each week.',
-    path: '/',
-    body,
-  }));
-}
-
-// ---------------------------------------------------------------------------
-// Legal and support
-// ---------------------------------------------------------------------------
-const DOCS = [
-  { file: 'PRIVACY.md', path: '/privacy/', title: 'Privacy Policy',
-    description: 'What EvenUS stores, what it never sees, and how to get rid of all of it.' },
-  { file: 'TERMS.md', path: '/terms/', title: 'Terms of Use',
-    description: 'The agreement between you and EvenUS.' },
-  { file: 'SUPPORT.md', path: '/support/', title: 'Help',
-    description: 'Answers to the questions a two-person app actually generates, and how to reach a human.' },
-  { file: 'DELETE_ACCOUNT.md', path: '/delete-account/', title: 'Delete your account',
-    description: 'How to delete your EvenUS account and your data. No partner approval needed.' },
-  { file: 'DISCLAIMER.md', path: '/disclaimer/', title: 'Disclaimer',
-    description: 'EvenUS is not financial advice and not therapy. What that means in practice.' },
-];
-
-function legal() {
-  for (const d of DOCS) {
-    const md = readFileSync(join(legalDir, d.file), 'utf8');
-    pageAt(d.path, layout({
-      title: d.title,
-      description: d.description,
-      path: d.path,
-      body: `<div class="wrap article-body" style="padding-top:52px">${render(md)}</div>`,
-    }));
+// The extra CSS is the accessibility work the handoff asks production to add
+// and the prototypes omit: a visible focus ring, and honouring reduced motion
+// by disabling the decorative loops.
+const A11Y = `
+<style>
+  a:focus-visible, button:focus-visible, input:focus-visible {
+    outline: 2px solid #2E6A5C; outline-offset: 2px; border-radius: 4px;
   }
-}
-
-// ---------------------------------------------------------------------------
-// Blog
-// ---------------------------------------------------------------------------
-function blog() {
-  if (!existsSync(blogSrc)) {
-    console.log('  (no recovered blog source — skipping the blog)');
-    return [];
-  }
-
-  const posts = [];
-  for (const f of readdirSync(blogSrc).filter((n) => n.endsWith('.html'))) {
-    const post = extractPost(readFileSync(join(blogSrc, f), 'utf8'));
-    if (!post || post.words < 200) {
-      console.log(`  ⚠️  skipped ${f} (${post ? post.words + ' words' : 'no body found'})`);
-      continue;
+  .skip { position:absolute; left:-9999px; }
+  .skip:focus { left:16px; top:16px; z-index:99; background:#fff; color:#1B1F1D;
+    padding:12px 18px; border-radius:99px; border:1px solid #DAD4C6; font-weight:600; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: .001ms !important; animation-iteration-count: 1 !important;
+      transition-duration: .001ms !important;
     }
-    posts.push({ ...post, slug: f.replace(/\.html$/, '') });
   }
+</style>`;
 
-  // Newest first; undated posts sort last rather than to 1970.
-  posts.sort((a, b) => (b.iso || '0000').localeCompare(a.iso || '0000'));
-
-  for (const p of posts) {
-    const path = `/blog/${p.slug}/`;
-    pageAt(path, layout({
-      title: p.title,
-      description: p.excerpt,
-      path,
-      published: p.iso || undefined,
-      body: `<div class="wrap" style="padding-top:52px">
-  <h1>${esc(p.title)}</h1>
-  <p class="meta">${p.date ? esc(p.date) + ' · ' : ''}${p.words.toLocaleString()} words</p>
-  <div class="article-body">${p.html}</div>
-  <hr>
-  <p><a href="${href('/blog/')}">← All writing</a></p>
-</div>`,
-    }));
-  }
-
-  const items = posts.map((p) => `<li>
-      <a href="${href(`/blog/${p.slug}/`)}">${esc(p.title)}</a>
-      <p>${esc(p.excerpt)}</p>
-    </li>`).join('\n');
-
-  pageAt('/blog/', layout({
-    title: 'Blog',
-    description: 'Writing on mental load, fair money splits and dividing housework without an argument.',
-    path: '/blog/',
-    body: `<div class="wrap" style="padding-top:52px">
-  <h1>Writing</h1>
-  <p class="meta">${posts.length} pieces on mental load, money and how households actually run.</p>
-  <ul class="post-list">
-${items}
-  </ul>
-</div>`,
-  }));
-
-  return posts;
+function shell({ title, description, path, helmet, body, published }) {
+  const full = path === '/' ? 'EvenUS — A fairer share of everything.' : `${title} · EvenUS`;
+  return `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>${esc(full)}</title>
+<meta name="description" content="${esc(description)}">
+<meta name="theme-color" content="#F7F5EF">
+<link rel="canonical" href="${ORIGIN}${path}">
+<meta property="og:site_name" content="EvenUS">
+<meta property="og:type" content="${published ? 'article' : 'website'}">
+<meta property="og:title" content="${esc(title)}">
+<meta property="og:description" content="${esc(description)}">
+<meta property="og:url" content="${ORIGIN}${path}">
+${published ? `<meta property="article:published_time" content="${published}">` : ''}
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="${url('/favicon.svg')}" type="image/svg+xml">
+${helmet}
+${A11Y}
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div id="main">
+${body}
+</div>
+<script src="${url('/site.js')}" defer></script>
+</body>
+</html>
+`;
 }
 
-// ---------------------------------------------------------------------------
-// The pieces a live site needs and nobody remembers
-// ---------------------------------------------------------------------------
-function extras(posts) {
-  pageAt('/404/', layout({
-    title: 'Page not found',
-    description: 'That page does not exist.',
-    path: '/404/',
-    noindex: true,
-    body: `<div class="wrap" style="padding-top:72px">
-  <h1>That page isn’t here.</h1>
-  <p>It may have moved when the site was rebuilt. Try
-  <a href="${href('/blog/')}">the writing</a> or <a href="${href('/')}">the homepage</a>.</p>
-</div>`,
-  }));
-  // Most hosts want 404.html at the root, not in a folder. Move it, and take
-  // the folder's path back out of `written` — the checks at the bottom read
-  // every file in that list, and a stale entry crashes the build after it has
-  // already reported success.
-  writeFileSync(join(out, '404.html'), readFileSync(join(out, '404/index.html')));
-  rmSync(join(out, '404'), { recursive: true, force: true });
-  written.splice(written.indexOf('404/index.html'), 1);
-  written.push('404.html');
-
-  const urls = [
-    { loc: '/', pri: '1.0' },
-    { loc: '/blog/', pri: '0.8' },
-    { loc: '/support/', pri: '0.6' },
-    { loc: '/privacy/', pri: '0.4' },
-    { loc: '/terms/', pri: '0.4' },
-    { loc: '/disclaimer/', pri: '0.3' },
-    { loc: '/delete-account/', pri: '0.4' },
-    ...posts.map((p) => ({ loc: `/blog/${p.slug}/`, pri: '0.7', lastmod: p.iso })),
-  ];
-  write('sitemap.xml',
-    `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
-    urls.map((u) =>
-      `  <url><loc>${SITE.origin}${u.loc}</loc>` +
-      (u.lastmod ? `<lastmod>${u.lastmod}</lastmod>` : '') +
-      `<priority>${u.pri}</priority></url>`).join('\n') +
-    `\n</urlset>\n`);
-
-  write('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${SITE.origin}/sitemap.xml\n`);
-
-  // GitHub Pages runs Jekyll unless told not to, and Jekyll silently drops
-  // every file and folder whose name starts with an underscore.
-  write('.nojekyll', '');
-
-  write('favicon.svg',
-    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">` +
-    `<rect width="64" height="64" rx="12" fill="${PALETTE.bg}"/>` +
-    mark(64).replace(/^<svg[^>]*>/, '').replace(/<\/svg>$/, '') +
-    `</svg>\n`);
-
-  // .app is on the browser HSTS preload list, so http:// never even reaches the
-  // server. These headers are for hosts that read them (Netlify, Cloudflare
-  // Pages); harmless anywhere else.
-  write('_headers',
-    `/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n` +
-    `  X-Frame-Options: DENY\n  Permissions-Policy: geolocation=(), camera=(), microphone=()\n` +
-    `  Strict-Transport-Security: max-age=31536000; includeSubDomains\n`);
+/**
+ * Points the design's placeholder links at real routes.
+ *
+ * The prototypes navigate by relative filename so the bundle browses offline,
+ * and link out to absolute evenus.app URLs with target="_blank". Neither is
+ * right for the live site.
+ */
+function routes(html) {
+  const map = {
+    'EvenUS Website.dc.html': '/', 'Blog.dc.html': '/blog/', 'Help.dc.html': '/support/',
+    'Privacy.dc.html': '/privacy/', 'Terms.dc.html': '/terms/',
+    'Disclaimer.dc.html': '/disclaimer/', 'Delete Account.dc.html': '/delete-account/',
+  };
+  for (const [file, to] of Object.entries(map)) {
+    // ⚠️ Three variations, and each one was actually present in the bundle:
+    // the raw filename, the %20-encoded form (two of the seven pages have a
+    // space in the name), and either of those followed by a #fragment — the
+    // header's "Get the app" links to "EvenUS%20Website.dc.html#get".
+    // An exact-string swap silently missed the last kind.
+    for (const name of [file, encodeURIComponent(file).replace(/%2F/g, '/')]) {
+      const re = new RegExp(
+        `href="(?:\\./)?${name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(#[^"]*)?"`,
+        'g'
+      );
+      html = html.replace(re, (_m, frag) => `href="${url(to)}${frag || ''}"`);
+    }
+  }
+  html = html.replace(/href="https:\/\/evenus\.app(\/[^"]*)"/g, (_m, p) => `href="${url(p)}"`);
+  // Same-site links should not open a new tab.
+  html = html.replace(/<a([^>]*href="(?:\/|\.\.?\/)[^"]*"[^>]*)\starget="_blank"\srel="noopener"/g, '<a$1');
+  html = html.replace(/<a([^>]*)\starget="_blank"\srel="noopener"([^>]*href="(?:\/)[^"]*")/g, '<a$1$2');
+  return html;
 }
 
-// ---------------------------------------------------------------------------
+const page = (file, opts, overrides = {}, transform = null) => {
+  const r = renderDC(design, file, overrides, {}, transform);
+  return { helmet: r.helmet, body: routes(stripPrototypeHandlers(r.body)), ...opts };
+};
 
-console.log('\nBuilding evenus.app\n');
+/** Opens every accordion answer so the static page contains all of them. */
+const openAll = (key) => (scope) => {
+  if (Array.isArray(scope[key])) {
+    scope[key] = scope[key].map((it) => ({ ...it, open: true, mark: '+' }));
+  }
+  return scope;
+};
+
+console.log('\nBuilding evenus.app' + (BASE ? ` (base ${BASE})` : '') + '\n');
 rmSync(out, { recursive: true, force: true });
 mkdirSync(out, { recursive: true });
 
-homepage();
-legal();
-const posts = blog();
-extras(posts);
+// --- Posts -----------------------------------------------------------------
+const CURATED = curated(join(design, 'Blog.dc.html'));
+const posts = [];
+for (const f of readdirSync(join(here, 'recovered/blog')).filter((n) => n.endsWith('.html'))) {
+  const slug = f.replace(/\.html$/, '');
+  const p = extractPost(readFileSync(join(here, 'recovered/blog', f), 'utf8'));
+  if (!p || p.words < 200) { console.log(`  ⚠️  skipped ${f}`); continue; }
+  const c = CURATED.get(slug);
+  posts.push({
+    slug,
+    path: `/blog/${slug}/`,
+    html: p.html,
+    iso: p.iso,
+    date: p.date,
+    words: p.words,
+    cat: c?.cat ?? categoryFor(slug),
+    title: c?.title ?? p.title,
+    excerpt: c?.excerpt ?? p.excerpt,
+    read: c?.read ?? readTime(p.words),
+  });
+}
+posts.sort((a, b) => (b.iso || '0000').localeCompare(a.iso || '0000'));
 
-console.log(`  ${written.length} files written to dist/`);
-console.log(`  homepage, ${DOCS.length} standing pages, ${posts.length} blog posts, sitemap, robots, 404`);
+// --- Home ------------------------------------------------------------------
+{
+  const r = renderDC(design, 'EvenUS Website.dc.html', {}, {}, openAll('faqs'));
+  const body = routes(hookHome(r.body));
+  pageAt('/', shell({
+    title: 'EvenUS',
+    description: 'EvenUS measures how money, time and mental load are actually shared between two people — and suggests one thing to swap each week.',
+    path: '/', helmet: r.helmet, body,
+  }));
+}
 
-// --- The two things that must be true before this goes live ----------------
+// --- Blog index ------------------------------------------------------------
+// The design's own <sc-for> is driven with the real 115 posts.
+{
+  const cats = CATEGORIES.map((label) => ({
+    label,
+    bg: label === 'All' ? '#1B1F1D' : 'transparent',
+    fg: label === 'All' ? '#F7F5EF' : '#5E645F',
+    border: label === 'All' ? '#1B1F1D' : '#DAD4C6',
+  }));
+  const r = renderDC(design, 'Blog.dc.html', {
+    cats,
+    posts: posts.map((p) => ({ cat: p.cat, title: p.title, excerpt: p.excerpt, read: p.read, url: url(p.path) })),
+  });
+  let body = routes(stripPrototypeHandlers(r.body));
 
-// 1. Not one trace of the old stack.
-const dirty = new Map();
-for (const rel of written) {
-  if (!rel.endsWith('.html') && !rel.endsWith('.xml')) continue;
-  const body = readFileSync(join(out, rel), 'utf8').toLowerCase();
-  for (const fp of FOOTPRINTS) {
-    if (body.includes(fp.toLowerCase())) dirty.set(fp, (dirty.get(fp) || 0) + 1);
+  // Filter hooks. Each pill gets its label, each row its category.
+  let i = 0;
+  body = body.replace(/<button style="font-family:inherit;font-size:13px/g,
+    () => `<button data-filter="${CATEGORIES[i++]}" type="button" style="font-family:inherit;font-size:13px`);
+  if (i !== CATEGORIES.length) throw new Error(`blog: expected ${CATEGORIES.length} filter pills, hooked ${i}`);
+
+  let j = 0;
+  body = body.replace(/<a href="([^"]*\/blog\/[^"]*)" style="display:grid/g,
+    (_m, href) => `<a href="${href}" data-cat="${esc(posts[j++].cat)}" style="display:grid`);
+  if (j !== posts.length) throw new Error(`blog: expected ${posts.length} rows, hooked ${j}`);
+
+  // The prototype's "Browse all 115" button paginated a 32-item placeholder
+  // list. Every post is on the page, so it becomes the live filter count.
+  body = body.replace(
+    /<a href="[^"]*" style="display:inline-flex;align-items:center;gap:10px;border:1px solid #DAD4C6[^>]*>Browse all 115 pieces<\/a>/,
+    `<span data-filter-count style="display:inline-flex;align-items:center;gap:10px;border:1px solid #DAD4C6;color:#5E645F;font-size:14.5px;font-weight:600;padding:14px 26px;border-radius:99px">${posts.length} pieces</span>`
+  );
+
+  pageAt('/blog/', shell({
+    title: 'Blog',
+    description: 'Writing on mental load, money and how households actually run.',
+    path: '/blog/', helmet: r.helmet, body,
+  }));
+}
+
+// --- The standing pages ----------------------------------------------------
+const PAGES = [
+  ['Help.dc.html', '/support/', 'Help', 'How to reach a human, and answers to the questions a two-person app generates.', openAll('faqs')],
+  ['Privacy.dc.html', '/privacy/', 'Privacy Policy', 'What EvenUS stores, what it never sees, and how to get rid of all of it.', null],
+  ['Terms.dc.html', '/terms/', 'Terms of Use', 'The agreement between you and EvenUS.', null],
+  ['Disclaimer.dc.html', '/disclaimer/', 'Disclaimer', 'EvenUS is not financial advice and not therapy. What that means in practice.', null],
+  ['Delete Account.dc.html', '/delete-account/', 'Delete your account', 'How to delete your EvenUS account and your data. No partner approval needed.', null],
+];
+for (const [file, path, title, description, transform] of PAGES) {
+  const r = renderDC(design, file, {}, {}, transform);
+  pageAt(path, shell({ title, description, path, helmet: r.helmet, body: routes(stripPrototypeHandlers(r.body)) }));
+}
+
+// --- Blog posts ------------------------------------------------------------
+//
+// ⚠️ THE HANDOFF HAS NO ARTICLE PAGE. It designs the blog index and stops. This
+// template is composed from the system's own parts — the shared header and
+// footer, the legal pages' prose column (16.5px/1.68, #4B504B, capped at 780px)
+// and the index's category chip — so it belongs to the same design without
+// inventing anything the handoff did not establish.
+{
+  const chrome = renderDC(design, 'Blog.dc.html', { cats: [], posts: [] });
+  const header = /<header[\s\S]*?<\/header>/.exec(chrome.body)?.[0] ?? '';
+  const footer = /<footer[\s\S]*?<\/footer>/.exec(chrome.body)?.[0] ?? '';
+  if (!header || !footer) throw new Error('article: could not lift the shared chrome');
+
+  for (const p of posts) {
+    const body = `<div style="min-height:100vh;background:#F7F5EF;overflow-x:hidden">
+${routes(stripPrototypeHandlers(header))}
+  <article>
+    <section style="max-width:1180px;margin:0 auto;padding:clamp(48px,7vw,88px) 28px clamp(24px,3vw,36px)">
+      <div style="max-width:820px">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:22px">
+          <span style="font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#2E6A5C;background:#E7F2EE;border:1px solid #CFE6DE;padding:5px 10px;border-radius:99px">${esc(p.cat)}</span>
+          <span style="font-size:12.5px;color:#A9AEA8">${esc(p.read)} read</span>
+        </div>
+        <h1 style="margin:0;font-size:clamp(30px,4.4vw,54px);line-height:1.06;letter-spacing:-.035em;font-weight:700;text-wrap:balance">${esc(p.title)}</h1>
+        <p style="margin:22px 0 0;max-width:640px;font-size:17.5px;line-height:1.6;color:#5E645F;text-wrap:pretty">${esc(p.excerpt)}</p>
+        <div style="margin-top:26px;padding-top:22px;border-top:1px solid #E4DFD3;font-size:13.5px;color:#8A8F89">${p.date ? esc(p.date) : ''}</div>
+      </div>
+    </section>
+
+    <section style="max-width:1180px;margin:0 auto;padding:0 28px clamp(56px,7vw,96px)">
+      <div class="prose" style="max-width:780px;font-size:16.5px;line-height:1.68;color:#4B504B;text-wrap:pretty">
+${p.html}
+      </div>
+    </section>
+  </article>
+
+  <section style="background:#1B1F1D;color:#F7F5EF">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(56px,7vw,88px) 28px;display:flex;flex-wrap:wrap;gap:28px;align-items:center;justify-content:space-between">
+      <div style="max-width:560px">
+        <h2 style="margin:0;font-size:clamp(24px,3vw,36px);line-height:1.1;letter-spacing:-.03em;font-weight:700">Reading about it is one thing. <span style="font-family:Newsreader,Georgia,serif;font-style:italic;font-weight:300;color:#8FD0BE">Measuring it</span> is another.</h2>
+      </div>
+      <a href="${url('/')}#demo" style="display:inline-flex;align-items:center;gap:10px;background:#F7F5EF;color:#1B1F1D;font-size:14.5px;font-weight:600;padding:14px 26px;border-radius:99px">Try the calculation</a>
+    </div>
+  </section>
+
+  <div style="max-width:1180px;margin:0 auto;padding:clamp(40px,5vw,64px) 28px 0">
+    <a href="${url('/blog/')}" style="font-size:14.5px;font-weight:600;color:#2E6A5C">← All writing</a>
+  </div>
+${routes(stripPrototypeHandlers(footer))}
+</div>`;
+
+    pageAt(p.path, shell({
+      title: p.title, description: p.excerpt, path: p.path,
+      helmet: chrome.helmet, body, published: p.iso || undefined,
+    }));
   }
+}
+
+// --- Prose styling for the article body ------------------------------------
+// The recovered posts are semantic HTML with no attributes, so the type scale
+// is applied from one rule set rather than inline on every element.
+emit('article.css', `
+.prose h2 { font-size: clamp(22px,2.6vw,30px); line-height:1.16; letter-spacing:-.028em;
+  font-weight:700; color:#1B1F1D; margin:44px 0 14px; text-wrap:balance; }
+.prose h3 { font-size:19px; font-weight:700; letter-spacing:-.02em; color:#1B1F1D; margin:32px 0 10px; }
+.prose p { margin:0 0 20px; }
+.prose ul, .prose ol { margin:0 0 22px; padding-left:22px; }
+.prose li { margin-bottom:9px; }
+.prose strong { font-weight:700; color:#1B1F1D; }
+.prose blockquote { margin:26px 0; padding:18px 22px; background:#fff;
+  border:1px solid #EDE8DC; border-left:3px solid #6FB3A2; border-radius:16px; }
+.prose blockquote p:last-child { margin-bottom:0; }
+.prose a { color:#2E6A5C; text-decoration:underline; text-underline-offset:2px; }
+.prose table { width:100%; border-collapse:collapse; margin:0 0 22px; display:block; overflow-x:auto; }
+.prose td, .prose th { border-bottom:1px solid #E4DFD3; padding:11px 14px 11px 0; text-align:left; vertical-align:top; }
+`.trim());
+
+// --- Static bits -----------------------------------------------------------
+emit('site.js', readFileSync(join(here, 'dc/site.js'), 'utf8'));
+emit('favicon.svg',
+  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">` +
+  `<rect width="64" height="64" rx="14" fill="#F7F5EF"/>` +
+  `<g fill="none" stroke-width="7" stroke-linecap="round">` +
+  `<path d="M19 56 C19 47 28 45 28 34 L28 9" stroke="#6FB3A2"/>` +
+  `<path d="M45 56 C45 47 36 45 36 34 L36 9" stroke="#F0A48A"/></g></svg>\n`);
+emit('.nojekyll', '');
+
+const urls = [
+  { loc: '/', pri: '1.0' }, { loc: '/blog/', pri: '0.9' }, { loc: '/support/', pri: '0.7' },
+  { loc: '/privacy/', pri: '0.4' }, { loc: '/terms/', pri: '0.4' },
+  { loc: '/disclaimer/', pri: '0.3' }, { loc: '/delete-account/', pri: '0.5' },
+  ...posts.map((p) => ({ loc: p.path, pri: '0.7', lastmod: p.iso })),
+];
+emit('sitemap.xml',
+  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
+  urls.map((u) => `  <url><loc>${ORIGIN}${u.loc}</loc>` +
+    (u.lastmod ? `<lastmod>${u.lastmod}</lastmod>` : '') +
+    `<priority>${u.pri}</priority></url>`).join('\n') + `\n</urlset>\n`);
+emit('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${ORIGIN}/sitemap.xml\n`);
+
+{
+  const r = renderDC(design, 'Disclaimer.dc.html');
+  emit('404.html', shell({
+    title: 'Page not found',
+    description: 'That page does not exist.',
+    path: '/404.html', helmet: r.helmet,
+    body: `<div style="min-height:70vh;display:flex;align-items:center;justify-content:center;padding:80px 28px">
+  <div style="max-width:560px;text-align:center">
+    <h1 style="margin:0;font-size:clamp(30px,4.4vw,54px);line-height:1.06;letter-spacing:-.035em;font-weight:700">That page isn't here.</h1>
+    <p style="margin:20px 0 30px;font-size:17.5px;line-height:1.6;color:#5E645F">It may have moved when the site was rebuilt.</p>
+    <a href="${url('/')}" style="display:inline-flex;background:#1B1F1D;color:#F7F5EF;font-size:14.5px;font-weight:600;padding:13px 24px;border-radius:99px">Back to the homepage</a>
+  </div>
+</div>`,
+  }));
+}
+
+// --- Link the stylesheet into the article pages ----------------------------
+for (const p of posts) {
+  const f = join(out, p.path.replace(/^\/|\/$/g, ''), 'index.html');
+  writeFileSync(f, readFileSync(f, 'utf8')
+    .replace('</head>', `<link rel="stylesheet" href="${url('/article.css')}">\n</head>`));
+}
+
+// --- Checks ----------------------------------------------------------------
+console.log(`  ${written.length} files -> dist/`);
+console.log(`  home, blog, ${posts.length} posts, ${PAGES.length} standing pages, 404, sitemap, robots`);
+
+const dirty = new Map();
+for (const rel of written.filter((r) => r.endsWith('.html'))) {
+  const b = readFileSync(join(out, rel), 'utf8').toLowerCase();
+  for (const fp of FOOTPRINTS) if (b.includes(fp.toLowerCase())) dirty.set(fp, (dirty.get(fp) || 0) + 1);
 }
 if (dirty.size) {
   console.error('\n❌ WordPress footprints in the output:');
   for (const [fp, n] of dirty) console.error(`     ${fp} — ${n} file(s)`);
   process.exit(1);
 }
-console.log('  ✅ no WordPress, Elementor or Tag Manager footprint anywhere');
+console.log('  ✅ no WordPress, Elementor or Tag Manager footprint');
 
-// 2. No placeholder shipped to a store reviewer.
+const leftovers = new Set();
+for (const rel of written.filter((r) => r.endsWith('.html'))) {
+  const b = readFileSync(join(out, rel), 'utf8');
+  if (/<sc-for|<sc-if|<dc-import|\{\{/.test(b)) leftovers.add('unrendered design directive');
+  if (/onClick=|onInput=/.test(b)) leftovers.add('prototype event handler');
+  if (/\.dc\.html/.test(b)) leftovers.add('link to a design file that does not ship');
+}
+if (leftovers.size) { console.error('\n❌ ' + [...leftovers].join(', ')); process.exit(1); }
+console.log('  ✅ no prototype runtime left in the output');
+
 const tokens = new Set();
 for (const rel of written.filter((r) => r.endsWith('.html'))) {
-  for (const m of readFileSync(join(out, rel), 'utf8').matchAll(/\[([A-Z][A-Z ]+)\]/g)) {
-    tokens.add(m[1]);
-  }
+  for (const m of readFileSync(join(out, rel), 'utf8').matchAll(/\[([A-Z][A-Z ]+)\]/g)) tokens.add(m[1]);
 }
 console.log('');
 if (tokens.size) {
-  console.log('⚠️  Placeholders still to replace before this goes live:');
-  for (const t of [...tokens].sort()) console.log(`     [${t}]`);
-  console.log('\n   Edit docs/legal/*.md, then re-run. Never hand-edit public/.\n');
+  console.log(`⚠️  Placeholders still to fill: ${[...tokens].sort().join(', ')}`);
+  console.log('   They live in the design files under handoff/.\n');
 } else {
-  console.log('✅ No placeholders left.\n');
+  console.log('  ✅ no placeholders left\n');
 }

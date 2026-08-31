@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior:smooth; }
+  body { margin:0; background:#F7F5EF; color:#1B1F1D; font-family:'Plus Jakarta Sans',system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+  a { color:#2E6A5C; }
+  a:hover { color:#1B1F1D; }
+  ::selection { background:#DCEFE9; }
+</style>
+</helmet>
+
+<dc-import name="SiteHeader" hint-size="100%,66px"></dc-import>
+
+<main style="min-height:100vh;background:#F7F5EF">
+  <section style="max-width:900px;margin:0 auto;padding:clamp(52px,7vw,96px) 28px clamp(28px,3vw,44px)">
+    <div style="font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#8A8F89">Your data</div>
+    <h1 style="margin:16px 0 0;font-size:clamp(36px,4.8vw,58px);line-height:1.04;letter-spacing:-.035em;font-weight:700;text-wrap:balance">Deleting your EvenUS account</h1>
+    <p style="margin:24px 0 0;max-width:660px;font-size:clamp(17px,1.9vw,20px);line-height:1.6;color:#4B504B;text-wrap:pretty">You can delete your account and your personal data at any time. <strong style="color:#1B1F1D">You don't need your partner's permission, and they aren't asked to approve it.</strong></p>
+  </section>
+
+  <section style="max-width:900px;margin:0 auto;padding:0 28px clamp(70px,9vw,120px)">
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:24px">
+      <div style="background:#fff;border:1px solid #EDE8DC;border-radius:24px;padding:28px">
+        <div style="width:38px;height:38px;border-radius:12px;background:#DCEFE9;color:#2E6A5C;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700">01</div>
+        <h2 style="margin:18px 0 0;font-size:19px;font-weight:700;letter-spacing:-.02em">In the app</h2>
+        <p style="margin:10px 0 0;font-size:15.5px;line-height:1.62;color:#4B504B"><strong style="color:#1B1F1D">Profile → Delete account.</strong> It takes effect immediately.</p>
+      </div>
+      <div style="background:#fff;border:1px solid #EDE8DC;border-radius:24px;padding:28px">
+        <div style="width:38px;height:38px;border-radius:12px;background:#FBE3D9;color:#A9583C;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700">02</div>
+        <h2 style="margin:18px 0 0;font-size:19px;font-weight:700;letter-spacing:-.02em">By email</h2>
+        <p style="margin:10px 0 0;font-size:15.5px;line-height:1.62;color:#4B504B">Email <a href="mailto:support@evenus.app" style="font-weight:600">support@evenus.app</a> from the address you signed up with, asking for your account to be deleted. We will action it within 30 days.</p>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:16px">
+      <div style="background:#1B1F1D;color:#F7F5EF;border-radius:24px;padding:30px">
+        <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8FD0BE">Deleted straight away</div>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-top:18px">
+          <div style="display:flex;gap:12px;align-items:flex-start"><span style="flex:0 0 auto;width:5px;height:5px;border-radius:50%;background:#8FD0BE;margin-top:9px;display:block"></span><span style="font-size:15.5px;line-height:1.6">Your login, name and email address</span></div>
+          <div style="display:flex;gap:12px;align-items:flex-start"><span style="flex:0 0 auto;width:5px;height:5px;border-radius:50%;background:#8FD0BE;margin-top:9px;display:block"></span><span style="font-size:15.5px;line-height:1.6">Your weekly check-in answers, all of them</span></div>
+          <div style="display:flex;gap:12px;align-items:flex-start"><span style="flex:0 0 auto;width:5px;height:5px;border-radius:50%;background:#8FD0BE;margin-top:9px;display:block"></span><span style="font-size:15.5px;line-height:1.6">Your mental-load answers</span></div>
+          <div style="display:flex;gap:12px;align-items:flex-start"><span style="flex:0 0 auto;width:5px;height:5px;border-radius:50%;background:#8FD0BE;margin-top:9px;display:block"></span><span style="font-size:15.5px;line-height:1.6">Your recorded income and financial commitments</span></div>
+        </div>
+      </div>
+      <div style="background:#fff;border:1px solid #EDE8DC;border-radius:24px;padding:30px">
+        <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#A9583C">What is kept, and why</div>
+        <p style="margin:18px 0 0;font-size:15.5px;line-height:1.65;color:#4B504B;text-wrap:pretty"><strong style="color:#1B1F1D">Shared expenses, chores and bills</strong> stay with the household, because they are also your partner's records. Your name is replaced with "Former member". Deleting them outright would silently rewrite every past split and score the person you lived with still relies on.</p>
+        <p style="margin:13px 0 0;font-size:15.5px;line-height:1.65;color:#4B504B;text-wrap:pretty"><strong style="color:#1B1F1D">If you were the last member of the household</strong>, everything is deleted.</p>
+      </div>
+    </div>
+
+    <p style="margin:28px 0 0;font-size:16.5px;line-height:1.68;color:#4B504B;max-width:700px;text-wrap:pretty">There is no shadow copy, no thirty-day holding period, and no reactivation window. Backups and server logs may persist for up to 30 days.</p>
+
+    <div style="margin-top:32px;background:#E7F2EE;border:1px solid #CFE6DE;border-radius:24px;padding:28px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
+      <div>
+        <h2 style="margin:0;font-size:19px;font-weight:700;letter-spacing:-.02em">Take a copy first</h2>
+        <p style="margin:8px 0 0;font-size:15.5px;line-height:1.6;color:#3F5F57">Before deleting, you can export everything of yours as a file.</p>
+      </div>
+      <div style="font-size:14px;font-weight:700;background:#fff;border:1px solid #CFE6DE;color:#2E6A5C;padding:12px 20px;border-radius:99px;white-space:nowrap">Profile → Export</div>
+    </div>
+  </section>
+</main>
+
+<dc-import name="SiteFooter" hint-size="100%,140px"></dc-import>
+
+</x-dc>
+</body>
+</html>
