@@ -22,7 +22,7 @@
 //      recovered ones, so the design's <sc-for> is driven with those instead.
 // ---------------------------------------------------------------------------
 
-import { mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { renderDC } from './dc/render.mjs';
@@ -252,6 +252,34 @@ mkdirSync(out, { recursive: true });
 
 // --- Posts -----------------------------------------------------------------
 const CURATED = curated(join(design, 'Blog.dc.html'));
+
+/**
+ * Hand-written posts, which override the recovered one of the same slug.
+ *
+ * ⚠️ THIS IS THE PATH OFF THE MACHINE-WRITTEN CORPUS. The 115 recovered posts
+ * are generated text with the tells stripped out; they are not going to be
+ * rewritten in bulk and should not be. A post that matters gets written
+ * properly and dropped in src/posts/, and it takes over from there.
+ *
+ * Metadata rides in an HTML comment at the top so the file stays a plain
+ * fragment with nothing to compile.
+ */
+function handWritten() {
+  const dir = join(here, 'posts');
+  const out = new Map();
+  if (!existsSync(dir)) return out;
+  for (const f of readdirSync(dir).filter((n) => n.endsWith('.html'))) {
+    const raw = readFileSync(join(dir, f), 'utf8');
+    const meta = {};
+    for (const m of raw.matchAll(/^\s*meta:(\w+)\s+(.+)$/gm)) meta[m[1]] = m[2].trim();
+    out.set(f.replace(/\.html$/, ''), {
+      ...meta,
+      html: raw.replace(/<!--[\s\S]*?-->/, '').trim(),
+    });
+  }
+  return out;
+}
+const HAND = handWritten();
 const catSlug = (c) => c.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const posts = [];
 const urlsExtra = [];
@@ -260,17 +288,19 @@ for (const f of readdirSync(join(here, 'recovered/blog')).filter((n) => n.endsWi
   const p = extractPost(readFileSync(join(here, 'recovered/blog', f), 'utf8'));
   if (!p || p.words < 200) { console.log(`  ⚠️  skipped ${f}`); continue; }
   const c = CURATED.get(slug);
+  const own = HAND.get(slug);
   posts.push({
     slug,
     path: `/blog/${slug}/`,
-    html: cleanCopy(p.html),
-    iso: p.iso,
-    date: p.date,
-    words: p.words,
-    cat: c?.cat ?? categoryFor(slug),
-    title: c?.title ?? cleanCopy(p.title),
-    excerpt: c?.excerpt ?? cleanCopy(p.excerpt),
-    read: c?.read ?? readTime(p.words),
+    html: own ? own.html : cleanCopy(p.html),
+    iso: own?.iso ?? p.iso,
+    date: own?.date ?? p.date,
+    words: own ? own.html.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length : p.words,
+    handWritten: Boolean(own),
+    cat: own?.cat ?? c?.cat ?? categoryFor(slug),
+    title: own?.title ?? c?.title ?? cleanCopy(p.title),
+    excerpt: own?.excerpt ?? c?.excerpt ?? cleanCopy(p.excerpt),
+    read: own?.read ?? c?.read ?? readTime(p.words),
   });
 }
 posts.sort((a, b) => (b.iso || '0000').localeCompare(a.iso || '0000'));
@@ -508,7 +538,7 @@ ${routes(stripPrototypeHandlers(header))}
     <p style="margin:20px 0 0;max-width:620px;font-size:17.5px;line-height:1.6;color:#5E645F;text-wrap:pretty">${esc(BLURB[cat] || '')}</p>
     <p style="margin:16px 0 0;font-size:13.5px;color:#8A8F89">${inCat.length} ${inCat.length === 1 ? 'piece' : 'pieces'}</p>
     <img src="${url(`/topic-${slug}.png`)}" width="1200" height="630" decoding="async"
-         alt="${esc(cat)} — writing from EvenUS on ${esc((BLURB[cat] || '').toLowerCase().replace(/\.$/, ''))}"
+         alt="${esc(cat)}: ${esc((BLURB[cat] || '').split('. ')[0])}. Writing from EvenUS."
          style="width:100%;max-width:760px;height:auto;margin-top:36px;border:1px solid #EDE8DC;border-radius:22px">
   </section>
 
@@ -630,6 +660,7 @@ for (const p of posts) {
 
 // --- Checks ----------------------------------------------------------------
 console.log(`  ${written.length} files -> dist/`);
+console.log(`  ${posts.filter((p) => p.handWritten).length} hand-written, ${posts.filter((p) => !p.handWritten).length} recovered`);
 console.log(`  home, blog, ${posts.length} posts, ${PAGES.length} standing pages, 404, sitemap, robots`);
 
 const dirty = new Map();
