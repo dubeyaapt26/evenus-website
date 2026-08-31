@@ -1,4 +1,4 @@
-/* EvenUS — evenus.app
+/* EvenUS · evenus.app
  *
  * The interactions from the design handoff, reimplemented as plain DOM code.
  * The prototype runtime (support.js) is not part of the deliverable.
@@ -15,7 +15,7 @@
    * Fairness calculator
    *
    * The formula is the handoff's, unchanged. The defaults are calibrated so
-   * the demo opens on exactly the state the rest of the page depicts —
+   * the demo opens on exactly the state the rest of the page depicts:
    * 18 vs 11 free hours, a 7-hour gap, score 87. Changing FREE_BUDGET or the
    * 1.85 multiplier means updating the hero chip, the phone mockups and the
    * profile card figures to match.
@@ -50,7 +50,7 @@
       var headline, suggestion;
       if (gap <= 2) {
         headline = 'Within ' + gap + ' hours of even.';
-        suggestion = 'Nothing to swap. Keep the rhythm you have — EvenUS will stay quiet this week.';
+        suggestion = 'Nothing to swap. Keep the rhythm you have. EvenUS will stay quiet this week.';
       } else if (gap <= 7) {
         headline = ahead + ' has ' + gap + ' more free hours.';
         suggestion = ahead + ", take Thursday's dinner and dishes. It's about two hours and closes " +
@@ -82,7 +82,7 @@
       var group = el.closest('div');
       var label = group && group.querySelector('span');
       var who = /A$/.test(key) ? 'Alex' : 'Sam';
-      el.setAttribute('aria-label', (label ? label.textContent.trim() : key) + ' — ' + who);
+      el.setAttribute('aria-label', (label ? label.textContent.trim() : key) + ': ' + who);
       el.addEventListener('input', function () {
         state[key] = Number(el.value);
         paint();
@@ -93,7 +93,7 @@
   }
 
   /* ---------------------------------------------------------------------
-   * Accordions — single-open, first item open, clicking the open one closes it.
+   * Accordions: single-open, first item open, clicking the open one closes it.
    * Every answer is in the DOM; this collapses them on load.
    * ------------------------------------------------------------------- */
   function accordions() {

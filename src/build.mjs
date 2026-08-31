@@ -28,6 +28,7 @@ import { fileURLToPath } from 'node:url';
 import { renderDC } from './dc/render.mjs';
 import { hookHome, stripPrototypeHandlers } from './dc/hooks.mjs';
 import { extractPost, FOOTPRINTS } from './site/wordpress.mjs';
+import { cleanCopy, STRUCTURAL } from './site/voice.mjs';
 import { CATEGORIES, curated, categoryFor, readTime } from './dc/blogdata.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
@@ -92,7 +93,7 @@ const A11Y = `
 </style>`;
 
 function shell({ title, description, path, helmet, body, published }) {
-  const full = path === '/' ? 'EvenUS — A fairer share of everything.' : `${title} · EvenUS`;
+  const full = path === '/' ? 'EvenUS · A fairer share of everything.' : `${title} · EvenUS`;
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -185,13 +186,13 @@ for (const f of readdirSync(join(here, 'recovered/blog')).filter((n) => n.endsWi
   posts.push({
     slug,
     path: `/blog/${slug}/`,
-    html: p.html,
+    html: cleanCopy(p.html),
     iso: p.iso,
     date: p.date,
     words: p.words,
     cat: c?.cat ?? categoryFor(slug),
-    title: c?.title ?? p.title,
-    excerpt: c?.excerpt ?? p.excerpt,
+    title: c?.title ?? cleanCopy(p.title),
+    excerpt: c?.excerpt ?? cleanCopy(p.excerpt),
     read: c?.read ?? readTime(p.words),
   });
 }
@@ -409,6 +410,26 @@ for (const rel of written.filter((r) => r.endsWith('.html'))) {
 }
 if (leftovers.size) { console.error('\n❌ ' + [...leftovers].join(', ')); process.exit(1); }
 console.log('  ✅ no prototype runtime left in the output');
+
+{
+  let em = 0, structural = new Map();
+  for (const rel of written.filter((r) => r.endsWith('.html'))) {
+    const t = readFileSync(join(out, rel), 'utf8').replace(/<[^>]+>/g, ' ');
+    em += (t.match(/\u2014/g) || []).length;
+    for (const [re, name] of STRUCTURAL) {
+      const n = (t.match(re) || []).length;
+      if (n) structural.set(name, (structural.get(name) || 0) + n);
+    }
+  }
+  console.log(`  ${em === 0 ? '✅' : '⚠️ '} em dashes in the output: ${em}`);
+  if (structural.size) {
+    const total = [...structural.values()].reduce((a, b) => a + b, 0);
+    console.log(`  ⚠️  ${total} structural AI tell(s) left — these need a person, not a regex:`);
+    for (const [k, n] of [...structural].sort((a, b) => b[1] - a[1])) {
+      console.log(`       ${String(n).padStart(3)}  ${k}`);
+    }
+  }
+}
 
 const tokens = new Set();
 for (const rel of written.filter((r) => r.endsWith('.html'))) {

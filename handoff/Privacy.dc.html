@@ -124,9 +124,9 @@
 
         <h2 id="basis" style="margin:52px 0 0;font-size:clamp(24px,2.6vw,32px);letter-spacing:-.03em;font-weight:700;scroll-margin-top:100px">Legal basis (UK/EU)</h2>
         <div style="display:flex;flex-direction:column;gap:12px;margin-top:20px">
-          <div style="font-size:16px;line-height:1.65;color:#4B504B"><strong style="color:#1B1F1D">Contract</strong> — account data, household data, and everything needed to provide the service you asked for.</div>
-          <div style="font-size:16px;line-height:1.65;color:#4B504B"><strong style="color:#1B1F1D">Legitimate interests</strong> — security, abuse prevention, and fixing crashes.</div>
-          <div style="font-size:16px;line-height:1.65;color:#4B504B"><strong style="color:#1B1F1D">Consent</strong> — push notifications, and a profile photo if you add one. You can withdraw either at any time in the app or your device settings.</div>
+          <div style="font-size:16px;line-height:1.65;color:#4B504B"><strong style="color:#1B1F1D">Contract</strong>: account data, household data, and everything needed to provide the service you asked for.</div>
+          <div style="font-size:16px;line-height:1.65;color:#4B504B"><strong style="color:#1B1F1D">Legitimate interests</strong>: security, abuse prevention, and fixing crashes.</div>
+          <div style="font-size:16px;line-height:1.65;color:#4B504B"><strong style="color:#1B1F1D">Consent</strong>: push notifications, and a profile photo if you add one. You can withdraw either at any time in the app or your device settings.</div>
         </div>
 
         <h2 id="held" style="margin:52px 0 0;font-size:clamp(24px,2.6vw,32px);letter-spacing:-.03em;font-weight:700;scroll-margin-top:100px">Where your data is held</h2>
@@ -148,10 +148,10 @@
 
         <h2 id="rights" style="margin:52px 0 0;font-size:clamp(24px,2.6vw,32px);letter-spacing:-.03em;font-weight:700;scroll-margin-top:100px">Your rights</h2>
         <p style="margin:16px 0 0;font-size:16.5px;line-height:1.68;color:#4B504B;text-wrap:pretty">Access, correction, deletion, portability, restriction, objection, and the right to withdraw consent. In the app you can already <strong style="color:#1B1F1D">export all your data</strong> (Profile → Export) and <strong style="color:#1B1F1D">delete your account</strong>. For anything else, email <a href="mailto:support@evenus.app">support@evenus.app</a>.</p>
-        <p style="margin:12px 0 0;font-size:16.5px;line-height:1.68;color:#4B504B">You have the right to complain to your data protection authority — in the UK, the Information Commissioner's Office (ico.org.uk).</p>
+        <p style="margin:12px 0 0;font-size:16.5px;line-height:1.68;color:#4B504B">You have the right to complain to your data protection authority. In the UK that is the Information Commissioner's Office (ico.org.uk).</p>
 
         <h2 id="children" style="margin:52px 0 0;font-size:clamp(24px,2.6vw,32px);letter-spacing:-.03em;font-weight:700;scroll-margin-top:100px">Children</h2>
-        <p style="margin:16px 0 0;font-size:16.5px;line-height:1.68;color:#4B504B;text-wrap:pretty">EvenUS is for adults aged 18 and over. You may record details about children in your household — first name, birth date, living arrangements — because those change the household's workload and costs. <strong style="color:#1B1F1D">Children do not have accounts and cannot use the app.</strong> We do not knowingly collect data directly from anyone under 18.</p>
+        <p style="margin:16px 0 0;font-size:16.5px;line-height:1.68;color:#4B504B;text-wrap:pretty">EvenUS is for adults aged 18 and over. You may record details about children in your household (first name, birth date, living arrangements) because those change the household's workload and costs. <strong style="color:#1B1F1D">Children do not have accounts and cannot use the app.</strong> We do not knowingly collect data directly from anyone under 18.</p>
 
         <h2 id="payments" style="margin:52px 0 0;font-size:clamp(24px,2.6vw,32px);letter-spacing:-.03em;font-weight:700;scroll-margin-top:100px">Payments</h2>
         <p style="margin:16px 0 0;font-size:16.5px;line-height:1.68;color:#4B504B">The app is currently free. If paid features are introduced, payment is handled by <strong style="color:#1B1F1D">Apple</strong> or <strong style="color:#1B1F1D">Google</strong> under their own terms. <strong style="color:#1B1F1D">We never see or store your card details.</strong></p>
@@ -178,7 +178,7 @@ class Component extends DCLogic {
     return {
       given: [
         { what: "Name, email address", why: "To create your account and connect you to your partner", who: "You, your partner (name only)" },
-        { what: "Income and paid working hours", why: "Direct inputs to the fairness calculation \u2014 it cannot work without them", who: "You and your partner. You can hide the exact figure so your partner sees only the resulting share" },
+        { what: "Income and paid working hours", why: "Direct inputs to the fairness calculation. It cannot work without them", who: "You and your partner. You can hide the exact figure so your partner sees only the resulting share" },
         { what: "Expenses, bills, and how they're split", why: "The money side of the calculation", who: "Both partners" },
         { what: "Chores, who owns them, and completions", why: "The time and effort side", who: "Both partners" },
         { what: "Children's first names, birth dates, living arrangements", why: "Children change both the workload and the cost split. Blended families need this to produce a number that isn't wrong", who: "Both partners" },
