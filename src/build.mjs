@@ -159,7 +159,8 @@ const crumbs = (items) => ({
   })),
 });
 
-function shell({ title, description, path, helmet, body, published, jsonld }) {
+function shell({ title, description, path, helmet, body, published, jsonld, image }) {
+  const card = image || '/og.png';
   const full = path === '/' ? 'EvenUS · A fairer share of everything.' : `${title} · EvenUS`;
   return `<!doctype html>
 <html lang="en">
@@ -176,12 +177,12 @@ function shell({ title, description, path, helmet, body, published, jsonld }) {
 <meta property="og:url" content="${ORIGIN}${path}">
 ${published ? `<meta property="article:published_time" content="${published}">` : ''}
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="${ORIGIN}/og.png">
+<meta name="twitter:image" content="${ORIGIN}${card}">
 <meta property="og:locale" content="en_GB">
-<meta property="og:image" content="${ORIGIN}/og.png">
+<meta property="og:image" content="${ORIGIN}${card}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="EvenUS. The fight isn't really about the dishes.">
+<meta property="og:image:alt" content="${esc(title)} · EvenUS">
 <link rel="icon" href="${url('/favicon.svg')}" type="image/svg+xml">
 ${helmet}
 ${A11Y}
@@ -430,6 +431,7 @@ ${routes(stripPrototypeHandlers(footer))}
     pageAt(p.path, shell({
       title: p.title, description: p.excerpt, path: p.path,
       helmet: chrome.helmet, body, published: p.iso || undefined,
+      image: `/topic-${catSlug(p.cat)}.png`,
       jsonld: graph(ORG,
         crumbs([
           { name: 'Home', path: '/' },
@@ -448,6 +450,7 @@ ${routes(stripPrototypeHandlers(footer))}
           dateModified: p.iso || undefined,
           inLanguage: 'en',
           isPartOf: { '@id': `${ORIGIN}/blog/#blog` },
+          image: { '@type': 'ImageObject', url: `${ORIGIN}/topic-${catSlug(p.cat)}.png`, width: 1200, height: 630 },
           mainEntityOfPage: { '@type': 'WebPage', '@id': ORIGIN + p.path },
           author: { '@id': `${ORIGIN}/#organization` },
           publisher: { '@id': `${ORIGIN}/#organization` },
@@ -504,6 +507,9 @@ ${routes(stripPrototypeHandlers(header))}
     <h1 style="margin:0;font-size:clamp(34px,5vw,64px);line-height:1.03;letter-spacing:-.035em;font-weight:700;text-wrap:balance">${esc(cat)}</h1>
     <p style="margin:20px 0 0;max-width:620px;font-size:17.5px;line-height:1.6;color:#5E645F;text-wrap:pretty">${esc(BLURB[cat] || '')}</p>
     <p style="margin:16px 0 0;font-size:13.5px;color:#8A8F89">${inCat.length} ${inCat.length === 1 ? 'piece' : 'pieces'}</p>
+    <img src="${url(`/topic-${slug}.png`)}" width="1200" height="630" decoding="async"
+         alt="${esc(cat)} — writing from EvenUS on ${esc((BLURB[cat] || '').toLowerCase().replace(/\.$/, ''))}"
+         style="width:100%;max-width:760px;height:auto;margin-top:36px;border:1px solid #EDE8DC;border-radius:22px">
   </section>
 
   <section style="max-width:1180px;margin:0 auto;padding:0 28px">
@@ -525,6 +531,7 @@ ${routes(stripPrototypeHandlers(footer))}
       title: cat,
       description: BLURB[cat] || `${inCat.length} pieces on ${cat.toLowerCase()}.`,
       path, helmet: chrome.helmet, body,
+      image: `/topic-${slug}.png`,
       jsonld: graph(ORG,
         crumbs([{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog/' }, { name: cat, path }]),
         {
