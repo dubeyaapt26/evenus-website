@@ -199,8 +199,32 @@ const crumbs = (items) => ({
   })),
 });
 
+/**
+ * Self-hosted faces, inlined, replacing the Google Fonts <link>.
+ *
+ * ⚠️ THE POINT IS THE CHAIN, NOT THE BYTES. Hotlinking cost a serialised
+ * round trip to fonts.googleapis.com for the CSS, and only then a second one
+ * to fonts.gstatic.com for the files: two DNS lookups, two TLS handshakes and
+ * a render-blocking stylesheet before any text could paint in the right face.
+ * Same origin removes all of it, and the handoff asked for this explicitly.
+ *
+ * The CSS is inlined rather than linked because it is 2 KB and a separate file
+ * would reintroduce the round trip this change exists to delete.
+ */
+const FONT_CSS = readFileSync(join(root, 'static/fonts.css'), 'utf8').trim();
+
+// Only the two faces above the fold on every page: the body weight and the
+// headline weight. Preloading more competes with them for bandwidth.
+const FONT_PRELOAD = ['plus-jakarta-sans-400', 'plus-jakarta-sans-700']
+  .map((f) => `<link rel="preload" href="${'${BASE}'}/fonts/${f}.woff2" as="font" type="font/woff2" crossorigin>`)
+  .join('\n');
+
 function shell({ title, description, path, helmet, body, published, jsonld, image }) {
   const card = image || '/og.png';
+  // Strip the design's Google Fonts hotlink and its preconnects.
+  helmet = helmet
+    .replace(/<link[^>]*fonts\.googleapis\.com[^>]*>\s*/g, '')
+    .replace(/<link[^>]*fonts\.gstatic\.com[^>]*>\s*/g, '');
   const full = path === '/' ? 'EvenUS · A fairer share of everything.' : `${title} · EvenUS`;
   return `<!doctype html>
 <html lang="en">
@@ -224,6 +248,8 @@ ${published ? `<meta property="article:published_time" content="${published}">` 
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="${esc(title)} · EvenUS">
 <link rel="icon" href="${url('/favicon.svg')}" type="image/svg+xml">
+${FONT_PRELOAD.replace(/\$\{BASE\}/g, BASE)}
+<style>${FONT_CSS.replace(/url\('\/fonts\//g, `url('${BASE}/fonts/`)}</style>
 ${helmet}
 ${A11Y}
 ${jsonld || ''}
@@ -768,9 +794,15 @@ emit('.nojekyll', '');
 // the build would work on a laptop and fail in CI. Regenerate it locally when
 // the hero copy changes; the sharing card quoting a headline the page no longer
 // carries is the failure to watch for.
-for (const f of readdirSync(join(root, 'static'))) {
-  emit(f, readFileSync(join(root, 'static', f)));
-}
+// Recursive, because static/ now holds a fonts/ directory and a flat copy
+// silently shipped nothing from it: the build succeeded, the CSS referenced
+// /fonts/*.woff2, and every face 404'd.
+(function copyStatic(dir, prefix = '') {
+  for (const f of readdirSync(join(root, dir), { withFileTypes: true })) {
+    if (f.isDirectory()) copyStatic(join(dir, f.name), `${prefix}${f.name}/`);
+    else emit(prefix + f.name, readFileSync(join(root, dir, f.name)));
+  }
+})('static');
 
 const urls = [
   { loc: '/', pri: '1.0' }, { loc: '/blog/', pri: '0.9' }, { loc: '/support/', pri: '0.7' },
