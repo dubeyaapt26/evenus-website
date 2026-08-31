@@ -232,6 +232,36 @@ const FONT_PRELOAD = [
   .map((f) => `<link rel="preload" href="${'${BASE}'}/fonts/${f}.woff2" as="font" type="font/woff2" crossorigin>`)
   .join('\n');
 
+/**
+ * Google Analytics 4.
+ *
+ * Loaded async and placed at the end of <body>, so it never blocks render. It
+ * costs two extra origins (googletagmanager.com, google-analytics.com) and
+ * roughly 50 KB, which is the price of having it at all.
+ *
+ * ⚠️ THIS SETS COOKIES AND NEEDS CONSENT IN THE UK AND EU. GA4 writes a _ga
+ * cookie and processes IP addresses, and PECR plus UK GDPR require prior
+ * consent for non-essential analytics. There is no consent banner on this
+ * site, and the privacy policy carries a "Legal basis (UK/EU)" section, so the
+ * gap is visible on the page that discusses it.
+ *
+ * Two ways to close it, both a small change from here:
+ *   - Consent Mode v2 with analytics_storage denied by default, which runs GA4
+ *     cookieless and needs no banner, at the cost of modelled rather than
+ *     measured data.
+ *   - A consent banner, which the design deliberately does not have.
+ *
+ * Left as the standard tag because that is what was asked for. The choice is
+ * the site owner's, not this file's.
+ */
+const ANALYTICS = `<script async src="https://www.googletagmanager.com/gtag/js?id=G-V79KZPESPX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-V79KZPESPX');
+</script>`;
+
 function shell({ title, description, path, helmet, body, published, jsonld, image }) {
   const card = image || '/og.png';
   // Strip the design's Google Fonts hotlink and its preconnects.
@@ -273,6 +303,7 @@ ${jsonld || ''}
 ${body}
 </div>
 <script src="${url('/site.js')}" defer></script>
+${ANALYTICS}
 </body>
 </html>
 `;
@@ -916,7 +947,13 @@ console.log(`  home, blog, ${posts.length} posts, ${PAGES.length} standing pages
 
 const dirty = new Map();
 for (const rel of written.filter((r) => r.endsWith('.html'))) {
-  const b = readFileSync(join(out, rel), 'utf8').toLowerCase();
+  // ⚠️ Scan the page WITHOUT the deliberate analytics block. googletagmanager
+  // and gtag( are on the footprint list to catch Tag Manager leaking out of
+  // the WordPress import, and that guarantee is worth keeping: GTM inside a
+  // recovered post body is a bug, GTM in the site's own footer is a decision.
+  // Exempting the exact known snippet keeps the check honest instead of
+  // deleting the two entries and losing the guarantee entirely.
+  const b = readFileSync(join(out, rel), 'utf8').split(ANALYTICS).join('').toLowerCase();
   for (const fp of FOOTPRINTS) if (b.includes(fp.toLowerCase())) dirty.set(fp, (dirty.get(fp) || 0) + 1);
 }
 if (dirty.size) {
