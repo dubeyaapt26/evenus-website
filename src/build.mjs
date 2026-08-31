@@ -175,7 +175,13 @@ function shell({ title, description, path, helmet, body, published, jsonld }) {
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:url" content="${ORIGIN}${path}">
 ${published ? `<meta property="article:published_time" content="${published}">` : ''}
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="${ORIGIN}/og.png">
+<meta property="og:locale" content="en_GB">
+<meta property="og:image" content="${ORIGIN}/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="EvenUS. The fight isn't really about the dishes.">
 <link rel="icon" href="${url('/favicon.svg')}" type="image/svg+xml">
 ${helmet}
 ${A11Y}
@@ -568,6 +574,15 @@ emit('favicon.svg',
   `<path d="M19 56 C19 47 28 45 28 34 L28 9" stroke="#6FB3A2"/>` +
   `<path d="M45 56 C45 47 36 45 36 34 L36 9" stroke="#F0A48A"/></g></svg>\n`);
 emit('.nojekyll', '');
+
+// ⚠️ og.png is COMMITTED, not generated at build time. It is rendered from an
+// SVG with macOS `qlmanage`, and the deploy runs on Linux — generating it in
+// the build would work on a laptop and fail in CI. Regenerate it locally when
+// the hero copy changes; the sharing card quoting a headline the page no longer
+// carries is the failure to watch for.
+for (const f of readdirSync(join(root, 'static'))) {
+  emit(f, readFileSync(join(root, 'static', f)));
+}
 
 const urls = [
   { loc: '/', pri: '1.0' }, { loc: '/blog/', pri: '0.9' }, { loc: '/support/', pri: '0.7' },
