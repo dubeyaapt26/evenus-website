@@ -303,6 +303,27 @@ for (const f of readdirSync(join(here, 'recovered/blog')).filter((n) => n.endsWi
     read: own?.read ?? c?.read ?? readTime(p.words),
   });
 }
+// ⚠️ Hand-written posts with NO recovered counterpart. The loop above walks
+// the archive, so a genuinely new article was silently ignored: it built, it
+// reported the same 115 posts, and the file simply never appeared. Anything in
+// src/posts/ that is not an override is a new post in its own right.
+for (const [slug, own] of HAND) {
+  if (posts.some((p) => p.slug === slug)) continue;
+  posts.push({
+    slug,
+    path: `/blog/${slug}/`,
+    html: own.html,
+    iso: own.iso ?? null,
+    date: own.date ?? null,
+    words: own.html.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length,
+    handWritten: true,
+    cat: own.cat ?? 'Mental load',
+    title: own.title ?? slug,
+    excerpt: own.excerpt ?? '',
+    read: own.read ?? readTime(own.html.replace(/<[^>]+>/g, ' ').split(/\s+/).length),
+  });
+}
+
 posts.sort((a, b) => (b.iso || '0000').localeCompare(a.iso || '0000'));
 
 // --- Home ------------------------------------------------------------------
@@ -487,6 +508,82 @@ ${routes(stripPrototypeHandlers(footer))}
         }),
     }));
   }
+}
+
+// --- The calculator, as its own page ------------------------------------------
+//
+// The homepage demo lifted onto a page of its own, because a tool earns links
+// that an article never will and this one already exists in the design.
+//
+// ⚠️ IT IS NOT CALLED A "MENTAL LOAD CALCULATOR", and the keyword data says it
+// should be: that phrase has the demand. But the thing computes DISCRETIONARY
+// HOURS, and mental load is one weighted input to it, not its output. Naming it
+// for a term it does not measure would be a small lie told for traffic, in a
+// product whose entire pitch is that it does not do that. It is named for what
+// it does and says plainly where mental load fits.
+{
+  const home = renderDC(design, 'EvenUS Website.dc.html', {}, {}, openAll('faqs'));
+  const full = routes(hookHome(home.body));
+  const demo = /<section id="demo"[\s\S]*?<\/section>\s*(?=<section)/.exec(full);
+  if (!demo) throw new Error('calculator: could not lift the #demo section from the design');
+  const header = /<header[\s\S]*?<\/header>/.exec(full)[0];
+  const footer = /<footer[\s\S]*?<\/footer>/.exec(full)[0];
+
+  const path = '/calculator/';
+  const body = `<div style="min-height:100vh;background:#F7F5EF;overflow-x:hidden">
+${header}
+  <section style="max-width:1180px;margin:0 auto;padding:clamp(48px,7vw,88px) 28px clamp(8px,2vw,16px)">
+    <nav aria-label="Breadcrumb" style="font-size:12.5px;color:#8A8F89;margin-bottom:18px">
+      <a href="${url('/')}" style="color:#8A8F89">Home</a>
+    </nav>
+    <h1 style="margin:0;max-width:900px;font-size:clamp(34px,5vw,64px);line-height:1.03;letter-spacing:-.035em;font-weight:700;text-wrap:balance">Household fairness calculator</h1>
+    <p style="margin:22px 0 0;max-width:640px;font-size:17.5px;line-height:1.6;color:#5E645F;text-wrap:pretty">How many hours a week does each of you actually have left, once sleep, paid work, commuting and the housework are out? Move the sliders. Nothing is stored and there is no account.</p>
+  </section>
+
+${demo[0]}
+
+  <section style="max-width:1180px;margin:0 auto;padding:0 28px clamp(64px,8vw,110px)">
+    <div style="max-width:780px;font-size:16.5px;line-height:1.68;color:#4B504B">
+      <h2 style="font-size:clamp(24px,3vw,34px);line-height:1.12;letter-spacing:-.03em;font-weight:700;color:#1B1F1D;margin:0 0 18px">What it is calculating</h2>
+      <p style="margin:0 0 18px">A week has 168 hours. Take out sleep and the personal time nobody has a choice about and roughly 68 are left to allocate. Out of those come paid work, the commute, and the housework and planning. What remains is discretionary: the hours that are genuinely yours.</p>
+      <p style="margin:0 0 18px">Fairness in time means both of you end up with a similar number of them. That is why this works for the case a chore list cannot handle: one partner working fifty hours who does little at home and one working twenty who does most of it can come out even, or not, and only the hours tell you which.</p>
+
+      <h2 style="font-size:clamp(24px,3vw,34px);line-height:1.12;letter-spacing:-.03em;font-weight:700;color:#1B1F1D;margin:40px 0 18px">Where does mental load come into it?</h2>
+      <p style="margin:0 0 18px"><strong style="font-weight:700;color:#1B1F1D">The housework slider covers doing and planning together, so mental load is inside the number rather than beside it.</strong> That is a simplification. The app weights planning-heavy work more than execution-heavy work of the same length, because organising a birthday and taking the bins out are not the same two hours. This page does not, which is why it is a calculator and not the product.</p>
+      <p style="margin:0 0 18px">If you want the fuller version, <a href="${url('/blog/what-is-the-mental-load/')}">what the mental load is</a> explains what gets counted and why it stays invisible.</p>
+
+      <h2 style="font-size:clamp(24px,3vw,34px);line-height:1.12;letter-spacing:-.03em;font-weight:700;color:#1B1F1D;margin:40px 0 18px">And the money?</h2>
+      <p style="margin:0 0 18px">Separately, always. The split shown is proportional to income, meaning each person covers the share of shared costs that matches their share of what comes in. Hours are never priced, because putting an hourly rate on domestic work is a claim this does not make.</p>
+      <p style="margin:0 0 18px">There are four methods and the differences are real. <a href="${url('/blog/how-to-split-finances-when-incomes-differ/')}">Splitting bills when you earn different amounts</a> runs the same numbers through all of them.</p>
+
+      <h2 style="font-size:clamp(24px,3vw,34px);line-height:1.12;letter-spacing:-.03em;font-weight:700;color:#1B1F1D;margin:40px 0 18px">What a result does not mean</h2>
+      <p style="margin:0 0 18px">A gap is not a verdict about either of you. Two people can be several hours apart for a month because one of them had a bad month at work, and the arrangement is fine. It is a reason to look, not a finding.</p>
+      <p style="margin:0">And a small gap is not automatically good. Two people with four free hours each are perfectly balanced and both drowning, which is a worse position than an uneven week with slack in it. <a href="${url('/blog/how-the-evenus-fairness-score-really-works-effort-money-mental-load-explained/')}">How the fairness score works</a> covers the guardrails that catch that.</p>
+    </div>
+  </section>
+${footer}
+</div>`;
+
+  pageAt(path, shell({
+    title: 'Household fairness calculator',
+    description: 'Work out how many free hours a week each partner actually has, once sleep, paid work, commuting and housework come out. No account, nothing stored.',
+    path, helmet: home.helmet, body,
+    jsonld: graph(ORG,
+      crumbs([{ name: 'Home', path: '/' }, { name: 'Household fairness calculator', path }]),
+      {
+        '@type': 'WebApplication',
+        '@id': `${ORIGIN}${path}#calculator`,
+        name: 'Household fairness calculator',
+        applicationCategory: 'UtilitiesApplication',
+        browserRequirements: 'Requires JavaScript',
+        operatingSystem: 'Any',
+        url: ORIGIN + path,
+        publisher: { '@id': `${ORIGIN}/#organization` },
+        offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+        description: 'Calculates each partner\'s discretionary hours per week and the income-proportional share of shared costs.',
+      }),
+  }));
+  urlsExtra.push({ loc: path, pri: '0.9' });
 }
 
 // --- Topic hubs -------------------------------------------------------------
