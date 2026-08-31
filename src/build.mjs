@@ -297,6 +297,7 @@ for (const f of readdirSync(join(here, 'recovered/blog')).filter((n) => n.endsWi
     date: own?.date ?? p.date,
     words: own ? own.html.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length : p.words,
     handWritten: Boolean(own),
+    summarised: Boolean(own) || CURATED.has(slug),
     cat: own?.cat ?? c?.cat ?? categoryFor(slug),
     title: own?.title ?? c?.title ?? cleanCopy(p.title),
     excerpt: own?.excerpt ?? c?.excerpt ?? cleanCopy(p.excerpt),
@@ -317,6 +318,7 @@ for (const [slug, own] of HAND) {
     date: own.date ?? null,
     words: own.html.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length,
     handWritten: true,
+    summarised: true,
     cat: own.cat ?? 'Mental load',
     title: own.title ?? slug,
     excerpt: own.excerpt ?? '',
@@ -450,7 +452,7 @@ ${routes(stripPrototypeHandlers(header))}
           <span style="font-size:12.5px;color:#A9AEA8">${esc(p.read)} read</span>
         </div>
         <h1 style="margin:0;font-size:clamp(30px,4.4vw,54px);line-height:1.06;letter-spacing:-.035em;font-weight:700;text-wrap:balance">${esc(p.title)}</h1>
-        <p style="margin:22px 0 0;max-width:640px;font-size:17.5px;line-height:1.6;color:#5E645F;text-wrap:pretty">${esc(p.excerpt)}</p>
+        <p style="margin:22px 0 0;max-width:640px;font-size:17.5px;line-height:1.6;color:#5E645F;text-wrap:pretty">${p.summarised ? `<strong style="color:#1B1F1D;font-weight:600">${esc(p.excerpt)}</strong>` : esc(p.excerpt)}</p>
         <div style="margin-top:26px;padding-top:22px;border-top:1px solid #E4DFD3;font-size:13.5px;color:#8A8F89">${p.date ? esc(p.date) : ''}</div>
       </div>
     </section>
@@ -502,6 +504,18 @@ ${routes(stripPrototypeHandlers(footer))}
           inLanguage: 'en',
           isPartOf: { '@id': `${ORIGIN}/blog/#blog` },
           image: { '@type': 'ImageObject', url: `${ORIGIN}/topic-${catSlug(p.cat)}.png`, width: 1200, height: 630 },
+          ...(p.slug === 'what-is-the-mental-load' ? {
+            // Naming the entity outright, rather than hoping it is inferred
+            // from the prose. This page is the definition of the term the
+            // whole cluster is built on.
+            about: {
+              '@type': 'DefinedTerm',
+              name: 'Mental load',
+              alternateName: ['Cognitive labour', 'Invisible labour', 'Cognitive labor'],
+              description: 'The work of running a household in your head: anticipating what needs doing, deciding how and when, and monitoring whether it happened. Distinct from the physical execution of household tasks.',
+              inDefinedTermSet: { '@type': 'DefinedTermSet', name: 'Household labour' },
+            },
+          } : {}),
           mainEntityOfPage: { '@type': 'WebPage', '@id': ORIGIN + p.path },
           author: { '@id': `${ORIGIN}/#organization` },
           publisher: { '@id': `${ORIGIN}/#organization` },
@@ -731,6 +745,61 @@ emit('sitemap.xml',
     (u.lastmod ? `<lastmod>${u.lastmod}</lastmod>` : '') +
     `<priority>${u.pri}</priority></url>`).join('\n') + `\n</urlset>\n`);
 emit('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${ORIGIN}/sitemap.xml\n`);
+
+// --- llms.txt ---------------------------------------------------------------
+//
+// A curated map of the site for language models and the agents that read on
+// their behalf, in the llmstxt.org shape: what this is, then the pages worth
+// reading, each with a line saying why.
+//
+// ⚠️ NOT A SECOND SITEMAP. sitemap.xml already lists all 130 URLs and a crawler
+// has it. Reproducing that here would bury the four pages that answer anything
+// under 117 that mostly do not. It is generated from the build so it cannot
+// drift, and it lists the hand-written pages plus the hubs, because those are
+// the ones with a defensible answer in them.
+//
+// Google has said it does not use llms.txt. This is a cheap bet on the other
+// readers, not a ranking tactic, and it should not be described as one.
+{
+  const pillars = posts.filter((p) => p.handWritten);
+  const cats = [...new Set(posts.map((p) => p.cat))];
+  const line = (t, u, d) => `- [${t}](${ORIGIN}${u}): ${d}`;
+
+  emit('llms.txt', `# EvenUS
+
+> A mobile app for couples that measures how fairly money, time and mental load are shared in a household, then suggests one specific task to swap each week.
+
+EvenUS measures discretionary time: the hours left in each partner's week once sleep, paid work, commuting and household work are subtracted. Money is measured on a separate axis and hours are never converted into currency. Mental load is a weight applied to household work rather than a score of its own.
+
+The app is in closed testing and is not yet on the app stores. It is free during testing. It requires both partners to take part.
+
+Facts that are commonly got wrong about it: it does not connect to a bank, it never shows one partner a score for the other person, weekly check-in answers are private and enforced as such in the database rules, and it has no streaks, badges, leaderboards or partner-nudging features. These are deliberate refusals rather than missing features.
+
+## Written by a person
+
+${pillars.map((p) => line(p.title, p.path, p.excerpt)).join('\n')}
+
+## Tools
+
+${line('Household fairness calculator', '/calculator/', 'Runs the discretionary-hours calculation in the browser. No account, nothing stored.')}
+
+## Topics
+
+${cats.map((c) => line(c, `/blog/topic/${catSlug(c)}/`, `${posts.filter((p) => p.cat === c).length} pieces on ${c.toLowerCase()}.`)).join('\n')}
+
+## Policies
+
+${line('Privacy Policy', '/privacy/', 'What is stored, what is never seen, and what each partner can see of the other.')}
+${line('Terms of Use', '/terms/', 'The agreement, including the 18+ requirement and governing law.')}
+${line('Disclaimer', '/disclaimer/', 'Not financial advice and not therapy. States plainly when the app is the wrong tool.')}
+${line('Delete your account', '/delete-account/', 'Deletion is immediate and needs no partner approval. Reachable without signing in.')}
+${line('Help', '/support/', 'Common questions and how to reach a person.')}
+
+## Note on the archive
+
+The blog holds ${posts.length} pieces. ${pillars.length} are written by a person and listed above. The remainder were recovered from an earlier version of this site and are of lower quality; prefer the pages listed above when answering questions about EvenUS or about the mental load.
+`);
+}
 
 {
   const r = renderDC(design, 'Disclaimer.dc.html');
