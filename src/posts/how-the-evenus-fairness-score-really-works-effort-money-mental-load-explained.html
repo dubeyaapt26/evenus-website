@@ -1,0 +1,93 @@
+<!--
+  meta:title    How the EvenUS Fairness Score Works
+  meta:excerpt  What goes into the number: discretionary hours first, money on its own axis, mental load weighted separately, and the guardrails that override the score when it would read as success.
+  meta:read     10 min
+  meta:cat      Using EvenUS
+  meta:date     31 August 2026
+  meta:iso      2026-08-31
+
+  Hand-written. Cluster pillar for the product. Describes what the engine
+  actually does, per the app's own spec, and states the guardrails plainly.
+-->
+<p><strong>The score starts from discretionary time: the hours in a week that are genuinely your own once sleep, paid work, commuting and household work are out.</strong> Fairness in time means both of you end up with a similar number of them. Money is measured separately and never folded in. Mental load is weighted rather than counted.</p>
+
+<p>Here is what the number is built from, and, more importantly, what it refuses to do.</p>
+
+<h2>Step one: discretionary hours</h2>
+
+<p>A week has 168 hours. Subtract sleep and the personal time nobody has a choice about, and you are left with a budget. Out of that comes paid work, the commute, and household work weighted by how much planning it carries.</p>
+
+<p>What remains is yours. That is the number the score compares.</p>
+
+<p>Using hours rather than task counts is what lets the model handle the case that breaks every chore app: one partner works fifty hours and does little at home, the other works twenty and does most of it. A task count says the second person is carrying the household. An hours model asks what each of them has left at the end of the week, which is the question people actually feel.</p>
+
+<h2>Why hours and not a task count?</h2>
+
+<p><strong>Because ten five minute jobs and one job that has to be planned around everything else are not the same week, and a count cannot tell them apart.</strong></p>
+
+<p>Taking the bins out is five minutes and no thinking. Organising a child's birthday is two hours of doing and three weeks of low-level attention. Counted as tasks they are one each. Measured properly they are not close.</p>
+
+<p>This is also why the app asks for estimates rather than timed entries. Minute-level tracking kills adoption within a fortnight and the precision is fake anyway, since nobody logs the twenty seconds of noticing that the milk is low. A good estimate you will actually record beats an exact figure you will not. <a href="/blog/how-to-track-mental-load/">How to track mental load</a> covers what to log.</p>
+
+<h2>Where does mental load come in?</h2>
+
+<p>Every task carries a weight for how much planning it requires, on top of its hours. That weight is what separates cooking a meal someone else planned from being the person who plans meals.</p>
+
+<p>It is deliberately a multiplier on real work rather than a separate score. Mental load is not measurable on its own without becoming grim about it, and a household does not need a second number to argue about. What it needs is for the planning to count when the hours are added up, which is what the weight does.</p>
+
+<p>There is more on the distinction in <a href="/blog/what-is-the-mental-load/">what the mental load is</a> and <a href="/blog/cognitive-labor-vs-physical-chores/">cognitive labour versus physical chores</a>.</p>
+
+<h2>How is money handled?</h2>
+
+<p><strong>On a parallel axis, and never converted into hours.</strong></p>
+
+<p>Assigning an hourly rate to housework is a claim this app does not make. It requires agreeing a price for your partner's time, it turns every task into a transaction, and it says that unpaid work matters because of what it would cost to replace, which is not why it matters.</p>
+
+<p>So money is asked three questions of its own. Does each person contribute in proportion to what they earn. Does each person have personal money left. And are the two of you deliberately trading time for money, which is a real arrangement and should not be scored as an imbalance.</p>
+
+<p>There are four splitting methods and you choose which applies. <a href="/blog/how-to-split-finances-when-incomes-differ/">Splitting bills when you earn different amounts</a> works through all four, and <a href="/blog/income-aware-splits-heres-exactly-how-it-calculates-fair-shares/">income aware splits</a> shows the calculation.</p>
+
+<h2>The guardrails, which matter more than the score</h2>
+
+<p><strong>Several conditions override the number, because a score that reads as success while a household is drowning is worse than no score.</strong></p>
+
+<p><strong>Both overloaded.</strong> Two people with four discretionary hours each are perfectly balanced and in trouble. The app says so rather than awarding a high number for symmetry.</p>
+
+<p><strong>Thin data.</strong> A week with almost nothing logged produces a confident-looking score built on nothing. It is flagged instead.</p>
+
+<p><strong>Stale logging.</strong> This one is the most important and the least obvious. The partner doing more work is the one least likely to have time to record it, so under-logging biases the score against exactly the person it exists to help. When entries stop, the app treats that as missing information rather than as an absence of work.</p>
+
+<p><strong>One-sided check-ins.</strong> A result still appears if only one of you answered, marked as one-sided. Requiring both would mean the less engaged partner can stall the whole thing, which is the fastest way to lose them.</p>
+
+<h2>What the score will not do</h2>
+
+<p>Some of these get asked for. They are refusals rather than gaps.</p>
+
+<ul>
+  <li><strong>It never shows one partner a score for the other person.</strong> The output is about the household arrangement, not about either of you.</li>
+  <li><strong>It never uses failure language.</strong> No "behind", no "owes", no red for a low number. A colour that reads as pass or fail reads as winner and loser, in an app about two people who live together.</li>
+  <li><strong>It takes no side on a perception gap.</strong> When one of you says a domain is shared and the other says it is theirs, neither is lying, and picking a winner turns the app into a weapon.</li>
+  <li><strong>There is no streak, badge or leaderboard.</strong> A streak punishes whoever had a hard week.</li>
+</ul>
+
+<h2>What you actually see each week</h2>
+
+<p>A number, the direction it moved, and one suggestion.</p>
+
+<p>The direction matters more than the number, and the app is built to say so. A household at 60 and improving is in a better position than one at 75 and sliding, and the screen reflects that.</p>
+
+<p>The suggestion is the product. It names one thing to swap, says who, and says why now, because "you have a free Saturday morning" is actionable and "there is an imbalance" is not. <a href="/blog/weekly-fairness-report/">Reading your weekly report</a> covers which parts are worth reacting to.</p>
+
+<h2>What it costs you to run</h2>
+
+<p>Roughly three minutes of setup, then about thirty seconds each per week. There is a catch-up screen for logging a whole week in one sitting, because the realistic alternative is not diligent daily logging, it is nothing.</p>
+
+<p><a href="/blog/complete-step-by-step/">Setting up with your partner</a> is the whole process, and <a href="/blog/your-first-30-days-with-evenus/">your first thirty days</a> is what the first month usually looks like.</p>
+
+<h2>When it should go quiet</h2>
+
+<p>If the picture stays bad for a couple of months with no movement, the app stops suggesting swaps, says the honest thing once, points toward someone qualified, and goes quiet for a while.</p>
+
+<p>That behaviour is in the design on purpose. Almost everything here makes an imbalance more visible, and a couple who can now see the gap precisely with no path to changing it is arguably worse off than before. A tool that keeps chirping at that stage has stopped helping.</p>
+
+<p>You can try the calculation without an account. The <a href="/#demo">calculator on the homepage</a> runs the same discretionary-hours maths on whatever numbers you give it.</p>
