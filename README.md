@@ -61,6 +61,19 @@ root-relative version for a custom domain.
 To move to **evenus.app**: point DNS at GitHub Pages, set the custom domain in
 *Settings → Pages*, and drop the `BASE_PATH` line from the workflow.
 
+### Vercel
+
+`vercel.json` carries the build command and output directory.
+
+⚠️ **Without it Vercel serves 404s for everything**, and the reason is easy to
+miss: `dist/` is gitignored, so there is no `index.html` in the repository for a
+zero-config deploy to find. Vercel has to be told to run the build.
+
+Vercel serves from the domain root, so **no `BASE_PATH`** — the default,
+root-relative build is the correct one there. Do not copy the workflow's
+`BASE_PATH` into Vercel's environment variables; it would prefix every link with
+`/evenus-website` and break the whole site.
+
 ⚠️ **`.app` is on the browser HSTS preload list.** Every `.app` domain must serve
 valid HTTPS — browsers refuse plain HTTP outright, with no click-through. Tick
 *Enforce HTTPS* once the certificate is issued.
