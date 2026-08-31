@@ -111,7 +111,7 @@ const A11Y = `
 
      The header holds a wordmark, up to six nav links and a CTA in a single
      non-wrapping row. Below roughly 760px that cannot fit, so the row now
-     wraps — but the header is position:sticky, and a wrapped sticky header
+     wraps, but the header is position:sticky, and a wrapped sticky header
      occupies about 280px of a 667px phone viewport for the entire scroll.
 
      Nothing intrinsic fixes that: the problem is not the width, it is that
