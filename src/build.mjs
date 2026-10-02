@@ -174,7 +174,28 @@ const APP = {
     'Weekly chore swap suggestion',
     'Private weekly check-ins',
   ],
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD', availability: 'https://schema.org/LimitedAvailability' },
+  // ⚠️ THIS IS THE PAID APP, AND IT SAID price: '0'.
+  // Google reads this offer to decide what to print next to the result, so a
+  // zero here puts the word "Free" in a search listing for a $9.99 subscription —
+  // the single worst place to be wrong about a price. Two offers, one per billing
+  // period, because a 9.99-to-69 "range" would read as a range for one purchase.
+  // `LimitedAvailability` stays while the app is still in closed testing.
+  offers: [
+    {
+      '@type': 'Offer',
+      name: 'Monthly subscription',
+      price: '9.99',
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/LimitedAvailability',
+    },
+    {
+      '@type': 'Offer',
+      name: 'Yearly subscription',
+      price: '69.00',
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/LimitedAvailability',
+    },
+  ],
 };
 
 /** Pulls the visible accordion Q&A off a rendered page. */
@@ -727,6 +748,8 @@ ${footer}
         operatingSystem: 'Any',
         url: ORIGIN + path,
         publisher: { '@id': `${ORIGIN}/#organization` },
+        // Genuinely free, and unrelated to the app's subscription: this is the
+        // calculator that runs on this page in a browser. Do not "correct" it.
         offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
         description: 'Calculates each partner\'s discretionary hours per week and the income-proportional share of shared costs.',
       }),
