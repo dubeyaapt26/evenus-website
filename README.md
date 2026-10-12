@@ -44,14 +44,32 @@ colour moved is invisible in a screenshot — this fails the build instead.
 ## Two things the handoff does not contain
 
 1. **A blog post template.** The bundle designs the blog index and stops. The
-   article page is composed in `src/build.mjs` from the system's own parts — the
+   article page is composed in `src/build.mjs` from the system's own parts: the
    shared chrome, the legal pages' prose column, the index's category chip.
-2. **Real content.** The index ships 32 placeholder posts. The site has 115
-   recovered ones, so the design's own `<sc-for>` is driven with those.
+2. **Real content.** The index ships 32 placeholder posts. The design's own
+   `<sc-for>` is driven with the articles in `src/posts/` instead.
 
-   The 32 placeholders carry real slugs — every one matches a recovered post —
-   so their categories, titles and excerpts are treated as authoritative. The
-   other 83 get a category from `src/dc/blogdata.mjs`.
+## Articles
+
+One file per article in `src/posts/<slug>.html`; the slug is the URL. Metadata
+rides in an HTML comment at the top:
+
+```
+<!--
+  meta:title    Headline (under 70 characters)
+  meta:excerpt  Meta description, 120 to 155 characters
+  meta:read     6 min
+  meta:cat      Mental load | Money | Using EvenUS | Life changes | Reviews
+  meta:date     19 March 2026
+  meta:iso      2026-03-19
+  meta:updated  2026-10-12
+-->
+```
+
+Every article is bylined Aapt Dubey and links to `/about/`. Search titles that
+differ from the headline live in `src/dc/seo.mjs`. Posts merged into another
+are listed in `MERGED` in `src/build.mjs` and need a matching 301 in
+`vercel.json`; the build fails without it.
 
 ## Layout
 
@@ -60,12 +78,13 @@ handoff/               the design bundle. EDIT HERE.
   HANDOFF.md           the full brief: tokens, type, per-screen spec
 src/
   build.mjs            the whole build
+  posts/               the articles, one file each
   dc/render.mjs        renders .dc.html to static HTML
   dc/hooks.mjs         annotates it for the runtime, with assertions
   dc/site.js           the interactions, as plain DOM code
   dc/blogdata.mjs      categories and read times
-  site/wordpress.mjs   pulls prose out of the archived pages
-  recovered/blog/      115 archived posts
+  dc/seo.mjs           search titles and description trimming
+  dc/checks.mjs        what the build refuses to ship
 dist/                  generated; not committed
 ```
 
@@ -87,7 +106,7 @@ and output directory. Without it Vercel serves 404s for everything, because
 `BASE_PATH` is the difference. A GitHub *project* site is served from `/<repo>/`,
 so every root-relative link 404s without it — breakage that appears only after
 deploying. It is applied at the write boundary rather than where links are
-authored, because links also arrive from the recovered posts' own
+authored, because links also arrive from the articles' own
 cross-references, which no template controls.
 
 Vercel serves from the domain root and needs **no** `BASE_PATH`. Do not copy the
@@ -96,21 +115,3 @@ and break the site in the opposite direction.
 
 ⚠️ **`.app` is on the browser HSTS preload list.** Every `.app` domain must serve
 valid HTTPS — browsers refuse plain HTTP outright, with no click-through.
-
-## The WordPress import
-
-The original site was WordPress with Elementor and was deleted at its host. The
-domain survived; the files did not. The Internet Archive had crawled it, so the
-writing survived even though the theme, the stylesheets and every image did not.
-
-`src/site/wordpress.mjs` imports **only the prose**. It is an allow-list, not a
-strip-list, and that distinction is the whole design: removing the tags you
-happened to notice leaves the ones you did not, which is exactly how a WordPress
-footprint survives a migration.
-
-**The build asserts it.** If `wp-content`, `elementor`, `googletagmanager` or
-nine others reach the output, the build fails rather than printing a warning
-nobody reads. It also fails on any unrendered design directive, any leftover
-prototype event handler, and any link to a `.dc.html` file that does not ship.
-
-Images were never archived, so posts are text-only.

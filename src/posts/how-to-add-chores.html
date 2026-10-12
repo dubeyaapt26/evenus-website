@@ -1,0 +1,111 @@
+<!--
+  meta:title    How to Add Chores, Bills and Tasks in EvenUS
+  meta:excerpt  How to add chores, planning tasks, regular bills and one-off expenses in EvenUS, what each field means, and how to log a week in about thirty seconds.
+  meta:read     7 min
+  meta:cat      Using EvenUS
+  meta:date     28 February 2026
+  meta:iso      2026-02-28
+  meta:updated  2026-10-12
+
+  Rewritten. Target query: How to Add Chores, Bills and Tasks in EvenUS.
+  Checked against app/(tabs)/chores/add.tsx, templates.tsx, domains.tsx,
+  finance/add.tsx, finance/bill-edit.tsx, catchup.tsx, src/lib/choreTemplates.ts.
+-->
+<p><strong>In EvenUS you add chores from a starter list of 29 common household tasks or create your own with a name, a rough time in minutes, a frequency and an owner. Planning tasks such as meal planning and school forms are already in the starter list. Bills record who pays and who keeps an eye on them.</strong></p>
+
+<p>EvenUS is currently in closed testing, so this guide is for testers and anyone curious about how setup works. Here is each step, what the fields mean, and a worked example.</p>
+
+<h2>What should you add first?</h2>
+
+<p><strong>Start from the list, not from a blank screen.</strong> Typing thirty chores by hand is where most people give up.</p>
+
+<p>The chores tab offers a common starting set of 29 tasks across the kitchen, cleaning, laundry, childcare, pets, admin, maintenance and planning. You tick the ones that apply. As you tick, a running total shows roughly how many hours a week those tasks add up to. That number is not a target. It is simply the work your home needs before anyone logs anything, and for many couples it is the first time they have seen it stated.</p>
+
+<p>Each starter task comes with a sensible default time and frequency, such as cooking dinner at 45 minutes daily or cleaning the bathroom at 30 minutes weekly. You can change any of them later.</p>
+
+<h2>How do you add a chore in EvenUS?</h2>
+
+<p><strong>Open the chores tab, add a new chore, and fill in a short form. Only the name really needs typing.</strong></p>
+
+<ol>
+  <li><strong>What is it.</strong> A plain name, such as "Change the sheets".</li>
+  <li><strong>Room.</strong> Optional, for example "Bedroom".</li>
+  <li><strong>Minutes.</strong> Your best estimate of a typical run. It defaults to 15.</li>
+  <li><strong>How often.</strong> Every day, every week, every 2 weeks, every month, or just once.</li>
+  <li><strong>Who owns this?</strong> You, your partner, or "Nobody yet".</li>
+  <li><strong>What does done look like?</strong> Optional, and more useful than it looks.</li>
+  <li><strong>How easy is this to hand over?</strong> Five plain-language levels, from "Anyone could do it today" to "Can't really be handed over".</li>
+</ol>
+
+<h3>Why ownership matters more than assignment</h3>
+
+<p>The ownership question is the heart of the form. In EvenUS, owning a chore means noticing it needs doing, not just doing it when asked. There is no "both" option on purpose. Two owners tends to mean no owner, so if a task genuinely belongs to nobody yet, the app says so.</p>
+
+<h3>Why estimates rather than timers</h3>
+
+<p>Minutes are a rough estimate, not a stopwatch reading. Timing every job is tiring, and the precision is false anyway. A reasonable estimate you actually enter beats an exact one you never record.</p>
+
+<h3>What the handover levels change</h3>
+
+<p>If you mark a chore as needing history with it, or as not really transferable, EvenUS will not suggest swapping it. It still counts as work in the totals. That covers things like managing a child's therapy appointments, where handing over is not realistic.</p>
+
+<h2>How do you add mental load tasks?</h2>
+
+<p><strong>Through the starter list and a short private setup about planning areas.</strong> You do not need to invent them yourself.</p>
+
+<p>The starter list already includes planning tasks such as "Plan the week's meals", "Write the grocery list", "Track school dates &amp; forms", "Remember birthdays &amp; buy gifts", "Renew subscriptions &amp; insurance" and "Check in on ageing parents". These are marked as mental-load tasks and count for more than a physical job of the same length, because planning carries a weight that minutes alone miss.</p>
+
+<p>Separately, a setup called "The part nobody sees" asks each partner, on their own, who holds areas like meal planning, money admin, the social calendar, gifts and occasions, and school admin. You each answer separately, and neither sees the other's answers until both have finished. Where you see an area differently, the app shows both readings without choosing between them. <a href="/blog/how-to-track-mental-load/">How to track mental load in EvenUS</a> goes into this in more depth.</p>
+
+<h2>How do you add a regular bill?</h2>
+
+<p><strong>In the money tab, under regular bills, add a bill and answer who pays and who keeps an eye on it.</strong></p>
+
+<p>The form asks for a name ("Rent, electricity, nursery…"), the amount, how often (monthly, quarterly or yearly), the due day, a category, how it is shared (by income, evenly, or by one of you), and whether it pays itself automatically or is paid manually. Then two questions that are easy to blur:</p>
+
+<ul>
+  <li><strong>Whose account does it leave?</strong> Who actually pays.</li>
+  <li><strong>Who keeps an eye on this one?</strong> Who remembers the renewal, compares providers and sorts it out when a payment fails.</li>
+</ul>
+
+<p>A direct debit leaving an account is not labour. Watching it is. Keeping those apart is how the admin side of money shows up instead of disappearing.</p>
+
+<h2>How do you add a one-off expense?</h2>
+
+<p><strong>Type the amount and save.</strong> Everything else is pre-filled: today's date, you paid, split by income.</p>
+
+<p>A preview shows each person's fair share as you type, so you see the result of the split before the entry exists. "More details" opens the optional fields: a category, what it was for, whether it was for the children, and the split. You can split evenly, by income, by a custom amount, or mark it as "My treat". How the income-based split is worked out is covered in <a href="/blog/income-aware-splits-heres-exactly-how-it-calculates-fair-shares/">income-aware splits</a>.</p>
+
+<h2>A worked example: Priya and Tom's first evening</h2>
+
+<p><strong>Here is a realistic first setup, start to finish.</strong></p>
+
+<p>Priya and Tom tick 14 starter chores. The running total says about 11 hours a week. They change "Cook dinner" from 45 to 35 minutes, because they cook simple meals on weeknights, and set Tom as owner. Priya owns "Plan the week's meals" and "Track school dates &amp; forms". "Clean windows" goes to "Nobody yet", because honestly nobody does it.</p>
+
+<p>They add one custom chore: "Water the allotment", 40 minutes, every week, owned by Tom, done meaning "both beds, and the water butt refilled".</p>
+
+<p>In money they add rent (£1,400 monthly, by income, leaves Tom's account, Priya keeps an eye on it) and broadband (£35 monthly, evenly, automatic, Tom keeps an eye on it). Then Priya enters £62.40 for the weekly shop, which takes about ten seconds.</p>
+
+<p>Total time: roughly fifteen minutes between them, most of it spent talking about who actually owns what.</p>
+
+<h2>How do you log chores each week?</h2>
+
+<p><strong>Use the weekly catch-up, which is built to take about thirty seconds.</strong> You do not need to tick tasks off daily.</p>
+
+<p>The catch-up lists everything recurring, pre-ticked against its usual owner and leaving out anything already logged that week. You untick what did not happen, change the person on anything someone else did, and save. Unticking is not treated as a failure. It is the most common and honest answer. You can still mark individual chores done as you go if you prefer.</p>
+
+<p>If you would like a nudge when a chore comes round, chore reminders go only to that chore's owner. <a href="/blog/how-to-turn-on-gentle-reminders/">How to turn on gentle reminders</a> explains how they work.</p>
+
+<h2>Common questions</h2>
+
+<h3>Can I edit a chore without changing past weeks?</h3>
+<p>Yes. Each completed chore keeps the time and planning weight it had when it was done, so editing a chore later does not rewrite earlier weeks. Removing a chore takes it off the list but keeps its history.</p>
+
+<h3>Can my partner change the chores I logged?</h3>
+<p>No. Neither of you can edit or dispute the other person's entries. If you see the week differently, that shows up as a difference in readings rather than an argument in the app.</p>
+
+<h3>Do I have to add every single chore?</h3>
+<p>No. Add the tasks that take real time or real thought. Ten well-chosen chores give a more useful picture than fifty you never log. <a href="/blog/complete-step-by-step/">Setting up EvenUS with your partner</a> walks through the rest of setup.</p>
+
+<h3>Which currencies can I use?</h3>
+<p>Households choose US dollars, pounds, euros or rupees at setup.</p>

@@ -78,6 +78,66 @@
       "source": "/blog/best-tools-to-track-and-share-domestic-responsibilities-fairly/",
       "destination": "/blog/best-chore-tracking-apps/",
       "permanent": true
+    },
+    {
+      "source": "/feed",
+      "destination": "/feed.xml",
+      "permanent": true
+    },
+    {
+      "source": "/feed/",
+      "destination": "/feed.xml",
+      "permanent": true
+    },
+    {
+      "source": "/blog/feed/",
+      "destination": "/feed.xml",
+      "permanent": true
+    },
+    {
+      "source": "/comments/feed/",
+      "destination": "/feed.xml",
+      "permanent": true
+    },
+    {
+      "source": "/author/:name*",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/category/:name*",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/tag/:name*",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/page/:n*",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/page/:n*",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/:year(\\d{4})/:rest*",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-admin/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-login.php",
+      "destination": "/",
+      "permanent": true
     }
   ]
 }

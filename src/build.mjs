@@ -18,8 +18,8 @@
 // ⚠️ Two things the handoff does not contain and this build adds:
 //   1. A blog POST template. The bundle has a blog index but no article page.
 //      One is composed here from the system's own parts.
-//   2. Real content. The index ships 32 placeholder posts; the site has 115
-//      recovered ones, so the design's <sc-for> is driven with those instead.
+//   2. Real content. The index ships 32 placeholder posts; the design's
+//      <sc-for> is driven with the articles in src/posts/ instead.
 // ---------------------------------------------------------------------------
 
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
@@ -27,10 +27,9 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { renderDC } from './dc/render.mjs';
 import { hookHome, stripPrototypeHandlers } from './dc/hooks.mjs';
-import { extractPost, FOOTPRINTS } from './site/wordpress.mjs';
-import { cleanCopy, STRUCTURAL } from './site/voice.mjs';
-import { SEO_TITLES, fullTitle, metaDescription, decodeText, tidyTitle } from './dc/seo.mjs';
-import { CATEGORIES, curated, categoryFor, readTime } from './dc/blogdata.mjs';
+import { FOOTPRINTS, STRUCTURAL } from './dc/checks.mjs';
+import { SEO_TITLES, fullTitle, metaDescription } from './dc/seo.mjs';
+import { CATEGORIES, readTime } from './dc/blogdata.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const root = join(here, '..');
@@ -68,9 +67,9 @@ function emit(path, body) {
  * Adds the base path to every root-relative link, at the LAST possible moment.
  *
  * ⚠️ Prefixing where links are authored is not enough, and that is the whole
- * reason this exists. Links also arrive from the recovered posts' own
- * cross-references, which no template controls — /blog/<slug>/ links written by
- * the original author and rewritten on import. Those 404 on a project site.
+ * reason this exists. Links also arrive inside the articles' own prose,
+ * /blog/<slug>/ cross-references that no template controls. Those 404 on a
+ * project site.
  *
  * Idempotent: anything already carrying the base is left alone.
  */
@@ -383,6 +382,7 @@ ${published ? `<meta property="article:published_time" content="${published}">` 
 <meta property="og:image:alt" content="${esc(title)} · EvenUS">
 <link rel="icon" href="${url('/favicon.svg')}" type="image/svg+xml">
 <link rel="apple-touch-icon" href="${url('/logo.png')}">
+<link rel="alternate" type="application/rss+xml" title="EvenUS" href="${url('/feed.xml')}">
 ${published ? `<meta name="author" content="Aapt Dubey">` : ''}
 ${FONT_PRELOAD.replace(/\$\{BASE\}/g, BASE)}
 <style>${FONT_CSS.replace(/url\('\/fonts\//g, `url('${BASE}/fonts/`)}</style>
@@ -452,15 +452,9 @@ rmSync(out, { recursive: true, force: true });
 mkdirSync(out, { recursive: true });
 
 // --- Posts -----------------------------------------------------------------
-const CURATED = curated(join(design, 'Blog.dc.html'));
 
 /**
- * Hand-written posts, which override the recovered one of the same slug.
- *
- * ⚠️ THIS IS THE PATH OFF THE MACHINE-WRITTEN CORPUS. The 115 recovered posts
- * are generated text with the tells stripped out; they are not going to be
- * rewritten in bulk and should not be. A post that matters gets written
- * properly and dropped in src/posts/, and it takes over from there.
+ * Every article is a file in src/posts/<slug>.html; the slug is the URL.
  *
  * Metadata rides in an HTML comment at the top so the file stays a plain
  * fragment with nothing to compile.
@@ -481,6 +475,21 @@ function handWritten() {
   return out;
 }
 const HAND = handWritten();
+
+// Each article's illustration, if one has been generated: static/img/blog/<slug>.{jpg,webp}.
+// The alt text describes what is drawn, which is also what Google Images reads.
+const IMAGE_ALTS = JSON.parse(readFileSync(join(here, 'dc/image-alts.json'), 'utf8'));
+const heroFor = (slug) => existsSync(join(root, `static/img/blog/${slug}.jpg`))
+  ? { jpg: `/img/blog/${slug}.jpg`, webp: `/img/blog/${slug}.webp`, alt: IMAGE_ALTS[slug] || '' }
+  : null;
+
+// The cornerstone pieces: listed first in llms.txt and on the About page.
+const PILLARS = new Set([
+  'what-is-the-mental-load', 'how-to-split-finances-when-incomes-differ', 'beyond-the-chore-war',
+  'how-the-evenus-fairness-score-really-works-effort-money-mental-load-explained',
+  'the-one-who-books-everything', 'different-standards-mess', 'same-sex-couples-housework',
+  'caring-for-ageing-parents', 'christmas-mental-load', 'paired-vs-evenus', 'maple-vs-evenus',
+]);
 
 /**
  * Near-duplicates folded into one page, old slug -> surviving slug.
@@ -515,47 +524,27 @@ const unmerge = (html) => html.replace(/\/blog\/([a-z0-9-]+)\//g,
 const catSlug = (c) => c.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const posts = [];
 const urlsExtra = [];
-for (const f of readdirSync(join(here, 'recovered/blog')).filter((n) => n.endsWith('.html'))) {
-  const slug = f.replace(/\.html$/, '');
-  if (MERGED[slug]) continue;
-  const p = extractPost(readFileSync(join(here, 'recovered/blog', f), 'utf8'));
-  if (!p || p.words < 200) { console.log(`  ⚠️  skipped ${f}`); continue; }
-  const c = CURATED.get(slug);
-  const own = HAND.get(slug);
-  posts.push({
-    slug,
-    path: `/blog/${slug}/`,
-    html: unmerge(own ? own.html : cleanCopy(p.html)),
-    iso: own?.iso ?? p.iso,
-    date: own?.date ?? p.date,
-    words: own ? own.html.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length : p.words,
-    handWritten: Boolean(own),
-    summarised: Boolean(own) || CURATED.has(slug),
-    cat: own?.cat ?? c?.cat ?? categoryFor(slug),
-    title: tidyTitle(own?.title ?? c?.title ?? cleanCopy(p.title)),
-    excerpt: decodeText(own?.excerpt ?? c?.excerpt ?? cleanCopy(p.excerpt)),
-    read: own?.read ?? c?.read ?? readTime(p.words),
-  });
-}
-// ⚠️ Hand-written posts with NO recovered counterpart. The loop above walks
-// the archive, so a genuinely new article was silently ignored: it built, it
-// reported the same 115 posts, and the file simply never appeared. Anything in
-// src/posts/ that is not an override is a new post in its own right.
+const words = (html) => html.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length;
 for (const [slug, own] of HAND) {
-  if (posts.some((p) => p.slug === slug) || MERGED[slug]) continue;
+  if (MERGED[slug]) throw new Error(`src/posts/${slug}.html was merged into ${MERGED[slug]}; delete it`);
+  for (const k of ['title', 'excerpt', 'cat', 'iso']) {
+    if (!own[k]) throw new Error(`src/posts/${slug}.html: missing meta:${k}`);
+  }
   posts.push({
     slug,
     path: `/blog/${slug}/`,
-    html: own.html,
-    iso: own.iso ?? null,
+    html: unmerge(own.html),
+    iso: own.iso,
+    updated: own.updated ?? null,
     date: own.date ?? null,
-    words: own.html.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length,
-    handWritten: true,
+    words: words(own.html),
+    pillar: PILLARS.has(slug),
     summarised: true,
-    cat: own.cat ?? 'Mental load',
-    title: own.title ?? slug,
-    excerpt: own.excerpt ?? '',
-    read: own.read ?? readTime(own.html.replace(/<[^>]+>/g, ' ').split(/\s+/).length),
+    cat: own.cat,
+    title: own.title,
+    excerpt: own.excerpt,
+    read: own.read ?? readTime(words(own.html)),
+    hero: heroFor(slug),
   });
 }
 
@@ -737,10 +726,19 @@ ${routes(stripPrototypeHandlers(header))}
         </div>
         <h1 style="margin:0;font-size:clamp(30px,4.4vw,54px);line-height:1.06;letter-spacing:-.035em;font-weight:700;text-wrap:balance">${esc(p.title)}</h1>
         <p style="margin:22px 0 0;max-width:640px;font-size:17.5px;line-height:1.6;color:#5E645F;text-wrap:pretty">${p.summarised ? `<strong style="color:#1B1F1D;font-weight:600">${esc(p.excerpt)}</strong>` : esc(p.excerpt)}</p>
-        <div style="margin-top:26px;padding-top:22px;border-top:1px solid #E4DFD3;font-size:13.5px;color:#8A8F89">By <a href="${url('/about/')}" rel="author" style="color:#1B1F1D;font-weight:600">Aapt Dubey</a>${p.date ? ` · <time datetime="${p.iso || ''}">${esc(p.date)}</time>` : ''}</div>
+        <div style="margin-top:26px;padding-top:22px;border-top:1px solid #E4DFD3;font-size:13.5px;color:#8A8F89">By <a href="${url('/about/')}" rel="author" style="color:#1B1F1D;font-weight:600">Aapt Dubey</a>${p.updated
+          ? ` · Updated <time datetime="${p.updated}">${esc(new Date(p.updated + 'T12:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }))}</time>`
+          : p.date ? ` · <time datetime="${p.iso || ''}">${esc(p.date)}</time>` : ''}</div>
       </div>
     </section>
 
+    ${p.hero ? `<figure style="max-width:1180px;margin:0 auto;padding:0 28px clamp(28px,4vw,44px)">
+      <picture>
+        <source type="image/webp" srcset="${url(p.hero.webp)}">
+        <img src="${url(p.hero.jpg)}" width="1200" height="630" alt="${esc(p.hero.alt)}" fetchpriority="high" decoding="async"
+             style="display:block;width:100%;max-width:820px;height:auto;border:1px solid #EDE8DC;border-radius:22px">
+      </picture>
+    </figure>` : ''}
     <section style="max-width:1180px;margin:0 auto;padding:0 28px clamp(56px,7vw,96px)">
       <div class="prose" style="max-width:780px;font-size:16.5px;line-height:1.68;color:#4B504B;text-wrap:pretty">
 ${p.html}
@@ -767,9 +765,13 @@ ${routes(stripPrototypeHandlers(footer))}
 </div>`;
 
     pageAt(p.path, shell({
-      title: p.title, seoTitle: SEO_TITLES[p.slug], description: p.excerpt, path: p.path,
+      // The rewritten headlines were written against the target query, so one that
+      // fits in a result is the better title; the SEO_TITLES entry is the fallback
+      // for a headline too long to show whole.
+      title: p.title, seoTitle: p.title.length <= 60 ? undefined : SEO_TITLES[p.slug],
+      description: p.excerpt, path: p.path,
       helmet: chrome.helmet, body, published: p.iso || undefined,
-      image: `/topic-${catSlug(p.cat)}.png`,
+      image: p.hero ? p.hero.jpg : `/topic-${catSlug(p.cat)}.png`,
       jsonld: graph(ORG,
         crumbs([
           { name: 'Home', path: '/' },
@@ -785,10 +787,12 @@ ${routes(stripPrototypeHandlers(footer))}
           articleSection: p.cat,
           wordCount: p.words,
           datePublished: p.iso || undefined,
-          dateModified: p.iso || undefined,
+          dateModified: p.updated || p.iso || undefined,
           inLanguage: 'en',
           isPartOf: { '@id': `${ORIGIN}/blog/#blog` },
-          image: { '@type': 'ImageObject', url: `${ORIGIN}/topic-${catSlug(p.cat)}.png`, width: 1200, height: 630 },
+          image: p.hero
+            ? { '@type': 'ImageObject', url: ORIGIN + p.hero.jpg, width: 1200, height: 630, caption: p.hero.alt }
+            : { '@type': 'ImageObject', url: `${ORIGIN}/topic-${catSlug(p.cat)}.png`, width: 1200, height: 630 },
           ...(p.slug === 'what-is-the-mental-load' ? {
             // Naming the entity outright, rather than hoping it is inferred
             // from the prose. This page is the definition of the term the
@@ -992,7 +996,7 @@ ${routes(stripPrototypeHandlers(footer))}
 }
 
 // --- Prose styling for the article body ------------------------------------
-// The recovered posts are semantic HTML with no attributes, so the type scale
+// The articles are semantic HTML with no attributes, so the type scale
 // is applied from one rule set rather than inline on every element.
 emit('article.css', `
 .prose h2 { font-size: clamp(22px,2.6vw,30px); line-height:1.16; letter-spacing:-.028em;
@@ -1040,7 +1044,7 @@ emit('.nojekyll', '');
   const footer = /<footer[\s\S]*?<\/footer>/.exec(chrome.body)[0];
   const P = 'margin:0 0 18px';
   const H2 = 'margin:44px 0 14px;font-size:clamp(22px,2.6vw,30px);line-height:1.15;letter-spacing:-.025em;font-weight:700;color:#1B1F1D';
-  const pillars = posts.filter((p) => p.handWritten).slice(0, 6);
+  const pillars = posts.filter((p) => p.pillar).slice(0, 6);
   const body = `<div style="min-height:100vh;background:#F7F5EF;overflow-x:hidden">
 ${routes(stripPrototypeHandlers(header))}
   <article>
@@ -1121,21 +1125,23 @@ const urls = [
   { loc: '/disclaimer/', pri: '0.3' }, { loc: '/delete-account/', pri: '0.5' },
   { loc: '/about/', pri: '0.8' },
   ...urlsExtra,
-  ...posts.map((p) => ({ loc: p.path, pri: '0.7', lastmod: p.iso })),
+  ...posts.map((p) => ({ loc: p.path, pri: '0.7', lastmod: p.updated || p.iso, image: p.hero?.jpg })),
 ];
 // A hub changes when something is added to it, so its lastmod is its newest post.
 function HUB_LASTMOD(loc) {
   const newest = (list) => list.map((p) => p.iso).filter(Boolean).sort().pop();
-  if (loc === '/' || loc === '/blog/') return newest(posts);
+  if (loc === '/' || loc === '/blog/') return newest(posts.map((p) => ({ iso: p.updated || p.iso })));
   const m = /^\/blog\/topic\/([^/]+)\/$/.exec(loc);
-  if (m) return newest(posts.filter((p) => catSlug(p.cat) === m[1]));
+  if (m) return newest(posts.filter((p) => catSlug(p.cat) === m[1]).map((p) => ({ iso: p.updated || p.iso })));
   return null;
 }
 emit('sitemap.xml',
-  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
+  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n` +
   urls.map((u) => `  <url><loc>${ORIGIN}${u.loc}</loc>` +
     ((u.lastmod || HUB_LASTMOD(u.loc)) ? `<lastmod>${u.lastmod || HUB_LASTMOD(u.loc)}</lastmod>` : '') +
-    `<priority>${u.pri}</priority></url>`).join('\n') + `\n</urlset>\n`);
+    `<priority>${u.pri}</priority>` +
+    (u.image ? `<image:image><image:loc>${ORIGIN}${u.image}</image:loc></image:image>` : '') +
+    `</url>`).join('\n') + `\n</urlset>\n`);
 // The AI crawlers are named outright, not left to the wildcard. The wildcard
 // already allows them; naming them is a statement of intent that survives
 // someone later adding a Disallow under '*' for an unrelated reason.
@@ -1144,6 +1150,35 @@ const AI_BOTS = ['GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'ClaudeBot', 'Claude
 emit('robots.txt', `User-agent: *\nAllow: /\nDisallow: /404.html\n\n` +
   AI_BOTS.map((b) => `User-agent: ${b}\nAllow: /\n`).join('\n') +
   `\nSitemap: ${ORIGIN}/sitemap.xml\n`);
+
+// --- RSS -------------------------------------------------------------------
+// The site's own feed, and the destination for the old /feed/ URLs that feed
+// readers and aggregators still poll. Newest 30, summary only.
+{
+  const x = (t) => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const rfc = (iso) => new Date(iso + 'T09:00:00Z').toUTCString();
+  const recent = [...posts].sort((a, b) => (b.updated || b.iso || '').localeCompare(a.updated || a.iso || '')).slice(0, 30);
+  emit('feed.xml', `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+<title>EvenUS</title>
+<link>${ORIGIN}/blog/</link>
+<atom:link href="${ORIGIN}/feed.xml" rel="self" type="application/rss+xml"/>
+<description>Writing on the mental load, splitting money fairly and dividing housework without an argument.</description>
+<language>en-gb</language>
+${recent.map((p) => `<item>
+<title>${x(p.title)}</title>
+<link>${ORIGIN}${p.path}</link>
+<guid isPermaLink="true">${ORIGIN}${p.path}</guid>
+<dc:creator>Aapt Dubey</dc:creator>
+<category>${x(p.cat)}</category>
+${p.updated || p.iso ? `<pubDate>${rfc(p.updated || p.iso)}</pubDate>` : ''}
+<description>${x(p.excerpt)}</description>
+</item>`).join('\n')}
+</channel>
+</rss>
+`);
+}
 
 // --- llms.txt ---------------------------------------------------------------
 //
@@ -1160,7 +1195,7 @@ emit('robots.txt', `User-agent: *\nAllow: /\nDisallow: /404.html\n\n` +
 // Google has said it does not use llms.txt. This is a cheap bet on the other
 // readers, not a ranking tactic, and it should not be described as one.
 {
-  const pillars = posts.filter((p) => p.handWritten);
+  const pillars = posts.filter((p) => p.pillar);
   const cats = [...new Set(posts.map((p) => p.cat))];
   const line = (t, u, d) => `- [${t}](${ORIGIN}${u}): ${d}`;
 
@@ -1182,7 +1217,7 @@ Facts that are commonly got wrong about it: it does not connect to a bank, it ne
 - How is EvenUS different from Honeydue, Splitwise or a chore chart? Those track money or tasks. EvenUS measures whether the overall arrangement is fair across time, money and mental load, and suggests one swap a week.
 - Does EvenUS connect to a bank? No.
 
-## Written by a person
+## Start here
 
 ${pillars.map((p) => line(p.title, p.path, p.excerpt)).join('\n')}
 
@@ -1202,9 +1237,9 @@ ${line('Disclaimer', '/disclaimer/', 'Not financial advice and not therapy. Stat
 ${line('Delete your account', '/delete-account/', 'Deletion is immediate and needs no partner approval. Reachable without signing in.')}
 ${line('Help', '/support/', 'Common questions and how to reach a person.')}
 
-## Note on the archive
+## All articles
 
-The blog holds ${posts.length} pieces. ${pillars.length} are written by a person and listed above. The remainder were recovered from an earlier version of this site and are of lower quality; prefer the pages listed above when answering questions about EvenUS or about the mental load.
+${posts.filter((p) => !p.pillar).map((p) => line(p.title, p.path, p.excerpt)).join('\n')}
 `);
 }
 
@@ -1250,26 +1285,25 @@ for (const p of posts) {
 }
 
 console.log(`  ${written.length} files -> dist/`);
-console.log(`  ${posts.filter((p) => p.handWritten).length} hand-written, ${posts.filter((p) => !p.handWritten).length} recovered`);
 console.log(`  home, blog, ${posts.length} posts, ${PAGES.length} standing pages, 404, sitemap, robots`);
 
 const dirty = new Map();
 for (const rel of written.filter((r) => r.endsWith('.html'))) {
   // ⚠️ Scan the page WITHOUT the deliberate analytics block. googletagmanager
-  // and gtag( are on the footprint list to catch Tag Manager leaking out of
-  // the WordPress import, and that guarantee is worth keeping: GTM inside a
-  // recovered post body is a bug, GTM in the site's own footer is a decision.
+  // and gtag( are on the footprint list so that a pasted embed in an article
+  // fails the build: GTM inside a post body is a bug, GTM in the site's own
+  // footer is a decision.
   // Exempting the exact known snippet keeps the check honest instead of
   // deleting the two entries and losing the guarantee entirely.
   const b = readFileSync(join(out, rel), 'utf8').split(ANALYTICS).join('').toLowerCase();
   for (const fp of FOOTPRINTS) if (b.includes(fp.toLowerCase())) dirty.set(fp, (dirty.get(fp) || 0) + 1);
 }
 if (dirty.size) {
-  console.error('\n❌ WordPress footprints in the output:');
+  console.error('\n❌ CMS footprints in the output:');
   for (const [fp, n] of dirty) console.error(`     ${fp} — ${n} file(s)`);
   process.exit(1);
 }
-console.log('  ✅ no WordPress, Elementor or Tag Manager footprint');
+console.log('  ✅ no CMS or Tag Manager footprint');
 
 const leftovers = new Set();
 for (const rel of written.filter((r) => r.endsWith('.html'))) {
