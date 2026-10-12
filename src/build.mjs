@@ -29,6 +29,7 @@ import { renderDC } from './dc/render.mjs';
 import { hookHome, stripPrototypeHandlers } from './dc/hooks.mjs';
 import { extractPost, FOOTPRINTS } from './site/wordpress.mjs';
 import { cleanCopy, STRUCTURAL } from './site/voice.mjs';
+import { SEO_TITLES, fullTitle, metaDescription, decodeText, tidyTitle } from './dc/seo.mjs';
 import { CATEGORIES, curated, categoryFor, readTime } from './dc/blogdata.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
@@ -90,6 +91,13 @@ const pageAt = (u, html) =>
 // by disabling the decorative loops.
 const A11Y = `
 <style>
+  /* Links inside running text must not rely on colour alone (WCAG 1.4.1). */
+  .prose a, p > a:not([style]) { text-decoration: underline; text-underline-offset: 2px; }
+  /* The hero headline rose in from opacity 0, and Chrome does not count an
+     invisible element as the largest paint, so LCP waited for the animation:
+     4.3s on a simulated phone. Keep the movement, drop the fade. Declared after
+     the design's own keyframes, so this definition wins. */
+  @keyframes rise { from { transform: translateY(26px); } to { transform: none; } }
   a:focus-visible, button:focus-visible, input:focus-visible {
     outline: 2px solid #2E6A5C; outline-offset: 2px; border-radius: 4px;
   }
@@ -141,11 +149,40 @@ const A11Y = `
 
 const ld = (obj) => `<script type="application/ld+json">${JSON.stringify(obj)}</script>`;
 
+// The person behind the site and the writing.
+//
+// ⚠️ ONLY WHAT THE OWNER HAS STATED. Google's quality raters and the AI answer
+// engines both check that an author is a real, findable person, and the
+// LinkedIn profile is the corroborating source. Do not add credentials,
+// employers or awards here that the owner has not confirmed: an invented
+// detail on an author entity is worse than a missing one.
+const AUTHOR = {
+  '@type': 'Person',
+  '@id': `${ORIGIN}/about/#aapt-dubey`,
+  name: 'Aapt Dubey',
+  url: `${ORIGIN}/about/`,
+  jobTitle: 'Founder',
+  worksFor: { '@id': `${ORIGIN}/#organization` },
+  nationality: { '@type': 'Country', name: 'India' },
+  hasCredential: {
+    '@type': 'EducationalOccupationalCredential',
+    credentialCategory: 'degree',
+    name: 'MBA in Marketing and Banking',
+  },
+  knowsAbout: [
+    'Mental load', 'Division of household labour', 'Couples finances',
+    'Income-proportional bill splitting', 'Household budgeting', 'Marketing', 'Banking',
+  ],
+  sameAs: ['https://www.linkedin.com/in/aaptdubey/'],
+};
+
 const ORG = {
   '@type': 'Organization',
   '@id': `${ORIGIN}/#organization`,
   name: 'EvenUS',
   url: ORIGIN,
+  logo: { '@type': 'ImageObject', url: `${ORIGIN}/logo.png`, width: 512, height: 512 },
+  founder: { '@id': `${ORIGIN}/about/#aapt-dubey` },
   email: 'support@evenus.app',
   address: {
     '@type': 'PostalAddress',
@@ -306,13 +343,22 @@ const ANALYTICS = `<script async src="https://www.googletagmanager.com/gtag/js?i
  * The 404 gets noindex, follow rather than bare noindex: keep it out of the
  * index, but keep following its links to real pages.
  */
-function shell({ title, description, path, helmet, body, published, jsonld, image, noindex }) {
+function shell({ title, seoTitle, description, path, helmet, body, published, jsonld, image, noindex }) {
   const card = image || '/og.png';
   // Strip the design's Google Fonts hotlink and its preconnects.
   helmet = helmet
     .replace(/<link[^>]*fonts\.googleapis\.com[^>]*>\s*/g, '')
     .replace(/<link[^>]*fonts\.gstatic\.com[^>]*>\s*/g, '');
-  const full = path === '/' ? 'EvenUS · A fairer share of everything.' : `${title} · EvenUS`;
+  const full = fullTitle(seoTitle || title);
+  description = metaDescription(description);
+  // ⚠️ CONTRAST. The design's two light greys measure 3.0:1 (#8A8F89) and
+  // 2.2:1 (#A9AEA8) on the cream background, under the 4.5:1 WCAG AA minimum
+  // for body-size text, and Lighthouse flagged 120+ nodes. Both map to the
+  // nearest grey in the same family that passes (#686D68, 4.8:1). The terracotta
+  // tag text gets the same treatment against its pink chip.
+  const fixContrast = (h) => h.replace(/#8A8F89|#A9AEA8/gi, '#686D68').replace(/#A9583C/gi, '#8F4A31');
+  body = fixContrast(body);
+  helmet = fixContrast(helmet);
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -336,6 +382,8 @@ ${published ? `<meta property="article:published_time" content="${published}">` 
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="${esc(title)} · EvenUS">
 <link rel="icon" href="${url('/favicon.svg')}" type="image/svg+xml">
+<link rel="apple-touch-icon" href="${url('/logo.png')}">
+${published ? `<meta name="author" content="Aapt Dubey">` : ''}
 ${FONT_PRELOAD.replace(/\$\{BASE\}/g, BASE)}
 <style>${FONT_CSS.replace(/url\('\/fonts\//g, `url('${BASE}/fonts/`)}</style>
 ${helmet}
@@ -344,9 +392,7 @@ ${jsonld || ''}
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div id="main">
-${body}
-</div>
+${/<main[\s>]/.test(body) ? `<div id="main">\n${body}\n</div>` : `<main id="main">\n${body}\n</main>`}
 <script src="${url('/site.js')}" defer></script>
 ${ANALYTICS}
 </body>
@@ -435,11 +481,43 @@ function handWritten() {
   return out;
 }
 const HAND = handWritten();
+
+/**
+ * Near-duplicates folded into one page, old slug -> surviving slug.
+ *
+ * ⚠️ MEASURED, NOT GUESSED. These were picked by text similarity across the
+ * whole archive (TF-IDF cosine over the article bodies): the four "domestic
+ * peace" pieces scored 0.59 to 0.86 against each other, the two "best tools"
+ * pieces 0.72. Pages that similar compete for the same query and Google
+ * usually ranks neither. The survivor is the one with the clearer query, or
+ * the one the design's own index already featured.
+ *
+ * Each needs a matching 301 in vercel.json; the build fails if one is missing.
+ */
+const MERGED = {
+  'the-architecture-of-domestic-peace': 'from-conflict-to-collaboration-equity-at-home',
+  'the-architecture-of-domestic-peace-in-modern-household': 'from-conflict-to-collaboration-equity-at-home',
+  'the-efficiency-of-intimacy-reclaiming': 'from-conflict-to-collaboration-equity-at-home',
+  'best-tools-to-track-and-share-domestic-responsibilities-fairly': 'best-chore-tracking-apps',
+};
+{
+  const vercel = JSON.parse(readFileSync(join(root, 'vercel.json'), 'utf8'));
+  for (const [from, to] of Object.entries(MERGED)) {
+    const r = (vercel.redirects || []).find((x) => x.source === `/blog/${from}/`);
+    if (!r || r.destination !== `/blog/${to}/` || !r.permanent) {
+      throw new Error(`vercel.json: missing 301 /blog/${from}/ -> /blog/${to}/`);
+    }
+  }
+}
+/** Points links at a merged post to the post that absorbed it. */
+const unmerge = (html) => html.replace(/\/blog\/([a-z0-9-]+)\//g,
+  (m, slug) => (MERGED[slug] ? `/blog/${MERGED[slug]}/` : m));
 const catSlug = (c) => c.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const posts = [];
 const urlsExtra = [];
 for (const f of readdirSync(join(here, 'recovered/blog')).filter((n) => n.endsWith('.html'))) {
   const slug = f.replace(/\.html$/, '');
+  if (MERGED[slug]) continue;
   const p = extractPost(readFileSync(join(here, 'recovered/blog', f), 'utf8'));
   if (!p || p.words < 200) { console.log(`  ⚠️  skipped ${f}`); continue; }
   const c = CURATED.get(slug);
@@ -447,15 +525,15 @@ for (const f of readdirSync(join(here, 'recovered/blog')).filter((n) => n.endsWi
   posts.push({
     slug,
     path: `/blog/${slug}/`,
-    html: own ? own.html : cleanCopy(p.html),
+    html: unmerge(own ? own.html : cleanCopy(p.html)),
     iso: own?.iso ?? p.iso,
     date: own?.date ?? p.date,
     words: own ? own.html.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length : p.words,
     handWritten: Boolean(own),
     summarised: Boolean(own) || CURATED.has(slug),
     cat: own?.cat ?? c?.cat ?? categoryFor(slug),
-    title: own?.title ?? c?.title ?? cleanCopy(p.title),
-    excerpt: own?.excerpt ?? c?.excerpt ?? cleanCopy(p.excerpt),
+    title: tidyTitle(own?.title ?? c?.title ?? cleanCopy(p.title)),
+    excerpt: decodeText(own?.excerpt ?? c?.excerpt ?? cleanCopy(p.excerpt)),
     read: own?.read ?? c?.read ?? readTime(p.words),
   });
 }
@@ -464,7 +542,7 @@ for (const f of readdirSync(join(here, 'recovered/blog')).filter((n) => n.endsWi
 // reported the same 115 posts, and the file simply never appeared. Anything in
 // src/posts/ that is not an override is a new post in its own right.
 for (const [slug, own] of HAND) {
-  if (posts.some((p) => p.slug === slug)) continue;
+  if (posts.some((p) => p.slug === slug) || MERGED[slug]) continue;
   posts.push({
     slug,
     path: `/blog/${slug}/`,
@@ -489,7 +567,10 @@ posts.sort((a, b) => (b.iso || '0000').localeCompare(a.iso || '0000'));
   const body = routes(hookHome(r.body));
   pageAt('/', shell({
     title: 'EvenUS',
-    description: 'EvenUS measures how money, time and mental load are actually shared between two people, and suggests one thing to swap each week.',
+    // ⚠️ The old title was the tagline, "A fairer share of everything", which
+    // nobody searches. This names the category in the words people use for it.
+    seoTitle: 'EvenUS: Fair Chore and Bill Splitting App for Couples',
+    description: 'The couples app for splitting chores, bills and the mental load fairly. EvenUS measures who has free time, splits costs by income and suggests one swap a week.',
     path: '/', helmet: r.helmet, body,
     jsonld: graph(ORG, APP, {
       '@type': 'WebSite', '@id': `${ORIGIN}/#website`, url: ORIGIN, name: 'EvenUS',
@@ -533,6 +614,7 @@ posts.sort((a, b) => (b.iso || '0000').localeCompare(a.iso || '0000'));
 
   pageAt('/blog/', shell({
     title: 'Blog',
+    seoTitle: 'Mental Load, Chores and Money Advice for Couples',
     description: 'Writing on the mental load, splitting money fairly and dividing housework without an argument. ' + posts.length + ' pieces.',
     path: '/blog/', helmet: r.helmet, body,
     jsonld: graph(ORG, crumbs([{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog/' }]), {
@@ -548,9 +630,9 @@ posts.sort((a, b) => (b.iso || '0000').localeCompare(a.iso || '0000'));
 
 // --- The standing pages ----------------------------------------------------
 const PAGES = [
-  ['Help.dc.html', '/support/', 'Help', 'How to reach a human, and answers to the questions a two-person app generates.', openAll('faqs')],
+  ['Help.dc.html', '/support/', 'Help and Support', 'How to reach a human, and answers to the questions a two-person app generates.', openAll('faqs')],
   ['Privacy.dc.html', '/privacy/', 'Privacy Policy', 'What EvenUS stores, what it never sees, and how to get rid of all of it.', null],
-  ['Terms.dc.html', '/terms/', 'Terms of Use', 'The agreement between you and EvenUS.', null],
+  ['Terms.dc.html', '/terms/', 'Terms of Use', 'The EvenUS terms of use: the 7-day free trial, the subscription, what you agree to, and how to cancel or delete your account.', null],
   ['Disclaimer.dc.html', '/disclaimer/', 'Disclaimer', 'EvenUS is not financial advice and not therapy. What that means in practice.', null],
   ['Delete Account.dc.html', '/delete-account/', 'Delete your account', 'How to delete your EvenUS account and your data. No partner approval needed.', null],
 ];
@@ -576,11 +658,52 @@ for (const [file, path, title, description, transform] of PAGES) {
   const footer = /<footer[\s\S]*?<\/footer>/.exec(chrome.body)?.[0] ?? '';
   if (!header || !footer) throw new Error('article: could not lift the shared chrome');
 
+  // Related posts by what they are ABOUT, not by date.
+  //
+  // ⚠️ It took the first three posts in the category, so the same three newest
+  // pieces were linked from every page in it and 74 of the rest had two inbound
+  // links or fewer: the index and the hub. Crawlers judge a page's importance
+  // largely by internal links, and that was starving most of the archive.
+  // A small TF-IDF over the bodies spreads the links to the pages that genuinely
+  // answer the next question, which is the point of a related list anyway.
+  const terms = (p) => {
+    const words = (p.title + ' ' + p.title + ' ' + p.html.replace(/<[^>]+>/g, ' '))
+      .toLowerCase().match(/[a-z]{4,}/g) || [];
+    const c = new Map();
+    for (const w of words) c.set(w, (c.get(w) || 0) + 1);
+    return c;
+  };
+  const counts = new Map(posts.map((p) => [p.slug, terms(p)]));
+  const df = new Map();
+  for (const c of counts.values()) for (const w of c.keys()) df.set(w, (df.get(w) || 0) + 1);
+  const vecs = new Map();
+  for (const [slug, c] of counts) {
+    const v = new Map();
+    let n = 0;
+    for (const [w, k] of c) {
+      const d = df.get(w);
+      if (d > posts.length / 2) continue;
+      const x = (1 + Math.log(k)) * Math.log(posts.length / d);
+      v.set(w, x); n += x * x;
+    }
+    n = Math.sqrt(n) || 1;
+    for (const [w, x] of v) v.set(w, x / n);
+    vecs.set(slug, v);
+  }
+  const sim = (a, b) => { let t = 0; for (const [w, x] of a) t += x * (b.get(w) || 0); return t; };
+  const nearest = new Map(posts.map((p) => {
+    const v = vecs.get(p.slug);
+    const ranked = posts.filter((q) => q.slug !== p.slug)
+      .map((q) => [q, sim(v, vecs.get(q.slug)) + (q.cat === p.cat ? 0.05 : 0)])
+      .sort((x, y) => y[1] - x[1]).map(([q]) => q);
+    return [p.slug, ranked.slice(0, 4)];
+  }));
+
   const related = (p) => {
-    const siblings = posts.filter((q) => q.cat === p.cat && q.slug !== p.slug).slice(0, 3);
+    const siblings = nearest.get(p.slug);
     if (!siblings.length) return '';
     return `<section style="max-width:1180px;margin:0 auto;padding:clamp(56px,7vw,88px) 28px 0">
-      <div style="font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#8A8F89">More on ${esc(p.cat.toLowerCase())}</div>
+      <h2 style="margin:0;font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#8A8F89">Read next</h2>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr));gap:20px;margin-top:24px">
         ${siblings.map((q) => `<a href="${url(q.path)}" style="display:block;background:#fff;border:1px solid #EDE8DC;border-radius:22px;padding:26px;color:#1B1F1D">
           <div style="font-size:12.5px;color:#A9AEA8;margin-bottom:10px">${esc(q.read)} read</div>
@@ -590,6 +713,12 @@ for (const [file, path, title, description, transform] of PAGES) {
       </div>
     </section>`;
   };
+
+  const AUTHOR_BOX = `<aside aria-label="About the author" style="max-width:780px;margin-top:48px;padding:26px 28px;background:#fff;border:1px solid #EDE8DC;border-radius:22px">
+        <div style="font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#8A8F89">About the author</div>
+        <div style="font-size:18px;font-weight:700;letter-spacing:-.02em;margin-top:10px"><a href="${url('/about/')}" rel="author" style="color:#1B1F1D">Aapt Dubey</a></div>
+        <p style="margin:8px 0 0;font-size:15px;line-height:1.6;color:#5E645F">Founder of EvenUS. MBA in Marketing and Banking, married for more than ten years, based in India. Aapt started EvenUS to measure what couples usually argue about instead: who is actually carrying the money, the time and the mental load at home.</p>
+      </aside>`;
 
   for (const p of posts) {
     const body = `<div style="min-height:100vh;background:#F7F5EF;overflow-x:hidden">
@@ -608,7 +737,7 @@ ${routes(stripPrototypeHandlers(header))}
         </div>
         <h1 style="margin:0;font-size:clamp(30px,4.4vw,54px);line-height:1.06;letter-spacing:-.035em;font-weight:700;text-wrap:balance">${esc(p.title)}</h1>
         <p style="margin:22px 0 0;max-width:640px;font-size:17.5px;line-height:1.6;color:#5E645F;text-wrap:pretty">${p.summarised ? `<strong style="color:#1B1F1D;font-weight:600">${esc(p.excerpt)}</strong>` : esc(p.excerpt)}</p>
-        <div style="margin-top:26px;padding-top:22px;border-top:1px solid #E4DFD3;font-size:13.5px;color:#8A8F89">${p.date ? esc(p.date) : ''}</div>
+        <div style="margin-top:26px;padding-top:22px;border-top:1px solid #E4DFD3;font-size:13.5px;color:#8A8F89">By <a href="${url('/about/')}" rel="author" style="color:#1B1F1D;font-weight:600">Aapt Dubey</a>${p.date ? ` · <time datetime="${p.iso || ''}">${esc(p.date)}</time>` : ''}</div>
       </div>
     </section>
 
@@ -616,6 +745,7 @@ ${routes(stripPrototypeHandlers(header))}
       <div class="prose" style="max-width:780px;font-size:16.5px;line-height:1.68;color:#4B504B;text-wrap:pretty">
 ${p.html}
       </div>
+      ${AUTHOR_BOX}
     </section>
   </article>
 
@@ -637,7 +767,7 @@ ${routes(stripPrototypeHandlers(footer))}
 </div>`;
 
     pageAt(p.path, shell({
-      title: p.title, description: p.excerpt, path: p.path,
+      title: p.title, seoTitle: SEO_TITLES[p.slug], description: p.excerpt, path: p.path,
       helmet: chrome.helmet, body, published: p.iso || undefined,
       image: `/topic-${catSlug(p.cat)}.png`,
       jsonld: graph(ORG,
@@ -672,9 +802,9 @@ ${routes(stripPrototypeHandlers(footer))}
             },
           } : {}),
           mainEntityOfPage: { '@type': 'WebPage', '@id': ORIGIN + p.path },
-          author: { '@id': `${ORIGIN}/#organization` },
+          author: { '@id': AUTHOR['@id'], '@type': 'Person', name: AUTHOR.name, url: AUTHOR.url },
           publisher: { '@id': `${ORIGIN}/#organization` },
-        }),
+        }, AUTHOR),
     }));
   }
 }
@@ -735,6 +865,7 @@ ${footer}
 
   pageAt(path, shell({
     title: 'Household fairness calculator',
+    seoTitle: 'Household Fairness Calculator for Couples (Free)',
     description: 'Work out how many free hours a week each partner actually has, once sleep, paid work, commuting and housework come out. No account, nothing stored.',
     path, helmet: home.helmet, body,
     jsonld: graph(ORG,
@@ -771,6 +902,14 @@ ${footer}
   const header = /<header[\s\S]*?<\/header>/.exec(chrome.body)[0];
   const footer = /<footer[\s\S]*?<\/footer>/.exec(chrome.body)[0];
 
+  // What each hub is searched as, rather than its one-word label.
+  const TOPIC_TITLES = {
+    'Mental load': 'Mental Load in Relationships: Guides for Couples',
+    'Money': 'Splitting Money as a Couple: Bills, Budgets, Accounts',
+    'Using EvenUS': 'EvenUS Guides: Setting Up and Using the App',
+    'Life changes': 'Sharing the Load Through Babies, Job Loss and More',
+    'Reviews': 'Couples Chore and Budget Apps Compared',
+  };
   const BLURB = {
     'Mental load': 'The planning, the remembering and the noticing. Why the work that leaves no trace is the work that exhausts people, and what to do about it.',
     'Money': 'Splitting bills when incomes differ, joint accounts versus separate ones, and the arguments that are never really about the money.',
@@ -827,6 +966,7 @@ ${routes(stripPrototypeHandlers(footer))}
 
     pageAt(path, shell({
       title: cat,
+      seoTitle: TOPIC_TITLES[cat],
       description: BLURB[cat] || `${inCat.length} pieces on ${cat.toLowerCase()}.`,
       path, helmet: chrome.helmet, body,
       image: `/topic-${slug}.png`,
@@ -885,6 +1025,86 @@ emit('.nojekyll', '');
 // the build would work on a laptop and fail in CI. Regenerate it locally when
 // the hero copy changes; the sharing card quoting a headline the page no longer
 // carries is the failure to watch for.
+// --- About ------------------------------------------------------------------
+//
+// Who is behind the site. An author byline that leads nowhere is worth little
+// to a reader and less to a search engine checking whether the writer exists;
+// this is where every byline points, and the LinkedIn link is what makes it
+// checkable.
+//
+// ⚠️ Every claim about the founder here was supplied by the founder. Do not
+// pad it out with experience or credentials nobody has confirmed.
+{
+  const chrome = renderDC(design, 'Blog.dc.html', { cats: [], posts: [] });
+  const header = /<header[\s\S]*?<\/header>/.exec(chrome.body)[0];
+  const footer = /<footer[\s\S]*?<\/footer>/.exec(chrome.body)[0];
+  const P = 'margin:0 0 18px';
+  const H2 = 'margin:44px 0 14px;font-size:clamp(22px,2.6vw,30px);line-height:1.15;letter-spacing:-.025em;font-weight:700;color:#1B1F1D';
+  const pillars = posts.filter((p) => p.handWritten).slice(0, 6);
+  const body = `<div style="min-height:100vh;background:#F7F5EF;overflow-x:hidden">
+${routes(stripPrototypeHandlers(header))}
+  <article>
+    <section style="max-width:1180px;margin:0 auto;padding:clamp(48px,7vw,88px) 28px clamp(24px,3vw,36px)">
+      <div style="max-width:820px">
+        <nav aria-label="Breadcrumb" style="font-size:12.5px;color:#8A8F89;margin-bottom:18px"><a href="${url('/')}" style="color:#8A8F89">Home</a> · About</nav>
+        <h1 style="margin:0;font-size:clamp(30px,4.4vw,54px);line-height:1.06;letter-spacing:-.035em;font-weight:700;text-wrap:balance">About EvenUS and its founder, Aapt Dubey</h1>
+        <p style="margin:22px 0 0;max-width:640px;font-size:17.5px;line-height:1.6;color:#5E645F;text-wrap:pretty"><strong style="color:#1B1F1D;font-weight:600">EvenUS is a couples app that measures how fairly money, time and mental load are shared at home, then suggests one task to swap each week. It was founded in India by Aapt Dubey, who writes the articles on this site.</strong></p>
+      </div>
+    </section>
+    <section style="max-width:1180px;margin:0 auto;padding:0 28px clamp(56px,7vw,96px)">
+      <div class="prose" style="max-width:780px;font-size:16.5px;line-height:1.68;color:#4B504B;text-wrap:pretty">
+        <h2 style="${H2};margin-top:8px">Aapt Dubey, founder</h2>
+        <ul style="margin:0 0 18px;padding-left:20px">
+          <li>Founder of EvenUS</li>
+          <li>MBA in Marketing and Banking</li>
+          <li>Married for more than ten years</li>
+          <li>Based in India</li>
+          <li><a href="https://www.linkedin.com/in/aaptdubey/" rel="me noopener" target="_blank">Aapt Dubey on LinkedIn</a></li>
+        </ul>
+        <p style="${P}">An MBA in marketing and banking is a training in how money moves and how people decide about it. A decade of marriage is a training in something harder: how two people who love each other can still disagree about who did the dishes, who remembered the dentist and whose salary pays the rent.</p>
+        <p style="${P}">Most of those disagreements are not about the task. They are about whether the whole arrangement feels fair, and nobody can see the whole arrangement, because half of it happens in someone's head. EvenUS exists to make that visible with numbers both partners agree on, so the conversation is about a shared picture rather than two memories.</p>
+
+        <h2 style="${H2}">What EvenUS measures</h2>
+        <p style="${P}"><strong>Free time.</strong> The hours left in each partner's week once sleep, paid work, commuting and household work come out. You can run the same calculation in the <a href="${url('/calculator/')}">household fairness calculator</a> without an account.</p>
+        <p style="${P}"><strong>Money, on its own axis.</strong> Shared costs split in proportion to income, so a partner earning 60% of the household income pays 60% of the shared bills. Hours are never converted into money.</p>
+        <p style="${P}"><strong>Mental load.</strong> The planning, remembering and noticing behind household work, counted as a weight on that work rather than as a separate score. <a href="${url('/blog/what-is-the-mental-load/')}">What the mental load is</a> explains the term.</p>
+
+        <h2 style="${H2}">What EvenUS deliberately does not do</h2>
+        <p style="${P}">It does not connect to a bank. It never shows one partner a score for the other person. Weekly check-in answers are private. It has no streaks, badges, leaderboards or features for nudging your partner. Those are decisions, not gaps: a fairness app that becomes a scorekeeping app makes the problem worse.</p>
+
+        <h2 style="${H2}">How the writing on this site is made</h2>
+        <p style="${P}">Articles are written or reviewed by Aapt Dubey. They are general information about relationships and household money, not financial, legal or therapeutic advice; the <a href="${url('/disclaimer/')}">disclaimer</a> says when EvenUS is the wrong tool. Similar older articles have been merged so that each question has one answer. If you spot something wrong, write to <a href="mailto:support@evenus.app">support@evenus.app</a> and it will be corrected.</p>
+
+        <h2 style="${H2}">Start with these</h2>
+        <ul style="margin:0 0 18px;padding-left:20px">
+          ${pillars.map((p) => `<li><a href="${url(p.path)}">${esc(p.title)}</a></li>`).join('\n          ')}
+        </ul>
+
+        <h2 style="${H2}">Contact</h2>
+        <p style="${P}">Email <a href="mailto:support@evenus.app">support@evenus.app</a>. Answers to common questions are on the <a href="${url('/support/')}">help page</a>.</p>
+      </div>
+    </section>
+  </article>
+${routes(stripPrototypeHandlers(footer))}
+</div>`;
+  pageAt('/about/', shell({
+    title: 'About EvenUS and its founder, Aapt Dubey',
+    seoTitle: 'About EvenUS and Founder Aapt Dubey',
+    description: 'EvenUS is a couples app for sharing money, time and mental load fairly, founded in India by Aapt Dubey, an MBA in Marketing and Banking married for 10+ years.',
+    path: '/about/', helmet: chrome.helmet, body,
+    jsonld: graph(ORG, AUTHOR,
+      crumbs([{ name: 'Home', path: '/' }, { name: 'About', path: '/about/' }]),
+      {
+        '@type': ['AboutPage', 'ProfilePage'],
+        '@id': `${ORIGIN}/about/`,
+        url: `${ORIGIN}/about/`,
+        name: 'About EvenUS and its founder, Aapt Dubey',
+        mainEntity: { '@id': AUTHOR['@id'] },
+        about: { '@id': `${ORIGIN}/#organization` },
+      }),
+  }));
+}
+
 // Recursive, because static/ now holds a fonts/ directory and a flat copy
 // silently shipped nothing from it: the build succeeded, the CSS referenced
 // /fonts/*.woff2, and every face 404'd.
@@ -899,15 +1119,31 @@ const urls = [
   { loc: '/', pri: '1.0' }, { loc: '/blog/', pri: '0.9' }, { loc: '/support/', pri: '0.7' },
   { loc: '/privacy/', pri: '0.4' }, { loc: '/terms/', pri: '0.4' },
   { loc: '/disclaimer/', pri: '0.3' }, { loc: '/delete-account/', pri: '0.5' },
+  { loc: '/about/', pri: '0.8' },
   ...urlsExtra,
   ...posts.map((p) => ({ loc: p.path, pri: '0.7', lastmod: p.iso })),
 ];
+// A hub changes when something is added to it, so its lastmod is its newest post.
+function HUB_LASTMOD(loc) {
+  const newest = (list) => list.map((p) => p.iso).filter(Boolean).sort().pop();
+  if (loc === '/' || loc === '/blog/') return newest(posts);
+  const m = /^\/blog\/topic\/([^/]+)\/$/.exec(loc);
+  if (m) return newest(posts.filter((p) => catSlug(p.cat) === m[1]));
+  return null;
+}
 emit('sitemap.xml',
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
   urls.map((u) => `  <url><loc>${ORIGIN}${u.loc}</loc>` +
-    (u.lastmod ? `<lastmod>${u.lastmod}</lastmod>` : '') +
+    ((u.lastmod || HUB_LASTMOD(u.loc)) ? `<lastmod>${u.lastmod || HUB_LASTMOD(u.loc)}</lastmod>` : '') +
     `<priority>${u.pri}</priority></url>`).join('\n') + `\n</urlset>\n`);
-emit('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${ORIGIN}/sitemap.xml\n`);
+// The AI crawlers are named outright, not left to the wildcard. The wildcard
+// already allows them; naming them is a statement of intent that survives
+// someone later adding a Disallow under '*' for an unrelated reason.
+const AI_BOTS = ['GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-SearchBot',
+  'Claude-User', 'PerplexityBot', 'Perplexity-User', 'Google-Extended', 'Applebot-Extended', 'Bingbot'];
+emit('robots.txt', `User-agent: *\nAllow: /\nDisallow: /404.html\n\n` +
+  AI_BOTS.map((b) => `User-agent: ${b}\nAllow: /\n`).join('\n') +
+  `\nSitemap: ${ORIGIN}/sitemap.xml\n`);
 
 // --- llms.txt ---------------------------------------------------------------
 //
@@ -934,9 +1170,17 @@ emit('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${ORIGIN}/sitemap.xml\n`
 
 EvenUS measures discretionary time: the hours left in each partner's week once sleep, paid work, commuting and household work are subtracted. Money is measured on a separate axis and hours are never converted into currency. Mental load is a weight applied to household work rather than a score of its own.
 
-The app is in closed testing and is not yet on the app stores. It is free during testing. It requires both partners to take part.
+The app is in closed testing and is not yet on the app stores. Pricing: a 7-day free trial with no card required, then $9.99 a month or $69 a year. One subscription covers both partners. It requires both partners to take part.
 
 Facts that are commonly got wrong about it: it does not connect to a bank, it never shows one partner a score for the other person, weekly check-in answers are private and enforced as such in the database rules, and it has no streaks, badges, leaderboards or partner-nudging features. These are deliberate refusals rather than missing features.
+
+## Common questions
+
+- What is the best app for splitting chores fairly with a partner? EvenUS is built for that one job: both partners log household work, it weights the planning and remembering (the mental load), and it compares the free hours each person has left rather than counting tasks.
+- How do couples split bills when one earns more? The common fair method is income-proportional: each partner pays the same percentage of their income. EvenUS calculates that share, and the [calculator](${ORIGIN}/calculator/) runs it in a browser with no account.
+- Is there an app that tracks the mental load? Yes. EvenUS records invisible work such as booking, remembering and planning, and counts it as a weight on household work.
+- How is EvenUS different from Honeydue, Splitwise or a chore chart? Those track money or tasks. EvenUS measures whether the overall arrangement is fair across time, money and mental load, and suggests one swap a week.
+- Does EvenUS connect to a bank? No.
 
 ## Written by a person
 
@@ -988,6 +1232,23 @@ for (const p of posts) {
 }
 
 // --- Checks ----------------------------------------------------------------
+// Every root-relative link must land on a file this build wrote. A merged post,
+// a renamed slug or a typo in a hand-written piece otherwise ships as a 404
+// that nobody sees until Search Console reports it weeks later.
+{
+  const have = new Set(written.map((w) => '/' + w.replace(/index\.html$/, '')));
+  const broken = new Set();
+  for (const rel of written.filter((r) => r.endsWith('.html'))) {
+    const html = readFileSync(join(out, rel), 'utf8');
+    for (const [, u] of html.matchAll(/href="(\/[^"#?]*)/g)) {
+      const bare = BASE && u.startsWith(BASE + '/') ? u.slice(BASE.length) : u;
+      if (!bare.startsWith('//') && !have.has(bare)) broken.add(`${rel} -> ${u}`);
+    }
+  }
+  if (broken.size) throw new Error('broken internal links:\n  ' + [...broken].slice(0, 20).join('\n  '));
+  console.log('  ✅ every internal link resolves');
+}
+
 console.log(`  ${written.length} files -> dist/`);
 console.log(`  ${posts.filter((p) => p.handWritten).length} hand-written, ${posts.filter((p) => !p.handWritten).length} recovered`);
 console.log(`  home, blog, ${posts.length} posts, ${PAGES.length} standing pages, 404, sitemap, robots`);

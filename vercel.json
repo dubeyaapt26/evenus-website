@@ -57,5 +57,27 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/blog/the-architecture-of-domestic-peace/",
+      "destination": "/blog/from-conflict-to-collaboration-equity-at-home/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/the-architecture-of-domestic-peace-in-modern-household/",
+      "destination": "/blog/from-conflict-to-collaboration-equity-at-home/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/the-efficiency-of-intimacy-reclaiming/",
+      "destination": "/blog/from-conflict-to-collaboration-equity-at-home/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/best-tools-to-track-and-share-domestic-responsibilities-fairly/",
+      "destination": "/blog/best-chore-tracking-apps/",
+      "permanent": true
+    }
   ]
 }
