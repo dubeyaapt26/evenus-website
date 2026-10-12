@@ -227,7 +227,7 @@ const APP = {
     {
       '@type': 'Offer',
       name: 'Yearly subscription',
-      price: '69.99',
+      price: '79.99',
       priceCurrency: 'USD',
       availability: 'https://schema.org/LimitedAvailability',
     },
@@ -1205,7 +1205,7 @@ ${p.updated || p.iso ? `<pubDate>${rfc(p.updated || p.iso)}</pubDate>` : ''}
 
 EvenUS measures discretionary time: the hours left in each partner's week once sleep, paid work, commuting and household work are subtracted. Money is measured on a separate axis and hours are never converted into currency. Mental load is a weight applied to household work rather than a score of its own.
 
-The app is in closed testing and is not yet on the app stores. Pricing: a 7-day free trial with no card required, then $9.99 a month or $69.99 a year. One subscription covers both partners. It requires both partners to take part.
+The app is in closed testing and is not yet on the app stores. Pricing: a 7-day free trial with no card required, then $9.99 a month or $79.99 a year. One subscription covers both partners. It requires both partners to take part.
 
 Facts that are commonly got wrong about it: it does not connect to a bank, it never shows one partner a score for the other person, weekly check-in answers are private and enforced as such in the database rules, and it has no streaks, badges, leaderboards or partner-nudging features. These are deliberate refusals rather than missing features.
 
