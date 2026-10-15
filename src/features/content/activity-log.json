@@ -1,0 +1,89 @@
+{
+  "id": "activity-log",
+  "h1": "Activity: a shared record of what either of you added or changed",
+  "seoTitle": "Household Activity Log for Couples: Who Changed What",
+  "description": "See what either of you added or changed in EvenUS, in order, with who and when. A shared record nobody can edit, and what it deliberately leaves out.",
+  "updated": "2026-10-15",
+  "answer": "Activity is the shared record in EvenUS of what either partner added or changed, newest first. Each line says who did what and when: an expense added, a chore done, a bill stopped, a change to how costs split. Both of you see the same list, nobody can edit or remove an entry, and it only ever records things done, never things not done.",
+  "what": {
+    "h2": "What does Activity do in EvenUS?",
+    "html": "<p><strong>It answers “when did that change?” without either of you having to ask.</strong> In a shared household app, numbers move because of things the other person did: an expense added on the bus, an income updated, a split changed. Without a record, a figure that shifted overnight can feel like something happened behind your back.</p><p>Activity lists each of those things in order, with the person’s name and how long ago it happened. Lines are written plainly, such as “Sam added “Groceries”” or “Alex added time away” when someone adds, changes or removes a period in <a href=\"/features/away-mode/\">Away</a>. An import of many expenses shows as one line rather than fifty.</p><p>On the full list, a small dot marks anything that changed the inputs to the <a href=\"/features/fairness-score/\">household balance</a> (the fairness score): an income or paid-hours update, a change to how time and money are weighed, a deleted expense, a child added, or a corrected chore time.</p>"
+  },
+  "who": {
+    "h2": "Who is Activity for?",
+    "html": "<p>Any couple using EvenUS together, especially when you add things at different times and want to see what is new, or when a number on the <a href=\"/features/settle-up/\">Even up</a> card changed and you would like to know why.</p>"
+  },
+  "steps": {
+    "h2": "How do you see the Activity feed?",
+    "intro": "Open Us and tap Activity to see the latest entries, newest first, then tap See all for the longer list.",
+    "items": [
+      {
+        "name": "Open Activity",
+        "text": "Open the Us tab and tap Activity."
+      },
+      {
+        "name": "Read down the list",
+        "text": "Each line says who did what, and when, newest first. Your entries and your partner’s are in the same list, each in that person’s colour."
+      },
+      {
+        "name": "Open the longer list",
+        "text": "Tap See all for more entries on a screen of their own. At the bottom, “Show more” loads the next 50."
+      },
+      {
+        "name": "Look for the dot",
+        "text": "On that screen, a dot on the right marks anything that changed the inputs to your fairness score."
+      },
+      {
+        "name": "If it does not load",
+        "text": "If you see “Couldn’t load the activity just now.”, check your connection and tap Try again."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see in Activity?",
+    "html": "<p><strong>The same list as you.</strong> The activity feed is shared, and both of you see every entry, in the same order, each in your own chosen language.</p><p>If your partner keeps their personal spending detail private, their entries read “added a personal expense”, with no title, and yours do the same with <a href=\"/features/personal-spending-privacy/\">Hide my personal spending detail</a> switched on. Your private check-in answers, calendar hours and survey answers never appear.</p><p>Activity is a list you open, not a stream of alerts. How you hear about what your partner adds is a separate choice in <a href=\"/features/partner-activity/\">When your partner adds something</a>.</p>"
+  },
+  "tips": {
+    "h2": "Tips for using Activity",
+    "items": [
+      "When the household balance moves more than you expected, open See all and look for the dots first. They mark the changes that feed the score.",
+      "Nothing in Activity can be edited or removed, by either of you, so it stays a record you can both trust. Correct the expense or chore itself, and the correction is listed as a new line.",
+      "Keep tapping “Show more” to go further back. For the whole history in one file, use Export everything (JSON) in <a href=\"/features/data-export/\">Export your data</a>.",
+      "If a line surprises you, open the expense itself. Each one shows how it split, who paid and what changed."
+    ]
+  },
+  "extra": [
+    {
+      "h2": "Why does Activity never record what someone didn’t do?",
+      "html": "<p>Because a list of absences reads as an accusation, however neutral its wording. Activity keeps records of things done, never notes about things not done: there is no line for a skipped chore, a missed check-in, or a bill nobody looked at.</p><p>The aim is a record that describes the household, not one that keeps score of a person. Couples who count each other’s tasks tend to find that it <a href=\"/blog/score-destroys-modern-relationships/\">backfires</a>, and a shared record of what happened is a calmer place to start a conversation than two memories of it.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Can my partner delete things from the EvenUS activity feed?",
+      "a": "No. Neither of you can edit or remove an entry in Activity. If an expense or a chore time is corrected, the correction is added as a new line, so the record of what happened stays complete for both of you."
+    },
+    {
+      "q": "Does the activity feed show my personal purchases?",
+      "a": "Only as “a personal expense” if you have Hide my personal spending detail switched on. Your partner sees that something was added and when, but not its title, notes or category. Shared expenses always appear with what they were for."
+    },
+    {
+      "q": "What does the dot next to an activity entry mean?",
+      "a": "On the full Activity list, a dot marks a change to the inputs of your household balance, such as an income update, a change to paid hours, a deleted expense or a change to how time and money are weighed."
+    },
+    {
+      "q": "Does EvenUS send a notification for every activity entry?",
+      "a": "Not unless you choose that. Activity is a list you open when you want to. In When your partner adds something you can pick a daily summary, every entry, or nothing, and your partner cannot see which you chose."
+    },
+    {
+      "q": "Is Activity part of EvenUS Pro?",
+      "a": "No. Activity keeps working after the 7-day free week, with or without a subscription, along with reading and exporting what you recorded. Computed views such as the household balance are part of EvenUS Pro."
+    }
+  ],
+  "relatedPosts": [
+    "outsourcing-the-argument",
+    "score-destroys-modern-relationships",
+    "no-more-who-did-more-fights-how-evenus-brings-real-peace-to-couples",
+    "tracking-shared-expenses"
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "id": "receipt-scan",
+  "h1": "Scan a receipt: the total, shop and date read on your phone",
+  "seoTitle": "Scan Receipts Into Shared Expenses: EvenUS",
+  "description": "Photograph a receipt and EvenUS reads the total, the shop and the date on your phone. You check it before saving, and the photo is never uploaded.",
+  "updated": "2026-10-15",
+  "answer": "Scan a receipt is how EvenUS turns a photo of a till slip into a shared expense. You take or choose a photo, and the phone itself reads the total, the shop and the date into the expense form. A note says where the amount came from. You check it, choose the split and tap Save expense. The photo stays on that phone and is never uploaded.",
+  "what": {
+    "h2": "What does Scan a receipt do?",
+    "html": "<p><strong>It reads the total, the shop and the date off a receipt photo and fills them into a new expense for you to check.</strong> A long supermarket slip has a dozen numbers on it, and typing the right one while packing bags is where mistakes creep in.</p><p>EvenUS looks for the line that is the total, in the wording shops actually use, such as “Grand Total”, “Amount Due”, “Summe” or “Total TTC”. It never takes the subtotal, the tax, the cash tendered or the change. If there is a tip, the amount includes it, because that is what left the account. A short note under the amount tells you how it was found, for example “Filled in from the receipt. Check the amount before saving.”</p><p>The reading happens on the phone, using the text recognition built into iOS and Android. Then it becomes an ordinary <a href=\"/features/shared-expenses/\">shared expense</a>, split the way you choose.</p>"
+  },
+  "who": {
+    "h2": "Who is Scan a receipt for?",
+    "html": "<p>For the big weekly shop, the dinner out with a tip, or the hardware store run with a slip as long as your arm. It suits the partner who keeps receipts in a pocket and the one who would rather point a camera than squint at small print.</p>"
+  },
+  "steps": {
+    "h2": "How do you scan a receipt in EvenUS?",
+    "intro": "Open the expense form, tap “Scan a receipt”, take or choose a photo, check what was filled in, and tap Save expense.",
+    "items": [
+      {
+        "name": "Open the expense form",
+        "text": "Open Money and tap “Add an expense”, or use the receipt button in the Tell EvenUS field while it is empty."
+      },
+      {
+        "name": "Take or choose the photo",
+        "text": "Tap “Scan a receipt”, then “Take a photo” or “Choose from photos”. You will see “Reading the receipt…” for a moment."
+      },
+      {
+        "name": "Check what was filled in",
+        "text": "Look at the amount, the name and the date. A note under them says where the amount came from, such as the total line or the total with the tip."
+      },
+      {
+        "name": "Choose the split and save",
+        "text": "Fix anything that needs it, choose how it’s split, and tap Save expense."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see?",
+    "html": "<p><strong>Your partner sees the expense once you save it, like any other, and nothing of the receipt itself.</strong> The photo and the text read from it stay in EvenUS on the phone that took it. Nothing is uploaded.</p><p>If the receipt has personal items on it, mark them with “Part of this was just for me” before saving, so only the rest is shared. With <a href=\"/features/personal-spending-privacy/\">Hide my personal spending detail</a> switched on, anything marked as just yours shows to your partner by amount only.</p>"
+  },
+  "tips": {
+    "h2": "Tips for a clean read",
+    "items": [
+      "A flat, well-lit photo of the whole slip reads best. If you see “Nothing readable on that one”, type the amount.",
+      "If no line says “total”, it uses the largest price and says so. Give that one a closer look.",
+      "To see the photo again, open the expense on the same phone and tap “Receipt saved on this phone”.",
+      "No receipt to hand? Type one line into <a href=\"/features/quick-add/\">Tell EvenUS</a>, like “dinner 64”, and check the draft."
+    ]
+  },
+  "country": {
+    "h2": "Which countries’ receipts can it read?",
+    "html": "<p><strong>Receipts from the US, the UK and Europe, India, Canada and Australia.</strong> That covers US sales tax, tips and month-first dates; VAT, MwSt, TVA, IVA and BTW, with comma decimals like 1.234,56 €; GST, CGST and SGST with ₹ or Rs; Canadian GST, HST, PST and QST; and Australian “GST incl.” slips.</p><p>If a receipt looks like it is in a currency other than your household’s, the note says so. Nothing is converted, so change the amount if it needs it.</p>"
+  },
+  "extra": [
+    {
+      "h2": "Why doesn’t it save the expense straight away?",
+      "html": "<p>A wrongly read total, saved without a look, would move both partners’ shared numbers for weeks, including the money half of the <a href=\"/features/fairness-score/\">household balance</a> (the fairness score). So the scan only fills in the form, and when the reading is less certain, the note says so plainly. You stay the one who decides what is saved.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Is my receipt photo uploaded anywhere?",
+      "a": "No. The photo is read on your phone and stays in EvenUS on that phone. Neither the photo nor the text read from it is uploaded, and your partner’s phone never receives it. Only the expense you save is shared."
+    },
+    {
+      "q": "Can I scan a receipt with a tip on it?",
+      "a": "Yes. When a receipt shows a tip, the amount includes it, because that is what was paid. If the total line is blank but the tip is readable, it adds the two together and the note says so."
+    },
+    {
+      "q": "What if the receipt is in another currency?",
+      "a": "The note under the amount says the receipt looks like it is in a different currency from your household’s. EvenUS does not convert it, so change the amount to what was taken from your account before saving."
+    },
+    {
+      "q": "What happens if EvenUS can’t read the receipt?",
+      "a": "You see “Nothing readable on that one”, and you can type the amount in by hand. If it finds no total, the photo is still kept on your phone with the expense, so you can look at it later."
+    },
+    {
+      "q": "Do I need EvenUS Pro to scan receipts?",
+      "a": "No. Scanning receipts and adding expenses keep working after the 7-day free week, with or without a subscription, because they are part of recording what you spend."
+    }
+  ],
+  "relatedPosts": [
+    "tracking-shared-expenses",
+    "building-a-family-ledger",
+    "how-to-split-bills"
+  ]
+}

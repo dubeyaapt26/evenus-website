@@ -1,0 +1,84 @@
+{
+  "id": "joint-account",
+  "h1": "Joint account: spending counts as paid by whoever put that money in",
+  "seoTitle": "Joint Account Tracking for Couples in EvenUS",
+  "description": "Pay shared bills from a joint account? Record each top-up and EvenUS counts every payment from it as paid by whoever put that money in, oldest first.",
+  "updated": "2026-10-15",
+  "answer": "Joint account in EvenUS is for couples who pay shared bills from an account they both top up. Each of you records your own top-ups, and any expense paid from the account counts as paid by whoever put that money in, oldest money first. Your household balance and the Even up figure then treat joint spending fairly, without either of you working it out by hand.",
+  "what": {
+    "h2": "What does Joint account do?",
+    "html": "<p><strong>It answers a question a joint account hides: whose money actually paid for this?</strong> In a yours, mine and ours set-up, each of you tops up a shared account and the bills go out of it. That works until the top-ups drift apart, and nobody can say whose money the last few months of bills were.</p><p>In EvenUS you switch on “We have a joint account”, record each top-up, and pick Joint account as the payer when you add an expense paid from it. EvenUS then counts that expense as paid by whoever put the money in, oldest money first, exactly as if they had paid from their own account.</p><p>The <a href=\"/features/settle-up/\">Even up</a> card and the money side of the <a href=\"/features/fairness-score/\">household balance</a> work unchanged. Money sitting in the account is not counted as spending until it is spent.</p>"
+  },
+  "who": {
+    "h2": "Who is Joint account for?",
+    "html": "<p>Couples who pay some shared bills from a joint account and top it up from their own money. If all your shared costs are paid from your own accounts, you do not need it: <a href=\"/features/shared-expenses/\">Shared expenses</a> covers that.</p>"
+  },
+  "steps": {
+    "h2": "How do you set up a joint account in EvenUS?",
+    "intro": "Open Money, tap “Joint account” under Plan, switch on “We have a joint account”, choose how you aim to fund it, then record top-ups and pick Joint account as the payer.",
+    "items": [
+      {
+        "name": "Switch it on",
+        "text": "Open the Money tab, then under Plan tap “Joint account”, and switch on “We have a joint account”."
+      },
+      {
+        "name": "Say how you aim to fund it",
+        "text": "Under “How you aim to fund it”, choose By income, so each of you puts in your income share, or Half each."
+      },
+      {
+        "name": "Record your top-ups",
+        "text": "Each time you top it up, tap “I put money in” and record your own amount. Under “When did it go in?” pick the day, any day in the last 29 days, so a top-up you forgot to log still lands on the right date."
+      },
+      {
+        "name": "Pay expenses from it",
+        "text": "When you add an expense paid from the account, choose Joint account under “Who paid?”. EvenUS works out whose money it was."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see?",
+    "html": "<p><strong>You both see what is in the account, this month’s spending from it and each top-up with who put it in.</strong> The screen describes the account, never a person. If it has paid out more than went in, it suggests a top-up that would bring it back level, split by your target, in plain numbers.</p><p>Each of you records, and can take back, only your own top-ups. Taking one back is there for mistakes, like a top-up entered twice.</p>"
+  },
+  "tips": {
+    "h2": "Tips for running a joint account in EvenUS",
+    "items": [
+      "Set up “Your standing order” with the amount and the day of the month, and EvenUS offers to record it each month. You still tap “Record it”, so nothing is entered that did not happen.",
+      "Spending beyond what is in the account counts the way you aim to fund it, until the next top-up covers it.",
+      "Log a top-up within 29 days of making it. The day you pick decides which money counts as oldest.",
+      "Write down which bills come out of the joint account in a <a href=\"/features/money-agreement/\">Money agreement</a>."
+    ]
+  },
+  "extra": [
+    {
+      "h2": "Why oldest money first?",
+      "html": "<p>Because it matches how a shared account is really used. Say Sam puts in 600 on the 1st and Alex puts in 400 on the 15th. A 100 food shop on the 20th counts as paid by Sam, because Sam’s money was in the account first. Once Sam’s 600 has been spent, the next payments count as Alex’s. Each part adds up to the expense exactly.</p><p>Top-ups themselves are not spending: moving money into a shared account has not bought anything yet.</p>"
+    },
+    {
+      "h2": "What happens when someone joins or leaves the household?",
+      "html": "<p>What was already spent stays as it was. A shortfall from before someone joined or left stays with the people who ran it up, and a later top-up never quietly repays it. Someone who was there can choose to put a top-up towards it by switching on “Use this top-up to cover the earlier shortfall”. It covers their own part first, and the rest shows under Before the household changed on Money, never in what the two of you even up now.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Does EvenUS connect to our joint bank account?",
+      "a": "No. EvenUS never connects to a bank. You record each top-up yourself, with the day it went in, or tap Record it when your standing order comes round."
+    },
+    {
+      "q": "Who counts as paying for something bought from the joint account?",
+      "a": "Whoever put that money in, oldest money first. If the account is empty, the cost counts the way you aim to fund it, by income or half each, until a top-up covers it."
+    },
+    {
+      "q": "Can my partner remove a top-up I recorded?",
+      "a": "No. Each of you records, and can take back, only your own top-ups. Taking one back is meant for mistakes, such as a top-up entered twice."
+    },
+    {
+      "q": "Do we still need to even up if we have a joint account?",
+      "a": "Sometimes. If your top-ups match your target, what comes out of the account will usually be close to even. If they drift, the Even up card shows one figure for who would send what to square everything, including joint spending."
+    }
+  ],
+  "relatedPosts": [
+    "yours-mine-and-ours-bank-accounts",
+    "manage-household-finances-without-a-joint-bank-account",
+    "how-to-split-bills"
+  ]
+}

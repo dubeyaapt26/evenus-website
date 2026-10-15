@@ -1,0 +1,82 @@
+{
+  "id": "settle-up",
+  "h1": "Even up: one figure for who sends what to settle up",
+  "seoTitle": "Settle Up With Your Partner: Even Up in EvenUS",
+  "description": "One running figure shows which way money goes to square your shared costs. How Even up works, what your partner sees and how a payment is recorded.",
+  "updated": "2026-10-15",
+  "answer": "Even up is the card at the top of the Money tab in EvenUS. It shows one running figure: how much would pass from one of you to the other to square every shared cost not yet evened up, carried across weeks and months. When the sending partner pays and records it, the card clears and the payment is not counted as household spending.",
+  "what": {
+    "h2": "What does Even up do?",
+    "html": "<p><strong>It turns a long list of shared costs into one amount and one direction, so settling up is a single payment instead of an afternoon with a spreadsheet.</strong> When you take turns paying, the “To even up” card says where that leaves you, with a name, an arrow and a figure.</p><p>The figure comes from every <a href=\"/features/shared-expenses/\">shared expense</a> either of you has added, split the way your household chose in <a href=\"/features/money-mode/\">How costs split</a>. It is not reset each week: anything not yet evened up carries on until it is.</p><p>When the money moves, recording it squares the split. The payment is listed under Expenses as evening up and never counted as household spending, so it does not inflate what you spent together that month.</p>"
+  },
+  "who": {
+    "h2": "Who is Even up for?",
+    "html": "<p>Couples who keep their own accounts and like to square things now and then: every Friday, on payday, or whenever the figure feels large enough to bother with. It also suits couples with a <a href=\"/features/joint-account/\">joint account</a> for some bills, because spending from it counts as paid by whoever put that money in.</p>"
+  },
+  "steps": {
+    "h2": "How do you settle up with your partner in EvenUS?",
+    "intro": "Open Money, read the “To even up” card, pay the amount the way you like from the sending phone, then tap “Record a payment”, check the amount and the day, and tap “Save”.",
+    "items": [
+      {
+        "name": "Read the card",
+        "text": "Open the Money tab. The “To even up” card shows the amount and which way it goes, carried across weeks and months until it’s evened up."
+      },
+      {
+        "name": "Pay from the sending phone",
+        "text": "On the phone of the person sending, tap “Pay now” to open a payment app with the amount filled in, or pay however you like: a bank transfer, cash, anything."
+      },
+      {
+        "name": "Record the payment",
+        "text": "Tap “Record a payment”. The amount and today’s date are filled in. If you paid part of it, or paid on another day, change the amount or the day, add a note if you like, then tap “Save”."
+      },
+      {
+        "name": "See it settle",
+        "text": "The payment appears under Expenses as evening up, and the card goes once everything is even. Both phones update."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see?",
+    "html": "<p><strong>You both see the same card and the same amount, with the same direction.</strong></p><p>The “Pay now” and “Record a payment” buttons appear only on the sending phone. The other phone carries a short note instead: it is recorded from the sending side, whenever suits you both. Nobody can mark money as received on someone else’s behalf, and there is no button to prompt your partner to pay.</p><p>Personal spending hidden with <a href=\"/features/personal-spending-privacy/\">Hide my personal spending detail</a> still counts in the amount, because the amount has to be right, but your partner sees only “A personal expense” on that line.</p>"
+  },
+  "tips": {
+    "h2": "Tips for evening up without fuss",
+    "items": [
+      "Pick a rhythm that suits you both, such as the first weekend of the month. The card carries everything until then.",
+      "If the full history can’t be read, for example offline, the card shows “Try again” instead of a partial figure.",
+      "Add each partner’s handle under <a href=\"/features/pay-now/\">Your payment details</a> so “Pay now” fills in the amount for you.",
+      "With End up with the same, the monthly levelling between your incomes has its own line, Levelling for the month, counted by the days you had that split. “Record levelling” marks it paid, and it is never added to the amount to even up. Anything left from an earlier month shows as “Still open from” that month.",
+      "Paid half now and half next week? Record each part with its own amount and day. The card keeps the rest until it is even."
+    ]
+  },
+  "extra": [
+    {
+      "h2": "Why does evening up bring the household balance back to even?",
+      "html": "<p>The money part of the <a href=\"/features/fairness-score/\">household balance</a> reads what is still to even up between you, never who happened to pay this week. Say Alex and Sam split by income, 60 and 40. Sam buys groceries for 100 and Alex pays a 50 energy bill. Alex’s share of the 150 is 90 and Sam’s is 60, so the card shows 40 from Alex to Sam. Once Alex sends 40 and records it, the money side reads even again. Taking turns to pay reads exactly the same as splitting every bill at the till.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Does recording a payment count as household spending?",
+      "a": "No. A payment between the two of you only squares the split. It is listed under Expenses as evening up, but it is left out of spending totals and budgets."
+    },
+    {
+      "q": "Can I record a part payment or one made on another day?",
+      "a": "Yes. “Record a payment” lets you change the amount and the day before you tap “Save”. A part payment brings the card down by that much, and the rest stays until it is evened up. Payments are recorded from the sending side only."
+    },
+    {
+      "q": "Does EvenUS move the money for me?",
+      "a": "No. EvenUS never connects to a bank and cannot send money. You pay through your own banking or payment app, or in cash, and then record it."
+    },
+    {
+      "q": "Is Even up part of EvenUS Pro?",
+      "a": "No. Even up keeps working after the 7-day free week whether or not you subscribe, along with adding expenses and recording payments. EvenUS Pro covers computed views such as the household balance and the weekly idea."
+    }
+  ],
+  "relatedPosts": [
+    "how-to-split-bills",
+    "manage-household-finances-without-a-joint-bank-account",
+    "building-a-family-ledger",
+    "income-proportional-bill-splitting"
+  ]
+}

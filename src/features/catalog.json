@@ -1,0 +1,3193 @@
+{
+ "source": "evenus/docs/features.json (generated from src/lib/features/catalog.ts). English only. Do not edit by hand: run node src/features/sync-catalog.mjs.",
+ "groups": [
+  {
+   "id": "share-money",
+   "title": "Share money",
+   "features": [
+    "shared-expenses",
+    "settle-up",
+    "pay-now",
+    "upi-pay",
+    "venmo-pay",
+    "money-mode",
+    "regular-bills",
+    "budgets",
+    "subscriptions",
+    "savings-goals",
+    "joint-account",
+    "money-agreement",
+    "tax-year-summary",
+    "household-help",
+    "where-money-goes"
+   ]
+  },
+  {
+   "id": "share-housework",
+   "title": "Share the housework",
+   "features": [
+    "chores-effort",
+    "chore-time",
+    "chore-templates",
+    "chore-reminders",
+    "weekly-catchup",
+    "mental-load-map",
+    "time-of-your-own",
+    "shopping-list",
+    "home-maintenance"
+   ]
+  },
+  {
+   "id": "kids-family",
+   "title": "Kids and family",
+   "features": [
+    "children",
+    "support-payments",
+    "childcare",
+    "parental-leave",
+    "away-mode",
+    "pets"
+   ]
+  },
+  {
+   "id": "plan-together",
+   "title": "Plan together",
+   "features": [
+    "fairness-score",
+    "weekly-idea",
+    "private-checkin",
+    "seen-differently",
+    "sunday-talk",
+    "thank-you-notes",
+    "year-in-review",
+    "date-night",
+    "hosting",
+    "invite-partner"
+   ]
+  },
+  {
+   "id": "reminders-calendar",
+   "title": "Reminders and calendar",
+   "features": [
+    "household-reminders",
+    "document-renewals",
+    "calendar-export",
+    "calendar-busy-time",
+    "partner-activity"
+   ]
+  },
+  {
+   "id": "faster-adding",
+   "title": "Faster adding",
+   "features": [
+    "quick-add",
+    "receipt-scan",
+    "apple-pay-capture",
+    "statement-import",
+    "splitwise-import",
+    "home-widget",
+    "watch",
+    "siri-shortcuts",
+    "android-shortcuts"
+   ]
+  },
+  {
+   "id": "privacy-data",
+   "title": "Privacy and your data",
+   "features": [
+    "personal-spending-privacy",
+    "activity-log",
+    "data-export",
+    "delete-account"
+   ]
+  },
+  {
+   "id": "settings-help",
+   "title": "Settings and help",
+   "features": [
+    "dark-mode",
+    "language",
+    "household-settings",
+    "when-someone-leaves",
+    "previous-household",
+    "subscription",
+    "trial-tips",
+    "help-feedback"
+   ]
+  }
+ ],
+ "features": [
+  {
+   "id": "shared-expenses",
+   "group": "share-money",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/finance/add",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "settle-up",
+    "receipt-scan",
+    "quick-add",
+    "money-mode"
+   ],
+   "keywords": [
+    "expense",
+    "spending",
+    "paid",
+    "bill",
+    "split",
+    "cost",
+    "purchase",
+    "groceries",
+    "rent"
+   ],
+   "title": "Shared expenses",
+   "oneLiner": "Log what either of you paid for, and EvenUS splits it the way you’ve chosen.",
+   "whoFor": "Any couple who shares costs, from the weekly shop to the rent. Most entries are a number and Save.",
+   "steps": [
+    "Open Money and tap “Add an expense”.",
+    "Type the amount and what it was for. The day, you as the payer and your usual split are already filled in.",
+    "If this one is different, change “Who paid?” or “How should it be shared?”: by income, half each, just one of you, or custom.",
+    "Tap “Save expense”. It appears under Expenses on both phones."
+   ],
+   "tips": [
+    "Under “More options” you can mark a part that was just for you, money paid back by work, insurance or a refund, or add a note.",
+    "You can also scan a receipt to fill in the form. The photo stays on this phone.",
+    "Only the person who added an expense can change or delete it, and every change to a number is listed on the expense."
+   ],
+   "partnerSees": "Your partner sees each shared expense, who paid and how it was split. If you switch on “Hide my personal spending detail”, anything marked just yours shows to them as “A personal expense” with its amount only. There is no filter by person.",
+   "countryNotes": null,
+   "where": "Money → Add an expense",
+   "whereParts": [
+    "Money",
+    "Add an expense"
+   ]
+  },
+  {
+   "id": "settle-up",
+   "group": "share-money",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/finance",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "pay-now",
+    "shared-expenses",
+    "money-mode"
+   ],
+   "keywords": [
+    "settle",
+    "settle up",
+    "even up",
+    "balance",
+    "pay back",
+    "record a payment",
+    "square up"
+   ],
+   "title": "Even up",
+   "oneLiner": "One running figure shows who would send what to even up everything not yet evened up.",
+   "whoFor": "Couples who pay from separate accounts and like to square things now and then, weekly or whenever suits you both.",
+   "steps": [
+    "Open Money. The “To even up” card shows the amount and which way it goes, carried across weeks and months until it’s evened up.",
+    "On the sending phone, tap “Pay now” to open a payment app, or pay however you like.",
+    "Tap “Record a payment”, check the amount and the day (change them for a part payment or another day), then tap “Save”.",
+    "The payment shows under Expenses as evening up, and the card goes once everything is even."
+   ],
+   "tips": [
+    "A payment between you two squares the split. It isn’t counted as household spending. The money part of the household balance reads what is still to even up, never who paid this week, so evening up brings it back to even.",
+    "If the full history can’t be read, for example offline, the card shows “Try again” instead of a partial figure.",
+    "With End up with the same, the month’s levelling between your incomes has its own line below, Levelling for the month. It counts the days that month you had that split and were both in the household, from the day someone joined, or someone left, is never added to the amount to even up, and “Record levelling” marks it paid. What was left of an earlier month stays on as “Still open from” that month until it is recorded."
+   ],
+   "partnerSees": "You both see the same card and the same amount. The buttons appear only on the sending phone; the other phone notes that it’s recorded from the sending side.",
+   "countryNotes": null,
+   "where": "Money → To even up",
+   "whereParts": [
+    "Money",
+    "To even up"
+   ]
+  },
+  {
+   "id": "pay-now",
+   "group": "share-money",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/profile/payment-details",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "settle-up",
+    "upi-pay",
+    "venmo-pay"
+   ],
+   "keywords": [
+    "pay now",
+    "paypal",
+    "payment link",
+    "transfer",
+    "send money",
+    "handle"
+   ],
+   "title": "Pay now",
+   "oneLiner": "Opens a payment app with your partner’s handle and the amount filled in, then asks whether it went through.",
+   "whoFor": "Couples who even up through UPI, PayPal, Venmo or a bank payment link and would rather not copy numbers across.",
+   "steps": [
+    "Each of you opens Us → Your details → “Your payment details”, adds your own UPI ID, PayPal.me username, Venmo username or payment link, and taps Save.",
+    "When the “To even up” card on Money shows you as the sender, tap “Pay now”, and pick an app if there’s a choice.",
+    "Check the amount in the payment app and send it there.",
+    "Come back to EvenUS and answer “Did the payment go through?”. Tap the “Yes, record” button to record it, or “Not yet” to leave the card as it is."
+   ],
+   "tips": [
+    "EvenUS can’t see your payment app, so nothing is recorded unless you say yes.",
+    "Add a handle, not an account number, card number or password. The payment app shows the registered name before anything moves.",
+    "If the app doesn’t open, pay however suits you and use “Record a payment” afterwards."
+   ],
+   "partnerSees": "Your handles are used only to build your partner’s “Pay now” link to you, and their payment app shows them when they pay. Each of you can add or change only your own.",
+   "countryNotes": "UPI is offered in INR households, Venmo in USD households, and PayPal in the currencies PayPal.me accepts. A payment link works anywhere, but the amount isn’t filled in there. Apple Pay isn’t offered, because it can’t take a person-to-person amount from another app.",
+   "where": "Us → Your details → Your payment details",
+   "whereParts": [
+    "Us",
+    "Your details",
+    "Your payment details"
+   ]
+  },
+  {
+   "id": "upi-pay",
+   "group": "share-money",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": [
+    "INR"
+   ],
+   "inAppRoute": "/(tabs)/profile/payment-details",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "pay-now",
+    "settle-up"
+   ],
+   "keywords": [
+    "upi",
+    "upi id",
+    "vpa",
+    "gpay",
+    "google pay",
+    "phonepe",
+    "paytm",
+    "bhim"
+   ],
+   "title": "Pay with UPI",
+   "oneLiner": "Even up through any UPI app, with your partner’s UPI ID and the amount already filled in.",
+   "whoFor": "Rupee households where you use Google Pay, PhonePe, Paytm or another UPI app.",
+   "steps": [
+    "The person being paid opens Us → Your details → “Your payment details”, enters their UPI ID (it looks like name@bank) and taps Save.",
+    "On Money, when the “To even up” card shows you as the sender, tap “Pay now”, then “Pay with UPI” if there’s a choice.",
+    "Your phone offers your UPI apps. Check the name and amount there, then pay with your UPI PIN as usual.",
+    "Back in EvenUS, answer “Did the payment go through?”. Only a yes records it."
+   ],
+   "tips": [
+    "A typo in a UPI ID is caught by your UPI app, which shows the registered name before anything moves.",
+    "The payment note reads “EvenUS settle up”, so it’s easy to spot in your bank statement."
+   ],
+   "partnerSees": "Your partner’s UPI app shows your UPI ID and registered name when they pay you. In EvenUS it’s used only for that link, and each of you can change only your own.",
+   "countryNotes": "Only for households whose currency is INR. A UPI amount is in rupees, so it isn’t offered for other currencies.",
+   "where": "Us → Your details → Your payment details",
+   "whereParts": [
+    "Us",
+    "Your details",
+    "Your payment details"
+   ]
+  },
+  {
+   "id": "venmo-pay",
+   "group": "share-money",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": [
+    "USD"
+   ],
+   "inAppRoute": "/(tabs)/profile/payment-details",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "pay-now",
+    "settle-up"
+   ],
+   "keywords": [
+    "venmo",
+    "venmo username",
+    "pay back"
+   ],
+   "title": "Pay with Venmo",
+   "oneLiner": "Even up through Venmo, with your partner’s username and the amount already filled in.",
+   "whoFor": "US dollar households where you both use Venmo.",
+   "steps": [
+    "The person being paid opens Us → Your details → “Your payment details”, enters their Venmo username and taps Save.",
+    "On Money, when the “To even up” card shows you as the sender, tap “Pay now”, then “Pay with Venmo” if there’s a choice.",
+    "Venmo opens with the amount and a note saying EvenUS. If the Venmo app isn’t on the phone, the Venmo website opens instead.",
+    "Send it in Venmo, then come back and answer “Did the payment go through?”. Only a yes records it."
+   ],
+   "tips": [
+    "You can paste your username with or without the @, or as a venmo.com link. EvenUS keeps just the username."
+   ],
+   "partnerSees": "Your partner’s Venmo shows your username when they pay you. In EvenUS it’s used only for that link, and each of you can change only your own.",
+   "countryNotes": "Only for households whose currency is USD, as Venmo works in the US only.",
+   "where": "Us → Your details → Your payment details",
+   "whereParts": [
+    "Us",
+    "Your details",
+    "Your payment details"
+   ]
+  },
+  {
+   "id": "money-mode",
+   "group": "share-money",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/profile/money-mode",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "money-agreement",
+    "where-money-goes",
+    "fairness-score"
+   ],
+   "keywords": [
+    "split",
+    "fifty fifty",
+    "50/50",
+    "by income",
+    "proportional",
+    "equal",
+    "what is left",
+    "allowance"
+   ],
+   "title": "How costs split",
+   "oneLiner": "Choose one of four ways to share household costs, and see what each would do with your own figures first.",
+   "whoFor": "Couples setting up EvenUS, or anyone whose pay has changed and who wants to look at the split again together.",
+   "steps": [
+    "Open Us → Household → “How costs split”, or tap Change beside the split on Money.",
+    "Tap any of the four: Split by income, Split evenly, End up with the same, or Split what’s spare.",
+    "Read “What that does”: each share of what you earn together, what each of you puts into shared costs, how what’s left over divides, and your own income after commitments and what you keep, from this month’s real figures.",
+    "Tap “Use this one” to switch. Nothing changes until you do."
+   ],
+   "tips": [
+    "None of the four is marked as recommended. Each one answers a different question about fairness.",
+    "Split by income can start with an amount you each keep first, and Split what’s spare lets you set the floor each of you keeps.",
+    "Child support, money sent to family and loan repayments can come off income first, under Payments and support."
+   ],
+   "partnerSees": "It’s one setting for the household, so you both see the same choice. Either of you can change it, and the activity feed notes the change.",
+   "countryNotes": null,
+   "where": "Us → Household → How costs split",
+   "whereParts": [
+    "Us",
+    "Household",
+    "How costs split"
+   ]
+  },
+  {
+   "id": "regular-bills",
+   "group": "share-money",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/finance/bills",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "subscriptions",
+    "budgets",
+    "childcare"
+   ],
+   "keywords": [
+    "bills",
+    "recurring",
+    "direct debit",
+    "standing order",
+    "utilities",
+    "electricity",
+    "internet",
+    "rent",
+    "emi"
+   ],
+   "title": "Regular bills",
+   "oneLiner": "Rent, utilities and anything that comes round again, added once and recorded as an expense each time it’s due.",
+   "whoFor": "Households with bills that repeat monthly, quarterly or yearly, who’d like the work of keeping an eye on them to count.",
+   "steps": [
+    "Open Money and tap the Regular bills card. While a bill is due soon, the card is called Bills coming up.",
+    "Tap “Add a bill”, then enter the name, the amount, how often and the due day of the month.",
+    "Answer “Whose account does it leave?” and “Who keeps an eye on this one?”. They can be different people.",
+    "Choose how it’s shared (or set amounts), pick the children it is for if any, and save. When it falls due, it’s added to Expenses the next time the paying partner opens EvenUS."
+   ],
+   "tips": [
+    "Keeping an eye on a bill is the noticing: renewals, comparing providers, chasing a payment that didn’t go through. The list shows it beside who pays.",
+    "If the due day is the 31st, shorter months use their last day.",
+    "“Stop tracking this bill” takes it off the list. The expenses it already added stay."
+   ],
+   "partnerSees": "You both see every bill, whose account it leaves, who keeps an eye on it and the expenses it adds. The summary states the count plainly, with no judgement attached.",
+   "countryNotes": null,
+   "where": "Money → Regular bills",
+   "whereParts": [
+    "Money",
+    "Regular bills"
+   ]
+  },
+  {
+   "id": "budgets",
+   "group": "share-money",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/finance/budgets",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "regular-bills",
+    "subscriptions",
+    "savings-goals"
+   ],
+   "keywords": [
+    "budget",
+    "monthly limit",
+    "category",
+    "spending plan",
+    "80%"
+   ],
+   "title": "Budgets",
+   "oneLiner": "A monthly amount for the categories you choose, beside what the household has spent so far this month.",
+   "whoFor": "Couples who’d like a calm view of one or two categories, like groceries or eating out, with no tally of who spent what.",
+   "steps": [
+    "Open Money, then under Plan tap Budgets.",
+    "Tap “Set budgets” and enter a month’s amount for the categories you want. Leave the rest blank.",
+    "Tap “Save budgets”. Each category gets a bar for this month, on this screen and on Money."
+   ],
+   "tips": [
+    "A budget carries over to the next month until you change it.",
+    "Past the amount, the bar changes to a darker shade and says how far over, in plain words. It doesn’t turn red.",
+    "Switch on “A note at 80%” for one quiet notification when a category reaches 80% of its month. It’s just for you and doesn’t say who spent what."
+   ],
+   "partnerSees": "Budgets are shared, so you both see the same amounts and bars. The 80% note is each person’s own choice. Personal spending whose detail is hidden is left out of category budgets for both of you.",
+   "countryNotes": null,
+   "where": "Money → Plan → Budgets",
+   "whereParts": [
+    "Money",
+    "Plan",
+    "Budgets"
+   ]
+  },
+  {
+   "id": "subscriptions",
+   "group": "share-money",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/finance/subscriptions",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "regular-bills",
+    "document-renewals",
+    "budgets"
+   ],
+   "keywords": [
+    "subscriptions",
+    "netflix",
+    "spotify",
+    "renewal",
+    "streaming",
+    "membership",
+    "gym"
+   ],
+   "title": "Subscriptions",
+   "oneLiner": "Everything that renews in one list, with what it all comes to a month and a reminder before a renewal if you want one.",
+   "whoFor": "Anyone with streaming, a gym, cloud storage or a phone plan renewing in the background.",
+   "steps": [
+    "Open Money, then under Track tap Subscriptions.",
+    "Tap “Add a subscription” and enter the name, what it costs each time, how often it renews, the next renewal and who pays it.",
+    "Pick a reminder if you like, a day or a week before. It goes only to whoever pays it.",
+    "Or tap “Look in our expenses”. EvenUS’s server checks the last year for the same thing at a similar price every month or year, and lists what it finds."
+   ],
+   "tips": [
+    "Those are only suggestions. Nothing is added until you tap “Add it”.",
+    "Yearly ones count as a twelfth each month in the total."
+   ],
+   "partnerSees": "You both see the list and the monthly total. A reminder for your partner reaches only them, doesn’t say who set it, and they can switch it off. A partner’s hidden personal spending isn’t used for suggestions.",
+   "countryNotes": null,
+   "where": "Money → Track → Subscriptions",
+   "whereParts": [
+    "Money",
+    "Track",
+    "Subscriptions"
+   ]
+  },
+  {
+   "id": "savings-goals",
+   "group": "share-money",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/finance/goals",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "budgets",
+    "joint-account",
+    "money-mode"
+   ],
+   "keywords": [
+    "savings",
+    "goal",
+    "save up",
+    "holiday fund",
+    "emergency fund",
+    "deposit",
+    "target"
+   ],
+   "title": "Savings goals",
+   "oneLiner": "Something you’re saving towards together, with one bar that fills as either of you puts money in.",
+   "whoFor": "Couples saving for a holiday, a deposit or a new sofa who’d like to watch it build up.",
+   "steps": [
+    "Open Money, then under Plan tap “Savings goals”.",
+    "Tap “Add a goal” (“Add another goal” once you have one), enter what it’s for and how much, choose Whenever or a date under “By when”, then tap “Add the goal”.",
+    "Tap “Put money in” on a goal to record what you put in yourself."
+   ],
+   "tips": [
+    "With a date, EvenUS suggests a monthly pace split the way you split shared costs. It’s a pace, not a deadline, and nothing changes if you get there later.",
+    "Only you can take back what you put in. “Put it away” takes a goal off the list for both of you and keeps what was put in recorded."
+   ],
+   "partnerSees": "You both see each goal, the total saved and the suggested pace. Each of you records your own money in, and the bar shows the household total, not a tally per person.",
+   "countryNotes": null,
+   "where": "Money → Plan → Savings goals",
+   "whereParts": [
+    "Money",
+    "Plan",
+    "Savings goals"
+   ]
+  },
+  {
+   "id": "joint-account",
+   "group": "share-money",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/finance/pot",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "money-mode",
+    "money-agreement",
+    "shared-expenses"
+   ],
+   "keywords": [
+    "joint account",
+    "pot",
+    "shared account",
+    "yours mine ours",
+    "top up",
+    "kitty"
+   ],
+   "title": "Joint account",
+   "oneLiner": "Spending from a joint account counts as paid by whoever put that money in, oldest money first.",
+   "whoFor": "Couples who pay some shared bills from a joint account and top it up from their own money.",
+   "steps": [
+    "Open Money, then under Plan tap “Joint account”, and switch on “We have a joint account”.",
+    "Under “How you aim to fund it”, choose By income or Half each.",
+    "Each time you top it up, tap “I put money in” and record your own amount and the day, up to 29 days back.",
+    "When you add an expense paid from it, choose Joint account under “Who paid?”."
+   ],
+   "tips": [
+    "Set up “Your standing order” and EvenUS offers to record it each month. You still tap “Record it”.",
+    "Spending beyond what’s in the account counts the way you aim to fund it, until the next top-up covers it. A shortfall from before someone joined or left stays with the people who ran it up: a later top-up never quietly repays it. Someone who was there can choose to put a top-up towards it: “Use this top-up to cover the earlier shortfall”. It covers their own part first; the rest shows under Before the household changed, never in what the two of you even up now.",
+    "If the account has paid out beyond what went in, the screen suggests a top-up split by your target, in plain numbers."
+   ],
+   "partnerSees": "You both see what’s in the account, this month’s spending from it and each top-up with who put it in. Each of you records, and can take back, only your own top-ups.",
+   "countryNotes": null,
+   "where": "Money → Plan → Joint account",
+   "whereParts": [
+    "Money",
+    "Plan",
+    "Joint account"
+   ]
+  },
+  {
+   "id": "money-agreement",
+   "group": "share-money",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/finance/agreement",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "money-mode",
+    "joint-account",
+    "sunday-talk"
+   ],
+   "keywords": [
+    "agreement",
+    "rules",
+    "who pays what",
+    "default split",
+    "review date"
+   ],
+   "title": "Money agreement",
+   "oneLiner": "A short written note of how you share each kind of cost, which you both agree to.",
+   "whoFor": "Couples who’ve talked through who covers what and want new expenses to start that way.",
+   "steps": [
+    "Open Money, then under Plan tap “Money agreement”, then “Write one together”.",
+    "For each category choose Not covered, By income, Half each, Our own % or Each their own. Add notes and a date to look at it again if you like.",
+    "Tap Save. Saving counts as you agreeing; your partner opens the same screen and taps “I agree”.",
+    "Once you’ve both agreed, a new expense in a covered category starts with the split you chose."
+   ],
+   "tips": [
+    "Expenses already saved keep their split, and you can still choose differently on any one new expense.",
+    "Any change makes a new version, which you both agree to again. Either of you can tap “End this agreement”; new expenses then go back to your usual split.",
+    "A review date sends one ordinary reminder to both of you to look at it together."
+   ],
+   "partnerSees": "You both see the same agreement and whether each of you has agreed to this version. Nothing is scored, and the app doesn’t track whether it’s kept.",
+   "countryNotes": null,
+   "where": "Money → Plan → Money agreement",
+   "whereParts": [
+    "Money",
+    "Plan",
+    "Money agreement"
+   ]
+  },
+  {
+   "id": "tax-year-summary",
+   "group": "share-money",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/finance/tax-year",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "data-export",
+    "statement-import"
+   ],
+   "keywords": [
+    "tax",
+    "tax year",
+    "annual summary",
+    "pdf",
+    "csv",
+    "accountant",
+    "financial year"
+   ],
+   "title": "Tax-year summary",
+   "oneLiner": "Your shared spending for one tax year, by category and by who paid, as a PDF and a CSV.",
+   "whoFor": "Anyone filing a return, looking up childcare or health costs, or handing a tidy record to an accountant.",
+   "steps": [
+    "Open Money, then under Reports tap “Tax-year summary”.",
+    "Check the dates under “The tax year runs” and pick “Which year”.",
+    "Tap “Make the summary”, then “Share PDF” or “Share CSV”."
+   ],
+   "tips": [
+    "It’s a record of what you spent together, not tax advice. Childcare and health are picked out because those are the lines people look for.",
+    "The year is added up on EvenUS’s server when you tap, and the PDF and CSV are made on this phone."
+   ],
+   "partnerSees": "Either of you can make one. A partner’s personal spending whose detail is hidden appears as “A personal expense”, and purely personal money is left out altogether.",
+   "countryNotes": "The tax year follows your household’s country: UK 6 April to 5 April, India 1 April to 31 March, Australia 1 July to 30 June, US and Canada 1 January to 31 December. Elsewhere it runs from 1 January, and you can change it on the screen. In the US, the childcare and health totals come with a note about FSA and HSA claims.",
+   "where": "Money → Reports → Tax-year summary",
+   "whereParts": [
+    "Money",
+    "Reports",
+    "Tax-year summary"
+   ]
+  },
+  {
+   "id": "household-help",
+   "group": "share-money",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/finance/helpers",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "regular-bills",
+    "childcare",
+    "chores-effort"
+   ],
+   "keywords": [
+    "household help",
+    "maid",
+    "cook",
+    "cleaner",
+    "nanny",
+    "driver",
+    "attendance",
+    "salary",
+    "advance"
+   ],
+   "title": "Household help",
+   "oneLiner": "Days, pay and advances for anyone you employ at home, kept straight with a tap a day.",
+   "whoFor": "Households with a maid, cook, nanny, driver, gardener or cleaner, paid by the month, the week or the visit.",
+   "steps": [
+    "Open Money, then under Track tap “Household help”, then “Add someone”.",
+    "Enter their name, what they do, their pay and the days they usually come, then tap “Add them”.",
+    "Each day, tap Came, Half day, Leave or Didn’t come under Today on their card. Tap the same one again to clear the day.",
+    "Tap Month to see the calendar, then “Record pay” or “An advance”, and choose who paid and on which day."
+   ],
+   "tips": [
+    "An advance comes off that month’s pay. Whatever goes beyond that month’s pay comes off the months after.",
+    "If you set the days of leave you’ve agreed, the card notes when a month goes past it. The pay stays as it is; that’s for you to talk over with them.",
+    "Pay and advances are saved as Household help expenses, split the way you split shared costs. A first or last day (in Edit) makes that month a part month, paid for its days. When someone stops working for you, open them, tap Edit, then “No longer working for us”. They move to Past help, where “Bring back” returns them."
+   ],
+   "partnerSees": "It’s shared, like bills: you both see the same days and payments, and either of you can mark a day or record pay. Each payment shows who paid it.",
+   "countryNotes": null,
+   "where": "Money → Track → Household help",
+   "whereParts": [
+    "Money",
+    "Track",
+    "Household help"
+   ]
+  },
+  {
+   "id": "where-money-goes",
+   "group": "share-money",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/insights/money",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "money-mode",
+    "fairness-score",
+    "support-payments"
+   ],
+   "keywords": [
+    "where the money goes",
+    "take-home",
+    "left over",
+    "personal money",
+    "income share"
+   ],
+   "title": "Where the money goes",
+   "oneLiner": "One month, both of you: each share of what you earn together, each share of shared costs, and how what’s left over divides.",
+   "whoFor": "Couples who want to see how the split lands on two incomes, line by line.",
+   "steps": [
+    "Open Insights and tap Money.",
+    "Read down the sum: each share of what you earn together, your own income after commitments, each share of shared costs, then what’s left over. Your own figures show in full, the other person’s as shares.",
+    "To try a different split, tap “Change how shared costs split”."
+   ],
+   "tips": [
+    "It needs both of you, and a month of shared costs to work from.",
+    "The last card lists what one month can’t see, like pensions and anything held before you lived together.",
+    "If one of you has very little left that isn’t already accounted for, a note says so about the arrangement, not about either person."
+   ],
+   "partnerSees": "The same screen from their side: their own income after commitments and what they keep in full, and yours only as a share, never the amount. Incomes are what the split is worked out from, so with their own figures the shares let them work out yours exactly, and you theirs.",
+   "countryNotes": null,
+   "where": "Insights → Money",
+   "whereParts": [
+    "Insights",
+    "Money"
+   ]
+  },
+  {
+   "id": "chores-effort",
+   "group": "share-housework",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/chores",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "chore-time",
+    "chore-templates",
+    "chore-reminders",
+    "weekly-catchup",
+    "time-of-your-own"
+   ],
+   "keywords": [
+    "chores",
+    "effort",
+    "housework",
+    "tasks",
+    "cleaning",
+    "cooking",
+    "laundry",
+    "dishes",
+    "done"
+   ],
+   "title": "Effort",
+   "oneLiner": "One shared list of the housework, where each chore you finish records the time it really took.",
+   "whoFor": "For any couple who wants the everyday work of the house to be seen, not just done. It helps most when the same few jobs seem to happen by themselves.",
+   "steps": [
+    "Open the Effort tab and tap Add a chore, or start from Browse templates.",
+    "Give it a name, the minutes it usually takes, how often it comes round, and who owns it.",
+    "Tap the circle next to a chore when you finish it. Tap the Done button for about the usual time, or put in when you started and finished and tap Save. Long press the circle to start a timer instead.",
+    "Long press a chore for Done…, to hand it over, park it for a bit, skip this one, or remove it. A ticked circle can be tapped again: done again, or undo your own entry. Removing keeps everything already logged, and on a removed chore’s page Restore puts it back."
+   ],
+   "tips": [
+    "Owning a chore means noticing it needs doing, not just doing it when asked.",
+    "Only the time you log counts, never the estimate, and entries that overlap count once. Each log keeps its minutes, so editing a chore later never changes a past week. A one-off chore leaves the list the day after it’s done, and comes back by itself if you remove its only entry under Add a chore you did.",
+    "Filling in What does done look like saves the “done, but not properly” conversation later."
+   ],
+   "partnerSees": "Your partner sees the same list, who owns each chore, and the week’s Housework logged. A tick shows who did it. Skipping or parking a chore sends nobody a message.",
+   "countryNotes": null,
+   "where": "Effort → Add a chore",
+   "whereParts": [
+    "Effort",
+    "Add a chore"
+   ]
+  },
+  {
+   "id": "chore-time",
+   "group": "share-housework",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/chores/log",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "chores-effort",
+    "weekly-catchup",
+    "time-of-your-own",
+    "quick-add"
+   ],
+   "keywords": [
+    "add a chore",
+    "forgot",
+    "late",
+    "timer",
+    "start time",
+    "end time",
+    "how long",
+    "minutes",
+    "yesterday",
+    "correct",
+    "change time"
+   ],
+   "title": "Add a chore you did",
+   "oneLiner": "Record the real time a chore took, run a timer while you do it, or add one you forgot, up to 31 days back.",
+   "whoFor": "For anyone who finishes a job and forgets to tick it off, or wants the week to show the time the work really took.",
+   "steps": [
+    "Open the Effort tab and tap Add a chore you did.",
+    "Pick the chore, or tap Something else and say what you did.",
+    "Tap Next: the time, choose the day, put in when you started and finished, then tap Save.",
+    "To fix one of yours, tap it under Your entries, last 31 days, then change the time or tap Remove."
+   ],
+   "tips": [
+    "Only the time you log counts, never the estimate. While there is less than an hour logged between you this week, or you have been home together for less than two days, the time part of the balance waits, and never says who.",
+    "On the Effort tab, long press a chore’s circle to start a timer. Tap Done on the banner when you finish, or Cancel to throw it away.",
+    "Tell EvenUS, Siri and the watch understand lines like did the dishes 20 min yesterday 7pm: the minutes end at the time you said."
+   ],
+   "partnerSees": "Your partner sees the chore as done in the week you did it, with its minutes. A timer stays on your phone until you save it, and only you can change or remove your own entries; a change or a removal shows in the activity feed.",
+   "countryNotes": null,
+   "where": "Effort → Add a chore you did",
+   "whereParts": [
+    "Effort",
+    "Add a chore you did"
+   ]
+  },
+  {
+   "id": "chore-templates",
+   "group": "share-housework",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/chores/templates",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "chores-effort",
+    "mental-load-map"
+   ],
+   "keywords": [
+    "templates",
+    "starter list",
+    "common chores",
+    "setup",
+    "hours a week"
+   ],
+   "title": "Chore templates",
+   "oneLiner": "Set up the house’s usual chores in a couple of taps, with the weekly hours added up as you pick.",
+   "whoFor": "For a couple setting up for the first time, or anyone who would rather not write out forty chores by hand.",
+   "steps": [
+    "Open the Effort tab and tap Chore templates.",
+    "Tap Use a common starting set, or pick chores one at a time. The chips at the top narrow the list by area.",
+    "Watch the weekly hours add up at the bottom, then tap the Add button. It shows how many you picked, like Add 12."
+   ],
+   "tips": [
+    "The hours are the work your house needs, before anyone logs a thing. That is often the useful number to talk about.",
+    "Everything added can be edited afterwards: the minutes, how often, and who owns it.",
+    "Templates for children only show up once you’ve added children under Us."
+   ],
+   "partnerSees": "The chores appear on your partner’s phone straight away. A chore keeps the name it was added with, in the language the app was in at the time.",
+   "countryNotes": null,
+   "where": "Effort → Chore templates",
+   "whereParts": [
+    "Effort",
+    "Chore templates"
+   ]
+  },
+  {
+   "id": "chore-reminders",
+   "group": "share-housework",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/chores",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "chores-effort",
+    "household-reminders"
+   ],
+   "keywords": [
+    "chore reminder",
+    "notification",
+    "time",
+    "bins",
+    "remind me"
+   ],
+   "title": "Chore reminders",
+   "oneLiner": "Put a time on a chore so the app holds the remembering, not either of you.",
+   "whoFor": "For the jobs that slip because nobody is holding the schedule, like the bins or the plants.",
+   "steps": [
+    "Open the Effort tab and tap a chore.",
+    "Tap Add a reminder.",
+    "Choose What time and, if you like, Which days, then tap Set the reminder.",
+    "If the reminder is for you, Turn this off on the chore switches it off, and Turn it back on brings it back."
+   ],
+   "tips": [
+    "Leave the days blank and it only comes up when the chore is actually about due.",
+    "Nothing arrives after 9:30 pm or before 8 am. On Android, a reminder can come a few minutes late while the phone is saving battery.",
+    "A chore needs an owner first. Reminders live on the chore, not on either of you."
+   ],
+   "partnerSees": "Only the chore’s owner gets the reminder, and it never says who set it. The owner can switch it off whenever they like, and nobody is told. Both of you see the reminder time on the chore.",
+   "countryNotes": null,
+   "where": "Effort → Any chore → Add a reminder",
+   "whereParts": [
+    "Effort",
+    "Any chore",
+    "Add a reminder"
+   ]
+  },
+  {
+   "id": "weekly-catchup",
+   "group": "share-housework",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/catchup",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "chores-effort",
+    "quick-add"
+   ],
+   "keywords": [
+    "catch up",
+    "catch-up",
+    "batch log",
+    "whole week",
+    "30 seconds",
+    "log the week"
+   ],
+   "title": "Catch up on the week",
+   "oneLiner": "Log the whole week’s recurring chores in about 30 seconds.",
+   "whoFor": "For weeks when ticking things off as you go didn’t happen, which is most weeks for most people.",
+   "steps": [
+    "Open the Effort tab and tap Catch up on the week. It shows up when recurring chores are waiting to be confirmed.",
+    "Everything is already ticked against whoever usually looks after it. Untick anything that didn’t happen, and tap a name to change who did it. For your own, set how long it really took, in all.",
+    "Tap Log these. If it was a quiet week, Log nothing this week is a fine answer too."
+   ],
+   "tips": [
+    "Anything already logged this week is left out, so nothing is asked twice.",
+    "You can undo any of these from the chores list."
+   ],
+   "partnerSees": "Each of you logs your own. Anything you mark as your partner’s is not logged by you; it waits in their own catch-up to confirm. Unticked chores are not counted against anyone, and nobody is told about them.",
+   "countryNotes": null,
+   "where": "Effort → Catch up on the week",
+   "whereParts": [
+    "Effort",
+    "Catch up on the week"
+   ]
+  },
+  {
+   "id": "mental-load-map",
+   "group": "share-housework",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/chores/domains",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "seen-differently",
+    "chores-effort",
+    "fairness-score"
+   ],
+   "keywords": [
+    "mental load",
+    "planning",
+    "invisible work",
+    "remembering",
+    "who keeps track",
+    "domains"
+   ],
+   "title": "Who keeps track of what",
+   "oneLiner": "A few private questions about the planning and remembering, so the part nobody sees gets counted.",
+   "whoFor": "For couples where one of you seems to hold the school forms, the birthdays and the next dentist visit in your head.",
+   "steps": [
+    "Open the Effort tab and, under Planning and remembering, tap Answer the questions. Once you’ve answered, the button reads Answer again or compare. It is also under Us, then Household → Who keeps track of what.",
+    "Tap Start. Each card is one area of the house; tap the answer that feels true and the next card follows.",
+    "Tap Doesn’t apply to us for anything that isn’t part of your life. You can stop and come back.",
+    "Once you have both finished, the Planning and remembering card shows who holds each area."
+   ],
+   "tips": [
+    "It takes around three minutes.",
+    "Answer as it actually feels. Where your answers differ, the card says seen differently, and neither answer is treated as the right one.",
+    "The planning hours count in time of your own only after both of you have finished."
+   ],
+   "partnerSees": "Nothing, until you have both finished. Neither of you sees the other’s answers before then, so there is no editing yours after seeing theirs. After that, you both see the same card. If someone leaves the household, every answer is cleared and the questions start again, so nothing said about one person is ever read as being about someone new.",
+   "countryNotes": null,
+   "where": "Effort → Planning and remembering → Answer the questions",
+   "whereParts": [
+    "Effort",
+    "Planning and remembering",
+    "Answer the questions"
+   ]
+  },
+  {
+   "id": "time-of-your-own",
+   "group": "share-housework",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/insights/time",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "fairness-score",
+    "calendar-busy-time",
+    "parental-leave"
+   ],
+   "keywords": [
+    "free time",
+    "time of your own",
+    "hours",
+    "discretionary",
+    "leisure",
+    "paid work",
+    "commute"
+   ],
+   "title": "Time of your own",
+   "oneLiner": "The hours each of you has left in a week once sleep, paid work, travel, the house and the children are counted.",
+   "whoFor": "For couples who suspect the housework split looks even but the weeks don’t feel it, often when one of you works long hours or does most of the school runs.",
+   "steps": [
+    "Look at Time of your own, this week on the This week tab, or open Insights, then Time.",
+    "Tap How this is worked out to see the sum, line by line.",
+    "If a line looks wrong, tap Change your hours to update your paid work and travel."
+   ],
+   "tips": [
+    "Every number is real clock hours. An hour is an hour, whatever anyone earns.",
+    "Household work counts what each of you logged, and nothing else: someone who logged nothing shows nothing. The time part waits only while there is less than an hour logged between you, or fewer than two days at home together."
+   ],
+   "partnerSees": "You both see the same numbers for both of you, and the same sum underneath. Pay never enters this view. Each of you changes only your own hours.",
+   "countryNotes": null,
+   "where": "Insights → Time",
+   "whereParts": [
+    "Insights",
+    "Time"
+   ]
+  },
+  {
+   "id": "shopping-list",
+   "group": "share-housework",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/chores/shopping",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "shared-expenses",
+    "quick-add",
+    "hosting"
+   ],
+   "keywords": [
+    "shopping list",
+    "groceries",
+    "list",
+    "milk",
+    "done shopping",
+    "buy"
+   ],
+   "title": "Shopping list",
+   "oneLiner": "One shared list either of you can add to, which turns into a single expense when the shop is done.",
+   "whoFor": "For couples who keep texting each other “we need milk”.",
+   "steps": [
+    "Open the Effort tab and tap Shopping list, then type in Add something, add How much if you like, and tap Add.",
+    "In the shop, tick things as they go in the trolley. Tap ✕ beside an item to take it off the list, and Undo puts it straight back. Press and hold an item to change it.",
+    "Tap Done shopping, pick what you bought, enter the total, and tap Check the expense.",
+    "Save the expense. Only then are those items cleared from the list."
+   ],
+   "tips": [
+    "You can add from Tell EvenUS too: type “add milk and eggs to the list”.",
+    "Nothing on the list counts towards anything. It is just a list.",
+    "If you hide your personal spending detail and mark part of a shop as just for you, your partner sees the whole shop as “A personal expense”: the amount, but not its title or category."
+   ],
+   "partnerSees": "Your partner sees the list change straight away. The finished shop arrives as one ordinary expense, paid by whoever did the shop, after you have checked it.",
+   "countryNotes": null,
+   "where": "Effort → Shopping list",
+   "whereParts": [
+    "Effort",
+    "Shopping list"
+   ]
+  },
+  {
+   "id": "home-maintenance",
+   "group": "share-housework",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/chores/maintenance",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "chores-effort",
+    "regular-bills"
+   ],
+   "keywords": [
+    "maintenance",
+    "gutters",
+    "filters",
+    "smoke alarm",
+    "boiler",
+    "service",
+    "seasonal",
+    "repairs"
+   ],
+   "title": "Home maintenance",
+   "oneLiner": "The jobs a home needs now and then, like filters, gutters and alarms, timed for your seasons.",
+   "whoFor": "For anyone whose smoke alarm battery is a surprise every year.",
+   "steps": [
+    "Open the Effort tab and tap Home maintenance.",
+    "Under Your home, choose House or Apartment, and We own it or We rent. The checklist follows your answers.",
+    "Tap Add on the jobs you want, choose who looks after each one, and tap Add to chores. Add your own covers anything missing.",
+    "When a job is done, tap Done, put in when you started and finished, and tap Save. You can add what it cost, or leave it."
+   ],
+   "tips": [
+    "Each job becomes an ordinary chore with its month. It turns up when it comes round and stays quiet the rest of the year.",
+    "Turn on Snowy winters if your winters freeze, to add the pipe and snow jobs."
+   ],
+   "partnerSees": "Your partner sees the same checklist and the same chores. A job set to Either of you can be done by either of you.",
+   "countryNotes": "The seasons come from your household’s country, and the months move by six for the southern hemisphere, so gutters land in the right autumn. You can change it under Seasons.",
+   "where": "Effort → Home maintenance",
+   "whereParts": [
+    "Effort",
+    "Home maintenance"
+   ]
+  },
+  {
+   "id": "children",
+   "group": "kids-family",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/profile/children",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "childcare",
+    "support-payments",
+    "parental-leave"
+   ],
+   "keywords": [
+    "children",
+    "kids",
+    "stepchildren",
+    "blended family",
+    "child costs",
+    "custody",
+    "school"
+   ],
+   "title": "Children",
+   "oneLiner": "Every child in the house, so their costs are shared the right way and the care is counted.",
+   "whoFor": "For any family with children at home some or all of the time, including stepchildren and children in your care.",
+   "steps": [
+    "Open Us, then Household → Children, and tap Add a child.",
+    "Add a name, pick the year and then the day of birth on the calendar, and say how often they are here. Add a child on Us → Household → Your household opens the same form.",
+    "Under Whose child, pick one of four answers: ours, yours from a previous relationship, your partner’s from a previous relationship, or another child in your care.",
+    "Open Needs, costs and who pays to set who pays for them and a rough monthly cost."
+   ],
+   "tips": [
+    "For a child from a previous relationship, their costs and everyday care start with their parent. EvenUS asks you once whether to share them instead, and the list shows which it is.",
+    "Care either of you logs counts fully for whoever does it, and takes the place of that person’s own share of the care estimate, never the other’s."
+   ],
+   "partnerSees": "Your partner sees the same children and the same answers. These choices shape how costs are split, and never how either of you is credited for the work.",
+   "countryNotes": null,
+   "where": "Us → Household → Children",
+   "whereParts": [
+    "Us",
+    "Household",
+    "Children"
+   ]
+  },
+  {
+   "id": "support-payments",
+   "group": "kids-family",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/profile/obligations",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "children",
+    "where-money-goes",
+    "money-mode"
+   ],
+   "keywords": [
+    "child support",
+    "spousal support",
+    "alimony",
+    "maintenance payment",
+    "court-ordered",
+    "commitments",
+    "loan"
+   ],
+   "title": "Money that’s already promised",
+   "oneLiner": "Record child support, spousal support or other money that leaves before this household sees it.",
+   "whoFor": "For anyone paying or receiving support, sending money to family, or repaying a loan, so shares are worked out on what is actually left.",
+   "steps": [
+    "Open Us, then Household → Money already promised.",
+    "Tap Add a commitment and choose What kind.",
+    "Enter How much and how often it is paid. Tick A court set this amount if a court set it.",
+    "Tap Save."
+   ],
+   "tips": [
+    "Recording it means the app expects you to put in a smaller share here, not a bigger one. Meeting an existing commitment isn’t a shortfall.",
+    "Court-ordered amounts sit fixed, the same way rent does. Nothing in the app suggests changing them.",
+    "When an order ends, tap Change on its row, then This order has ended, and pick the day. It still counts for the weeks before that day. Correct a typo, under Change too, fixes a figure entered by mistake."
+   ],
+   "partnerSees": "Your partner sees what kind it is, whose it is and the monthly amount, but it is never shown as a shortfall or as money missing from here. Only the person who added one can change it. A court-ordered one is never removed: it can be marked as ended or have a typo corrected, and the row shows your partner when either happened.",
+   "countryNotes": null,
+   "where": "Us → Household → Money already promised",
+   "whereParts": [
+    "Us",
+    "Household",
+    "Money already promised"
+   ]
+  },
+  {
+   "id": "childcare",
+   "group": "kids-family",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/profile/childcare",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "children",
+    "household-help",
+    "regular-bills"
+   ],
+   "keywords": [
+    "childcare",
+    "daycare",
+    "nursery",
+    "nanny",
+    "creche",
+    "camp",
+    "drop-off",
+    "pick-up"
+   ],
+   "title": "Childcare",
+   "oneLiner": "Daycare, a nanny or a camp, set up once as a regular bill plus drop-off and pick-up chores.",
+   "whoFor": "For families paying for childcare, where the cost and the runs both need sharing.",
+   "steps": [
+    "Open Us, then Household → Childcare, and tap Add childcare. Add your children first if you haven’t.",
+    "Give it a name, the kind, which children it is for and the days they go.",
+    "Add the cost, how often it is paid, the day of the month it is paid and who pays it.",
+    "Under Drop-off and pick-up, choose who usually does each, Either of you, or Not a chore, and how many minutes it takes. Pick a last day if it ends, then tap Save."
+   ],
+   "tips": [
+    "The cost is posted as a regular bill, shared the way each child’s costs are.",
+    "Whoever does a drop-off or pick-up gets the credit, whatever their relationship to the child."
+   ],
+   "partnerSees": "Your partner sees the childcare, its regular bill, and the drop-off and pick-up chores on Effort. Stopping it archives the bill and the chores; past expenses and logs stay.",
+   "countryNotes": null,
+   "where": "Us → Household → Childcare",
+   "whereParts": [
+    "Us",
+    "Household",
+    "Childcare"
+   ]
+  },
+  {
+   "id": "parental-leave",
+   "group": "kids-family",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/profile/leave",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "children",
+    "time-of-your-own",
+    "childcare"
+   ],
+   "keywords": [
+    "parental leave",
+    "maternity",
+    "paternity",
+    "leave",
+    "new baby",
+    "part-time"
+   ],
+   "title": "Parental leave",
+   "oneLiner": "Add your leave dates so the app counts the weeks as they really are.",
+   "whoFor": "For new parents on full leave or a phased return, so a week at home with a baby isn’t read as a free week.",
+   "steps": [
+    "Open Us, then Household → Parental leave, and tap Add my leave.",
+    "Set the first and last day, how much you are Still working and the pay continuing. Tap Other to type any share from 0 to 100.",
+    "Link it to a child if you like, then tap Save."
+   ],
+   "tips": [
+    "During leave, paid work counts as what you actually do, and the children’s care counts where each of you is at home.",
+    "Pay continuing is shown on the timeline only. It never changes a score."
+   ],
+   "partnerSees": "Your partner sees your leave on the timeline: the dates, how much you are working and the pay continuing. Each of you adds your own, and only the person on leave changes their own dates.",
+   "countryNotes": null,
+   "where": "Us → Household → Parental leave",
+   "whereParts": [
+    "Us",
+    "Household",
+    "Parental leave"
+   ]
+  },
+  {
+   "id": "away-mode",
+   "group": "kids-family",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/profile/away",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "parental-leave",
+    "chores-effort",
+    "calendar-busy-time"
+   ],
+   "keywords": [
+    "away",
+    "away mode",
+    "trip",
+    "travel",
+    "work trip",
+    "business trip",
+    "hospital",
+    "out of town",
+    "vacation"
+   ],
+   "title": "Away",
+   "oneLiner": "Add the days you are away from home, so a work trip is never read as a quiet week.",
+   "whoFor": "For anyone who travels for work, spends time in hospital or stays with family for a while, so the days away are left out of the comparison instead of counting against anyone.",
+   "steps": [
+    "Open Us, then Household → Away, and tap Add time away.",
+    "Tap the first day and the last day to pick them on the calendar, and choose why if you like.",
+    "Tap Save. Tap a period later to change it, or tap Remove to take it off."
+   ],
+   "tips": [
+    "While either of you is away, household work logged then is not compared, and the week is compared over the days you were both home. Nothing is made up for the days away.",
+    "Your chore reminders and the notices about what your partner adds pause while you are away.",
+    "A period can start up to 29 days ago and last up to a year. One that started earlier can only be removed."
+   ],
+   "partnerSees": "Your partner sees a line in the activity feed when you add, change or remove time away, and the week is compared over the days you were both home. Each of you adds and changes only your own.",
+   "countryNotes": null,
+   "where": "Us → Household → Away",
+   "whereParts": [
+    "Us",
+    "Household",
+    "Away"
+   ]
+  },
+  {
+   "id": "pets",
+   "group": "kids-family",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/profile/pets",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "chores-effort",
+    "household-reminders"
+   ],
+   "keywords": [
+    "pets",
+    "dog",
+    "cat",
+    "vet",
+    "walks",
+    "feeding",
+    "vaccinations"
+   ],
+   "title": "Pets",
+   "oneLiner": "Feeding, walks, the vet and what they cost, in one place for each pet.",
+   "whoFor": "For any household with a dog, a cat or anyone else who needs looking after every day.",
+   "steps": [
+    "Open Us, then Household → Pets, and tap Add a pet.",
+    "Open the pet and, under What they need, tap Add on the jobs you want, choosing who usually does each.",
+    "Under Vet and vaccinations, tap Vet visit or Vaccinations, pick the day on the calendar and a time if you like, then tap Add reminder. Tap a reminder to change or delete it.",
+    "Under Costs, tap Add a cost, or Set a pets budget."
+   ],
+   "tips": [
+    "Each job is an ordinary chore on the Effort tab.",
+    "Vaccinations come round every year, so that reminder repeats yearly."
+   ],
+   "partnerSees": "Your partner sees the same pets and chores. Vet and vaccination reminders go to both of you, the day before and on the day. Costs land in the Pets budget like any other expense.",
+   "countryNotes": null,
+   "where": "Us → Household → Pets",
+   "whereParts": [
+    "Us",
+    "Household",
+    "Pets"
+   ]
+  },
+  {
+   "id": "fairness-score",
+   "group": "plan-together",
+   "pro": true,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/insights",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "time-of-your-own",
+    "where-money-goes",
+    "weekly-idea"
+   ],
+   "keywords": [
+    "score",
+    "fairness",
+    "balance",
+    "why",
+    "insights",
+    "how it is worked out",
+    "weights"
+   ],
+   "title": "Household balance",
+   "oneLiner": "One number for how the week was arranged between you, with every part of it explained.",
+   "whoFor": "For couples who want to see how time and money are shared before talking about it. It describes the week, never either of you.",
+   "steps": [
+    "Open Insights.",
+    "Pick Week or Month at the top.",
+    "Read the Time and Money cards, then tap “See the hour-by-hour sum” or “See who paid what” for the working.",
+    "Read “How the number is made” for the weights used to make this number.",
+    "To change what it reads about you, open Us, then Your details, and tap Edit your details: your income after tax and how often you’re paid, your paid work, travel, sleep and time for yourself. Tap Save changes. A new income counts from now on, never for past weeks and months."
+   ],
+   "tips": [
+    "Until you have both been home two days this week (so on Monday and Tuesday, or longer when one of you is away), the ring shows last week’s number, marked Last week, with this week’s money in words beside it. While there is little to go on, the ring shows a dash.",
+    "The number lives here, beside its explanation. The This week tab talks in hours and plain words instead.",
+    "Hours are never turned into money, and a deliberate trade between time and money counts as a trade. It never scores higher than paying exactly the split you both chose. Money reads what is still to even up between you, not who paid this week: taking turns to pay reads the same as splitting every bill."
+   ],
+   "partnerSees": "The same number and the same explanation, word for word. It is never shared outside the app, not even in the Your year image.",
+   "countryNotes": null,
+   "where": "Insights",
+   "whereParts": [
+    "Insights"
+   ]
+  },
+  {
+   "id": "weekly-idea",
+   "group": "plan-together",
+   "pro": true,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/swap",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "fairness-score",
+    "sunday-talk",
+    "mental-load-map"
+   ],
+   "keywords": [
+    "idea",
+    "suggestion",
+    "swap",
+    "this week",
+    "what would help",
+    "trial"
+   ],
+   "title": "This week’s idea",
+   "oneLiner": "One suggestion a week for something to move between you, tried for two weeks, then kept or handed back.",
+   "whoFor": "For the partner who wants to help and isn’t sure where to start, and for the one who would rather not have to ask.",
+   "steps": [
+    "On the This week tab, find the “This week’s idea” card and tap “See why and try it”.",
+    "Read why this, why now, and what it would change for the time each of you has.",
+    "Tap “Try it for two weeks” or “Not this one”. It starts only once both of you say yes.",
+    "When the two weeks are up, each of you chooses “Keep it this way” or “Swap back”. It stays only if you both keep it. A planning area is a two-week try only, with no keep at the end."
+   ],
+   "tips": [
+    "“Not this one” sets the idea aside for good, and no note goes to your partner about it.",
+    "Either of you can end a running swap early with “Stop the swap”, no explanation needed.",
+    "A new idea comes on Sunday. When things look even, there may be no idea that week at all."
+   ],
+   "partnerSees": "The same idea on their phone, with the same two choices. Nobody is told when an idea is set aside, and there is no button for chasing an answer.",
+   "countryNotes": null,
+   "where": "This week → This week's idea",
+   "whereParts": [
+    "This week",
+    "This week's idea"
+   ]
+  },
+  {
+   "id": "private-checkin",
+   "group": "plan-together",
+   "pro": true,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/checkin",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "seen-differently",
+    "sunday-talk"
+   ],
+   "keywords": [
+    "check-in",
+    "check in",
+    "how did the week feel",
+    "private",
+    "feelings"
+   ],
+   "title": "Private check-in",
+   "oneLiner": "Two quick questions about how the week felt, answered for you alone.",
+   "whoFor": "For anyone who wants to say how the week really felt without it turning into a conversation. Your answers are yours alone.",
+   "steps": [
+    "On the This week tab, find “How did last week feel?” and tap Start.",
+    "Move the two sliders: how fair the week felt, and how your week was overall. Neither shows a number.",
+    "Tap Done, or Not now to leave it for another time."
+   ],
+   "tips": [
+    "Once saved, an answer can’t be edited or deleted, even by you. The next check-in opens on Monday.",
+    "Skipping is an ordinary answer. Nothing counts the weeks you answer.",
+    "The Sunday evening reminder for it can be switched off in Us, then Preferences."
+   ],
+   "partnerSees": "Nothing. Your partner can never read your answers, and the server’s rules enforce that, not only the app. They aren’t in your partner’s data export either.",
+   "countryNotes": null,
+   "where": "This week → How did last week feel?",
+   "whereParts": [
+    "This week",
+    "How did last week feel?"
+   ]
+  },
+  {
+   "id": "seen-differently",
+   "group": "plan-together",
+   "pro": true,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/insights/perception",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "mental-load-map",
+    "private-checkin",
+    "sunday-talk"
+   ],
+   "keywords": [
+    "perception",
+    "seen differently",
+    "where you differ",
+    "shared or mine",
+    "conversation"
+   ],
+   "title": "Seen differently",
+   "oneLiner": "Where the two of you read the same job differently, shown side by side without deciding who is right.",
+   "whoFor": "For couples who have both answered “Who keeps track of what” and want to see where their answers part. A calm starting point for a conversation.",
+   "steps": [
+    "Open Insights, then “Who keeps track of what”, and answer the questions. Your partner does the same on their phone.",
+    "Once you have both finished, open Insights, then “Where your readings differ”.",
+    "Read both answers, shown at the same size, and the question worth asking at the end."
+   ],
+   "tips": [
+    "Neither of you sees the other’s answers until both of you have finished.",
+    "If several areas read differently, take one at a time. The screen shows one and says how many others there are."
+   ],
+   "partnerSees": "The same screen, with both answers at the same size and weight. There is no vote, no “who’s right” and no way to change the other person’s answer.",
+   "countryNotes": null,
+   "where": "Insights → Where your readings differ",
+   "whereParts": [
+    "Insights",
+    "Where your readings differ"
+   ]
+  },
+  {
+   "id": "sunday-talk",
+   "group": "plan-together",
+   "pro": true,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/talk",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "weekly-idea",
+    "thank-you-notes",
+    "calendar-busy-time"
+   ],
+   "keywords": [
+    "sunday talk",
+    "weekly talk",
+    "conversation",
+    "plan the week",
+    "ritual"
+   ],
+   "title": "Sunday talk",
+   "oneLiner": "Ten minutes together once a week: something you appreciated, the week, the idea, what’s coming up and one small plan.",
+   "whoFor": "For couples who want a short, regular moment to look at the week together, on one phone or on both at once.",
+   "steps": [
+    "On Sundays, open the Sunday talk card on the This week tab. On any other day, open Us, then Household → Sunday talk.",
+    "Tap Start, or “I’m ready to talk” so it shows on your partner’s phone next time they open the app.",
+    "Go through the five steps. Each one has “Skip this step”.",
+    "In the last step, write one small plan for next week. It is saved as a note with both your names on it."
+   ],
+   "tips": [
+    "It is live on both phones, so what one of you writes appears on the other screen as you go.",
+    "In the first step, what you appreciated can also go to your partner as a note.",
+    "“Ready to talk” is never sent as a notification. The only push is part of the one Sunday evening notice, and Us → Preferences → Sunday talk switches it off."
+   ],
+   "partnerSees": "The same talk, live, and a single line in their app when you say you’re ready. The week’s numbers are the household’s totals, never one of you set against the other, and nothing counts how many talks you have had.",
+   "countryNotes": null,
+   "where": "Us → Household → Sunday talk",
+   "whereParts": [
+    "Us",
+    "Household",
+    "Sunday talk"
+   ]
+  },
+  {
+   "id": "thank-you-notes",
+   "group": "plan-together",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/thanks",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "sunday-talk",
+    "year-in-review"
+   ],
+   "keywords": [
+    "thank you",
+    "thanks",
+    "appreciation",
+    "note",
+    "gratitude"
+   ],
+   "title": "Notes between you",
+   "oneLiner": "A short note to your partner about something specific they did, and the one part of EvenUS that is never measured.",
+   "whoFor": "For anyone who noticed something and wants to say so. Nothing is counted, and nobody is reminded to write one.",
+   "steps": [
+    "Open Us, then Household → Notes between you.",
+    "Tap an opener such as “Thanks for handling…”, or write your own.",
+    "Tap Send."
+   ],
+   "tips": [
+    "Something small and specific tends to land best.",
+    "The latest note also shows under Recent on the This week tab. Tap it to open all your notes.",
+    "Notes need both of you in the household."
+   ],
+   "partnerSees": "The note, in the app on their phone straight away, with your name on it, and no obligation to reply. They only get a notification about it if they keep updates on for when you add something (Us → Preferences), and then it says a note arrived, never what it says.",
+   "countryNotes": null,
+   "where": "Us → Household → Notes between you",
+   "whereParts": [
+    "Us",
+    "Household",
+    "Notes between you"
+   ]
+  },
+  {
+   "id": "year-in-review",
+   "group": "plan-together",
+   "pro": true,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/insights/year",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "thank-you-notes",
+    "fairness-score"
+   ],
+   "keywords": [
+    "year in review",
+    "your year",
+    "annual",
+    "recap",
+    "share image"
+   ],
+   "title": "Your year",
+   "oneLiner": "The year so far, both of you side by side: housework, care, planning, money shared, ideas tried and notes.",
+   "whoFor": "For couples who want to look back over the year together. Nothing is ranked and nobody is put first.",
+   "steps": [
+    "Open Insights, then “Your year”.",
+    "Read the totals: each of you in your own colour, with the total together underneath.",
+    "To share, go to “Share an image”, choose whether to include the money, and tap “Share this image”."
+   ],
+   "tips": [
+    "The image shows totals together only: never one of you set against the other, never the balance, and no money unless you switch it on.",
+    "Planning and remembering is counted once you have both answered the planning questions."
+   ],
+   "partnerSees": "The same year, in the same order and colours. Nothing leaves the app unless one of you chooses to share the image.",
+   "countryNotes": null,
+   "where": "Insights → Your year",
+   "whereParts": [
+    "Insights",
+    "Your year"
+   ]
+  },
+  {
+   "id": "date-night",
+   "group": "plan-together",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/finance/date-night",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "household-reminders",
+    "budgets",
+    "sunday-talk"
+   ],
+   "keywords": [
+    "date night",
+    "date ideas",
+    "going out",
+    "together time",
+    "romance"
+   ],
+   "title": "Date night",
+   "oneLiner": "A little money set aside for time out together, and a shared list of things you would like to do.",
+   "whoFor": "For couples who want time together to have a place in the budget and on the calendar.",
+   "steps": [
+    "Open Money, then Date night under Plan.",
+    "Tap “Set a date-night budget” to give it a line in your monthly budgets.",
+    "Tap “Add an idea”, with a rough cost if you like.",
+    "Tap “Plan one”, pick a day on the calendar and a time if you like. You both get a reminder; tap “Change plan” to move or remove it.",
+    "Afterwards, tap “We did this” and pick the day, today or earlier. Adding what it cost is up to you."
+   ],
+   "tips": [
+    "Either of you can add ideas, and “Do it again” brings back one you enjoyed.",
+    "There is no count of dates and no “days since”. The list is simply ideas and things you have done."
+   ],
+   "partnerSees": "The same list and the same budget. A planned date becomes a reminder for both of you that never says who set it, and nobody’s tally of ideas is kept.",
+   "countryNotes": null,
+   "where": "Money → Plan → Date night",
+   "whereParts": [
+    "Money",
+    "Plan",
+    "Date night"
+   ]
+  },
+  {
+   "id": "hosting",
+   "group": "plan-together",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/chores/events",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "shopping-list",
+    "household-reminders",
+    "chores-effort"
+   ],
+   "keywords": [
+    "hosting",
+    "party",
+    "thanksgiving",
+    "christmas",
+    "diwali",
+    "eid",
+    "birthday party",
+    "guests",
+    "menu"
+   ],
+   "title": "Hosting",
+   "oneLiner": "Plan an occasion together: the date, the guests, the tasks, the menu and what it costs.",
+   "whoFor": "For couples hosting Thanksgiving, Christmas, Easter, Diwali, Eid, Hanukkah, Lunar New Year, a birthday party or something of their own, who want the work visible and shared.",
+   "steps": [
+    "Open Effort, then Hosting, and tap “Plan an occasion”.",
+    "Pick the occasion and the date, and add guests and a budget if you like. Leave “Start with the usual tasks and menu” on for a ready-made list.",
+    "Tap “Create the plan”, then give each task to one of you or to “Either of you”.",
+    "Add to the menu and add costs. The menu goes on the shared shopping list too.",
+    "Tap “Remind us the day before” if a reminder would help."
+   ],
+   "tips": [
+    "Every task and menu item from the template can be changed or removed.",
+    "A task marked Done counts as household work for whoever did it, like any chore.",
+    "The budget adds up shared spending tagged to the plan. Anything just for one of you is left out."
+   ],
+   "partnerSees": "The same plan, with each person’s list side by side. Tasks are never counted against each other, and nobody is shown as doing the most.",
+   "countryNotes": null,
+   "where": "Effort → Hosting",
+   "whereParts": [
+    "Effort",
+    "Hosting"
+   ]
+  },
+  {
+   "id": "invite-partner",
+   "group": "plan-together",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/invite",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "fairness-score",
+    "help-feedback"
+   ],
+   "keywords": [
+    "invite",
+    "partner",
+    "whatsapp",
+    "join",
+    "code",
+    "pair",
+    "share link"
+   ],
+   "title": "Invite your partner",
+   "oneLiner": "Bring your partner into the household with a message, their email address or an eight-character code.",
+   "whoFor": "For whoever sets up EvenUS first. Every picture here needs both of you, so this is the step that makes the rest work.",
+   "steps": [
+    "Open Us, then tap “Invite your partner”.",
+    "Tap “Send them a message” or “Send on WhatsApp”. It carries a link and the code.",
+    "Or save their email: EvenUS emails them an invite, and when they sign up with that address, they join automatically.",
+    "Or read the eight-character code out loud. They enter it after signing up.",
+    "If someone left your household before, the person who joins starts fresh with you in an empty household, and your earlier records move to Us → Previous household, private to you. The invite screen says so before you send it. If the person who left comes back instead, everything stays as it is."
+   ],
+   "tips": [
+    "The invite email can land in spam, so a message from you is still the surest way. A code works for seven days; tap New code when it has run out.",
+    "The code has no I, O, 0 or 1, so it survives being read over the phone.",
+    "If they are already in another household, the link changes nothing. They leave that one first: Us → Household → Your household → Leave household."
+   ],
+   "partnerSees": "Your message, with the link and the code. Once they join, you both see the same household on your own phones. Your income stays yours: they see your share of the split, not the amount.",
+   "countryNotes": null,
+   "where": "Us → Invite your partner",
+   "whereParts": [
+    "Us",
+    "Invite your partner"
+   ]
+  },
+  {
+   "id": "household-reminders",
+   "group": "reminders-calendar",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/reminders",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "document-renewals",
+    "calendar-export",
+    "chore-reminders"
+   ],
+   "keywords": [
+    "reminders",
+    "birthday",
+    "anniversary",
+    "to-do",
+    "event",
+    "remember"
+   ],
+   "title": "Reminders",
+   "oneLiner": "Birthdays, anniversaries, events and to-dos, for you, your partner or both of you.",
+   "whoFor": "For couples who share the remembering. Whoever a reminder is for gets the notice, and it never says who added it.",
+   "steps": [
+    "Open Us, then Household → Reminders and dates, or open Coming up on the This week tab.",
+    "Tap “Add a reminder” and pick Birthday, Anniversary, Event or To-do.",
+    "Set the date and time, then choose who it is for: Me, Both of us or your partner.",
+    "Choose how often it repeats and when to be reminded, then tap “Add reminder”."
+   ],
+   "tips": [
+    "Press and hold a reminder, or tap its … button, for Edit, Add to calendar, Mute for me and Delete. Mute for me shows on reminders that include you, and a to-do also has Done.",
+    "Muting is just for you, and nobody else is told.",
+    "Nothing here is ever late. An open to-do from an earlier day stays on the list under Today. A one-off reminder is set for today or later, and once its day has gone it moves to Past reminders, where you can open, change or delete it."
+   ],
+   "partnerSees": "Every reminder in the household is on their list too, with no name on who set it. Only the people a reminder is for get its notice: when one is for your partner alone, the screen says so before you save, and they can mute it for themselves. Deleting a reminder removes it for both of you.",
+   "countryNotes": null,
+   "where": "Us → Household → Reminders and dates",
+   "whereParts": [
+    "Us",
+    "Household",
+    "Reminders and dates"
+   ]
+  },
+  {
+   "id": "document-renewals",
+   "group": "reminders-calendar",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/reminders/edit",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "household-reminders",
+    "subscriptions"
+   ],
+   "keywords": [
+    "passport",
+    "visa",
+    "licence",
+    "license",
+    "insurance",
+    "expiry",
+    "renewal",
+    "mot",
+    "warranty"
+   ],
+   "title": "Document renewals",
+   "oneLiner": "Expiry reminders for passports, visas, driving licences, insurance, car MOT or PUC, and warranties.",
+   "whoFor": "For households with papers that take weeks to renew. Notice arrives three months, one month and one week before the expiry date.",
+   "steps": [
+    "Open Us, then Household → Reminders and dates, and tap “Add a reminder”.",
+    "Pick Document, then choose which document and whose it is.",
+    "Enter the date it expires and who should be reminded, then tap “Add reminder”."
+   ],
+   "tips": [
+    "Leave the document number out. EvenUS never stores it, and it turns away a name or note that looks like one. The expiry date is all a reminder needs.",
+    "Notice comes 90, 30 and 7 days ahead by default, and you can add one for the day itself."
+   ],
+   "partnerSees": "If it is for both of you, the same notices, with no name on who set them. The note shows inside the app and in a calendar file if one is exported, never in a notification.",
+   "countryNotes": null,
+   "where": "Us → Household → Reminders and dates → Add a reminder",
+   "whereParts": [
+    "Us",
+    "Household",
+    "Reminders and dates",
+    "Add a reminder"
+   ]
+  },
+  {
+   "id": "calendar-export",
+   "group": "reminders-calendar",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/reminders",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "household-reminders",
+    "calendar-busy-time"
+   ],
+   "keywords": [
+    "calendar",
+    "export",
+    "ics",
+    "add to calendar",
+    "google calendar",
+    "apple calendar",
+    "outlook"
+   ],
+   "title": "Add to calendar",
+   "oneLiner": "Put your household reminders into the calendar you already use, as a calendar file.",
+   "whoFor": "For anyone who lives by their phone’s calendar, Google Calendar or Outlook, and wants birthdays and plans there too.",
+   "steps": [
+    "Open Us, then Household → Reminders and dates.",
+    "Tap Export to share them all as one .ics file, or open a single reminder and tap “Add to calendar”.",
+    "Pick your calendar app from the share sheet. On an Android phone, a single reminder opens straight in your calendar app as a new event, already filled in, for you to save there."
+   ],
+   "tips": [
+    "It is a copy made on this phone, and each entry carries the reminder’s note too. Later changes in EvenUS don’t reach your calendar, so export again after an edit.",
+    "Birthdays, anniversaries and documents go in as all-day entries. A to-do goes in once it has a time.",
+    "A repeating entry with a time can show an hour out after the clocks change. The EvenUS notification stays on time."
+   ],
+   "partnerSees": "Nothing changes for your partner. The file is made and shared from your phone, nothing is uploaded, and it never says who set a reminder.",
+   "countryNotes": null,
+   "where": "Us → Household → Reminders and dates",
+   "whereParts": [
+    "Us",
+    "Household",
+    "Reminders and dates"
+   ]
+  },
+  {
+   "id": "calendar-busy-time",
+   "group": "reminders-calendar",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/profile/calendar",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "time-of-your-own",
+    "sunday-talk",
+    "weekly-idea"
+   ],
+   "keywords": [
+    "busy",
+    "calendar",
+    "busy week",
+    "meetings",
+    "shifts",
+    "availability"
+   ],
+   "title": "Calendar busy time",
+   "oneLiner": "Let a busy week count, using only how many hours of each day your calendar is taken.",
+   "whoFor": "For anyone whose evenings, weekends or long meetings fill a week in ways paid work hours don’t show. It stays off until you switch it on.",
+   "steps": [
+    "Open Us, then Household → Calendar busy time.",
+    "Tap “Allow calendar access”.",
+    "Tap “Choose calendars”, pick the ones with your own commitments, and tap Save.",
+    "To stop, tap Disconnect. Every uploaded week of busy hours is deleted."
+   ],
+   "tips": [
+    "Leave out a calendar of work shifts, and shared family or holiday calendars. Your paid hours are already counted.",
+    "A busy week counts as less free time that week. The Sunday talk may mention it, and the weekly idea steers clear of your busy days.",
+    "It needs the EvenUS app on an iPhone or Android phone."
+   ],
+   "partnerSees": "Busy hours per day, never your events: no title, place, guest or note leaves your phone. Only you can switch it on for your calendar, and nothing is ever read from your partner’s.",
+   "countryNotes": null,
+   "where": "Us → Household → Calendar busy time",
+   "whereParts": [
+    "Us",
+    "Household",
+    "Calendar busy time"
+   ]
+  },
+  {
+   "id": "partner-activity",
+   "group": "reminders-calendar",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/profile",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "activity-log",
+    "personal-spending-privacy"
+   ],
+   "keywords": [
+    "notifications",
+    "partner added",
+    "daily summary",
+    "every entry",
+    "alerts",
+    "push"
+   ],
+   "title": "When your partner adds something",
+   "oneLiner": "Choose how you hear about what your partner adds: a daily summary, every entry, or nothing.",
+   "whoFor": "For anyone who likes to know what lands in the shared household, or would rather look at the app in their own time.",
+   "steps": [
+    "Open Us, then Preferences.",
+    "Under “When your partner adds something”, pick Daily summary, Every entry or Off.",
+    "Read the line under the choices to see exactly what will arrive."
+   ],
+   "tips": [
+    "Daily summary is the default: one line at 8 pm, only on days something was added, and not on Sundays, when the weekly recap is the one notice.",
+    "Every entry arrives as it happens. Entries close together come as one, and overnight they wait until 8 am.",
+    "A personal expense your partner keeps private is only ever “a personal expense”, and the amount of a payment between you is never shown."
+   ],
+   "partnerSees": "Neither of you can see the other’s choice. There is no notification about anything someone didn’t do, and a reminder meant for you is never announced with a name on it.",
+   "countryNotes": null,
+   "where": "Us → Preferences → When your partner adds something",
+   "whereParts": [
+    "Us",
+    "Preferences",
+    "When your partner adds something"
+   ]
+  },
+  {
+   "id": "quick-add",
+   "group": "faster-adding",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "shared-expenses",
+    "siri-shortcuts",
+    "android-shortcuts",
+    "receipt-scan"
+   ],
+   "keywords": [
+    "tell evenus",
+    "quick add",
+    "type",
+    "voice",
+    "dictate",
+    "speak",
+    "chat",
+    "hinglish"
+   ],
+   "title": "Tell EvenUS",
+   "oneLiner": "Type or say one line, like “groceries 30” or “dishes 20 min”, and EvenUS turns it into an expense, a chore or a reminder for you to check.",
+   "whoFor": "For the moment you’ve just paid, cleaned or remembered something and don’t want to open a form. It works with your keyboard’s mic too.",
+   "steps": [
+    "Open This week and tap the typing box under the headline, the one with a grey example of something to add. That box is Tell EvenUS. It’s on Money and Effort too.",
+    "Type a line, or tap the mic on your keyboard and say it: “bought groceries for 30”, “cleaned the bathroom yesterday”, “remind me to book the dentist Friday”.",
+    "Tap the arrow to check it. A sheet shows what EvenUS understood, and asks you to check anything it filled in for you.",
+    "Change what needs changing, or tap Edit details for the full form, then tap Save. Nothing is saved before that."
+   ],
+   "tips": [
+    "Use your partner’s name to say they paid or did it. A chore that belongs to your partner is logged by them, so the sheet offers to log it as yours.",
+    "“Add milk and eggs to the list” puts both on the shopping list, and “passport expires 12 March 2028” sets reminders ahead of the date.",
+    "With the field empty, the receipt button beside it scans a receipt instead."
+   ],
+   "partnerSees": "Your partner sees what you save, the same as if you’d used the form, and hears about it the way they chose in their own settings. They never see what you typed or said, or anything you cancelled.",
+   "countryNotes": "It understands Hindi and Hinglish as well as English: “grocery ke liye 300 diye”, “kal doodh lana yaad dilana”, or Devanagari like “किराने पर 300 रुपये”, with hazaar and lakh. It also understands everyday Spanish, French, German and Portuguese, like “pagué 40 en el súper”, “j’ai payé 25 € de courses”, “erinnere mich morgen an den Müll” or “paguei 50 no mercado”. Every amount is recorded in your household’s currency; if a line names another currency, the sheet asks you to check the amount.",
+   "where": "This week → Tell EvenUS",
+   "whereParts": [
+    "This week",
+    "Tell EvenUS"
+   ]
+  },
+  {
+   "id": "receipt-scan",
+   "group": "faster-adding",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/finance/add",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "shared-expenses",
+    "quick-add"
+   ],
+   "keywords": [
+    "receipt",
+    "scan",
+    "photo",
+    "camera",
+    "bill photo",
+    "ocr",
+    "tip",
+    "vat",
+    "gst"
+   ],
+   "title": "Scan a receipt",
+   "oneLiner": "Take a photo of a receipt and EvenUS reads it on this phone, filling in the total, the shop and the date for you to check.",
+   "whoFor": "For the big supermarket shop or the dinner out, when typing the total off a long slip is the slow part.",
+   "steps": [
+    "Open Money and tap Add an expense, or use the receipt button in the Tell EvenUS field.",
+    "Tap Scan a receipt, then Take a photo or Choose from photos.",
+    "Check what was filled in. A note under it says where the amount came from, such as the total line or the total with the tip.",
+    "Fix anything that needs it, choose how it’s split, and tap Save expense."
+   ],
+   "tips": [
+    "A flat, well-lit photo of the whole slip reads best. If nothing readable comes out, type the amount in.",
+    "It uses the total, never the subtotal, the tax or the cash handed over. When there’s a tip, the amount includes it.",
+    "To see the photo again, open the expense on this phone and tap Receipt saved on this phone."
+   ],
+   "partnerSees": "Your partner sees the expense once you save it, like any other. They never see the photo or the text read from it: the photo stays in EvenUS on this phone and is never uploaded.",
+   "countryNotes": "Reads receipts from the US (sales tax, tips, month-first dates), the UK and Europe (VAT, MwSt, TVA, IVA, BTW, and comma decimals like 1.234,56 €), India (GST, CGST and SGST, ₹ and Rs), Canada (GST, HST, PST, QST) and Australia (GST incl.). If a receipt is in another currency, the note says so. Nothing is converted, so change the amount if it needs it.",
+   "where": "Money → Add an expense → Scan a receipt",
+   "whereParts": [
+    "Money",
+    "Add an expense",
+    "Scan a receipt"
+   ]
+  },
+  {
+   "id": "apple-pay-capture",
+   "group": "faster-adding",
+   "pro": false,
+   "platforms": [
+    "ios"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/profile/apple-pay",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "shared-expenses",
+    "siri-shortcuts",
+    "statement-import"
+   ],
+   "keywords": [
+    "apple pay",
+    "wallet",
+    "automation",
+    "shortcuts",
+    "tap to pay",
+    "capture",
+    "waiting to review"
+   ],
+   "title": "Apple Pay capture",
+   "oneLiner": "After you pay with Apple Pay, EvenUS can ask quietly whether to add the payment to your shared spending.",
+   "whoFor": "For anyone who pays for shared things with Apple Pay and would like a gentle prompt in place of remembering later. Needs an iPhone on iOS 17 or later.",
+   "steps": [
+    "Open Us, tap Household, then Apple Pay capture.",
+    "Tap Open Shortcuts, go to Automation, tap the + and choose Transaction.",
+    "Pick the cards you use for shared spending and choose Run Immediately, then tap New Blank Automation and add the action Log a payment in EvenUS.",
+    "Set Amount to Shortcut Input → Amount and Merchant to Shortcut Input → Merchant, then tap Done.",
+    "After your next Apple Pay payment, tap Add on the notification to open the expense form filled in, or Personal to let it go. Check it and tap Save expense."
+   ],
+   "tips": [
+    "Anything you haven’t answered waits in Money → Track → Waiting to review, and clears itself after 14 days.",
+    "EvenUS doesn’t open when you pay, and nothing is sent anywhere. The payment waits on this phone until you add it.",
+    "Android has no Wallet automation that can pass a payment to another app, so there Tell EvenUS or a receipt scan is the quickest way."
+   ],
+   "partnerSees": "Nothing until you save an expense; then they see it like any other. Payments you mark Personal or leave to expire never reach them, and the waiting list is only on your iPhone.",
+   "countryNotes": "If Wallet reports a payment in a currency other than your household’s, it’s marked so you can check the amount. EvenUS doesn’t convert it.",
+   "where": "Us → Household → Apple Pay capture",
+   "whereParts": [
+    "Us",
+    "Household",
+    "Apple Pay capture"
+   ]
+  },
+  {
+   "id": "statement-import",
+   "group": "faster-adding",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/finance/import",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "splitwise-import",
+    "shared-expenses",
+    "tax-year-summary"
+   ],
+   "keywords": [
+    "bank statement",
+    "import",
+    "csv",
+    "ofx",
+    "qfx",
+    "upload",
+    "transactions",
+    "hdfc",
+    "icici",
+    "sbi",
+    "axis",
+    "kotak",
+    "excel",
+    "xls"
+   ],
+   "title": "Import a bank statement",
+   "oneLiner": "Pick a statement file from your bank, tick the payments that were shared, and only those become expenses.",
+   "whoFor": "For catching up on a month of card spending in one go, or for starting out with history you already have.",
+   "steps": [
+    "Download a CSV, OFX or QFX statement from your bank’s website or app and save it to this phone.",
+    "Open Money, scroll to Track and tap Import a bank statement, then Choose a file.",
+    "Say whose account it is, then tick the payments that were shared. Tap the split under a ticked one to change it.",
+    "Tap the Add button at the bottom to save the ticked ones as shared expenses."
+   ],
+   "tips": [
+    "Nothing is ticked to start with. Payments that seem to be in EvenUS already are marked “looks already added”, so you can leave them.",
+    "The file is read on this phone and forgotten straight after. It’s never uploaded. Payments from before the week you joined are marked and left out, and the screen says how many.",
+    "For a long file, choose a shorter date range from your bank. The check for things already added covers about six months at a time."
+   ],
+   "partnerSees": "The expenses you add, like any others, and one line in the activity feed for the import, not a notice for each. They never see the file or the rows you left unticked.",
+   "countryNotes": "Recognises downloads from Chase, Bank of America, Wells Fargo, Amex and Capital One in the US; Barclays, HSBC, Monzo and Revolut in the UK; N26 and German banks; CommBank, ANZ and Westpac in Australia; RBC and TD in Canada; HDFC, ICICI, SBI, Axis and Kotak in India, along with the layout most other Indian banks use (Narration, Withdrawal and Deposit columns, amounts in lakhs). Indian banks often give an Excel (XLS) file: open it and save it as CSV first, and the account details above the table and the summary below it are skipped. Other banks’ CSV files usually read too, including ones with separate withdrawal and deposit columns. Dates follow the bank’s format, then your phone’s region. Payments in a currency other than your household’s are listed but not added. PDF statements can’t be read.",
+   "where": "Money → Track → Import a bank statement",
+   "whereParts": [
+    "Money",
+    "Track",
+    "Import a bank statement"
+   ]
+  },
+  {
+   "id": "splitwise-import",
+   "group": "faster-adding",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/finance/import-splitwise",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "statement-import",
+    "settle-up"
+   ],
+   "keywords": [
+    "splitwise",
+    "import",
+    "switch",
+    "move over",
+    "export"
+   ],
+   "title": "Import from Splitwise",
+   "oneLiner": "Bring your Splitwise history across: who paid, how each cost was split, and the payments between you.",
+   "whoFor": "For couples moving over from Splitwise who want their past shared spending in one place. Your partner needs to have joined first.",
+   "steps": [
+    "In Splitwise on the web, open the group with just the two of you, choose Export as spreadsheet and save the CSV to this phone.",
+    "In EvenUS, open Money, scroll to Track and tap Import from Splitwise, then Choose the Splitwise file.",
+    "Choose which name is you. The other name becomes your partner.",
+    "Look through the list, untick anything you’d rather leave out, and tap Import."
+   ],
+   "tips": [
+    "Splitwise “Payment” rows come in as settle-ups between you, so the history of evening up comes across too.",
+    "A cost paid by both of you at once is left out rather than guessed, and the screen says how many. Add it by hand if it matters.",
+    "The file is read on this phone and never uploaded. Entries from before the week you joined are marked and left out, and the screen says how many."
+   ],
+   "partnerSees": "The imported expenses and settle-ups, like any others, with one line in the activity feed for the import, not a notice for each. They never see the file.",
+   "countryNotes": "Rows in a currency other than your household’s are left out, and the screen says how many. A group with a third person in it can’t be imported, so export one with just the two of you.",
+   "where": "Money → Track → Import from Splitwise",
+   "whereParts": [
+    "Money",
+    "Track",
+    "Import from Splitwise"
+   ]
+  },
+  {
+   "id": "home-widget",
+   "group": "faster-adding",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/profile/preferences",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "quick-add",
+    "chores-effort"
+   ],
+   "keywords": [
+    "widget",
+    "home screen",
+    "today",
+    "my chores",
+    "show amounts"
+   ],
+   "title": "Home-screen widget",
+   "oneLiner": "Your chores for today and one money line on your home screen, with a Tell EvenUS button on the medium size.",
+   "whoFor": "For seeing what comes round today without opening the app. On iPhone in small and medium sizes, and on Android.",
+   "steps": [
+    "Long-press an empty spot on your home screen, then tap Edit or + on iPhone, or Widgets on Android.",
+    "Find EvenUS and add the size you want. The medium iPhone size has the Tell EvenUS button.",
+    "Tap a chore to open it, or Tell EvenUS to add something. The small iPhone size opens Effort.",
+    "To show amounts, open Us, then Preferences → Language, widget and privacy, and switch on Show amounts on widget."
+   ],
+   "tips": [
+    "Amounts stay hidden until you switch them on, and the hidden line reads the same whatever the balance, so nobody near your phone can tell which way it went.",
+    "There’s never a score on the widget. It shows the next three of your chores that come round today, and nothing about expenses.",
+    "With amounts on, a locked iPhone still hides the figure. Signing out clears the widget."
+   ],
+   "partnerSees": "Nothing from your widget: it’s on your phone only. Their widget, if they add one, shows their own chores, and Show amounts on widget is set on each phone separately.",
+   "countryNotes": null,
+   "where": "Your home screen → Add a widget",
+   "whereParts": [
+    "Your home screen",
+    "Add a widget"
+   ]
+  },
+  {
+   "id": "watch",
+   "group": "faster-adding",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/profile/watch",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "quick-add",
+    "home-widget",
+    "chores-effort"
+   ],
+   "keywords": [
+    "watch",
+    "apple watch",
+    "wear os",
+    "smartwatch",
+    "wrist",
+    "complication",
+    "tile",
+    "galaxy watch",
+    "pixel watch"
+   ],
+   "title": "Watch",
+   "oneLiner": "Today’s chores for you on your wrist, tick one off, or tell EvenUS something by voice. Apple Watch on iPhone, Wear OS on Android.",
+   "whoFor": "For the moment your hands are full and your phone is in another room. Apple Watch needs watchOS 10 or later; Wear OS needs Wear OS 3 or later.",
+   "steps": [
+    "Install EvenUS on your watch: on iPhone, open the Watch app and tap Install next to EvenUS; on Android, open the Play Store on your watch and install EvenUS.",
+    "Open EvenUS on your phone once. Your watch then shows your chores for today and the even-up line.",
+    "Tap a chore on the watch to tick it off. Your phone does it, and offers Undo.",
+    "Tap Tell EvenUS on the watch and say it, like “paid 30 for groceries”. It waits on your phone for you to check; you save it there.",
+    "Add the EvenUS complication to an Apple Watch face, or the EvenUS tile on Wear OS, for your next chore or a Tell EvenUS shortcut."
+   ],
+   "tips": [
+    "Nothing you say on the watch is saved until you check it on your phone. Anything waiting is in Us → Household → Watch, and under Tell EvenUS on Home.",
+    "There’s never a score on the watch, and nothing about expenses. Amounts stay hidden unless Show amounts on widget is on, and the hidden line reads the same whatever the balance.",
+    "Your watch talks only to your phone, never to our servers. Signing out clears it. A chore ticked off on the watch can be undone for a day."
+   ],
+   "partnerSees": "Only what you save, or tick off, the same as doing it on your phone. Your watch shows your chores, never theirs.",
+   "countryNotes": null,
+   "where": "EvenUS on your watch",
+   "whereParts": [
+    "EvenUS on your watch"
+   ]
+  },
+  {
+   "id": "siri-shortcuts",
+   "group": "faster-adding",
+   "pro": false,
+   "platforms": [
+    "ios"
+   ],
+   "currencies": null,
+   "inAppRoute": null,
+   "addedInVersion": "1.0.0",
+   "related": [
+    "quick-add",
+    "apple-pay-capture",
+    "home-widget"
+   ],
+   "keywords": [
+    "siri",
+    "hey siri",
+    "shortcuts",
+    "app intents",
+    "voice",
+    "action button"
+   ],
+   "title": "Siri and Shortcuts",
+   "oneLiner": "Ask Siri to open Tell EvenUS, add a reminder or show your chores, then say the details when Siri asks.",
+   "whoFor": "For iPhone moments with your hands full: at the till, in the kitchen, in the car. Works on iOS 16 or later with no setup.",
+   "steps": [
+    "Say “Hey Siri, tell EvenUS”.",
+    "When Siri asks what you’d like to tell EvenUS, say the words, like “I paid 30 for groceries”.",
+    "EvenUS opens with it filled in. Check it and tap Save.",
+    "For a reminder, say “Hey Siri, add a reminder in EvenUS”, then what and when, like “book the dentist on Friday”. “Hey Siri, show my chores in EvenUS” opens Effort."
+   ],
+   "tips": [
+    "Say the details as a second turn, after Siri asks. Said in one sentence, “Hey Siri, tell EvenUS I paid 30 for groceries” doesn’t reach EvenUS, because Siri can’t carry free text in the opening phrase.",
+    "In the Shortcuts app the same actions take text, so you can build Dictate Text → Tell EvenUS, or put it on the Action button.",
+    "“Add to EvenUS”, “Log something in EvenUS” and “What are my chores in EvenUS” work too. Siri also understands “Even us”."
+   ],
+   "partnerSees": "Whatever you save, like anything added by hand. Nothing is saved by Siri itself, so a misheard sentence never reaches them.",
+   "countryNotes": "In India, Siri runs in English (India), so start with the English phrases. EvenUS reads the words that follow in English or Hinglish, as Siri writes them down.",
+   "where": "Siri on your iPhone",
+   "whereParts": [
+    "Siri on your iPhone"
+   ]
+  },
+  {
+   "id": "android-shortcuts",
+   "group": "faster-adding",
+   "pro": false,
+   "platforms": [
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": null,
+   "addedInVersion": "1.0.0",
+   "related": [
+    "quick-add",
+    "home-widget"
+   ],
+   "keywords": [
+    "shortcuts",
+    "long-press",
+    "google assistant",
+    "hey google",
+    "launcher",
+    "app actions"
+   ],
+   "title": "Android shortcuts",
+   "oneLiner": "Long-press the EvenUS icon to go straight to Tell EvenUS, Add expense, Add reminder or My chores.",
+   "whoFor": "For adding things on the move on Android, with one tap fewer.",
+   "steps": [
+    "Long-press the EvenUS icon on your home screen or in the app drawer.",
+    "Tap Tell EvenUS, Add expense, Add reminder or My chores.",
+    "Check what opens and tap Save. Nothing is saved until you do.",
+    "To keep one handy, most launchers let you drag it from the list onto your home screen."
+   ],
+   "tips": [
+    "“Hey Google, open EvenUS” works everywhere.",
+    "Where Google Assistant is the phone’s assistant, “Hey Google, open my chores in EvenUS” and “Hey Google, create groceries 30 in EvenUS” can work too, once EvenUS is installed from Google Play. On phones where Gemini has replaced Assistant, these may not be available.",
+    "The shortcut names follow your phone’s language, not the language chosen in EvenUS."
+   ],
+   "partnerSees": "Whatever you save, like anything added by hand. Shortcuts only open the app; they never save anything on their own.",
+   "countryNotes": null,
+   "where": "Your home screen → The EvenUS icon",
+   "whereParts": [
+    "Your home screen",
+    "The EvenUS icon"
+   ]
+  },
+  {
+   "id": "personal-spending-privacy",
+   "group": "privacy-data",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/profile/preferences",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "partner-activity",
+    "data-export"
+   ],
+   "keywords": [
+    "privacy",
+    "personal spending",
+    "hide detail",
+    "private",
+    "just mine"
+   ],
+   "title": "Hide my personal spending detail",
+   "oneLiner": "Keep what your own purchases were to yourself, while the amounts still count in your shared numbers.",
+   "whoFor": "For anyone who’d like a “my treat” or a personal buy to stay personal. Shared costs stay visible to both of you.",
+   "steps": [
+    "Open Us, then Preferences → Language, widget and privacy.",
+    "Under Privacy, switch on Hide my personal spending detail.",
+    "When an expense is just yours, set the split so it’s all yours, or under More options tick Part of this was just for me and enter how much."
+   ],
+   "tips": [
+    "Shared costs are always visible to both of you. This covers only spending marked as yours.",
+    "It applies wherever your partner looks, including the activity feed and their data export.",
+    "Your income is never shown to your partner as an amount, only as a share of what you earn together. There’s no switch to hide it further, on purpose: the split needs both incomes, and with their own income, that share lets your partner work out yours exactly, as you can theirs."
+   ],
+   "partnerSees": "They see “A personal expense”, the amount and who paid, because the amount still moves your shared numbers. They don’t see what it was, its notes or its category, and the activity feed calls it “a personal expense” too. If only part of an expense was yours, like a few things in a supermarket shop, the whole expense shows this way: its title, notes and category are hidden, and the full amount still counts.",
+   "countryNotes": null,
+   "where": "Us → Preferences → Language, widget and privacy → Privacy",
+   "whereParts": [
+    "Us",
+    "Preferences",
+    "Language, widget and privacy",
+    "Privacy"
+   ]
+  },
+  {
+   "id": "activity-log",
+   "group": "privacy-data",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/profile/activity",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "partner-activity",
+    "data-export"
+   ],
+   "keywords": [
+    "activity",
+    "history",
+    "what changed",
+    "log",
+    "record"
+   ],
+   "title": "Activity",
+   "oneLiner": "A shared record of what either of you added or changed, in order.",
+   "whoFor": "For answering “when did that change?” without having to ask, or seeing what’s new since you last looked.",
+   "steps": [
+    "Open Us and tap Activity.",
+    "Read down the list: who did what, and when, newest first.",
+    "For the longer list, tap See all under it. There, a dot marks anything that changed the inputs to your fairness score. Tap Show more at the bottom for older entries. If the list can’t load, tap Try again."
+   ],
+   "tips": [
+    "It keeps records of things done, never notes about things not done.",
+    "Nothing in it can be edited or removed, by either of you, so it stays a record you can both trust.",
+    "A personal expense with hidden detail appears as “a personal expense”."
+   ],
+   "partnerSees": "The same list: the activity feed is shared, and both of you see every entry. An import of many expenses shows as one line.",
+   "countryNotes": null,
+   "where": "Us → Activity",
+   "whereParts": [
+    "Us",
+    "Activity"
+   ]
+  },
+  {
+   "id": "data-export",
+   "group": "privacy-data",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/profile/export",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "delete-account",
+    "tax-year-summary"
+   ],
+   "keywords": [
+    "export",
+    "download my data",
+    "backup",
+    "gdpr",
+    "copy of data",
+    "json",
+    "csv"
+   ],
+   "title": "Export your data",
+   "oneLiner": "Take a copy of everything in your household, expenses, chores, bills, settings and more, archived things included, plus your own private records, as files you can open anywhere.",
+   "whoFor": "For keeping your own records, working in a spreadsheet, or keeping a copy before deleting your account.",
+   "steps": [
+    "Open Us, tap Export, then Export my data.",
+    "Choose Export everything (JSON) for the full picture, or a spreadsheet: Export expenses (CSV), Export chores (CSV), Export chore log (CSV) or Export bills (CSV).",
+    "Pick where to send or save it from your phone’s share sheet."
+   ],
+   "tips": [
+    "The expenses file shows what each one actually cost after anything that came back.",
+    "Nothing is cut off by date: the files go back to the very first entry, and include archived chores, stopped bills and finished goals."
+   ],
+   "partnerSees": "Nothing: they aren’t told. Your file has the shared household data but never their private records, check-ins, calendar hours, leave plans, survey answers, or their payment details, and their personal expenses with hidden detail appear only as “A personal expense”. Their export leaves out your private records in the same way.",
+   "countryNotes": null,
+   "where": "Us → Export → Export my data",
+   "whereParts": [
+    "Us",
+    "Export",
+    "Export my data"
+   ]
+  },
+  {
+   "id": "delete-account",
+   "group": "privacy-data",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/profile/delete-account",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "data-export",
+    "help-feedback"
+   ],
+   "keywords": [
+    "delete account",
+    "remove my data",
+    "close account",
+    "erase"
+   ],
+   "title": "Delete your account",
+   "oneLiner": "Remove your login and your private data from EvenUS, with no waiting period and nobody else’s approval.",
+   "whoFor": "For anyone who has finished with EvenUS, for any reason. Your partner isn’t asked to approve it.",
+   "steps": [
+    "Open Us and tap Delete your account at the bottom.",
+    "Read what is deleted straight away and, if someone else is in the household, what is kept for them and why. If you’re the only one in the household, the household and everything in it are deleted too. Any Previous household kept for you is deleted with your account.",
+    "If you’d like a copy, tap Export my data first.",
+    "If you subscribe, cancel in your App Store or Google Play subscriptions; deleting the account doesn’t stop a renewal.",
+    "Type delete to confirm, then tap Delete my account."
+   ],
+   "tips": [
+    "There’s no thirty-day holding period and no shadow copy. It happens straight away.",
+    "Changed your mind on the screen? Keep my account takes you back with nothing changed.",
+    "No household yet? Sign out and Delete account are also at the bottom of the welcome and setup screens, and of Check your email while you confirm your address."
+   ],
+   "partnerSees": "They get a short notice (a notification, an email and a card in the app) that you deleted your account, with no reason given. They aren’t asked to approve it. The shared expenses, chores, bills and activity stay for them, with your name taken off. Your check-in answers, mental-load answers, income, commitments, notes and login are deleted.",
+   "countryNotes": null,
+   "where": "Us → Delete your account",
+   "whereParts": [
+    "Us",
+    "Delete your account"
+   ]
+  },
+  {
+   "id": "dark-mode",
+   "group": "settings-help",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/profile",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "language",
+    "home-widget"
+   ],
+   "keywords": [
+    "dark mode",
+    "appearance",
+    "theme",
+    "night",
+    "light mode"
+   ],
+   "title": "Dark mode",
+   "oneLiner": "Choose a light or dark look for EvenUS, or let it follow your phone.",
+   "whoFor": "For evening use, or for anyone who finds a darker screen easier on the eyes.",
+   "steps": [
+    "Open Us and tap Preferences.",
+    "Under Appearance, choose System, Light or Dark.",
+    "The change applies straight away."
+   ],
+   "tips": [
+    "System follows your phone: light by day, and dark when your phone is.",
+    "Colours are checked for easy reading in both looks."
+   ],
+   "partnerSees": "Nothing. Appearance is set on this phone only, and your partner’s phone keeps its own setting.",
+   "countryNotes": null,
+   "where": "Us → Preferences → Appearance",
+   "whereParts": [
+    "Us",
+    "Preferences",
+    "Appearance"
+   ]
+  },
+  {
+   "id": "language",
+   "group": "settings-help",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/profile/preferences",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "quick-add",
+    "dark-mode"
+   ],
+   "keywords": [
+    "language",
+    "hindi",
+    "english",
+    "translate"
+   ],
+   "title": "Language",
+   "oneLiner": "Use EvenUS in English, Hindi, Spanish, French, German or Portuguese, each of you in the language you choose.",
+   "whoFor": "For households where one or both of you would rather read in another language than English, or where you each prefer a different one.",
+   "steps": [
+    "Open Us, then Preferences → Language, widget and privacy.",
+    "Under Language, tap System or your language. Each one is listed in its own words: English, हिन्दी, Español, Français, Deutsch, Português.",
+    "The app changes straight away. Notifications and emails use this language too."
+   ],
+   "tips": [
+    "System follows your phone’s language.",
+    "Things either of you typed, like names and titles, stay as they were written.",
+    "Tell EvenUS understands English, Hindi, Hinglish, Spanish, French, German and Portuguese, whichever language the app is in. Siri and the long-press shortcuts follow your phone’s language."
+   ],
+   "partnerSees": "Your partner keeps their own language. Notifications reach each of you in your own, so a reminder you set for them arrives in theirs. What you type isn’t translated.",
+   "countryNotes": null,
+   "where": "Us → Preferences → Language, widget and privacy → Language",
+   "whereParts": [
+    "Us",
+    "Preferences",
+    "Language, widget and privacy",
+    "Language"
+   ]
+  },
+  {
+   "id": "household-settings",
+   "group": "settings-help",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/profile/household",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "when-someone-leaves",
+    "household-reminders",
+    "sunday-talk"
+   ],
+   "keywords": [
+    "household name",
+    "rename",
+    "time zone",
+    "timezone",
+    "moved",
+    "new city",
+    "week start",
+    "sunday summary time"
+   ],
+   "title": "Household name and time zone",
+   "oneLiner": "Rename your household, or move its time zone when you move, so your weeks turn at your own midnight.",
+   "whoFor": "For a household that has moved city or country, or that would like a different name.",
+   "steps": [
+    "Open Us, then Household, and tap Your household.",
+    "Under Household name, change the name and tap Save name.",
+    "Under Time zone, tap Change time zone, search for a big city in your time zone and tap it. Use this phone’s zone picks the zone your phone is in, when that is different."
+   ],
+   "tips": [
+    "Your weeks start at 00:00 on Monday in this time zone, and the Sunday summary and household reminders run on it.",
+    "A new time zone takes over when the week you’re in ends; the screen shows the date. The week you’re in stays as it is."
+   ],
+   "partnerSees": "The same name and time zone, for both of you. Each change shows as a line in the activity feed.",
+   "countryNotes": null,
+   "where": "Us → Household → Your household",
+   "whereParts": [
+    "Us",
+    "Household",
+    "Your household"
+   ]
+  },
+  {
+   "id": "when-someone-leaves",
+   "group": "settings-help",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/profile/household",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "subscription",
+    "invite-partner",
+    "delete-account",
+    "previous-household"
+   ],
+   "keywords": [
+    "leave",
+    "left",
+    "break up",
+    "separate",
+    "divorce",
+    "partner left",
+    "deleted account",
+    "new partner",
+    "subscription after leaving"
+   ],
+   "title": "When someone leaves",
+   "oneLiner": "If one of you leaves the household or deletes their account, the other is told calmly, keeps everything recorded, and sees what happens to the subscription.",
+   "whoFor": "For a household that changes: a break-up, a move, or one of you stopping. Nobody needs the other person's permission to leave.",
+   "steps": [
+    "To leave, open Us, then Household, tap Your household, and tap Leave household at the bottom. Your private details go with you; the shared history stays. If you're the only one in it, leaving deletes the household and everything in it, so you're offered Export first.",
+    "The person who stays gets a notification, an email and a card on This week and in Us. It names who left and never gives a reason.",
+    "On the card, choose Invite them back, Invite someone new, or Keep using EvenUS on your own.",
+    "The card also says what happens to the subscription. If you pay, your plan continues, with a new partner too. If the person who left paid, Pro stays on until their paid period ends or until someone new joins; then you choose a plan. A subscription does this for one household only.",
+    "If someone new joins after that, the two of you start fresh in an empty household, and the earlier records move to Us → Previous household, private to the person who stayed. If the person who left comes back instead, everything stays as it is."
+   ],
+   "tips": [
+    "Everything you recorded stays readable and exportable, with or without Pro.",
+    "If the same person comes back, their subscription applies again. The free week is never given twice.",
+    "Deleting an account doesn't cancel a store subscription. Cancel it in the App Store or Google Play."
+   ],
+   "partnerSees": "The person who leaves gets a short confirmation email. They never see anything recorded after they left.",
+   "countryNotes": null,
+   "where": "Us → Household → Your household → Leave household",
+   "whereParts": [
+    "Us",
+    "Household",
+    "Your household",
+    "Leave household"
+   ]
+  },
+  {
+   "id": "previous-household",
+   "group": "settings-help",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/profile/previous-household",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "when-someone-leaves",
+    "invite-partner",
+    "data-export"
+   ],
+   "keywords": [
+    "previous household",
+    "old household",
+    "archive",
+    "new partner",
+    "start fresh",
+    "fresh start",
+    "earlier records",
+    "history before",
+    "break up"
+   ],
+   "title": "Previous household",
+   "oneLiner": "When someone new joins after a partner has left, the two of you start fresh, and your earlier records stay private to you, read-only.",
+   "whoFor": "For the person who stayed, once someone new has joined.",
+   "steps": [
+    "Open Us and tap Previous household. It shows only while one is kept for you.",
+    "See the period it covers, the totals, and the spending, chores and weeks that were recorded. Search any list.",
+    "Export a copy, or delete it for good at the bottom of the screen."
+   ],
+   "tips": [
+    "Nothing here can be changed, and nothing from it is part of your household now.",
+    "If the person who left comes back instead, nothing starts again: everything stays where it was."
+   ],
+   "partnerSees": "Nothing. Your new partner never sees anything from before, and the person who left can’t see it either.",
+   "countryNotes": null,
+   "where": "Us → Previous household",
+   "whereParts": [
+    "Us",
+    "Previous household"
+   ]
+  },
+  {
+   "id": "subscription",
+   "group": "settings-help",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/profile/subscription",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "trial-tips",
+    "help-feedback",
+    "delete-account"
+   ],
+   "keywords": [
+    "subscription",
+    "pro",
+    "plan",
+    "price",
+    "restore",
+    "cancel",
+    "renew",
+    "trial",
+    "free week",
+    "billing"
+   ],
+   "title": "Subscription",
+   "oneLiner": "See where your free week or EvenUS Pro stands, look at the plans, restore a purchase, or manage it in your store account.",
+   "whoFor": "For anyone wondering how many free days are left, when Pro renews, or how to change plan or cancel.",
+   "steps": [
+    "Open Us and tap Subscription in the Help section near the bottom.",
+    "Check the status at the top: the days left in your free week, when Pro renews or ends, or a plan from the EvenUS team.",
+    "Tap See plans to look at the monthly and yearly plans, even if you already have Pro.",
+    "Tap Restore purchases if you bought on another phone, or Manage subscription to change plan or cancel in the App Store or Google Play."
+   ],
+   "tips": [
+    "The free week runs in the app with no card, so nothing is charged when it ends. Subscribing during the free week ends the free days, and billing starts that day.",
+    "Cancelling happens in your App Store or Google Play account. Deleting the app doesn’t cancel a subscription.",
+    "Whoever pays, one subscription covers both of you."
+   ],
+   "partnerSees": "Your partner sees the same status, because one subscription covers the household. They never see your store account or how you paid.",
+   "countryNotes": null,
+   "where": "Us → Help → Subscription",
+   "whereParts": [
+    "Us",
+    "Help",
+    "Subscription"
+   ]
+  },
+  {
+   "id": "trial-tips",
+   "group": "settings-help",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/profile",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "subscription",
+    "partner-activity"
+   ],
+   "keywords": [
+    "tips",
+    "free week",
+    "trial",
+    "notifications",
+    "getting started"
+   ],
+   "title": "Tips during your free week",
+   "oneLiner": "During your free week, one short evening tip a day about an EvenUS feature you haven’t tried yet.",
+   "whoFor": "For new households who want to find the useful parts without reading the whole guide.",
+   "steps": [
+    "Tips are off unless you choose them. When EvenUS asks about notifications, tap “Turn on, with free-week tips”, or switch on Tips during your free week in Us → Preferences.",
+    "They arrive at about 7 pm, Monday to Saturday, during your free week only, never on Sundays. Tap one to go straight to the feature; on This week the same tip waits in a card even with notifications off.",
+    "To stop them, open Us, tap Preferences and switch off Tips during your free week."
+   ],
+   "tips": [
+    "Each tip skips anything you’ve already used, and no feature comes up twice.",
+    "The evening before your free week ends, one last note says so plainly. No card was taken, so nothing is charged automatically; subscribing is up to you.",
+    "The tips are chosen and scheduled on this phone. What you open is counted only on this phone and never sent anywhere."
+   ],
+   "partnerSees": "Nothing. Tips are only about EvenUS features, never about your partner, and your partner has their own switch.",
+   "countryNotes": null,
+   "where": "Us → Preferences → Tips during your free week",
+   "whereParts": [
+    "Us",
+    "Preferences",
+    "Tips during your free week"
+   ]
+  },
+  {
+   "id": "help-feedback",
+   "group": "settings-help",
+   "pro": false,
+   "platforms": [
+    "ios",
+    "android"
+   ],
+   "currencies": null,
+   "inAppRoute": "/(tabs)/profile/help",
+   "addedInVersion": "1.0.0",
+   "related": [
+    "delete-account",
+    "invite-partner"
+   ],
+   "keywords": [
+    "help",
+    "feedback",
+    "support",
+    "contact",
+    "bug",
+    "idea",
+    "email"
+   ],
+   "title": "Help and feedback",
+   "oneLiner": "Ask a question, say what isn’t working, or suggest a feature, from inside the app.",
+   "whoFor": "For anything you’d like a person to read: a question, a problem, a billing worry or an idea.",
+   "steps": [
+    "Open Us and tap Help and feedback near the bottom.",
+    "Choose Contact us or Request a feature.",
+    "Pick what it’s about and write your message, or give the idea a short name and say why it matters to you.",
+    "Switch on the reply option if you’d like an email back, then tap Send."
+   ],
+   "tips": [
+    "Your message goes with the app version and your phone model, and nothing about your household, your partner or what you’ve recorded.",
+    "You can send five messages a day. After that, email support@evenus.app directly.",
+    "Email us directly opens your mail app, addressed to support@evenus.app."
+   ],
+   "partnerSees": "Nothing. Messages go to the EvenUS team only, and your partner isn’t told you wrote.",
+   "countryNotes": null,
+   "where": "Us → Help → Help and feedback",
+   "whereParts": [
+    "Us",
+    "Help",
+    "Help and feedback"
+   ]
+  }
+ ]
+}

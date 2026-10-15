@@ -1,0 +1,90 @@
+{
+  "id": "seen-differently",
+  "h1": "Seen differently: where you each read the same job another way",
+  "seoTitle": "Mental Load Perception Gap: Seen Differently",
+  "description": "Seen differently shows where you and your partner answered the same planning job differently, side by side, without deciding which of you is right.",
+  "updated": "2026-10-15",
+  "answer": "Seen differently is the EvenUS screen that shows where two partners answered the same household planning job differently in Who keeps track of what. It places both answers side by side at the same size, explains how both can be true at once, and offers one question worth asking. It never says which answer is right.",
+  "what": {
+    "h2": "What does Seen differently do?",
+    "html": "<p><strong>It finds the planning jobs the two of you see differently and shows them calmly, side by side.</strong> Much of running a home is invisible from the outside: deciding, checking, noticing what is running low. So one of you can honestly believe meal planning is shared while the other honestly experiences it as theirs. Neither is misremembering. You are seeing different halves of the same job.</p><p>After you have both answered the questions in <a href=\"/features/mental-load-map/\">Who keeps track of what</a>, EvenUS compares your answers area by area and surfaces only the ones that clearly part. Small differences of degree are left alone.</p>"
+  },
+  "who": {
+    "h2": "Who is Seen differently for?",
+    "html": "<p>Couples who have both answered “Who keeps track of what” and want to see where their answers part, especially anyone who has had the “but I thought we shared that” conversation. It is a starting point for talking, not a judgement on who carries more.</p>"
+  },
+  "steps": {
+    "h2": "How do you use Seen differently?",
+    "intro": "Both answer “Who keeps track of what” on your own phones, then open Insights, then “Where your readings differ”.",
+    "items": [
+      {
+        "name": "Answer the questions",
+        "text": "Open Insights, then “Who keeps track of what”, and answer the questions, from Just me to Just your partner, We pay someone or Doesn't apply to us. Your partner does the same on their phone."
+      },
+      {
+        "name": "Wait for both answers",
+        "text": "Until your partner has finished, the screen says it is waiting on the other half. Neither of you sees the other’s answers before then."
+      },
+      {
+        "name": "Open the comparison",
+        "text": "Once you have both finished, open Insights, then “Where your readings differ”."
+      },
+      {
+        "name": "Read it together",
+        "text": "Read both answers, shown at the same size, and the question worth asking at the end."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see?",
+    "html": "<p><strong>The same screen, with both answers at the same size and weight.</strong> There is no vote, no “who’s right” and no way to change the other person’s answer. Each answer is labelled with whose it is, and the screen says plainly that neither has been corrected or overwritten.</p><p>Before you have both finished, neither of you can see the other’s answers, and afterwards neither can change them, so nobody answers with one eye on what the other said.</p>"
+  },
+  "tips": {
+    "h2": "Tips for using Seen differently",
+    "items": [
+      "If several areas read differently, take one at a time. The screen shows one and says how many others there are.",
+      "Answer carefully the first time. Once you have both finished, answers stay as they were, so nobody changes theirs after seeing the other's.",
+      "Open it together, so the first reaction is shared rather than rehearsed.",
+      "Start with the question the screen offers. It tends to work better than asking who does more.",
+      "If the screen says your readings couldn't load, check your connection and tap Try again. It never shows a failed load as waiting on your partner."
+    ]
+  },
+  "extra": [
+    {
+      "h2": "What counts as seen differently? An example",
+      "html": "<p>Each answer says how much of an area is yours. If both are accurate, the two should roughly add up to the whole job. Say Alex answers meal planning as Just me and Sam answers Genuinely shared. Together that is well over one whole job, so the screen shows it: one of you has it as shared, the other has it as theirs.</p><p>Some pairs are worth a look in a different way. If you each have an area down as mostly the other's, the screen suggests checking it isn't quietly sitting with nobody. Two answers of We pay someone agree. A difference of one step, such as Mostly me beside Genuinely shared, is too small to flag. When several areas differ, the widest gap comes first.</p>"
+    },
+    {
+      "h2": "How does this connect to the household balance?",
+      "html": "<p>The same answers feed the planning hours inside the time figure of the <a href=\"/features/fairness-score/\">household balance</a>. Where your answers for an area differ, the two are averaged rather than one being picked, and an area counts only once both of you have answered it. Seen differently is the place to talk about those areas before anything is adjusted, perhaps as part of <a href=\"/features/sunday-talk/\">Sunday talk</a>.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Can my partner see my answers before they finish theirs?",
+      "a": "No. Neither of you sees the other’s answers in Who keeps track of what until both of you have finished. Only then does Seen differently show the areas you read differently, with both answers side by side."
+    },
+    {
+      "q": "Does EvenUS decide which of us is right?",
+      "a": "No. Both answers are shown at the same size and weight, with no vote and no verdict. The app has no way to know which reading is right, and it says so on the screen."
+    },
+    {
+      "q": "What if we see everything the same way?",
+      "a": "Then the screen says you are reading it the same way. That is worth knowing too: it means the picture the rest of EvenUS draws is one you both recognise."
+    },
+    {
+      "q": "Can either of us change an answer afterwards?",
+      "a": "No. Before you have both finished, you can change your own answers. Once you have both finished, answers stay as they were, so nobody can change theirs after seeing the other's, and the server's rules refuse it too."
+    },
+    {
+      "q": "Is Seen differently part of EvenUS Pro?",
+      "a": "Yes. It is included in the 7-day free week and then part of EvenUS Pro. Your answers and everything else already recorded stay readable and exportable without a subscription."
+    }
+  ],
+  "relatedPosts": [
+    "how-to-explain-the-mental-load-to-a-partner",
+    "cognitive-labor-vs-physical-chores",
+    "dividing-labor-without-blame-or-guilt",
+    "invisible-labor"
+  ]
+}

@@ -5,13 +5,13 @@
   meta:cat      Using EvenUS
   meta:date     28 February 2026
   meta:iso      2026-02-28
-  meta:updated  2026-10-12
+  meta:updated  2026-10-14
 
   Rewritten. Target query: Live Household Balance Dashboard.
   Checked against app/(tabs)/index.tsx (dashboard order), CLAUDE.md §4.13
   (current week live, history from weekSnapshots), insights screens.
 -->
-<p><strong>The live household balance dashboard is the EvenUS home screen. It shows the current week, calculated live from what you and your partner have logged, so a chore you tick off or an expense you add is reflected straight away. It leads with the direction things are moving, then where the hours sit between you, then one suggested change for the week.</strong> Older weeks come from saved weekly summaries rather than live data.</p>
+<p><strong>The live household balance dashboard is the EvenUS This week tab, the first of its five tabs (This week, Money, Effort, Insights and Us). It shows the current week, calculated live from what you and your partner have logged, so a chore you tick off or an expense you add is reflected straight away. It leads with the direction things are moving, then where the hours sit between you, then one suggested change for the week.</strong> Older weeks come from saved weekly summaries rather than live data.</p>
 
 <p>This article explains what is on the dashboard, why it is arranged the way it is, and what it deliberately leaves out. EvenUS is in closed testing, so details may still change.</p>
 
@@ -27,7 +27,7 @@
   <li><strong>The check-in and recent activity.</strong> A prompt for the private weekly check-in, and a short list of what has been logged lately.</li>
 </ol>
 
-<p>"See the numbers" is one tap away and leads to the insights screens, where the overall score, the effort and money breakdowns, and the full weekly sums live.</p>
+<p>The Insights tab is one tap away, with the overall score, the time and money breakdowns, and the full weekly sums.</p>
 
 <h2>What does "live" actually mean here?</h2>
 
@@ -39,13 +39,13 @@
 
 <h3>Why older weeks are not live</h3>
 
-<p>Previous weeks, and the trend across them, come from weekly summaries saved in the background. They can lag the current state by a few minutes. That is deliberate: recalculating months of history on a phone every time you open the app would be slow and wasteful, and history does not need to be live. It also means editing a chore today does not quietly rewrite last month, because each completed chore keeps the time and planning weight it had when it was done.</p>
+<p>Previous weeks, and the trend across them, come from weekly summaries saved in the background. They can lag the current state by a few minutes. That is deliberate: recalculating months of history on a phone every time you open the app would be slow and wasteful, and history does not need to be live. It also means editing a chore today does not quietly rewrite last month, because each completed chore keeps the time it took when it was done.</p>
 
-<h2>Why isn't the fairness score on the home screen?</h2>
+<h2>Why isn't the fairness score at the top of the This week tab?</h2>
 
 <p><strong>Because a big number at the top of the screen reads as a verdict, and the dashboard is meant to start conversations, not settle them.</strong></p>
 
-<p>Picture Sam opening the app first thing on a Monday and seeing a low number before Alex is even awake. Whatever the number is, the first thing it does is make one of them defensive. So the home screen leads with direction and with something to do, and keeps the score one tap away for when you want it.</p>
+<p>Picture Sam opening the app first thing on a Monday and seeing a low number before Alex is even awake. Whatever the number is, the first thing it does is make one of them defensive. So the This week tab leads with direction and with something to do, and keeps the score one tap away for when you want it.</p>
 
 <p>Direction also matters more than position. A household at 60 and improving is in a better place than one at 75 and sliding, and the dashboard is built to say so. <a href="/blog/how-the-evenus-fairness-score-really-works-effort-money-mental-load-explained/">How the EvenUS fairness score works</a> explains what the score is built from.</p>
 
@@ -53,11 +53,11 @@
 
 <p><strong>From discretionary time: the hours each of you has left that are genuinely your own.</strong></p>
 
-<p>A week has 168 hours. Take away sleep and unavoidable personal time, then paid work, commuting and household work, with planning-heavy tasks weighted more heavily than quick physical ones. What remains is free time, and balance means both of you ending up with a similar amount.</p>
+<p>A week has 168 hours. Take away sleep and unavoidable personal time, then paid work, commuting, household work and childcare, and the planning and remembering each of you holds, counted as hours like everything else. What remains is free time, and balance means both of you ending up with a similar amount.</p>
 
-<p>A simple worked example: suppose Priya and Tom each have about 68 hours to allocate after sleep and personal time. Priya works 38 paid hours and does 20 hours at home, leaving 10. Tom works 45 paid hours and does 9 at home, leaving 14. The gap is 4 hours a week. The dashboard would describe that gap, not who caused it.</p>
+<p>A simple worked example: suppose Priya and Tom each have 98 hours to allocate after sleep (8 hours a night) and personal time (2 hours a day). Priya works 38 paid hours, commutes 5 and has 31 hours of housework and planning, leaving 24. Tom works 45 paid hours, commutes 5 and has 20 at home, leaving 28. The gap is 4 hours a week. The dashboard would describe that gap, not who caused it.</p>
 
-<p>Money sits on a separate axis and is never converted into hours. You can see it in the money breakdown under the insights screens.</p>
+<p>Money sits on a separate axis and is never converted into hours. You can see it in Insights, under Money.</p>
 
 <h2>What does the dashboard deliberately leave out?</h2>
 
@@ -88,7 +88,7 @@
 
 <p><strong>Glance at it, act on the one idea, and leave the deeper reading for the weekly report.</strong> It is not designed to be checked hourly.</p>
 
-<p>A good rhythm for most couples: <a href="/blog/how-to-add-chores/">add your chores and bills</a> once, log as you go or use the weekly 30-second catch-up, look at this week's idea together once, and read the <a href="/blog/weekly-fairness-report/">weekly fairness report</a> when it arrives. <a href="/blog/your-first-30-days-with-evenus/">Your first 30 days with EvenUS</a> covers what the first month usually looks like. If you want to see the hours calculation before setting anything up, the free <a href="/calculator/">household fairness calculator</a> runs a simplified version with no account.</p>
+<p>A good rhythm for most couples: <a href="/blog/how-to-add-chores/">add your chores and bills</a> once, log as you go or use the weekly catch-up, look at this week's idea together once, and read the <a href="/blog/weekly-fairness-report/">weekly fairness report</a> when it arrives. <a href="/blog/your-first-30-days-with-evenus/">Your first 30 days with EvenUS</a> covers what the first month usually looks like. If you want to see the hours calculation before setting anything up, the free <a href="/calculator/">household fairness calculator</a> runs a simplified version with no account.</p>
 
 <h2>Common questions</h2>
 

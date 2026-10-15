@@ -1,0 +1,91 @@
+{
+  "id": "apple-pay-capture",
+  "h1": "Apple Pay capture: a quiet prompt to share a payment after you pay",
+  "seoTitle": "Log Apple Pay Payments as Shared Expenses",
+  "description": "Set up Apple Pay capture once, and after you pay EvenUS quietly asks whether to add it to shared spending. Nothing is saved or sent until you choose.",
+  "updated": "2026-10-15",
+  "answer": "Apple Pay capture is an optional EvenUS setting for iPhone on iOS 17 or later. Using a Shortcuts automation, each Apple Pay payment on the cards you pick is kept on your phone, and one quiet notification asks whether to add it to shared spending. Add opens the expense form filled in for you to check; Personal lets it go. Nothing is saved or sent until you tap Save expense.",
+  "what": {
+    "h2": "What does Apple Pay capture do?",
+    "html": "<p><strong>It catches a shared payment at the moment you make it, so you do not have to remember it later.</strong> Small shared costs paid by phone, like the coffee or the takeaway, are the ones most likely to go unrecorded.</p><p>Once it is set up, iPhone’s own Shortcuts app passes the merchant and the amount of each Apple Pay payment to EvenUS. EvenUS does not open. The payment waits on your phone, and a single notification asks something like “Add £4.20 at Pret to shared?” You tap Add or Personal, or ignore it.</p><p>Add opens the ordinary <a href=\"/features/shared-expenses/\">shared expense</a> form with the amount and merchant filled in and a likely category guessed. You check it, choose the split and save, exactly as if you had typed it.</p>"
+  },
+  "who": {
+    "h2": "Who is Apple Pay capture for?",
+    "html": "<p>For anyone who pays for shared things with Apple Pay and would like a gentle prompt in place of remembering later, especially the partner who does most of the everyday tapping. It needs an iPhone on iOS 17 or later.</p>"
+  },
+  "steps": {
+    "h2": "How do you set up Apple Pay capture?",
+    "intro": "Open Us, tap Household, then “Apple Pay capture”, and follow the steps to build a Transaction automation in the Shortcuts app that runs “Log a payment in EvenUS”.",
+    "items": [
+      {
+        "name": "Open the setup screen",
+        "text": "Open Us, tap Household, then “Apple Pay capture”."
+      },
+      {
+        "name": "Start a Transaction automation",
+        "text": "Tap “Open Shortcuts”, go to Automation, tap the + and choose Transaction."
+      },
+      {
+        "name": "Pick your shared cards",
+        "text": "Pick the cards you use for shared spending and choose Run Immediately, then tap New Blank Automation and add the action “Log a payment in EvenUS”."
+      },
+      {
+        "name": "Pass the amount and merchant",
+        "text": "Set Amount to Shortcut Input → Amount and Merchant to Shortcut Input → Merchant, then tap Done."
+      },
+      {
+        "name": "Answer the next prompt",
+        "text": "After your next Apple Pay payment, tap Add on the notification to open the expense form filled in, or Personal to let it go. Check it and tap Save expense."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see?",
+    "html": "<p><strong>Nothing until you save an expense; then they see it like any other.</strong> The merchant and amount of each payment are kept only on your iPhone while they wait. Payments you mark Personal, or leave to expire, never reach your partner, and the waiting list itself is only on your phone.</p><p>Capture can see every Apple Pay payment on the cards you pick, so pick only the cards you use for shared spending. Your personal card can stay out of the automation entirely.</p>"
+  },
+  "tips": {
+    "h2": "Tips for living with Apple Pay capture",
+    "items": [
+      "Anything you haven’t answered waits in Money → Track → “Waiting to review”, and clears itself after 14 days. A quick look on Sunday is plenty.",
+      "If you and your partner both have iPhones, each of you sets up your own automation for your own cards.",
+      "Android has no Wallet automation that can pass a payment to another app, so there <a href=\"/features/quick-add/\">Tell EvenUS</a> or a <a href=\"/features/receipt-scan/\">receipt scan</a> is the quickest way."
+    ]
+  },
+  "country": {
+    "h2": "Does Apple Pay capture work on Android or older iPhones?",
+    "html": "<p><strong>It needs an iPhone on iOS 17 or later, because Wallet transaction automations arrived in iOS 17.</strong> On an older version, the setup screen says so. On Android it is not available, because Google Wallet has no automation that can pass a payment to another app.</p><p>It works wherever Apple Pay does. If Wallet reports a payment in another currency, the form says what was paid, for example “From Apple Pay: €12.00. EvenUS records in GBP, so type what it came to in GBP.”, and leaves the amount empty, so it is never saved as the wrong money.</p>"
+  },
+  "extra": [
+    {
+      "h2": "Why doesn’t it add payments automatically?",
+      "html": "<p>Not every Apple Pay payment is shared, and only you know which ones are. A payment saved without a look could move both partners’ numbers, including the money half of the <a href=\"/features/fairness-score/\">household balance</a> (the fairness score), for weeks before anyone noticed. So capture only ever asks. The form opens with “From Apple Pay. Check it, then save.”, and the expense exists only once you tap Save expense. For a month of card spending in one go, <a href=\"/features/statement-import/\">import a bank statement</a> instead.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Does EvenUS connect to my bank or Apple Wallet?",
+      "a": "No. EvenUS never connects to a bank. Apple’s own Shortcuts app passes the merchant and amount of each payment, on the cards you choose, to EvenUS on your phone. Nothing is sent to EvenUS’s servers until you save an expense."
+    },
+    {
+      "q": "Can my partner see my Apple Pay payments?",
+      "a": "No. Payments wait only on your iPhone. Your partner sees an expense only once you have added it and tapped Save. Anything you mark Personal or leave for 14 days is cleared without ever reaching them."
+    },
+    {
+      "q": "Does Apple Pay capture work on Android?",
+      "a": "No. Google Wallet has no automation that can pass a payment to another app, so Apple Pay capture is iPhone only. On Android, Tell EvenUS or a receipt scan is the quickest way to add a payment."
+    },
+    {
+      "q": "What happens to payments I don’t answer?",
+      "a": "They wait in Money → Track → Waiting to review, where you can Add or mark them Personal later. Anything left there for 14 days clears itself, so the list never becomes a chore of its own."
+    },
+    {
+      "q": "Is Apple Pay capture part of EvenUS Pro?",
+      "a": "No. Apple Pay capture is a way of adding expenses, so it keeps working after the 7-day free week whether or not you subscribe."
+    }
+  ],
+  "relatedPosts": [
+    "how-to-automate-your-household-spending",
+    "tracking-shared-expenses",
+    "productivity-hacks-for-dual-income-households"
+  ]
+}

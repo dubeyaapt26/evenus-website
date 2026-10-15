@@ -1,0 +1,84 @@
+{
+  "id": "shopping-list",
+  "h1": "Shopping list: one shared list that becomes one expense",
+  "seoTitle": "Shared Shopping List for Couples: EvenUS",
+  "description": "One shopping list you both add to, updated on both phones straight away. When the shop is done it becomes a single shared expense you check first.",
+  "updated": "2026-10-15",
+  "answer": "The Shopping list in EvenUS is one shared list that either partner can add to, and it changes on both phones straight away. In the shop you tick things off as they go in the trolley. When you tap Done shopping and enter the total, it becomes one ordinary shared expense, paid by whoever did the shop, which you check before it is saved.",
+  "what": {
+    "h2": "What does the Shopping list do?",
+    "html": "<p><strong>It replaces the “we need milk” messages with one list you both see, and turns the finished shop into one expense without retyping anything.</strong> One of you notices the washing up liquid is low and adds it. The other is near the supermarket and sees it a moment later.</p><p>When the shop is done, the bought items become a single entry in <a href=\"/features/shared-expenses/\">Shared expenses</a>, filed under Groceries with a title made from the items, such as “Milk, eggs and bread”. It splits the way your household shares costs and feeds the <a href=\"/features/settle-up/\">Even up</a> card. A shop made only of one hosting plan’s menu items is tagged to that plan, so its budget includes it.</p><p>The list itself is just a list. EvenUS does not count who added items or who ticked them off.</p>"
+  },
+  "who": {
+    "h2": "Who is the Shopping list for?",
+    "html": "<p>For couples who keep texting each other “we need milk”, and for households where one of you tends to notice what is running out. It also suits couples who take turns doing the big shop, because the expense lands with whoever paid.</p>"
+  },
+  "steps": {
+    "h2": "How do you use the Shopping list?",
+    "intro": "Open the Effort tab, tap “Shopping list”, add items, tick them off in the shop, then tap “Done shopping”, enter the total and check the expense.",
+    "items": [
+      {
+        "name": "Open the list",
+        "text": "Open the Effort tab and tap “Shopping list”."
+      },
+      {
+        "name": "Add what you need",
+        "text": "Type in “Add something”, add How much if you like, such as 2 kg, and tap Add. “Milk, eggs and bread” goes on as three items. Press and hold an item later to change it."
+      },
+      {
+        "name": "Tick things off in the shop",
+        "text": "Tap each item as it goes in the trolley. Ticked items move under “In the trolley”, with no pop-up to dismiss. Tap ✕ beside an item to take it off the list, and Undo puts it straight back."
+      },
+      {
+        "name": "Finish the shop",
+        "text": "Tap “Done shopping”. Pick what you bought (what you ticked is chosen already), enter the total under “The total”, and tap “Check the expense”."
+      },
+      {
+        "name": "Save the expense",
+        "text": "The expense form opens filled in: Groceries, a title from the items, and you as the payer. Check it and save. Only then are those items cleared from the list."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see?",
+    "html": "<p><strong>Your partner sees the list change straight away</strong>: new items, ticks and anything removed. In different aisles of the same shop, you can each tick what you pick up.</p><p>The finished shop arrives as one ordinary expense, paid by whoever did the shop, after that person has checked it. The one exception is a shop with a personal part when you have switched on <a href=\"/features/personal-spending-privacy/\">Hide my personal spending detail</a>: then your partner sees the whole shop as “A personal expense”, with its full amount but not its title or category. There is no record of who added which item.</p>"
+  },
+  "tips": {
+    "h2": "Tips for a list that actually gets used",
+    "items": [
+      "Add from <a href=\"/features/quick-add/\">Tell EvenUS</a> too: type “add milk and eggs to the list” and both items go on as separate lines.",
+      "Removed something by mistake? “Removed” shows with Undo for a few seconds.",
+      "If you cancel the expense form after Done shopping, the list stays exactly as it was, ticks included.",
+      "Buying some things just for yourself in the same shop? Use “Part of this was just for me” on the expense so only the rest is shared."
+    ]
+  },
+  "extra": [
+    {
+      "h2": "Why does nothing on the list count?",
+      "html": "<p>Noticing that the milk is running low is a small piece of the <a href=\"/blog/what-is-the-mental-load/\">mental load</a>, and it is tempting to score it. EvenUS deliberately does not. Counting who added items would reward typing fast and turn a shared list into something to compete over.</p><p>The work behind the shopping is counted elsewhere. Keeping track of what is running low is the Groceries area in <a href=\"/features/mental-load-map/\">Who keeps track of what</a>, and the time spent doing the shop can be logged as a chore in Effort. The money is the expense. The list just holds the items.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Can my partner and I both add to the same shopping list?",
+      "a": "Yes. There is one list per household and either of you can add, tick or remove items. Changes appear on the other phone straight away, so you can both shop from it at the same time."
+    },
+    {
+      "q": "Who is the payer when the shop becomes an expense?",
+      "a": "Whoever taps Done shopping is filled in as the payer, because they did the shop. You can change it on the expense form before saving if your partner paid, just as with any expense."
+    },
+    {
+      "q": "What happens to items I did not buy?",
+      "a": "Only the items you pick in the Done shopping sheet are cleared, and only after the expense is saved. Anything you did not get stays on the list for next time, on both phones."
+    },
+    {
+      "q": "Does the Shopping list affect the household balance?",
+      "a": "The list itself does not count towards anything. Once a shop is saved as an expense, that expense is part of your shared spending like any other, which is what feeds the money side of the household balance."
+    }
+  ],
+  "relatedPosts": [
+    "shared-to-do-lists-for-couples",
+    "tracking-shared-expenses",
+    "digital-minimalism-for-couples"
+  ]
+}

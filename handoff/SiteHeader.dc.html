@@ -12,6 +12,7 @@
     <a href="EvenUS%20Website.dc.html" style="font-size:22px;font-weight:700;letter-spacing:-.02em;color:#1B1F1D;text-decoration:none">Even<span style="font-family:Newsreader,serif;font-style:italic;font-weight:400;color:#2E6A5C">US</span></a>
     <nav style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px 24px;font-size:14px;font-weight:500;flex:1 1 auto;min-width:0">
       <a href="EvenUS%20Website.dc.html" style="text-decoration:none;color:{{ cHome }}">Home</a>
+      <a href="/features/" style="text-decoration:none;color:{{ cFeatures }}">Features</a>
       <a href="Blog.dc.html" style="text-decoration:none;color:{{ cBlog }}">Blog</a>
       <a href="Help.dc.html" style="text-decoration:none;color:{{ cHelp }}">Help</a>
     </nav>
@@ -20,12 +21,12 @@
 </header>
 
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;blog&quot;,&quot;help&quot;,&quot;&quot;],&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;features&quot;,&quot;blog&quot;,&quot;help&quot;,&quot;&quot;],&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
 class Component extends DCLogic {
   renderVals() {
     const a = this.props.active || "";
     const on = "#1B1F1D", off = "#5E645F";
-    return { cHome: a === "home" ? on : off, cBlog: a === "blog" ? on : off, cHelp: a === "help" ? on : off };
+    return { cHome: a === "home" ? on : off, cFeatures: a === "features" ? on : off, cBlog: a === "blog" ? on : off, cHelp: a === "help" ? on : off };
   }
 }
 </script>

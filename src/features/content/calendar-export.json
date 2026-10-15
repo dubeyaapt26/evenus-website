@@ -1,0 +1,85 @@
+{
+  "id": "calendar-export",
+  "h1": "Add to calendar: put household reminders in the calendar you use",
+  "seoTitle": "Add Household Reminders to Google or Apple Calendar",
+  "description": "Send EvenUS birthdays, events and document dates to Google Calendar, Apple Calendar or Outlook as a calendar file, made on your phone, never uploaded.",
+  "updated": "2026-10-14",
+  "answer": "Add to calendar in EvenUS copies your household reminders into the calendar app you already use, such as Apple Calendar, Google Calendar or Outlook. Tap Export on the reminders list to share them all as one .ics calendar file, or “Add to calendar” on a single reminder. The file is made on your phone, nothing is uploaded, each entry carries the reminder’s note, and it never says who set a reminder.",
+  "what": {
+    "h2": "What does Add to calendar do?",
+    "html": "<p><strong>It puts the household's dates next to everything else in your day, without asking you to keep two calendars by hand.</strong> Many people plan their week from one calendar app. If birthdays and the parents' evening live only in EvenUS, they are easy to miss when you are booking something else on the same evening.</p><p>EvenUS writes your <a href=\"/features/household-reminders/\">reminders</a> into a standard .ics calendar file and opens your phone's share sheet. From there you pick Calendar, Google Calendar, Outlook, Files or a message, and the entries land where you already look.</p><p>It is a one-way copy, made at the moment you tap. EvenUS keeps sending its own notifications as before, so the calendar entries are an extra view, not a replacement.</p>"
+  },
+  "who": {
+    "h2": "Who is Add to calendar for?",
+    "html": "<p>Anyone who lives by their phone's calendar, Google Calendar or Outlook and wants birthdays, anniversaries and plans there too. It also helps when one of you keeps a shared family calendar elsewhere and would like the EvenUS dates in it, or when you want a document's expiry date in a work calendar to plan time off for the renewal appointment.</p>"
+  },
+  "steps": {
+    "h2": "How do you add EvenUS reminders to your calendar?",
+    "intro": "Open Reminders and dates from the Us tab, tap Export for all of them or “Add to calendar” on one, and pick your calendar app from the share sheet.",
+    "items": [
+      {
+        "name": "Open your reminders",
+        "text": "Open Us, then Household → Reminders and dates."
+      },
+      {
+        "name": "Export everything at once",
+        "text": "Tap Export at the top of the list to share all of the household's reminders as one .ics file."
+      },
+      {
+        "name": "Or add just one",
+        "text": "Open a single reminder and tap “Add to calendar”, or press and hold it in the list, or tap its … button, and choose “Add to calendar” there."
+      },
+      {
+        "name": "Pick your calendar app",
+        "text": "Choose your calendar app from the share sheet. Most calendar apps show the entries first and ask you to confirm before adding them. On an Android phone, a single reminder opens straight in your calendar app as a new event, already filled in, for you to save there."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see?",
+    "html": "<p><strong>Nothing changes for your partner.</strong> The file is made and shared from your phone, nothing is uploaded to EvenUS or anywhere else, and your partner is not told that you exported anything.</p><p>The file never says who set a reminder: there is no organiser, no attendee and no author in it, only the date, the title and any note. Each entry carries the reminder’s note, in its description, so if you share the file with someone else, they will see the notes too. It is worth a look before you send it anywhere. Exporting one reminder at a time keeps the file to exactly what you mean to send.</p>"
+  },
+  "tips": {
+    "h2": "Tips for calendar export",
+    "items": [
+      "It is a copy made on this phone, and each entry carries the reminder’s note too. Later changes in EvenUS don’t reach your calendar, so export again after an edit.",
+      "Birthdays, anniversaries and documents go in as all-day entries. A to-do goes in once it has a time.",
+      "A repeating entry with a time can show an hour out after the clocks change. The EvenUS notification stays on time.",
+      "All-day entries are marked as free time, so a birthday never blocks your day in a work calendar.",
+      "If you see “Nothing to add yet”, the only reminders are to-dos without a time. Give one a time and try again."
+    ]
+  },
+  "extra": [
+    {
+      "h2": "What goes into the calendar, and how?",
+      "html": "<p>Birthdays and anniversaries become all-day entries that repeat every year. Events go in at their time, an hour long, or as all-day entries, with the repeat you chose. To-dos go in only when they have a time and are not yet done. Documents become an all-day entry on the expiry date, titled \"Expires: Sam's passport\", so the calendar shows the deadline, while the earlier notice stays with EvenUS's own <a href=\"/features/document-renewals/\">document renewal</a> notifications.</p><p>One small difference: a monthly reminder on the 31st moves to the last day of shorter months in EvenUS, while calendar apps skip those months.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Does EvenUS sync with Google Calendar?",
+      "a": "Not as a live sync. EvenUS makes a calendar file on your phone that Google Calendar, Apple Calendar or Outlook can import. Changes made later in EvenUS do not follow, so export again after editing a reminder."
+    },
+    {
+      "q": "Does EvenUS read my calendar when I export?",
+      "a": "No. Exporting only writes a file from your EvenUS reminders. Reading a calendar is a separate feature, Calendar busy time, which is off until you switch it on and only ever counts busy hours, never events."
+    },
+    {
+      "q": "Will my partner's reminders end up in my calendar?",
+      "a": "Export shares every reminder on the household list, including ones set for your partner alone. To send only your own, open each one and use “Add to calendar” on that reminder instead."
+    },
+    {
+      "q": "Why is my repeating event an hour out in my calendar?",
+      "a": "Timed repeating entries are written with a fixed clock time, so after the clocks change some calendar apps show them an hour out. All-day entries never move, and the EvenUS notification itself always arrives at the right time."
+    },
+    {
+      "q": "Does calendar export need EvenUS Pro?",
+      "a": "No. Add to calendar keeps working after the 7-day free week, with or without a subscription, along with the reminders themselves."
+    }
+  ],
+  "relatedPosts": [
+    "shared-to-do-lists-for-couples",
+    "digital-minimalism-for-couples",
+    "the-digital-co-ceo"
+  ]
+}

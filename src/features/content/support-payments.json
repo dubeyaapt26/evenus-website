@@ -1,0 +1,89 @@
+{
+  "id": "support-payments",
+  "h1": "Money that’s already promised: support and commitments counted first",
+  "seoTitle": "Child Support and Shared Bills: Fair Splits in EvenUS",
+  "description": "Record child support, spousal support, family transfers or loan repayments, and EvenUS works out fair shares on the income you actually have left.",
+  "updated": "2026-10-15",
+  "answer": "Money that’s already promised is where each partner in EvenUS records money that leaves before the household sees it: child or spousal support, money sent to family, loan and card repayments or a student loan. Support received is recorded too. EvenUS takes these off income before shares are worked out, so a split by income reflects what each of you actually has to share.",
+  "what": {
+    "h2": "What does Money that’s already promised do?",
+    "html": "<p><strong>It makes income-based splits fair for people who already have money committed elsewhere.</strong> If one of you earns a good salary but pays a large child support order every month, a split based on the full salary asks too much of them. The money was spoken for before it reached this household.</p><p>Each commitment you add comes off your income after tax before shares are worked out. Support you receive is added in the same way. Every share that depends on income, from <a href=\"/features/money-mode/\">How costs split</a> to the money side of the <a href=\"/features/fairness-score/\">household balance</a>, is then based on what is actually left, and Insights shows it as “Income after commitments”.</p><p>Recording a commitment means the app expects you to put a smaller share into this household, not a bigger one. Meeting an existing commitment is never treated as a shortfall.</p>"
+  },
+  "who": {
+    "h2": "Who is Money that’s already promised for?",
+    "html": "<p>Anyone paying or receiving child support or spousal support, sending money to family, or repaying a loan, a card or a student loan. It matters most in blended families and for couples who split by income, where an uncounted commitment quietly tilts every share.</p>"
+  },
+  "steps": {
+    "h2": "How do you record child support or another commitment?",
+    "intro": "Open Us, go to Household, then Money already promised, tap “Add a commitment”, choose what kind it is, enter the amount and how often, and tap “Save”.",
+    "items": [
+      {
+        "name": "Open Money already promised",
+        "text": "Open the Us tab, then Household → Money already promised."
+      },
+      {
+        "name": "Choose what kind",
+        "text": "Tap “Add a commitment” and, under What kind, pick Child support you pay, Child support you receive, Spousal support you pay or receive, Money you send to family, Loan and card repayments, or Student loan."
+      },
+      {
+        "name": "Enter how much and how often",
+        "text": "Type How much, as it is usually paid, and choose Weekly, Fortnightly, Monthly or Yearly. EvenUS shows it as a monthly figure. For child support, you can name the child it is for."
+      },
+      {
+        "name": "Mark it if a court set it",
+        "text": "Tick “A court set this amount” if a court set it. Court-ordered amounts sit fixed, like rent."
+      },
+      {
+        "name": "Save it",
+        "text": "Tap “Save”. It appears under On the books, and shares across the app are worked out on what is left."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see?",
+    "html": "<p><strong>Your partner sees what kind it is, whose it is and the monthly amount.</strong> It is never shown to them as a shortfall, and never described as money missing from here.</p><p>Only the person who added a commitment can change it. A court-ordered one is never removed: it can be marked as ended or have a typo corrected, and the row shows your partner when either happened. Removing any other commitment asks first, and it stops counting from that day. Changes also appear in the <a href=\"/features/activity-log/\">activity log</a>.</p>"
+  },
+  "tips": {
+    "h2": "Tips for recording commitments",
+    "items": [
+      "When an order ends, tap “Change” on its row, then “This order has ended”, and pick the day. It still counts for the weeks before that day.",
+      "If the order itself changed, mark the old one as ended and add the new one from the day it started, so earlier weeks keep the figure that applied then.",
+      "Use “Correct a typo”, also under Change, only for a figure entered by mistake. The new amount replaces it for every week, past ones included.",
+      "If support you receive pays for a child’s costs, set that child to Covered by support under <a href=\"/features/children/\">Children</a>, so their costs stay out of the shared split."
+    ]
+  },
+  "extra": [
+    {
+      "h2": "How does a commitment change your shares? A worked example",
+      "html": "<p>Alex has $4,000 a month after tax and Sam $3,000. Split by income, Alex covers about 57% of shared costs and Sam 43%.</p><p>Alex also pays $1,000 a month in court-ordered child support. Once it is recorded, Alex’s income for working out shares is $3,000, the same as Sam’s, so each covers 50%. On $2,000 of shared monthly costs, Alex’s share moves from about $1,143 to $1,000. It is the same household, counted on the money that is really there.</p>"
+    },
+    {
+      "h2": "Why does EvenUS never suggest changing a court order?",
+      "html": "<p>A court-ordered amount is a fixed cost, like rent, not a household choice for a couple to renegotiate, so nothing in the app suggests changing it. It simply sits underneath the numbers: each share in <a href=\"/features/where-money-goes/\">Where the money goes</a> is worked out after it.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Does child support count as income in EvenUS?",
+      "a": "Child support you receive is added to your income, and child support you pay is taken off it, before shares are worked out. That way a split by income reflects what each of you actually has for this household."
+    },
+    {
+      "q": "Can my partner change a commitment I added?",
+      "a": "No. Only the person who added a commitment can change it. Your partner sees what kind it is, whose it is and the monthly amount, and the row shows them when it was ended or corrected."
+    },
+    {
+      "q": "What happens when a support order ends?",
+      "a": "Tap Change on its row, then This order has ended, and pick the day. It stays on the books and still counts for every week before that day. From that day on, shares are worked out without it."
+    },
+    {
+      "q": "Does recording support change anything if we split half each?",
+      "a": "A half-each split does not depend on income, so each share stays at half. Commitments change the splits that are worked out from income, and the money side of the household balance."
+    }
+  ],
+  "relatedPosts": [
+    "step-parenting-fair-chore-and-finance-division-without-drama",
+    "income-proportional-bill-splitting",
+    "calculating-fair-financial-splits",
+    "managing-debt-as-a-couple"
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "id": "home-maintenance",
+  "h1": "Home maintenance: the jobs a home needs now and then, timed for your seasons",
+  "seoTitle": "Home Maintenance Checklist for Couples: EvenUS",
+  "description": "A seasonal home maintenance checklist for your kind of home, from smoke alarms to gutters. Each job becomes a shared chore that turns up in its month.",
+  "updated": "2026-10-15",
+  "answer": "Home maintenance in EvenUS is a checklist of the jobs a home needs now and then, such as testing smoke alarms, changing filters and clearing gutters. It follows your kind of home, whether you own or rent, and your hemisphere. Each job you keep becomes an ordinary chore with its month and an owner, so it turns up when it comes round and stays quiet the rest of the year.",
+  "what": {
+    "h2": "What does Home maintenance do?",
+    "html": "<p><strong>It puts the occasional jobs a home needs onto your shared chores, in the right month, so they stop relying on one person’s memory.</strong> Weekly chores get noticed because the bin is full. The yearly ones are different: nobody sees a dryer vent filling with lint, and the smoke alarm battery is a surprise every year.</p><p>Home maintenance starts from a built-in checklist chosen by your answers. A house gets gutters, a garden tidy and a roof check; an apartment does not. Owners see the water heater, the AC service and the chimney; renters see a yearly reminder to note anything to raise with the landlord.</p><p>Every job you add becomes an ordinary chore in <a href=\"/features/chores-effort/\">Effort</a>, with its month, an owner and an estimate.</p>"
+  },
+  "who": {
+    "h2": "Who is Home maintenance for?",
+    "html": "<p>For anyone whose smoke alarm battery is a surprise every year, and for couples where one of you quietly keeps the whole calendar of house jobs in your head. Writing the jobs down, with a name next to each, moves that remembering onto a list you both see.</p>"
+  },
+  "steps": {
+    "h2": "How do you set up Home maintenance?",
+    "intro": "Open the Effort tab, tap “Home maintenance”, describe your home, then tap “Add” on the jobs you want and “Add to chores”.",
+    "items": [
+      {
+        "name": "Open it",
+        "text": "Open the Effort tab and tap “Home maintenance”."
+      },
+      {
+        "name": "Describe your home",
+        "text": "Under “Your home”, choose “House” or “Apartment”, and “We own it” or “We rent”. The checklist follows your answers. Turn on “Snowy winters” if your winters freeze."
+      },
+      {
+        "name": "Add the jobs you want",
+        "text": "Tap “Add” on a job. Under “Who looks after it?” choose one of you or “Either of you”, adjust the minutes, the month and how often if you like, add a rough cost if you want, and tap “Add to chores”."
+      },
+      {
+        "name": "Add anything missing",
+        "text": "Tap “Add your own” for a job the list does not have, such as bleeding the radiators, and fill in “What needs doing”."
+      },
+      {
+        "name": "Mark it done",
+        "text": "When a job is done, tap “Done”, put in when you “Started” and “Finished”, and tap “Save”. EvenUS then asks about the cost: tap “Add the cost” to open an expense, or “Not now”."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see?",
+    "html": "<p><strong>Your partner sees the same checklist and the same chores.</strong> A job set to “Either of you” can be done by either of you, and whoever taps Done is the one it is logged for, with the real time they put in. A job given to one person shows as theirs. Reminders go to the person who owns the job, never from one partner to the other. Removing a job archives the chore, and anything already logged stays.</p>"
+  },
+  "tips": {
+    "h2": "Tips for keeping on top of house jobs",
+    "items": [
+      "Each job becomes an ordinary chore with its month. It turns up when it comes round and stays quiet the rest of the year.",
+      "Turn on “Snowy winters” if your winters freeze, to add the pipe and snow jobs.",
+      "Give each job one owner where you can. “Either of you” is fine for quick jobs, but bigger ones tend to happen when someone holds them.",
+      "Use “Rough cost each time” for jobs that need a professional, like a chimney sweep. A yearly cost can also go in <a href=\"/features/regular-bills/\">Regular bills</a>."
+    ]
+  },
+  "country": {
+    "h2": "Does it work in the southern hemisphere?",
+    "html": "<p><strong>Yes.</strong> The seasons come from your household’s country, and every month moves by six for the southern hemisphere, so the gutters land in the right autumn. The screen says which it is using, for example “Timed for the southern hemisphere.”</p><p>If your country’s default does not fit, change it under “Seasons” to “Northern” or “Southern”, or leave it on “From your country”. Snow jobs only appear with “Snowy winters” on.</p>"
+  },
+  "extra": [
+    {
+      "h2": "Why does each job become a chore instead of a to-do?",
+      "html": "<p>A to-do list keeps every job in view all year, which mostly teaches you to ignore it. Making each job a chore with its month means the gutters appear in their month and not before. When it is done, the real time you put in counts in your housework and in the <a href=\"/features/fairness-score/\">household balance</a>. Noticing what needs fixing is the Home upkeep area in <a href=\"/features/mental-load-map/\">Who keeps track of what</a>.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Which jobs are on the home maintenance checklist?",
+      "a": "It depends on your home. Everyone gets jobs like testing the smoke and CO alarms, new alarm batteries and cleaning the dryer vent. Houses add gutters, garden tidies and a roof check, owners add things like the water heater, and renters get a landlord check."
+    },
+    {
+      "q": "Can I add my own maintenance jobs?",
+      "a": "Yes. Tap Add your own, describe what needs doing, choose who looks after it, how often and which month, and save it. It becomes a chore just like the built-in jobs."
+    },
+    {
+      "q": "Does the cost of a job become a shared expense?",
+      "a": "Only if you choose. After you save the time for a finished job, EvenUS asks whether you want to add what it cost. Add the cost opens the expense form, and Not now leaves it as a finished chore with no expense."
+    },
+    {
+      "q": "Can my partner and I share maintenance jobs?",
+      "a": "Yes. Set a job to Either of you and whichever of you does it taps Done and puts in the time. You both see the same checklist and the same chores."
+    }
+  ],
+  "relatedPosts": [
+    "the-one-who-books-everything",
+    "invisible-labor-checklist",
+    "how-to-add-chores"
+  ]
+}

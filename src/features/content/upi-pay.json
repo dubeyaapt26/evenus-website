@@ -1,0 +1,84 @@
+{
+  "id": "upi-pay",
+  "h1": "Pay with UPI: even up through Google Pay, PhonePe or any UPI app",
+  "seoTitle": "Split Expenses and Pay Your Partner by UPI | EvenUS",
+  "description": "Even up with your partner through any UPI app, with their UPI ID and the rupee amount filled in. How it works, what is shared, and why only a yes counts.",
+  "updated": "2026-10-15",
+  "answer": "Pay with UPI is the UPI option behind the Pay now button in EvenUS, offered in households whose currency is the rupee. When the To even up card shows you as the sender, it opens your UPI app, such as Google Pay, PhonePe, Paytm or BHIM, with your partner’s UPI ID and the amount filled in. You pay with your UPI PIN, and EvenUS records it only if you say it went through.",
+  "what": {
+    "h2": "What does Pay with UPI do?",
+    "html": "<p><strong>It hands your UPI app everything it needs to pay your partner, so evening up takes a PIN rather than a search and a retyped amount.</strong> Many couples in India already split costs over UPI, but the amount usually comes from a mental note or a chat message. EvenUS works out the figure from your shared expenses and passes it to the app you already use.</p><p>Your partner saves their own UPI ID once. From then on, when the <a href=\"/features/settle-up/\">To even up</a> card shows you as the sender, <a href=\"/features/pay-now/\">Pay now</a> opens a standard UPI payment request with their UPI ID, their name, the amount in rupees and a short note.</p><p>EvenUS never touches the money and never sees your UPI app. When you come back, it asks whether the payment went through, and records it only if you tap yes.</p>"
+  },
+  "who": {
+    "h2": "Who is Pay with UPI for?",
+    "html": "<p>Rupee households where you both use Google Pay, PhonePe, Paytm or another UPI app, and settle shared costs between your own accounts. It suits couples who square up often, because each payment is a few taps.</p>"
+  },
+  "steps": {
+    "h2": "How do you pay your partner by UPI in EvenUS?",
+    "intro": "The partner being paid saves their UPI ID; the sending partner taps “Pay now”, then “Pay with UPI”, pays in their UPI app and confirms on return.",
+    "items": [
+      {
+        "name": "Save the UPI ID",
+        "text": "The person being paid opens Us → Your details → “Your payment details”, enters their UPI ID (it looks like name@bank) and taps Save."
+      },
+      {
+        "name": "Tap Pay now",
+        "text": "On Money, when the “To even up” card shows you as the sender, tap “Pay now”, then “Pay with UPI” if there’s a choice."
+      },
+      {
+        "name": "Pay in your UPI app",
+        "text": "Your phone offers your UPI apps. Pick one, check the name and amount there, then pay with your UPI PIN as usual."
+      },
+      {
+        "name": "Confirm back in EvenUS",
+        "text": "Back in EvenUS, answer “Did the payment go through?”. Only a yes records it, and the To even up card updates on both phones."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see, and who can see your UPI ID?",
+    "html": "<p><strong>Your UPI ID is used for one thing: the payment link your partner uses to pay you.</strong> When they pay, their UPI app shows your UPI ID and the name registered with your bank, as it would for any payment. EvenUS does not show it anywhere else.</p><p>Each of you can add or change only your own UPI ID, so your partner cannot redirect where your money goes. Once a payment is recorded, you both see the card clear and the payment listed under Expenses as evening up, not as household spending.</p>"
+  },
+  "tips": {
+    "h2": "Tips for evening up over UPI",
+    "items": [
+      "A typo in a UPI ID is caught by your UPI app, which shows the registered name before anything moves. If the name looks wrong, stop there.",
+      "The payment note reads “EvenUS settle up”, so it is easy to spot in your bank statement or UPI history.",
+      "If you change your mind in the UPI app, come back and tap “Not yet”. The card stays as it was.",
+      "Paid from another app, in cash, only part of it, or on another day? Use “Record a payment” afterwards, where you can change the amount and the day before tapping Save."
+    ]
+  },
+  "country": {
+    "h2": "Does Pay with UPI work outside India?",
+    "html": "<p>Only for households whose currency is INR. A UPI amount is always in rupees, so sending a pound or dollar figure as rupees would be a different payment altogether. The UPI field on “Your payment details” appears only in rupee households.</p><p>Couples elsewhere can use <a href=\"/features/pay-now/\">Pay now</a> with PayPal, a bank payment link, or <a href=\"/features/venmo-pay/\">Venmo</a> in the US.</p>"
+  },
+  "extra": [
+    {
+      "h2": "What exactly does EvenUS hand to the UPI app?",
+      "html": "<p>A standard UPI payment request, the same kind a shop’s QR code produces. It holds your partner’s UPI ID, their name, the amount in rupees, the currency, and the note “EvenUS settle up”. It holds nothing about you, your bank or your shared expenses. Your UPI app shows who you are paying and how much, and asks for your PIN. EvenUS is not part of the payment, which is why it asks you afterwards rather than claiming to know.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Which UPI apps work with EvenUS?",
+      "a": "Any UPI app on your phone that opens a standard UPI payment request, such as Google Pay, PhonePe, Paytm or BHIM. You pay in the one you choose with your usual UPI PIN."
+    },
+    {
+      "q": "Does EvenUS see my UPI PIN or bank details?",
+      "a": "No. You enter your PIN in your own UPI app, never in EvenUS. EvenUS only stores your partner’s UPI ID to build the payment request, and it never connects to a bank."
+    },
+    {
+      "q": "Why is Pay with UPI missing on my phone?",
+      "a": "It appears only when your household currency is INR and the partner being paid has saved a valid UPI ID under Your payment details. It also only shows on the sending phone, when the To even up card names you as the sender."
+    },
+    {
+      "q": "What if the name in my UPI app looks wrong?",
+      "a": "Stop before entering your PIN. Your UPI app shows the name registered to the UPI ID, so a different name usually means a typo. Come back, tap Not yet, and ask your partner to check their UPI ID under Your payment details."
+    }
+  ],
+  "relatedPosts": [
+    "how-to-split-bills",
+    "manage-household-finances-without-a-joint-bank-account",
+    "income-proportional-bill-splitting"
+  ]
+}

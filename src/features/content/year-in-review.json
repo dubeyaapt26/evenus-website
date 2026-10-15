@@ -1,0 +1,89 @@
+{
+  "id": "year-in-review",
+  "h1": "Your year: the year at home, both of you side by side",
+  "seoTitle": "Year in Review for Couples: Your Year in EvenUS",
+  "description": "Look back over the year together: housework, care, planning, money shared, ideas tried and notes, with nobody ranked. Plus an optional image to share.",
+  "updated": "2026-10-15",
+  "answer": "Your year is the year in review in EvenUS. It shows how a couple shared the home over the year so far: hours of housework, care for the children, planning and remembering, money shared, ideas tried and notes written. Both partners appear side by side in their own colours, with the total together underneath. Nothing is ranked, and an optional image shares totals only.",
+  "what": {
+    "h2": "What does Your year show?",
+    "html": "<p><strong>It gathers every week you have both logged this year into one calm look back, with neither of you set against the other.</strong> Over a year, the useful question changes: not who did what on Tuesday, but what the shape of your household was, and whether it moved.</p><p>The screen opens with how many weeks you tracked together, then a card for each part of home life: Housework, Looking after the children (if you have children in the household), Planning and remembering, Money shared, How the balance moved, Ideas you tried and Notes between you. Each person card shows both of you in household order, never sorted by who has the larger figure, with the total together beneath.</p><p>It closes with one line about the two of you, not a verdict. If the <a href=\"/features/fairness-score/\">household balance</a> (the fairness score) came closer over the year, it says so. If some weeks were heavier, it says that too, gently.</p>"
+  },
+  "who": {
+    "h2": "Who is Your year for?",
+    "html": "<p>Couples who want to look back over the year together, often at the end of December, on an anniversary or before a conversation about what to change next year. It is most useful once you have logged a few months, through steady weeks or a new baby, job or move.</p>"
+  },
+  "steps": {
+    "h2": "How do you open and share Your year?",
+    "intro": "Open Insights, tap “Your year”, read down the cards, and use “Share an image” at the bottom if you want to share totals.",
+    "items": [
+      {
+        "name": "Open Your year",
+        "text": "Open the Insights tab, then tap “Your year”. Use the switch at the top to choose this year or last year."
+      },
+      {
+        "name": "Read the totals",
+        "text": "Each card shows each of you in your own colour, with the total together underneath. Planning and remembering appears once you have both answered the planning questions."
+      },
+      {
+        "name": "Look at how the balance moved",
+        "text": "The “How the balance moved” card draws a small line through the weeks and describes it in one sentence: closer, steady, or drifting apart a little."
+      },
+      {
+        "name": "Choose what goes in the image",
+        "text": "Scroll to “Share an image”. It previews exactly what will be shared. Switch on “Include the money” only if you want the shared spending in it."
+      },
+      {
+        "name": "Share it",
+        "text": "Tap “Share this image” and pick where it goes, such as a message to family or your own photos."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see?",
+    "html": "<p><strong>Your partner sees the same year, in the same order and the same colours.</strong> Neither of you gets a version that puts you first. The money card shows household spending you split, not either person’s income or personal spending.</p><p>Nothing leaves the app unless one of you chooses to share the image, which is deliberately smaller than the screen: totals together only, never one of you against the other, never the household balance, and no money unless the person sharing switches it on.</p>"
+  },
+  "tips": {
+    "h2": "Tips for looking back together",
+    "items": [
+      "Open it together, on one phone. The cards read better side by side.",
+      "Answer the <a href=\"/features/mental-load-map/\">planning questions</a> if you have not, so the planning and remembering is counted alongside the housework.",
+      "If the line says the year drifted apart a little, that is common. A <a href=\"/features/sunday-talk/\">Sunday talk</a> is a good place to pick one small change.",
+      "If the screen says “Your year couldn't load.”, check your connection and tap Try again."
+    ]
+  },
+  "extra": [
+    {
+      "h2": "Where do the numbers come from?",
+      "html": "<p>Your year is built from the weekly summaries EvenUS already keeps, one for each finished week, rather than re-reading a year of individual chores and expenses. That keeps it quick, and it means a week becomes part of your year from the Monday after it ends.</p><p>If no week has finished yet, the screen says your year starts this week rather than showing a page of zeros. Ideas you tried lists each <a href=\"/features/weekly-idea/\">weekly idea</a> you took on, with how many weeks it ran. The notes card counts <a href=\"/features/thank-you-notes/\">notes between you</a> as one total for the household, never split by who wrote them.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Does Your year show who did more?",
+      "a": "No. Both of you appear side by side in household order, never sorted by the larger figure, with the total together underneath. The closing line is about the two of you."
+    },
+    {
+      "q": "What is in the image if I share my year?",
+      "a": "Weeks tracked, hours of housework between you, ideas tried and thank-you notes, all as totals together. It never shows one partner against the other or the household balance, and money appears only if you switch on Include the money."
+    },
+    {
+      "q": "Is Your year part of EvenUS Pro?",
+      "a": "Yes. Your year is part of EvenUS Pro after the 7-day free week. Without a subscription the screen shows that your year is paused, while everything you recorded stays readable and exportable."
+    },
+    {
+      "q": "Can I see last year as well?",
+      "a": "Yes. A switch at the top of Your year lets you choose this year or last year, as long as you were using EvenUS then. Each year only includes weeks that both of you logged."
+    },
+    {
+      "q": "Why is planning and remembering not counted on my year?",
+      "a": "It is counted once you have both answered the planning questions about who keeps track of what. Until then, the card says so instead of showing a figure that would leave the planning out."
+    }
+  ],
+  "relatedPosts": [
+    "weekly-fairness-report",
+    "creating-your-relationship-fairness-score",
+    "celebrating-small-wins",
+    "quantifying-the-invisible"
+  ]
+}

@@ -30,6 +30,11 @@ import { hookHome, stripPrototypeHandlers } from './dc/hooks.mjs';
 import { FOOTPRINTS, STRUCTURAL } from './dc/checks.mjs';
 import { SEO_TITLES, fullTitle, metaDescription } from './dc/seo.mjs';
 import { CATEGORIES, readTime } from './dc/blogdata.mjs';
+import { loadCatalog, loadContent, loadScreenshots, loadWhere, validateContent, postSlugsOf } from './dc/features.mjs';
+import { buildFeatures } from './dc/featurepages.mjs';
+import { HUB } from './features/hub.mjs';
+import { ENGINE_SOURCE, calculatorDemo, checkGolden, checkHomeDemo } from './calc/page.mjs';
+import { appLinkFiles } from './applinks.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const root = join(here, '..');
@@ -97,9 +102,13 @@ const A11Y = `
      4.3s on a simulated phone. Keep the movement, drop the fade. Declared after
      the design's own keyframes, so this definition wins. */
   @keyframes rise { from { transform: translateY(26px); } to { transform: none; } }
-  a:focus-visible, button:focus-visible, input:focus-visible {
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible {
     outline: 2px solid #2E6A5C; outline-offset: 2px; border-radius: 4px;
   }
+  /* The calculator's sliders: a 44px-tall hit area around the thin track the
+     design draws, so each one is easy to grab on a phone (WCAG 2.5.5). */
+  #demo input[type=range] { display:block; height:44px; margin:0 !important; }
+  [hidden] { display:none !important; }
   .skip { position:absolute; left:-9999px; }
   /* Nav and footer links render at 18px tall, below the 24px WCAG 2.2 minimum
      target size and awkward to hit on a phone. inline-flex with a min-height
@@ -183,13 +192,9 @@ const ORG = {
   logo: { '@type': 'ImageObject', url: `${ORIGIN}/logo.png`, width: 512, height: 512 },
   founder: { '@id': `${ORIGIN}/about/#aapt-dubey` },
   email: 'support@evenus.app',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'C-1604, Assotech Blith, Sector 99',
-    addressLocality: 'Gurgaon',
-    addressRegion: 'Haryana',
-    addressCountry: 'IN',
-  },
+  // Country only. The owner asked for the street address to come off the site:
+  // a founder working from home should not publish where they live.
+  address: { '@type': 'PostalAddress', addressCountry: 'IN' },
 };
 
 const APP = {
@@ -290,33 +295,77 @@ const FONT_PRELOAD = [
   .join('\n');
 
 /**
- * Google Analytics 4.
+ * Google Analytics 4, behind Consent Mode v2.
  *
  * Loaded async and placed at the end of <body>, so it never blocks render. It
  * costs two extra origins (googletagmanager.com, google-analytics.com) and
  * roughly 50 KB, which is the price of having it at all.
  *
- * ⚠️ THIS SETS COOKIES AND NEEDS CONSENT IN THE UK AND EU. GA4 writes a _ga
- * cookie and processes IP addresses, and PECR plus UK GDPR require prior
- * consent for non-essential analytics. There is no consent banner on this
- * site, and the privacy policy carries a "Legal basis (UK/EU)" section, so the
- * gap is visible on the page that discusses it.
+ * ⚠️ CONSENT FIRST, THEN THE TAG. The consent default is pushed onto the
+ * dataLayer BEFORE 'config', with every storage type denied, so until a
+ * visitor accepts, GA4 runs cookieless (no _ga cookie, no client id that
+ * survives the page) and Google models the gaps. A stored "granted" from an
+ * earlier visit is replayed before the config hit, so a returning visitor who
+ * said yes is measured from their first page view, not their second.
  *
- * Two ways to close it, both a small change from here:
- *   - Consent Mode v2 with analytics_storage denied by default, which runs GA4
- *     cookieless and needs no banner, at the cost of modelled rather than
- *     measured data.
- *   - A consent banner, which the design deliberately does not have.
+ * The question itself is asked by consentBanner() in site.js and remembered in
+ * localStorage under the same key read here. ad_storage, ad_user_data and
+ * ad_personalization are never granted: there are no ads on this site, and the
+ * privacy policy says so.
  *
- * Left as the standard tag because that is what was asked for. The choice is
- * the site owner's, not this file's.
+ * This exact string is exempt from the CMS-footprint scan below; a tag
+ * anywhere else in a page still fails the build.
  */
-const ANALYTICS = `<script async src="https://www.googletagmanager.com/gtag/js?id=G-V79KZPESPX"></script>
-<script>
+const ANALYTICS = `<script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+    analytics_storage: 'denied', wait_for_update: 500
+  });
+  try {
+    if (localStorage.getItem('evenus-analytics-consent') === 'granted') {
+      gtag('consent', 'update', { analytics_storage: 'granted' });
+    }
+  } catch (e) {}
   gtag('js', new Date());
   gtag('config', 'G-V79KZPESPX');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V79KZPESPX"></script>`;
+
+/**
+ * Analytics for the invite page, /join/<CODE>: NOTHING until the visitor says yes.
+ *
+ * ⚠️ The URL of this page carries a live invite code, so the cookieless
+ * Consent Mode ping every other page sends would hand the code to Google in
+ * page_location. Here the tag is not even requested before consent: it loads
+ * only when a stored "granted" exists or the banner's Accept is pressed
+ * (site.js calls window.evenusConsentGranted), and the page it reports is
+ * /join/ with the code and the referrer stripped.
+ *
+ * Exempt from the CMS-footprint scan, like ANALYTICS.
+ */
+const JOIN_ANALYTICS = `<script>
+  (function () {
+    function load() {
+      if (window.evenusGaLoaded) return;
+      window.evenusGaLoaded = true;
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { dataLayer.push(arguments); };
+      gtag('consent', 'default', {
+        ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+        analytics_storage: 'granted'
+      });
+      gtag('js', new Date());
+      gtag('config', 'G-V79KZPESPX', { page_location: location.origin + '/join/', page_path: '/join/', page_referrer: '' });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-V79KZPESPX';
+      document.head.appendChild(s);
+    }
+    window.evenusConsentGranted = load;
+    try { if (localStorage.getItem('evenus-analytics-consent') === 'granted') load(); } catch (e) {}
+  })();
 </script>`;
 
 /*
@@ -342,7 +391,7 @@ const ANALYTICS = `<script async src="https://www.googletagmanager.com/gtag/js?i
  * The 404 gets noindex, follow rather than bare noindex: keep it out of the
  * index, but keep following its links to real pages.
  */
-function shell({ title, seoTitle, description, path, helmet, body, published, jsonld, image, noindex }) {
+function shell({ title, seoTitle, description, path, helmet, body, published, modified, jsonld, image, imageSize, imageAlt, noindex, extraHead, analytics }) {
   const card = image || '/og.png';
   // Strip the design's Google Fonts hotlink and its preconnects.
   helmet = helmet
@@ -359,7 +408,7 @@ function shell({ title, seoTitle, description, path, helmet, body, published, js
   body = fixContrast(body);
   helmet = fixContrast(helmet);
   return `<!doctype html>
-<html lang="en">
+<html lang="en"${BASE ? ` data-base="${BASE}"` : ''}>
 <head>
 <meta charset="utf-8">
 <title>${esc(full)}</title>
@@ -373,13 +422,15 @@ function shell({ title, seoTitle, description, path, helmet, body, published, js
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:url" content="${ORIGIN}${path}">
 ${published ? `<meta property="article:published_time" content="${published}">` : ''}
+${modified ? `<meta property="article:modified_time" content="${modified}">` : ''}
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="${ORIGIN}${card}">
 <meta property="og:locale" content="en_GB">
 <meta property="og:image" content="${ORIGIN}${card}">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="${esc(title)} · EvenUS">
+<meta property="og:image:width" content="${(imageSize || [1200, 630])[0]}">
+<meta property="og:image:height" content="${(imageSize || [1200, 630])[1]}">
+<meta property="og:image:alt" content="${esc(imageAlt || `${title} · EvenUS`)}">
+<meta name="twitter:image:alt" content="${esc(imageAlt || `${title} · EvenUS`)}">
 <link rel="icon" href="${url('/favicon.svg')}" type="image/svg+xml">
 <link rel="apple-touch-icon" href="${url('/logo.png')}">
 <link rel="alternate" type="application/rss+xml" title="EvenUS" href="${url('/feed.xml')}">
@@ -388,13 +439,14 @@ ${FONT_PRELOAD.replace(/\$\{BASE\}/g, BASE)}
 <style>${FONT_CSS.replace(/url\('\/fonts\//g, `url('${BASE}/fonts/`)}</style>
 ${helmet}
 ${A11Y}
+${extraHead || ''}
 ${jsonld || ''}
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 ${/<main[\s>]/.test(body) ? `<div id="main">\n${body}\n</div>` : `<main id="main">\n${body}\n</main>`}
 <script src="${url('/site.js')}" defer></script>
-${ANALYTICS}
+${analytics ?? ANALYTICS}
 </body>
 </html>
 `;
@@ -550,6 +602,68 @@ for (const [slug, own] of HAND) {
 
 posts.sort((a, b) => (b.iso || '0000').localeCompare(a.iso || '0000'));
 
+// --- Features: load and check -------------------------------------------------
+//
+// ⚠️ Every feature in the app's catalog must have a page, and every page must
+// pass validateContent() (lengths, question-led headings, no em dashes, no
+// blame words, links that exist). A missing or failing page stops the build.
+const CATALOG = loadCatalog(root);
+const SHOTS = loadScreenshots(root);
+const WHERE = loadWhere(root);
+const FEATURE_CONTENT = new Map();
+{
+  const postSlugs = postSlugsOf(root);
+  const problems = [];
+  for (const f of CATALOG.features) {
+    const c = loadContent(root, f.id);
+    if (!c) { problems.push(`${f.id}: no src/features/content/${f.id}.json`); continue; }
+    const r = validateContent(c, { catalog: CATALOG, postSlugs });
+    for (const e of r.errors) problems.push(`${f.id}: ${e}`);
+    const n = (SHOTS.shots || []).filter((s) => s.feature === f.id).length;
+    if (n < 1 || n > 3) problems.push(`${f.id}: needs 1 to 3 screenshots in src/features/screenshots.json (has ${n})`);
+    const w = WHERE[f.id];
+    if (typeof w !== 'string' || w.length < 3) problems.push(`${f.id}: no "where to find it" path in src/features/where.json`);
+    else if (/\u2014/.test(w)) problems.push(`${f.id}: em dash in src/features/where.json`);
+    FEATURE_CONTENT.set(f.id, c);
+  }
+  const extra = readdirSync(join(here, 'features/content')).map((x) => x.replace(/\.json$/, ''))
+    .filter((id) => !CATALOG.features.some((f) => f.id === id));
+  for (const id of extra) problems.push(`${id}: page for a feature the catalog does not have`);
+  for (const id of Object.keys(WHERE)) if (!CATALOG.features.some((f) => f.id === id)) problems.push(`${id}: src/features/where.json names a feature the catalog does not have`);
+  if (problems.length) throw new Error('feature pages:\n  ' + problems.join('\n  '));
+}
+
+/**
+ * Features to suggest under each article.
+ *
+ * The feature pages already name the articles that answer the question behind
+ * them, so that choice is reversed first: a post a feature page links to links
+ * back. The rest is filled by the catalog's own search words appearing in the
+ * article, so a post about UPI finds Pay with UPI without anyone wiring it up.
+ */
+const FEATURES_FOR_POST = new Map();
+{
+  const back = new Map();
+  for (const [id, c] of FEATURE_CONTENT) for (const slug of c.relatedPosts || []) {
+    if (!back.has(slug)) back.set(slug, []);
+    back.get(slug).push(id);
+  }
+  for (const p of posts) {
+    const text = (p.title + ' ' + p.title + ' ' + p.html.replace(/<[^>]+>/g, ' ')).toLowerCase();
+    const scored = CATALOG.features.map((f) => {
+      let n = 0;
+      for (const k of [f.title.toLowerCase(), ...f.keywords]) {
+        if (k.length < 4) continue;
+        const re = new RegExp('\\b' + k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b', 'g');
+        n += Math.min(5, (text.match(re) || []).length);
+      }
+      return [f.id, n];
+    }).filter(([, n]) => n >= 3).sort((a, b) => b[1] - a[1]).map(([id]) => id);
+    const ids = [...new Set([...(back.get(p.slug) || []), ...scored])].slice(0, 3);
+    FEATURES_FOR_POST.set(p.slug, ids.map((id) => CATALOG.features.find((f) => f.id === id)));
+  }
+}
+
 // --- Home ------------------------------------------------------------------
 {
   const r = renderDC(design, 'EvenUS Website.dc.html', {}, {}, openAll('faqs'));
@@ -619,7 +733,7 @@ posts.sort((a, b) => (b.iso || '0000').localeCompare(a.iso || '0000'));
 
 // --- The standing pages ----------------------------------------------------
 const PAGES = [
-  ['Help.dc.html', '/support/', 'Help and Support', 'How to reach a human, and answers to the questions a two-person app generates.', openAll('faqs')],
+  ['Help.dc.html', '/support/', 'Help and Support', 'How to reach a human, and answers to the questions a two-person app generates.', openAll('items')],
   ['Privacy.dc.html', '/privacy/', 'Privacy Policy', 'What EvenUS stores, what it never sees, and how to get rid of all of it.', null],
   ['Terms.dc.html', '/terms/', 'Terms of Use', 'The EvenUS terms of use: the 7-day free trial, the subscription, what you agree to, and how to cancel or delete your account.', null],
   ['Disclaimer.dc.html', '/disclaimer/', 'Disclaimer', 'EvenUS is not financial advice and not therapy. What that means in practice.', null],
@@ -703,6 +817,24 @@ for (const [file, path, title, description, transform] of PAGES) {
     </section>`;
   };
 
+  // The app features this article is about, as cards in the "Read next" style.
+  const relatedFeatures = (p) => {
+    const list = FEATURES_FOR_POST.get(p.slug) || [];
+    if (!list.length) return '';
+    return `<section aria-labelledby="rf-${p.slug}" style="max-width:1180px;margin:0 auto;padding:clamp(56px,7vw,88px) 28px 0">
+      <h2 id="rf-${p.slug}" style="margin:0;font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#8A8F89">Related features</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr));gap:20px;margin-top:24px">
+        ${list.map((f) => `<a href="${url(`/features/${f.id}/`)}" class="rf-card" style="display:flex;flex-direction:column;background:#fff;border:1px solid #EDE8DC;border-radius:22px;padding:26px;color:#1B1F1D">
+          <div style="font-size:12.5px;color:#6F746F;margin-bottom:10px">In the app${f.pro ? ' · EvenUS Pro' : ''}</div>
+          <div style="font-size:18px;font-weight:700;letter-spacing:-.02em;line-height:1.25;margin-bottom:8px;text-wrap:pretty">${esc(f.title)}</div>
+          <div style="font-size:14.5px;line-height:1.55;color:#5E645F;text-wrap:pretty">${esc(f.oneLiner)}</div>
+          ${WHERE[f.id] ? `<div style="font-size:13.5px;line-height:1.5;color:#4B504B;margin-top:10px;text-wrap:pretty"><b style="font-weight:700;color:#1B1F1D">Where to find it:</b> ${esc(WHERE[f.id])}</div>` : ''}
+          <div class="rf-cta" style="margin-top:auto;padding-top:12px;display:inline-flex;align-items:center;gap:6px;min-height:32px;font-size:14.5px;font-weight:700;color:#2E6A5C">How to use it <span aria-hidden="true">→</span></div>
+        </a>`).join('')}
+      </div>
+    </section>`;
+  };
+
   const AUTHOR_BOX = `<aside aria-label="About the author" style="max-width:780px;margin-top:48px;padding:26px 28px;background:#fff;border:1px solid #EDE8DC;border-radius:22px">
         <div style="font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#8A8F89">About the author</div>
         <div style="font-size:18px;font-weight:700;letter-spacing:-.02em;margin-top:10px"><a href="${url('/about/')}" rel="author" style="color:#1B1F1D">Aapt Dubey</a></div>
@@ -755,6 +887,8 @@ ${p.html}
       <a href="${url('/')}#demo" style="display:inline-flex;align-items:center;gap:10px;background:#F7F5EF;color:#1B1F1D;font-size:14.5px;font-weight:600;padding:14px 26px;border-radius:99px">Try the calculation</a>
     </div>
   </section>
+
+  ${relatedFeatures(p)}
 
   ${related(p)}
 
@@ -820,15 +954,22 @@ ${routes(stripPrototypeHandlers(footer))}
 //
 // ⚠️ IT IS NOT CALLED A "MENTAL LOAD CALCULATOR", and the keyword data says it
 // should be: that phrase has the demand. But the thing computes DISCRETIONARY
-// HOURS, and mental load is one weighted input to it, not its output. Naming it
+// HOURS, and mental load is one input to it (planning hours), not its output. Naming it
 // for a term it does not measure would be a small lie told for traffic, in a
 // product whose entire pitch is that it does not do that. It is named for what
 // it does and says plainly where mental load fits.
 {
   const home = renderDC(design, 'EvenUS Website.dc.html', {}, {}, openAll('faqs'));
   const full = routes(hookHome(home.body));
-  const demo = /<section id="demo"[\s\S]*?<\/section>\s*(?=<section)/.exec(full);
-  if (!demo) throw new Error('calculator: could not lift the #demo section from the design');
+  const lifted = /<section id="demo"[\s\S]*?<\/section>\s*(?=<section)/.exec(full);
+  if (!lifted) throw new Error('calculator: could not lift the #demo section from the design');
+  // ⚠️ THE CALCULATOR IS THE APP'S FORMULA. The port is checked against a
+  // golden table made by the app's own engine, and the homepage widget's
+  // static figures against the port: either drifting fails the build.
+  const goldenCases = checkGolden();
+  const homeView = checkHomeDemo(lifted[0]);
+  console.log(`  ✅ calculator: ${goldenCases} golden cases match the app's engine; homepage widget opens on ${homeView.freeA.split(' ')[0]} vs ${homeView.freeB.split(' ')[0]} free hours, overall ${homeView.score}`);
+  const demo = [calculatorDemo(lifted[0]).demo];
   const header = /<header[\s\S]*?<\/header>/.exec(full)[0];
   const footer = /<footer[\s\S]*?<\/footer>/.exec(full)[0];
 
@@ -840,7 +981,7 @@ ${header}
       <a href="${url('/')}" style="color:#8A8F89">Home</a>
     </nav>
     <h1 style="margin:0;max-width:900px;font-size:clamp(34px,5vw,64px);line-height:1.03;letter-spacing:-.035em;font-weight:700;text-wrap:balance">Household fairness calculator</h1>
-    <p style="margin:22px 0 0;max-width:640px;font-size:17.5px;line-height:1.6;color:#5E645F;text-wrap:pretty">How many hours a week does each of you actually have left, once sleep, paid work, commuting and the housework are out? Move the sliders. Nothing is stored and there is no account.</p>
+    <p style="margin:22px 0 0;max-width:640px;font-size:17.5px;line-height:1.6;color:#5E645F;text-wrap:pretty">How many hours a week does each of you actually have left, once sleep, paid work, commuting, housework, childcare and planning are out, and is the money even? Move the sliders. Nothing is stored and there is no account.</p>
   </section>
 
 ${demo[0]}
@@ -848,15 +989,20 @@ ${demo[0]}
   <section style="max-width:1180px;margin:0 auto;padding:0 28px clamp(64px,8vw,110px)">
     <div style="max-width:780px;font-size:16.5px;line-height:1.68;color:#4B504B">
       <h2 style="font-size:clamp(24px,3vw,34px);line-height:1.12;letter-spacing:-.03em;font-weight:700;color:#1B1F1D;margin:0 0 18px">What it is calculating</h2>
-      <p style="margin:0 0 18px">A week has 168 hours. Take out sleep and the personal time nobody has a choice about and roughly 68 are left to allocate. Out of those come paid work, the commute, and the housework and planning. What remains is discretionary: the hours that are genuinely yours.</p>
-      <p style="margin:0 0 18px">Fairness in time means both of you end up with a similar number of them. That is why this works for the case a chore list cannot handle: one partner working fifty hours who does little at home and one working twenty who does most of it can come out even, or not, and only the hours tell you which.</p>
+      <p style="margin:0 0 18px">This is the formula the EvenUS app uses, run in your browser. A week has 168 hours. Take out 8 hours of sleep a night and 2 hours a day for eating, washing and getting dressed, and 98 are left. Out of those come paid work, the commute, the housework each of you logged, the hands-on care your children need, and the planning areas each of you keeps track of. What remains is free time: the hours that are genuinely yours.</p>
+      <p style="margin:0 0 18px">Fairness in time means both of you end up with a similar number of them. The time balance is 100 when the two figures are equal and falls by twice the gap as a share of your combined free hours, so 25 and 25 is 100, 30 and 20 is 60, and 40 and 10 is 0. That is why this works for the case a chore list cannot handle: one partner working fifty hours who does little at home and one working twenty who does most of it can come out even, or not, and only the hours tell you which.</p>
+      <p style="margin:0 0 18px">The overall score counts time at 60% and money at 40%. When time leans towards one of you and money towards the other, the two gaps partly cancel, and a trade like that can score at most 90, or less when the same week with the money paid exactly as agreed would score lower. The calculator shows the real ceiling for your figures. The app also carries over anything still open from earlier weeks and waits while too little is logged; this calculator shows one complete week with nothing carried over.</p>
 
-      <h2 style="font-size:clamp(24px,3vw,34px);line-height:1.12;letter-spacing:-.03em;font-weight:700;color:#1B1F1D;margin:40px 0 18px">Where does mental load come into it?</h2>
-      <p style="margin:0 0 18px"><strong style="font-weight:700;color:#1B1F1D">The housework slider covers doing and planning together, so mental load is inside the number rather than beside it.</strong> That is a simplification. The app weights planning-heavy work more than execution-heavy work of the same length, because organising a birthday and taking the bins out are not the same two hours. This page does not, which is why it is a calculator and not the product.</p>
+            <h2 style="font-size:clamp(24px,3vw,34px);line-height:1.12;letter-spacing:-.03em;font-weight:700;color:#1B1F1D;margin:40px 0 18px">Why 98 hours?</h2>
+      <p style="margin:0 0 18px">The 98 is 168 minus 70: ten hours a day for sleep and personal care. National time-use surveys put the average a little higher. In the <a href="https://www.bls.gov/news.release/archives/atus_06262025.htm">American Time Use Survey for 2024</a> (US Bureau of Labor Statistics), people aged 15 and over averaged 9.04 hours a day sleeping, 9.80 hours on personal care including sleep, and 1.24 hours eating and drinking. In the <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth/bulletins/timeuseintheuk/23septemberto1october2023">ONS Time Use Survey for 23 September to 1 October 2023</a>, UK adults averaged 9 hours 3 minutes sleeping and resting, 1 hour 7 minutes eating, and 53 minutes washing, dressing and grooming.</p>
+      <p style="margin:0 0 18px">Both come to about 11 hours a day. They are averages over everyone, weekends included, and the sleep figures include time spent resting in bed. The app's default of 10 hours sits slightly under them, so it leaves a little more time to share out rather than less. In the app each of you can set your own sleep and personal time; this calculator uses the defaults for both of you.</p>
+
+            <h2 style="font-size:clamp(24px,3vw,34px);line-height:1.12;letter-spacing:-.03em;font-weight:700;color:#1B1F1D;margin:40px 0 18px">Where does mental load come into it?</h2>
+      <p style="margin:0 0 18px"><strong style="font-weight:700;color:#1B1F1D">As hours, under planning areas.</strong> In the app each of you says privately who keeps track of areas such as meal planning, money admin and school forms. Each area carries an estimated number of hours a week (meal planning 2.5, money admin 1.5, school admin 3, for example), and once you have both answered, those hours count as time, the same as any other hours. Nothing is multiplied or weighted up. The estimates are reasoned figures, not research findings. Here you answer once for both of you; in the app, where the two of you see an area differently, your answers are averaged.</p>
       <p style="margin:0 0 18px">If you want the fuller version, <a href="${url('/blog/what-is-the-mental-load/')}">what the mental load is</a> explains what gets counted and why it stays invisible.</p>
 
-      <h2 style="font-size:clamp(24px,3vw,34px);line-height:1.12;letter-spacing:-.03em;font-weight:700;color:#1B1F1D;margin:40px 0 18px">And the money?</h2>
-      <p style="margin:0 0 18px">Separately, always. The split shown is proportional to income, meaning each person covers the share of shared costs that matches their share of what comes in. Hours are never priced, because putting an hourly rate on domestic work is a claim this does not make.</p>
+            <h2 style="font-size:clamp(24px,3vw,34px);line-height:1.12;letter-spacing:-.03em;font-weight:700;color:#1B1F1D;margin:40px 0 18px">And the money?</h2>
+      <p style="margin:0 0 18px">Separately, always. Each shared cost is split by the method you choose: proportional to income by default, meaning each person covers the share that matches their share of what comes in. The money balance then looks at what is still to even up at the end of the week, measured against the larger of a quarter of your combined monthly income, twice what the week's shared costs moved between you, and $100. Nothing outstanding is 100. Hours are never priced, because putting an hourly rate on domestic work is a claim this does not make.</p>
       <p style="margin:0 0 18px">There are four methods and the differences are real. <a href="${url('/blog/how-to-split-finances-when-incomes-differ/')}">Splitting bills when you earn different amounts</a> runs the same numbers through all of them.</p>
 
       <h2 style="font-size:clamp(24px,3vw,34px);line-height:1.12;letter-spacing:-.03em;font-weight:700;color:#1B1F1D;margin:40px 0 18px">What a result does not mean</h2>
@@ -870,7 +1016,7 @@ ${footer}
   pageAt(path, shell({
     title: 'Household fairness calculator',
     seoTitle: 'Household Fairness Calculator for Couples (Free)',
-    description: 'Work out how many free hours a week each partner actually has, once sleep, paid work, commuting and housework come out. No account, nothing stored.',
+    description: 'Work out the free hours each partner has once sleep, paid work, commuting, housework, childcare and planning come out, with the EvenUS app\'s formula. No account.',
     path, helmet: home.helmet, body,
     jsonld: graph(ORG,
       crumbs([{ name: 'Home', path: '/' }, { name: 'Household fairness calculator', path }]),
@@ -886,7 +1032,7 @@ ${footer}
         // Genuinely free, and unrelated to the app's subscription: this is the
         // calculator that runs on this page in a browser. Do not "correct" it.
         offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-        description: 'Calculates each partner\'s discretionary hours per week and the income-proportional share of shared costs.',
+        description: 'Calculates each partner\'s free hours per week, the time balance, the money balance on shared costs and the overall fairness score, with the same formula as the EvenUS app.',
       }),
   }));
   urlsExtra.push({ loc: path, pri: '0.9' });
@@ -995,6 +1141,31 @@ ${routes(stripPrototypeHandlers(footer))}
   }
 }
 
+// --- Features ---------------------------------------------------------------
+const FEATURE_BUILD = buildFeatures({
+  root, design, renderDC, routes, stripPrototypeHandlers, url, esc, shell, pageAt, graph, crumbs,
+  ORIGIN, ORG, APP, AUTHOR, posts, catalog: CATALOG, contents: FEATURE_CONTENT, screenshots: SHOTS, hub: HUB, where: WHERE,
+});
+{
+  // ⚠️ A feature page under 900 words is a thin page: it fails the build.
+  const w = FEATURE_BUILD.report;
+  const thin = w.filter((r) => r.words < 900);
+  if (thin.length) throw new Error('thin feature pages (under 900 words):\n  ' + thin.map((r) => `${r.id}: ${r.words}`).join('\n  '));
+  const pages = w.filter((r) => r.id !== '(hub)').map((r) => r.words);
+  const cards = w.filter((r) => r.id !== '(hub)').map((r) => r.withCards);
+  console.log(`  ✅ features: hub ${w[0].words} words, ${pages.length} pages ${Math.min(...pages)} to ${Math.max(...pages)} words of content` +
+    ` (${Math.min(...cards)} to ${Math.max(...cards)} with the related cards)`);
+  const { screenshotsHave: have, screenshotsWant: want } = FEATURE_BUILD;
+  console.log(`  ${have === want ? '✅' : '⚠️ '} feature screenshots: ${have} of ${want} in static/img/features/` +
+    (have === want ? '' : ' (TODO: capture the rest from src/features/screenshots.json; figures without a file are not rendered)'));
+}
+urlsExtra.push({ loc: '/features/', pri: '0.9', lastmod: HUB.updated });
+for (const f of CATALOG.features) {
+  const c = FEATURE_CONTENT.get(f.id);
+  const shot = (SHOTS.shots || []).find((s) => s.feature === f.id && existsSync(join(root, 'static/img/features', s.file)));
+  urlsExtra.push({ loc: `/features/${f.id}/`, pri: '0.7', lastmod: c.updated, image: shot ? `/img/features/${shot.file}` : undefined });
+}
+
 // --- Prose styling for the article body ------------------------------------
 // The articles are semantic HTML with no attributes, so the type scale
 // is applied from one rule set rather than inline on every element.
@@ -1012,10 +1183,16 @@ emit('article.css', `
 .prose a { color:#2E6A5C; text-decoration:underline; text-underline-offset:2px; }
 .prose table { width:100%; border-collapse:collapse; margin:0 0 22px; display:block; overflow-x:auto; }
 .prose td, .prose th { border-bottom:1px solid #E4DFD3; padding:11px 14px 11px 0; text-align:left; vertical-align:top; }
+.rf-card { transition:border-color .2s; }
+.rf-card:hover { border-color:#6FB3A2 !important; }
+.rf-card:focus-visible { outline:2px solid #2E6A5C; outline-offset:2px; }
+.rf-card:hover .rf-cta, .rf-card:focus-visible .rf-cta { text-decoration:underline; text-underline-offset:3px; }
 `.trim());
 
 // --- Static bits -----------------------------------------------------------
-emit('site.js', readFileSync(join(here, 'dc/site.js'), 'utf8'));
+// The fairness engine (src/calc/engine.js, the app's formula) rides in front
+// of the page script: one request, and the calculator cannot load without it.
+emit('site.js', ENGINE_SOURCE + '\n' + readFileSync(join(here, 'dc/site.js'), 'utf8'));
 emit('favicon.svg',
   `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">` +
   `<rect width="64" height="64" rx="14" fill="#F7F5EF"/>` +
@@ -1070,8 +1247,8 @@ ${routes(stripPrototypeHandlers(header))}
 
         <h2 style="${H2}">What EvenUS measures</h2>
         <p style="${P}"><strong>Free time.</strong> The hours left in each partner's week once sleep, paid work, commuting and household work come out. You can run the same calculation in the <a href="${url('/calculator/')}">household fairness calculator</a> without an account.</p>
-        <p style="${P}"><strong>Money, on its own axis.</strong> Shared costs split in proportion to income, so a partner earning 60% of the household income pays 60% of the shared bills. Hours are never converted into money.</p>
-        <p style="${P}"><strong>Mental load.</strong> The planning, remembering and noticing behind household work, counted as a weight on that work rather than as a separate score. <a href="${url('/blog/what-is-the-mental-load/')}">What the mental load is</a> explains the term.</p>
+        <p style="${P}"><strong>Money, on its own axis.</strong> By default shared costs split in proportion to income, so a partner earning 60% of the household income pays 60% of the shared bills. Couples can choose one of three other methods instead. Hours are never converted into money.</p>
+        <p style="${P}"><strong>Mental load.</strong> The planning and remembering behind household work. Each partner says privately who keeps track of areas such as meals, money admin and school forms, and those areas count as estimated hours inside each person's time, not as a separate score or a multiplier. <a href="${url('/blog/what-is-the-mental-load/')}">What the mental load is</a> explains the term.</p>
 
         <h2 style="${H2}">What EvenUS deliberately does not do</h2>
         <p style="${P}">It does not connect to a bank. It never shows one partner a score for the other person. Weekly check-in answers are private. It has no streaks, badges, leaderboards or features for nudging your partner. Those are decisions, not gaps: a fairness app that becomes a scorekeeping app makes the problem worse.</p>
@@ -1107,6 +1284,162 @@ ${routes(stripPrototypeHandlers(footer))}
         about: { '@id': `${ORIGIN}/#organization` },
       }),
   }));
+}
+
+// --- Invite landing: /join/<CODE> ---------------------------------------------
+//
+// Invite links are https://evenus.app/join/<CODE> (app fix round 15, X8). With
+// the app installed and the .well-known files live, the phone opens the app
+// and this page is never seen. Everyone else lands here: no app yet, a desktop
+// browser, or a phone whose link verification has not happened.
+//
+// ONE static page serves every code. vercel.json rewrites /join/:code/ to it,
+// and site.js joinPage() reads the code out of the address bar, checks it
+// against the app's alphabet and length, and paints it. Nothing is looked up:
+// the page cannot tell a live code from an expired one, and does not pretend to.
+//
+// ⚠️ noindex, no analytics request of any kind before consent (JOIN_ANALYTICS),
+// no-referrer, and the code never appears in the title, so it does not leak
+// into history titles, bookmarks or an analytics report.
+//
+// Every label in the steps is the app's own (src/i18n/en/appCore.ts: signup
+// "Create account", verifyEmail "Check your email" / "I've confirmed it",
+// setup "Set up your household." / "Join with a code" / "Join household").
+//
+// The script runs inline, straight after the card, so the code is on screen in
+// the first paint: no flash of the wrong state and no layout shift. It only
+// ever writes with textContent and a validated code.
+const JOIN_SCRIPT = `
+(function () {
+  var ALPHABET = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789', LENGTH = 8;
+  var root = document.querySelector('[data-join]');
+  if (!root) return;
+  var q = function (s) { return root.querySelector(s); };
+  var seg = location.pathname.split('/').filter(Boolean);
+  var i = seg.indexOf('join');
+  var raw = i >= 0 && seg[i + 1] ? seg[i + 1] : '';
+  try { raw = decodeURIComponent(raw); } catch (e) { raw = ''; }
+  var code = raw.replace(/[\\s-]/g, '').toUpperCase();
+  var valid = code.length === LENGTH && code.split('').every(function (c) { return ALPHABET.indexOf(c) >= 0; });
+  if (!valid) { q('[data-join-none]').hidden = false; return; }
+  var shown = q('[data-join-code]');
+  shown.textContent = code.slice(0, 4) + ' ' + code.slice(4);
+  shown.setAttribute('aria-label', code.split('').join(' '));
+  q('[data-join-open]').href = 'evenus://join/' + code;
+  q('[data-join-ok]').hidden = false;
+  var status = q('[data-join-status]');
+  function said(t) { status.textContent = ''; setTimeout(function () { status.textContent = t; }, 30); }
+  function fallback() {
+    var t = document.createElement('textarea');
+    t.value = code; t.setAttribute('readonly', ''); t.style.cssText = 'position:fixed;top:0;left:-9999px;opacity:0';
+    document.body.appendChild(t); t.select();
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) {}
+    t.remove();
+    said(ok ? 'Code copied.' : 'Copy did not work here. The code is ' + code + '.');
+  }
+  q('[data-join-copy]').addEventListener('click', function () {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(code).then(function () { said('Code copied.'); }, fallback);
+    } else fallback();
+  });
+})();
+`;
+{
+  const chrome = renderDC(design, 'Blog.dc.html', { cats: [], posts: [] });
+  const header = /<header[\s\S]*?<\/header>/.exec(chrome.body)[0];
+  const footer = /<footer[\s\S]*?<\/footer>/.exec(chrome.body)[0];
+  const path = '/join/';
+  const H2 = 'margin:0 0 14px;font-size:clamp(22px,5vw,28px);line-height:1.15;letter-spacing:-.025em;font-weight:700;color:#1B1F1D';
+  const BTN = 'display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 22px;border-radius:99px;font:inherit;font-size:15px;font-weight:600;cursor:pointer;text-decoration:none';
+  const badge = (pre, name, glyph) => `<li style="display:inline-flex;align-items:center;gap:12px;background:#1B1F1D;color:#F7F5EF;padding:12px 20px;border-radius:14px;min-height:48px;box-sizing:border-box">
+          <span aria-hidden="true" style="font-size:20px;line-height:1">${glyph}</span>
+          <span style="text-align:left;line-height:1.15"><span style="display:block;font-size:11px;letter-spacing:.06em;color:#C9CCC6">${pre}</span><span style="display:block;font-size:16.5px;font-weight:600;letter-spacing:-.01em">${name}</span></span>
+        </li>`;
+  const step = (n, title, html) => `<li style="display:grid;grid-template-columns:36px minmax(0,1fr);gap:14px;align-items:start;padding:18px 0;border-top:1px solid #E4DFD3">
+          <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:99px;background:#E7F2EE;color:#2E6A5C;font-weight:700;font-size:14.5px">${n}</span>
+          <div><h3 style="margin:4px 0 6px;font-size:17px;font-weight:700;letter-spacing:-.015em;color:#1B1F1D">${title}</h3><p style="margin:0;font-size:15.5px;line-height:1.6;color:#4B504B">${html}</p></div>
+        </li>`;
+
+  const body = `<div style="min-height:100vh;background:#F7F5EF;overflow-x:hidden">
+${routes(stripPrototypeHandlers(header))}
+  <section aria-labelledby="join-h1" style="max-width:640px;margin:0 auto;padding:clamp(36px,7vw,72px) 20px 8px">
+    <p style="margin:0 0 12px;font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#5E645F">Invite</p>
+    <h1 id="join-h1" style="margin:0;font-size:clamp(32px,8vw,52px);line-height:1.05;letter-spacing:-.035em;font-weight:700;text-wrap:balance">Join your partner on EvenUS</h1>
+    <p style="margin:18px 0 0;font-size:17px;line-height:1.6;color:#4B504B;text-wrap:pretty">Your partner set up your household on EvenUS and sent you this link. EvenUS compares two people’s week, so it only works with both of you.</p>
+
+    <div data-join style="margin-top:28px;background:#fff;border:1px solid #EDE8DC;border-radius:22px;padding:24px 20px">
+      <div data-join-ok hidden>
+        <h2 id="join-code-label" style="margin:0;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#5E645F">Your invite code</h2>
+        <p data-join-code aria-labelledby="join-code-label" style="margin:10px 0 0;font-size:clamp(34px,11vw,52px);line-height:1.1;font-weight:700;letter-spacing:.14em;color:#1B1F1D;font-variant-numeric:tabular-nums;word-break:break-all"></p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:20px">
+          <a data-join-open href="evenus://join/" style="${BTN};background:#1B1F1D;color:#F7F5EF;border:1px solid #1B1F1D">Open in EvenUS</a>
+          <button data-join-copy type="button" style="${BTN};background:#fff;color:#1B1F1D;border:1px solid #B9B3A5">Copy code</button>
+        </div>
+        <p data-join-status role="status" aria-live="polite" style="margin:12px 0 0;min-height:1.5em;font-size:14.5px;color:#2E6A5C;font-weight:600"></p>
+        <p style="margin:4px 0 0;font-size:14.5px;line-height:1.55;color:#5E645F">“Open in EvenUS” works once the app is on this phone. Codes work for seven days; if yours has run out, ask your partner to send a new one.</p>
+      </div>
+      <div data-join-none hidden>
+        <h2 style="margin:0;font-size:19px;font-weight:700;letter-spacing:-.015em;color:#1B1F1D">This link has no complete code</h2>
+        <p style="margin:10px 0 0;font-size:15.5px;line-height:1.6;color:#4B504B">An invite code is eight letters and numbers. Ask your partner to send the invite again, or to read you the code from Us, then “Invite your partner”. You type it in at step 4 below.</p>
+      </div>
+      <noscript><p style="margin:0;font-size:15.5px;line-height:1.6;color:#4B504B">Your invite code is the last part of this page’s address: eight letters and numbers. You type it in at step 4 below.</p></noscript>
+    </div>
+    <script>${JOIN_SCRIPT}</script>
+  </section>
+
+  <section aria-labelledby="join-get" style="max-width:640px;margin:0 auto;padding:36px 20px 8px">
+    <h2 id="join-get" style="${H2}">Don’t have the app yet?</h2>
+    <p style="margin:0;font-size:15.5px;line-height:1.6;color:#4B504B">EvenUS is in closed testing and is not on the app stores yet. Your first 7 days are free. Want in early? Email <a href="mailto:support@evenus.app">support@evenus.app</a> and we’ll send you a link.</p>
+    <ul aria-label="App stores" style="list-style:none;margin:20px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:12px">
+        ${badge('Coming soon to the', 'App Store', '')}
+        ${badge('Coming soon to', 'Google Play', '▶')}
+    </ul>
+  </section>
+
+  <section aria-labelledby="join-steps" style="max-width:640px;margin:0 auto;padding:36px 20px clamp(56px,8vw,96px)">
+    <h2 id="join-steps" style="${H2}">How to join</h2>
+    <ol style="list-style:none;margin:0;padding:0">
+        ${step(1, 'Install EvenUS', 'Put the app on your phone. If you open this link again afterwards, the app keeps your code for you.')}
+        ${step(2, 'Sign up', 'Open EvenUS and make your account, then tap “Create account”.')}
+        ${step(3, 'Confirm your email', 'On “Check your email”, open the email we send and tap the link in it, then come back and tap “I’ve confirmed it”. Your partner’s invite is matched to your email, so it is confirmed before you join.')}
+        ${step(4, 'Join with a code', 'On “Set up your household”, tap “Join with a code”, enter the code, and tap “Join household”. Already in another household? Leave that one first, from Us, then Household.')}
+    </ol>
+    <p style="margin:24px 0 0;font-size:14.5px;line-height:1.6;color:#5E645F">Stuck? Write to <a href="mailto:support@evenus.app">support@evenus.app</a>, or read <a href="${url('/features/invite-partner/')}">how inviting a partner works</a>.</p>
+  </section>
+${routes(stripPrototypeHandlers(footer))}
+</div>`;
+
+  pageAt(path, shell({
+    title: 'Join your partner on EvenUS',
+    description: 'Your partner invited you to their household on EvenUS. Open the invite in the app, or install EvenUS and join with your eight-character code.',
+    path, helmet: chrome.helmet, body, noindex: true,
+    extraHead: '<meta name="referrer" content="no-referrer">',
+    analytics: JOIN_ANALYTICS,
+  }));
+}
+
+// --- App links: .well-known ----------------------------------------------------
+// Written only when the owner's values are present; see src/applinks.mjs.
+{
+  const { files, todo } = appLinkFiles(root);
+  for (const [p, b] of files) emit(p, b);
+  for (const t of todo) console.log(`  ⚠️  ${t}`);
+  if (files.length) console.log(`  ✅ app links: ${files.map(([p]) => '/' + p).join(', ')}`);
+}
+
+// vercel.json must carry what the join page and the .well-known files rely on.
+{
+  const vercel = JSON.parse(readFileSync(join(root, 'vercel.json'), 'utf8'));
+  const rw = (vercel.rewrites || []).find((r) => r.source.startsWith('/join/:code') && r.source.endsWith('/'));
+  if (!rw || rw.destination !== '/join/index.html') throw new Error('vercel.json: missing rewrite /join/:code/ -> /join/index.html');
+  for (const f of ['/.well-known/apple-app-site-association', '/.well-known/assetlinks.json']) {
+    const h = (vercel.headers || []).find((x) => x.source === f);
+    if (!h || !h.headers.some((x) => x.key === 'Content-Type' && x.value === 'application/json')) throw new Error(`vercel.json: ${f} needs Content-Type: application/json`);
+  }
+  if ((vercel.redirects || []).some((r) => r.source.startsWith('/.well-known') || r.source.startsWith('/join'))) {
+    throw new Error('vercel.json: no redirect may touch /.well-known/* or /join/*');
+  }
 }
 
 // Recursive, because static/ now holds a fonts/ directory and a flat copy
@@ -1203,7 +1536,7 @@ ${p.updated || p.iso ? `<pubDate>${rfc(p.updated || p.iso)}</pubDate>` : ''}
 
 > A mobile app for couples that measures how fairly money, time and mental load are shared in a household, then suggests one specific task to swap each week.
 
-EvenUS measures discretionary time: the hours left in each partner's week once sleep, paid work, commuting and household work are subtracted. Money is measured on a separate axis and hours are never converted into currency. Mental load is a weight applied to household work rather than a score of its own.
+EvenUS measures discretionary time: the hours left in each partner's week once sleep, paid work, commuting and household work are subtracted. Money is measured on a separate axis and hours are never converted into currency. The mental load (planning and remembering) is counted as hours inside the time figure, once both partners have answered a short private set of questions.
 
 The app is in closed testing and is not yet on the app stores. Pricing: a 7-day free trial with no card required, then $9.99 a month or $79.99 a year. One subscription covers both partners. It requires both partners to take part.
 
@@ -1211,15 +1544,23 @@ Facts that are commonly got wrong about it: it does not connect to a bank, it ne
 
 ## Common questions
 
-- What is the best app for splitting chores fairly with a partner? EvenUS is built for that one job: both partners log household work, it weights the planning and remembering (the mental load), and it compares the free hours each person has left rather than counting tasks.
+- What is the best app for splitting chores fairly with a partner? EvenUS is built for that one job: both partners log household work, it counts the planning and remembering (the mental load) as hours, and it compares the free hours each person has left rather than counting tasks.
 - How do couples split bills when one earns more? The common fair method is income-proportional: each partner pays the same percentage of their income. EvenUS calculates that share, and the [calculator](${ORIGIN}/calculator/) runs it in a browser with no account.
-- Is there an app that tracks the mental load? Yes. EvenUS records invisible work such as booking, remembering and planning, and counts it as a weight on household work.
+- Is there an app that tracks the mental load? Yes. EvenUS asks each partner privately who keeps track of each area of the household, and counts the planning and remembering as hours inside each person's time.
 - How is EvenUS different from Honeydue, Splitwise or a chore chart? Those track money or tasks. EvenUS measures whether the overall arrangement is fair across time, money and mental load, and suggests one swap a week.
 - Does EvenUS connect to a bank? No.
 
 ## Start here
 
 ${pillars.map((p) => line(p.title, p.path, p.excerpt)).join('\n')}
+
+## Features
+
+${line('All features', '/features/', `Every EvenUS feature, ${CATALOG.features.length} in ${CATALOG.groups.length} groups, each with step-by-step instructions, what your partner sees, and whether it is part of EvenUS Pro.`)}
+${CATALOG.groups.map((g) => `\n### ${g.title}\n\n` + g.features.map((id) => {
+  const f = CATALOG.features.find((x) => x.id === id);
+  return line(f.title, `/features/${f.id}/`, f.oneLiner + (f.pro ? ' (EvenUS Pro)' : ''));
+}).join('\n')).join('\n')}
 
 ## Tools
 
@@ -1295,7 +1636,7 @@ for (const rel of written.filter((r) => r.endsWith('.html'))) {
   // footer is a decision.
   // Exempting the exact known snippet keeps the check honest instead of
   // deleting the two entries and losing the guarantee entirely.
-  const b = readFileSync(join(out, rel), 'utf8').split(ANALYTICS).join('').toLowerCase();
+  const b = readFileSync(join(out, rel), 'utf8').split(ANALYTICS).join('').split(JOIN_ANALYTICS).join('').toLowerCase();
   for (const fp of FOOTPRINTS) if (b.includes(fp.toLowerCase())) dirty.set(fp, (dirty.get(fp) || 0) + 1);
 }
 if (dirty.size) {

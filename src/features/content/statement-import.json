@@ -1,0 +1,93 @@
+{
+  "id": "statement-import",
+  "h1": "Import a bank statement: tick the shared payments, add only those",
+  "seoTitle": "Import a Bank Statement CSV Into EvenUS",
+  "description": "Pick a CSV, OFX or QFX statement, tick the payments that were shared, and only those become expenses. Read on your phone, never uploaded, no bank link.",
+  "updated": "2026-10-15",
+  "answer": "Import a bank statement is how EvenUS catches up on card spending without connecting to a bank. You download a CSV, OFX or QFX file from your bank, choose it in EvenUS, and tick the payments that were shared. Only the ticked ones become shared expenses, each split the way you pick. The file is read on your phone and forgotten straight after.",
+  "what": {
+    "h2": "What does Import a bank statement do?",
+    "html": "<p><strong>It turns a statement you already have into a list you can tick, so a month of shared card spending goes in at once.</strong></p><p>EvenUS reads the file on your phone and lists each payment out with its date, the payee and a likely category. Nothing is ticked to start with, because most of a statement is usually personal. You tick the payments that were shared, adjust the split on any that differ, and add them. They become ordinary <a href=\"/features/shared-expenses/\">shared expenses</a>, saved as paid by you.</p><p>Payments that look as if they are in EvenUS already are marked “looks already added”, so an expense someone typed in last Tuesday does not go in twice.</p>"
+  },
+  "who": {
+    "h2": "Who is Import a bank statement for?",
+    "html": "<p>For catching up on a month of card spending in one go. Each of you imports your own statement, because every ticked row is saved as paid by the person importing it, or by the <a href=\"/features/joint-account/\">joint account</a> for a joint statement.</p>"
+  },
+  "steps": {
+    "h2": "How do you import a bank statement into EvenUS?",
+    "intro": "Download a CSV, OFX or QFX statement, open Money, tap “Import a bank statement” under Track, choose the file, tick the shared payments and tap Add.",
+    "items": [
+      {
+        "name": "Download the statement",
+        "text": "Download a CSV, OFX or QFX statement from your bank’s website or app and save it to this phone."
+      },
+      {
+        "name": "Open the import screen",
+        "text": "Open Money, scroll to Track and tap “Import a bank statement”, then “Choose a file”."
+      },
+      {
+        "name": "Say whose account it is",
+        "text": "If you have a joint account set up in EvenUS, answer “Whose account is this?” with Mine or Joint account."
+      },
+      {
+        "name": "Tick the shared payments",
+        "text": "Tick the payments that were shared. Tap the split under a ticked one, such as “Half each · tap to change”, to change it."
+      },
+      {
+        "name": "Add them",
+        "text": "Tap the Add button at the bottom, for example “Add 12 shared expenses”, to save the ticked ones."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see?",
+    "html": "<p><strong>Your partner sees the expenses you add, like any others, and one line in the <a href=\"/features/activity-log/\">activity feed</a> for the import, not a notice for each.</strong> Each imported expense shows “Added from: A bank statement”.</p><p>They never see the file, your balance, or the rows you left unticked. EvenUS keeps only what you tick and forgets the rest.</p>"
+  },
+  "tips": {
+    "h2": "Tips for a tidy import",
+    "items": [
+      "Nothing is ticked to start with. Payments that seem to be in EvenUS already are marked “looks already added”, so you can leave them.",
+      "Payments from before the week you joined are marked “before you joined” and left out, and so is a payment too small to record in your household’s currency; the screen counts both. Anything that could not be added is named, so you can add it by hand.",
+      "For a long file, choose a shorter date range. The check for things already added covers about six months, and one import adds up to 300 expenses.",
+      "Only money going out can be ticked. Record a refund on its expense with “This was paid back”."
+    ]
+  },
+  "country": {
+    "h2": "Which banks and countries does statement import support?",
+    "html": "<p><strong>It recognises downloads from most large banks in the US, UK, Europe, Australia, Canada and India, and usually reads other banks’ CSV files too.</strong> That includes Chase, Bank of America, Wells Fargo, Amex and Capital One; Barclays, HSBC, Monzo and Revolut; N26 and German banks; CommBank, ANZ and Westpac; RBC and TD; and HDFC, ICICI, SBI, Axis and Kotak, along with the layout most other Indian banks use, with Narration, Withdrawal and Deposit columns and amounts in lakhs.</p><p>Indian banks often give an Excel (XLS) file: open it and save it as CSV first. Dates follow the bank’s format, then your phone’s region. Payments in a currency other than your household’s are listed but not added, and PDF statements can’t be read.</p>"
+  },
+  "extra": [
+    {
+      "h2": "Why doesn’t EvenUS just connect to my bank?",
+      "html": "<p>EvenUS never connects to a bank, by design. A bank link would hand a third party a live view of every payment either of you makes, when the household only needs the shared ones. What you add counts towards the <a href=\"/features/fairness-score/\">household balance</a> like anything typed in.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Does EvenUS connect to my bank account?",
+      "a": "No. EvenUS never connects to a bank. You download a statement file yourself and choose it in the app. It is read on your phone, only the payments you tick are saved, and the file is forgotten straight after."
+    },
+    {
+      "q": "Can my partner see my whole bank statement?",
+      "a": "No. Your partner sees only the payments you tick and add, as ordinary shared expenses, plus one line in the activity feed for the import. The file and every row you left unticked stay with you."
+    },
+    {
+      "q": "Can I import a PDF bank statement?",
+      "a": "No. PDF statements can’t be read. Download a CSV, OFX or QFX file from your bank’s website or app instead. If your bank only offers Excel, open the file and save it as CSV first."
+    },
+    {
+      "q": "Can I import payments from before we started using EvenUS?",
+      "a": "If you joined your partner’s household, payments dated before the week you joined are left out, and the screen says how many. They stay in your bank’s records, just not in your shared ones."
+    },
+    {
+      "q": "Is statement import part of EvenUS Pro?",
+      "a": "No. Importing a statement is a way of adding expenses, so it keeps working after the 7-day free week, with or without a subscription."
+    }
+  ],
+  "relatedPosts": [
+    "tracking-shared-expenses",
+    "manage-household-finances-without-a-joint-bank-account",
+    "yours-mine-and-ours-bank-accounts",
+    "how-to-automate-your-household-spending"
+  ]
+}

@@ -5,44 +5,50 @@
   meta:cat      Using EvenUS
   meta:date     1 March 2026
   meta:iso      2026-03-01
-  meta:updated  2026-10-12
+  meta:updated  2026-10-14
 
   Rewritten. Target query: Relationship Balance Calculator: How to Use It.
-  Inputs checked against dist/calculator/index.html and dist/site.js:
-  income 1000-9000/month (USD display), paid work 0-70h, housework and
-  planning 0-45h, 68h free budget, split shown proportional to income.
+  Inputs checked against dist/calculator/index.html and src/calc/engine.js
+  (14 Oct 2026): the app's formula, 98h week budget (168 - 8h sleep/night -
+  2h personal/day), income 1000-9000/month, paid work 0-70h, housework 0-45h,
+  commute 0-20h, up to three children by age, childcare logged 0-40h,
+  eleven planning areas, four split methods, shared costs paid by each.
+  Default example: 48 vs 41 free hours, time 84, money 100, overall 90.
 -->
-<p><strong>To use the relationship balance calculator, open the free <a href="/calculator/">household fairness calculator</a> and move three pairs of sliders, one for each partner: monthly income, paid work hours a week, and housework and planning hours a week. It instantly shows how many free hours each of you has left, the gap between you, how shared costs would split by income, and one suggested change.</strong> No account is needed and nothing is stored.</p>
+<p><strong>To use the relationship balance calculator, open the free <a href="/calculator/">household fairness calculator</a> and move the sliders for each partner: monthly income, paid work, housework and commute, then add any children, who keeps track of each planning area, and what each of you paid towards shared costs this week. It uses the same formula as the EvenUS app and shows how many free hours each of you has left, the time balance, the money balance, the overall score and one suggested change.</strong> No account is needed and nothing is stored.</p>
 
 <p>It takes about two minutes. The harder part is choosing honest numbers, so most of this guide is about what to enter and how to read what comes back.</p>
 
 <h2>What does the relationship balance calculator measure?</h2>
 
-<p><strong>Free time first, money second.</strong> It works out how many hours a week each of you has that are genuinely your own, and separately shows how shared costs would be divided in proportion to income.</p>
+<p><strong>Free time first, money second.</strong> It works out how many hours a week each of you has that are genuinely your own, and separately checks whether the week's shared costs were paid in the split you chose.</p>
 
-<p>The starting point is the 168 hours in a week. The calculator takes out sleep and the personal time nobody has a choice about, such as eating and getting ready, which leaves roughly 68 hours to allocate. From those it subtracts each person's paid work and housework. What remains is discretionary time. A fair week, by this measure, is one where both of you end up with a similar number of free hours.</p>
+<p>The starting point is the 168 hours in a week. The calculator takes out 8 hours of sleep a night and 2 hours a day for eating, washing and getting dressed, which leaves 98 hours. From those it subtracts each person's paid work, commute, logged housework and childcare, an estimate of the hands-on care children need for their age, and the planning areas each of you holds. What remains is discretionary time. The calculator page explains <a href="/calculator/">why the budget is 98 hours</a>, with the national time-use figures behind it. A fair week, by this measure, is one where both of you end up with a similar number of free hours.</p>
 
 <p>Money is shown alongside but never converted into hours. The calculator does not put a price on housework.</p>
 
 <h2>What do you need to enter?</h2>
 
-<p><strong>Three numbers for each partner.</strong> The two partners are labelled Alex and Sam; just decide which of you is which.</p>
+<p><strong>A few numbers for each partner.</strong> The two partners are labelled Alex and Sam; just decide which of you is which.</p>
 
 <table>
   <tr><th>Slider</th><th>Range</th><th>What to put in</th></tr>
   <tr><td>Monthly income</td><td>1,000 to 9,000</td><td>Take-home pay per month. The page shows dollars, but the split works the same in any currency.</td></tr>
-  <tr><td>Paid work, hours a week</td><td>0 to 70</td><td>Contracted hours plus regular overtime. Add your commute here too, since there is no separate commute slider.</td></tr>
-  <tr><td>Housework and planning</td><td>0 to 45</td><td>Cooking, cleaning, laundry, childcare, and the planning: meal plans, school forms, bookings, renewals.</td></tr>
+  <tr><td>Paid work, hours a week</td><td>0 to 70</td><td>Contracted hours plus regular overtime.</td></tr>
+  <tr><td>Housework, hours a week</td><td>0 to 45</td><td>Cooking, cleaning, laundry, the shop: the time the work itself took.</td></tr>
+  <tr><td>Commute, hours a week</td><td>0 to 20</td><td>Travel to and from work, there and back.</td></tr>
+  <tr><td>Children</td><td>Up to three, by age</td><td>Each adds an estimate of hands-on care for their age. Childcare you log yourselves goes in its own sliders.</td></tr>
+  <tr><td>Planning areas</td><td>Eleven areas</td><td>Who keeps track of meals, money admin, school forms and the rest. Each carries an estimated number of hours a week.</td></tr>
+  <tr><td>Shared costs this week</td><td>Any amount</td><td>What each of you paid for shared things, with the split method you use.</td></tr>
 </table>
 
 <h3>How to estimate housework hours honestly</h3>
 
-<p>This is the slider people get wrong most often, usually by forgetting the thinking. A quick way to estimate it:</p>
+<p>This is the slider people get wrong most often. The planning has its own section, so this is only the doing. A quick way to estimate it:</p>
 
 <ol>
   <li>List your daily tasks and multiply by seven. Thirty minutes of cooking every day is 3.5 hours.</li>
   <li>Add weekly tasks: the big shop, the bathroom, the laundry.</li>
-  <li>Add the planning you do: writing lists, booking, keeping track of dates. Half an hour here and there adds up.</li>
   <li>Round to the nearest hour. Close enough is fine.</li>
 </ol>
 
@@ -54,37 +60,41 @@
 
 <ul>
   <li><strong>Free hours.</strong> Shown for each partner as bars, with a headline such as "Alex has 7 more free hours."</li>
-  <li><strong>Fairness score.</strong> A single number out of 100 that drops as the gap between your free hours grows.</li>
-  <li><strong>Shared costs.</strong> Each person's percentage of shared costs if you split in proportion to income.</li>
+  <li><strong>Fairness score.</strong> A single number out of 100: the time balance counted at 60% and the money balance at 40%. When time leans one way and money the other, the two gaps partly cancel.</li>
+  <li><strong>Shared costs.</strong> Each person's percentage of shared costs under the split method, the money balance, and what one of you would send the other to even up.</li>
   <li><strong>This week's one thing.</strong> A suggested change sized to the gap. If you are within a couple of hours of each other, it suggests nothing at all.</li>
 </ul>
 
 <h2>A worked example with real numbers</h2>
 
-<p><strong>The calculator opens on an example household, which is a useful way to see the arithmetic.</strong></p>
+<p><strong>The homepage version opens on an example household, which is a useful way to see the arithmetic.</strong></p>
 
-<p>Alex earns 4,500 a month, works 42 hours, and does 8 hours of housework and planning. Sam earns 4,200, works 34 hours, and does 23 hours at home.</p>
+<p>Alex earns 4,500 a month, works 42 hours, and does 8 hours of housework. Sam earns 4,200, works 34 hours, and does 23 hours at home. Neither commutes, there are no children, and shared costs were paid in the split.</p>
 
 <ul>
-  <li>Alex: 68 − 42 − 8 = <strong>18 free hours</strong></li>
-  <li>Sam: 68 − 34 − 23 = <strong>11 free hours</strong></li>
-  <li>Gap: 18 − 11 = <strong>7 hours</strong> a week</li>
-  <li>Shared costs by income: 4,500 ÷ 8,700 is about 52% for Alex, 48% for Sam</li>
+  <li>Alex: 98 − 42 − 8 = <strong>48 free hours</strong></li>
+  <li>Sam: 98 − 34 − 23 = <strong>41 free hours</strong></li>
+  <li>Gap: 48 − 41 = <strong>7 hours</strong> a week, so the time balance is 100 × (1 − 2 × 7 ÷ 89) = <strong>84</strong></li>
+  <li>Shared costs by income: 4,500 ÷ 8,700 is about 52% for Alex, 48% for Sam, and both paid exactly that, so the money balance is <strong>100</strong></li>
 </ul>
 
-<p>The fairness number comes out at 87, and the suggestion is for Alex to take Thursday's dinner and washing up, about two hours that close most of the gap without touching the weekend.</p>
+<p>The fairness number comes out at 100 × (1 − 0.6 × 0.16) = 90, and the suggestion is for Alex to take Thursday's dinner and washing up, about two hours that close most of the gap without touching the weekend.</p>
 
 <p>Notice what this shows. Alex works eight more paid hours, so a task count might say Alex is carrying more. Sam still ends up with seven fewer free hours because of the work at home. That is the kind of picture the calculator is built to reveal.</p>
 
-<p>Now try a variation. If Sam moves to 30 paid hours and Alex picks up 4 more hours at home, Alex has 68 − 42 − 12 = 14 and Sam has 68 − 30 − 23 = 15. The gap is one hour, and the calculator suggests nothing. Even, for now.</p>
+<p>Now try a variation. If Sam moves to 30 paid hours and Alex picks up 4 more hours at home, Alex has 98 − 42 − 12 = 44 and Sam has 98 − 30 − 23 = 45. The gap is one hour, the score rises to 99, and the calculator suggests nothing. Even, for now.</p>
+
+<p>On the full calculator the same household opens with the eight everyday planning areas marked as shared. That adds 5.5 hours of planning to each of you, so the figures read 43 and 36 free hours, a time balance of 82 and an overall 89.</p>
 
 <h2>What doesn't the calculator capture?</h2>
 
-<p><strong>It is a simplified version of the EvenUS model, and it says so.</strong> Know its limits before you treat the result as fact.</p>
+<p><strong>It is the app's formula for one complete week with nothing carried over, and it says so.</strong> Know its limits before you treat the result as fact.</p>
 
 <ul>
-  <li><strong>Mental load is folded in, not weighted.</strong> Planning goes in the same slider as physical work. The app gives planning-heavy tasks extra weight. The calculator does not.</li>
-  <li><strong>Only one split method.</strong> It shows a proportional split. There are other fair methods, compared in <a href="/blog/how-to-split-finances-when-incomes-differ/">how to split bills when you earn different amounts</a>.</li>
+  <li><strong>Nothing carries over.</strong> The app keeps a running balance of what is still to even up from earlier weeks, and waits to compare time while under an hour of housework is logged between you. The calculator looks at one week on its own.</li>
+  <li><strong>One answer per planning area.</strong> In the app each of you answers privately, and where you see an area differently the two answers are averaged. Here you answer once for both of you.</li>
+  <li><strong>Defaults for sleep and personal time.</strong> The calculator uses 8 hours of sleep and 2 hours of personal time a day for both of you. In the app each of you can set your own.</li>
+  <li><strong>Children living with you full time.</strong> The app also handles children from a previous relationship, alternate weeks and extra needs. Split methods are compared in <a href="/blog/how-to-split-finances-when-incomes-differ/">how to split bills when you earn different amounts</a>.</li>
   <li><strong>Balance is not the same as wellbeing.</strong> Two people with four free hours each look even and are both stretched. A small gap is not automatically good news.</li>
   <li><strong>One week, not a pattern.</strong> A busy month at work can skew it. Try it with typical numbers, not this week's worst.</li>
 </ul>
@@ -95,7 +105,7 @@
 
 <p>If the gap is small, there may be nothing to change. If it is large, pick one task to move, ideally a whole area including the planning, and try it for two weeks. <a href="/blog/beyond-the-chore-war/">How to divide housework without it becoming an argument</a> covers how to raise it. A gap is a reason to look, not a finding about either of you.</p>
 
-<p>The EvenUS app runs the fuller version of the same maths week by week, with mental load weighting and money on its own axis. <a href="/blog/how-the-evenus-fairness-score-really-works-effort-money-mental-load-explained/">How the EvenUS fairness score works</a> explains the differences.</p>
+<p>The EvenUS app runs the same maths week by week, from the time you each log and your private planning answers, and carries the money balance from one week to the next. <a href="/blog/how-the-evenus-fairness-score-really-works-effort-money-mental-load-explained/">How the EvenUS fairness score works</a> explains the differences.</p>
 
 <h2>Common questions</h2>
 
@@ -105,8 +115,8 @@
 <h3>Can I use pounds or rupees?</h3>
 <p>The sliders display dollars, but the income split is a ratio, so it works the same whatever currency you earn in. Enter your monthly take-home in the same units for both of you.</p>
 
-<h3>Why is there no commute slider?</h3>
-<p>To keep it to three inputs. Add your commuting time to paid work hours to get the same effect.</p>
+<h3>Why is the homepage version shorter?</h3>
+<p>It keeps to income, paid work and housework, and takes shared costs as paid in the split. The <a href="/calculator/">full calculator</a> adds commuting, children, planning areas and who paid what.</p>
 
 <h3>What score counts as fair?</h3>
 <p>There is no pass mark. Look at the gap in hours instead: within a couple of hours is close to even, and anything larger is worth a conversation.</p>

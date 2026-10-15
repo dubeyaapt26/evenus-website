@@ -1,0 +1,81 @@
+{
+  "id": "chore-reminders",
+  "h1": "Chore reminders: let the app hold the remembering, not either of you",
+  "seoTitle": "Chore Reminders for Couples Without Nagging: EvenUS",
+  "description": "Put a time on a chore and EvenUS reminds whoever owns it, without saying who set it. How chore reminders work, quiet hours, and what your partner sees.",
+  "updated": "2026-10-15",
+  "answer": "Chore reminders in EvenUS put a time on a chore so the app does the remembering. Either of you can set one, but only the chore’s owner is reminded, and the reminder never says who set it. It only arrives when the chore is about due, never after 9:30 pm or before 8 am, and the owner can switch it off whenever they like.",
+  "what": {
+    "h2": "What do chore reminders do?",
+    "html": "<p><strong>They move the job of remembering a chore from a person to the app.</strong> Some chores slip not because anyone minds doing them but because nobody is holding the schedule: the bins on a Tuesday night, the plants on a Sunday. In many homes, one partner ends up remembering for both, which is its own quiet piece of work.</p><p>In EvenUS, a reminder lives on the chore, not on either of you. You choose a time and, if you like, the days, and the chore’s owner gets a notification when it is about due. Because it comes from the app rather than from a partner, it reads as information rather than a request.</p><p>Reminders are deliberately limited. A daily chore reminds at most once a day, a weekly one at most once a week, and nobody gets more than two chore reminders a day across everything. There is no “remind them now” button.</p>"
+  },
+  "who": {
+    "h2": "Who are chore reminders for?",
+    "html": "<p>For the jobs that slip because nobody is holding the schedule, like the bins or the plants. They suit the partner who would rather be reminded by their phone than by a person, and the partner who is tired of being the one who remembers.</p>"
+  },
+  "steps": {
+    "h2": "How do you set a chore reminder in EvenUS?",
+    "intro": "Open the chore on the Effort tab, tap “Add a reminder”, choose a time and, optionally, days, then tap “Set the reminder”.",
+    "items": [
+      {
+        "name": "Open the chore",
+        "text": "Open the Effort tab and tap a chore. It needs an owner first: if it says nobody owns it, choose one under “Who owns this?”."
+      },
+      {
+        "name": "Add a reminder",
+        "text": "Tap “Add a reminder”. The screen tells you who will get it, and says it won’t say who set it."
+      },
+      {
+        "name": "Choose the time and days",
+        "text": "Choose “What time” and, if you like, “Which days”, then tap “Set the reminder”."
+      },
+      {
+        "name": "Switch it off or back on",
+        "text": "If the reminder is for you, “Turn this off” on the chore switches it off, and “Turn it back on” brings it back. To change it, tap “Change the reminder”."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see?",
+    "html": "<p><strong>Only the chore’s owner gets the reminder, and it never says who set it.</strong> If you set a reminder on a chore you own, it is a note to yourself, not a message. If you set one on your partner’s chore, the screen tells you plainly that they can switch it off whenever they like.</p><p>The owner can turn a reminder off at any time, and nobody is told. Both of you see the reminder time on the chore, so there are no hidden schedules. What EvenUS will not do is let one partner send the other a nudge, or mark a chore as late. See <a href=\"/blog/gentle-reminders/\">why reminders from a partner feel like nagging</a>.</p>"
+  },
+  "tips": {
+    "h2": "Tips for chore reminders that help",
+    "items": [
+      "Leave the days blank and it only comes up when the chore is actually about due. Setting days narrows it down further, it never adds extra reminders.",
+      "Nothing arrives after 9:30 pm or before 8 am, so pick a time in your waking day, such as 7:30 pm for the bins. On Android, a reminder can come a few minutes late while the phone is saving battery.",
+      "A chore needs an owner first. Reminders live on the chore, not on either of you, so handing a chore over moves the reminder with it.",
+      "For dates rather than chores, such as birthdays or a passport renewal, use <a href=\"/features/household-reminders/\">household reminders</a> instead."
+    ]
+  },
+  "extra": [
+    {
+      "h2": "Why can either partner set a reminder but only the owner receive it?",
+      "html": "<p>Setting a reminder on your partner’s chore can be genuinely helpful: they may not know the bin day changed. But a reminder from a person, with their name on it, at a time they picked, tends to read as an instruction. That is how a helpful nudge turns into nagging, one of the patterns underneath the <a href=\"/blog/why-asking-for-help-is-the-problem/\">“just ask me” problem</a>.</p><p>So EvenUS keeps the useful part and removes the rest. The notification carries no name, the owner can switch it off without anyone knowing, and the person who set it is told so before they save. If Sam sets a 7:30 pm reminder on Alex’s bins, Alex gets a quiet prompt from the app, and whether it is useful stays Alex’s call.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Can I set a chore reminder for my partner?",
+      "a": "Yes, on a chore they own. Only they get the reminder, it never says who set it, and they can switch it off whenever they like without you being told. Both of you see the reminder time on the chore itself."
+    },
+    {
+      "q": "Will EvenUS send reminders late at night?",
+      "a": "No. Nothing arrives after 9:30 pm or before 8 am. Each chore reminds at most once each time it comes round, and nobody gets more than two chore reminders a day across everything."
+    },
+    {
+      "q": "Why can’t I add a reminder to a chore?",
+      "a": "The chore needs an owner first, because a reminder goes to the person who owns it. If nobody owns the chore yet, open it on the Effort tab and choose an owner, then tap Add a reminder."
+    },
+    {
+      "q": "Does EvenUS tell my partner if I turn a reminder off?",
+      "a": "No. The owner can turn a reminder off whenever they like and nobody is told. The time stays visible on the chore, so turning it back on later is one tap with Turn it back on."
+    }
+  ],
+  "relatedPosts": [
+    "gentle-reminders",
+    "how-to-turn-on-gentle-reminders",
+    "why-asking-for-help-is-the-problem",
+    "the-difference-between-helping-out-and-taking-ownership"
+  ]
+}

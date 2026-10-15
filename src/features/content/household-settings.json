@@ -1,0 +1,96 @@
+{
+  "id": "household-settings",
+  "h1": "Household name and time zone: rename your household, or move its week when you move",
+  "seoTitle": "Household Name and Time Zone in EvenUS",
+  "description": "Rename your EvenUS household, or change its time zone after a move so your weeks turn at your own midnight. When a change takes effect and what stays.",
+  "updated": "2026-10-15",
+  "answer": "In EvenUS, open Us, then Household, and tap Your household to rename your household or change its time zone. Your weeks start at 00:00 on Monday in that zone. A new time zone takes over when the week you are in ends, and the screen shows the date as “from” that day. The currency stays as it was set.",
+  "what": {
+    "h2": "What can you change on Your household?",
+    "html": "<p><strong>Two shared settings live here: the household's name, and the time zone your weeks run on.</strong> Both belong to the household, so a change applies to both phones.</p><p>The name is the one typed on “Create your household”, and it is what the invite message names. The time zone decides where your week begins and ends: your weeks start at 00:00 on Monday in it, and the Sunday summary and household reminders run on it. A new household takes the zone of the phone that created it, so after a move, or a setup done while travelling, this is where you put it right.</p><p>The same screen holds the Time and money weights for the <a href=\"/features/fairness-score/\">household balance</a>, under “How much should time count?”.</p>"
+  },
+  "who": {
+    "h2": "Who is this for?",
+    "html": "<p>For a household that has moved city or country, or that would like a different name. It also suits a couple who set up EvenUS on a trip, so the week ran in the wrong zone.</p>"
+  },
+  "steps": {
+    "h2": "How do you rename your household or change its time zone?",
+    "intro": "Open Us, then Household, and tap Your household. Edit the name and tap Save name, or tap Change time zone and pick a city.",
+    "items": [
+      {
+        "name": "Open Your household",
+        "text": "Open the Us tab, tap Household, then Your household. The name and time zone sit below the list of members."
+      },
+      {
+        "name": "Change the name",
+        "text": "Under Household name, edit the name (up to 60 characters). Save name appears once it differs; tap it. The name cannot be left empty."
+      },
+      {
+        "name": "Open the time zone picker",
+        "text": "Under Time zone, the row shows the zone in force as a city and offset, such as “Kolkata · UTC+05:30”. Tap Change time zone."
+      },
+      {
+        "name": "Pick a city",
+        "text": "Search for a big city in your time zone and tap it. If your phone is in a different zone, “Use this phone's zone” picks it in one tap."
+      },
+      {
+        "name": "Check the date it takes over",
+        "text": "You see “Saved. Your weeks follow {city} time from {date}.” Until that day, the Time zone row shows the waiting change."
+      },
+      {
+        "name": "Set the Time and money weights",
+        "text": "Under “How much should time count?”, choose 50/50, 60/40 or 70/30. The line below reads, for example, “Currently 60% time · 40% money”."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see?",
+    "html": "<p><strong>The same name and time zone, for both of you. Each change shows as a line in the activity feed, such as “Alex renamed the household” or “Alex changed the household's time zone”.</strong> A change to the weights reads “Alex changed how time and money are weighed in your balance”.</p>"
+  },
+  "tips": {
+    "h2": "Tips for the name and time zone",
+    "items": [
+      "No exact match for your town? Try a big city in the same time zone.",
+      "Changed your mind before the new zone takes over? Pick again. The new choice replaces the one still waiting.",
+      "If the change will not save, check that your phone's date and time are set automatically, then try again with a connection.",
+      "A phone in another time zone, on a work trip for example, still follows the household's week. For days away, use <a href=\"/features/away-mode/\">Away</a>."
+    ]
+  },
+  "extra": [
+    {
+      "h2": "When does a new time zone take effect?",
+      "html": "<p><strong>At the end of the week you are in.</strong> The week under way keeps its start and end, and finished weeks keep their dates.</p><p>Say Alex and Sam move from London to Mumbai and change the zone on a Wednesday. The sheet reads “A new time zone takes over for both of you when the week you're in ends: from {date}. This week stays as it is.” That week finishes on London time. From the next Monday, weeks start at 00:00 Mumbai time.</p>"
+    },
+    {
+      "h2": "Can you change the household's currency?",
+      "html": "<p><strong>No. The currency is chosen once, on “Create your household”, and stays as it was set.</strong> There is no currency setting on Your household, and EvenUS does not convert between currencies: a receipt, Wallet payment or quick-add line in another currency is marked so you can check the amount. If someone new joins later, the currency and time zone stay the same.</p>"
+    },
+    {
+      "h2": "What do the Time and money weights change?",
+      "html": "<p>The overall score blends your time balance and your money balance; this setting picks the blend, with 60/40 as the default. Insights shows it under “How the number is made”, for example “Time 60%, money 40%.” Hours are never turned into money.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "When does a new time zone take effect in EvenUS?",
+      "a": "When the week you are in ends. The screen shows the date as “Your weeks follow {city} time from {date}.” The week already under way stays as it is, for both of you."
+    },
+    {
+      "q": "Can I change the currency after creating the household?",
+      "a": "No. The currency is set on “Create your household” and stays fixed. Amounts in other currencies are not converted, so the app asks you to check them before saving."
+    },
+    {
+      "q": "Can either of us rename the household or change the time zone?",
+      "a": "Yes. Either of you can change the name, the time zone or the weights. The other person is not asked to approve it, and each change appears as a line in the activity feed."
+    },
+    {
+      "q": "Is changing the household name or time zone part of EvenUS Pro?",
+      "a": "No. Renaming the household and changing its time zone keep working after the 7-day free week, with or without a subscription. The household balance that reads the weights is part of EvenUS Pro."
+    }
+  ],
+  "relatedPosts": [
+    "weekly-fairness-report",
+    "how-the-evenus-fairness-score-really-works-effort-money-mental-load-explained",
+    "why-fair-doesnt-always-mean-equal"
+  ]
+}

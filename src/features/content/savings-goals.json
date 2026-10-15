@@ -1,0 +1,84 @@
+{
+  "id": "savings-goals",
+  "h1": "Savings goals: save towards something together and watch one bar fill",
+  "seoTitle": "Couples Savings Goal Tracker: Savings Goals in EvenUS",
+  "description": "Set a shared savings goal for a holiday, a deposit or a new sofa, record what each of you puts in, and watch one household bar fill. Free in EvenUS.",
+  "updated": "2026-10-15",
+  "answer": "Savings goals in EvenUS are things a couple is saving towards together, like a holiday, a deposit or a new sofa. You set what it is for and how much, with a date if there is one. Each of you records what you put in yourself, and one bar fills with the household total. With a date, EvenUS suggests a monthly pace split the way you share costs.",
+  "what": {
+    "h2": "What do Savings goals do?",
+    "html": "<p><strong>A savings goal gives the two of you one shared picture of something you are building towards, and how far along it is.</strong> Couples often save in different places, so each knows their own part and nobody sees the whole.</p><p>In EvenUS, a goal is a name, an amount and, if you like, a date. Each time either of you sets money aside for it, you tap “Put money in” and record your own amount. The bar fills with what the household has put in together, so you see the goal rather than a race between two contributions.</p><p>With a date, EvenUS turns what is left into a suggested amount a month and splits it the way you split shared costs in <a href=\"/features/money-mode/\">How costs split</a>. EvenUS never moves money: it is a record of what you set aside, wherever you keep it.</p>"
+  },
+  "who": {
+    "h2": "Who are Savings goals for?",
+    "html": "<p>Couples saving for a holiday, a deposit or a new sofa who would like to watch it build up. They suit couples who keep their money separately, since each of you records from your own side, and couples with a <a href=\"/features/joint-account/\">joint account</a> who want a clear target alongside it.</p>"
+  },
+  "steps": {
+    "h2": "How do you set up a savings goal in EvenUS?",
+    "intro": "Open Money, tap “Savings goals” under Plan, tap “Add a goal”, fill it in and tap “Add the goal”.",
+    "items": [
+      {
+        "name": "Open Savings goals",
+        "text": "Open the Money tab, then under Plan tap “Savings goals”."
+      },
+      {
+        "name": "Describe the goal",
+        "text": "Tap “Add a goal” (“Add another goal” once you have one). Under “What for”, write what you are saving towards, and under “How much”, enter the amount."
+      },
+      {
+        "name": "Choose a date, or not",
+        "text": "Under “By when”, choose Whenever, or “By a date” and pick one. Then tap “Add the goal”."
+      },
+      {
+        "name": "Record what you put in",
+        "text": "Each time you set money aside, tap “Put money in” on the goal and enter how much. It is recorded as yours, and your partner records their own."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see?",
+    "html": "<p><strong>You both see each goal, the total saved and the suggested pace.</strong> The bar shows the household total, not a tally per person, because the goal belongs to both of you. Your own entries are listed as “You put in” with the amount and the date.</p><p>Each of you records only your own money, and only you can take back what you put in, for example if you entered the wrong amount.</p><p>When a goal is no longer needed, “Put it away” takes it off the list for both of you. What was put in stays recorded.</p>"
+  },
+  "tips": {
+    "h2": "Tips for saving together",
+    "items": [
+      "With a date, the monthly figure is a pace, not a deadline. Nothing changes and no warning appears if you get there later; once the date passes, the goal invites you to pick a new one.",
+      "The suggested split follows How costs split, so a couple splitting by income sees the monthly pace shared in proportion to each person’s income after commitments.",
+      "Record a contribution when you actually move the money, not when you plan to. The bar stays a true picture of what is set aside.",
+      "Saving for a home? Pair a goal with <a href=\"/blog/building-your-foundation/\">our guide to saving for a house together</a>."
+    ]
+  },
+  "extra": [
+    {
+      "h2": "How is the monthly pace worked out?",
+      "html": "<p>EvenUS takes what is left to save and divides it by the whole months until the date, counting the current month while there is still time in it. Say Alex and Sam want 1,800 for a week away, have 600 saved, and the date is six months off. That is 1,200 over six months, about 200 a month. If they split shared costs by income and Alex has 60% of the household’s income after commitments, the suggestion is Alex 120 and Sam 80. The two parts always add up to the whole, to the cent.</p><p>When there is no date, nothing left to save, or the date has passed, no figure is shown. The screen never asks anyone to catch up.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Does EvenUS move money into savings for us?",
+      "a": "No. EvenUS never connects to a bank and never moves money. A savings goal is a record of what each of you has set aside, wherever you keep it. You move the money yourselves, then tap Put money in."
+    },
+    {
+      "q": "Can my partner see how much I put into a goal?",
+      "a": "The bar shows the household total rather than a tally per person. Each of you sees your own entries listed with dates, and records your own money separately."
+    },
+    {
+      "q": "What happens if we miss the date on a savings goal?",
+      "a": "Nothing changes. The date only turns what is left into a suggested monthly pace. Once it passes, the goal shows what you have saved and suggests picking a new date whenever it suits you. There are no warnings and nothing turns red."
+    },
+    {
+      "q": "Do savings goals count in the household balance?",
+      "a": "No. Money set aside for a goal is not shared spending, so it does not change the money side of the household balance or the Even up figure."
+    },
+    {
+      "q": "Are savings goals free after the free week?",
+      "a": "Yes. Savings goals keep working after the 7-day free week, with or without EvenUS Pro. You can add goals, record money in and put goals away as before."
+    }
+  ],
+  "relatedPosts": [
+    "building-your-foundation",
+    "budgeting-for-couples",
+    "income-proportional-bill-splitting"
+  ]
+}

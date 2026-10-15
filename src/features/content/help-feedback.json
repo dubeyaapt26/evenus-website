@@ -1,0 +1,85 @@
+{
+  "id": "help-feedback",
+  "h1": "Help and feedback: ask a question, report a problem or suggest a feature",
+  "seoTitle": "Contact EvenUS Support: Help and Feedback in the App",
+  "description": "Ask a question, say what is not working or suggest a feature from inside EvenUS. What is sent with your message, and what is never sent.",
+  "updated": "2026-10-15",
+  "answer": "Help and feedback is the screen in EvenUS for writing to the EvenUS team from inside the app. Choose Contact us to ask a question or report a problem, or Request a feature to suggest an idea. Your message goes with the app version and phone model only, never anything about your household or partner, and you can ask for an email reply.",
+  "what": {
+    "h2": "What does Help and feedback do?",
+    "html": "<p><strong>It sends a message from the app straight to the people who build EvenUS, without you hunting for an address.</strong> The easiest moment to report something odd is while the screen is still in front of you.</p><p>There are two kinds of message. Contact us is for a question, something that is not working, a billing or subscription worry, or a question about privacy and your data. Request a feature is for an idea: you give it a short name and, if you like, say why it would matter in your home. That second part is optional, and it is the part that helps most when deciding what to build.</p><p>Every message is read by a person. If you switch on the reply option, the answer comes to the email address on your account.</p>"
+  },
+  "who": {
+    "h2": "Who is Help and feedback for?",
+    "html": "<p>Anyone with something they would like a person to read: a question about how the <a href=\"/features/fairness-score/\">household balance</a> (the fairness score) came out, a problem with an expense or a reminder, a worry about a charge, a question about your data, or an idea for something EvenUS does not do yet. You do not need a subscription to use it, and it works the same during the free week and afterwards.</p>"
+  },
+  "steps": {
+    "h2": "How do you contact EvenUS from the app?",
+    "intro": "Open Us, tap Help and feedback near the bottom, choose Contact us or Request a feature, write your message and tap Send.",
+    "items": [
+      {
+        "name": "Open Help and feedback",
+        "text": "Open the Us tab and tap Help and feedback near the bottom, in the Help section."
+      },
+      {
+        "name": "Choose the kind of message",
+        "text": "Choose Contact us or Request a feature at the top of the screen."
+      },
+      {
+        "name": "Write it",
+        "text": "For Contact us, pick what it’s about (Question, Something isn’t working, Billing or subscription, Privacy or my data, or Other) and write your message. For Request a feature, give the idea a short name and, under “Why it matters to you”, say why it matters to you."
+      },
+      {
+        "name": "Decide whether you would like a reply",
+        "text": "Leave the reply option on, which reads “You can email me back at” followed by your account email, if you would like an answer by email. Switch it off to send without one."
+      },
+      {
+        "name": "Send it",
+        "text": "Tap Send. The screen says “Thank you. It’s with us.”, and “Send another” lets you write again."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "Does your partner see what you send?",
+    "html": "<p><strong>No.</strong> Messages go to the EvenUS team only, and your partner isn’t told you wrote. Nothing appears in the household’s activity, on This week or in any notification.</p><p>The message carries what you typed, whether you would like a reply, and a short technical line: the app version and build, your phone model, and the system version. The screen shows that line before you send, with the words “Nothing about your household, your partner or what you’ve recorded.” No expenses, chores, scores or names travel with it.</p>"
+  },
+  "tips": {
+    "h2": "Tips for getting a useful answer",
+    "items": [
+      "For something that is not working, say which screen you were on and what you tapped just before. The app version and phone model are added for you.",
+      "You can send five messages a day. After that, email support@evenus.app directly.",
+      "Email us directly opens your mail app, addressed to support@evenus.app. It is handy for attaching a screenshot, which the in-app form does not take.",
+      "Billing questions are quicker if you check <a href=\"/features/subscription/\">Subscription</a> first: it shows the renewal date, which store the purchase went through and a button to restore it.",
+      "If the week seems to start or the Sunday summary to arrive at the wrong hour, check the <a href=\"/features/household-settings/\">household time zone</a> in Us → Household → Your household first. Weeks start at 00:00 on Monday in that zone; either of you can change it, and a change takes over when the week you are in ends."
+    ]
+  },
+  "extra": [
+    {
+      "h2": "Why does the message carry nothing about your household?",
+      "html": "<p>Because support does not need it. Everything in EvenUS is built from two people’s information: incomes, spending, hours, private check-in answers. Sending any of it with a support message would mean sharing your partner’s data without them in the conversation, so the form carries only what you type and the technical line shown on screen.</p><p>The limit of five messages a day is counted per person, and it never blocks email: support@evenus.app is always there. If you are leaving EvenUS, <a href=\"/features/delete-account/\">Delete your account</a> handles that in the app without writing to anyone.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I contact EvenUS support?",
+      "a": "Open Us, tap Help and feedback, choose Contact us, pick what it is about and write your message, then tap Send. You can also email support@evenus.app from any email account, or tap Email us directly on the same screen."
+    },
+    {
+      "q": "Will I get a reply?",
+      "a": "If the reply option is on, the team replies to the email address on your account when there is something to say. Every message is read, and feature requests are read even when no reply is needed."
+    },
+    {
+      "q": "Can I suggest a new feature?",
+      "a": "Yes. On Help and feedback, choose Request a feature, give the idea a short name and say why it matters to you. The why is optional, but it is the most useful part when deciding what to build next."
+    },
+    {
+      "q": "Why can’t I send another message today?",
+      "a": "Each person can send five messages a day from the app. When you reach the limit, the screen says so. You can send more the next day, or write to support@evenus.app at any time."
+    }
+  ],
+  "relatedPosts": [
+    "complete-step-by-step",
+    "your-first-30-days-with-evenus",
+    "how-to-add-chores"
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "id": "money-agreement",
+  "h1": "Money agreement: a short written note of how you share each kind of cost",
+  "seoTitle": "Couples Money Agreement: Who Pays What, in Writing",
+  "description": "Write down together how you share each kind of cost, both agree to it, and new expenses start with that split. How the EvenUS money agreement works.",
+  "updated": "2026-10-15",
+  "answer": "A money agreement in EvenUS is a short written note of how a couple shares each kind of cost: by income, half each, your own percentage, or each paying their own. You write it together, and it starts once you have both tapped to agree. From then on, a new expense in a covered category starts with the split you chose, and you can still choose differently on any one expense.",
+  "what": {
+    "h2": "What does a Money agreement do?",
+    "html": "<p><strong>It turns a conversation you have already had about money into a default the app follows, so you do not have to repeat it at every expense.</strong> Many couples decide over dinner that rent is split by income, food is half each and hobbies are each their own. A month later, two people remember the same chat slightly differently.</p><p>In EvenUS, the agreement lists each expense category with one choice beside it: Not covered, By income, Half each, Our own % or Each their own. There is room for notes in your own words and a date to look at it again. Once you have both agreed to the current version, a new expense in a covered category starts with that split.</p><p>It sits on top of <a href=\"/features/money-mode/\">How costs split</a>: the household setting is the general rule, and the agreement lets particular categories follow a different one.</p>"
+  },
+  "who": {
+    "h2": "Who is a Money agreement for?",
+    "html": "<p>Couples who have talked through who covers what and want new expenses to start that way, especially those who share some costs and keep others separate, or whose arrangement changed after a new job, a baby or a move.</p>"
+  },
+  "steps": {
+    "h2": "How do you write a money agreement in EvenUS?",
+    "intro": "Open Money, tap “Money agreement” under Plan, tap “Write one together”, choose a split for each category, save, and your partner taps “I agree”.",
+    "items": [
+      {
+        "name": "Start the agreement",
+        "text": "Open the Money tab, then under Plan tap “Money agreement”, then “Write one together”."
+      },
+      {
+        "name": "Choose a split for each category",
+        "text": "For each category choose Not covered, By income, Half each, Our own % or Each their own. With Our own %, set each of your percentages."
+      },
+      {
+        "name": "Add notes and a review date if you like",
+        "text": "Write anything else you agreed under Notes, in your own words. Under “Look at it again”, pick 3, 6 or 12 months, or leave it at No date."
+      },
+      {
+        "name": "Save, then your partner agrees",
+        "text": "Tap Save. Saving counts as you agreeing to it. Your partner opens the same screen and taps “I agree”."
+      },
+      {
+        "name": "Let new expenses follow it",
+        "text": "Once you have both agreed, a new expense in a covered category starts with the split you chose. You can still pick a different split on any one expense."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see?",
+    "html": "<p><strong>You both see the same agreement and whether each of you has agreed to this version.</strong> The screen says plainly where things stand, for example that you have agreed and it starts once your partner agrees too.</p><p>Each of you agrees only for yourself. Nothing is scored, there is no record of whether the agreement is kept, and no reminder is sent from one of you to the other about it. Either of you can tap “End this agreement”; it stops for both of you, and new expenses go back to your usual split.</p>"
+  },
+  "tips": {
+    "h2": "Tips for a money agreement that works",
+    "items": [
+      "Expenses already saved keep their split, and you can still choose differently on any one new expense. An agreement is a starting point, not a lock.",
+      "Any change makes a new version, which you both agree to again. Until you do, the previous version is no longer in force, so agree soon after a change.",
+      "Use Not covered for categories you have not discussed yet. Those expenses start with your usual split.",
+      "A review date sends one ordinary reminder to both of you. Six or twelve months suits most couples.",
+      "Talk it through first and write it down second. <a href=\"/blog/how-to-talk-about-money-without-fighting/\">How to talk about money without fighting</a> has ideas."
+    ]
+  },
+  "extra": [
+    {
+      "h2": "What do the five choices mean?",
+      "html": "<ul><li><strong>By income</strong>: each of you covers a share in proportion to income, as in Split by income.</li><li><strong>Half each</strong>: an even split, whatever either of you earns.</li><li><strong>Our own %</strong>: a percentage you set together, like 70 and 30.</li><li><strong>Each their own</strong>: costs in that category are personal, and each of you pays your own.</li><li><strong>Not covered</strong>: the agreement says nothing, and your household setting applies.</li></ul><p>Because the split is saved on each expense when it is added, changing or ending the agreement later never rewrites history.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Does a money agreement change expenses we already added?",
+      "a": "No. Expenses already saved keep their split. The agreement only sets the starting split for new expenses in covered categories, and whoever adds an expense can still choose a different one."
+    },
+    {
+      "q": "What if my partner has not agreed yet?",
+      "a": "The agreement is not in force until you have both agreed to the current version. Until then, new expenses start with your usual household split, and the screen shows that it is waiting for your partner."
+    },
+    {
+      "q": "Does EvenUS track whether we keep our money agreement?",
+      "a": "No. Nothing is scored and there is no kept or broken record. The agreement is a default for new expenses and a note you both wrote. Choosing differently on one expense is not flagged."
+    },
+    {
+      "q": "How do we change a money agreement?",
+      "a": "Open it and tap Change it. Any change to a split, the notes or the review date makes a new version. Saving counts as your agreement, and your partner taps I agree to put the new version in force."
+    },
+    {
+      "q": "Can either of us end a money agreement?",
+      "a": "Yes. Either of you can open it and tap “End this agreement”, then confirm. It stops for both of you, new expenses go back to your usual split, and expenses already saved keep theirs. You can write a new one any time."
+    }
+  ],
+  "relatedPosts": [
+    "how-to-talk-about-money-without-fighting",
+    "creating-a-family-mission-statement-for-finance-and-chores",
+    "how-to-split-bills"
+  ]
+}

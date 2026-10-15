@@ -1,0 +1,85 @@
+{
+  "id": "time-of-your-own",
+  "h1": "Time of your own: the hours each of you has left in a week",
+  "seoTitle": "Free Time for Couples: Time of Your Own in EvenUS",
+  "description": "See the hours each of you has left in a week once sleep, paid work, travel, housework and the children are counted. The sum is shown line by line.",
+  "updated": "2026-10-15",
+  "answer": "Time of your own is the EvenUS view of free time. It starts from the 168 hours in a week, takes away sleep, eating and washing, paid work, travel, the household work each of you logged, looking after children, the planning you hold and any busy calendar time, and shows what is left for each of you, in real clock hours, line by line.",
+  "what": {
+    "h2": "What does Time of your own do?",
+    "html": "<p><strong>It shows how many hours in a week are genuinely yours, side by side with your partner’s, once everything that has to happen has happened.</strong> Counting chores alone can make a week look even when it does not feel even. If one of you works 50 hours and the other 25, splitting the washing up down the middle leaves very different evenings.</p><p>Time of your own looks at the whole week instead, and compares the hours left over. That figure is the time half of the <a href=\"/features/fairness-score/\">household balance</a>, which reads “Time 60%, money 40%” by default.</p><p>Pay never enters this view. An hour is an hour, whoever earns more.</p>"
+  },
+  "who": {
+    "h2": "Who is Time of your own for?",
+    "html": "<p>For couples who suspect the housework split looks even but the weeks do not feel it, common when one of you works long hours, does most of the school runs, or travels further each day. It also helps during <a href=\"/features/parental-leave/\">parental leave</a>, when paid work and travel drop for one of you and the care hours rise.</p>"
+  },
+  "steps": {
+    "h2": "How do you use Time of your own?",
+    "intro": "Look at Time of your own, this week on the This week tab, or open Insights, then Time, and tap “How this is worked out” to see the sum.",
+    "items": [
+      {
+        "name": "Find the figure",
+        "text": "On the This week tab, look at the Time of your own, this week card. For the full view, open Insights, then Time."
+      },
+      {
+        "name": "Read the sum",
+        "text": "Tap “How this is worked out” to see the sum, line by line: hours in a week, sleep, eating and washing, paid work, getting there and back, household work, looking after children, planning and remembering, “Busy calendar, beyond usual work”, and the time that is yours."
+      },
+      {
+        "name": "Fix a line that looks wrong",
+        "text": "If your paid work or travel is off, tap “Change your hours” and update them. Each of you changes only your own hours."
+      },
+      {
+        "name": "Keep logging",
+        "text": "Household work counts only what you have logged in Effort, so ticking off chores as you go keeps the figure honest."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see?",
+    "html": "<p><strong>You both see the same numbers for both of you, and the same sum underneath.</strong> If a line looks surprising to either of you, you can both open the sum and see where it came from.</p><p>Each of you changes only your own hours. Pay never appears here, so seeing each other’s free time reveals nothing about income. If one of you is on leave for part of the week, a note under the sum says so by name.</p>"
+  },
+  "tips": {
+    "h2": "Tips for a figure you both trust",
+    "items": [
+      "Every number is real clock hours. An hour is an hour, whatever anyone earns.",
+      "Household work counts what each of you logged and nothing else. <a href=\"/features/chores-effort/\">Log chores</a> as you do them, or add one you forgot up to 31 days back.",
+      "The time part waits while there is less than an hour logged between you, or fewer than two days at home together.",
+      "If your hours change a lot from week to week, <a href=\"/features/calendar-busy-time/\">calendar busy time</a> adds the extra hours above your usual paid work. They now have their own line in the sum, so the column always adds up."
+    ]
+  },
+  "extra": [
+    {
+      "h2": "What does a worked example look like?",
+      "html": "<p>Take Alex and Sam. Both start from 168 hours. Sleep at 8 hours a night and 2 hours a day for eating, washing and getting dressed use the same figures for both, which leaves 98 hours available each.</p><p>Alex has 45 hours of paid work, 5 of travel, 8 of logged housework, 6 looking after children and 4 of planning: 30 hours left. Sam has 35 of paid work, 3 of travel, 14 of housework, 12 with the children and 7 of planning: 27 hours left. About 3 hours between them, and nobody’s salary came into it.</p>"
+    },
+    {
+      "h2": "What can the sum not see?",
+      "html": "<p>The screen lists its own limits under “What this sum can’t see”. An hour on duty at home with a sleeping child is not the same as an hour alone in a café. Two people can have the same twelve free hours and only one of them chose theirs. The figure is a starting point for a conversation, not a verdict.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Does earning more count as time in EvenUS?",
+      "a": "No. Time of your own counts clock hours only, and pay never enters it. Money is compared separately on the Money tab, so a long week of paid work counts as hours whatever it earns."
+    },
+    {
+      "q": "Why does my household work show as zero?",
+      "a": "Household work counts only what you have logged in Effort, never a chore’s estimate. If you have not ticked anything off yet this week, it shows nothing. You can add a chore you did up to 31 days back."
+    },
+    {
+      "q": "Can my partner change my hours?",
+      "a": "No. Each of you changes only your own paid work and travel, through Change your hours. You both see the same sum, so either of you can spot a line that looks wrong."
+    },
+    {
+      "q": "How does parental leave change the sum?",
+      "a": "While one of you is on leave, paid work and getting there and back count only for the part of the week at work, and a note under the sum names who is on leave. Care hours still count for whoever is at home."
+    }
+  ],
+  "relatedPosts": [
+    "the-architecture-of-equity",
+    "creating-your-relationship-fairness-score",
+    "the-architecture-of-a-fair-marriage",
+    "why-fair-doesnt-always-mean-equal"
+  ]
+}

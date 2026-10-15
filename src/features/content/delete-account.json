@@ -1,0 +1,83 @@
+{
+  "id": "delete-account",
+  "h1": "Delete your account: remove your login and private data straight away",
+  "seoTitle": "How to Delete Your EvenUS Account and Data",
+  "description": "Delete your EvenUS account in the app, with no waiting period or partner approval. What is deleted straight away, what stays for the household and why.",
+  "updated": "2026-10-15",
+  "answer": "Delete your account is where you remove your login and your private data from EvenUS, from inside the app. It happens straight away, with no thirty-day holding period, and nobody is asked to approve it. Your check-in answers, mental-load answers, income, commitments, notes and login are deleted. If someone else is in the household, the shared expenses, chores and bills stay for them, with your name taken off.",
+  "what": {
+    "h2": "What does Delete your account do?",
+    "html": "<p><strong>It ends your EvenUS account and removes your private data, in one step you can take on your own.</strong> The screen first lists what is deleted straight away and, if someone else is in the household, what is kept for them and why.</p><p>Deleted straight away: your check-in answers, all of them; your mental-load answers; your income, commitments and notes; your login, name and email; and any <a href=\"/features/previous-household/\">Previous household</a> kept for you. Kept, when someone else is there: the shared expenses you both logged, and the household’s chores and bills, because they are your partner’s records too. Your name comes off them, and they show you as a former member.</p><p>If you are the only one in the household, it is deleted with your account: every expense, chore, bill, reminder and stored week in it. Nobody else keeps a copy, so export one first if you might want it. The full policy, including asking by email, is on the <a href=\"/delete-account/\">delete your account</a> page.</p>"
+  },
+  "who": {
+    "h2": "Who is Delete your account for?",
+    "html": "<p>Anyone who has finished with EvenUS, for any reason: you have stopped using it, you want your private answers gone, or the relationship has ended. You do not need to give a reason, or even a household: if you never finished setting one up, Sign out and Delete account are at the bottom of the welcome and setup screens.</p>"
+  },
+  "steps": {
+    "h2": "How do you delete your EvenUS account?",
+    "intro": "Open Us, tap Delete your account at the bottom, read what will happen, then type delete and tap “Delete my account”.",
+    "items": [
+      {
+        "name": "Open the screen",
+        "text": "Open the Us tab and tap Delete your account at the bottom. No household yet? Tap Delete account at the bottom of the welcome or setup screen, or of Check your email while you confirm your address."
+      },
+      {
+        "name": "Read what happens",
+        "text": "Read Deleted straight away and, if someone else is in the household, Kept, and why: what goes now, and what stays for them."
+      },
+      {
+        "name": "Take a copy if you want one",
+        "text": "If you would like a copy, tap “Export my data” first. It includes the parts about to be deleted."
+      },
+      {
+        "name": "Cancel a subscription in your store",
+        "text": "If you subscribe, cancel in your App Store or Google Play subscriptions, using the button on the screen. Deleting the account does not stop a renewal."
+      },
+      {
+        "name": "Confirm",
+        "text": "Type delete to confirm, then tap “Delete my account”. If you change your mind, “Keep my account” takes you back with nothing changed."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see after you delete your account?",
+    "html": "<p><strong>They are not asked to approve it, and the shared history stays for them.</strong> They are told once, by a notification, an email to their verified address and a card in the app, that you deleted your account, with your name and no reason. You get a short confirmation email, which also says how to cancel a store subscription.</p><p>The shared expenses, chores, bills and <a href=\"/features/activity-log/\">Activity</a> entries remain, with your name taken off. Your <a href=\"/features/private-checkin/\">private check-ins</a> were never readable to them, and afterwards they no longer exist.</p><p>If you paid for EvenUS Pro, your partner keeps it only until your paid period ends or someone new joins, whichever comes first. <a href=\"/features/when-someone-leaves/\">When someone leaves</a> explains what they can do next.</p>"
+  },
+  "tips": {
+    "h2": "Tips before you delete your account",
+    "items": [
+      "Export first if there is any chance you will want the records later. <a href=\"/features/data-export/\">Export your data</a> includes your own private records and any Previous household kept for you, and deletion cannot be undone.",
+      "Cancel a subscription in the App Store or Google Play before you delete. One subscription covers both of you, so cancelling also ends Pro for your partner when the paid period ends.",
+      "If you can no longer open the app, email <a href=\"mailto:support@evenus.app\">support@evenus.app</a> from the address you signed up with and ask for your account to be deleted."
+    ]
+  },
+  "extra": [
+    {
+      "h2": "Why are shared expenses kept when someone else is in the household?",
+      "html": "<p>Because they belong to two people. A shared expense records what the household spent and how it was split, and your partner relies on it for their history, their <a href=\"/features/settle-up/\">Even up</a> figure and past weeks of the household balance. Deleting it would quietly rewrite every past split for them. So everything about you is removed, and the record of what the household did stays, with your name taken off. When nobody else is in the household, there is nobody to keep it for, so it goes too.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Does deleting my account cancel my EvenUS Pro subscription?",
+      "a": "No. A subscription lives with the App Store or Google Play, and only they can stop a renewal. Cancel it in your store subscriptions first. The delete screen has a button that opens them for you."
+    },
+    {
+      "q": "Is there a waiting period before my EvenUS account is deleted?",
+      "a": "No. Deletion happens straight away, with no thirty-day holding period, no shadow copy and no reactivation window. Backups and server logs may persist for up to 30 days, as the delete your account page explains."
+    },
+    {
+      "q": "Can I delete my account if I never set up a household?",
+      "a": "Yes. Sign out and Delete account sit at the bottom of the welcome and setup screens, so you can remove an account that never joined or created a household, without finishing setup first."
+    },
+    {
+      "q": "What happens to the household if I am the only one in it?",
+      "a": "It is deleted with your account: its expenses, chores, bills, reminders and stored weeks. Nothing is kept for anyone, so tap Export my data first if you might want a copy."
+    }
+  ],
+  "relatedPosts": [
+    "financial-transparency",
+    "digital-minimalism-for-couples",
+    "household-equity-after-a-job-loss"
+  ]
+}

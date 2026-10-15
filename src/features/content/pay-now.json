@@ -1,0 +1,87 @@
+{
+  "id": "pay-now",
+  "h1": "Pay now: open a payment app with the amount already filled in",
+  "seoTitle": "Pay Your Partner Back in One Tap: Pay Now in EvenUS",
+  "description": "Pay now opens UPI, PayPal, Venmo or a payment link with your partner’s handle and the amount filled in, then asks whether the payment went through.",
+  "updated": "2026-10-15",
+  "answer": "Pay now is the button on the To even up card in EvenUS. On the sending phone it opens a payment app, such as a UPI app, PayPal, Venmo or your partner’s own payment link, with their handle and the amount filled in. You send the money there, come back, and EvenUS asks whether it went through. Only a yes records it.",
+  "what": {
+    "h2": "What does Pay now do?",
+    "html": "<p><strong>It saves copying a name and an amount from one app to another when you even up.</strong> Pay now does the finding and the typing, and leaves the sending to you.</p><p>It works from the handle your partner has saved for themselves: a UPI ID, a PayPal.me username, a Venmo username or a payment link from their bank. When the <a href=\"/features/settle-up/\">To even up</a> card shows you as the sender, Pay now builds a link with that handle and the amount, and your phone opens the payment app.</p><p>EvenUS never sees the payment. It cannot read your payment app or your bank, so when you come back it asks “Did the payment go through?” and records the payment only if you say yes.</p>"
+  },
+  "who": {
+    "h2": "Who is Pay now for?",
+    "html": "<p>Couples who even up through <a href=\"/features/upi-pay/\">UPI</a>, PayPal, <a href=\"/features/venmo-pay/\">Venmo</a> or a bank payment link, and would rather not copy numbers between apps. If you settle in cash, “Record a payment” on its own does the recording.</p>"
+  },
+  "steps": {
+    "h2": "How do you set up and use Pay now?",
+    "intro": "Each of you saves your own handle under “Your payment details”, then the sending partner taps “Pay now” on the To even up card and answers “Did the payment go through?” on return.",
+    "items": [
+      {
+        "name": "Save your own handle",
+        "text": "Open Us → Your details → “Your payment details”. Add your UPI ID, PayPal.me username, Venmo username or a payment link, and tap Save. Each of you adds your own, because it is where you receive money."
+      },
+      {
+        "name": "Tap Pay now",
+        "text": "When the “To even up” card on Money shows you as the sender, tap “Pay now”. If your partner has saved more than one handle, pick an app."
+      },
+      {
+        "name": "Check and send in the payment app",
+        "text": "The payment app opens with your partner’s handle and the amount. Check the name and amount, then send it as usual."
+      },
+      {
+        "name": "Answer the question",
+        "text": "Come back to EvenUS and answer “Did the payment go through?”. Tap the “Yes, record” button to record it, or “Not yet” to leave the card as it is."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see, and who can change the handles?",
+    "html": "<p><strong>Your handles are used only to build your partner’s Pay now link to you.</strong> Their payment app shows your handle, and usually your registered name, when they pay you. They do not appear anywhere else in EvenUS.</p><p>Each of you can add or change only your own payment details, so nobody can edit where the other’s money goes. Once a payment is recorded, both phones see the card clear.</p>"
+  },
+  "tips": {
+    "h2": "Tips for using Pay now safely",
+    "items": [
+      "Add a handle, never an account number, card number or password. The payment app shows the registered name before anything moves.",
+      "Nothing is recorded unless you say yes. If you changed your mind, tap “Not yet” and the card stays as it was.",
+      "If the app doesn’t open, it may not be on this phone. Pay however suits you and use “Record a payment” afterwards."
+    ]
+  },
+  "country": {
+    "h2": "Which payment apps work in which countries?",
+    "html": "<p>What Pay now offers depends on your household’s currency, so an amount is never sent in the wrong one.</p><ul><li><strong>UPI</strong>: INR households only, because a UPI amount is always in rupees.</li><li><strong>Venmo</strong>: USD households only, as Venmo works in the US only.</li><li><strong>PayPal</strong>: the currencies PayPal.me accepts, including pounds, euros and US, Canadian and Australian dollars.</li><li><strong>A payment link</strong> from your bank, such as Monzo, Revolut or Wise, works anywhere, but the amount isn’t filled in, so check it by hand.</li></ul><p>Apple Pay isn’t offered, because it can’t take a person-to-person amount from another app.</p>"
+  },
+  "extra": [
+    {
+      "h2": "Why does EvenUS ask instead of confirming the payment?",
+      "html": "<p>Because it cannot know. EvenUS never connects to a bank or a payment provider, so opening an app is all it can do. Marking money as sent the moment the app opened would be a guess, and a wrong guess would put a figure on both phones that neither of you agreed to. The person who sent the money says it went through, and only then does the To even up card move.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Does EvenUS send money to my partner?",
+      "a": "No. EvenUS opens your payment app with your partner’s handle and the amount filled in, and you send the money there yourself. It never connects to a bank or holds money."
+    },
+    {
+      "q": "Can my partner change my payment details?",
+      "a": "No. Each of you can add or change only your own UPI ID, PayPal.me username, Venmo username or payment link. Your handle is used only to build the Pay now link your partner uses to pay you."
+    },
+    {
+      "q": "What if I tap Pay now but don’t finish paying?",
+      "a": "Answer Not yet when EvenUS asks whether the payment went through. Nothing is recorded and the To even up card stays as it was."
+    },
+    {
+      "q": "What if I paid only part of it, or on another day?",
+      "a": "Answer Not yet, then tap “Record a payment” on the To even up card. There you can change the amount and the day before tapping Save, and the card keeps the rest until it is even."
+    },
+    {
+      "q": "Do I need EvenUS Pro to use Pay now?",
+      "a": "No. Pay now and Record a payment keep working after the 7-day free week, with or without a subscription. EvenUS Pro covers the computed views, such as the household balance and the weekly idea."
+    }
+  ],
+  "relatedPosts": [
+    "how-to-split-bills",
+    "manage-household-finances-without-a-joint-bank-account",
+    "tips-to-eliminate-money-related-conflicts"
+  ]
+}

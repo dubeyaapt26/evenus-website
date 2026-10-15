@@ -27,7 +27,7 @@
   <section style="max-width:1180px;margin:0 auto;padding:clamp(52px,7vw,92px) 28px clamp(30px,4vw,52px)">
     <div style="font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#8A8F89">Legal</div>
     <h1 style="margin:16px 0 0;font-size:clamp(38px,5vw,62px);line-height:1.03;letter-spacing:-.035em;font-weight:700">Terms of Use</h1>
-    <p style="margin:16px 0 0;font-size:14px;color:#8A8F89">Last updated: 16 August 2026</p>
+    <p style="margin:16px 0 0;font-size:14px;color:#8A8F89">Last updated: 15 October 2026</p>
   </section>
 
   <section style="max-width:1180px;margin:0 auto;padding:0 28px clamp(70px,9vw,120px)">
@@ -37,7 +37,7 @@
         <div style="position:sticky;top:96px">
           <div style="font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#8A8F89;padding-bottom:14px;border-bottom:1px solid #E4DFD3">Sections</div>
           <div style="display:flex;flex-direction:column;gap:11px;padding-top:16px;font-size:14px">
-            <sc-for list="{{ toc }}" as="t" hint-placeholder-count="12">
+            <sc-for list="{{ toc }}" as="t" hint-placeholder-count="13">
               <a href="{{ t.href }}" style="color:#5E645F;text-decoration:none" style-hover="color:#1B1F1D"><span style="color:#B4B8B2;margin-right:8px">{{ t.n }}</span>{{ t.label }}</a>
             </sc-for>
           </div>
@@ -45,7 +45,8 @@
       </div>
 
       <div style="flex:999 1 520px;min-width:0;max-width:780px">
-        <sc-for list="{{ sections }}" as="s" hint-placeholder-count="12">
+        <p style="margin:0 0 44px;font-size:17px;line-height:1.65;color:#4B504B;text-wrap:pretty">These terms are an agreement between you and <strong style="color:#1B1F1D">Aapt Dubey</strong>, an individual based in India, who operates EvenUS (&ldquo;we&rdquo;, &ldquo;us&rdquo;). Website: <a href="https://evenus.app">evenus.app</a>. Contact: <a href="mailto:support@evenus.app">support@evenus.app</a>.</p>
+        <sc-for list="{{ sections }}" as="s" hint-placeholder-count="13">
           <div id="{{ s.id }}" style="padding-bottom:44px;scroll-margin-top:100px">
             <div style="display:flex;align-items:baseline;gap:14px">
               <span style="font-size:13px;font-weight:700;color:#2E6A5C;letter-spacing:.04em">{{ s.n }}</span>
@@ -59,10 +60,17 @@
             <sc-if value="{{ s.hasList }}" hint-placeholder-val="{{ false }}">
               <div style="margin-top:16px;display:flex;flex-direction:column;gap:10px">
                 <sc-for list="{{ s.list }}" as="li" hint-placeholder-count="3">
-                  <div style="display:flex;gap:12px;align-items:flex-start">
-                    <span style="flex:0 0 auto;width:5px;height:5px;border-radius:50%;background:#6FB3A2;margin-top:10px;display:block"></span>
-                    <span style="font-size:16px;line-height:1.65;color:#4B504B;text-wrap:pretty">{{ li }}</span>
+                  <div style="display:flex;gap:12px;align-items:flex-start;padding-left:{{ li.indent }}px">
+                    <span style="flex:0 0 auto;width:5px;height:5px;border-radius:50%;background:{{ li.dot }};margin-top:10px;display:block"></span>
+                    <span style="font-size:16px;line-height:1.65;color:#4B504B;text-wrap:pretty">{{ li.t }}</span>
                   </div>
+                </sc-for>
+              </div>
+            </sc-if>
+            <sc-if value="{{ s.hasAfter }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top:16px;display:flex;flex-direction:column;gap:13px">
+                <sc-for list="{{ s.after }}" as="p" hint-placeholder-count="1">
+                  <p style="margin:0;font-size:16.5px;line-height:1.68;color:#4B504B;text-wrap:pretty">{{ p }}</p>
                 </sc-for>
               </div>
             </sc-if>
@@ -72,7 +80,7 @@
         <div style="background:#fff;border:1px solid #EDE8DC;border-radius:24px;padding:28px">
           <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8A8F89">Contact</div>
           <div style="margin-top:12px;font-size:18px;font-weight:600"><a href="mailto:support@evenus.app">support@evenus.app</a></div>
-          <div style="margin-top:6px;font-size:15px;color:#5E645F">EvenUS, C-1604, Assotech Blith, Sector 99, Gurgaon, Haryana, India</div>
+          <div style="margin-top:6px;font-size:15px;color:#5E645F">EvenUS is operated by Aapt Dubey (individual), India · <a href="https://evenus.app">evenus.app</a></div>
         </div>
       </div>
     </div>
@@ -83,68 +91,96 @@
 
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{}">
+// Mirrors evenus/docs/legal/TERMS.md (the app's own terms). Section numbers,
+// order and wording follow that file; keep them in step.
+const B = (t) => '<strong style="color:#1B1F1D">' + t + '</strong>';
+const L = (href, text) => '<a href="' + href + '">' + text + '</a>';
+const APPLE = L("https://apps.apple.com/account/subscriptions", "apps.apple.com/account/subscriptions");
+const PLAY = L("https://play.google.com/store/account/subscriptions", "play.google.com/store/account/subscriptions");
+
+// [title, body paragraphs, list items (string, or [string] for a sub-item), paragraphs after the list]
 const S = [
   ["What EvenUS is", [
-    "An app for two adults sharing a home. You each record what you earn, what you spend, and what you do around the house. EvenUS compares those and offers one suggestion a week for something you might swap.",
+    "An app for two adults sharing a home. You each record what you earn, what you spend, and what you do around the house. EvenUS compares those and offers " + B("one suggestion a week") + " for something you might swap.",
     "You need an account each. One shared login will not work, and is not supported."
   ]],
   ["Who can use it", [
-    "You must be 18 or over and legally able to enter a contract. Do not create an account for anyone else, or add someone to a household without their knowledge."
+    "You must be " + B("18 or over") + " and legally able to enter a contract. Do not create an account for anyone else, or add someone to a household without their knowledge."
   ]],
   ["Your account", [
-    "Keep your password to yourself. You are responsible for what happens under your login. Tell us at support@evenus.app if you think someone else has access."
+    "Keep your password to yourself. You are responsible for what happens under your login. Tell us at " + L("mailto:support@evenus.app", "support@evenus.app") + " if you think someone else has access."
   ]],
-  ["What EvenUS is not", [
-    "EvenUS is not financial advice. It does not tell you how to split your money, what is fair, or what you should do. It describes what you have recorded and suggests one thing to try. Every decision is yours.",
-    "EvenUS is not legal advice. Where you record child support, maintenance, or other obligations, the app treats them as fixed facts that change your available income. It does not calculate what any obligation should be, never suggests changing one, and is not a substitute for a solicitor or a court.",
-    "EvenUS is not therapy, counselling, or a relationship service. It is a measurement and suggestion tool. It cannot assess a relationship and does not try to.",
-    "If your relationship is in serious difficulty, or if you feel unsafe, please speak to a qualified professional. Data showing an imbalance can confirm something painful, and confirmation is not the same as help.",
-    "The numbers depend entirely on what you both enter. Incomplete or inaccurate entries produce incomplete or inaccurate results. Nothing is verified against a bank, an employer, or any other source."
+  ["What EvenUS is not (please read this one)", [
+    B("EvenUS is not financial advice.") + " It does not tell you how to split your money, what is fair, or what you should do. It describes what you have recorded and suggests one thing to try. Every decision is yours.",
+    B("EvenUS is not legal advice.") + " Where you record child support, maintenance, or other obligations, the app treats them as fixed facts that change your available income. " + B("It does not calculate what any obligation should be, never suggests changing one, and is not a substitute for a solicitor or a court."),
+    B("EvenUS is not therapy, counselling, or a relationship service.") + " It is a measurement and suggestion tool. It cannot assess a relationship and does not try to.",
+    B("If your relationship is in serious difficulty, or if you feel unsafe, please speak to a qualified professional.") + " Data showing an imbalance can confirm something painful, and confirmation is not the same as help.",
+    B("The numbers depend entirely on what you both enter.") + " Incomplete or inaccurate entries produce incomplete or inaccurate results. Nothing is verified against a bank, an employer, or any other source."
   ]],
   ["Using it properly", [
     "Do not use EvenUS to harass, coerce, monitor, or control another person. Do not try to access another household's data, reverse engineer the service, or overload it.",
-    "We may suspend or close an account we reasonably believe is being used to control or intimidate someone."
+    B("We may suspend or close an account we reasonably believe is being used to control or intimidate someone.")
   ]],
   ["Your content", [
     "What you enter stays yours. You grant us only the permission needed to store it, show it to you and your partner, and run the service. We do not sell it or use it for advertising.",
-    "Both partners can see and use shared household data. You cannot withdraw your partner's access to the shared history of a household you both used. See the Privacy Policy on why deletion works the way it does."
+    "Some things never reach us at all: " + B("receipt photos stay on your phone") + ", and if you switch on the optional " + B("calendar busy time") + ", only busy-hour totals are uploaded, never what your events are. The " + L("Privacy.dc.html", "Privacy Policy") + " sets out exactly what is stored where, including the optional tips EvenUS shows during your free week.",
+    "Both partners can see and use shared household data. " + B("You cannot withdraw your partner's access to the shared history of a household you both used") + ": see the " + L("Privacy.dc.html#keep", "Privacy Policy") + " on why deletion works the way it does."
   ]],
   ["Ending a household", [
     "Either of you can leave at any time, and neither needs the other's permission.",
-    "Shared history stays with the household, not with whoever leaves. Your name becomes \u201cFormer member\u201d and your private answers are deleted. If you were the last member, everything is deleted.",
-    "We are not a party to anything between you and the person you shared a home with, and we will not adjudicate a dispute between you or take a side. We do not provide data from your household as evidence in a dispute between you, except where we are legally required to. Either of you can export your own copy at any time."
+    "When one of you leaves, or deletes their account, the person who stays is told (by a notification, an email to their verified address and a card in the app) that you left or deleted your account, with your name and nothing else (no reason). You get a short confirmation email yourself. These are account emails: they are sent whatever your notification settings are.",
+    B("Shared history stays with the household, not with whoever leaves.") + " Your name becomes “Former member” and your private answers are deleted. If you were the last member, everything is deleted.",
+    B("Someone new means a fresh start.") + " If someone new joins after a partner has left, the two of them start with a new, empty household; nothing from before is shared with the new partner. The person who stayed keeps the earlier household as a private, read-only “Previous household” (Us → Previous household), which they can export or delete at any time and which is deleted with their account. If the person who left comes back instead, nothing starts again.",
+    "We are not a party to anything between you and the person you shared a home with, and we will not adjudicate a dispute between you or take a side. " + B("We do not provide data from your household as evidence in a dispute between you, except where we are legally required to.") + " Either of you can export your own copy at any time."
   ]],
   ["Payment", [
-    "EvenUS is free for the first 7 days after you set up a household. After that, the parts of the app that work out and show you how your week was shared need a subscription."
+    "EvenUS is a paid subscription, " + B("EvenUS Pro") + ", after a free week."
   ], [
-    "$9.99 a month, or $79.99 a year. Prices in other countries are set per region by Apple and Google and are shown in your own currency before you pay",
-    "one subscription covers both of you, and you are never charged twice for one household",
-    "the free 7 days needs no card, and nothing is charged unless you choose to subscribe",
-    "a subscription renews until you cancel it. Cancel through your App Store or Play Store account, any time, and you keep what you have paid for until the period ends",
-    "billing is handled entirely by Apple or Google, under their terms. We never see your card",
-    "refunds are handled by Apple or Google, not by us",
-    "if the subscription ends, everything you have already recorded stays readable and exportable. We do not hold your own records behind a payment"
+    B("Prices:") + " " + B("$9.99 a month") + " or " + B("$79.99 a year") + " (US dollar reference prices). The price for your country, in your currency and including any tax the store charges, is set by and shown in the App Store or Google Play before you pay.",
+    B("7-day free trial, inside the app, no card needed.") + " It starts when your household is created and covers both of you; each person only ever gets one free week. It is run by the app itself, not by the store (there is no store free trial or introductory offer), so " + B("nothing is charged when it ends") + ". You choose whether to subscribe. " + B("If you subscribe during the free week, the remaining free days end and billing starts that day") + ": the store charges the first period straight away.",
+    B("One subscription covers both partners") + " in a household: you are never charged twice for one household.",
+    B("The subscription belongs to whoever bought it, also when a partner leaves or deletes their account."),
+    [B("If the person who stays pays") + ", nothing changes: the subscription keeps covering the household, including a new partner who joins. No one is charged twice."],
+    [B("If the person who leaves paid") + ", the person who stays keeps EvenUS Pro until the end of the period that was already paid for when they left, or until someone new joins the household, whichever comes first. After that, to keep Pro, the person who stays (or the new partner) subscribes. A payment made by someone who has left never covers a new partner, and a renewal charged to them after they left does not extend it. A refund of it ends this straight away. A subscription does this " + B("for one household only") + ": if its buyer later leaves another household as well, that household gets no time from it."],
+    [B("If the same person comes back") + ", their subscription applies to the household again."],
+    [B("The person who leaves keeps their own subscription.") + " It covers the next household they create or join. Leaving or deleting your account does not cancel it: cancel it in the store (see “How to cancel” below)."],
+    [B("The free week is once per person.") + " Changing partners or households never starts a new one: after a partner change there is no free week. A new partner is covered by the plan the person who stays already pays for, or the household subscribes."],
+    ["Whatever happens to the subscription, everything already recorded stays readable and exportable."],
+    B("Purchases are made through Apple or Google") + ", under their terms. Your subscription status is processed for us by " + B("RevenueCat") + ", which tells us whether a subscription is active. We never see your card details.",
+    B("Auto-renewal.") + " A subscription renews automatically at the end of each month or year, at the then-current price, until you cancel it. Cancel at least " + B("24 hours before the current period ends") + " to avoid the next charge. You keep Pro until the end of the period you have paid for. " + B("Deleting the app, or your EvenUS account, does not cancel a store subscription") + ": cancel it in the store as well (see “How to cancel” below).",
+    B("Refunds are handled by Apple or Google") + " under their own policies, not by us. We cannot issue or block a store refund.",
+    B("What stays free, always.") + " If the trial ends or a subscription lapses, the computed parts of the app (the fairness picture and its trend, weekly reports, check-ins, suggestions and the other Pro features) are locked. You can still " + B("read everything already recorded, add expenses, tick chores off, export all your data and delete your account") + ": we never lock you out of your own records to push a payment.",
+    B("Price changes.") + " If a price goes up, Apple or Google will tell you before it applies, and where the law or the store requires it, ask for your agreement first."
+  ], [
+    B("How to cancel.") + " On iPhone: Settings → your name → Subscriptions → EvenUS, or " + APPLE + ". On Android: Play Store → your profile → Payments &amp; subscriptions → Subscriptions → EvenUS, or " + PLAY + "."
   ]],
   ["Availability", [
-    "We try to keep it running and make no promise that it always will. It may be unavailable for maintenance, and features may change or be withdrawn. If we shut the service down we will give at least 30 days' notice and you will be able to export your data."
+    "We try to keep it running and make no promise that it always will. It may be unavailable for maintenance, and features may change or be withdrawn. If we shut the service down we will give " + B("at least 30 days' notice") + " and you will be able to export your data."
   ]],
   ["Liability", [
-    "To the fullest extent the law allows, EvenUS is provided \u201cas is\u201d, and EvenUS is not liable for indirect or consequential loss, lost data, or any decision you take based on what the app shows you.",
+    "To the fullest extent the law allows, EvenUS is provided " + B("“as is”") + ", and we are not liable for indirect or consequential loss, lost data, or any decision you take based on what the app shows you.",
     "Nothing here limits liability for death or personal injury caused by negligence, for fraud, or for anything else that cannot lawfully be excluded. If you are a consumer, your statutory rights are unaffected."
   ]],
   ["Changes", [
     "We may update these terms. Material changes will be shown in the app before they take effect. Continuing to use EvenUS after that means you accept them."
   ]],
   ["Law", [
-    "Governed by the laws of India. If you are a consumer, you keep the protection of the mandatory laws of the country you live in."
+    "These terms are governed by the laws of " + B("India") + ", and the courts of India have jurisdiction. If you are a consumer, you keep the protection of the mandatory laws of the country you live in, and you may also bring a claim in the courts there."
+  ]],
+  ["App Store and Google Play", [
+    "If you downloaded EvenUS from the App Store, these terms are between you and us, not Apple; Apple is not responsible for EvenUS or its content, and has no obligation to provide support for it. Apple and its subsidiaries are third-party beneficiaries of these terms and may enforce them. Your use of EvenUS also follows the App Store's or Google Play's own terms; where they conflict with these on how the store works, the store's terms apply."
   ]]
 ];
 
 class Component extends DCLogic {
   renderVals() {
-    const sections = S.map(([title, body, list], i) => ({
+    const sections = S.map(([title, body, list, after], i) => ({
       id: "s" + (i + 1), n: String(i + 1).padStart(2, "0"), title, body,
-      list: list || [], hasList: !!list
+      list: (list || []).map((li) => Array.isArray(li)
+        ? { t: li[0], indent: 22, dot: "#B4B8B2" }
+        : { t: li, indent: 0, dot: "#6FB3A2" }),
+      hasList: !!list,
+      after: after || [], hasAfter: !!after
     }));
     return {
       sections,

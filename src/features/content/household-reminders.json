@@ -1,0 +1,90 @@
+{
+  "id": "household-reminders",
+  "h1": "Reminders: birthdays, plans and to-dos for you, your partner or both",
+  "seoTitle": "Shared Reminders for Couples: Birthdays and To-Dos",
+  "description": "Set birthdays, anniversaries, events and to-dos for you, your partner or both. Whoever it is for gets the notice, and it never says who added it.",
+  "updated": "2026-10-15",
+  "answer": "Reminders in EvenUS hold the household's dates and small jobs: birthdays, anniversaries, events and to-dos. Either of you adds one and chooses who it is for: you, your partner or both of you. Every reminder is on both partners’ lists, but only the person it is for gets a notification, and the notice never says who set it. Each of you can mute a reminder just for yourself.",
+  "what": {
+    "h2": "What do Reminders do in EvenUS?",
+    "html": "<p><strong>They let the app carry the remembering, so neither of you has to hold the household's dates in your head.</strong> That remembering is a large part of <a href=\"/blog/what-is-the-mental-load/\">the mental load</a>.</p><p>A reminder is a shared object, not a message from a person. A notification reads \"Mum's birthday is in a week\", never \"Alex reminded you\".</p><p>Each type starts with sensible settings. Birthdays and anniversaries repeat every year and remind both of you a week before and on the day. An event reminds both of you an hour before. A to-do is for you, on the day. You can change any of these before saving.</p>"
+  },
+  "who": {
+    "h2": "Who are Reminders for?",
+    "html": "<p>Couples who share the remembering, or would like to. If one of you is the household's diary, moving a few dates into EvenUS puts that work somewhere you can both see it. For passports, visas and insurance, the Document type gives longer notice: see <a href=\"/features/document-renewals/\">Document renewals</a>.</p>"
+  },
+  "steps": {
+    "h2": "How do you set up a reminder in EvenUS?",
+    "intro": "Open Reminders and dates from the Us tab, tap “Add a reminder”, fill it in, then tap “Add reminder”.",
+    "items": [
+      {
+        "name": "Open your reminders",
+        "text": "Open Us, then Household → Reminders and dates. You can also start from Coming up on the This week tab, which shows the next seven days."
+      },
+      {
+        "name": "Pick the type",
+        "text": "Tap “Add a reminder” and pick Birthday, Anniversary, Event or To-do, then give it a name such as \"Mum's birthday\" or \"Book the boiler service\"."
+      },
+      {
+        "name": "Set the date and who it is for",
+        "text": "Set the date, today or later for a one-off, and either leave it as All day or add a time. Under For, choose Me, Both of us or your partner. If it is for your partner alone, the screen says so before you save."
+      },
+      {
+        "name": "Choose the repeat and the notice",
+        "text": "Under Repeats pick Once, Every week, Every month or Every year. Under Remind pick one or more of On the day, An hour before, A day before or A week before."
+      },
+      {
+        "name": "Save it",
+        "text": "Tap “Add reminder”. It appears under Today, This week or Later, labelled with who it is for."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see?",
+    "html": "<p><strong>Every reminder in the household is on your partner’s list too, with no name on who set it.</strong> Both of you can see each reminder and who it is for, but only the people a reminder is for get its notice.</p><p>When a reminder is for your partner alone, the form tells you before you save: only they get it, it will not say who set it, and they can mute it for themselves. Muting is private in both directions. Deleting is shared: either of you can delete a reminder, and the app asks first, because it goes for both of you. A note shows inside the app, and in a calendar file if one is exported, never in a notification.</p>"
+  },
+  "tips": {
+    "h2": "Tips for reminders that help rather than nag",
+    "items": [
+      "Press and hold a reminder, or tap its … button, for Edit, “Add to calendar”, “Mute for me” and Delete. “Mute for me” shows on reminders that include you, and a to-do also has Done.",
+      "Nothing here is ever late. An open to-do from an earlier day stays on the list under Today. Once a one-off reminder's day has gone, it moves to Past reminders, where you can open, change or delete it.",
+      "While you are <a href=\"/features/away-mode/\">Away</a>, reminder notices pause for you. The reminders stay on the list.",
+      "Type a date straight into <a href=\"/features/quick-add/\">Tell EvenUS</a>, like \"Mum's birthday on 14 November\", and check the draft before saving.",
+      "Want birthdays in the calendar you already use? See <a href=\"/features/calendar-export/\">Add to calendar</a>."
+    ]
+  },
+  "extra": [
+    {
+      "h2": "Why does a reminder never say who set it?",
+      "html": "<p>Because the moment a reminder carries a name, it stops being about the thing and becomes about the person. \"Sam reminded you about the dentist\" reads like a prompt from a partner. \"Dentist tomorrow at 9:00 am\" is the same information with nobody standing behind it.</p><p>The same thinking explains what is missing. There is no repeat-until-done: a to-do fires at the times you chose and then stops, and nothing records what was not done.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Can I set a reminder for my partner in EvenUS?",
+      "a": "Yes. Choose your partner under For, and only they get the notification, though the reminder sits on both lists. It never says who set it, and your partner can mute it for themselves."
+    },
+    {
+      "q": "Does my partner know if I mute a reminder?",
+      "a": "No. “Mute for me” stops the notices on your phone only, and nobody is told. The reminder stays on the shared list, marked as muted for you."
+    },
+    {
+      "q": "What time do all-day reminders arrive?",
+      "a": "At 9:00 am in your household's time zone. A birthday set to remind a week before and on the day sends one notice a week ahead and another on the morning itself."
+    },
+    {
+      "q": "What happens to a reminder once its day has passed?",
+      "a": "A one-off reminder is set for today or later, and once its day has gone it moves to Past reminders, folded under the list. Tap Past reminders to open one and change or delete it. Repeating reminders simply move on to their next date."
+    },
+    {
+      "q": "Do reminders need EvenUS Pro?",
+      "a": "No. Reminders keep working after the 7-day free week, with or without a subscription. EvenUS Pro covers the computed views, not the everyday tools."
+    }
+  ],
+  "relatedPosts": [
+    "the-one-who-books-everything",
+    "what-is-the-mental-load",
+    "gentle-reminders",
+    "how-to-track-mental-load"
+  ]
+}

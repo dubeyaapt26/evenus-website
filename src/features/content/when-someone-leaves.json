@@ -1,0 +1,83 @@
+{
+  "id": "when-someone-leaves",
+  "h1": "When someone leaves: what happens if a partner leaves or deletes their account",
+  "seoTitle": "When a Partner Leaves EvenUS: Records and Subscription",
+  "description": "What happens in EvenUS when one of you leaves the household or deletes their account: who is told, what stays, and what happens to the subscription.",
+  "updated": "2026-10-15",
+  "answer": "When someone leaves an EvenUS household or deletes their account, the person who stays is told once, by notification, email and a card in the app. It names who left and never gives a reason. Everything recorded together stays with them, and the card says what happens to the subscription. If someone new joins later, the two of them start fresh.",
+  "what": {
+    "h2": "What happens when one of you leaves the household?",
+    "html": "<p><strong>Households change, and EvenUS handles the change quietly, without blame and without asking anyone's permission.</strong> Either of you can leave at any time, and deleting your account while in a household counts as leaving too.</p><p>What goes with the person who leaves: their income, hours, payment details, private check-ins and survey answers. What stays: the shared expenses, chores, bills and history, because they are the other person's records too. Wherever the person who left appears, their name becomes “Former member”.</p><p>If you are the only one in the household, leaving deletes the household and everything recorded in it: expenses, chores, bills, reminders and every stored week. Nobody keeps a copy, so the app asks “Leave and delete this household?” and offers Export first.</p>"
+  },
+  "who": {
+    "h2": "Who is this for?",
+    "html": "<p>For any household that changes: a break-up, a move to separate homes, or one of you stepping away from the app. It answers what the person who leaves takes with them, and what the person who stays keeps.</p>"
+  },
+  "steps": {
+    "h2": "How does leaving work, and what does the person who stays do next?",
+    "intro": "Open Us, then Household, tap Your household, and tap Leave household at the bottom. The person who stays is told once and chooses what happens next from a card on This week and in Us.",
+    "items": [
+      {
+        "name": "Leave the household",
+        "text": "Open Us, tap Household, then Your household, and tap Leave household at the bottom. Read what stays and what goes, then confirm. If you are the only one in it, the button reads “Leave and delete”."
+      },
+      {
+        "name": "The person who stays is told",
+        "text": "They get one notification, an email to their verified address, and a card on This week and in Us. It names who left and never gives a reason."
+      },
+      {
+        "name": "Choose what comes next",
+        "text": "On the card, tap Invite them back, Invite someone new, or Keep using EvenUS on your own."
+      },
+      {
+        "name": "Read the plan line",
+        "text": "The card also says what happens to the subscription: “Your plan continues.”, Pro stays on until a date, or “Choose a plan to keep Pro.” A subscription does this for one household only."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does the person who leaves see?",
+    "html": "<p><strong>A single confirmation email to their own verified address, and nothing recorded after they left.</strong> After a deletion, the email also says that <a href=\"/features/delete-account/\">deleting the account</a> does not cancel a store subscription, and where to cancel it. These are account emails, so they arrive whatever the notification settings are.</p>"
+  },
+  "tips": {
+    "h2": "Tips for when your household changes",
+    "items": [
+      "Take a copy first if you are the one leaving. <a href=\"/features/data-export/\">Export your data</a> gives you a file of your records, and private answers do not come back once they are gone.",
+      "Everything recorded stays readable and exportable for the person who stays, with or without EvenUS Pro.",
+      "If the same person comes back, their subscription applies again. The free week is never given twice."
+    ]
+  },
+  "extra": [
+    {
+      "h2": "What happens to the EvenUS Pro subscription?",
+      "html": "<p><strong>The subscription belongs to whoever bought it, also when a partner leaves or deletes their account.</strong></p><ul><li><strong>If the person who stays pays,</strong> nothing changes. The plan keeps covering the household, new partner included.</li><li><strong>If the person who left paid,</strong> the person who stays keeps Pro until the end of the period already paid for when they left, or until someone new joins, whichever comes first. A renewal charged to them after they left does not extend it, and a subscription does this for one departed household only.</li></ul><p>The full wording is in the <a href=\"/terms/\">Terms of Use</a>, under Payment.</p>"
+    },
+    {
+      "h2": "What happens when someone new joins?",
+      "html": "<p><strong>Someone new means a fresh start.</strong> The two of you begin in a new, empty household, and nothing from before is shared with the new partner. Only the stayer's own settings come along, plus the household's name, currency and time zone. The earlier household becomes the stayer's <a href=\"/features/previous-household/\">Previous household</a>: private to them, read-only, and kept until they delete it or their account. If the same person who left comes back instead, nothing starts again: everything stays as it was.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Does my partner have to agree before I leave our EvenUS household?",
+      "a": "No. Either of you can leave at any time, and nobody is asked to approve it. The person who stays is told once, with your name and never a reason."
+    },
+    {
+      "q": "I paid for EvenUS Pro and then left. Does my ex-partner keep it?",
+      "a": "Only until the period you had already paid for ends, or until someone new joins their household, whichever is first. A later renewal charged to you never extends it, and your subscription covers the next household you create or join."
+    },
+    {
+      "q": "Will a new partner see what we recorded before?",
+      "a": "No. When someone new joins, the two of you start in an empty household. The earlier records stay private and read-only for the person who stayed, under Us → Previous household, and the database rules refuse anyone else."
+    },
+    {
+      "q": "Can we start a new free week with a new partner?",
+      "a": "No. The free week is once per person, and changing partners or households never starts a new one. A plan the person who stayed already pays for covers a new partner, or the household subscribes."
+    }
+  ],
+  "relatedPosts": [
+    "financial-transparency",
+    "tools-to-track-shared-expenses-for-unmarried-couples",
+    "yours-mine-and-ours-bank-accounts"
+  ]
+}

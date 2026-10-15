@@ -1,0 +1,88 @@
+{
+  "id": "fairness-score",
+  "h1": "Household balance: one number for how the week was shared, fully explained",
+  "seoTitle": "Fairness Score for Couples: The Household Balance",
+  "description": "How the EvenUS household balance works: free time, money still to even up and the planning load, weighted 60/40, with a worked example you can check.",
+  "updated": "2026-10-15",
+  "answer": "The household balance (the fairness score) is a number from 0 to 100 in EvenUS that describes how a week or month was arranged between two partners. It compares the free time each of you has left and how much money is still to even up on your chosen split, weighted Time 60%, money 40% by default, with every part explained.",
+  "what": {
+    "h2": "What does the household balance do?",
+    "html": "<p><strong>It turns a week of logged chores, planning and shared spending into one number, then shows exactly how that number was made.</strong></p><p>The number has two parts. <em>Time</em> compares the hours each of you has left once paid work, travel, household work, childcare, planning and a busy calendar are counted, the figure in <a href=\"/features/time-of-your-own/\">Time of your own</a>. <em>Money</em> reads what is still to even up between you on your chosen split, the figure on the <a href=\"/features/settle-up/\">To even up</a> card. A 100 means both are level. It describes the arrangement, never either of you.</p>"
+  },
+  "who": {
+    "h2": "Who is the household balance for?",
+    "html": "<p>Couples who want to see how time and money are shared before talking about it, and who would rather check the working than trust a verdict.</p>"
+  },
+  "steps": {
+    "h2": "How do you read the household balance?",
+    "intro": "Open Insights, pick Week or Month, and read the cards under the number.",
+    "items": [
+      {
+        "name": "Open Insights",
+        "text": "Open the Insights tab and pick Week or Month at the top. The household balance sits in a ring, out of 100."
+      },
+      {
+        "name": "Check the working",
+        "text": "Read the Time and Money cards, then tap “See the hour-by-hour sum” or “See who paid what” for the working, line by line."
+      },
+      {
+        "name": "Read how it is made",
+        "text": "Read “How the number is made” for the weights used to make this number, such as “Time 60%, money 40%.”"
+      },
+      {
+        "name": "Change the weights if you both want to",
+        "text": "Open Us, then Household, tap <a href=\"/features/household-settings/\">Your household</a>, and under “How much should time count?” choose 50/50, 60/40 or 70/30."
+      },
+      {
+        "name": "Keep your details current",
+        "text": "Open Us, then Your details, and tap Edit your details to change your income after tax and how often you are paid, your paid work, travel, sleep and time for yourself. Tap Save changes. A new income counts from now on, never for past weeks and months."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see?",
+    "html": "<p><strong>The same number and the same explanation, word for word.</strong> No sentence in it names a person. It is never shared outside the app, not even in the <a href=\"/features/year-in-review/\">Your year</a> image.</p>"
+  },
+  "tips": {
+    "h2": "Tips for reading the household balance",
+    "items": [
+      "On a Monday and Tuesday, the ring shows last week's number, marked Last week. That is expected, not a fault.",
+      "Answer <a href=\"/features/mental-load-map/\">Who keeps track of what</a>, both of you. Planning only counts once you have both finished.",
+      "Add a work trip or a hospital stay under <a href=\"/features/away-mode/\">Away</a>, so the days away are left out rather than read as a quiet week."
+    ]
+  },
+  "extra": [
+    {
+      "h2": "How is the number worked out? A worked example",
+      "html": "<p>Alex and Sam each start with 98 hours a week, after 8 hours of sleep a night and 2 hours a day for eating, washing and dressing. Alex works 45 paid hours, travels 5, logged 6 hours of household work and holds money admin and home upkeep (3 hours of planning). Sam works 30 paid hours, logged 16 hours and holds meals, groceries and the social calendar (5.5 hours).</p><ul><li><strong>Free time:</strong> Alex has 98 minus 45, 5, 6 and 3, so 39 hours. Sam has 98 minus 30, 16 and 5.5, so 46.5 hours.</li><li><strong>Time balance:</strong> a gap of 7.5 hours in 85.5 free hours between you gives 100 × (1 - 2 × 7.5 ÷ 85.5) = 82.</li><li><strong>Money balance:</strong> they earn $5,000 a month each after tax, split half each, and Alex paid the $1,800 rent, so $900 is still to even up. Against a scale of $2,500 (a quarter of their monthly income), that reads 51.</li><li><strong>Overall:</strong> both gaps sit on the same side, so it is the weighted average, 0.6 × 82 + 0.4 × 51 = 70. Once the $900 is evened up, money reads 100 and the overall is 89.</li></ul><p>Hours from <a href=\"/features/calendar-busy-time/\">Calendar busy time</a> get their own line, “Busy calendar, beyond usual work”, in the hour-by-hour sum and in Where the hours go, so the rows add up.</p>"
+    },
+    {
+      "h2": "When does the number wait, and what does it leave out?",
+      "html": "<p>Time is compared once you have both been home for two days this week and logged an hour of household work between you. Until then the ring shows last week's number or a dash rather than a guess. While either of you is away, household work logged then isn't compared, and the week is compared over the days you were both home.</p><p>Hours are never turned into money. Planning weights are estimates, and emotional labour is not scored.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Does EvenUS turn housework hours into money?",
+      "a": "No. Time and money are scored as two separate balances from 0 to 100, and the household balance combines the two using your weights, Time 60%, money 40% unless you change them."
+    },
+    {
+      "q": "Why does the household balance say Last week on a Monday?",
+      "a": "Time is only compared once you have both been home two days this week, or longer when one of you is away. Until then the ring shows last week's finished number, marked Last week, with this week's money in words beside it."
+    },
+    {
+      "q": "What if one of us earns more and the other does more at home?",
+      "a": "That counts as a trade, not a gap. When the two gaps sit on different sides they partly cancel, but the number never scores higher than the same week with money paid exactly as agreed."
+    },
+    {
+      "q": "Is the household balance part of EvenUS Pro?",
+      "a": "Yes. It is included in the 7-day free week and then part of EvenUS Pro. Without a subscription you can still read everything recorded, add expenses and export your data."
+    }
+  ],
+  "relatedPosts": [
+    "how-the-evenus-fairness-score-really-works-effort-money-mental-load-explained",
+    "creating-your-relationship-fairness-score",
+    "weekly-fairness-report",
+    "live-household-balance"
+  ]
+}

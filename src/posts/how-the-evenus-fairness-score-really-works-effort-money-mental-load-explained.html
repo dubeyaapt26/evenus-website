@@ -1,21 +1,22 @@
 <!--
   meta:title    How the EvenUS Fairness Score Works
-  meta:excerpt  What goes into the number: discretionary hours first, money on its own axis, mental load weighted separately, and the guardrails that override the score when it would read as success.
+  meta:excerpt  What goes into the number: discretionary hours first, planning counted as hours, money on its own axis, and the guardrails that override the score when it would read as success.
   meta:read     10 min
   meta:cat      Using EvenUS
   meta:date     31 August 2026
   meta:iso      2026-08-31
+  meta:updated  2026-10-14
 
   Hand-written. Cluster pillar for the product. Describes what the engine
   actually does, per the app's own spec, and states the guardrails plainly.
 -->
-<p><strong>The score starts from discretionary time: the hours in a week that are genuinely your own once sleep, paid work, commuting and household work are out.</strong> Fairness in time means both of you end up with a similar number of them. Money is measured separately and never folded in. Mental load is weighted rather than counted.</p>
+<p><strong>The score starts from discretionary time: the hours in a week that are genuinely your own once sleep, paid work, commuting and household work are out.</strong> Fairness in time means both of you end up with a similar number of them. Money is measured separately and never converted into hours. The planning and remembering each of you carries, the mental load, is counted as hours inside the time figure, not as a multiplier.</p>
 
 <p>Here is what the number is built from, and, more importantly, what it refuses to do.</p>
 
 <h2>Step one: discretionary hours</h2>
 
-<p>A week has 168 hours. Subtract sleep and the personal time nobody has a choice about, and you are left with a budget. Out of that comes paid work, the commute, and household work weighted by how much planning it carries.</p>
+<p>A week has 168 hours. Subtract sleep and the personal time nobody has a choice about, and you are left with a budget. Out of that comes paid work, the commute, household work and childcare, and the planning and remembering each of you holds.</p>
 
 <p>What remains is yours. That is the number the score compares.</p>
 
@@ -27,13 +28,13 @@
 
 <p>Taking the bins out is five minutes and no thinking. Organising a child's birthday is two hours of doing and three weeks of low-level attention. Counted as tasks they are one each. Measured properly they are not close.</p>
 
-<p>This is also why the app asks for estimates rather than timed entries. Minute-level tracking kills adoption within a fortnight and the precision is fake anyway, since nobody logs the twenty seconds of noticing that the milk is low. A good estimate you will actually record beats an exact figure you will not. <a href="/blog/how-to-track-mental-load/">How to track mental load</a> covers what to log.</p>
+<p>This is also why only time you actually log counts. Logging a chore records when you started and finished, or you can run a timer, and the weekly catch-up confirms a week of recurring chores at once, with your own set to how long they really took. The chore list's usual minutes only tell the app how much logging to expect; when too little has been logged, the time figure waits rather than guessing. <a href="/blog/how-to-track-mental-load/">How to track mental load</a> covers the planning side.</p>
 
 <h2>Where does mental load come in?</h2>
 
-<p>Every task carries a weight for how much planning it requires, on top of its hours. That weight is what separates cooking a meal someone else planned from being the person who plans meals.</p>
+<p>Separately from the chores. Each of you answers a few private questions about who keeps track of areas such as meals, groceries, money admin, the social calendar and school admin. Each area carries an estimated number of hours a week, from half an hour to three hours, shared out according to your answers. Once both of you have finished, those planning hours are added to each person's week, the same as paid work or housework. That is what separates cooking a meal someone else planned from being the person who plans meals.</p>
 
-<p>It is deliberately a multiplier on real work rather than a separate score. Mental load is not measurable on its own without becoming grim about it, and a household does not need a second number to argue about. What it needs is for the planning to count when the hours are added up, which is what the weight does.</p>
+<p>It is deliberately counted as hours, not as a multiplier on other work. An earlier version of the app gave planning-heavy chores extra weight; that has been retired. Planning now counts once, as the hours of holding an area, and a logged task counts the minutes it took. The hours per area are estimates rather than research findings, and the app says so. A household does not need a second number to argue about. What it needs is for the planning to count when the hours are added up.</p>
 
 <p>There is more on the distinction in <a href="/blog/what-is-the-mental-load/">what the mental load is</a> and <a href="/blog/cognitive-labor-vs-physical-chores/">cognitive labour versus physical chores</a>.</p>
 
@@ -43,7 +44,9 @@
 
 <p>Assigning an hourly rate to housework is a claim this app does not make. It requires agreeing a price for your partner's time, it turns every task into a transaction, and it says that unpaid work matters because of what it would cost to replace, which is not why it matters.</p>
 
-<p>So money is asked three questions of its own. Does each person contribute in proportion to what they earn. Does each person have personal money left. And are the two of you deliberately trading time for money, which is a real arrangement and should not be scored as an imbalance.</p>
+<p>So money is asked questions of its own. Did each of you pay close to the share of shared spending that your chosen split says. Does each person have personal money left. And are the two of you trading, one with less free time and the other paying more, which is a real arrangement: when the two gaps point at different people, they partly cancel instead of stacking.</p>
+
+<p>The overall number combines the time balance and the money balance, with time counting for 60% and money for 40% by default. You can change that balance for your household.</p>
 
 <p>There are four splitting methods and you choose which applies. <a href="/blog/how-to-split-finances-when-incomes-differ/">Splitting bills when you earn different amounts</a> works through all four, and <a href="/blog/income-aware-splits-heres-exactly-how-it-calculates-fair-shares/">income aware splits</a> shows the calculation.</p>
 
@@ -53,11 +56,11 @@
 
 <p><strong>Both overloaded.</strong> Two people with four discretionary hours each are perfectly balanced and in trouble. The app says so rather than awarding a high number for symmetry.</p>
 
-<p><strong>Thin data.</strong> A week with almost nothing logged produces a confident-looking score built on nothing. It is flagged instead.</p>
+<p><strong>Thin data.</strong> A week with almost nothing logged produces a confident-looking score built on nothing. It is flagged instead, and early in a week a gap counts for less, because a day of logging cannot show a pattern.</p>
 
 <p><strong>Stale logging.</strong> This one is the most important and the least obvious. The partner doing more work is the one least likely to have time to record it, so under-logging biases the score against exactly the person it exists to help. When entries stop, the app treats that as missing information rather than as an absence of work.</p>
 
-<p><strong>One-sided check-ins.</strong> A result still appears if only one of you answered, marked as one-sided. Requiring both would mean the less engaged partner can stall the whole thing, which is the fastest way to lose them.</p>
+<p><strong>Planning waits for both answers.</strong> The planning hours are added only once both of you have finished the questions about who keeps track of what, so the two phones never show different numbers. Until then, the screen says the planning is not in the score yet.</p>
 
 <h2>What the score will not do</h2>
 
@@ -80,7 +83,7 @@
 
 <h2>What it costs you to run</h2>
 
-<p>Roughly three minutes of setup, then about thirty seconds each per week. There is a catch-up screen for logging a whole week in one sitting, because the realistic alternative is not diligent daily logging, it is nothing.</p>
+<p>Roughly three minutes of setup, then a minute or so each per week. There is a catch-up screen for logging a whole week in one sitting, because the realistic alternative is not diligent daily logging, it is nothing.</p>
 
 <p><a href="/blog/complete-step-by-step/">Setting up with your partner</a> is the whole process, and <a href="/blog/your-first-30-days-with-evenus/">your first thirty days</a> is what the first month usually looks like.</p>
 

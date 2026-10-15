@@ -1,0 +1,86 @@
+{
+  "id": "tax-year-summary",
+  "h1": "Tax-year summary: a year of shared spending as a PDF and a CSV",
+  "seoTitle": "Tax-Year Summary of Shared Spending for Couples",
+  "description": "Make a PDF and CSV of one tax year of shared spending, by category and by who paid, with childcare and health picked out. Free in the EvenUS app.",
+  "updated": "2026-10-14",
+  "answer": "The tax-year summary in EvenUS turns one tax year of a couple’s shared spending into a PDF and a CSV. It totals the year by category and by who paid, picks out childcare and health, and lists every shared expense. The year follows your household’s country, such as 6 April to 5 April in the UK. It is a tidy record for a return or an accountant, not tax advice.",
+  "what": {
+    "h2": "What does the Tax-year summary do?",
+    "html": "<p><strong>It gives you one clean record of everything the two of you spent together over a tax year, ready to file away or hand over.</strong> When a return is due, or an accountant asks what you spent on childcare, the answer is usually spread across two banking apps, a few receipts and somebody’s memory.</p><p>If you have been recording shared costs in EvenUS, the record already exists. The summary adds it up for the year you choose: a total, the split by category, the split by who paid, and childcare and health shown on their own lines because those are the figures people most often go looking for. The CSV lists every shared expense with its date, what it was, its category, the shared amount, the currency, who paid and a note where it is childcare or health.</p><p>It covers what you spent together. For a full copy of everything in your household, use <a href=\"/features/data-export/\">Export your data</a> instead.</p>"
+  },
+  "who": {
+    "h2": "Who is the Tax-year summary for?",
+    "html": "<p>Anyone filing a return, looking up childcare or health costs, or handing a tidy record to an accountant. It also helps couples who simply like to look back at a year in one document. Either partner can make one at any time.</p>"
+  },
+  "steps": {
+    "h2": "How do you make a tax-year summary in EvenUS?",
+    "intro": "Open Money, tap “Tax-year summary” under Reports, check the dates, pick the year, tap “Make the summary”, then share the PDF or CSV.",
+    "items": [
+      {
+        "name": "Open the summary",
+        "text": "Open the Money tab, then under Reports tap “Tax-year summary”."
+      },
+      {
+        "name": "Check when your tax year runs",
+        "text": "Under “The tax year runs”, check the dates. They are chosen from your household’s country, and you can change them if yours is different."
+      },
+      {
+        "name": "Pick the year",
+        "text": "Under “Which year”, choose the tax year you want."
+      },
+      {
+        "name": "Make it",
+        "text": "Tap “Make the summary”. The totals appear on screen: the year’s shared total, childcare, health, by category and by who paid."
+      },
+      {
+        "name": "Share or save the files",
+        "text": "Tap “Share PDF” or “Share CSV” and choose where to send or save it from your phone’s share sheet."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see, and what stays private?",
+    "html": "<p><strong>Either of you can make a summary, and it covers the household’s shared spending.</strong> Making one does not notify your partner or change anything in the app.</p><p>Privacy works as it does everywhere else in EvenUS. If your partner uses <a href=\"/features/personal-spending-privacy/\">Hide my personal spending detail</a>, their hidden personal spending appears in your summary as “A personal expense”, without its title. Purely personal money, such as a treat marked as just yours or the personal part of a shop, is not shared spending and is left out altogether.</p>"
+  },
+  "tips": {
+    "h2": "Tips for using the summary at tax time",
+    "items": [
+      "It is a record of what you spent together, not tax advice. Childcare and health are picked out because those are the lines people look for. Whether anything is claimable is for you and your adviser.",
+      "The year is added up on EvenUS’s server when you tap, and the PDF and CSV are made on this phone.",
+      "Open the CSV in any spreadsheet to filter by category or add your own notes before handing it over.",
+      "Missing months? <a href=\"/features/statement-import/\">Import a bank statement</a> to add shared payments you never recorded, then make the summary again."
+    ]
+  },
+  "country": {
+    "h2": "Which tax years does it support?",
+    "html": "<p>The tax year follows your household’s country:</p><ul><li><strong>UK</strong>: 6 April to 5 April.</li><li><strong>India</strong>: 1 April to 31 March.</li><li><strong>Australia</strong>: 1 July to 30 June.</li><li><strong>US and Canada</strong>: 1 January to 31 December.</li></ul><p>Everywhere else it runs from 1 January, and you can change it on the screen. In the US, the childcare and health totals come with a note that these are often what dependent-care FSA, medical FSA and HSA claims ask about, and to check with your plan or a tax adviser.</p>"
+  },
+  "faqs": [
+    {
+      "q": "Is the EvenUS tax-year summary tax advice?",
+      "a": "No. It is a record of what the two of you spent together over a tax year, grouped by category and by who paid. Childcare and health are picked out to save you looking, but whether anything is claimable is for you and a tax adviser."
+    },
+    {
+      "q": "Does the summary include my personal spending?",
+      "a": "No. Purely personal money is left out altogether, because it is not shared spending. Only what the two of you shared is counted. A partner’s hidden personal spending shows as A personal expense, without its detail."
+    },
+    {
+      "q": "Can I change the dates of the tax year?",
+      "a": "Yes. The dates are chosen from your household’s country, and you can change them on the screen under The tax year runs if yours is different, for example if you live in one country and file in another."
+    },
+    {
+      "q": "Where are the PDF and CSV made?",
+      "a": "The year is added up on EvenUS’s server when you tap Make the summary, and the PDF and CSV files are made on your phone. You choose where they go from your phone’s share sheet."
+    },
+    {
+      "q": "Is the tax-year summary free?",
+      "a": "Yes. The tax-year summary keeps working after the 7-day free week, with or without EvenUS Pro, so you can make one for any year you have recorded."
+    }
+  ],
+  "relatedPosts": [
+    "building-a-family-ledger",
+    "tracking-shared-expenses",
+    "financial-transparency"
+  ]
+}

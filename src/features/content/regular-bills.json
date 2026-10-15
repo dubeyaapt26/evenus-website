@@ -1,0 +1,93 @@
+{
+  "id": "regular-bills",
+  "h1": "Regular bills: rent and utilities added once, recorded each time they’re due",
+  "seoTitle": "Track Recurring Household Bills as a Couple | EvenUS",
+  "description": "Add rent, utilities and other repeating bills once, and EvenUS records each one as a shared expense when it falls due, with who keeps an eye on it shown.",
+  "updated": "2026-10-15",
+  "answer": "Regular bills in EvenUS is a list of the household costs that come round again, such as rent, electricity, internet or a loan repayment. You add each bill once with its amount, how often it is due and the due day. EvenUS then records it as a shared expense each time it falls due, and shows both whose account it leaves and who keeps an eye on it.",
+  "what": {
+    "h2": "What do Regular bills do?",
+    "html": "<p><strong>They take the repeating costs off your to-do list: each bill is entered once and turns into a shared expense on its due day, split the way you set.</strong> Without it, the rent has to be typed in every month, and the one month nobody does it, the <a href=\"/features/settle-up/\">Even up</a> figure is quietly wrong.</p><p>Each bill also records two people who are often different: whose account the money leaves, and who keeps an eye on it. A direct debit pays itself. Noticing that the broadband deal has ended, comparing providers, or chasing a payment that bounced is real work that usually goes unseen. The list shows both, side by side.</p>"
+  },
+  "who": {
+    "h2": "Who are Regular bills for?",
+    "html": "<p>Households with costs that repeat monthly, quarterly or yearly, from rent and council tax to an EMI or a child’s club fees, and especially couples where one person quietly manages most of them.</p>"
+  },
+  "steps": {
+    "h2": "How do you add a regular bill in EvenUS?",
+    "intro": "Open the Regular bills card on Money, tap “Add a bill”, fill in the amount, timing and the two people involved, choose how it is shared and save.",
+    "items": [
+      {
+        "name": "Open Regular bills",
+        "text": "Open the Money tab and tap the Regular bills card. While a bill is due soon, the card is called Bills coming up."
+      },
+      {
+        "name": "Describe the bill",
+        "text": "Tap “Add a bill”. Fill in “What is it?”, the amount, “How often” (Monthly, Quarterly or Yearly) and the due day. For a quarterly or yearly bill, pick the month it falls in or starts in."
+      },
+      {
+        "name": "Name the two people",
+        "text": "Answer “Whose account does it leave?” and “Who keeps an eye on this one?”. They can be different people."
+      },
+      {
+        "name": "Choose how it is shared",
+        "text": "Under “How is it shared?” pick By income, Evenly, One of us, or “Set amounts” to enter each person’s part, which together make the bill’s amount. Under “Does it pay itself?” choose Automatic for a direct debit or Paid manually."
+      },
+      {
+        "name": "Pick the children, if it is for them",
+        "text": "If you have added children, “For which children?” lets you pick the ones this bill is for. Switch on “Depends on when the children are with us” for costs like food or activities."
+      },
+      {
+        "name": "Save it",
+        "text": "Save the bill. When it falls due, it’s added to Expenses the next time the paying partner opens EvenUS."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see?",
+    "html": "<p><strong>You both see every bill, whose account it leaves, who keeps an eye on it and the expenses it adds.</strong> When one of you keeps an eye on most of the bills, the summary says so as a plain count, for example “Sam keeps an eye on 7 of your 9 regular bills.” It carries no judgement, and it does not appear when the work is spread fairly evenly.</p><p>A bill paid by one of you just for themselves follows <a href=\"/features/personal-spending-privacy/\">Hide my personal spending detail</a>: with detail hidden, your partner sees “A personal bill” instead of its name, and its name, account and split stay as you set them.</p>"
+  },
+  "tips": {
+    "h2": "Tips for keeping bills accurate",
+    "items": [
+      "Keeping an eye on a bill is the noticing: renewals, comparing providers, chasing a payment that didn’t go through. Give it to whoever really does that, not whoever pays.",
+      "If the due day is the 31st, shorter months use their last day, so you never need a second bill for February.",
+      "“Stop tracking this bill” takes it off the list. The expenses it already added stay, so past months are not rewritten.",
+      "For streaming, the gym and app plans, use <a href=\"/features/subscriptions/\">Subscriptions</a>, which totals what renews each month."
+    ]
+  },
+  "extra": [
+    {
+      "h2": "Do Regular bills send reminders?",
+      "html": "<p>Only for bills marked Paid manually; an Automatic bill sends nothing. For a manual bill, EvenUS reminds the person who keeps an eye on it and the person who pays it, two days before it is due, in the morning. The notification names the bill and when it is due but never the amount, because a lock screen is not a private place. Each phone schedules its own reminders. For birthdays and other dates, see <a href=\"/features/household-reminders/\">Reminders</a>.</p>"
+    },
+    {
+      "h2": "How do bills for children work when they are not always with you?",
+      "html": "<p>With “Depends on when the children are with us” switched on, each month counts only the share of the week the children you picked are here, so a food or activities bill follows their time in your home. Leave it off for costs like school fees, which count in full every month. Their weeks come from <a href=\"/features/children/\">Children</a>.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Does EvenUS pay my bills or connect to my bank?",
+      "a": "No. EvenUS never connects to a bank and never moves money. A regular bill is a record: on its due day it becomes a shared expense in the app, so your split and the Even up figure stay right."
+    },
+    {
+      "q": "Why is a bill not showing in Expenses yet?",
+      "a": "A due bill is added the next time the partner whose account it leaves opens EvenUS, dated for when it was due."
+    },
+    {
+      "q": "What is the difference between who pays and who keeps an eye on a bill?",
+      "a": "Who pays is whose account the money leaves. Who keeps an eye on it is the person who would notice if it went wrong: renewals, price rises, a failed payment. The second is real work that usually goes uncounted."
+    },
+    {
+      "q": "Can I add a quarterly or yearly bill?",
+      "a": "Yes. Choose Quarterly or Yearly under How often and pick the month it falls in or starts in. In the monthly summary at the top, a quarterly bill counts as a third and a yearly bill as a twelfth each month."
+    }
+  ],
+  "relatedPosts": [
+    "how-to-automate-your-household-spending",
+    "the-one-who-books-everything",
+    "how-to-add-chores",
+    "invisible-labor"
+  ]
+}

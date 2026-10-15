@@ -1,0 +1,91 @@
+{
+  "id": "invite-partner",
+  "h1": "Invite your partner: bring them into the household with a message or a code",
+  "seoTitle": "How to Invite Your Partner to EvenUS",
+  "description": "Bring your partner into your EvenUS household with a message, WhatsApp, their email address or an eight-character code. What they see once they join.",
+  "updated": "2026-10-15",
+  "answer": "Invite your partner is how the person who sets up EvenUS first brings the other into the household. Send a message or a WhatsApp with a link and a code, save their email so EvenUS emails them an invite and they join automatically when they sign up, or read out an eight-character code. Every picture in EvenUS compares two people’s week, so this step makes the rest work.",
+  "what": {
+    "h2": "What does Invite your partner do?",
+    "html": "<p><strong>It joins your partner to the household you set up, so both phones see the same chores, expenses and weekly picture.</strong> On your own, the app can see what you do, and nothing at all about how it is shared. The <a href=\"/features/fairness-score/\">household balance</a> (the fairness score), the weekly picture and <a href=\"/features/thank-you-notes/\">notes between you</a> all wait for the second person.</p><p>The invite screen offers three routes. A message goes wherever you two already talk, with a link and the code. Saving their email sends them an invite from EvenUS, and if they sign up with that address, they are joined straight away instead of landing in an empty account of their own. The code needs nothing at all, and suits two people on the same sofa.</p>"
+  },
+  "who": {
+    "h2": "Who is Invite your partner for?",
+    "html": "<p>Whoever sets up EvenUS first, and the partner on the receiving end, who may want to know what they are joining before they tap a link. <a href=\"/blog/complete-step-by-step/\">Setting up EvenUS with your partner</a> walks through the first day from both sides.</p>"
+  },
+  "steps": {
+    "h2": "How do you invite your partner to EvenUS?",
+    "intro": "Open Us, tap “Invite your partner”, then send a message, save their email, or read them the eight-character code.",
+    "items": [
+      {
+        "name": "Open the invite screen",
+        "text": "Open the Us tab, then tap “Invite your partner”."
+      },
+      {
+        "name": "Send a message",
+        "text": "Tap “Send them a message” for any messaging app, or “Send on WhatsApp”. The message carries a link that opens EvenUS, and the code."
+      },
+      {
+        "name": "Or save their email",
+        "text": "Under “Or save their email”, type their address and tap “Save it”. EvenUS emails them an invite, and when they sign up with that address, they join automatically, with no code to type."
+      },
+      {
+        "name": "Or read out the code",
+        "text": "Under “Or read this out”, read them the eight-character code, or tap it to copy. They enter it after signing up."
+      },
+      {
+        "name": "Check they are in",
+        "text": "Once they join, the screen says “You’re both here.” Until then, you can tap “I’ll do this later” and come back from Us."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see?",
+    "html": "<p><strong>Before they join, your partner sees your message, with the link and the code.</strong> It says you set up the household on EvenUS and that it only works with both of you.</p><p>Once they join, you both see the same household on your own phones. Some things stay yours. Your income after tax is used to work out an income-based split, but your partner sees only your share of what you earn together, as a percentage, never the amount. With <a href=\"/features/personal-spending-privacy/\">Hide my personal spending detail</a> on, your personal purchases show only as an amount.</p>"
+  },
+  "tips": {
+    "h2": "Tips for an invite that gets accepted",
+    "items": [
+      "The invite email can land in spam, so a message from you is still the surest way.",
+      "The code has no I, O, 0 or 1, so it survives being read over the phone.",
+      "A code works for seven days. When it has run out, the screen says so: tap New code and send that one."
+    ]
+  },
+  "extra": [
+    {
+      "h2": "What if your partner is already in another household?",
+      "html": "<p>A person can only be in one EvenUS household at a time. If your partner has already set up their own, the link changes nothing. They leave that household first, from Us → Household → Your household → Leave household, and then use your link or code. If a code no longer works, or the household already has two people, the app says so. If something still will not connect, <a href=\"/features/help-feedback/\">Help and feedback</a> lets you ask from inside the app, or write to <a href=\"mailto:support@evenus.app\">support@evenus.app</a>.</p>"
+    },
+    {
+      "h2": "What happens when someone new joins after a partner left?",
+      "html": "<p>You both start fresh. Before joining, the new person sees “You’ll start fresh together”, and you are told “Someone new starts fresh with you”. The two of you begin with an empty household, and nothing from before is shared with the new partner. Your earlier records stay private to you, read-only, under Us → <a href=\"/features/previous-household/\">Previous household</a>. If the person who left comes back instead, nothing starts again and everything stays as it is. A partner change never starts a new free week.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Does EvenUS work if my partner never joins?",
+      "a": "Only partly. You can record your own chores and expenses, but the household balance and the weekly picture compare two people’s week, so they need both of you."
+    },
+    {
+      "q": "Does saving my partner’s email send them an invite?",
+      "a": "Yes. Saving their email sends them an invite from EvenUS, and they are connected to you the moment they sign up with that address. Invite emails can land in spam, so a message or the code from you is still the surest way."
+    },
+    {
+      "q": "How long does an invite code last?",
+      "a": "Seven days. When the code has run out, the invite screen says so. Tap New code, then send your partner the new code or a fresh message with the new link."
+    },
+    {
+      "q": "Can my partner see how much I earn?",
+      "a": "Not as an amount. Your income after tax is used to work out an income-based split, but your partner sees only your share of what you earn together, as a percentage. With their own income, they can work out yours from that share, and you can work out theirs."
+    },
+    {
+      "q": "Does my partner need their own subscription?",
+      "a": "No. One EvenUS Pro subscription covers both partners in the household. Inviting your partner and joining a household are free, before and after the 7-day free week."
+    }
+  ],
+  "relatedPosts": [
+    "complete-step-by-step",
+    "your-first-30-days-with-evenus",
+    "dividing-labor-without-blame-or-guilt"
+  ]
+}

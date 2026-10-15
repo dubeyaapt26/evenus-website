@@ -1,0 +1,80 @@
+{
+  "id": "trial-tips",
+  "h1": "Tips during your free week: one short evening tip about a feature you haven’t tried",
+  "seoTitle": "EvenUS Free Week Tips: One Short Tip a Day",
+  "description": "During your EvenUS free week, choose one short tip a day around 7 pm about a feature you have not used yet. Off unless you turn it on.",
+  "updated": "2026-10-15",
+  "answer": "Tips during your free week is an optional EvenUS notification: at most one short tip a day, around 7 pm, Monday to Saturday, about a feature you have not used yet. It is off unless you choose it, runs only during the 7-day free week, and stops as soon as you subscribe. Tips are chosen on your phone and are never about your partner.",
+  "what": {
+    "h2": "What do the free-week tips do?",
+    "html": "<p><strong>They point you to one useful part of EvenUS each evening, so you find what matters without reading the whole guide.</strong> The free week is 7 days inside the app, with no card, once per person, and most households only discover the feature that suits them, like splitting by income, after it is over.</p><p>Each tip is a single line, such as “Type “groceries 30” or “dishes 20 min” into Tell EvenUS.” Tap it and EvenUS opens that feature directly. Without notifications, the same tip waits on This week in a card headed “Tip for today”, with a “Try it now” link.</p><p>The tips only ever describe EvenUS features. They never mention your partner, what either of you did, or how the week is going.</p>"
+  },
+  "who": {
+    "h2": "Who are the free-week tips for?",
+    "html": "<p>New households who want to find the useful parts of EvenUS quickly, before deciding whether to subscribe. If you prefer to explore on your own, leave them off: nothing else in the app depends on them.</p>"
+  },
+  "steps": {
+    "h2": "How do you turn free-week tips on or off?",
+    "intro": "Choose “Turn on, with free-week tips” when EvenUS asks about notifications, or switch on Tips during your free week in Us, then Preferences.",
+    "items": [
+      {
+        "name": "Choose tips when asked",
+        "text": "Tips are off unless you choose them. When EvenUS asks about notifications, tap “Turn on, with free-week tips”. Tap “Turn on, reminders only” to get your own reminders without the tips."
+      },
+      {
+        "name": "Or switch them on later",
+        "text": "Open Us, tap Preferences and switch on Tips during your free week. The switch is there only while your free week is running."
+      },
+      {
+        "name": "Open a tip",
+        "text": "Tips arrive at about 7 pm, Monday to Saturday, during your free week only, never on Sundays. Tap one to go straight to the feature. On This week the same tip waits in a card even with notifications off."
+      },
+      {
+        "name": "Stop them",
+        "text": "To stop them, open Us, tap Preferences and switch off Tips during your free week. They also stop on their own the moment you subscribe."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see when you get tips?",
+    "html": "<p><strong>Nothing.</strong> Tips are only about EvenUS features, never about your partner, and your partner has their own switch. Turning tips on for yourself does not turn them on for them, and they are not told you chose them.</p><p>Tips are chosen and scheduled on your phone, and what you open is counted only on that phone and never sent anywhere. That is how a tip skips a feature you have already used without anyone learning which features you tried.</p>"
+  },
+  "tips": {
+    "h2": "Tips for getting the most from your free week",
+    "items": [
+      "Each tip skips anything you’ve already used, and no feature comes up twice, so some evenings are simply quiet.",
+      "The evening before your free week ends, one last note says so plainly. No card was taken, so nothing is charged automatically; subscribing is up to you, on the <a href=\"/features/subscription/\">Subscription</a> screen.",
+      "Subscribing during the free week ends the free days, and billing starts that day. The paywall says so next to the button: “Your free days end when you subscribe.” One subscription covers both of you.",
+      "On Android, the tips have their own notification channel, called Tips during your free week, so you can silence them without touching your chore reminders."
+    ]
+  },
+  "extra": [
+    {
+      "h2": "Which tips come on which day?",
+      "html": "<p>Each day offers the most useful feature you have not used yet. Day one is <a href=\"/features/invite-partner/\">inviting your partner</a> if you are not paired, otherwise <a href=\"/features/quick-add/\">Tell EvenUS</a>. Day two is logging a chore, or the ready-made chore lists. Day three is splitting costs by income, or <a href=\"/features/settle-up/\">Even up</a>. Day four is the <a href=\"/features/mental-load-map/\">mental load map</a>. Day five depends on where you live: UPI for households in rupees, Apple Pay capture on iPhone where it is supported, otherwise scanning a receipt. Day six is this week’s idea, and the last evening is the note that the free week is ending.</p><p>No tip arrives within two hours of the free week starting. Sundays are left for the weekly check-in and the Sunday talk; if your free week ends on a Sunday, the ending note comes on Saturday.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Does EvenUS send marketing notifications?",
+      "a": "Only if you choose free-week tips. They are off unless you turn them on, arrive at most once a day during the 7-day free week, describe EvenUS features only, and stop when you subscribe or the week ends."
+    },
+    {
+      "q": "What time do the free-week tips arrive?",
+      "a": "At about 7 pm in your household’s time zone, Monday to Saturday. There are never tips on Sundays, never more than one a day, and none in the first two hours after your free week starts."
+    },
+    {
+      "q": "Can I see the tips without turning on notifications?",
+      "a": "Yes. During the free week, today’s tip also appears on the This week tab in a card headed Tip for today, with a link to try the feature, whether or not tip notifications are on."
+    },
+    {
+      "q": "Does my partner get the same tips?",
+      "a": "Only if they choose them on their own phone. Each of you has your own switch, and tips are picked from what that person has used, so you may each see different ones on the same evening."
+    }
+  ],
+  "relatedPosts": [
+    "your-first-30-days-with-evenus",
+    "complete-step-by-step",
+    "how-to-add-chores"
+  ]
+}

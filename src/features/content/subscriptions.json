@@ -1,0 +1,84 @@
+{
+  "id": "subscriptions",
+  "h1": "Subscriptions: everything that renews, in one list with a monthly total",
+  "seoTitle": "Track Shared Subscriptions as a Couple in EvenUS",
+  "description": "List every streaming service, gym and phone plan you pay for, see what they come to a month, and get a reminder before one renews. Free in EvenUS.",
+  "updated": "2026-10-15",
+  "answer": "Subscriptions in EvenUS is one shared list of everything your household pays for on repeat: streaming, the gym, cloud storage, the phone plan. Each entry has its cost, how often it renews, the next renewal and who pays it. EvenUS adds them up into one figure a month, and can send whoever pays a reminder a day or a week before a renewal.",
+  "what": {
+    "h2": "What does Subscriptions do?",
+    "html": "<p><strong>It puts every renewing payment in one place, with the total they come to each month, so nothing quietly carries on in the background.</strong> Subscriptions are easy to start and easy to forget. One of you starts a trial, the other already has a similar service, and a year later both are still renewing.</p><p>In EvenUS, each subscription is a line on a list you both see: the name, what it costs each time, whether it renews every week, month or year, the next renewal date and who pays it. At the top, “All together” shows what the whole list comes to a month. Yearly ones are counted as a twelfth each month, so an annual cloud storage plan sits next to a monthly gym membership on the same scale.</p><p>“Look in our expenses” checks the shared expenses you have already recorded for anything that looks like a subscription. The list itself does not record an expense: the money you spend is still added the usual way, through <a href=\"/features/shared-expenses/\">Shared expenses</a> or <a href=\"/features/regular-bills/\">Regular bills</a>.</p>"
+  },
+  "who": {
+    "h2": "Who is Subscriptions for?",
+    "html": "<p>Anyone with streaming, a gym, cloud storage or a phone plan renewing in the background, which is most households. It suits couples who have each brought their own accounts into the relationship and want to see the overlap, and couples who want a calm look at what the household commits to every month before setting <a href=\"/features/budgets/\">Budgets</a>.</p>"
+  },
+  "steps": {
+    "h2": "How do you add a subscription in EvenUS?",
+    "intro": "Open Money, tap Subscriptions under Track, tap “Add a subscription”, fill in the details and save.",
+    "items": [
+      {
+        "name": "Open the list",
+        "text": "Open the Money tab, then under Track tap Subscriptions."
+      },
+      {
+        "name": "Add one by hand",
+        "text": "Tap “Add a subscription”. Enter the name, what it costs each time, how often it renews (every week, month or year), the next renewal and who pays it."
+      },
+      {
+        "name": "Choose a reminder if you want one",
+        "text": "Under “Remind whoever pays it”, pick “A day before” or “A week before”, or leave it with no reminder. The reminder goes only to the person who pays it."
+      },
+      {
+        "name": "Or let EvenUS look for them",
+        "text": "Tap “Look in our expenses”. EvenUS’s server checks the last year of shared expenses for the same thing at a similar price every month or year, and lists what it finds."
+      },
+      {
+        "name": "Add the suggestions you recognise",
+        "text": "Tap “Add it” beside any suggestion that really is a subscription. Anything you leave is simply not added."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see?",
+    "html": "<p><strong>You both see the same list and the same monthly total.</strong> Either of you can add a subscription, and each row shows who pays it, so the list describes the household’s commitments rather than one person’s spending.</p><p>Reminders are quieter. A renewal reminder reaches only the person who pays that subscription. If you set one for your partner’s gym, it goes to them, it does not say who set it, and they can switch it off. There is no way to send a nudge from one phone to the other.</p><p>If your partner uses <a href=\"/features/personal-spending-privacy/\">Hide my personal spending detail</a>, their hidden personal spending is left out before EvenUS looks for subscriptions, so a private purchase can never turn up as a suggestion on your screen.</p>"
+  },
+  "tips": {
+    "h2": "Tips for a useful subscriptions list",
+    "items": [
+      "Suggestions from “Look in our expenses” are only suggestions. Nothing is added until you tap “Add it”, so skip anything that was a one-off.",
+      "Yearly subscriptions count as a twelfth each month in the total. Set a week’s reminder on those, since the full amount lands at once.",
+      "Look at the list together now and then and ask of each line whether you both still use it.",
+      "Rent, energy and other bills that should become expenses on their own belong in <a href=\"/features/regular-bills/\">Regular bills</a>, not here."
+    ]
+  },
+  "extra": [
+    {
+      "h2": "How does “Look in our expenses” find subscriptions?",
+      "html": "<p>It looks for the same title or merchant at a similar amount, roughly every month or every year, seen at least twice in the last year of shared expenses. A gym that took the same amount each month for eight months shows as about monthly, seen eight times. Anything you already track, and anything set up as a regular bill, is skipped.</p><p>The check runs on EvenUS’s server because it needs a full year of expenses. EvenUS never connects to a bank, so it can only find what you have already recorded.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Does adding a subscription record it as an expense?",
+      "a": "No. The subscriptions list tracks what renews and what it all comes to a month. The payments themselves are added as shared expenses in the usual way, or set up as a regular bill if you want EvenUS to add them each time they are due."
+    },
+    {
+      "q": "Can my partner see the reminders I set?",
+      "a": "A reminder goes only to whoever pays that subscription. If it is your partner, they get it without being told who set it, and they can switch it off. You both see on the list that a reminder is on."
+    },
+    {
+      "q": "What happens if I remove a subscription from the list?",
+      "a": "It goes from the list for both of you, along with its reminder. Any expenses you already recorded for it stay exactly as they were, so your shared numbers do not move."
+    },
+    {
+      "q": "Is Subscriptions part of EvenUS Pro?",
+      "a": "No. Subscriptions keeps working after the 7-day free week, with or without EvenUS Pro, including reminders and suggestions from your expenses."
+    }
+  ],
+  "relatedPosts": [
+    "budgeting-for-couples",
+    "how-to-automate-your-household-spending",
+    "tracking-shared-expenses"
+  ]
+}

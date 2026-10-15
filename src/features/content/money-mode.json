@@ -1,0 +1,89 @@
+{
+  "id": "money-mode",
+  "h1": "How costs split: four ways to share household costs, tried on your own figures",
+  "seoTitle": "50/50 or By Income? Split Bills as a Couple | EvenUS",
+  "description": "Choose how you share household costs: by income, evenly, end up with the same, or split what is spare. See what each does to your own figures first.",
+  "updated": "2026-10-15",
+  "answer": "How costs split is the household setting in EvenUS that decides how shared costs are divided between partners. There are four options: Split by income, Split evenly, End up with the same, and Split what’s spare. Before you choose, each one shows what it would do with this month’s real figures: each share of what you earn together, what each of you puts in, and how what’s left over divides.",
+  "what": {
+    "h2": "What does How costs split do?",
+    "html": "<p><strong>It sets the rule every shared expense follows, and lets you see the consequences of each rule before you pick one.</strong> Most couples arrive at a split by habit, rarely with the numbers in front of them.</p><p>Tap any of the four options and read “What that does”: each share of what you earn together, what each of you would put into shared costs, and how what’s left over would divide. Your own Income after commitments and what you are left with show in full; your partner’s read “Not shown”. The figures come from this month’s shared costs and your own incomes after tax.</p><p>Whatever you choose then flows through <a href=\"/features/shared-expenses/\">shared expenses</a>, the <a href=\"/features/settle-up/\">Even up</a> card and the money half of the <a href=\"/features/fairness-score/\">household balance</a>.</p>"
+  },
+  "who": {
+    "h2": "Who is How costs split for?",
+    "html": "<p>Couples setting up EvenUS, and anyone whose situation has changed: a new job, a pay cut, parental leave, a partner going part-time. It is a good screen to open together, because it turns “is this fair?” into four sets of numbers.</p>"
+  },
+  "steps": {
+    "h2": "How do you choose how costs split?",
+    "intro": "Open “How costs split”, tap each option to read “What that does” with your figures, then tap “Use this one” on the one you both want.",
+    "items": [
+      {
+        "name": "Open the setting",
+        "text": "Open Us → Household → “How costs split”, or tap Change beside the split on Money."
+      },
+      {
+        "name": "Try each option",
+        "text": "Tap any of the four: Split by income, Split evenly, End up with the same, or Split what’s spare."
+      },
+      {
+        "name": "Read what it does",
+        "text": "Under “What that does”, read each share of what you earn together, what each of you puts into shared costs, how what’s left over divides, and your own Income after commitments and what you keep, from this month’s real figures."
+      },
+      {
+        "name": "Adjust the amount kept first",
+        "text": "For Split by income you can set an amount you each keep first. For Split what’s spare you can set the floor each of you keeps. The figures move with it."
+      },
+      {
+        "name": "Switch",
+        "text": "Tap “Use this one” to switch. Nothing changes until you do."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see, and can either of you change it?",
+    "html": "<p><strong>It is one setting for the household, so you both see the same choice.</strong> Each of you sees your own Income after commitments and what you keep in full, and the other person’s only as a share, never the amount. Either of you can change it, and the activity feed notes the change.</p><p>To keep each month’s numbers steady, each of you can change the split up to four times in 30 days; switching straight back within a day does not count. Both incomes are used to work out the split, so with your own income, the other person’s share lets either of you work out theirs exactly.</p>"
+  },
+  "tips": {
+    "h2": "Tips for choosing a split together",
+    "items": [
+      "None of the four is marked as recommended. Each answers a different question about fairness, so talk about the question first.",
+      "Child support, money sent to family and loan repayments can come off income first, under <a href=\"/features/support-payments/\">Payments and support</a>.",
+      "If one cost is different on purpose, change the split on that expense rather than the household setting.",
+      "Once you have settled on a split, a <a href=\"/features/money-agreement/\">money agreement</a> can write down which kinds of cost it covers."
+    ]
+  },
+  "extra": [
+    {
+      "h2": "What do the four options do with the same numbers?",
+      "html": "<p>Take Alex with 3,000 a month income after tax, Sam with 2,000, no other commitments, and 2,000 of shared costs.</p><ul><li><strong>Split by income:</strong> each puts in the same share of what they earn, 40%. Alex puts in 1,200 and Sam 800, leaving 1,800 and 1,200.</li><li><strong>Split evenly:</strong> 1,000 each, leaving 2,000 and 1,000.</li><li><strong>End up with the same:</strong> both are left with 1,500, so Alex puts in 1,500 and Sam 500. This one moves the most money.</li><li><strong>Split what’s spare:</strong> each keeps a floor first, by default a quarter of your average income (625 here), and the rest is shared by income. Alex puts in about 1,267 and Sam about 733.</li></ul><p>The screen does this sum with your real figures. Read more in <a href=\"/blog/how-to-split-finances-when-incomes-differ/\">how to split bills when you earn different amounts</a>.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Which split does EvenUS recommend?",
+      "a": "None. All four are shown without a recommendation, because each answers a different question: same share of pay, same amount, same left over, or a protected floor first. The screen shows what each does to your own figures."
+    },
+    {
+      "q": "Can I split one expense differently from the household setting?",
+      "a": "Yes. On any expense, How should it be shared? lets you choose By income, Half each, just one of you or Custom for that one cost. The household setting is the starting point."
+    },
+    {
+      "q": "Will my partner know if I change the split?",
+      "a": "Yes. It is one setting for the household, so you both see the new choice straight away, and the activity feed notes the change."
+    },
+    {
+      "q": "What is the floor in Split what’s spare?",
+      "a": "An amount each of you keeps before the rest is shared by income. Left blank, it is a quarter of your average income and moves with it. If costs are too high for both floors, it works out to both of you having the same left over."
+    },
+    {
+      "q": "Is choosing a split part of EvenUS Pro?",
+      "a": "No. How costs split keeps working after the 7-day free week, with or without a subscription. The household balance that reads your split is part of EvenUS Pro."
+    }
+  ],
+  "relatedPosts": [
+    "how-to-split-finances-when-incomes-differ",
+    "income-proportional-bill-splitting",
+    "why-50-50-splitting-is-usually-unfair-in-2026-and-what-actually-works",
+    "rent-splitting-method"
+  ]
+}

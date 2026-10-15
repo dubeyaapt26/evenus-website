@@ -1,0 +1,81 @@
+{
+  "id": "parental-leave",
+  "h1": "Parental leave: your leave dates, so the week is counted as it really is",
+  "seoTitle": "Parental Leave and Sharing the Load With a New Baby",
+  "description": "Add your parental leave dates and how much you still work, and EvenUS counts paid work and baby care as they really are, not as a usual working week.",
+  "updated": "2026-10-15",
+  "answer": "Parental leave in EvenUS is where each partner adds their own leave: the first and last day, how much they are still working and how much pay continues. During those dates, EvenUS counts paid work as what you actually do and counts the children’s care where each of you is at home, so a week at home with a baby is never read as a free week.",
+  "what": {
+    "h2": "What does Parental leave do?",
+    "html": "<p><strong>It stops EvenUS reading a week of leave as either a full working week or a week of spare time.</strong> Without it, the app would assume you still work your usual paid hours, and once those hours were removed it could look as if the parent at home had forty hours to themselves.</p><p>With your leave added, paid work and the travel that goes with it count at the share you are still working, across the days of leave. The background care estimate is counted where people are at home, in proportion to the hours each of you is not at work. With a baby under one, the waking hours you spend alone with them while your partner is at work count as care for you. Care either of you logs still counts for whoever did it.</p><p>This shapes the time side of the <a href=\"/features/fairness-score/\">household balance</a> and <a href=\"/features/time-of-your-own/\">Time of your own</a>, where a note names who is on leave that week. Leave is never described as time off.</p>"
+  },
+  "who": {
+    "h2": "Who is Parental leave for?",
+    "html": "<p>New parents on full leave or a phased return, whether that is maternity, paternity, adoption or shared leave. Each of you adds your own, so one partner on leave, leave at different times, and overlapping leave all work.</p>"
+  },
+  "steps": {
+    "h2": "How do you add parental leave in EvenUS?",
+    "intro": "Open Us, go to Household, then Parental leave, tap “Add my leave”, set the dates, how much you are still working and the pay continuing, and tap “Save”.",
+    "items": [
+      {
+        "name": "Open Parental leave",
+        "text": "Open the Us tab, then Household → Parental leave, and tap “Add my leave”."
+      },
+      {
+        "name": "Set the dates",
+        "text": "Choose the First day and the Last day. One plan can cover up to two years. If your dates move, you can edit them later."
+      },
+      {
+        "name": "Say how much you are still working",
+        "text": "Under Still working, pick 0%, 25%, 50%, 75% or 100%, or tap “Other” to type any whole number from 0 to 100, such as 60. Set Pay continuing the same way."
+      },
+      {
+        "name": "Link a child and save",
+        "text": "Under For, link it to a child if you like, or leave it Not linked. Add a short Note if it helps, then tap “Save”."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see?",
+    "html": "<p><strong>Your partner sees your leave on the timeline: the dates, how much you are working and the pay continuing.</strong> Each of you adds your own leave, and only the person on leave changes their own dates.</p><p>Pay continuing is there so you both have the same picture of the months ahead. It is never used in the household balance.</p>"
+  },
+  "tips": {
+    "h2": "Tips for leave with a new baby",
+    "items": [
+      "During leave, paid work counts as what you actually do, and the children’s care counts where each of you is at home.",
+      "Pay continuing is shown on the timeline only. It never changes a score.",
+      "Add your baby under <a href=\"/features/children/\">Children</a> with their date of birth. On-call hours apply only to a child under one.",
+      "Planning a phased return? Add it as its own plan from the day you go back, after a plan at 0% for full leave. The timeline shows both.",
+      "If you remove a plan, the weeks it covered go back to your usual hours. Edit the dates instead if they only moved."
+    ]
+  },
+  "extra": [
+    {
+      "h2": "How does leave change a week? An example",
+      "html": "<p>Sam usually works 40 hours a week and Alex 38. Sam starts full leave with their baby, Ida, so Still working is 0%. For those weeks Sam’s paid work counts as about zero hours, not 40, and the Time screen says so in a plain line.</p><p>While Alex is at work, Sam is the one at home with Ida. Those waking hours count as care for Sam, up to a weekly limit, rather than as spare time. When Alex does bathtime, Alex logs it and it counts for Alex. Six months later Sam adds a second plan, taps Other and types 60 for a phased return, and the weeks shift on their own.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Does EvenUS treat parental leave as time off?",
+      "a": "No. Leave is never treated as time off or a holiday. Paid work counts at the share you still do, and with a baby under one, the hours you are alone with them while your partner works count as care for you."
+    },
+    {
+      "q": "Can my partner change my leave dates?",
+      "a": "No. Each of you adds your own leave, and only the person on leave changes their own dates. Your partner sees the dates, how much you are working and the pay continuing on the timeline."
+    },
+    {
+      "q": "Does my pay during leave affect the household balance?",
+      "a": "No. Pay continuing is shown on the timeline only and never changes a score. Your income after tax for shared costs is set separately in your details, and you can update it whenever it changes."
+    },
+    {
+      "q": "Can I record a phased return to work?",
+      "a": "Yes. Pick 50% under Still working, or tap Other and type any share from 0 to 100, for the dates of your phased return. Add it as a separate plan after your full leave so the timeline shows each stage."
+    }
+  ],
+  "relatedPosts": [
+    "new-parents-guide",
+    "pregnancy-postpartum",
+    "household-equity-after-a-job-loss"
+  ]
+}

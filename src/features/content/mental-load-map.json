@@ -1,0 +1,85 @@
+{
+  "id": "mental-load-map",
+  "h1": "Who keeps track of what: count the planning and remembering at home",
+  "seoTitle": "Mental Load Tracker for Couples: Who Keeps Track",
+  "description": "A few private questions about who plans and remembers each area of home life, so the mental load gets counted. How it works and what your partner sees.",
+  "updated": "2026-10-15",
+  "answer": "Who keeps track of what is the EvenUS mental load map. Each partner privately answers a few questions about who holds each area of home life in their head, from meal planning to school admin. Neither of you sees the other’s answers until you have both finished. Then both phones show who holds each area, where you see it differently, and the planning hours count as time.",
+  "what": {
+    "h2": "What does Who keeps track of what do?",
+    "html": "<p><strong>It counts the planning and remembering in your home, the part of the work that never shows up on a chore list.</strong> Booking the dentist takes four minutes. Being the person who remembers the dentist exists, notices it has been a year and knows which day works, runs quietly all year.</p><p>So instead of logging moments, EvenUS asks who holds each recurring area: meal planning, groceries, money admin, gifts and occasions, school admin and about ten more. Each card says what the area covers, so nobody is guessing.</p><p>Each area carries an estimated number of hours a week. Once you have both answered, those hours are added to the time figure in the <a href=\"/features/fairness-score/\">household balance</a>, alongside the housework you log in <a href=\"/features/chores-effort/\">Effort</a>.</p>"
+  },
+  "who": {
+    "h2": "Who is Who keeps track of what for?",
+    "html": "<p>For couples where one of you seems to hold the school forms, the birthdays and the next dentist visit in your head, and the other is not quite sure how much of it there is. It suits households without children too.</p>"
+  },
+  "steps": {
+    "h2": "How do you answer the questions?",
+    "intro": "Open the Effort tab, tap “Answer the questions” under Planning and remembering, then tap “Start” and pick the answer that feels true on each card.",
+    "items": [
+      {
+        "name": "Open the questions",
+        "text": "Open the Effort tab and, under Planning and remembering, tap “Answer the questions”. Once you have answered, the button reads “Answer again or compare”. They are also under Us, then Household → Who keeps track of what."
+      },
+      {
+        "name": "Start",
+        "text": "Tap “Start”. Each card is one area of the house, with a line on what it covers."
+      },
+      {
+        "name": "Pick the answer that feels true",
+        "text": "Choose “Just me”, “Mostly me”, “Genuinely shared”, “Mostly Sam”, “Just Sam” (your partner’s name appears) or “We pay someone”. The next card follows on its own."
+      },
+      {
+        "name": "Mark what does not fit your life",
+        "text": "Tap “Doesn’t apply to us” for anything that is not part of your household. You can stop at any card and tap “Carry on” later."
+      },
+      {
+        "name": "Wait for your partner",
+        "text": "When you finish you will see “That’s your side done.” Once your partner has finished too, the Planning and remembering card shows who holds each area."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see?",
+    "html": "<p><strong>Nothing, until you have both finished.</strong> Neither of you can see the other’s answers before then, so there is no editing yours after seeing theirs. Once you have both finished, your answers stay as they were and you both see the same card.</p><p>Where your answers differ, the card marks that area <em>seen differently</em>. Neither answer is treated as the right one: for the hours, EvenUS averages your two views. The comparison, area by area, is in <a href=\"/features/seen-differently/\">Seen differently</a>.</p><p>If the household changes, every answer is cleared and the questions start again, so nothing said about one person is ever read as being about someone new.</p>"
+  },
+  "tips": {
+    "h2": "Tips for answering well",
+    "items": [
+      "Set aside about three minutes each. You do not need to do it at the same time.",
+      "Answer as it actually feels this year, not as you would like it to be.",
+      "Use “We pay someone” for a cleaner who also restocks the cupboards. It still keeps a little time for whoever books them.",
+      "If a few areas are marked seen differently, talk about one at a time. <a href=\"/blog/how-to-explain-the-mental-load-to-a-partner/\">One real example from your week</a> helps more than a general discussion."
+    ]
+  },
+  "extra": [
+    {
+      "h2": "How are the planning hours worked out?",
+      "html": "<p>Each area has a weekly estimate: meal planning is about 2.5 hours, groceries, home upkeep and money admin about 1.5 each, school admin about 3. These are our estimates, not research findings. Your answer splits that estimate: “Just me” puts all of it with you, “Mostly me” three quarters, “Genuinely shared” half each, and “Mostly Sam” a quarter. “Doesn’t apply to us” is left out of the average rather than counted as zero.</p><p>Say Alex answers meal planning “Just me” and Sam answers “Mostly Alex”. Averaging the two views gives Alex about 2.2 hours a week and Sam about 0.3. More in <a href=\"/blog/how-the-evenus-fairness-score-really-works-effort-money-mental-load-explained/\">how the fairness score works</a>.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Can my partner see my answers before they finish theirs?",
+      "a": "No. Neither of you sees the other’s answers until you have both finished. After that you both see the same card, showing who holds each area and where your answers differ, and nobody can change their answers after seeing the other’s."
+    },
+    {
+      "q": "Does EvenUS score emotional labour?",
+      "a": "No. Who keeps track of what covers the logistics of running a home, such as forms, appointments, meals and renewals. Managing moods and feelings is real work, but EvenUS deliberately does not put a number on it."
+    },
+    {
+      "q": "What if we have no children or pets?",
+      "a": "The children’s areas only appear when you have added children, school admin and activities only for a child of school age, and pet admin only once you have added a pet. For a car or caring for parents, tap Doesn’t apply to us and the area adds no hours."
+    },
+    {
+      "q": "Why do my planning hours not show in the household balance yet?",
+      "a": "Planning hours count only after both of you have finished the questions. Until then the time figure includes logged housework, paid work and travel, but no planning, so one partner’s answers never shape the balance on their own."
+    }
+  ],
+  "relatedPosts": [
+    "how-to-track-mental-load",
+    "what-is-the-mental-load",
+    "mental-load-tracker",
+    "ultimate-mental-load-checklist-partners"
+  ]
+}

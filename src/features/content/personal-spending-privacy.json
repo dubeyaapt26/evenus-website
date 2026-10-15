@@ -1,0 +1,88 @@
+{
+  "id": "personal-spending-privacy",
+  "h1": "Hide my personal spending detail: keep your own purchases to yourself",
+  "seoTitle": "Keep Personal Spending Private From Your Partner",
+  "description": "Keep what your own purchases were private while the amounts still count in your shared numbers. How hiding personal spending detail works in EvenUS.",
+  "updated": "2026-10-15",
+  "answer": "Hide my personal spending detail is a privacy setting in EvenUS that keeps what your own purchases were to yourself. With it on, anything marked as just yours shows to your partner as “A personal expense”, with the amount and who paid, but no title, notes or category. The amount still counts in your shared numbers, and shared costs stay visible to both of you.",
+  "what": {
+    "h2": "What does Hide my personal spending detail do?",
+    "html": "<p><strong>It lets a personal purchase stay personal without taking it out of the household record.</strong> With full titles in a shared app, the record can start to feel like a window into each other’s spending.</p><p>With the setting on, an expense that is all yours still appears in your partner’s list with its amount and who paid. If only part of an expense was yours, like a few things in a supermarket shop, the whole expense shows this way: its title, notes and category are hidden, and the full amount still counts. What it was stays on your side, in a record only you can read. Your partner’s phone never receives that detail.</p><p>The amount stays visible on purpose. It still counts in the shared numbers you both rely on, such as the <a href=\"/features/settle-up/\">Even up</a> card and the <a href=\"/features/fairness-score/\">household balance</a> (the fairness score).</p>"
+  },
+  "who": {
+    "h2": "Who is Hide my personal spending detail for?",
+    "html": "<p>Anyone who would like a “my treat” or a personal buy to stay personal: a surprise for your partner, a hobby, or the part of the weekly shop that was just for you. It is a setting for each person: you decide for your own spending, and your partner decides for theirs.</p>"
+  },
+  "steps": {
+    "h2": "How do you hide your personal spending detail?",
+    "intro": "Open Us, go to Preferences → Language, widget and privacy, and switch on Hide my personal spending detail. It then covers anything marked as just yours.",
+    "items": [
+      {
+        "name": "Open the privacy settings",
+        "text": "Open the Us tab, then Preferences → Language, widget and privacy."
+      },
+      {
+        "name": "Switch it on",
+        "text": "Under Privacy, switch on Hide my personal spending detail. Expenses already marked as just yours are covered too, not only new ones."
+      },
+      {
+        "name": "Mark an expense that is all yours",
+        "text": "When you add an expense that was only for you, under “How should it be shared?” set the split so it is all yours."
+      },
+      {
+        "name": "Mark the personal part of a mixed shop",
+        "text": "For a shop that was partly for you, tap “More options”, tick “Part of this was just for me” and enter how much."
+      },
+      {
+        "name": "Save as usual",
+        "text": "Tap “Save expense”. On your phone it looks the same as ever. On your partner’s, it reads “A personal expense”."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see when the detail is hidden?",
+    "html": "<p><strong>Your partner sees “A personal expense”, the amount and who paid, and nothing about what it was.</strong> If they open it, a short line explains that you keep the detail of personal spending to yourself and that the amount still counts, so a hidden line never looks like a mistake.</p><p>The same wording follows the expense everywhere. The <a href=\"/features/activity-log/\">Activity</a> feed says you “added a personal expense”, and your partner’s <a href=\"/features/data-export/\">data export</a> carries it only as “A personal expense”. Hidden personal spending is also left out of category budgets for both of you. Shared costs are always visible to both of you.</p>"
+  },
+  "tips": {
+    "h2": "Tips for using personal spending privacy",
+    "items": [
+      "On a mixed shop, use “Part of this was just for me” rather than two expenses. The whole expense then reads “A personal expense” to your partner, with its full amount, and its title, notes and category are hidden.",
+      "You still see your own titles, notes and categories everywhere, including in your own export.",
+      "Switch it off later and the detail goes back into the shared record. Activity entries already written as “a personal expense” stay that way."
+    ]
+  },
+  "extra": [
+    {
+      "h2": "Why does EvenUS show the amount but not what it was?",
+      "html": "<p>Because the two answer different questions. The amount is part of the arithmetic you both rely on, and hiding it would mean your partner could no longer check figures that affect them. What you bought is about you, not the household, and a shared record does not need it. For more on what couples share and keep separate, see <a href=\"/blog/financial-transparency/\">financial transparency in a relationship</a>.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Can my partner see what I bought for myself in EvenUS?",
+      "a": "Not if you switch on Hide my personal spending detail. Anything marked as just yours then shows to your partner as “A personal expense” with its amount and who paid. The title, notes and category are kept where only you can read them."
+    },
+    {
+      "q": "Does hiding personal spending change the shared numbers?",
+      "a": "No. The amount still counts exactly as before, which is why your partner still sees it. Only the description is hidden. The Even up figure, the split and the household balance work the same whether the setting is on or off."
+    },
+    {
+      "q": "Can I hide a shared expense from my partner?",
+      "a": "No. Shared costs are always visible to both of you, with what they were for. The setting covers only expenses that are all yours, or ones where part was marked as just for you."
+    },
+    {
+      "q": "Can my partner see my income?",
+      "a": "Not as an amount. Your partner sees your share of what you earn together, as a percentage. There is no switch to hide it further, on purpose: the split needs both incomes after tax, and with their own income, that share lets either of you work out the other’s exactly."
+    },
+    {
+      "q": "Is hiding personal spending part of EvenUS Pro?",
+      "a": "No. Hide my personal spending detail keeps working after the 7-day free week, whether or not you subscribe, along with adding expenses and exporting your data."
+    }
+  ],
+  "relatedPosts": [
+    "financial-transparency",
+    "yours-mine-and-ours-bank-accounts",
+    "how-to-manage-household-finances-without-losing-your-identity",
+    "budgeting-for-couples"
+  ]
+}

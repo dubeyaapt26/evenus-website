@@ -1,0 +1,89 @@
+{
+  "id": "hosting",
+  "h1": "Hosting: plan an occasion together, from the guest list to the washing up",
+  "seoTitle": "Holiday Hosting Planner for Couples: Hosting in EvenUS",
+  "description": "Plan Thanksgiving, Diwali, Christmas or a birthday party together: date, guests, tasks, menu and budget in one shared plan, with the work visible.",
+  "updated": "2026-10-15",
+  "answer": "Hosting in EvenUS is a shared plan for an occasion a couple is hosting, such as Thanksgiving, Christmas, Diwali, Eid or a birthday party. It holds the date, the number of guests, a budget, who is doing which task, and the menu, which goes on the shared shopping list. Tasks count as household work for whoever does them, and nobody is shown as doing the most.",
+  "what": {
+    "h2": "What does Hosting do?",
+    "html": "<p><strong>It turns an occasion into one plan you can both see, so the work of hosting is shared rather than carried in one head.</strong> Hosting is mostly invisible work: the invitations, the menu, the big shop, the cleaning, the cooking, remembering who does not eat what. It often shows up only as tiredness on the day.</p><p>A plan collects the date, how many guests are coming, an optional budget and notes. Choose an occasion and it can start with the usual tasks and menu: for Thanksgiving that includes ordering the turkey, for Diwali the diyas, the sweets and the rangoli, for Lunar New Year the red envelopes and the dumplings. Every item can be changed or removed.</p><p>Each task is a one-off chore with a day, given to one of you or to “Either of you”. Menu items go on the shared <a href=\"/features/shopping-list/\">shopping list</a>. Costs you add are shared expenses tagged with the plan, so the budget adds itself up.</p>"
+  },
+  "who": {
+    "h2": "Who is Hosting for?",
+    "html": "<p>Couples hosting Thanksgiving, Christmas, Easter, Diwali, Eid, Hanukkah, Lunar New Year, a birthday party or something of their own. It is especially useful the first time you host together, or for a big family occasion where one of you has always done it.</p>"
+  },
+  "steps": {
+    "h2": "How do you plan an occasion in EvenUS?",
+    "intro": "Open Effort, then Hosting, tap “Plan an occasion”, fill in the basics, tap “Create the plan”, then share out the tasks and add the menu.",
+    "items": [
+      {
+        "name": "Start a plan",
+        "text": "Open the Effort tab, then Hosting, and tap “Plan an occasion”."
+      },
+      {
+        "name": "Fill in the basics",
+        "text": "Pick the occasion and the date, and add guests and a budget if you like. Leave “Start with the usual tasks and menu” on for a ready-made list, or switch it off to start blank."
+      },
+      {
+        "name": "Share out the tasks",
+        "text": "Tap “Create the plan”, then give each task to one of you or to “Either of you”. Use “Add a task” for anything the template missed, with a day to have it done by."
+      },
+      {
+        "name": "Mark tasks done with the real time",
+        "text": "When a task is finished, tap “Done”, put in when you started and finished, then tap “Save”."
+      },
+      {
+        "name": "Build the menu and add costs",
+        "text": "Add to the menu under Menu and shopping; it goes on the shared shopping list too. Tap “Add a cost” to record spending for the occasion."
+      },
+      {
+        "name": "Set a reminder",
+        "text": "Tap “Remind us the day before” if a reminder would help."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see?",
+    "html": "<p><strong>Your partner sees the same plan, with each person’s list side by side and the “Either of you” tasks after them.</strong> Under Who’s doing what, there is no count beside a list and nothing ranks one against the other, so nobody is shown as doing the most.</p><p>The budget only adds up shared spending tagged to the plan. Anything just for one of you, or the personal part of a mixed purchase, is left out.</p><p>A task marked Done is logged like any <a href=\"/features/chores-effort/\">chore</a>, with the time you put in, and counts as household work for whoever did it in the <a href=\"/features/fairness-score/\">household balance</a>.</p>"
+  },
+  "tips": {
+    "h2": "Tips for hosting together",
+    "items": [
+      "Every task and menu item from the template can be changed or removed. Trim it to what your household actually does.",
+      "Hand over whole parts rather than single jobs: one of you takes the food from menu to shop to cooking, the other the house and the guests. <a href=\"/blog/sharing-cognitive-labor/\">Sharing cognitive labour</a> explains why.",
+      "Put the planning on the list too, such as “Plan the menu” and “Send the invitations”. They are real work and count once done.",
+      "A shop made only of this plan’s menu items is tagged to the plan when you tap Done shopping, so the budget includes it."
+    ]
+  },
+  "extra": [
+    {
+      "h2": "What happens when the date moves or the occasion is over?",
+      "html": "<p>If you change the date, each task not done yet moves by the same number of days, and the reminder moves with it. Tasks already done stay where they were. A plan made late never starts with anything marked as missed: a task whose day has already passed is moved to today.</p><p>Once the occasion is over, it moves from Coming up to Earlier. If a plan is no longer needed, “Put this plan away” takes its unfinished tasks off your chores and removes its reminder, while the list and the spending stay. Before you start, <a href=\"/blog/christmas-mental-load/\">who actually does Christmas</a> is worth a read.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Which occasions does Hosting have templates for?",
+      "a": "Thanksgiving, Christmas, Easter, Diwali, Eid, Hanukkah, Lunar New Year and a birthday party, each with the usual tasks and menu. Choose Something else for any other occasion and add your own tasks."
+    },
+    {
+      "q": "Do hosting tasks count toward the household balance?",
+      "a": "Yes. Each task is a one-off chore, so when it is marked Done with the time you put in, it counts as household work for whoever did it, exactly like any other chore in Effort."
+    },
+    {
+      "q": "Does the hosting budget include personal spending?",
+      "a": "No. The budget adds up only shared spending tagged to the plan. Anything marked as just for one of you, or the personal part of a purchase, is left out of the total."
+    },
+    {
+      "q": "Does the menu go on our shopping list?",
+      "a": "Yes. Items under Menu and shopping are added to the shared shopping list, tagged with the occasion, so either of you can buy them and mark them bought."
+    }
+  ],
+  "relatedPosts": [
+    "christmas-mental-load",
+    "cross-cultural-couples",
+    "sharing-cognitive-labor",
+    "invisible-labor-checklist"
+  ]
+}

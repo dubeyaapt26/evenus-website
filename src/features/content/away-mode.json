@@ -1,0 +1,85 @@
+{
+  "id": "away-mode",
+  "h1": "Away: add your time away so a trip is never read as a quiet week",
+  "seoTitle": "Away in EvenUS: Work Trips, Hospital Stays and Travel",
+  "description": "Add the days you are away from home in EvenUS, and the week is compared over the days you were both home. How it works and what your partner sees.",
+  "updated": "2026-10-15",
+  "answer": "Away in EvenUS is where each of you adds the days you are away from home: a work trip, a hospital stay, a few weeks with family. While either of you is away, household work logged then is not compared, and the week is compared over the days you were both home. Nothing is made up for the days away.",
+  "what": {
+    "h2": "What does Away do?",
+    "html": "<p><strong>It tells EvenUS which days one of you was not at home, so those days are left out of the comparison instead of counting against anyone.</strong> Without it, a week where one of you spent five days at a conference would look like a week where that person did almost nothing.</p><p>With a period added, the household work line of the <a href=\"/features/fairness-score/\">household balance</a> (the fairness score) compares only the time you were both home. Housework logged while either of you was away does not count for anyone. Nothing is stretched or estimated to fill the gap: any number made up for the missing days would be a guess aimed at the person who was not there.</p><p>Away is not a pause button for the app. Expenses, bills and money keep working as usual, because a bill falls due whether you are home or not. It only changes how the time side of the week is read, and it pauses a few notices for the person who is away.</p>"
+  },
+  "who": {
+    "h2": "Who is Away for?",
+    "html": "<p>For anyone whose time at home is broken up: people who travel for work or on rotation, people in hospital or recovering somewhere else, and people staying with family for a while, for example to look after a parent. Each of you adds only your own time away.</p>"
+  },
+  "steps": {
+    "h2": "How do you add time away in EvenUS?",
+    "intro": "Open Us, then Household, then Away, tap “Add time away”, pick the first and last day, and tap Save.",
+    "items": [
+      {
+        "name": "Open Away",
+        "text": "Open the Us tab, tap Household, then the Away row (“Work trips, hospital stays, time away from home”). Tap “Add time away”."
+      },
+      {
+        "name": "Pick the first and last day",
+        "text": "Tap “First day” and pick it on the calendar, then “Last day”. A period can start up to 29 days ago and last up to a year."
+      },
+      {
+        "name": "Choose why, if you like",
+        "text": "Under “Why (optional)”, choose Work, Travel, Illness or Other, or leave it blank. The reason is only a label."
+      },
+      {
+        "name": "Save it",
+        "text": "Tap Save. The period shows on your list as Coming up, Away now or Ended, with the dates and number of days."
+      },
+      {
+        "name": "Change or remove it later",
+        "text": "Tap a period to change it, or tap Remove and confirm. One that started more than 29 days ago can only be removed."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see?",
+    "html": "<p><strong>Your partner sees a line in the activity feed when you add, change or remove time away, such as “Alex added time away”, and the week is compared over the days you were both home.</strong> They cannot change your periods: each of you adds and changes only your own, and the Away screen lists only yours. Removing a period takes it off the list for both of you.</p>"
+  },
+  "tips": {
+    "h2": "Tips for using Away well",
+    "items": [
+      "Add a trip before you leave if you know the dates. You can move them later if the trip changes.",
+      "Forgot to add it? A period can start up to 29 days ago, so last week's trip can be put right this week.",
+      "Your own chore reminders, and the notices about what your partner adds, pause while you are away.",
+      "Skipping a single chore because you were not there? Long press it, choose skip this one, and pick “Was away”. Use Away for whole days.",
+      "The list holds up to 20 periods between the two of you. If it is full, remove one of your own that has ended."
+    ]
+  },
+  "extra": [
+    {
+      "h2": "How does a week with time away work? An example",
+      "html": "<p>Sam is away on a work trip from Tuesday to Friday and adds it in Away before leaving. On Monday, Sam logs 20 minutes emptying the dishwasher; Alex logs an hour for the weekly shop. From Tuesday to Friday, Alex is home alone and logs the cooking and the school run.</p><p>For that week, the household work line compares only Monday, Saturday and Sunday, the days both were home. Alex's logs from Tuesday to Friday are not counted against Sam, and Sam's Monday logs are not scaled up to a full week. The shared costs, including Sam's hotel and Alex's shop, are recorded and split as usual.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Does adding time away in EvenUS stop shared expenses from being split?",
+      "a": "No. Away only changes how the household work line of the week is read. Expenses, bills, settle-up and budgets keep working as usual while either of you is away, because shared costs do not stop."
+    },
+    {
+      "q": "How far back can I add time away?",
+      "a": "A period can start up to 29 days ago, and one stretch can last up to a year. A period that started more than 29 days ago can no longer be changed, only removed, so add trips soon after they happen."
+    },
+    {
+      "q": "Do I still get chore reminders while I am away?",
+      "a": "No. Your own chore reminders pause during your time away, and so do the notices about what your partner adds. They start again on their own once the period ends."
+    },
+    {
+      "q": "Is Away part of EvenUS Pro?",
+      "a": "No. Adding, changing and removing time away keeps working after the 7-day free week, with or without a subscription. The household balance that reads it is part of EvenUS Pro."
+    }
+  ],
+  "relatedPosts": [
+    "household-management-when-one-partner-has-a-chronic-illness",
+    "how-to-balance-the-mental-load-when-both-partners-work-full-time",
+    "caring-for-ageing-parents"
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "id": "pets",
+  "h1": "Pets: feeding, walks, the vet and the costs, in one place per pet",
+  "seoTitle": "Share Pet Care as a Couple: Walks, Vet and Costs",
+  "description": "Add your dog, cat or other pet to EvenUS: feeding and walks become shared chores, the vet gets reminders for both of you, and costs land in a Pets budget.",
+  "updated": "2026-10-15",
+  "answer": "Pets in EvenUS gives each pet in your home its own page. The jobs they need, such as feeding, walks or the litter tray, become ordinary chores with an owner or either of you. Vet visits and yearly vaccinations become reminders for both partners, and what the pet costs is recorded as a shared expense in the Pets budget.",
+  "what": {
+    "h2": "What does Pets do in EvenUS?",
+    "html": "<p><strong>It gathers everything one animal needs into a single place, built from parts of the app you already use.</strong> Pet care is daily, easy to underestimate and easy to drift onto one person: the walks before work, the litter tray, remembering the booster is due, noticing the food is running low.</p><p>Each pet has a name, a kind and, if you like, a birthday. Under What they need, EvenUS suggests the usual jobs for that kind of animal: for a dog, feeding, walks, grooming and flea and worm treatment; for a cat, feeding, the litter tray, grooming and flea treatment. You add the ones you want, and each becomes an ordinary chore on <a href=\"/features/chores-effort/\">Effort</a>, with a realistic time attached, so the minutes count like any other housework.</p><p>The vet and vaccinations become <a href=\"/features/household-reminders/\">reminders</a> for both of you, and the pet’s costs become shared expenses in the Pets category, which the <a href=\"/features/budgets/\">monthly budgets</a> already cover.</p>"
+  },
+  "who": {
+    "h2": "Who is Pets for?",
+    "html": "<p>Any household with a dog, a cat or anyone else who needs looking after every day: a bird, fish, a rabbit, a small pet or a reptile. It is most useful where one of you has quietly become the default walker or feeder and neither of you has said so out loud.</p>"
+  },
+  "steps": {
+    "h2": "How do you add a pet in EvenUS?",
+    "intro": "Open Us, go to Household, then Pets, tap “Add a pet”, then open the pet to add the jobs, the vet dates and the costs.",
+    "items": [
+      {
+        "name": "Add the pet",
+        "text": "Open the Us tab, then Household → Pets, and tap “Add a pet”. Give them a Name, choose the Kind of pet, and add a Birthday if you like."
+      },
+      {
+        "name": "Add the jobs they need",
+        "text": "Open the pet and, under What they need, tap “Add” on the jobs you want. For each, answer “Who usually does it?” with one of you or Either of you."
+      },
+      {
+        "name": "Set the vet and vaccinations",
+        "text": "Under Vet and vaccinations, tap “Vet visit” or “Vaccinations (yearly)”, pick the day on the calendar, leave it “All day” or add a time, then tap “Add reminder”. Tap a reminder later to change or delete it."
+      },
+      {
+        "name": "Rename if you need to",
+        "text": "Tap “Edit” on the pet to change the name, kind or birthday, then “Save”. The pet’s chores and vet reminders take the new name too."
+      },
+      {
+        "name": "Record costs or set a budget",
+        "text": "Under Costs, tap “Add a cost” to open an expense already set to Pets and linked to this pet, or tap “Set a pets budget” to set a monthly amount."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see?",
+    "html": "<p><strong>Your partner sees the same pets and the same chores.</strong> Vet and vaccination reminders go to both of you, the day before and on the day, so neither of you has to be the one who remembers. Costs land in the Pets budget like any other expense and are split the way your shared costs usually are.</p><p>Either of you can tick a pet chore off when you do it, and the minutes count for whoever did it.</p>"
+  },
+  "tips": {
+    "h2": "Tips for sharing pet care",
+    "items": [
+      "Each job is an ordinary chore on the Effort tab, so you can change its time, days or owner there.",
+      "Vaccinations come round every year, so that reminder repeats yearly. Book the vet visit and set it in the same sitting.",
+      "Use Either of you for a walk you genuinely alternate, and a name for one that is really one person’s, so the plan matches the week.",
+      "For a big vet bill, tap “Add a cost” from the pet’s page. The category and the pet are filled in, and it splits like any shared cost.",
+      "Put a time on the morning walk with a <a href=\"/features/chore-reminders/\">chore reminder</a>. Only the chore’s owner gets it, so nobody has to ask."
+    ]
+  },
+  "extra": [
+    {
+      "h2": "How much time does a dog add to the week? An example",
+      "html": "<p>Alex and Sam add their dog, Biscuit. Feeding is suggested daily at about 10 minutes and the walk daily at about 40 minutes, so the two daily jobs alone come to nearly six hours a week. Grooming and flea and worm treatment add a little each month.</p><p>If Alex does every walk, that is close to five hours a week on Alex’s side of Effort, which the <a href=\"/features/fairness-score/\">household balance</a> counts like any other housework. Seeing the figure is often enough for a couple to decide, calmly, whether to keep it that way or take alternate mornings.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Can we share dog walks as a couple in EvenUS?",
+      "a": "Yes. Add the walk under What they need and choose a person or Either of you. It becomes an ordinary chore on Effort, and whoever does a walk ticks it off and gets the minutes."
+    },
+    {
+      "q": "Does EvenUS remind us about vet appointments?",
+      "a": "Yes. Under Vet and vaccinations, pick the day on the calendar and a time if you like, then tap Add reminder. Both of you get it the day before and on the day, and the vaccination reminder repeats every year. Tap it to change or delete it."
+    },
+    {
+      "q": "How do pet costs get split?",
+      "a": "Pet costs are ordinary shared expenses in the Pets category, so they split the way your other shared costs do, by income, half each or however you have chosen. Set a pets budget to see the month at a glance."
+    },
+    {
+      "q": "What happens if we remove a pet?",
+      "a": "Their chores are archived and their vet reminders removed. Past expenses and logs stay, so the weeks and months before still count as they were."
+    }
+  ],
+  "relatedPosts": [
+    "how-to-add-chores",
+    "invisible-labor-checklist",
+    "gentle-reminders",
+    "budgeting-for-couples"
+  ]
+}

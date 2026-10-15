@@ -1,0 +1,11 @@
+{
+  "name": "evenus-website",
+  "private": true,
+  "description": "evenus.app: static site built by src/build.mjs. No runtime dependencies.",
+  "scripts": {
+    "build": "node src/build.mjs",
+    "serve": "node src/build.mjs && npx --yes serve@14.2.4 dist -l 8080",
+    "test:engine": "sh -c 'TSX=../evenus/node_modules/.bin/tsx; [ -x \"$TSX\" ] || TSX=\"npx --yes tsx@4.19.2\"; $TSX src/calc/compare-app.mts \"$@\"' --",
+    "golden": "npm run test:engine -- --cases 5000 --write-golden"
+  }
+}

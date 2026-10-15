@@ -1,0 +1,89 @@
+{
+  "id": "sunday-talk",
+  "h1": "Sunday talk: ten minutes together to look at the week and plan one thing",
+  "seoTitle": "Weekly Check-In for Couples: Sunday Talk in EvenUS",
+  "description": "A guided ten-minute weekly talk for couples: something you appreciated, the week in a few lines, this week's idea, what's coming up and one small plan.",
+  "updated": "2026-10-15",
+  "answer": "Sunday talk is a guided ten-minute conversation in EvenUS for a couple to have once a week. It has five short steps, any of them skippable: something you appreciated, the week in a few lines, this week's idea, what's coming up, and one small plan for next week. Sit together with one phone, or each open it on your own, live.",
+  "what": {
+    "h2": "What does Sunday talk do?",
+    "html": "<p><strong>It gives the two of you a short, regular moment to look at the week together, with the structure already there.</strong> Most couples mean to talk about how the household is running and only do it when something has gone wrong.</p><p>The five steps draw on what is already in the app: the week's household totals, <a href=\"/features/weekly-idea/\">This week's idea</a> if there is one, and your <a href=\"/features/household-reminders/\">reminders and dates</a> for the next seven days. It opens with appreciation and ends with one small plan you will both do.</p>"
+  },
+  "who": {
+    "h2": "Who is Sunday talk for?",
+    "html": "<p>For couples who want a short, regular moment to look at the week together, on one phone or on both at once, especially busy households that rarely sit down to plan.</p>"
+  },
+  "steps": {
+    "h2": "How do you have a Sunday talk?",
+    "intro": "Open the Sunday talk card on the This week tab, tap Start, and go through the five steps together.",
+    "items": [
+      {
+        "name": "Open the talk",
+        "text": "On Sundays, open the Sunday talk card on the This week tab. On any other day, open Us, then Household → Sunday talk."
+      },
+      {
+        "name": "Start, or say you are ready",
+        "text": "Tap Start, or “I’m ready to talk” so it shows on your partner’s phone next time they open the app."
+      },
+      {
+        "name": "Share what you appreciated",
+        "text": "Each of you writes one thing you appreciated this week. Switch on “Also send it to” your partner “as a note” if you would like them to have it."
+      },
+      {
+        "name": "Go through the week, the idea and what's coming up",
+        "text": "Read the week in a few lines, look at this week’s idea, and check the next seven days. Each step has “Skip this step”."
+      },
+      {
+        "name": "Make one small plan",
+        "text": "In the last step, write one small plan for next week, such as “We’ll cook together on Wednesday”, and tap “Done for this week”. It is saved as a note with both your names on it."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see?",
+    "html": "<p><strong>The same talk, live, and a single line in their app when you say you’re ready.</strong> What one of you writes appears on the other screen as you go. When you tap “I’m ready to talk”, your partner sees it when they next open the app; nothing is sent to them as a notification.</p><p>The week’s numbers are the household’s totals, never one of you set against the other, and nothing counts how many talks you have had. Your <a href=\"/features/private-checkin/\">private check-in</a> stays private and is not part of the talk.</p>"
+  },
+  "tips": {
+    "h2": "Tips for a good Sunday talk",
+    "items": [
+      "Keep the appreciation small and specific, like a form sorted or a bin remembered.",
+      "In the first step, what you appreciated can also go to your partner as a note in <a href=\"/features/thank-you-notes/\">Notes between you</a>.",
+      "Write the plan as something you will both do, starting with “We’ll…”. Next week, the talk shows what you planned last time.",
+      "“Ready to talk” is never sent as a notification. The only push is part of the one Sunday evening notice, and Us → Preferences → Sunday talk switches it off."
+    ]
+  },
+  "extra": [
+    {
+      "h2": "What is in “The week” step?",
+      "html": "<p>A few calm lines about the household as a whole: for example, 14 things done around the house between you, about 9 hours of it, $640 of shared spending, and whether your free time came out close to even or how many hours sit between you, described as something to talk about. The numbers come from the same sums as the <a href=\"/features/fairness-score/\">household balance</a>, but the talk never shows the score or who did more.</p>"
+    },
+    {
+      "h2": "Can you change the plan once it is saved?",
+      "html": "<p>Yes. Go back to the plan step and the field opens with the saved plan’s words, so editing it changes what is there. Clear the field, or tap “Remove the plan” under Saved, to take it off for both of you; either of you can. Leaving a step by Next, Skip this step or Back keeps what you had typed, so nothing is lost by moving around. If the talk can’t load, the screen says “This week's talk couldn't load.” with Try again, rather than showing an empty talk.</p><p>There is no streak, no count of talks and no message about a week you missed.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Do we need two phones for Sunday talk?",
+      "a": "No. You can sit together with one phone, or each open it on your own. On two phones the talk is live, so what one of you writes appears on the other screen as you go."
+    },
+    {
+      "q": "Does EvenUS send my partner a notification when I say I'm ready?",
+      "a": "No. Tapping I'm ready to talk shows a single line in your partner's app the next time they open it. It is never sent as a notification."
+    },
+    {
+      "q": "Where does our plan for next week go?",
+      "a": "It is saved as a note with both your names on it. Either of you can change or remove it from the plan step that week, and the next Sunday talk shows it under Last week you planned."
+    },
+    {
+      "q": "Is Sunday talk part of EvenUS Pro?",
+      "a": "Yes. It is included in the 7-day free week and then part of EvenUS Pro. Notes, reminders and everything you have recorded stay readable without a subscription."
+    }
+  ],
+  "relatedPosts": [
+    "how-to-offload-your-mental-to-do-list-for-the-week",
+    "the-10-minute-daily-sync",
+    "celebrating-small-wins",
+    "how-to-talk-about-money-without-fighting"
+  ]
+}

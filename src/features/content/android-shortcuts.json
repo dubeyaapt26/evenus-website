@@ -1,0 +1,88 @@
+{
+  "id": "android-shortcuts",
+  "h1": "Android shortcuts: long-press EvenUS to add things in one tap",
+  "seoTitle": "Android App Shortcuts for EvenUS: Long-Press to Add",
+  "description": "Long-press the EvenUS icon on Android to jump straight to Tell EvenUS, Add expense, Add reminder or My chores. Nothing is saved until you tap Save.",
+  "updated": "2026-10-14",
+  "answer": "Android shortcuts in EvenUS are the options you see when you long-press the app icon: Tell EvenUS, Add expense, Add reminder and My chores. Each one opens the right screen directly, one tap sooner than opening the app and finding it. Shortcuts only open EvenUS; nothing is saved until you check what opened and tap Save.",
+  "what": {
+    "h2": "What do the EvenUS Android shortcuts do?",
+    "html": "<p><strong>They take you straight to the screen you want from the EvenUS icon, without going through Home first.</strong> Most things worth recording happen on the move: a bill paid at the counter, a reminder that occurs to you on the bus. The fewer taps between remembering and recording, the more of it actually gets written down.</p><p>Long-press the icon and four choices appear. “Tell EvenUS” opens the <a href=\"/features/quick-add/\">Tell EvenUS</a> field, ready for a line like “groceries 30”. “Add expense” opens the new <a href=\"/features/shared-expenses/\">shared expense</a> form. “Add reminder” opens a new <a href=\"/features/household-reminders/\">reminder</a>. “My chores” opens Effort, where your chores for today are.</p><p>None of them saves anything by itself. Each one opens a screen in the app, and you decide what to keep.</p>"
+  },
+  "who": {
+    "h2": "Who are Android shortcuts for?",
+    "html": "<p>For Android users who add things on the move and want one tap fewer to do it: the partner who logs the shop in the car park, or who adds a reminder the moment a school letter arrives. They work with nothing to set up, on the home screen and in the app drawer, on most Android launchers.</p>"
+  },
+  "steps": {
+    "h2": "How do you use EvenUS shortcuts on Android?",
+    "intro": "Long-press the EvenUS icon, tap the shortcut you want, then check what opens and tap Save.",
+    "items": [
+      {
+        "name": "Long-press the icon",
+        "text": "Long-press the EvenUS icon on your home screen or in the app drawer."
+      },
+      {
+        "name": "Pick a shortcut",
+        "text": "Tap Tell EvenUS, Add expense, Add reminder or My chores."
+      },
+      {
+        "name": "Check and save",
+        "text": "Check what opens and tap Save. Nothing is saved until you do."
+      },
+      {
+        "name": "Keep your favourite on the home screen",
+        "text": "To keep one handy, most launchers let you drag it from the list onto your home screen, where it sits as its own icon."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see?",
+    "html": "<p><strong>Whatever you save, like anything added by hand.</strong> An expense added through the Add expense shortcut is an ordinary expense, and your partner sees it the same way, with who paid and how it was split.</p><p>Shortcuts only open the app; they never save anything on their own and never send your partner a message. Opening My chores shows your own phone’s Effort tab and nothing more.</p>"
+  },
+  "tips": {
+    "h2": "Tips for Android shortcuts",
+    "items": [
+      "“Hey Google, open EvenUS” works everywhere.",
+      "Drag the shortcut you use most, often Tell EvenUS, onto your home screen so it is one tap from anywhere.",
+      "The shortcut names follow your phone’s language, not the language chosen in EvenUS. Change the app’s own <a href=\"/features/language/\">language</a> and the shortcuts stay as they were.",
+      "Want to see today’s chores without tapping at all? Add the <a href=\"/features/home-widget/\">home-screen widget</a> alongside the shortcuts."
+    ]
+  },
+  "country": {
+    "h2": "Do they work on every Android phone, and with Google Assistant?",
+    "html": "<p>Long-press shortcuts are an Android feature, so they need Android and a launcher that supports app shortcuts, which most do. On iPhone, the equivalent is <a href=\"/features/siri-shortcuts/\">Siri and Shortcuts</a>.</p><p>Voice is more limited. Where Google Assistant is the phone’s assistant, “Hey Google, open my chores in EvenUS” and “Hey Google, create groceries 30 in EvenUS” can work too, once EvenUS is installed from Google Play. On phones where Gemini has replaced Assistant, these may not be available. The shortcut labels come in English, Hindi, Spanish, French, German and Brazilian Portuguese.</p>"
+  },
+  "extra": [
+    {
+      "h2": "Why don’t the shortcuts save anything straight away?",
+      "html": "<p>A shortcut is a way in, not a decision. If one tap could record an expense, a pocket tap or a child playing with the phone could put a cost in front of your partner that neither of you meant. So every shortcut opens a screen where you see the details first. Add expense opens the usual form with the day, you as the payer and your usual split already filled in, so most of the time checking it is a glance before Save.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I add an expense quickly on Android?",
+      "a": "Long-press the EvenUS icon and tap Add expense. The new expense form opens with the day, you as the payer and your usual split filled in, so you type the amount and what it was for, then tap Save."
+    },
+    {
+      "q": "Can EvenUS shortcuts save something without me checking it?",
+      "a": "No. Every shortcut only opens a screen in EvenUS. Nothing is recorded, and nothing reaches your partner, until you check what opened and tap Save yourself."
+    },
+    {
+      "q": "Does EvenUS work with Google Assistant or Gemini?",
+      "a": "“Hey Google, open EvenUS” works everywhere. Where Google Assistant is the phone’s assistant, it can also open your chores or start a Tell EvenUS line once EvenUS is installed from Google Play. Where Gemini has replaced Assistant, those may not be available."
+    },
+    {
+      "q": "Why are my EvenUS shortcuts in a different language from the app?",
+      "a": "Android shows shortcut names in your phone’s language, because the launcher cannot see the language chosen inside EvenUS. Change the phone’s language to change them; the app itself keeps your own choice."
+    },
+    {
+      "q": "Are Android shortcuts part of EvenUS Pro?",
+      "a": "No. The shortcuts keep working after the 7-day free week, with or without a subscription, and adding expenses, reminders and chores through them stays available too."
+    }
+  ],
+  "relatedPosts": [
+    "how-to-add-chores",
+    "tracking-shared-expenses",
+    "why-paper-to-do-lists-are-ruining-your-household-efficiency"
+  ]
+}

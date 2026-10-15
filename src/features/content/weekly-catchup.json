@@ -1,0 +1,85 @@
+{
+  "id": "weekly-catchup",
+  "h1": "Catch up on the week: log your recurring chores in about 30 seconds",
+  "seoTitle": "Log a Week of Chores at Once: Catch Up in EvenUS",
+  "description": "Forgot to tick chores off as you went? Catch up on the week logs your recurring housework in about 30 seconds. How it works and what your partner sees.",
+  "updated": "2026-10-15",
+  "answer": "Catch up on the week is a short screen in EvenUS that logs the week’s recurring chores in one go. Everything is already ticked against whoever usually looks after it, so you untick what did not happen, set how long your own chores really took, and tap Log these. Each of you confirms only your own, and nothing unticked is counted against anyone.",
+  "what": {
+    "h2": "What does Catch up on the week do?",
+    "html": "<p><strong>It turns a week of forgotten ticks into one quick confirmation, so the housework still gets recorded when nobody logged as they went.</strong> By Sunday, the dishes, the hoovering and three loads of laundry are done but not recorded, and logging them one by one feels like admin.</p><p>The catch-up screen, titled “What actually got done?”, builds the list for you. Every recurring chore still waiting this week appears, already ticked against whoever usually looks after it. Anything already logged is left out, so nothing is asked twice.</p><p>For your own chores, each row starts at the usual time, and you change it to what it really took. That matters because the <a href=\"/features/fairness-score/\">household balance</a> counts logged minutes, never estimates.</p>"
+  },
+  "who": {
+    "h2": "Who is Catch up on the week for?",
+    "html": "<p>For weeks when ticking things off as you go didn’t happen, which is most weeks for most people. It suits couples who would rather spend half a minute on Sunday evening than think about the app every day.</p>"
+  },
+  "steps": {
+    "h2": "How do you catch up on the week in EvenUS?",
+    "intro": "Tap “Catch up on the week” on the Effort tab, correct anything that is not right, and tap “Log these”.",
+    "items": [
+      {
+        "name": "Open the catch-up",
+        "text": "Open the Effort tab and tap “Catch up on the week”. It shows up when recurring chores are waiting to be confirmed."
+      },
+      {
+        "name": "Untick what didn’t happen",
+        "text": "Everything is already ticked against whoever usually looks after it. Untick anything that didn’t happen this week."
+      },
+      {
+        "name": "Correct who did it",
+        "text": "Tap a name to change who did a chore, for example when your partner took the bins out on a week you usually do."
+      },
+      {
+        "name": "Set the real time for your own",
+        "text": "For each of your own chores, set “How long, in all?”. It starts at the usual time; change it to what it really took."
+      },
+      {
+        "name": "Log the week",
+        "text": "Tap “Log these”. If it was a quiet week, “Log nothing this week” is a fine answer too."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see?",
+    "html": "<p><strong>Each of you logs your own, so your catch-up never records time on your partner’s behalf.</strong> Anything you mark as your partner’s is not logged by you; it waits in their own catch-up to confirm, with their own minutes. When you finish, the screen tells you how many are theirs to confirm on their phone.</p><p>Unticked chores are not counted against anyone, and nobody is told about them. Once saved, your partner sees what they would see for any tick: the chore as done this week, by you, with your minutes.</p>"
+  },
+  "tips": {
+    "h2": "Tips for a quick weekly catch-up",
+    "items": [
+      "Anything already logged this week is left out, so nothing is asked twice. Ticking as you go just makes the list shorter.",
+      "You can undo any of these from the chores list.",
+      "Give your recurring chores owners. Only owned chores are pre-ticked, so an unowned chore always starts unticked.",
+      "A job that comes round every three months or once a year is listed only once it is due, and is never pre-ticked. Tick it yourself if it was done.",
+      "For a one-off job or something from an earlier week, use <a href=\"/features/chore-time/\">Add a chore you did</a> instead, with the day and times it happened."
+    ]
+  },
+  "extra": [
+    {
+      "h2": "How does the catch-up work out the time?",
+      "html": "<p>Each row starts at the usual minutes for that chore multiplied by the times it is still waiting. If Alex owns a daily wash-up of 15 minutes and logged it on Monday and Tuesday, by Sunday evening the row shows it five more times and starts at 75 minutes. Alex can change that to 60 if some evenings were quicker. It is saved as one entry.</p><p>Entries that overlap count once, so the catch-up lays the batch end to end in the time this week you have not already logged. If what you ticked needs more time than the week has had so far, nothing is saved and the screen asks you to lower a few of the minutes. A row left without a number is pointed out before anything is logged.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Can I log chores my partner did in the catch-up?",
+      "a": "Not on their behalf. If you mark a chore as your partner’s, it is not logged by you. It waits in their own catch-up for them to confirm with their own minutes, so each of you only ever records your own time."
+    },
+    {
+      "q": "Does unticking a chore count against my partner?",
+      "a": "No. Unticked chores are not counted against anyone, and nobody is told about them. An unticked chore simply records that it did not happen this week, which is useful to know and says nothing about either of you."
+    },
+    {
+      "q": "Why doesn’t Catch up on the week appear on my Effort tab?",
+      "a": "It only shows when recurring chores are waiting to be confirmed. If everything this week is already logged, parked or skipped, or you have no recurring chores yet, there is nothing to catch up on."
+    },
+    {
+      "q": "What if I log something by mistake in the catch-up?",
+      "a": "You can undo any of these from the chores list. Your own entries can also be changed or removed from Add a chore you did for 31 days, and a change shows in the activity feed."
+    }
+  ],
+  "relatedPosts": [
+    "how-to-offload-your-mental-to-do-list-for-the-week",
+    "from-conflict-to-collaboration",
+    "why-paper-to-do-lists-are-ruining-your-household-efficiency"
+  ]
+}

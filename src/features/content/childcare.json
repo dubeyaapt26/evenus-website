@@ -1,0 +1,86 @@
+{
+  "id": "childcare",
+  "h1": "Childcare: the cost and the drop-offs, shared and counted",
+  "seoTitle": "Split Childcare Costs and School Runs as a Couple",
+  "description": "Add daycare, a nanny or a camp once in EvenUS: the cost becomes a shared regular bill, and drop-off and pick-up become chores for whoever does them.",
+  "updated": "2026-10-15",
+  "answer": "Childcare in EvenUS is where a couple sets up daycare, a nanny, a babysitter, an after-school club or a camp once. Its cost becomes a regular bill, shared the way each child’s costs are, and drop-off and pick-up become chores on the days the children go. Whoever does a run gets the credit, whatever their relationship to the child.",
+  "what": {
+    "h2": "What does Childcare do?",
+    "html": "<p><strong>It turns one childcare arrangement into the two things it really is for a couple: a regular cost and a regular set of runs.</strong> Childcare is often the largest bill a young family has, and the drop-offs and pick-ups around it shape both of your working days.</p><p>When you add a provider, EvenUS posts its cost as a <a href=\"/features/regular-bills/\">regular bill</a> in the Childcare category, on the day of the month it is paid. Each time it is due it is recorded as an expense, split the way those children’s costs are set under <a href=\"/features/children/\">Children</a>. Drop-off and pick-up become ordinary chores on <a href=\"/features/chores-effort/\">Effort</a>, scheduled on the days the children go, with the minutes each run takes.</p><p>The time either of you logs for these runs counts in full for you and takes the place of your own share of the background care estimate, never on top of it.</p>"
+  },
+  "who": {
+    "h2": "Who is Childcare for?",
+    "html": "<p>Families paying for any regular childcare: a daycare or nursery, a nanny or babysitter, an after-school club, or a holiday camp. It is most useful where both the cost and the runs need sharing, such as a blended family where the cost follows one child’s parent but the runs are done by whoever is free.</p>"
+  },
+  "steps": {
+    "h2": "How do you set up childcare in EvenUS?",
+    "intro": "Open Us, go to Household, then Childcare, tap “Add childcare”, fill in the provider, cost and days, choose who usually does drop-off and pick-up, and tap “Save”.",
+    "items": [
+      {
+        "name": "Add your children first",
+        "text": "Childcare is linked to the children you have added. If you have not added them yet, tap “Add children” on the Childcare screen."
+      },
+      {
+        "name": "Open Childcare",
+        "text": "Open the Us tab, then Household → Childcare, and tap “Add childcare”."
+      },
+      {
+        "name": "Describe the provider",
+        "text": "Give it a Name, choose the Kind (Daycare, Nanny, Babysitter, After-school or Camp), pick which children it is For, and the Days they go."
+      },
+      {
+        "name": "Add the cost",
+        "text": "Enter the Cost, how often it is paid under Every (Week, Month or Year), the “Day of the month it’s paid” (1 to 31; in a shorter month, the last day), and who it is Paid by. The cost is optional if you only want the runs."
+      },
+      {
+        "name": "Choose who does the runs",
+        "text": "Under Drop-off and pick-up, choose who usually does each, Either of you, or Not a chore, and the “Minutes it takes”. Pick a last day if it ends, then tap “Save”."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see?",
+    "html": "<p><strong>Your partner sees the childcare, its regular bill, and the drop-off and pick-up chores on Effort.</strong> The runs show who usually does each one, and either of you can tick a run off when you do it.</p><p>After the last day, or when you tap “Stop this childcare”, its regular bill and its drop-off and pick-up chores stop. Past expenses and logs stay, so the weeks you used it still count as they were.</p>"
+  },
+  "tips": {
+    "h2": "Tips for sharing childcare",
+    "items": [
+      "The cost is posted as a regular bill, shared the way each child’s costs are. Change who pays for a child under Children and future bills follow.",
+      "Whoever does a drop-off or pick-up gets the credit, whatever their relationship to the child. Tick it off when you do it, even if it was not yours.",
+      "Choose Not a chore for a run that does not need anyone, such as a nanny who comes to the house.",
+      "A summer camp with a known end? Pick its last day when you add it, and nothing needs stopping by hand.",
+      "Childcare is picked out in the <a href=\"/features/tax-year-summary/\">tax year summary</a>, which helps if your country offers childcare relief."
+    ]
+  },
+  "extra": [
+    {
+      "h2": "How do the cost and the runs work out? An example",
+      "html": "<p>Alex and Sam send their daughter Ida to Little Acorns daycare on Monday, Wednesday and Friday, at $1,200 a month paid by Alex on the 1st. Ida’s costs are shared like other costs, which for them means by income: Alex 60%, Sam 40%.</p><p>Each month the bill posts as an expense paid by Alex, with Sam’s share of $480 feeding the <a href=\"/features/settle-up/\">Even up</a> card. Sam usually does drop-off and Alex pick-up, so six runs a week appear on Effort. When Alex covers a Wednesday drop-off, Alex ticks it off and those minutes count for Alex.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do we split childcare costs in EvenUS?",
+      "a": "The cost becomes a regular bill split the way the children’s costs are set: shared like other costs, carried by one of you, your own agreed shares, or covered by support. You set this once per child under Children."
+    },
+    {
+      "q": "Does the school run count as work in EvenUS?",
+      "a": "Yes. Drop-off and pick-up are childcare chores on Effort. The time you log counts in full for you and takes the place of your own share of the background care estimate, so it is never counted twice."
+    },
+    {
+      "q": "What happens when childcare ends?",
+      "a": "If you picked a last day, the bill and the drop-off and pick-up chores stop on their own after it. Otherwise tap Stop this childcare. Either way, past expenses and logs stay, so the weeks you used it keep their numbers."
+    },
+    {
+      "q": "Can a step-parent get credit for pick-ups?",
+      "a": "Yes. Whoever does a drop-off or pick-up gets the credit, whatever their relationship to the child. Family shape can change who pays for a child, never how the work is counted."
+    }
+  ],
+  "relatedPosts": [
+    "new-parents-guide",
+    "how-to-balance-the-mental-load-when-both-partners-work-full-time",
+    "step-parenting-fair-chore-and-finance-division-without-drama",
+    "how-to-add-chores"
+  ]
+}

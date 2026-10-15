@@ -1,0 +1,84 @@
+{
+  "id": "previous-household",
+  "h1": "Previous household: a fresh start with someone new, your records kept",
+  "seoTitle": "Previous Household in EvenUS: Fresh Start, Records Kept",
+  "description": "When someone new joins after a partner has left, you start fresh together and your earlier records stay private to you, read-only, to export or delete.",
+  "updated": "2026-10-15",
+  "answer": "Previous household in EvenUS is a private, read-only copy of your earlier household, kept for the person who stayed once someone new joins. The two of you start fresh in an empty household, and nothing from before is shared with the new partner. You can look back through the spending, chores and weeks that were recorded, export a copy, or delete it for good.",
+  "what": {
+    "h2": "What is a Previous household?",
+    "html": "<p><strong>It is your earlier household, kept exactly as it was on the day someone new joined, visible to you alone and closed to changes.</strong> When a partner leaves, everything you recorded together stays with you, as described in <a href=\"/features/when-someone-leaves/\">When someone leaves</a>. If that same person comes back, nothing starts again. But if someone new joins, the two of you begin with an empty household, and the earlier one moves to Us, then Previous household. A new partner should never be measured against history built by two other people.</p><p>The screen opens with “Only you can see this.” Below are the period it covers, the totals (weeks recorded, shared spending, hours of household work logged), and three searchable lists: Spending, Chores and Weeks.</p><p>Nothing here can be added, changed or removed, and nothing from it is part of your household now. It does not affect the <a href=\"/features/fairness-score/\">household balance</a> or any report in the new household.</p>"
+  },
+  "who": {
+    "h2": "Who is Previous household for?",
+    "html": "<p>For the person who stayed after a partner left, once someone new has joined them, who wants to keep the record of shared costs and housework from before without bringing any of it into the new household. If nobody new joins, you never see it, because the records simply stay in your household.</p>"
+  },
+  "steps": {
+    "h2": "How do you open and use your Previous household?",
+    "intro": "Open the Us tab and tap Previous household. The row shows only while one is kept for you. From there you can read, search, export or delete it.",
+    "items": [
+      {
+        "name": "Open it",
+        "text": "Open the Us tab and tap Previous household (“Private to you, read-only”). If more than one is kept for you, pick one from All previous households."
+      },
+      {
+        "name": "Read the period and the totals",
+        "text": "At the top you see the dates it covers and, under Altogether, the weeks recorded, the shared spending and the hours of household work logged."
+      },
+      {
+        "name": "Look through the lists",
+        "text": "Switch between Spending, Chores and Weeks. Type in Search to find an entry, and tap “Show more” to load older ones."
+      },
+      {
+        "name": "Export a copy",
+        "text": "Under Export, choose Everything, or Spending, Chores, Chore log or Bills as a CSV file, and save or share it."
+      },
+      {
+        "name": "Delete it, if you want",
+        "text": "At the bottom, tap “Delete it for good”, then Delete to confirm. Nothing in your household now changes."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your new partner see?",
+    "html": "<p><strong>Nothing. Your new partner never sees anything from before, and the person who left cannot see it either.</strong> This is enforced by the database rules, not only hidden in the app.</p><p>Both of you are told before anyone joins. The person joining reads “You’ll start fresh together” and that earlier records stay private to the person who invited them. The person who stayed sees “Someone new starts fresh with you” on the invite screen, with a reminder that if the person who left comes back instead, everything stays as it is.</p>"
+  },
+  "tips": {
+    "h2": "Tips for a Previous household",
+    "items": [
+      "Export a copy before you delete it. Deleting is for good and cannot be undone.",
+      "Your own <a href=\"/features/data-export/\">data export</a> from Us includes any Previous household kept for you, so one file can hold everything.",
+      "Deleting your account deletes your Previous household too. Nobody else holds a copy.",
+      "Children are not carried into the new household. Add them again under Us, then Household, then Children, if they are part of it."
+    ]
+  },
+  "extra": [
+    {
+      "h2": "What comes with you into the new household, and what starts fresh?",
+      "html": "<p><strong>Only your own settings and the household's basic details come with you:</strong> your name and colour, your income after tax and how often you are paid, your hours, commute, sleep and time of your own, your tags, payment details and privacy choice, and the household's name, currency and time zone.</p><p>Everything shared starts empty: expenses and bills, chores and their history, weekly results, reminders, goals, budgets, the joint account, the money agreement, Sunday talks, survey answers, children, pets, events, household help, the shopping list, activity and imports. All of that stays in your Previous household, read-only, until you delete it.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Can my new partner see the expenses from my previous relationship in EvenUS?",
+      "a": "No. When someone new joins after a partner has left, the two of you start with an empty household. Earlier records stay in your Previous household, private to you and read-only, and the database rules refuse anyone else."
+    },
+    {
+      "q": "What happens if my former partner comes back instead?",
+      "a": "Nothing starts again. If the same person who left rejoins, everything stays where it was, in the same household, and no Previous household is made. A fresh start only happens when someone new joins."
+    },
+    {
+      "q": "How long is a Previous household kept?",
+      "a": "Until you delete it from Us, then Previous household, or delete your account. There is no time limit, and it is included in your own data export while it exists."
+    },
+    {
+      "q": "Do I need EvenUS Pro to see my Previous household?",
+      "a": "No. Reading, searching, exporting and deleting a Previous household keep working after the 7-day free week, with or without a subscription."
+    }
+  ],
+  "relatedPosts": [
+    "financial-transparency",
+    "tools-to-track-shared-expenses-for-unmarried-couples",
+    "building-your-foundation"
+  ]
+}

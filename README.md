@@ -29,7 +29,7 @@ handoff explicitly excludes. Every interaction is reimplemented in
 
 | | |
 |---|---|
-| Fairness calculator | Six sliders; the handoff's formula unchanged |
+| Fairness calculator | The app's own formula, ported in `src/calc/engine.js` (see below) |
 | Accordions | Single-open, first open, `aria-expanded` / `aria-controls` |
 | Blog filter | Six categories, `aria-pressed`, live count |
 | Scroll reveal | IntersectionObserver, 4-second failsafe, respects reduced motion |
@@ -70,6 +70,21 @@ Every article is bylined Aapt Dubey and links to `/about/`. Search titles that
 differ from the headline live in `src/dc/seo.mjs`. Posts merged into another
 are listed in `MERGED` in `src/build.mjs` and need a matching 301 in
 `vercel.json`; the build fails without it.
+
+## Features
+
+`/features/` and one page per app feature at `/features/<id>/`, built by
+`src/dc/featurepages.mjs`. The ids, titles and steps come from the app's own
+catalog, copied into `src/features/catalog.json` by
+`node src/features/sync-catalog.mjs` (re-run when the app's catalog changes;
+the build fails if a feature has no page). Each page's words are in
+`src/features/content/<id>.json`, the hub's in `src/features/hub.mjs`.
+
+Screenshots are listed in `src/features/screenshots.json`. Save each capture
+as `static/img/features/<file>`; a figure appears only once its file exists,
+and the build prints how many are still missing. Sharing cards are committed
+PNGs in `static/og/features/`, made locally with
+`node src/features/og-cards.mjs` (needs Chrome, so it is not part of the build).
 
 ## Layout
 
@@ -115,3 +130,87 @@ and break the site in the opposite direction.
 
 ⚠️ **`.app` is on the browser HSTS preload list.** Every `.app` domain must serve
 valid HTTPS — browsers refuse plain HTTP outright, with no click-through.
+
+## Invite links and app links
+
+The app's invite links are `https://evenus.app/join/<CODE>` (8 characters from
+`ABCDEFGHJKMNPQRSTUVWXYZ23456789`). With the app installed and the two
+`.well-known` files live, the phone opens the app and the website is never
+seen. Everyone else gets the **join page**:
+
+- `dist/join/index.html` is one static page for every code. `vercel.json`
+  rewrites `/join/:code/` to it (`trailingSlash: true` first 308s
+  `/join/CODE` to `/join/CODE/`, which is why the rewrite source ends in `/`).
+  The code is read from the address bar by an inline script, checked against
+  the alphabet and length, and shown with "Copy code" and "Open in EvenUS"
+  (`evenus://join/<CODE>`). Nothing is looked up, so it cannot say whether a
+  code has expired.
+- It is `noindex` (meta tag and `X-Robots-Tag`), `no-referrer`, and loads **no
+  analytics at all** until the visitor accepts in the cookie banner; even then
+  it reports `/join/` with the code stripped. The code is never in the title.
+- The store badges say "Coming soon" and are not links. When the app is
+  listed, turn them into links in `src/build.mjs` (search for "Invite landing").
+- On GitHub Pages there is no rewrite, so `/join/<CODE>` 404s there. Vercel
+  is the host that matters for this.
+
+**The `.well-known` files** (`src/applinks.mjs`) are written only when the
+owner's values exist, read from the environment or from a gitignored
+`.env.local` at the repo root (the environment wins):
+
+```bash
+# .env.local  (never committed)
+APPLE_TEAM_ID=ABCDE12345
+ANDROID_SHA256_FINGERPRINTS=AA:BB:...:FF,11:22:...:EE   # Play app-signing key, then the EAS keystore
+```
+
+On Vercel, set the same two names under Project → Settings → Environment
+Variables. With both set the build writes:
+
+- `dist/.well-known/apple-app-site-association` (no extension), for
+  `<TEAMID>.evenus.app`, paths `/join/*`
+- `dist/.well-known/assetlinks.json`, for package `evenus.app` with every
+  fingerprint given
+
+A missing value skips that file and prints a `TODO:` line; the build still
+passes and **never ships a placeholder**. A value that is present but malformed
+(not 10 characters, not 32 colon-separated hex pairs) stops the build. Where to
+find the values: the app repo's `docs/18_APPLE_SUBMISSION.md` (Team ID) and
+`docs/17_PLAY_SUBMISSION.md` (fingerprints).
+
+`vercel.json` sets `Content-Type: application/json` on both, and the build
+fails if those headers or the join rewrite go missing, or if any redirect
+touches `/.well-known/*` or `/join/*`. Vercel exempts `/.well-known/*` from
+the trailing-slash redirect, so both files are served with no redirect.
+
+⚠️ That exemption is a final route in Vercel's routing, and it sits before the
+`headers` routes, so Vercel may serve the files without the headers in
+`vercel.json`. `assetlinks.json` gets `application/json` from its extension
+either way. Check the other after the first deploy with the values set:
+
+```bash
+curl -sI https://evenus.app/.well-known/apple-app-site-association   # expect 200, no Location, content-type application/json
+curl -sI https://evenus.app/.well-known/assetlinks.json
+curl -s  https://app-site-association.cdn-apple.com/a/v1/evenus.app  # what Apple's CDN has cached
+```
+
+Current iOS reads the file through Apple's CDN and accepts it without the
+JSON content type, so this is unlikely to matter, but if it does, replace
+`trailingSlash: true` with an equivalent redirect that skips `/.well-known/`.
+
+## The fairness calculator
+
+The homepage widget and `/calculator/` run the EvenUS app's formula for one
+complete week with nothing carried over (`src/calc/engine.js`, prepended to
+`site.js` by the build). It is a port, so it is checked against the real thing:
+
+```bash
+npm run test:engine        # 2,500 random weeks through the app's engine and the port; any difference fails
+npm run golden             # 5,000 weeks, then rewrites src/calc/golden.json (50 cases)
+```
+
+`test:engine` imports `../evenus/src/lib/fairness.ts` (or `$EVENUS_APP`) at
+test time only; nothing from the app ships. The build cannot see the app repo,
+so it checks the port against `src/calc/golden.json` instead, and checks that
+the homepage widget's figures in the design file are what the engine gives.
+Either drifting fails `node src/build.mjs`. After any change to the app's
+engine, run `npm run golden` and commit the new table.

@@ -1,0 +1,85 @@
+{
+  "id": "where-money-goes",
+  "h1": "Where the money goes: shares of what you earn, shared costs and what’s left over",
+  "seoTitle": "See How Your Split Lands on Two Incomes: EvenUS",
+  "description": "One month, both of you: each share of what you earn together, each share of shared costs, and how what’s left over divides. See your split land.",
+  "updated": "2026-10-15",
+  "answer": "Where the money goes is a screen in EvenUS that shows one month for both partners side by side: each share of what you earn together, each share of shared costs, and how what’s left over divides. Your own Income after commitments and what you keep show in full; your partner’s show only as shares. You can see how your chosen split lands, and try another if it no longer fits.",
+  "what": {
+    "h2": "What does Where the money goes show?",
+    "html": "<p><strong>It shows what your way of splitting costs actually leaves each of you with, as a short sum you can check line by line.</strong> Most conversations about splitting bills stop at the percentages.</p><p>The screen has two columns, one for each of you. It starts with each share of what you earn together, then Income after commitments (your income after tax, less money already promised such as child support or loan repayments), then each share of this month’s shared costs, and ends with what’s left over. In your own column every figure shows in full; in your partner’s, the amounts read “Not shown”. A line below says how what’s left over divides, as two percentages, and what yours comes to a month, with a scale that is never a score.</p><p>If you have a <a href=\"/features/money-agreement/\">Money agreement</a> or a <a href=\"/features/joint-account/\">Joint account</a>, a short section explains how each one shaped this month’s figures.</p>"
+  },
+  "who": {
+    "h2": "Who is Where the money goes for?",
+    "html": "<p>Couples who want to see how the split lands on two incomes, line by line. It is most useful when your incomes differ, when one of you has changed jobs or hours, or when a new cost such as childcare has arrived.</p>"
+  },
+  "steps": {
+    "h2": "How do you use Where the money goes?",
+    "intro": "Open Insights, tap Money, and read down from each share of what you earn together to what’s left over.",
+    "items": [
+      {
+        "name": "Open the screen",
+        "text": "Open the Insights tab and tap Money."
+      },
+      {
+        "name": "Read the sum",
+        "text": "Read down the rows: Share of what you earn together, Income after commitments, Share of shared costs, then What’s left over. Your own figures show in full, your partner’s as shares."
+      },
+      {
+        "name": "Check how what’s left over divides",
+        "text": "Read what shared costs came to and how they were split, then how what’s left over divides between you, and what yours comes to."
+      },
+      {
+        "name": "Try a different split",
+        "text": "To compare another way of splitting, tap “Change how shared costs split”. It opens How costs split, where you can see what each option would do first."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see?",
+    "html": "<p><strong>Your partner sees the same screen from their side: their own Income after commitments and what they keep in full, and yours only as a share, never the amount.</strong> Both phones use both incomes to work out the split, so with their own figures the shares let them work out yours exactly, and you theirs, and the app says so.</p><p>If one of you has very little left that is not already accounted for, a calm note says so about the arrangement, not about either person. It never names who.</p>"
+  },
+  "tips": {
+    "h2": "Tips for reading Where the money goes",
+    "items": [
+      "It needs both of you, and a month of shared costs to work from. Until then the screen explains what it is waiting for.",
+      "The last card lists what one month can’t see, like pensions and anything held before you lived together.",
+      "Money that leaves before the household sees it, such as child support or loan repayments, comes off income first when you record it in <a href=\"/features/support-payments/\">Money that’s already promised</a>.",
+      "Pair it with the money side of the <a href=\"/features/fairness-score/\">household balance</a>, which measures how costs were shared against the split you chose."
+    ]
+  },
+  "extra": [
+    {
+      "h2": "What does one month not show?",
+      "html": "<p>The screen ends with three things a single month cannot see. Anything held before you lived together, like savings, property or loans you brought in. Pensions and long-term saving: time out of paid work costs money that shows up decades later. And whether the spare money is really spent on yourself, because free on paper is not always free in practice. These are left as plain words, as prompts for a conversation.</p>"
+    },
+    {
+      "h2": "A worked example",
+      "html": "<p>Say Alex has 3,000 a month income after tax and Sam 2,000, with no other commitments, and shared costs come to 2,000. Each share of what you earn together is 60% and 40%. Split evenly, each puts in 1,000, so what’s left over divides 67% to Alex and 33% to Sam. Split by income, Alex puts in 1,200 and Sam 800, and what’s left over divides 60% and 40%. Alex sees “Yours comes to 1,800 a month”; Sam sees 1,200. The <a href=\"/blog/fair-expense-division-for-couples-with-unequal-earnings/\">worked examples for unequal incomes</a> go further.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Can my partner see my income on Where the money goes?",
+      "a": "Not as an amount. Your partner sees your share of what you earn together as a percentage, and your Income after commitments and what you keep read “Not shown” on their phone. Both incomes are used to work out the split, so with their own income, your share lets them work out yours exactly, as theirs lets you work out theirs."
+    },
+    {
+      "q": "Why does Where the money goes say there is not enough yet?",
+      "a": "It needs both of you in the household and a month of shared costs to work from. Invite your partner if they have not joined, and keep adding shared expenses. The screen fills in once there is a month to show."
+    },
+    {
+      "q": "Does this screen change how our costs are split?",
+      "a": "No. It only shows how your current split lands. To change it, tap Change how shared costs split, which opens How costs split. Nothing changes until you choose a new option there."
+    },
+    {
+      "q": "Is Where the money goes part of EvenUS Pro?",
+      "a": "No. Where the money goes keeps working after the 7-day free week, with or without EvenUS Pro. The household balance itself is part of EvenUS Pro after the free week."
+    }
+  ],
+  "relatedPosts": [
+    "fair-expense-division-for-couples-with-unequal-earnings",
+    "how-to-split-finances-when-incomes-differ",
+    "financial-equity-in-couples",
+    "why-50-50-splitting-is-usually-unfair-in-2026-and-what-actually-works"
+  ]
+}

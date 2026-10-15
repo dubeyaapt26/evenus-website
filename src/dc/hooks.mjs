@@ -7,8 +7,8 @@
 // the rendered output is annotated here.
 //
 // ⚠️ EVERY ANCHOR IS ASSERTED, AND THE ASSERTION EARNED ITS KEEP IMMEDIATELY:
-// `stroke-dashoffset="57"` matches twice, because a phone mockup draws the same
-// ring, and `>87<` matches four times. Hooks are therefore scoped to the
+// `stroke-dashoffset="44"` matches twice, because a phone mockup draws the same
+// ring, and `>90<` matches four times. Hooks are therefore scoped to the
 // section they belong to. A calculator that silently stops updating because a
 // colour changed is exactly the failure this prevents, and it is invisible in a
 // screenshot.
@@ -55,18 +55,18 @@ export function hookHome(html) {
       '<span style="color:#5E645F;font-weight:500" data-out="paid">42h · 34h</span>', 'paid');
     s = must(s, '<span style="color:#5E645F;font-weight:500">8h · 23h</span>',
       '<span style="color:#5E645F;font-weight:500" data-out="home">8h · 23h</span>', 'home');
-    s = must(s, 'stroke-dashoffset="57"', 'stroke-dashoffset="57" data-out="ring"', 'ring');
-    s = must(s, 'line-height:1">87</div>', 'line-height:1" data-out="score">87</div>', 'score');
+    s = must(s, 'stroke-dashoffset="44"', 'stroke-dashoffset="44" data-out="ring"', 'ring');
+    s = must(s, 'line-height:1">90</div>', 'line-height:1" data-out="score">90</div>', 'score');
     s = must(s, 'line-height:1.25">Alex has 7 more free hours.</div>',
       'line-height:1.25" data-out="headline">Alex has 7 more free hours.</div>', 'headline');
-    s = must(s, 'font-weight:600">18 free hours</span>',
-      'font-weight:600" data-out="freeA">18 free hours</span>', 'freeA');
-    s = must(s, 'font-weight:600">11 free hours</span>',
-      'font-weight:600" data-out="freeB">11 free hours</span>', 'freeB');
+    s = must(s, 'font-weight:600">48 free hours</span>',
+      'font-weight:600" data-out="freeA">48 free hours</span>', 'freeA');
+    s = must(s, 'font-weight:600">41 free hours</span>',
+      'font-weight:600" data-out="freeB">41 free hours</span>', 'freeB');
     s = must(s, 'background:#6FB3A2;transition:width .5s cubic-bezier(.2,.8,.2,1);width:100%"',
       'background:#6FB3A2;transition:width .5s cubic-bezier(.2,.8,.2,1);width:100%" data-out="barA"', 'barA');
-    s = must(s, 'background:#F0A48A;transition:width .5s cubic-bezier(.2,.8,.2,1);width:61%"',
-      'background:#F0A48A;transition:width .5s cubic-bezier(.2,.8,.2,1);width:61%" data-out="barB"', 'barB');
+    s = must(s, 'background:#F0A48A;transition:width .5s cubic-bezier(.2,.8,.2,1);width:85%"',
+      'background:#F0A48A;transition:width .5s cubic-bezier(.2,.8,.2,1);width:85%" data-out="barB"', 'barB');
     s = must(s, 'margin-top:7px">52% · 48%</div>', 'margin-top:7px" data-out="split">52% · 48%</div>', 'split');
 
     // The suggestion is the last text block inside the sage-tinted panel.

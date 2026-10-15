@@ -1,0 +1,88 @@
+{
+  "id": "private-checkin",
+  "h1": "Private check-in: two questions about how the week felt, for you alone",
+  "seoTitle": "Private Weekly Check-In for Couples | EvenUS",
+  "description": "Two sliders a week: how fair the week felt and how it went overall. Only you ever see your answers, and your partner cannot read them, by design.",
+  "updated": "2026-10-15",
+  "answer": "The private check-in in EvenUS is two quick questions you answer once a week: how fair the week felt to you, and how your week was overall. You answer with two sliders that show no numbers. Only you ever see your answers. Your partner cannot read them, and the server's security rules enforce that, not only the app.",
+  "what": {
+    "h2": "What does the private check-in do?",
+    "html": "<p><strong>It gives you a place to say how the week really felt, without it turning into a conversation.</strong> The rest of EvenUS measures what happened: hours logged, money shared, who holds the planning. None of that says whether a week felt fair, and two weeks with the same numbers can feel completely different from the inside.</p><p>The check-in asks just that, privately, so you can record how the week felt, for yourself. Your answers are yours alone: they are not used in any score or weekly suggestion, and they never appear in the <a href=\"/features/fairness-score/\">household balance</a>, on your partner's screen, or in anything shared between you.</p>"
+  },
+  "who": {
+    "h2": "Who is the private check-in for?",
+    "html": "<p>Anyone who wants to be honest about a week without having to manage how it lands. It suits the partner who tends to say “fine” when asked directly. Your partner can check in too, on their own phone, with the same privacy.</p>"
+  },
+  "steps": {
+    "h2": "How do you do the private check-in?",
+    "intro": "Tap Start on the “How did last week feel?” card, move both sliders and tap Done.",
+    "items": [
+      {
+        "name": "Open the check-in",
+        "text": "On the This week tab, find “How did last week feel?” and tap Start."
+      },
+      {
+        "name": "Answer the fairness question",
+        "text": "Move the first slider for “How fair did this week feel to you?”, between Not great and Really fair. It starts unset, with no thumb and no number."
+      },
+      {
+        "name": "Answer the overall question",
+        "text": "Move the second slider for “How was your week overall?”, between Not great and Really good."
+      },
+      {
+        "name": "Save it or leave it",
+        "text": "Tap Done to keep your answers, or Not now to leave it for another time. Done waits until both sliders have been moved, and until then the screen says “Move both sliders to answer, or choose Not now.”"
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see?",
+    "html": "<p><strong>Nothing.</strong> Your partner can never read your answers, and that is enforced by the server's rules, not only by the app hiding them. There is no indicator telling them whether you checked in this week, and your answers aren't in your partner's <a href=\"/features/data-export/\">data export</a> either. Your own export includes them, for you alone.</p><p>If you leave the household, your check-ins leave with you rather than staying with the household's history. More on how EvenUS handles private records is on the <a href=\"/privacy/\">privacy page</a>.</p>"
+  },
+  "tips": {
+    "h2": "Tips for the private check-in",
+    "items": [
+      "Answer for the week as it felt, not as the numbers looked.",
+      "Once saved, an answer can’t be edited or deleted, even by you. The next check-in opens on Monday.",
+      "Skipping is an ordinary answer. Nothing counts the weeks you answer, and there is no streak to keep.",
+      "The Sunday evening reminder can be switched off in Us, then Preferences, under “Check-in reminder”."
+    ]
+  },
+  "extra": [
+    {
+      "h2": "Why are there no numbers on the sliders?",
+      "html": "<p>A number invites you to score the week rather than describe it, and to compare this week's 6 with last week's 7. The question is how the week felt, so the sliders show only words at each end. Both start unset, with nothing filled in, because starting at either end, or even in the middle, would put a suggestion in your mouth about your own week. An untouched slider is never saved as an answer: a screen reader hears “Not answered yet” until you move it, then a description such as “around the middle” rather than a value.</p>"
+    },
+    {
+      "h2": "Why can't you change an answer afterwards?",
+      "html": "<p>The check-in is only useful if it is a true record of how each week felt at the time. If past answers could be revised, a hard week could quietly be smoothed over later, and the pattern across weeks would mean nothing. So each week's answer stands once you tap Done. If you open the check-in again the same week, it opens on “This week is already answered.”</p><p>That is also why it is private: if either of you believed the other could read it, the answers would become diplomatic. For the conversation itself, <a href=\"/features/sunday-talk/\">Sunday talk</a> is the shared space, and <a href=\"/features/seen-differently/\">Seen differently</a> shows where your readings of the planning differ.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Can my partner see my check-in answers?",
+      "a": "No. Your partner can never read your check-in answers. The server's security rules allow only you to read them, so they are private even if someone tried to read the data directly, and they are not in your partner's data export."
+    },
+    {
+      "q": "Can I edit or delete a check-in?",
+      "a": "No. Once you tap Done, that week's answer is saved and cannot be edited or deleted, even by you. This keeps it an honest record of how the week felt at the time. The next check-in opens on Monday."
+    },
+    {
+      "q": "What happens if I skip a week?",
+      "a": "Nothing. Skipping is an ordinary answer and nothing counts the weeks you answer. Tap Not now, or close the card, and the check-in will be there whenever you feel like it."
+    },
+    {
+      "q": "When does EvenUS remind me to check in?",
+      "a": "A reminder comes on Sunday evening, and the Sunday recap mentions that your check-in is open. You get one Sunday push, not several. You can switch the reminder off in Us, then Preferences, under Check-in reminder."
+    },
+    {
+      "q": "Is the private check-in part of EvenUS Pro?",
+      "a": "Yes. It is included in the 7-day free week and then part of EvenUS Pro. Anything you have already recorded stays readable and exportable with or without a subscription."
+    }
+  ],
+  "relatedPosts": [
+    "the-psychology-of-relationship-equity-and-labor-balance",
+    "hidden-resentment-caused-by-unequal-invisible-labor",
+    "the-silent-resentment"
+  ]
+}
