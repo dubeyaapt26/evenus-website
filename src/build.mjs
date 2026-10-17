@@ -35,6 +35,8 @@ import { buildFeatures } from './dc/featurepages.mjs';
 import { HUB } from './features/hub.mjs';
 import { ENGINE_SOURCE, calculatorDemo, checkGolden, checkHomeDemo } from './calc/page.mjs';
 import { appLinkFiles } from './applinks.mjs';
+import { BETA_CSS, betaForm } from './beta.mjs';
+import { QUIZ_PATH, quizBody, quizFaqLd } from './quiz/page.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const root = join(here, '..');
@@ -439,6 +441,7 @@ ${FONT_PRELOAD.replace(/\$\{BASE\}/g, BASE)}
 <style>${FONT_CSS.replace(/url\('\/fonts\//g, `url('${BASE}/fonts/`)}</style>
 ${helmet}
 ${A11Y}
+${BETA_CSS}
 ${extraHead || ''}
 ${jsonld || ''}
 </head>
@@ -490,6 +493,14 @@ const page = (file, opts, overrides = {}, transform = null) => {
   const r = renderDC(design, file, overrides, {}, transform);
   return { helmet: r.helmet, body: routes(stripPrototypeHandlers(r.body)), ...opts };
 };
+
+/**
+ * The homepage header on another page: its in-page links ("#how", "#get"…)
+ * point back to the homepage's sections, since this page has none of them.
+ */
+const homeHeaderElsewhere = (header) => header
+  .replace(/href="#top"/g, `href="${url('/')}"`)
+  .replace(/href="#([a-z][\w-]*)"/g, (_m, id) => `href="${url('/')}#${id}"`);
 
 /** Opens every accordion answer so the static page contains all of them. */
 const openAll = (key) => (scope) => {
@@ -667,7 +678,13 @@ const FEATURES_FOR_POST = new Map();
 // --- Home ------------------------------------------------------------------
 {
   const r = renderDC(design, 'EvenUS Website.dc.html', {}, {}, openAll('faqs'));
-  const body = routes(hookHome(r.body));
+  // "Coming soon" badges with nowhere to go → the beta sign-up (src/beta.mjs).
+  const getRe = /(<section id="get"[\s\S]*?)<div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:36px">[\s\S]*?Want in early\?[\s\S]*?<\/p>(\s*<\/section>)/;
+  const rendered = routes(hookHome(r.body));
+  if (!getRe.test(rendered)) throw new Error('home: the #get section no longer has the badges this build replaces with the beta form');
+  const body = rendered.replace(getRe, (_m, head, tail) =>
+    head.replace('Your first 7 days are free.</p>', 'Your first 7 days are free. Join the beta and we\'ll email you an invite for your phone.</p>')
+    + `<div style="margin-top:32px;display:flex;justify-content:center">${betaForm('home', { base: BASE, align: 'center' })}</div>` + tail);
   pageAt('/', shell({
     title: 'EvenUS',
     // ⚠️ The old title was the tagline, "A fairer share of everything", which
@@ -970,7 +987,7 @@ ${routes(stripPrototypeHandlers(footer))}
   const homeView = checkHomeDemo(lifted[0]);
   console.log(`  ✅ calculator: ${goldenCases} golden cases match the app's engine; homepage widget opens on ${homeView.freeA.split(' ')[0]} vs ${homeView.freeB.split(' ')[0]} free hours, overall ${homeView.score}`);
   const demo = [calculatorDemo(lifted[0]).demo];
-  const header = /<header[\s\S]*?<\/header>/.exec(full)[0];
+  const header = homeHeaderElsewhere(/<header[\s\S]*?<\/header>/.exec(full)[0]);
   const footer = /<footer[\s\S]*?<\/footer>/.exec(full)[0];
 
   const path = '/calculator/';
@@ -999,7 +1016,7 @@ ${demo[0]}
 
             <h2 style="font-size:clamp(24px,3vw,34px);line-height:1.12;letter-spacing:-.03em;font-weight:700;color:#1B1F1D;margin:40px 0 18px">Where does mental load come into it?</h2>
       <p style="margin:0 0 18px"><strong style="font-weight:700;color:#1B1F1D">As hours, under planning areas.</strong> In the app each of you says privately who keeps track of areas such as meal planning, money admin and school forms. Each area carries an estimated number of hours a week (meal planning 2.5, money admin 1.5, school admin 3, for example), and once you have both answered, those hours count as time, the same as any other hours. Nothing is multiplied or weighted up. The estimates are reasoned figures, not research findings. Here you answer once for both of you; in the app, where the two of you see an area differently, your answers are averaged.</p>
-      <p style="margin:0 0 18px">If you want the fuller version, <a href="${url('/blog/what-is-the-mental-load/')}">what the mental load is</a> explains what gets counted and why it stays invisible.</p>
+      <p style="margin:0 0 18px">If you want the fuller version, <a href="${url('/blog/what-is-the-mental-load/')}">what the mental load is</a> explains what gets counted and why it stays invisible, and the <a href="${url('/mental-load-quiz/')}">mental load quiz for couples</a> lets each of you answer who keeps track of what, then compare.</p>
 
             <h2 style="font-size:clamp(24px,3vw,34px);line-height:1.12;letter-spacing:-.03em;font-weight:700;color:#1B1F1D;margin:40px 0 18px">And the money?</h2>
       <p style="margin:0 0 18px">Separately, always. Each shared cost is split by the method you choose: proportional to income by default, meaning each person covers the share that matches their share of what comes in. The money balance then looks at what is still to even up at the end of the week, measured against the larger of a quarter of your combined monthly income, twice what the week's shared costs moved between you, and $100. Nothing outstanding is 100. Hours are never priced, because putting an hourly rate on domestic work is a claim this does not make.</p>
@@ -1008,6 +1025,13 @@ ${demo[0]}
       <h2 style="font-size:clamp(24px,3vw,34px);line-height:1.12;letter-spacing:-.03em;font-weight:700;color:#1B1F1D;margin:40px 0 18px">What a result does not mean</h2>
       <p style="margin:0 0 18px">A gap is not a verdict about either of you. Two people can be several hours apart for a month because one of them had a bad month at work, and the arrangement is fine. It is a reason to look, not a finding.</p>
       <p style="margin:0">And a small gap is not automatically good. Two people with four free hours each are perfectly balanced and both drowning, which is a worse position than an uneven week with slack in it. <a href="${url('/blog/how-the-evenus-fairness-score-really-works-effort-money-mental-load-explained/')}">How the fairness score works</a> covers the guardrails that catch that.</p>
+    </div>
+  </section>
+  <section aria-labelledby="calc-beta" style="max-width:1180px;margin:0 auto;padding:0 28px clamp(64px,8vw,110px)">
+    <div style="max-width:780px;background:#fff;border:1px solid #EDE8DC;border-radius:24px;padding:clamp(22px,4vw,36px)">
+      <h2 id="calc-beta" style="font-size:clamp(22px,2.6vw,30px);line-height:1.15;letter-spacing:-.03em;font-weight:700;color:#1B1F1D;margin:0 0 10px">Want this worked out from your real week?</h2>
+      <p style="margin:0 0 20px;font-size:16px;line-height:1.6;color:#4B504B">The calculator takes your guesses. The EvenUS app uses what the two of you actually log, keeps the money even as you go, and suggests one thing to try each week. It is in closed testing now.</p>
+      ${betaForm('calculator', { base: BASE })}
     </div>
   </section>
 ${footer}
@@ -1034,6 +1058,43 @@ ${footer}
         offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
         description: 'Calculates each partner\'s free hours per week, the time balance, the money balance on shared costs and the overall fairness score, with the same formula as the EvenUS app.',
       }),
+  }));
+  urlsExtra.push({ loc: path, pri: '0.9' });
+}
+
+// --- The mental load quiz ----------------------------------------------------
+//
+// A tool, because tools are what rank for "mental load quiz / test" and what
+// other sites link to (src/quiz/page.mjs says why, and how it works).
+{
+  const home = renderDC(design, 'EvenUS Website.dc.html', {}, {}, openAll('faqs'));
+  const full = routes(hookHome(home.body));
+  const header = homeHeaderElsewhere(/<header[\s\S]*?<\/header>/.exec(full)[0]);
+  const footer = /<footer[\s\S]*?<\/footer>/.exec(full)[0];
+  const path = QUIZ_PATH;
+  const body = quizBody({ header, footer, url, betaForm, base: BASE });
+  pageAt(path, shell({
+    title: 'The mental load quiz for couples',
+    seoTitle: 'Mental Load Quiz for Couples: Who Carries More? (Free)',
+    description: 'A free 20-question mental load quiz for couples. See your share of the noticing and planning at home, then compare answers with your partner. No sign-up.',
+    path, helmet: home.helmet, body,
+    image: '/og/mental-load-quiz.png', imageAlt: 'Two partners comparing their answers to the EvenUS mental load quiz',
+    jsonld: graph(ORG,
+      crumbs([{ name: 'Home', path: '/' }, { name: 'Mental load quiz', path }]),
+      {
+        '@type': 'WebApplication',
+        '@id': `${ORIGIN}${path}#quiz`,
+        name: 'The mental load quiz for couples',
+        applicationCategory: 'LifestyleApplication',
+        browserRequirements: 'Requires JavaScript',
+        operatingSystem: 'Any',
+        url: ORIGIN + path,
+        publisher: { '@id': `${ORIGIN}/#organization` },
+        // Free: this is the quiz on the page, not the app's subscription.
+        offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+        description: 'Twenty questions about who notices, plans and remembers at home, scored as each partner\'s share, with a link to compare both partners\' answers. Runs in the browser; nothing is stored.',
+      },
+      quizFaqLd()),
   }));
   urlsExtra.push({ loc: path, pri: '0.9' });
 }
@@ -1390,11 +1451,8 @@ ${routes(stripPrototypeHandlers(header))}
 
   <section aria-labelledby="join-get" style="max-width:640px;margin:0 auto;padding:36px 20px 8px">
     <h2 id="join-get" style="${H2}">Don’t have the app yet?</h2>
-    <p style="margin:0;font-size:15.5px;line-height:1.6;color:#4B504B">EvenUS is in closed testing and is not on the app stores yet. Your first 7 days are free. Want in early? Email <a href="mailto:support@evenus.app">support@evenus.app</a> and we’ll send you a link.</p>
-    <ul aria-label="App stores" style="list-style:none;margin:20px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:12px">
-        ${badge('Coming soon to the', 'App Store', '')}
-        ${badge('Coming soon to', 'Google Play', '▶')}
-    </ul>
+    <p style="margin:0 0 20px;font-size:15.5px;line-height:1.6;color:#4B504B">EvenUS is in closed testing and is not on the app stores yet. Your first 7 days are free. Join the beta and we’ll email you an invite for your phone, then come back to this link to join your partner.</p>
+    ${betaForm('join', { base: BASE })}
   </section>
 
   <section aria-labelledby="join-steps" style="max-width:640px;margin:0 auto;padding:36px 20px clamp(56px,8vw,96px)">
@@ -1565,6 +1623,7 @@ ${CATALOG.groups.map((g) => `\n### ${g.title}\n\n` + g.features.map((id) => {
 ## Tools
 
 ${line('Household fairness calculator', '/calculator/', 'Runs the discretionary-hours calculation in the browser. No account, nothing stored.')}
+${line('Mental load quiz for couples', '/mental-load-quiz/', 'Twenty questions on who notices, plans and remembers at home; both partners answer and compare. Runs in the browser, nothing stored.')}
 
 ## Topics
 

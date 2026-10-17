@@ -16,6 +16,7 @@
 
 import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { betaForm } from '../beta.mjs';
 
 /** Width and height of a .webp, from its header. Null if unreadable. */
 export function webpSize(file) {
@@ -92,6 +93,15 @@ export const FEATURE_CSS = `<style>
 .fx-cta h2 { margin:0; max-width:560px; font-size:clamp(24px,3vw,36px); line-height:1.1; letter-spacing:-.03em; font-weight:700; }
 .fx-cta p { margin:12px 0 0; max-width:520px; font-size:15.5px; line-height:1.6; color:#D8D4CA; }
 .fx-cta a { color:#8FD0BE; text-decoration:underline; text-underline-offset:3px; }
+.fx-beta { flex:1 1 360px; max-width:520px; }
+.fx-cta .beta { color:#F7F5EF; }
+.fx-cta .beta-phone legend, .fx-cta .beta-phone label, .fx-cta .beta-check { color:#E3E0D7; }
+.fx-cta .beta-go { background:#F7F5EF; color:#1B1F1D; border-color:#F7F5EF; }
+.fx-cta .beta-go:hover { background:#8FD0BE; border-color:#8FD0BE; }
+.fx-cta .beta input[type=radio], .fx-cta .beta input[type=checkbox] { accent-color:#8FD0BE; }
+.fx-cta .beta-small { color:#C9C6BC; }
+.fx-cta .beta-msg[data-kind=ok] { color:#8FD0BE; }
+.fx-cta .beta-msg[data-kind=err] { color:#F2B8A0; }
 .fx-badges { display:flex; flex-wrap:wrap; gap:10px; }
 .fx-badge { display:inline-flex; flex-direction:column; justify-content:center; min-height:52px; background:#F7F5EF; color:#1B1F1D; padding:8px 20px; border-radius:14px; line-height:1.15; }
 .fx-badge small { font-size:11px; letter-spacing:.04em; color:#4B504B; }
@@ -201,13 +211,10 @@ export function buildFeatures(ctx) {
   const cta = `<section class="fx-cta" aria-labelledby="get-evenus">
     <div class="fx-wrap">
       <div>
-        <h2 id="get-evenus">Coming soon to the App Store and Google Play</h2>
-        <p>EvenUS is in closed testing and is not on the app stores yet. Your first 7 days will be free, with no card. Want in early? Email <a href="mailto:support@evenus.app">support@evenus.app</a> and we will send a link.</p>
+        <h2 id="get-evenus">Join the EvenUS beta</h2>
+        <p>EvenUS is in closed testing and is not on the app stores yet. Your first 7 days will be free, with no card. Leave your email and we will send you an invite for your phone.</p>
       </div>
-      <div class="fx-badges" aria-hidden="true">
-        <span class="fx-badge"><small>Coming soon to the</small><span>App Store</span></span>
-        <span class="fx-badge"><small>Coming soon to</small><span>Google Play</span></span>
-      </div>
+      <div class="fx-beta">${betaForm('features', { base: url('') })}</div>
     </div>
   </section>`;
 
