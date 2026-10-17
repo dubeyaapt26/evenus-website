@@ -11,7 +11,7 @@
   },
   "who": {
     "h2": "Who is Effort for?",
-    "html": "<p>Any couple who wants the everyday work of the house to be seen, not just done. It helps most when the same few jobs seem to happen by themselves, or when one of you suspects the split is uneven but neither of you could put a number on it.</p>"
+    "html": "<p>Any couple who wants the everyday work of the house to be seen as well as done. It helps most when the same few jobs seem to happen by themselves, or when one of you suspects the split is uneven but neither of you could put a number on it.</p>"
   },
   "steps": {
     "h2": "How do you use Effort in EvenUS?",
@@ -46,7 +46,7 @@
   "tips": {
     "h2": "Tips for getting the most out of Effort",
     "items": [
-      "Owning a chore means noticing it needs doing, not just doing it when asked. Agree owners together rather than handing them out.",
+      "Owning a chore means noticing it needs doing, rather than only doing it when asked. Agree owners together rather than handing them out.",
       "Only the time you log counts, never the estimate. Each log keeps its own minutes, so editing a chore later never changes a past week. A one-off chore leaves the list the day after it is done, and comes back by itself if you remove its only entry under Add a chore you did.",
       "Removing a chore keeps everything already logged for it, and Restore puts it back on the list. Removing a log moves the chore’s “last done” back to the entry before it.",
       "If ticking as you go does not happen, <a href=\"/features/weekly-catchup/\">Catch up on the week</a> logs the recurring chores in about 30 seconds, and <a href=\"/features/chore-time/\">Add a chore you did</a> takes entries up to 31 days back."

@@ -187,6 +187,11 @@
       "source": "/wp-login.php",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/blog/emotional-labor-in-marriage/",
+      "destination": "/blog/emotional-labor-in-relationships/",
+      "permanent": true
     }
   ]
 }

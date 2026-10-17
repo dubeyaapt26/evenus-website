@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// /mental-load-quiz/ — the couples mental-load quiz.
+// /mental-load-quiz/: the couples mental-load quiz.
 //
 // Why a tool and not another article: for "mental load quiz / test /
 // inventory" searches the pages that rank are interactive tools (Momwell's
@@ -21,7 +21,7 @@
 //
 // The questions are this site's own wording. They draw on the sociological
 // idea of cognitive labour (anticipating needs, identifying options, deciding,
-// monitoring — Daminger 2019), not on any other quiz's items.
+// monitoring; Daminger 2019), not on any other quiz's items.
 // ---------------------------------------------------------------------------
 
 export const QUIZ_PATH = '/mental-load-quiz/';
@@ -63,12 +63,12 @@ export const AREAS = [
 export const ANSWERS = ['Me', 'Mostly me', 'Both of us equally', 'Mostly my partner', 'My partner', 'Doesn’t apply to us'];
 
 const FAQ = [
-  ['What is the mental load?', 'The mental load is the noticing, planning, remembering and deciding behind running a home: knowing the milk is low, that a birthday is coming, that a form is due. It is separate from doing the task, and because it leaves no visible trace it is easy for the person carrying it to feel tired without being able to point to why.'],
-  ['How is the result worked out?', 'Each answer counts as a share of that job: “Me” is all of it, “Mostly me” three quarters, “Both of us equally” half, “Mostly my partner” a quarter and “My partner” none. Your result is the average across the questions that apply to your home, overall and for each area. “Doesn’t apply to us” is left out entirely.'],
-  ['What is a fair result?', 'Anything around 50% means the noticing and planning is roughly shared. A result well above or below that is not a verdict: one of you may have taken on more for a good reason, such as working fewer paid hours. What matters is whether you have both agreed to the arrangement, and whether it still suits you.'],
-  ['Why should my partner take it too?', 'Because the most useful part is where your two answers differ. It is common for both people to feel a job is theirs, or for one person not to know a job exists at all. Neither of you is wrong: the gap shows what is invisible, which is the thing to talk about.'],
-  ['Are my answers stored anywhere?', 'No. The quiz runs in your browser and the page keeps nothing. If you send the partner link, your answers are coded in the part of the address after the # sign, which browsers do not send to any server. Whoever has the link can see your answers, so send it only to your partner.'],
-  ['Is this a scientific test?', 'No. It is a structured way to start a conversation, not a validated psychological measure, and it does not diagnose anything. The questions draw on research into cognitive household labour, which divides it into anticipating needs, finding options, deciding and keeping an eye on how things are going.'],
+  ['What is the mental load?', 'The mental load is the noticing, planning, remembering and deciding behind running a home: knowing the milk is low, that a birthday is coming, that a form is due. Doing the task is a separate thing. Because the thinking leaves no visible trace, the person carrying it can feel worn out and not be able to say why.'],
+  ['How is the result worked out?', 'Each answer counts as a share of that job: “Me” is all of it, “Mostly me” three quarters, “Both of us equally” half, “Mostly my partner” a quarter and “My partner” none. Your result is the average of those shares across the questions that apply to your home, overall and for each area. Anything marked “Doesn’t apply to us” is left out.'],
+  ['What is a fair result?', 'Anything around 50% means the noticing and planning is roughly shared. A result well above or below that isn’t a verdict. One of you may have taken on more for a good reason, such as working fewer paid hours. The real test is whether you both agreed to it, and whether it still works for you.'],
+  ['Why should my partner take it too?', 'Because the most useful part is where your two answers differ. Often both people feel a job is theirs, or one person didn’t know the job existed. Alex might answer “Me” for the car insurance, while Sam had no idea it renews every March. Neither answer is wrong, and the gap between them is usually where the conversation starts.'],
+  ['Are my answers stored anywhere?', 'No. The quiz runs in your browser and the page keeps nothing. If you send the partner link, your answers are coded into the part of the address after the # sign, and browsers don’t send that part to any server. Anyone with the link can see your answers, so send it only to your partner.'],
+  ['Is this a scientific test?', 'No. It’s a way to start a conversation. It hasn’t been validated as a psychological measure and it doesn’t diagnose anything. The questions draw on research into cognitive household labour, which splits it into anticipating needs, finding options, deciding, and keeping an eye on how things are going.'],
 ];
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -132,33 +132,33 @@ ${header}
   <section style="max-width:1180px;margin:0 auto;padding:clamp(48px,7vw,88px) 28px 8px">
     <nav aria-label="Breadcrumb" style="font-size:12.5px;color:#686D68;margin-bottom:18px"><a href="${url('/')}" style="color:#686D68">Home</a></nav>
     <h1 style="margin:0;max-width:900px;font-size:clamp(34px,5vw,64px);line-height:1.03;letter-spacing:-.035em;font-weight:700;text-wrap:balance">The mental load quiz for couples</h1>
-    <p style="margin:22px 0 0;max-width:640px;font-size:17.5px;line-height:1.6;color:#5E645F;text-wrap:pretty">Twenty questions about who notices, plans and remembers in your home. It takes about four minutes. Then send it to your partner and see where your two answers differ, which is usually the interesting part. Nothing is stored and there is no sign-up.</p>
+    <p style="margin:22px 0 0;max-width:640px;font-size:17.5px;line-height:1.6;color:#5E645F;text-wrap:pretty">Twenty questions about who notices, plans and remembers things in your home. It takes about four minutes. Afterwards you can send it to your partner and see where your answers differ, which tends to be the interesting bit. Nothing is stored and there’s no sign-up.</p>
     <img src="${url('/img/quiz/mental-load-quiz.webp')}" width="1152" height="512" alt="Two partners at a kitchen table comparing answer cards, with a calendar, a shopping bag and a bill floating around them" style="display:block;width:100%;max-width:900px;height:auto;margin:32px 0 0;border-radius:24px" fetchpriority="high">
   </section>
 
   <section style="max-width:1180px;margin:0 auto;padding:24px 28px 8px">
     <div class="qz-wrap">
-      <div id="qz-partner" hidden style="margin:0 0 24px;padding:18px 22px;border-radius:18px;background:#E6F1ED;color:#1B1F1D;font-size:16px;line-height:1.55"><strong>Your partner has taken this quiz.</strong> Answer the same questions from your side, and you will see both of your answers next to each other. Your partner’s answers are not shown until you finish.</div>
+      <div id="qz-partner" hidden style="margin:0 0 24px;padding:18px 22px;border-radius:18px;background:#E6F1ED;color:#1B1F1D;font-size:16px;line-height:1.55"><strong>Your partner has taken this quiz.</strong> Answer the same questions from your side and you’ll see both sets of answers next to each other. You won’t see your partner’s answers until you finish.</div>
       <form id="qz" data-quiz novalidate>
         ${fieldsets}
         <button class="qz-go" type="submit">See my result</button>
         <p class="qz-err" role="alert" hidden></p>
       </form>
       <div id="qz-out" aria-live="polite" tabindex="-1"></div>
-      <noscript><p style="margin:16px 0 0;color:#4B504B">The quiz works out your result in your browser, which needs JavaScript. Every question is above, so you can still talk them through together.</p></noscript>
+      <noscript><p style="margin:16px 0 0;color:#4B504B">The quiz works out your result in your browser, and that needs JavaScript. All the questions are above, though, so you can still go through them together.</p></noscript>
     </div>
   </section>
 
   <section style="max-width:1180px;margin:0 auto;padding:16px 28px 8px">
     <div class="qz-wrap" style="font-size:16.5px;line-height:1.68;color:#4B504B">
       <h2 style="${H2}">What this quiz measures</h2>
-      <p style="${P}">Most chore lists count the doing: the washing up, the school run, the shopping. This quiz counts the part before the doing: noticing that something needs to happen, working out what to do about it, and remembering to check it got done. Researchers call it cognitive household labour, and the sociologist Allison Daminger describes it in four steps: anticipating a need, identifying the options, deciding, and monitoring the result (<em>American Sociological Review</em>, 2019).</p>
-      <p style="${P}">That part tends to collect with one person, because it is quicker for whoever already holds the information to keep holding it. It is also hard to see from the outside, which is why the two of you can honestly remember the same week differently.</p>
+      <p style="${P}">Most chore lists count the doing, like the washing up or the school run. This quiz counts what comes before it. Someone has to notice the dishwasher tablets are nearly gone, decide which ones to buy and then check they actually arrived with the shopping. Researchers call it cognitive household labour, and the sociologist Allison Daminger describes it in four steps: anticipating a need, identifying the options, deciding, and monitoring the result (<em>American Sociological Review</em>, 2019).</p>
+      <p style="${P}">That work tends to pile up with one person, because it’s quicker for whoever already has the information to keep hold of it. It’s also hard to see from outside, so two people can honestly remember the same week quite differently.</p>
       <h2 style="${H2}">How to read your result</h2>
-      <p style="${P}">Your result is the share of the noticing and planning that you feel sits with you, across the questions that apply to your home. Around 50% means it is roughly shared. A result of 70% or more means most of it runs through you at the moment; 30% or less means most of it runs through your partner.</p>
-      <p style="${P}">A number on its own is not a judgement about either of you. Plenty of couples agree an uneven split on purpose, for example when one of you works fewer paid hours. The useful questions are whether you both chose it, whether it still suits you, and whether you see it the same way. If you want the time side as well, the <a href="${url('/calculator/')}">household fairness calculator</a> adds paid work, housework and childcare, and <a href="${url('/blog/what-is-the-mental-load/')}">what the mental load is</a> explains the idea in full.</p>
+      <p style="${P}">Your result is the share of the noticing and planning that you feel sits with you, across the questions that apply to your home. Around 50% means it is roughly shared. At 70% or more, most of it runs through you at the moment. At 30% or less, most of it runs through your partner.</p>
+      <p style="${P}">The number isn’t a judgement about either of you. Plenty of couples agree an uneven split on purpose, for example when one of you works fewer paid hours. What’s worth asking is whether you both chose it and whether you’d both describe it the same way. If you want the time side as well, the <a href="${url('/calculator/')}">household fairness calculator</a> adds paid work, housework and childcare, and <a href="${url('/blog/what-is-the-mental-load/')}">what the mental load is</a> explains the idea in full.</p>
       <h2 style="${H2}">When you and your partner answer differently</h2>
-      <p style="${P}">It is very common for both partners to answer “Me” to the same job. Usually you are each holding a different part of it: one remembers the birthday, the other buys the present. Sometimes one of you did not know a job existed at all. Treat each difference as a question to ask (“what does that one involve for you?”) rather than a point to settle. <a href="${url('/blog/how-to-explain-the-mental-load-to-a-partner/')}">How to explain the mental load to a partner</a> has words for that conversation.</p>
+      <p style="${P}">It’s very common for both partners to answer “Me” to the same job. Usually you’re each holding a different piece of it. Maya remembers her nephew’s birthday is coming up, and Jordan is the one who orders the present. Sometimes one of you didn’t know a job existed at all. Treat each difference as a question to ask (“what does that one involve for you?”) rather than a point to settle. <a href="${url('/blog/how-to-explain-the-mental-load-to-a-partner/')}">How to explain the mental load to a partner</a> has words for that conversation.</p>
       <div class="qz-faq">
         <h2 style="${H2}">Questions about the quiz</h2>
         ${FAQ.map(([q, a]) => `<h3>${esc(q)}</h3><p style="${P}">${esc(a)}</p>`).join('\n        ')}
@@ -169,7 +169,7 @@ ${header}
   <section aria-labelledby="quiz-beta" style="max-width:1180px;margin:0 auto;padding:24px 28px clamp(64px,8vw,110px)">
     <div style="max-width:780px;background:#fff;border:1px solid #EDE8DC;border-radius:24px;padding:clamp(22px,4vw,36px)">
       <h2 id="quiz-beta" style="font-size:clamp(22px,2.6vw,30px);line-height:1.15;letter-spacing:-.03em;font-weight:700;color:#1B1F1D;margin:0 0 10px">See it week by week, not once</h2>
-      <p style="margin:0 0 20px;font-size:16px;line-height:1.6;color:#4B504B">The quiz is a snapshot. The EvenUS app asks each of you privately who keeps track of each area, counts that time alongside chores and money, and suggests one thing to try each week. It is in closed testing now.</p>
+      <p style="margin:0 0 20px;font-size:16px;line-height:1.6;color:#4B504B">The quiz is a one-off snapshot. The EvenUS app asks each of you privately who keeps track of each area, counts that time alongside chores and money, and suggests one thing to try each week. It is in closed testing now.</p>
       ${betaForm('quiz', { base })}
     </div>
   </section>

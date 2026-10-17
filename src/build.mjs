@@ -571,6 +571,8 @@ const MERGED = {
   'the-architecture-of-domestic-peace-in-modern-household': 'from-conflict-to-collaboration-equity-at-home',
   'the-efficiency-of-intimacy-reclaiming': 'from-conflict-to-collaboration-equity-at-home',
   'best-tools-to-track-and-share-domestic-responsibilities-fairly': 'best-chore-tracking-apps',
+  // 17 Oct 2026: same search intent ("emotional labor in marriage" vs "…in relationships").
+  'emotional-labor-in-marriage': 'emotional-labor-in-relationships',
 };
 {
   const vercel = JSON.parse(readFileSync(join(root, 'vercel.json'), 'utf8'));
@@ -1244,6 +1246,9 @@ emit('article.css', `
 .prose a { color:#2E6A5C; text-decoration:underline; text-underline-offset:2px; }
 .prose table { width:100%; border-collapse:collapse; margin:0 0 22px; display:block; overflow-x:auto; }
 .prose td, .prose th { border-bottom:1px solid #E4DFD3; padding:11px 14px 11px 0; text-align:left; vertical-align:top; }
+.prose figure.shot { margin:30px auto; max-width:300px; text-align:center; }
+.prose figure.shot img { display:block; width:100%; height:auto; border-radius:28px; border:1px solid #E4DFD3; box-shadow:0 10px 30px rgba(27,31,29,.10); }
+.prose figure.shot figcaption { margin-top:12px; font-size:14px; line-height:1.5; color:#686D68; }
 .rf-card { transition:border-color .2s; }
 .rf-card:hover { border-color:#6FB3A2 !important; }
 .rf-card:focus-visible { outline:2px solid #2E6A5C; outline-offset:2px; }
