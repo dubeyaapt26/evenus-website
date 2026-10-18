@@ -22,6 +22,7 @@
 //      <sc-for> is driven with the articles in src/posts/ instead.
 // ---------------------------------------------------------------------------
 
+import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -62,11 +63,19 @@ const url = (p) => BASE + p;
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;')
   .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
+/**
+ * Developer notes in the inline CSS stay in the source, never in the pages:
+ * every page used to carry ~3 KB of design-process comments (security audit,
+ * 19 Oct 2026). Only comments INSIDE <style> elements are removed.
+ */
+const stripStyleComments = (html) => html.replace(/(<style[^>]*>)([\s\S]*?)(<\/style>)/g,
+  (_, open, css, close) => open + css.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n\s*\n+/g, '\n') + close);
+
 const written = [];
 function emit(path, body) {
   const file = join(out, path);
   mkdirSync(dirname(file), { recursive: true });
-  writeFileSync(file, path.endsWith('.html') ? withBase(body) : body);
+  writeFileSync(file, path.endsWith('.html') ? stripStyleComments(withBase(body)) : body);
   written.push(path);
 }
 
@@ -420,7 +429,7 @@ function shell({ title, seoTitle, description, path, helmet, body, published, mo
 <meta name="robots" content="${noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'}">
 <meta property="og:site_name" content="EvenUS">
 <meta property="og:type" content="${published ? 'article' : 'website'}">
-<meta property="og:title" content="${esc(title)}">
+<meta property="og:title" content="${esc(seoTitle || title)}">
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:url" content="${ORIGIN}${path}">
 ${published ? `<meta property="article:published_time" content="${published}">` : ''}
@@ -431,10 +440,11 @@ ${modified ? `<meta property="article:modified_time" content="${modified}">` : '
 <meta property="og:image" content="${ORIGIN}${card}">
 <meta property="og:image:width" content="${(imageSize || [1200, 630])[0]}">
 <meta property="og:image:height" content="${(imageSize || [1200, 630])[1]}">
-<meta property="og:image:alt" content="${esc(imageAlt || `${title} · EvenUS`)}">
-<meta name="twitter:image:alt" content="${esc(imageAlt || `${title} · EvenUS`)}">
+<meta property="og:image:alt" content="${esc(imageAlt || fullTitle(seoTitle || title))}">
+<meta name="twitter:image:alt" content="${esc(imageAlt || fullTitle(seoTitle || title))}">
+<link rel="icon" href="${url('/favicon.ico')}" sizes="48x48">
 <link rel="icon" href="${url('/favicon.svg')}" type="image/svg+xml">
-<link rel="apple-touch-icon" href="${url('/logo.png')}">
+<link rel="apple-touch-icon" href="${url('/apple-touch-icon.png')}">
 <link rel="alternate" type="application/rss+xml" title="EvenUS" href="${url('/feed.xml')}">
 ${published ? `<meta name="author" content="Aapt Dubey">` : ''}
 ${FONT_PRELOAD.replace(/\$\{BASE\}/g, BASE)}
@@ -692,7 +702,7 @@ const FEATURES_FOR_POST = new Map();
     // ⚠️ The old title was the tagline, "A fairer share of everything", which
     // nobody searches. This names the category in the words people use for it.
     seoTitle: 'EvenUS: Fair Chore and Bill Splitting App for Couples',
-    description: 'The couples app for splitting chores, bills and the mental load fairly. EvenUS measures who has free time, splits costs by income and suggests one swap a week.',
+    description: 'The couples app for splitting chores, bills and the mental load fairly. It measures who has free time, splits costs by income and suggests one swap a week.',
     path: '/', helmet: r.helmet, body,
     jsonld: graph(ORG, APP, {
       '@type': 'WebSite', '@id': `${ORIGIN}/#website`, url: ORIGIN, name: 'EvenUS',
@@ -758,11 +768,22 @@ const PAGES = [
   ['Disclaimer.dc.html', '/disclaimer/', 'Disclaimer', 'EvenUS is not financial advice and not therapy. What that means in practice.', null],
   ['Delete Account.dc.html', '/delete-account/', 'Delete your account', 'How to delete your EvenUS account and your data. No partner approval needed.', null],
 ];
+// Search titles for the standing pages ("Privacy Policy" alone is 23 characters
+// and says nothing about whose). The visible heading and breadcrumb keep `title`.
+// The second value is the day the page's content last changed: its sitemap
+// lastmod. Bump it with the content, never on every build.
+const PAGE_SEO = {
+  '/support/': ['Help and Support for the EvenUS Couples App', '2026-10-15'],
+  '/privacy/': ['Privacy Policy for the EvenUS Couples App', '2026-10-17'],
+  '/terms/': ['Terms of Use for the EvenUS Couples App', '2026-10-15'],
+  '/disclaimer/': ['Disclaimer: EvenUS Is Not Financial Advice', '2026-08-31'],
+  '/delete-account/': ['Delete Your EvenUS Account: Steps and What Is Removed', '2026-10-15'],
+};
 for (const [file, path, title, description, transform] of PAGES) {
   const r = renderDC(design, file, {}, {}, transform);
   const body = routes(stripPrototypeHandlers(r.body));
   pageAt(path, shell({
-    title, description, path, helmet: r.helmet, body,
+    title, seoTitle: PAGE_SEO[path]?.[0], description, path, helmet: r.helmet, body,
     jsonld: graph(ORG, crumbs([{ name: 'Home', path: '/' }, { name: title, path }]), faqFrom(body)),
   }));
 }
@@ -857,7 +878,7 @@ for (const [file, path, title, description, transform] of PAGES) {
   const AUTHOR_BOX = `<aside aria-label="About the author" style="max-width:780px;margin-top:48px;padding:26px 28px;background:#fff;border:1px solid #EDE8DC;border-radius:22px">
         <div style="font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#8A8F89">About the author</div>
         <div style="font-size:18px;font-weight:700;letter-spacing:-.02em;margin-top:10px"><a href="${url('/about/')}" rel="author" style="color:#1B1F1D">Aapt Dubey</a></div>
-        <p style="margin:8px 0 0;font-size:15px;line-height:1.6;color:#5E645F">Founder of EvenUS. MBA in Marketing and Banking, married for more than ten years, based in India. Aapt started EvenUS to measure what couples usually argue about instead: who is actually carrying the money, the time and the mental load at home.</p>
+        <p style="margin:8px 0 0;font-size:15px;line-height:1.6;color:#5E645F">Founder of EvenUS. MBA in Marketing and Banking, married for more than ten years, based in India. Aapt started EvenUS to put numbers on the thing couples usually argue about: who is carrying the money, the time and the mental load at home.</p>
       </aside>`;
 
   for (const p of posts) {
@@ -893,6 +914,7 @@ ${routes(stripPrototypeHandlers(header))}
     <section style="max-width:1180px;margin:0 auto;padding:0 28px clamp(56px,7vw,96px)">
       <div class="prose" style="max-width:780px;font-size:16.5px;line-height:1.68;color:#4B504B;text-wrap:pretty">
 ${p.html}
+${p.cat === 'Money' ? `<p style="font-size:14.5px;color:#6B706A">General information, not financial advice. The <a href="${url('/disclaimer/')}">disclaimer</a> says when to talk to a professional instead.</p>` : ''}${p.cat === 'Reviews' ? `<p style="font-size:14.5px;color:#6B706A">EvenUS is our own app. We have no affiliate deals with any app on this page and earn nothing if you choose one of them. Prices change, so check the store listing before you pay.</p>` : ''}
       </div>
       ${AUTHOR_BOX}
     </section>
@@ -901,7 +923,7 @@ ${p.html}
   <section style="background:#1B1F1D;color:#F7F5EF">
     <div style="max-width:1180px;margin:0 auto;padding:clamp(56px,7vw,88px) 28px;display:flex;flex-wrap:wrap;gap:28px;align-items:center;justify-content:space-between">
       <div style="max-width:560px">
-        <h2 style="margin:0;font-size:clamp(24px,3vw,36px);line-height:1.1;letter-spacing:-.03em;font-weight:700">Reading about it is one thing. <span style="font-family:Newsreader,Georgia,serif;font-style:italic;font-weight:300;color:#8FD0BE">Measuring it</span> is another.</h2>
+        <h2 style="margin:0;font-size:clamp(24px,3vw,36px);line-height:1.1;letter-spacing:-.03em;font-weight:700">See your own numbers. <span style="font-family:Newsreader,Georgia,serif;font-style:italic;font-weight:300;color:#8FD0BE">No account needed.</span></h2>
       </div>
       <a href="${url('/')}#demo" style="display:inline-flex;align-items:center;gap:10px;background:#F7F5EF;color:#1B1F1D;font-size:14.5px;font-weight:600;padding:14px 26px;border-radius:99px">Try the calculation</a>
     </div>
@@ -1061,7 +1083,7 @@ ${footer}
         description: 'Calculates each partner\'s free hours per week, the time balance, the money balance on shared costs and the overall fairness score, with the same formula as the EvenUS app.',
       }),
   }));
-  urlsExtra.push({ loc: path, pri: '0.9' });
+  urlsExtra.push({ loc: path, pri: '0.9', lastmod: '2026-10-15' /* calculator: bump with its content */ });
 }
 
 // --- The mental load quiz ----------------------------------------------------
@@ -1098,7 +1120,7 @@ ${footer}
       },
       quizFaqLd()),
   }));
-  urlsExtra.push({ loc: path, pri: '0.9' });
+  urlsExtra.push({ loc: path, pri: '0.9', lastmod: '2026-10-17' /* quiz: bump with its content */ });
 }
 
 // --- Topic hubs -------------------------------------------------------------
@@ -1295,7 +1317,8 @@ ${routes(stripPrototypeHandlers(header))}
       <div style="max-width:820px">
         <nav aria-label="Breadcrumb" style="font-size:12.5px;color:#8A8F89;margin-bottom:18px"><a href="${url('/')}" style="color:#8A8F89">Home</a> · About</nav>
         <h1 style="margin:0;font-size:clamp(30px,4.4vw,54px);line-height:1.06;letter-spacing:-.035em;font-weight:700;text-wrap:balance">About EvenUS and its founder, Aapt Dubey</h1>
-        <p style="margin:22px 0 0;max-width:640px;font-size:17.5px;line-height:1.6;color:#5E645F;text-wrap:pretty"><strong style="color:#1B1F1D;font-weight:600">EvenUS is a couples app that measures how fairly money, time and mental load are shared at home, then suggests one task to swap each week. It was founded in India by Aapt Dubey, who writes the articles on this site.</strong></p>
+        <p style="margin:22px 0 0;max-width:640px;font-size:17.5px;line-height:1.6;color:#5E645F;text-wrap:pretty"><strong style="color:#1B1F1D;font-weight:600">EvenUS is a couples app for iPhone and Android that measures how fairly money, time and mental load are shared at home, then suggests one task to swap each week. It was founded in India by Aapt Dubey, who writes the articles on this site.</strong></p>
+        <p style="margin:14px 0 0;max-width:640px;font-size:16px;line-height:1.6;color:#5E645F;text-wrap:pretty">It is in closed testing and not yet on the App Store or Google Play. The first 7 days are free with no card. After that it is $9.99 a month or $79.99 a year (US dollar reference prices), and one subscription covers both partners.</p>
       </div>
     </section>
     <section style="max-width:1180px;margin:0 auto;padding:0 28px clamp(56px,7vw,96px)">
@@ -1320,7 +1343,7 @@ ${routes(stripPrototypeHandlers(header))}
         <p style="${P}">It does not connect to a bank. It never shows one partner a score for the other person. Weekly check-in answers are private. It has no streaks, badges, leaderboards or features for nudging your partner. Those are decisions, not gaps: a fairness app that becomes a scorekeeping app makes the problem worse.</p>
 
         <h2 style="${H2}">How the writing on this site is made</h2>
-        <p style="${P}">Articles are written or reviewed by Aapt Dubey. They are general information about relationships and household money, not financial, legal or therapeutic advice; the <a href="${url('/disclaimer/')}">disclaimer</a> says when EvenUS is the wrong tool. Similar older articles have been merged so that each question has one answer. If you spot something wrong, write to <a href="mailto:support@evenus.app">support@evenus.app</a> and it will be corrected.</p>
+        <p style="${P}">Articles are written or reviewed by Aapt Dubey. They are general information about relationships and household money, not financial, legal or therapeutic advice; the <a href="${url('/disclaimer/')}">disclaimer</a> says when EvenUS is the wrong tool. Research named in an article links to the original paper or book. Similar older articles have been merged so that each question has one answer. If you spot something wrong, write to <a href="mailto:support@evenus.app">support@evenus.app</a> and it will be corrected.</p>
 
         <h2 style="${H2}">Start with these</h2>
         <ul style="margin:0 0 18px;padding-left:20px">
@@ -1516,10 +1539,10 @@ ${routes(stripPrototypeHandlers(footer))}
 })('static');
 
 const urls = [
-  { loc: '/', pri: '1.0' }, { loc: '/blog/', pri: '0.9' }, { loc: '/support/', pri: '0.7' },
-  { loc: '/privacy/', pri: '0.4' }, { loc: '/terms/', pri: '0.4' },
-  { loc: '/disclaimer/', pri: '0.3' }, { loc: '/delete-account/', pri: '0.5' },
-  { loc: '/about/', pri: '0.8' },
+  { loc: '/', pri: '1.0' }, { loc: '/blog/', pri: '0.9' }, { loc: '/support/', pri: '0.7', lastmod: PAGE_SEO['/support/'][1] },
+  { loc: '/privacy/', pri: '0.4', lastmod: PAGE_SEO['/privacy/'][1] }, { loc: '/terms/', pri: '0.4', lastmod: PAGE_SEO['/terms/'][1] },
+  { loc: '/disclaimer/', pri: '0.3', lastmod: PAGE_SEO['/disclaimer/'][1] }, { loc: '/delete-account/', pri: '0.5', lastmod: PAGE_SEO['/delete-account/'][1] },
+  { loc: '/about/', pri: '0.8', lastmod: '2026-10-19' },
   ...urlsExtra,
   ...posts.map((p) => ({ loc: p.path, pri: '0.7', lastmod: p.updated || p.iso, image: p.hero?.jpg })),
 ];
@@ -1598,6 +1621,8 @@ ${p.updated || p.iso ? `<pubDate>${rfc(p.updated || p.iso)}</pubDate>` : ''}
   emit('llms.txt', `# EvenUS
 
 > A mobile app for couples that measures how fairly money, time and mental load are shared in a household, then suggests one specific task to swap each week.
+
+EvenUS is made by its founder, Aapt Dubey, based in India, who also writes the articles on this site. It runs on iPhone and Android.
 
 EvenUS measures discretionary time: the hours left in each partner's week once sleep, paid work, commuting and household work are subtracted. Money is measured on a separate axis and hours are never converted into currency. The mental load (planning and remembering) is counted as hours inside the time figure, once both partners have answered a short private set of questions.
 
@@ -1687,6 +1712,27 @@ for (const p of posts) {
   }
   if (broken.size) throw new Error('broken internal links:\n  ' + [...broken].slice(0, 20).join('\n  '));
   console.log('  ✅ every internal link resolves');
+}
+
+// Every inline <script> the pages run must be allowed by the Content-Security-
+// Policy in vercel.json, by its sha256. Change a script (even its whitespace)
+// without updating the hash and the browser silently blocks it on the live
+// site; this turns that into a failed build instead.
+{
+  const csp = (JSON.parse(readFileSync(join(root, 'vercel.json'), 'utf8')).headers || [])
+    .flatMap((h) => h.headers).find((h) => h.key === 'Content-Security-Policy')?.value || '';
+  const missing = new Map();
+  for (const rel of written.filter((r) => r.endsWith('.html'))) {
+    const html = readFileSync(join(out, rel), 'utf8');
+    for (const [, attrs, body] of html.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/g)) {
+      if (/src=|application\/ld\+json/.test(attrs) || !body.trim()) continue;
+      const h = `'sha256-${createHash('sha256').update(body).digest('base64')}'`;
+      if (!csp.includes(h)) missing.set(h, rel);
+    }
+    if (/\son[a-z]+="/.test(html)) missing.set('inline event handler (on*=)', rel);
+  }
+  if (missing.size) throw new Error('vercel.json Content-Security-Policy does not allow:\n  ' + [...missing].map(([h, f]) => `${h}  (first seen in ${f})`).join('\n  '));
+  console.log('  ✅ every inline script is allowed by the Content-Security-Policy');
 }
 
 console.log(`  ${written.length} files -> dist/`);

@@ -119,6 +119,7 @@ export const SEO_TITLES = {
  * it wants one.
  */
 export function fullTitle(title, max = 60) {
+  if (/\bEvenUS\b/.test(title)) return title;
   const withBrand = `${title} · EvenUS`;
   return withBrand.length <= max ? withBrand : title;
 }

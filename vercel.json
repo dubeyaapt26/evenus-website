@@ -36,6 +36,10 @@
       "source": "/(.*)",
       "headers": [
         {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'none'; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; script-src 'self' https://www.googletagmanager.com 'sha256-bPKmkLwr/DEseXxvunjaG4t7K66jYmaoG5x5ftQQ764=' 'sha256-LjrC1AVG0KskKSfjCUUMQNWpT+FWDHDpipwwrq9JbRQ=' 'sha256-LmNDjpzPKunbczFP7TM0YVle1dTIYalHkQUjnc6fSP4='; style-src 'self' 'unsafe-inline'; img-src 'self' https://*.google-analytics.com https://*.googletagmanager.com; font-src 'self'; connect-src 'self' https://us-central1-evenus-be315.cloudfunctions.net https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; manifest-src 'self'; upgrade-insecure-requests"
+        },
+        {
           "key": "X-Content-Type-Options",
           "value": "nosniff"
         },
@@ -48,12 +52,16 @@
           "value": "DENY"
         },
         {
-          "key": "Permissions-Policy",
-          "value": "geolocation=(), camera=(), microphone=()"
-        },
-        {
           "key": "Strict-Transport-Security",
           "value": "max-age=31536000; includeSubDomains"
+        },
+        {
+          "key": "Cross-Origin-Opener-Policy",
+          "value": "same-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "accelerometer=(), autoplay=(), browsing-topics=(), camera=(), display-capture=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), usb=()"
         }
       ]
     },
@@ -109,6 +117,16 @@
   ],
   "redirects": [
     {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)/index.html",
+      "destination": "/$1/",
+      "permanent": true
+    },
+    {
       "source": "/blog/the-architecture-of-domestic-peace/",
       "destination": "/blog/from-conflict-to-collaboration-equity-at-home/",
       "permanent": true
@@ -129,11 +147,6 @@
       "permanent": true
     },
     {
-      "source": "/feed",
-      "destination": "/feed.xml",
-      "permanent": true
-    },
-    {
       "source": "/feed/",
       "destination": "/feed.xml",
       "permanent": true
@@ -149,37 +162,37 @@
       "permanent": true
     },
     {
-      "source": "/author/:name*",
+      "source": "/author/(.*)",
       "destination": "/about/",
       "permanent": true
     },
     {
-      "source": "/category/:name*",
+      "source": "/category/(.*)",
       "destination": "/blog/",
       "permanent": true
     },
     {
-      "source": "/tag/:name*",
+      "source": "/tag/(.*)",
       "destination": "/blog/",
       "permanent": true
     },
     {
-      "source": "/blog/page/:n*",
+      "source": "/blog/page/(.*)",
       "destination": "/blog/",
       "permanent": true
     },
     {
-      "source": "/page/:n*",
+      "source": "/page/(.*)",
       "destination": "/blog/",
       "permanent": true
     },
     {
-      "source": "/:year(\\d{4})/:rest*",
+      "source": "/(\\d{4})/(.*)",
       "destination": "/blog/",
       "permanent": true
     },
     {
-      "source": "/wp-admin/:path*",
+      "source": "/wp-admin/(.*)",
       "destination": "/",
       "permanent": true
     },

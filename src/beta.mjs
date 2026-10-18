@@ -27,7 +27,7 @@ export function betaForm(source, opts = {}) {
   const base = opts.base || '';
   const id = `beta${++n}`;
   const center = opts.align === 'center';
-  return `<form class="beta" data-beta data-source="${source}" action="${BETA_ENDPOINT}" method="post" novalidate style="${center ? 'margin:0 auto;' : ''}">
+  return `<form class="beta" data-beta data-source="${source}" action="" data-endpoint="${BETA_ENDPOINT}" method="post" novalidate style="${center ? 'margin:0 auto;' : ''}">
       <div class="beta-row">
         <label class="beta-sr" for="${id}-email">Email address</label>
         <input id="${id}-email" class="beta-email" type="email" name="email" required autocomplete="email" inputmode="email" maxlength="254" placeholder="you@example.com">
