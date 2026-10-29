@@ -263,6 +263,29 @@ function faqFrom(html) {
   return pairs.length ? { '@type': 'FAQPage', mainEntity: pairs } : null;
 }
 
+/**
+ * Articles end with a "Common questions" section: <h2>Common questions</h2>,
+ * then <h3> question / <p> answer pairs. Each pair is visible on the page, so
+ * it is also offered as FAQPage schema (the pages that rank for comparison
+ * searches do this; checked 29 Oct 2026). Only that section is read, and only
+ * the first paragraph after each question, so the schema never says more
+ * than the page shows.
+ */
+function faqFromHeadings(html) {
+  const start = html.search(/<h2[^>]*>\s*Common questions\s*<\/h2>/i);
+  if (start === -1) return null;
+  const rest = html.slice(start);
+  const end = rest.slice(1).search(/<h2[^>]*>/);
+  const section = end === -1 ? rest : rest.slice(0, end + 1);
+  const strip = (x) => x.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+  const pairs = [];
+  for (const m of section.matchAll(/<h3[^>]*>([\s\S]*?)<\/h3>\s*<p>([\s\S]*?)<\/p>/g)) {
+    const q = strip(m[1]), a = strip(m[2]);
+    if (q && a) pairs.push({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } });
+  }
+  return pairs.length ? { '@type': 'FAQPage', mainEntity: pairs } : null;
+}
+
 const graph = (...nodes) => ld({ '@context': 'https://schema.org', '@graph': nodes.filter(Boolean) });
 
 const crumbs = (items) => ({
@@ -947,7 +970,7 @@ ${routes(stripPrototypeHandlers(footer))}
       description: p.excerpt, path: p.path,
       helmet: chrome.helmet, body, published: p.iso || undefined,
       image: p.hero ? p.hero.jpg : `/topic-${catSlug(p.cat)}.png`,
-      jsonld: graph(ORG,
+      jsonld: graph(ORG, faqFromHeadings(p.html),
         crumbs([
           { name: 'Home', path: '/' },
           { name: 'Blog', path: '/blog/' },
@@ -1267,6 +1290,7 @@ emit('article.css', `
 .prose blockquote p:last-child { margin-bottom:0; }
 .prose a { color:#2E6A5C; text-decoration:underline; text-underline-offset:2px; }
 .prose table { width:100%; border-collapse:collapse; margin:0 0 22px; display:block; overflow-x:auto; }
+@media (max-width:640px) { .prose table { font-size:14px; } .prose th, .prose td { padding:8px 10px; } }
 .prose td, .prose th { border-bottom:1px solid #E4DFD3; padding:11px 14px 11px 0; text-align:left; vertical-align:top; }
 .prose figure.shot { margin:30px auto; max-width:300px; text-align:center; }
 .prose figure.shot img { display:block; width:100%; height:auto; border-radius:28px; border:1px solid #E4DFD3; box-shadow:0 10px 30px rgba(27,31,29,.10); }
