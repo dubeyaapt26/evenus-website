@@ -937,6 +937,11 @@ ${routes(stripPrototypeHandlers(header))}
     <section style="max-width:1180px;margin:0 auto;padding:0 28px clamp(56px,7vw,96px)">
       <div class="prose" style="max-width:780px;font-size:16.5px;line-height:1.68;color:#4B504B;text-wrap:pretty">
 ${p.html}
+${p.cat === 'Reviews' ? `<div style="margin:36px 0 8px;padding:24px 26px;background:#fff;border:1px solid #EDE8DC;border-radius:22px">
+  <p style="margin:0 0 6px;font-weight:600;color:#1B1F1D">Want to try EvenUS with your partner?</p>
+  <p style="margin:0 0 16px;font-size:15px;color:#5E645F">It is in closed testing on iPhone and Android. Leave an email and we will send you both an invite. The first 7 days are free, with no card.</p>
+  ${betaForm('blog', { base: BASE })}
+</div>` : ''}
 ${p.cat === 'Money' ? `<p style="font-size:14.5px;color:#6B706A">General information, not financial advice. The <a href="${url('/disclaimer/')}">disclaimer</a> says when to talk to a professional instead.</p>` : ''}${p.cat === 'Reviews' ? `<p style="font-size:14.5px;color:#6B706A">EvenUS is our own app. We have no affiliate deals with any app on this page and earn nothing if you choose one of them. Prices change, so check the store listing before you pay.</p>` : ''}
       </div>
       ${AUTHOR_BOX}
