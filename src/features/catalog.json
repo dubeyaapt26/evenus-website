@@ -204,7 +204,7 @@
    "tips": [
     "A payment between you two squares the split. It isn’t counted as household spending. The money part of the household balance reads what is still to even up, never who paid this week, so evening up brings it back to even.",
     "If the full history can’t be read, for example offline, the card shows “Try again” instead of a partial figure.",
-    "With End up with the same, the month’s levelling between your incomes has its own line below, Levelling for the month. It counts the days that month you had that split and were both in the household, from the day someone joined, or someone left, is never added to the amount to even up, and “Record levelling” marks it paid. What was left of an earlier month stays on as “Still open from” that month until it is recorded."
+    "With End up with the same, the month’s leveling between your incomes has its own line below, Levelling for the month. It counts the days that month you had that split and were both in the household, from the day someone joined, or someone left, is never added to the amount to even up, and “Record levelling” marks it paid. What was left of an earlier month stays on as “Still open from” that month until it is recorded."
    ],
    "partnerSees": "You both see the same card and the same amount. The buttons appear only on the sending phone; the other phone notes that it’s recorded from the sending side.",
    "countryNotes": null,
@@ -443,7 +443,7 @@
     "If the due day is the 31st, shorter months use their last day.",
     "“Stop tracking this bill” takes it off the list. The expenses it already added stay."
    ],
-   "partnerSees": "You both see every bill, whose account it leaves, who keeps an eye on it and the expenses it adds. The summary states the count plainly, with no judgement attached.",
+   "partnerSees": "You both see every bill, whose account it leaves, who keeps an eye on it and the expenses it adds. The summary states the count plainly, with no judgment attached.",
    "countryNotes": null,
    "where": "Money → Regular bills",
    "whereParts": [
@@ -1818,14 +1818,14 @@
    "whoFor": "For couples who want to look back over the year together. Nothing is ranked and nobody is put first.",
    "steps": [
     "Open Insights, then “Your year”.",
-    "Read the totals: each of you in your own colour, with the total together underneath.",
+    "Read the totals: each of you in your own color, with the total together underneath.",
     "To share, go to “Share an image”, choose whether to include the money, and tap “Share this image”."
    ],
    "tips": [
     "The image shows totals together only: never one of you set against the other, never the balance, and no money unless you switch it on.",
     "Planning and remembering is counted once you have both answered the planning questions."
    ],
-   "partnerSees": "The same year, in the same order and colours. Nothing leaves the app unless one of you chooses to share the image.",
+   "partnerSees": "The same year, in the same order and colors. Nothing leaves the app unless one of you chooses to share the image.",
    "countryNotes": null,
    "where": "Insights → Your year",
    "whereParts": [
@@ -2050,7 +2050,7 @@
     "warranty"
    ],
    "title": "Document renewals",
-   "oneLiner": "Expiry reminders for passports, visas, driving licences, insurance, car MOT or PUC, and warranties.",
+   "oneLiner": "Expiry reminders for passports, visas, driving licenses, insurance, car MOT or PUC, and warranties.",
    "whoFor": "For households with papers that take weeks to renew. Notice arrives three months, one month and one week before the expiry date.",
    "steps": [
     "Open Us, then Household → Reminders and dates, and tap “Add a reminder”.",
@@ -2240,7 +2240,7 @@
    "oneLiner": "Type or say one line, like “groceries 30” or “dishes 20 min”, and EvenUS turns it into an expense, a chore or a reminder for you to check.",
    "whoFor": "For the moment you’ve just paid, cleaned or remembered something and don’t want to open a form. It works with your keyboard’s mic too.",
    "steps": [
-    "Open This week and tap the typing box under the headline, the one with a grey example of something to add. That box is Tell EvenUS. It’s on Money and Chores too.",
+    "Open This week and tap the typing box under the headline, the one with a gray example of something to add. That box is Tell EvenUS. It’s on Money and Chores too.",
     "Type a line, or tap the mic on your keyboard and say it: “bought groceries for 30”, “cleaned the bathroom yesterday”, “remind me to book the dentist Friday”.",
     "Tap the arrow to check it. A sheet shows what EvenUS understood, and asks you to check anything it filled in for you.",
     "Change what needs changing, or tap Edit details for the full form, then tap Save. Nothing is saved before that."
@@ -2250,7 +2250,7 @@
     "“Add milk and eggs to the list” puts both on the shopping list, and “passport expires 12 March 2028” sets reminders ahead of the date.",
     "With the field empty, the receipt button beside it scans a receipt instead."
    ],
-   "partnerSees": "Your partner sees what you save, the same as if you’d used the form, and hears about it the way they chose in their own settings. They never see what you typed or said, or anything you cancelled.",
+   "partnerSees": "Your partner sees what you save, the same as if you’d used the form, and hears about it the way they chose in their own settings. They never see what you typed or said, or anything you canceled.",
    "countryNotes": "It understands Hindi and Hinglish as well as English: “grocery ke liye 300 diye”, “kal doodh lana yaad dilana”, or Devanagari like “किराने पर 300 रुपये”, with hazaar and lakh. It also understands everyday Spanish, French, German and Portuguese, like “pagué 40 en el súper”, “j’ai payé 25 € de courses”, “erinnere mich morgen an den Müll” or “paguei 50 no mercado”. Every amount is recorded in your household’s currency; if a line names another currency, the sheet asks you to check the amount.",
    "where": "This week → Tell EvenUS",
    "whereParts": [
@@ -2402,7 +2402,7 @@
     "For a long file, choose a shorter date range from your bank. The check for things already added covers about six months at a time."
    ],
    "partnerSees": "The expenses you add, like any others, and one line in the activity feed for the import, not a notice for each. They never see the file or the rows you left unticked.",
-   "countryNotes": "Recognises downloads from Chase, Bank of America, Wells Fargo, Amex and Capital One in the US; Barclays, HSBC, Monzo and Revolut in the UK; N26 and German banks; CommBank, ANZ and Westpac in Australia; RBC and TD in Canada; HDFC, ICICI, SBI, Axis and Kotak in India, along with the layout most other Indian banks use (Narration, Withdrawal and Deposit columns, amounts in lakhs). Indian banks often give an Excel (XLS) file: open it and save it as CSV first, and the account details above the table and the summary below it are skipped. Other banks’ CSV files usually read too, including ones with separate withdrawal and deposit columns. Dates follow the bank’s format, then your phone’s region. Payments in a currency other than your household’s are listed but not added. PDF statements can’t be read.",
+   "countryNotes": "Recognizes downloads from Chase, Bank of America, Wells Fargo, Amex and Capital One in the US; Barclays, HSBC, Monzo and Revolut in the UK; N26 and German banks; CommBank, ANZ and Westpac in Australia; RBC and TD in Canada; HDFC, ICICI, SBI, Axis and Kotak in India, along with the layout most other Indian banks use (Narration, Withdrawal and Deposit columns, amounts in lakhs). Indian banks often give an Excel (XLS) file: open it and save it as CSV first, and the account details above the table and the summary below it are skipped. Other banks’ CSV files usually read too, including ones with separate withdrawal and deposit columns. Dates follow the bank’s format, then your phone’s region. Payments in a currency other than your household’s are listed but not added. PDF statements can’t be read.",
    "where": "Money → Track → Import a bank statement",
    "whereParts": [
     "Money",
@@ -2845,7 +2845,7 @@
    ],
    "tips": [
     "System follows your phone: light by day, and dark when your phone is.",
-    "Colours are checked for easy reading in both looks."
+    "Colors are checked for easy reading in both looks."
    ],
    "partnerSees": "Nothing. Appearance is set on this phone only, and your partner’s phone keeps its own setting.",
    "countryNotes": null,
@@ -3086,7 +3086,7 @@
    ],
    "tips": [
     "The free week runs in the app with no card, so nothing is charged when it ends. Subscribing during the free week ends the free days, and billing starts that day.",
-    "Cancelling happens in your App Store or Google Play account. Deleting the app doesn’t cancel a subscription.",
+    "Canceling happens in your App Store or Google Play account. Deleting the app doesn’t cancel a subscription.",
     "Whoever pays, one subscription covers both of you."
    ],
    "partnerSees": "Your partner sees the same status, because one subscription covers the household. They never see your store account or how you paid.",

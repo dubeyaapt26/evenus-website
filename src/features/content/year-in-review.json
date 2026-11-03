@@ -4,7 +4,7 @@
   "seoTitle": "Year in Review for Couples: Your Year in EvenUS",
   "description": "Look back over the year together: housework, care, planning, money shared, ideas tried and notes, with nobody ranked. Plus an optional image to share.",
   "updated": "2026-10-15",
-  "answer": "Your year is the year in review in EvenUS. It shows how a couple shared the home over the year so far: hours of housework, care for the children, planning and remembering, money shared, ideas tried and notes written. Both partners appear side by side in their own colours, with the total together underneath. Nothing is ranked, and an optional image shares totals only.",
+  "answer": "Your year is the year in review in EvenUS. It shows how a couple shared the home over the year so far: hours of housework, care for the children, planning and remembering, money shared, ideas tried and notes written. Both partners appear side by side in their own colors, with the total together underneath. Nothing is ranked, and an optional image shares totals only.",
   "what": {
     "h2": "What does Your year show?",
     "html": "<p><strong>It gathers every week you have both logged this year into one calm look back, with neither of you set against the other.</strong> Over a year, the useful question changes: not who did what on Tuesday, but what the shape of your household was, and whether it moved.</p><p>The screen opens with how many weeks you tracked together, then a card for each part of home life: Housework, Looking after the children (if you have children in the household), Planning and remembering, Money shared, How the balance moved, Ideas you tried and Notes between you. Each person card shows both of you in household order, never sorted by who has the larger figure, with the total together beneath.</p><p>It closes with one line about the two of you, not a verdict. If the <a href=\"/features/fairness-score/\">household balance</a> (the fairness score) came closer over the year, it says so. If some weeks were heavier, it says that too, gently.</p>"
@@ -23,7 +23,7 @@
       },
       {
         "name": "Read the totals",
-        "text": "Each card shows each of you in your own colour, with the total together underneath. Planning and remembering appears once you have both answered the planning questions."
+        "text": "Each card shows each of you in your own color, with the total together underneath. Planning and remembering appears once you have both answered the planning questions."
       },
       {
         "name": "Look at how the balance moved",
@@ -41,7 +41,7 @@
   },
   "partner": {
     "h2": "What does your partner see?",
-    "html": "<p><strong>Your partner sees the same year, in the same order and the same colours.</strong> Neither of you gets a version that puts you first. The money card shows household spending you split, not either person’s income or personal spending.</p><p>Nothing leaves the app unless one of you chooses to share the image, which is deliberately smaller than the screen: totals together only, never one of you against the other, never the household balance, and no money unless the person sharing switches it on.</p>"
+    "html": "<p><strong>Your partner sees the same year, in the same order and the same colors.</strong> Neither of you gets a version that puts you first. The money card shows household spending you split, not either person’s income or personal spending.</p><p>Nothing leaves the app unless one of you chooses to share the image, which is deliberately smaller than the screen: totals together only, never one of you against the other, never the household balance, and no money unless the person sharing switches it on.</p>"
   },
   "tips": {
     "h2": "Tips for looking back together",

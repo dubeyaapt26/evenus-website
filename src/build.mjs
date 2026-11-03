@@ -189,7 +189,7 @@ const AUTHOR = {
     name: 'MBA in Marketing and Banking',
   },
   knowsAbout: [
-    'Mental load', 'Division of household labour', 'Couples finances',
+    'Mental load', 'Division of household labor', 'Couples finances',
     'Income-proportional bill splitting', 'Household budgeting', 'Marketing', 'Banking',
   ],
   sameAs: ['https://www.linkedin.com/in/aaptdubey/'],
@@ -1003,9 +1003,9 @@ ${routes(stripPrototypeHandlers(footer))}
             about: {
               '@type': 'DefinedTerm',
               name: 'Mental load',
-              alternateName: ['Cognitive labour', 'Invisible labour', 'Cognitive labor'],
+              alternateName: ['Cognitive labor', 'Invisible labor', 'Cognitive labour', 'Invisible labour'],
               description: 'The work of running a household in your head: anticipating what needs doing, deciding how and when, and monitoring whether it happened. Distinct from the physical execution of household tasks.',
-              inDefinedTermSet: { '@type': 'DefinedTermSet', name: 'Household labour' },
+              inDefinedTermSet: { '@type': 'DefinedTermSet', name: 'Household labor' },
             },
           } : {}),
           mainEntityOfPage: { '@type': 'WebPage', '@id': ORIGIN + p.path },

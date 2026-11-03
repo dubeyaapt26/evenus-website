@@ -45,7 +45,7 @@
   },
   "partner": {
     "h2": "What does your partner see?",
-    "html": "<p><strong>You both see every bill, whose account it leaves, who keeps an eye on it and the expenses it adds.</strong> When one of you keeps an eye on most of the bills, the summary says so as a plain count, for example “Sam keeps an eye on 7 of your 9 regular bills.” It carries no judgement, and it does not appear when the work is spread fairly evenly.</p><p>A bill paid by one of you just for themselves follows <a href=\"/features/personal-spending-privacy/\">Hide my personal spending detail</a>: with detail hidden, your partner sees “A personal bill” instead of its name, and its name, account and split stay as you set them.</p>"
+    "html": "<p><strong>You both see every bill, whose account it leaves, who keeps an eye on it and the expenses it adds.</strong> When one of you keeps an eye on most of the bills, the summary says so as a plain count, for example “Sam keeps an eye on 7 of your 9 regular bills.” It carries no judgment, and it does not appear when the work is spread fairly evenly.</p><p>A bill paid by one of you just for themselves follows <a href=\"/features/personal-spending-privacy/\">Hide my personal spending detail</a>: with detail hidden, your partner sees “A personal bill” instead of its name, and its name, account and split stay as you set them.</p>"
   },
   "tips": {
     "h2": "Tips for keeping bills accurate",

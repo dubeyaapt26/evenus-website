@@ -52,7 +52,7 @@
   "extra": [
     {
       "h2": "Why don’t budgets turn red or show who spent what?",
-      "html": "<p>Because a budget in EvenUS describes the household’s month, not anyone’s behaviour. A red bar and a name beside it turns a plan into a verdict, and a verdict about groceries is rarely the conversation a couple wants. So the bar stays in the app’s calm colours up to the amount, changes to a darker shade past it, and says something like “over by 20”. The money is the household’s, so the figure is too. If you want to see who paid for what, that is on each expense, where it belongs.</p>"
+      "html": "<p>Because a budget in EvenUS describes the household’s month, not anyone’s behavior. A red bar and a name beside it turns a plan into a verdict, and a verdict about groceries is rarely the conversation a couple wants. So the bar stays in the app’s calm colors up to the amount, changes to a darker shade past it, and says something like “over by 20”. The money is the household’s, so the figure is too. If you want to see who paid for what, that is on each expense, where it belongs.</p>"
     }
   ],
   "faqs": [
@@ -70,7 +70,7 @@
     },
     {
       "q": "What happens when we go over a budget?",
-      "a": "The bar changes to a darker shade and says how far over in plain words. It does not turn red, nothing is labelled as overspending, and no notification is sent beyond the optional 80% note."
+      "a": "The bar changes to a darker shade and says how far over in plain words. It does not turn red, nothing is labeled as overspending, and no notification is sent beyond the optional 80% note."
     },
     {
       "q": "Are budgets part of EvenUS Pro?",
