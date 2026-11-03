@@ -7,7 +7,7 @@
   "answer": "Childcare in EvenUS is where a couple sets up daycare, a nanny, a babysitter, an after-school club or a camp once. Its cost becomes a regular bill, shared the way each child’s costs are, and drop-off and pick-up become chores on the days the children go. Whoever does a run gets the credit, whatever their relationship to the child.",
   "what": {
     "h2": "What does Childcare do?",
-    "html": "<p><strong>It turns one childcare arrangement into the two things it really is for a couple: a regular cost and a regular set of runs.</strong> Childcare is often the largest bill a young family has, and the drop-offs and pick-ups around it shape both of your working days.</p><p>When you add a provider, EvenUS posts its cost as a <a href=\"/features/regular-bills/\">regular bill</a> in the Childcare category, on the day of the month it is paid. Each time it is due it is recorded as an expense, split the way those children’s costs are set under <a href=\"/features/children/\">Children</a>. Drop-off and pick-up become ordinary chores on <a href=\"/features/chores-effort/\">Effort</a>, scheduled on the days the children go, with the minutes each run takes.</p><p>The time either of you logs for these runs counts in full for you and takes the place of your own share of the background care estimate, never on top of it.</p>"
+    "html": "<p><strong>It turns one childcare arrangement into the two things it really is for a couple: a regular cost and a regular set of runs.</strong> Childcare is often the largest bill a young family has, and the drop-offs and pick-ups around it shape both of your working days.</p><p>When you add a provider, EvenUS posts its cost as a <a href=\"/features/regular-bills/\">regular bill</a> in the Childcare category, on the day of the month it is paid. Each time it is due it is recorded as an expense, split the way those children’s costs are set under <a href=\"/features/children/\">Children</a>. Drop-off and pick-up become ordinary chores on <a href=\"/features/chores-effort/\">Chores</a>, scheduled on the days the children go, with the minutes each run takes.</p><p>The time either of you logs for these runs counts in full for you and takes the place of your own share of the background care estimate, never on top of it.</p>"
   },
   "who": {
     "h2": "Who is Childcare for?",
@@ -41,7 +41,7 @@
   },
   "partner": {
     "h2": "What does your partner see?",
-    "html": "<p><strong>Your partner sees the childcare, its regular bill, and the drop-off and pick-up chores on Effort.</strong> The runs show who usually does each one, and either of you can tick a run off when you do it.</p><p>After the last day, or when you tap “Stop this childcare”, its regular bill and its drop-off and pick-up chores stop. Past expenses and logs stay, so the weeks you used it still count as they were.</p>"
+    "html": "<p><strong>Your partner sees the childcare, its regular bill, and the drop-off and pick-up chores on Chores.</strong> The runs show who usually does each one, and either of you can tick a run off when you do it.</p><p>After the last day, or when you tap “Stop this childcare”, its regular bill and its drop-off and pick-up chores stop. Past expenses and logs stay, so the weeks you used it still count as they were.</p>"
   },
   "tips": {
     "h2": "Tips for sharing childcare",
@@ -56,7 +56,7 @@
   "extra": [
     {
       "h2": "How do the cost and the runs work out? An example",
-      "html": "<p>Alex and Sam send their daughter Ida to Little Acorns daycare on Monday, Wednesday and Friday, at $1,200 a month paid by Alex on the 1st. Ida’s costs are shared like other costs, which for them means by income: Alex 60%, Sam 40%.</p><p>Each month the bill posts as an expense paid by Alex, with Sam’s share of $480 feeding the <a href=\"/features/settle-up/\">Even up</a> card. Sam usually does drop-off and Alex pick-up, so six runs a week appear on Effort. When Alex covers a Wednesday drop-off, Alex ticks it off and those minutes count for Alex.</p>"
+      "html": "<p>Alex and Sam send their daughter Ida to Little Acorns daycare on Monday, Wednesday and Friday, at $1,200 a month paid by Alex on the 1st. Ida’s costs are shared like other costs, which for them means by income: Alex 60%, Sam 40%.</p><p>Each month the bill posts as an expense paid by Alex, with Sam’s share of $480 feeding the <a href=\"/features/settle-up/\">Even up</a> card. Sam usually does drop-off and Alex pick-up, so six runs a week appear on Chores. When Alex covers a Wednesday drop-off, Alex ticks it off and those minutes count for Alex.</p>"
     }
   ],
   "faqs": [
@@ -66,7 +66,7 @@
     },
     {
       "q": "Does the school run count as work in EvenUS?",
-      "a": "Yes. Drop-off and pick-up are childcare chores on Effort. The time you log counts in full for you and takes the place of your own share of the background care estimate, so it is never counted twice."
+      "a": "Yes. Drop-off and pick-up are childcare chores on Chores. The time you log counts in full for you and takes the place of your own share of the background care estimate, so it is never counted twice."
     },
     {
       "q": "What happens when childcare ends?",

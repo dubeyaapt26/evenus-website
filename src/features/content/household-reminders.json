@@ -7,7 +7,7 @@
   "answer": "Reminders in EvenUS hold the household's dates and small jobs: birthdays, anniversaries, events and to-dos. Either of you adds one and chooses who it is for: you, your partner or both of you. Every reminder is on both partners’ lists, but only the person it is for gets a notification, and the notice never says who set it. Each of you can mute a reminder just for yourself.",
   "what": {
     "h2": "What do Reminders do in EvenUS?",
-    "html": "<p><strong>They let the app carry the remembering, so neither of you has to hold the household's dates in your head.</strong> That remembering is a large part of <a href=\"/blog/what-is-the-mental-load/\">the mental load</a>.</p><p>A reminder is a shared object, not a message from a person. A notification reads \"Mum's birthday is in a week\", never \"Alex reminded you\".</p><p>Each type starts with sensible settings. Birthdays and anniversaries repeat every year and remind both of you a week before and on the day. An event reminds both of you an hour before. A to-do is for you, on the day. You can change any of these before saving.</p>"
+    "html": "<p><strong>They let the app carry the remembering, so neither of you has to hold the household's dates in your head.</strong> That remembering is a large part of <a href=\"/blog/what-is-the-mental-load/\">the mental load</a>.</p><p>A reminder is a shared object, not a message from a person. A notification reads \"Mom's birthday is in a week\", never \"Alex reminded you\".</p><p>Each type starts with sensible settings. Birthdays and anniversaries repeat every year and remind both of you a week before and on the day. An event reminds both of you an hour before. A to-do is for you, on the day. You can change any of these before saving.</p>"
   },
   "who": {
     "h2": "Who are Reminders for?",
@@ -23,7 +23,7 @@
       },
       {
         "name": "Pick the type",
-        "text": "Tap “Add a reminder” and pick Birthday, Anniversary, Event or To-do, then give it a name such as \"Mum's birthday\" or \"Book the boiler service\"."
+        "text": "Tap “Add a reminder” and pick Birthday, Anniversary, Event or To-do, then give it a name such as \"Mom's birthday\" or \"Book the boiler service\"."
       },
       {
         "name": "Set the date and who it is for",
@@ -35,7 +35,7 @@
       },
       {
         "name": "Save it",
-        "text": "Tap “Add reminder”. It appears under Today, This week or Later, labelled with who it is for."
+        "text": "Tap “Add reminder”. It appears under Today, This week or Later, labeled with who it is for."
       }
     ]
   },
@@ -49,7 +49,7 @@
       "Press and hold a reminder, or tap its … button, for Edit, “Add to calendar”, “Mute for me” and Delete. “Mute for me” shows on reminders that include you, and a to-do also has Done.",
       "Nothing here is ever late. An open to-do from an earlier day stays on the list under Today. Once a one-off reminder's day has gone, it moves to Past reminders, where you can open, change or delete it.",
       "While you are <a href=\"/features/away-mode/\">Away</a>, reminder notices pause for you. The reminders stay on the list.",
-      "Type a date straight into <a href=\"/features/quick-add/\">Tell EvenUS</a>, like \"Mum's birthday on 14 November\", and check the draft before saving.",
+      "Type a date straight into <a href=\"/features/quick-add/\">Tell EvenUS</a>, like \"Mom's birthday on 14 November\", and check the draft before saving.",
       "Want birthdays in the calendar you already use? See <a href=\"/features/calendar-export/\">Add to calendar</a>."
     ]
   },

@@ -15,11 +15,11 @@
   },
   "steps": {
     "h2": "How do you plan an occasion in EvenUS?",
-    "intro": "Open Effort, then Hosting, tap “Plan an occasion”, fill in the basics, tap “Create the plan”, then share out the tasks and add the menu.",
+    "intro": "Open Chores, then Hosting, tap “Plan an occasion”, fill in the basics, tap “Create the plan”, then share out the tasks and add the menu.",
     "items": [
       {
         "name": "Start a plan",
-        "text": "Open the Effort tab, then Hosting, and tap “Plan an occasion”."
+        "text": "Open the Chores tab, then Hosting, and tap “Plan an occasion”."
       },
       {
         "name": "Fill in the basics",
@@ -51,7 +51,7 @@
     "h2": "Tips for hosting together",
     "items": [
       "Every task and menu item from the template can be changed or removed. Trim it to what your household actually does.",
-      "Hand over whole parts rather than single jobs: one of you takes the food from menu to shop to cooking, the other the house and the guests. <a href=\"/blog/sharing-cognitive-labor/\">Sharing cognitive labour</a> explains why.",
+      "Hand over whole parts rather than single jobs: one of you takes the food from menu to shop to cooking, the other the house and the guests. <a href=\"/blog/sharing-cognitive-labor/\">Sharing cognitive labor</a> explains why.",
       "Put the planning on the list too, such as “Plan the menu” and “Send the invitations”. They are real work and count once done.",
       "A shop made only of this plan’s menu items is tagged to the plan when you tap Done shopping, so the budget includes it."
     ]
@@ -69,7 +69,7 @@
     },
     {
       "q": "Do hosting tasks count toward the household balance?",
-      "a": "Yes. Each task is a one-off chore, so when it is marked Done with the time you put in, it counts as household work for whoever did it, exactly like any other chore in Effort."
+      "a": "Yes. Each task is a one-off chore, so when it is marked Done with the time you put in, it counts as household work for whoever did it, exactly like any other chore in Chores."
     },
     {
       "q": "Does the hosting budget include personal spending?",

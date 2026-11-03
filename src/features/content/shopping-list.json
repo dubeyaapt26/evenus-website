@@ -15,11 +15,11 @@
   },
   "steps": {
     "h2": "How do you use the Shopping list?",
-    "intro": "Open the Effort tab, tap “Shopping list”, add items, tick them off in the shop, then tap “Done shopping”, enter the total and check the expense.",
+    "intro": "Open the Chores tab, tap “Shopping list”, add items, tick them off in the shop, then tap “Done shopping”, enter the total and check the expense.",
     "items": [
       {
         "name": "Open the list",
-        "text": "Open the Effort tab and tap “Shopping list”."
+        "text": "Open the Chores tab and tap “Shopping list”."
       },
       {
         "name": "Add what you need",
@@ -55,7 +55,7 @@
   "extra": [
     {
       "h2": "Why does nothing on the list count?",
-      "html": "<p>Noticing that the milk is running low is a small piece of the <a href=\"/blog/what-is-the-mental-load/\">mental load</a>, and it is tempting to score it. EvenUS deliberately does not. Counting who added items would reward typing fast and turn a shared list into something to compete over.</p><p>The work behind the shopping is counted elsewhere. Keeping track of what is running low is the Groceries area in <a href=\"/features/mental-load-map/\">Who keeps track of what</a>, and the time spent doing the shop can be logged as a chore in Effort. The money is the expense. The list just holds the items.</p>"
+      "html": "<p>Noticing that the milk is running low is a small piece of the <a href=\"/blog/what-is-the-mental-load/\">mental load</a>, and it is tempting to score it. EvenUS deliberately does not. Counting who added items would reward typing fast and turn a shared list into something to compete over.</p><p>The work behind the shopping is counted elsewhere. Keeping track of what is running low is the Groceries area in <a href=\"/features/mental-load-map/\">Who keeps track of what</a>, and the time spent doing the shop can be logged as a chore in Chores. The money is the expense. The list just holds the items.</p>"
     }
   ],
   "faqs": [

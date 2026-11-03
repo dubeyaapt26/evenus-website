@@ -7,7 +7,7 @@
   "answer": "Add a chore you did is how EvenUS records the real time housework took. You pick the chore, choose the day and put in when you started and finished, up to 31 days back. You can also run a timer while you work. The entry lands in the week you did it, and only logged minutes count towards the household balance, never the estimate.",
   "what": {
     "h2": "What does Add a chore you did do?",
-    "html": "<p><strong>It lets you record housework with the time it really took, including the jobs you finished and forgot to tick off.</strong> You clean the oven on Saturday, mean to log it, and by Wednesday it has slipped your mind. Without a way to add it later, that work would quietly disappear from the week.</p><p>The Effort tab has “Add a chore you did” for exactly this. You choose the chore, or describe something that is not on the list, pick the day and enter a start and finish time. The entry goes into the week it was done in, even if that week has already closed, and the <a href=\"/features/fairness-score/\">household balance</a> for that week is worked out again.</p><p>For the chore you are about to start, a timer does the remembering. Long press a chore’s circle on the Effort tab, do the job, and tap Done on the banner when you finish.</p>"
+    "html": "<p><strong>It lets you record housework with the time it really took, including the jobs you finished and forgot to tick off.</strong> You clean the oven on Saturday, mean to log it, and by Wednesday it has slipped your mind. Without a way to add it later, that work would quietly disappear from the week.</p><p>The Chores tab has “Add a chore you did” for exactly this. You choose the chore, or describe something that is not on the list, pick the day and enter a start and finish time. The entry goes into the week it was done in, even if that week has already closed, and the <a href=\"/features/fairness-score/\">household balance</a> for that week is worked out again.</p><p>For the chore you are about to start, a timer does the remembering. Long press a chore’s circle on the Chores tab, do the job, and tap Done on the banner when you finish.</p>"
   },
   "who": {
     "h2": "Who is Add a chore you did for?",
@@ -15,11 +15,11 @@
   },
   "steps": {
     "h2": "How do you add a chore you already did?",
-    "intro": "On the Effort tab, tap “Add a chore you did”, pick the chore, tap “Next: the time”, enter the day and times, and tap “Save”.",
+    "intro": "On the Chores tab, tap “Add a chore you did”, pick the chore, tap “Next: the time”, enter the day and times, and tap “Save”.",
     "items": [
       {
         "name": "Open the form",
-        "text": "Open the Effort tab and tap “Add a chore you did”."
+        "text": "Open the Chores tab and tap “Add a chore you did”."
       },
       {
         "name": "Choose what you did",
@@ -42,7 +42,7 @@
   "tips": {
     "h2": "Tips for recording chore time",
     "items": [
-      "On the Effort tab, long press a chore’s circle to start a timer. Tap Done on the banner when you finish. Cancel asks first, then “Stop without saving” throws the time away.",
+      "On the Chores tab, long press a chore’s circle to start a timer. Tap Done on the banner when you finish. Cancel asks first, then “Stop without saving” throws the time away.",
       "<a href=\"/features/quick-add/\">Tell EvenUS</a>, Siri and the watch understand lines like “did the dishes 20 min yesterday 7pm”. The minutes end at the time you said.",
       "Use “Something else” for one-off jobs like clearing the loft. It is added once and leaves the list on its own.",
       "One entry can be up to 16 hours. For a longer stretch, such as a whole day of moving house, add it as two entries.",

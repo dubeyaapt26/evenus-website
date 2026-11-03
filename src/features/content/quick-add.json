@@ -19,7 +19,7 @@
     "items": [
       {
         "name": "Open the field",
-        "text": "Open This week and tap the typing box under the headline, the one with a grey example of something to add. That box is Tell EvenUS. On any tab, the round + button in the middle of the tab bar opens it as well: tap Type it, or Speak."
+        "text": "Open This week and tap the typing box under the headline, the one with a gray example of something to add. That box is Tell EvenUS. On any tab, the round + button in the middle of the tab bar opens it as well: tap Type it, or Speak."
       },
       {
         "name": "Type or say one line",
@@ -66,7 +66,7 @@
     },
     {
       "q": "Can my partner see what I typed into Tell EvenUS?",
-      "a": "No. Your partner sees only the expense, chore or reminder you save, the same as one made with the form. The words you typed or said, and any draft you cancelled, stay with you."
+      "a": "No. Your partner sees only the expense, chore or reminder you save, the same as one made with the form. The words you typed or said, and any draft you canceled, stay with you."
     },
     {
       "q": "Can I use Siri or my voice with Tell EvenUS?",

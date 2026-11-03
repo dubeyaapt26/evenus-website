@@ -37,7 +37,7 @@
   },
   "partner": {
     "h2": "What does your partner see?",
-    "html": "<p><strong>Nothing changes for your partner.</strong> The file is made and shared from your phone, nothing is uploaded to EvenUS or anywhere else, and your partner is not told that you exported anything.</p><p>The file never says who set a reminder: there is no organiser, no attendee and no author in it, only the date, the title and any note. Each entry carries the reminder’s note, in its description, so if you share the file with someone else, they will see the notes too. It is worth a look before you send it anywhere. Exporting one reminder at a time keeps the file to exactly what you mean to send.</p>"
+    "html": "<p><strong>Nothing changes for your partner.</strong> The file is made and shared from your phone, nothing is uploaded to EvenUS or anywhere else, and your partner is not told that you exported anything.</p><p>The file never says who set a reminder: there is no organizer, no attendee and no author in it, only the date, the title and any note. Each entry carries the reminder’s note, in its description, so if you share the file with someone else, they will see the notes too. It is worth a look before you send it anywhere. Exporting one reminder at a time keeps the file to exactly what you mean to send.</p>"
   },
   "tips": {
     "h2": "Tips for calendar export",

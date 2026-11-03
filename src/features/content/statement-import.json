@@ -54,7 +54,7 @@
   },
   "country": {
     "h2": "Which banks and countries does statement import support?",
-    "html": "<p><strong>It recognises downloads from most large banks in the US, UK, Europe, Australia, Canada and India, and usually reads other banks’ CSV files too.</strong> That includes Chase, Bank of America, Wells Fargo, Amex and Capital One; Barclays, HSBC, Monzo and Revolut; N26 and German banks; CommBank, ANZ and Westpac; RBC and TD; and HDFC, ICICI, SBI, Axis and Kotak, along with the layout most other Indian banks use, with Narration, Withdrawal and Deposit columns and amounts in lakhs.</p><p>Indian banks often give an Excel (XLS) file: open it and save it as CSV first. Dates follow the bank’s format, then your phone’s region. Payments in a currency other than your household’s are listed but not added, and PDF statements can’t be read.</p>"
+    "html": "<p><strong>It recognizes downloads from most large banks in the US, UK, Europe, Australia, Canada and India, and usually reads other banks’ CSV files too.</strong> That includes Chase, Bank of America, Wells Fargo, Amex and Capital One; Barclays, HSBC, Monzo and Revolut; N26 and German banks; CommBank, ANZ and Westpac; RBC and TD; and HDFC, ICICI, SBI, Axis and Kotak, along with the layout most other Indian banks use, with Narration, Withdrawal and Deposit columns and amounts in lakhs.</p><p>Indian banks often give an Excel (XLS) file: open it and save it as CSV first. Dates follow the bank’s format, then your phone’s region. Payments in a currency other than your household’s are listed but not added, and PDF statements can’t be read.</p>"
   },
   "extra": [
     {

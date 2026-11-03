@@ -1,13 +1,13 @@
 {
   "id": "subscription",
-  "h1": "Subscription: your free week, EvenUS Pro, restoring and cancelling",
-  "seoTitle": "EvenUS Subscription: Free Week, Pro and Cancelling",
+  "h1": "Subscription: your free week, EvenUS Pro, restoring and canceling",
+  "seoTitle": "EvenUS Subscription: Free Week, Pro and Canceling",
   "description": "See how many free days are left, when EvenUS Pro renews, how to restore a purchase or cancel, and why one subscription covers both of you.",
   "updated": "2026-10-15",
   "answer": "Subscription is the screen in EvenUS that shows where your household stands: days left in the 7-day free week, your plan and when EvenUS Pro renews or ends, or a plan from the EvenUS team. From it you can see the monthly and yearly plans, restore a purchase, or open your App Store or Google Play account to change plan or cancel. One subscription covers both partners.",
   "what": {
     "h2": "What does the Subscription screen show?",
-    "html": "<p><strong>It puts your household’s plan, and every action you can take on it, in one place.</strong> Which phone bought it, when it renews, whether cancelling the app cancels the payment: the screen answers those in plain words.</p><p>At the top is the status. During the free week it reads “Your free week”, with the days left and “No card was taken, so nothing is charged when it ends.” With EvenUS Pro it names your plan and price, such as “Your plan: Yearly, $79.99/year.”, then “Renews on” a date, or “Ends on” a date if renewal is off, and which store it was bought through. When a free week or subscription has ended, it adds “Everything you recorded is still here, and still yours.”</p><p>Under the status sit three buttons: “See plans”, “Restore purchases” and “Manage subscription”.</p>"
+    "html": "<p><strong>It puts your household’s plan, and every action you can take on it, in one place.</strong> Which phone bought it, when it renews, whether canceling the app cancels the payment: the screen answers those in plain words.</p><p>At the top is the status. During the free week it reads “Your free week”, with the days left and “No card was taken, so nothing is charged when it ends.” With EvenUS Pro it names your plan and price, such as “Your plan: Yearly, $79.99/year.”, then “Renews on” a date, or “Ends on” a date if renewal is off, and which store it was bought through. When a free week or subscription has ended, it adds “Everything you recorded is still here, and still yours.”</p><p>Under the status sit three buttons: “See plans”, “Restore purchases” and “Manage subscription”.</p>"
   },
   "who": {
     "h2": "Who is the Subscription screen for?",
@@ -48,7 +48,7 @@
     "items": [
       "The free week runs inside the app with no card, so nothing is charged when it ends. <a href=\"/features/trial-tips/\">Tips during your free week</a> can show you the useful parts while it lasts.",
       "Subscribing during the free week ends the free days, and billing starts that day. The paywall says so: “Your free days end when you subscribe.”",
-      "Cancelling happens in your App Store or Google Play account. Deleting the app does not cancel a subscription, and neither does <a href=\"/features/delete-account/\">deleting your account</a>.",
+      "Canceling happens in your App Store or Google Play account. Deleting the app does not cancel a subscription, and neither does <a href=\"/features/delete-account/\">deleting your account</a>.",
       "Purchase from another phone missing? Tap “Restore purchases”, then if needed use <a href=\"/features/help-feedback/\">Help and feedback</a> and choose “Billing or subscription”."
     ]
   },
