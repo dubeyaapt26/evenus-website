@@ -35,7 +35,7 @@
       },
       {
         "name": "Tap Done on the reminder",
-        "text": "When the reminder arrives, tap its “Done” button. It opens that chore’s time sheet, so you can save the time in one tap. Nothing is saved until you tap Save there."
+        "text": "When the reminder arrives, tap its “Done” button. It opens that chore’s “Done, about N min” sheet, so you can save the time in one tap. Nothing is saved until you tap Save there."
       }
     ]
   },
@@ -48,7 +48,7 @@
     "items": [
       "Leave the days blank and it only comes up when the chore is actually about due. Setting days narrows it down further, it never adds extra reminders.",
       "Nothing arrives after 9:30 pm or before 8 am, so pick a time in your waking day, such as 7:30 pm for the bins. On Android, a reminder can come a few minutes late while the phone is saving battery.",
-      "The reminder has a Done button. It opens the chore’s time sheet, and nothing is saved until you tap Save there. If you would rather leave it for later, just swipe the reminder away.",
+      "The reminder has a Done button. It opens the chore’s “Done” sheet, and nothing is saved until you tap Save there. If you would rather leave it for later, just swipe the reminder away.",
       "A chore needs an owner first. Reminders live on the chore, not on either of you, so handing a chore over moves the reminder with it.",
       "For dates rather than chores, such as birthdays or a passport renewal, use <a href=\"/features/household-reminders/\">household reminders</a> instead."
     ]
@@ -78,7 +78,7 @@
     },
     {
       "q": "What does the Done button on a chore reminder do?",
-      "a": "It opens the time sheet for that chore, so you can log it without hunting for it in the app. Nothing is saved until you check the minutes and tap Save, and the reminder never says who set it."
+      "a": "It opens the “Done” sheet for that chore, so you can log it without hunting for it in the app. Nothing is saved until you check the minutes and tap Save, and the reminder never says who set it."
     }
   ],
   "relatedPosts": [
