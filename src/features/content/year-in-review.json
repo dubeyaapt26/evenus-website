@@ -15,11 +15,11 @@
   },
   "steps": {
     "h2": "How do you open and share Your year?",
-    "intro": "Open Insights, tap “Your year”, read down the cards, and use “Share an image” at the bottom if you want to share totals.",
+    "intro": "Open Fairness, tap “Your year”, read down the cards, and use “Share an image” at the bottom if you want to share totals.",
     "items": [
       {
         "name": "Open Your year",
-        "text": "Open the Insights tab, then tap “Your year”. Use the switch at the top to choose this year or last year."
+        "text": "Open the Fairness tab, then tap “Your year”. Use the switch at the top to choose this year or last year."
       },
       {
         "name": "Read the totals",

@@ -67,7 +67,7 @@
     },
     {
       "h2": "What do the Time and money weights change?",
-      "html": "<p>The overall score blends your time balance and your money balance; this setting picks the blend, with 60/40 as the default. Insights shows it under “How the number is made”, for example “Time 60%, money 40%.” Hours are never turned into money.</p>"
+      "html": "<p>The overall score blends your time balance and your money balance; this setting picks the blend, with 60/40 as the default. Fairness shows it under “How the number is made”, for example “Time 60%, money 40%.” Hours are never turned into money.</p>"
     }
   ],
   "faqs": [

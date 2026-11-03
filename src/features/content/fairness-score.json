@@ -15,11 +15,11 @@
   },
   "steps": {
     "h2": "How do you read the household balance?",
-    "intro": "Open Insights, pick Week or Month, and read the cards under the number.",
+    "intro": "Open Fairness, pick Week or Month, and read the cards under the number.",
     "items": [
       {
-        "name": "Open Insights",
-        "text": "Open the Insights tab and pick Week or Month at the top. The household balance sits in a ring, out of 100."
+        "name": "Open Fairness",
+        "text": "Open the Fairness tab and pick Week or Month at the top. The household balance sits in a ring, out of 100."
       },
       {
         "name": "Check the working",

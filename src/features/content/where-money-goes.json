@@ -15,11 +15,11 @@
   },
   "steps": {
     "h2": "How do you use Where the money goes?",
-    "intro": "Open Insights, tap Money, and read down from each share of what you earn together to what’s left over.",
+    "intro": "Open Fairness, tap Money, and read down from each share of what you earn together to what’s left over.",
     "items": [
       {
         "name": "Open the screen",
-        "text": "Open the Insights tab and tap Money."
+        "text": "Open the Fairness tab and tap Money."
       },
       {
         "name": "Read the sum",

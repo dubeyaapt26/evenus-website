@@ -15,11 +15,11 @@
   },
   "steps": {
     "h2": "How do you use Seen differently?",
-    "intro": "Both answer “Who keeps track of what” on your own phones, then open Insights, then “Where your readings differ”.",
+    "intro": "Both answer “Who keeps track of what” on your own phones, then open Fairness, then “Where your readings differ”.",
     "items": [
       {
         "name": "Answer the questions",
-        "text": "Open Insights, then “Who keeps track of what”, and answer the questions, from Just me to Just your partner, We pay someone or Doesn't apply to us. Your partner does the same on their phone."
+        "text": "Open Fairness, then “Who keeps track of what”, and answer the questions, from Just me to Just your partner, We pay someone or Doesn't apply to us. Your partner does the same on their phone."
       },
       {
         "name": "Wait for both answers",
@@ -27,7 +27,7 @@
       },
       {
         "name": "Open the comparison",
-        "text": "Once you have both finished, open Insights, then “Where your readings differ”."
+        "text": "Once you have both finished, open Fairness, then “Where your readings differ”."
       },
       {
         "name": "Read it together",

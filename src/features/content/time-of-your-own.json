@@ -3,7 +3,7 @@
   "h1": "Time of your own: the hours each of you has left in a week",
   "seoTitle": "Free Time for Couples: Time of Your Own in EvenUS",
   "description": "See the hours each of you has left in a week once sleep, paid work, travel, housework and the children are counted. The sum is shown line by line.",
-  "updated": "2026-10-15",
+  "updated": "2026-11-03",
   "answer": "Time of your own is the EvenUS view of free time. It starts from the 168 hours in a week, takes away sleep, eating and washing, paid work, travel, the household work each of you logged, looking after children, the planning you hold and any busy calendar time, and shows what is left for each of you, in real clock hours, line by line.",
   "what": {
     "h2": "What does Time of your own do?",
@@ -15,11 +15,11 @@
   },
   "steps": {
     "h2": "How do you use Time of your own?",
-    "intro": "Look at Time of your own, this week on the This week tab, or open Insights, then Time, and tap “How this is worked out” to see the sum.",
+    "intro": "Open Fairness, where Time of your own, this week is at the top, or open Fairness, then Time, and tap “How this is worked out” to see the sum.",
     "items": [
       {
         "name": "Find the figure",
-        "text": "On the This week tab, look at the Time of your own, this week card. For the full view, open Insights, then Time."
+        "text": "Open Fairness: Time of your own, this week is at the top. For the full view, open Fairness, then Time."
       },
       {
         "name": "Read the sum",
