@@ -31,7 +31,7 @@
       },
       {
         "name": "Mark it if a court set it",
-        "text": "Tick “A court set this amount” if a court set it. Court-ordered amounts sit fixed, like rent."
+        "text": "Check “A court set this amount” if a court set it. Court-ordered amounts sit fixed, like rent."
       },
       {
         "name": "Save it",

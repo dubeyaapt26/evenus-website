@@ -41,7 +41,7 @@
   },
   "partner": {
     "h2": "What does your partner see?",
-    "html": "<p><strong>Your partner sees the same pets and the same chores.</strong> Vet and vaccination reminders go to both of you, the day before and on the day, so neither of you has to be the one who remembers. Costs land in the Pets budget like any other expense and are split the way your shared costs usually are.</p><p>Either of you can tick a pet chore off when you do it, and the minutes count for whoever did it.</p>"
+    "html": "<p><strong>Your partner sees the same pets and the same chores.</strong> Vet and vaccination reminders go to both of you, the day before and on the day, so neither of you has to be the one who remembers. Costs land in the Pets budget like any other expense and are split the way your shared costs usually are.</p><p>Either of you can check a pet chore off when you do it, and the minutes count for whoever did it.</p>"
   },
   "tips": {
     "h2": "Tips for sharing pet care",
@@ -62,7 +62,7 @@
   "faqs": [
     {
       "q": "Can we share dog walks as a couple in EvenUS?",
-      "a": "Yes. Add the walk under What they need and choose a person or Either of you. It becomes an ordinary chore on Chores, and whoever does a walk ticks it off and gets the minutes."
+      "a": "Yes. Add the walk under What they need and choose a person or Either of you. It becomes an ordinary chore on Chores, and whoever does a walk checks it off and gets the minutes."
     },
     {
       "q": "Does EvenUS remind us about vet appointments?",

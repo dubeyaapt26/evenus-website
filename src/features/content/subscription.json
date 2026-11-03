@@ -55,7 +55,7 @@
   "extra": [
     {
       "h2": "What keeps working if you do not subscribe?",
-      "html": "<p>Your records stay yours. When the free week ends without a subscription, or a subscription lapses, you can still read everything recorded, add expenses and tick chores off, <a href=\"/features/data-export/\">export all your data</a>, and manage or delete your account.</p><p>What Pro adds after the free week: the weekly read on how the week was shared (the <a href=\"/features/fairness-score/\">household balance</a>), one idea each week, Seen differently, the private check-in, the Sunday talk and the year in review. Subscribing later switches them back on with your history intact. The free week belongs to each person and starts once; a new household or partner never begins another.</p>"
+      "html": "<p>Your records stay yours. When the free week ends without a subscription, or a subscription lapses, you can still read everything recorded, add expenses and check chores off, <a href=\"/features/data-export/\">export all your data</a>, and manage or delete your account.</p><p>What Pro adds after the free week: the weekly read on how the week was shared (the <a href=\"/features/fairness-score/\">household balance</a>), one idea each week, Seen differently, the private check-in, the Sunday talk and the year in review. Subscribing later switches them back on with your history intact. The free week belongs to each person and starts once; a new household or partner never begins another.</p>"
     }
   ],
   "faqs": [

@@ -289,7 +289,7 @@
         var picked = form.querySelector('input[name=platform]:checked');
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { say('err', 'Please enter a full email address.'); form.elements.email.focus(); return; }
         if (!picked) { say('err', 'Which phone do you use? Pick one so we send the right invite.'); return; }
-        if (!form.elements.consent.checked) { say('err', 'Tick the box so we may email you the invite.'); return; }
+        if (!form.elements.consent.checked) { say('err', 'Check the box so we may email you the invite.'); return; }
         go.disabled = true;
         say('', 'Sending…');
         fetch(form.getAttribute('data-endpoint'), {

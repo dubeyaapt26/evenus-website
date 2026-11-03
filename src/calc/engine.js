@@ -564,7 +564,7 @@
       suggestion = ahead + ", take Thursday's dinner and dishes. It's about two hours and closes most of the gap without touching the weekend.";
     } else {
       headline = ahead + ' has ' + gap + ' more free hours.';
-      suggestion = ahead + ', take over the weekly shop and meal planning. That is the piece ' + behind +
+      suggestion = ahead + ', take over the weekly grocery run and meal planning. That is the piece ' + behind +
         ' is carrying invisibly, and it is worth roughly half this gap.';
     }
     var timeLine = r.timePending ? 'Time balance: waiting' : 'Time balance ' + r.timeBalance;

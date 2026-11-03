@@ -55,7 +55,7 @@
   "extra": [
     {
       "h2": "What exactly does EvenUS hand to the UPI app?",
-      "html": "<p>A standard UPI payment request, the same kind a shop’s QR code produces. It holds your partner’s UPI ID, their name, the amount in rupees, the currency, and the note “EvenUS settle up”. It holds nothing about you, your bank or your shared expenses. Your UPI app shows who you are paying and how much, and asks for your PIN. EvenUS is not part of the payment, which is why it asks you afterwards rather than claiming to know.</p>"
+      "html": "<p>A standard UPI payment request, the same kind a store’s QR code produces. It holds your partner’s UPI ID, their name, the amount in rupees, the currency, and the note “EvenUS settle up”. It holds nothing about you, your bank or your shared expenses. Your UPI app shows who you are paying and how much, and asks for your PIN. EvenUS is not part of the payment, which is why it asks you afterwards rather than claiming to know.</p>"
     }
   ],
   "faqs": [

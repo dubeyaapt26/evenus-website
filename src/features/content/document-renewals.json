@@ -4,14 +4,14 @@
   "seoTitle": "Passport and Visa Expiry Reminders for Couples",
   "description": "Get notice three months, one month and one week before a passport, visa, license, insurance or warranty expires. No document numbers are ever stored.",
   "updated": "2026-10-15",
-  "answer": "Document renewals in EvenUS are expiry reminders for the household's papers: passports, visas, driving licenses, insurance, car MOT or PUC, and warranties. You enter whose document it is and the date it expires, and EvenUS sends notice three months, one month and one week before. It never stores the document number, because the expiry date is all a reminder needs.",
+  "answer": "Document renewals in EvenUS are expiry reminders for the household's papers: passports, visas, driving licenses, insurance, car inspection or PUC, and warranties. You enter whose document it is and the date it expires, and EvenUS sends notice three months, one month and one week before. It never stores the document number, because the expiry date is all a reminder needs.",
   "what": {
     "h2": "What do document renewals do?",
-    "html": "<p><strong>They give you enough warning to renew a document before it becomes urgent.</strong> A passport or a visa can take weeks to renew, and the expiry date is usually printed somewhere nobody looks until a trip is booked. Often one person keeps all of these dates in their head, the admin described in <a href=\"/blog/the-one-who-books-everything/\">the one who books everything</a>.</p><p>A document reminder is a <a href=\"/features/household-reminders/\">reminder</a> of the Document type, with longer notice built in. Instead of an hour or a day ahead, it starts three months out, so there is time to find the forms, book an appointment and wait for the post.</p><p>A notification reads \"Sam's passport expires in a month\", with the expiry date underneath. It names the document, never who added the reminder.</p>"
+    "html": "<p><strong>They give you enough warning to renew a document before it becomes urgent.</strong> A passport or a visa can take weeks to renew, and the expiry date is usually printed somewhere nobody looks until a trip is booked. Often one person keeps all of these dates in their head, the admin described in <a href=\"/blog/the-one-who-books-everything/\">the one who books everything</a>.</p><p>A document reminder is a <a href=\"/features/household-reminders/\">reminder</a> of the Document type, with longer notice built in. Instead of an hour or a day ahead, it starts three months out, so there is time to find the forms, book an appointment and wait for the mail.</p><p>A notification reads \"Sam's passport expires in a month\", with the expiry date underneath. It names the document, never who added the reminder.</p>"
   },
   "who": {
     "h2": "Who are document renewals for?",
-    "html": "<p>Households with papers that take time to sort out: couples who travel, partners on a visa, families renewing children's passports, and anyone with a car that needs its MOT or PUC certificate each year.</p>"
+    "html": "<p>Households with papers that take time to sort out: couples who travel, partners on a visa, families renewing children's passports, and anyone with a car that needs its inspection or PUC certificate each year.</p>"
   },
   "steps": {
     "h2": "How do you add a document renewal in EvenUS?",
@@ -23,7 +23,7 @@
       },
       {
         "name": "Pick Document and the type",
-        "text": "Pick Document. Under Which document choose Passport, Visa, Driving license, Insurance, Car MOT / PUC, Warranty or Other."
+        "text": "Pick Document. Under Which document choose Passport, Visa, Driving license, Insurance, Car inspection / PUC, Warranty or Other."
       },
       {
         "name": "Say whose it is",
@@ -62,7 +62,7 @@
   "faqs": [
     {
       "q": "How far ahead does EvenUS remind me before a passport expires?",
-      "a": "By default, three months, one month and one week before the expiry date. You can untick any of these or add a notice on the day itself. Left as All day, each notice arrives at 9:00 am in your household's time zone."
+      "a": "By default, three months, one month and one week before the expiry date. You can uncheck any of these or add a notice on the day itself. Left as All day, each notice arrives at 9:00 am in your household's time zone."
     },
     {
       "q": "Can I add my child's passport?",
