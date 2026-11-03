@@ -7,7 +7,7 @@
   "answer": "Who keeps track of what is the EvenUS mental load map. Each partner privately answers a few questions about who holds each area of home life in their head, from meal planning to school admin. Neither of you sees the other’s answers until you have both finished. Then both phones show who holds each area, where you see it differently, and the planning hours count as time.",
   "what": {
     "h2": "What does Who keeps track of what do?",
-    "html": "<p><strong>It counts the planning and remembering in your home, the part of the work that never shows up on a chore list.</strong> Booking the dentist takes four minutes. Being the person who remembers the dentist exists, notices it has been a year and knows which day works, runs quietly all year.</p><p>So instead of logging moments, EvenUS asks who holds each recurring area: meal planning, groceries, money admin, gifts and occasions, school admin and about ten more. Each card says what the area covers, so nobody is guessing.</p><p>Each area carries an estimated number of hours a week. Once you have both answered, those hours are added to the time figure in the <a href=\"/features/fairness-score/\">household balance</a>, alongside the housework you log in <a href=\"/features/chores-effort/\">Effort</a>.</p>"
+    "html": "<p><strong>It counts the planning and remembering in your home, the part of the work that never shows up on a chore list.</strong> Booking the dentist takes four minutes. Being the person who remembers the dentist exists, notices it has been a year and knows which day works, runs quietly all year.</p><p>So instead of logging moments, EvenUS asks who holds each recurring area: meal planning, groceries, money admin, gifts and occasions, school admin and about ten more. Each card says what the area covers, so nobody is guessing.</p><p>Each area carries an estimated number of hours a week. Once you have both answered, those hours are added to the time figure in the <a href=\"/features/fairness-score/\">household balance</a>, alongside the housework you log in <a href=\"/features/chores-effort/\">Chores</a>.</p>"
   },
   "who": {
     "h2": "Who is Who keeps track of what for?",
@@ -15,11 +15,11 @@
   },
   "steps": {
     "h2": "How do you answer the questions?",
-    "intro": "Open the Effort tab, tap “Answer the questions” under Planning and remembering, then tap “Start” and pick the answer that feels true on each card.",
+    "intro": "Open the Chores tab, tap “Answer the questions” under Planning and remembering, then tap “Start” and pick the answer that feels true on each card.",
     "items": [
       {
         "name": "Open the questions",
-        "text": "Open the Effort tab and, under Planning and remembering, tap “Answer the questions”. Once you have answered, the button reads “Answer again or compare”. They are also under Us, then Household → Who keeps track of what."
+        "text": "Open the Chores tab and, under Planning and remembering, tap “Answer the questions”. Once you have answered, the button reads “Answer again or compare”. They are also under Us, then Household → Who keeps track of what."
       },
       {
         "name": "Start",

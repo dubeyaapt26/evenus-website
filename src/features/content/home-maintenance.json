@@ -7,7 +7,7 @@
   "answer": "Home maintenance in EvenUS is a checklist of the jobs a home needs now and then, such as testing smoke alarms, changing filters and clearing gutters. It follows your kind of home, whether you own or rent, and your hemisphere. Each job you keep becomes an ordinary chore with its month and an owner, so it turns up when it comes round and stays quiet the rest of the year.",
   "what": {
     "h2": "What does Home maintenance do?",
-    "html": "<p><strong>It puts the occasional jobs a home needs onto your shared chores, in the right month, so they stop relying on one person’s memory.</strong> Weekly chores get noticed because the bin is full. The yearly ones are different: nobody sees a dryer vent filling with lint, and the smoke alarm battery is a surprise every year.</p><p>Home maintenance starts from a built-in checklist chosen by your answers. A house gets gutters, a garden tidy and a roof check; an apartment does not. Owners see the water heater, the AC service and the chimney; renters see a yearly reminder to note anything to raise with the landlord.</p><p>Every job you add becomes an ordinary chore in <a href=\"/features/chores-effort/\">Effort</a>, with its month, an owner and an estimate.</p>"
+    "html": "<p><strong>It puts the occasional jobs a home needs onto your shared chores, in the right month, so they stop relying on one person’s memory.</strong> Weekly chores get noticed because the bin is full. The yearly ones are different: nobody sees a dryer vent filling with lint, and the smoke alarm battery is a surprise every year.</p><p>Home maintenance starts from a built-in checklist chosen by your answers. A house gets gutters, a garden tidy and a roof check; an apartment does not. Owners see the water heater, the AC service and the chimney; renters see a yearly reminder to note anything to raise with the landlord.</p><p>Every job you add becomes an ordinary chore in <a href=\"/features/chores-effort/\">Chores</a>, with its month, an owner and an estimate.</p>"
   },
   "who": {
     "h2": "Who is Home maintenance for?",
@@ -15,11 +15,11 @@
   },
   "steps": {
     "h2": "How do you set up Home maintenance?",
-    "intro": "Open the Effort tab, tap “Home maintenance”, describe your home, then tap “Add” on the jobs you want and “Add to chores”.",
+    "intro": "Open the Chores tab, tap “Home maintenance”, describe your home, then tap “Add” on the jobs you want and “Add to chores”.",
     "items": [
       {
         "name": "Open it",
-        "text": "Open the Effort tab and tap “Home maintenance”."
+        "text": "Open the Chores tab and tap “Home maintenance”."
       },
       {
         "name": "Describe your home",

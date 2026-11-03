@@ -7,7 +7,7 @@
   "answer": "Siri and Shortcuts let you add things to EvenUS by voice on iPhone. Say “Hey Siri, tell EvenUS”, and when Siri asks, say the details, like “I paid 30 for groceries”. EvenUS opens with the draft filled in for you to check and save. You can also add a reminder or open your chores the same way. It works on iOS 16 or later with no setup.",
   "what": {
     "h2": "What can Siri do in EvenUS?",
-    "html": "<p><strong>Siri opens EvenUS with what you said already filled in, so adding an expense, a chore or a reminder takes a sentence instead of a form.</strong></p><p>There are three things to ask for. “Tell EvenUS” takes any line <a href=\"/features/quick-add/\">Tell EvenUS</a> understands, such as an expense, a chore you did or a shopping item. “Add a reminder in EvenUS” turns what you say into a <a href=\"/features/household-reminders/\">reminder</a>. “Show my chores in EvenUS” opens Effort.</p><p>Siri never saves anything itself. Every request opens the app at a draft you check, with any guessed details flagged, and nothing is recorded until you tap Save.</p>"
+    "html": "<p><strong>Siri opens EvenUS with what you said already filled in, so adding an expense, a chore or a reminder takes a sentence instead of a form.</strong></p><p>There are three things to ask for. “Tell EvenUS” takes any line <a href=\"/features/quick-add/\">Tell EvenUS</a> understands, such as an expense, a chore you did or a shopping item. “Add a reminder in EvenUS” turns what you say into a <a href=\"/features/household-reminders/\">reminder</a>. “Show my chores in EvenUS” opens Chores.</p><p>Siri never saves anything itself. Every request opens the app at a draft you check, with any guessed details flagged, and nothing is recorded until you tap Save.</p>"
   },
   "who": {
     "h2": "Who is Siri for in EvenUS?",
@@ -35,13 +35,13 @@
       },
       {
         "name": "Open your chores",
-        "text": "Say “Hey Siri, show my chores in EvenUS” to go straight to Effort."
+        "text": "Say “Hey Siri, show my chores in EvenUS” to go straight to Chores."
       }
     ]
   },
   "partner": {
     "h2": "What does your partner see?",
-    "html": "<p><strong>Whatever you save, like anything added by hand.</strong> An expense you dictated and saved appears on their phone exactly as if you had typed it, with no mark that Siri was involved.</p><p>Because Siri itself saves nothing, a misheard sentence never reaches your partner. If Siri writes “13” where you said “30”, you see it on the draft and fix it before tapping Save. Opening your chores with Siri only opens your own phone’s Effort tab; it sends your partner nothing.</p>"
+    "html": "<p><strong>Whatever you save, like anything added by hand.</strong> An expense you dictated and saved appears on their phone exactly as if you had typed it, with no mark that Siri was involved.</p><p>Because Siri itself saves nothing, a misheard sentence never reaches your partner. If Siri writes “13” where you said “30”, you see it on the draft and fix it before tapping Save. Opening your chores with Siri only opens your own phone’s Chores tab; it sends your partner nothing.</p>"
   },
   "tips": {
     "h2": "Tips for using Siri with EvenUS",

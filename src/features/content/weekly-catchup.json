@@ -15,11 +15,11 @@
   },
   "steps": {
     "h2": "How do you catch up on the week in EvenUS?",
-    "intro": "Tap “Catch up on the week” on the Effort tab, correct anything that is not right, and tap “Log these”.",
+    "intro": "Tap “Catch up on the week” on the Chores tab, correct anything that is not right, and tap “Log these”.",
     "items": [
       {
         "name": "Open the catch-up",
-        "text": "Open the Effort tab and tap “Catch up on the week”. It shows up when recurring chores are waiting to be confirmed."
+        "text": "Open the Chores tab and tap “Catch up on the week”. It shows up when recurring chores are waiting to be confirmed."
       },
       {
         "name": "Untick what didn’t happen",
@@ -69,7 +69,7 @@
       "a": "No. Unticked chores are not counted against anyone, and nobody is told about them. An unticked chore simply records that it did not happen this week, which is useful to know and says nothing about either of you."
     },
     {
-      "q": "Why doesn’t Catch up on the week appear on my Effort tab?",
+      "q": "Why doesn’t Catch up on the week appear on my Chores tab?",
       "a": "It only shows when recurring chores are waiting to be confirmed. If everything this week is already logged, parked or skipped, or you have no recurring chores yet, there is nothing to catch up on."
     },
     {

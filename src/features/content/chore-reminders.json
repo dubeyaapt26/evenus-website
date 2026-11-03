@@ -15,11 +15,11 @@
   },
   "steps": {
     "h2": "How do you set a chore reminder in EvenUS?",
-    "intro": "Open the chore on the Effort tab, tap “Add a reminder”, choose a time and, optionally, days, then tap “Set the reminder”.",
+    "intro": "Open the chore on the Chores tab, tap “Add a reminder”, choose a time and, optionally, days, then tap “Set the reminder”.",
     "items": [
       {
         "name": "Open the chore",
-        "text": "Open the Effort tab and tap a chore. It needs an owner first: if it says nobody owns it, choose one under “Who owns this?”."
+        "text": "Open the Chores tab and tap a chore. It needs an owner first: if it says nobody owns it, choose one under “Who owns this?”."
       },
       {
         "name": "Add a reminder",
@@ -65,7 +65,7 @@
     },
     {
       "q": "Why can’t I add a reminder to a chore?",
-      "a": "The chore needs an owner first, because a reminder goes to the person who owns it. If nobody owns the chore yet, open it on the Effort tab and choose an owner, then tap Add a reminder."
+      "a": "The chore needs an owner first, because a reminder goes to the person who owns it. If nobody owns the chore yet, open it on the Chores tab and choose an owner, then tap Add a reminder."
     },
     {
       "q": "Does EvenUS tell my partner if I turn a reminder off?",

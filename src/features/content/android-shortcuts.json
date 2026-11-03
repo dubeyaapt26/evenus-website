@@ -7,7 +7,7 @@
   "answer": "Android shortcuts in EvenUS are the options you see when you long-press the app icon: Tell EvenUS, Add expense, Add reminder and My chores. Each one opens the right screen directly, one tap sooner than opening the app and finding it. Shortcuts only open EvenUS; nothing is saved until you check what opened and tap Save.",
   "what": {
     "h2": "What do the EvenUS Android shortcuts do?",
-    "html": "<p><strong>They take you straight to the screen you want from the EvenUS icon, without going through Home first.</strong> Most things worth recording happen on the move: a bill paid at the counter, a reminder that occurs to you on the bus. The fewer taps between remembering and recording, the more of it actually gets written down.</p><p>Long-press the icon and four choices appear. “Tell EvenUS” opens the <a href=\"/features/quick-add/\">Tell EvenUS</a> field, ready for a line like “groceries 30”. “Add expense” opens the new <a href=\"/features/shared-expenses/\">shared expense</a> form. “Add reminder” opens a new <a href=\"/features/household-reminders/\">reminder</a>. “My chores” opens Effort, where your chores for today are.</p><p>None of them saves anything by itself. Each one opens a screen in the app, and you decide what to keep.</p>"
+    "html": "<p><strong>They take you straight to the screen you want from the EvenUS icon, without going through Home first.</strong> Most things worth recording happen on the move: a bill paid at the counter, a reminder that occurs to you on the bus. The fewer taps between remembering and recording, the more of it actually gets written down.</p><p>Long-press the icon and four choices appear. “Tell EvenUS” opens the <a href=\"/features/quick-add/\">Tell EvenUS</a> field, ready for a line like “groceries 30”. “Add expense” opens the new <a href=\"/features/shared-expenses/\">shared expense</a> form. “Add reminder” opens a new <a href=\"/features/household-reminders/\">reminder</a>. “My chores” opens Chores, where your chores for today are.</p><p>None of them saves anything by itself. Each one opens a screen in the app, and you decide what to keep.</p>"
   },
   "who": {
     "h2": "Who are Android shortcuts for?",
@@ -37,7 +37,7 @@
   },
   "partner": {
     "h2": "What does your partner see?",
-    "html": "<p><strong>Whatever you save, like anything added by hand.</strong> An expense added through the Add expense shortcut is an ordinary expense, and your partner sees it the same way, with who paid and how it was split.</p><p>Shortcuts only open the app; they never save anything on their own and never send your partner a message. Opening My chores shows your own phone’s Effort tab and nothing more.</p>"
+    "html": "<p><strong>Whatever you save, like anything added by hand.</strong> An expense added through the Add expense shortcut is an ordinary expense, and your partner sees it the same way, with who paid and how it was split.</p><p>Shortcuts only open the app; they never save anything on their own and never send your partner a message. Opening My chores shows your own phone’s Chores tab and nothing more.</p>"
   },
   "tips": {
     "h2": "Tips for Android shortcuts",

@@ -850,11 +850,11 @@
     "dishes",
     "done"
    ],
-   "title": "Effort",
+   "title": "Chores",
    "oneLiner": "One shared list of the housework, where each chore you finish records the time it really took.",
    "whoFor": "For any couple who wants the everyday work of the house to be seen, not just done. It helps most when the same few jobs seem to happen by themselves.",
    "steps": [
-    "Open the Effort tab and tap Add a chore, or start from Browse templates.",
+    "Open the Chores tab and tap Add a chore, or start from Browse templates.",
     "Give it a name, the minutes it usually takes, how often it comes round, and who owns it.",
     "Tap the circle next to a chore when you finish it. Tap the Done button for about the usual time, or put in when you started and finished and tap Save. Long press the circle to start a timer instead.",
     "Long press a chore for Done…, to hand it over, park it for a bit, skip this one, or remove it. A ticked circle can be tapped again: done again, or undo your own entry. Removing keeps everything already logged, and on a removed chore’s page Restore puts it back."
@@ -866,9 +866,9 @@
    ],
    "partnerSees": "Your partner sees the same list, who owns each chore, and the week’s Housework logged. A tick shows who did it. Skipping or parking a chore sends nobody a message.",
    "countryNotes": null,
-   "where": "Effort → Add a chore",
+   "where": "Chores → Add a chore",
    "whereParts": [
-    "Effort",
+    "Chores",
     "Add a chore"
    ]
   },
@@ -906,21 +906,21 @@
    "oneLiner": "Record the real time a chore took, run a timer while you do it, or add one you forgot, up to 31 days back.",
    "whoFor": "For anyone who finishes a job and forgets to tick it off, or wants the week to show the time the work really took.",
    "steps": [
-    "Open the Effort tab and tap Add a chore you did.",
+    "Open the Chores tab and tap Add a chore you did.",
     "Pick the chore, or tap Something else and say what you did.",
     "Tap Next: the time, choose the day, put in when you started and finished, then tap Save.",
     "To fix one of yours, tap it under Your entries, last 31 days, then change the time or tap Remove."
    ],
    "tips": [
     "Only the time you log counts, never the estimate. While there is less than an hour logged between you this week, or you have been home together for less than two days, the time part of the balance waits, and never says who.",
-    "On the Effort tab, long press a chore’s circle to start a timer. Tap Done on the banner when you finish, or Cancel to throw it away.",
+    "On the Chores tab, long press a chore’s circle to start a timer. Tap Done on the banner when you finish, or Cancel to throw it away.",
     "Tell EvenUS, Siri and the watch understand lines like did the dishes 20 min yesterday 7pm: the minutes end at the time you said."
    ],
    "partnerSees": "Your partner sees the chore as done in the week you did it, with its minutes. A timer stays on your phone until you save it, and only you can change or remove your own entries; a change or a removal shows in the activity feed.",
    "countryNotes": null,
-   "where": "Effort → Add a chore you did",
+   "where": "Chores → Add a chore you did",
    "whereParts": [
-    "Effort",
+    "Chores",
     "Add a chore you did"
    ]
   },
@@ -950,7 +950,7 @@
    "oneLiner": "Set up the house’s usual chores in a couple of taps, with the weekly hours added up as you pick.",
    "whoFor": "For a couple setting up for the first time, or anyone who would rather not write out forty chores by hand.",
    "steps": [
-    "Open the Effort tab and tap Chore templates.",
+    "Open the Chores tab and tap Chore templates.",
     "Tap Use a common starting set, or pick chores one at a time. The chips at the top narrow the list by area.",
     "Watch the weekly hours add up at the bottom, then tap the Add button. It shows how many you picked, like Add 12."
    ],
@@ -961,9 +961,9 @@
    ],
    "partnerSees": "The chores appear on your partner’s phone straight away. A chore keeps the name it was added with, in the language the app was in at the time.",
    "countryNotes": null,
-   "where": "Effort → Chore templates",
+   "where": "Chores → Chore templates",
    "whereParts": [
-    "Effort",
+    "Chores",
     "Chore templates"
    ]
   },
@@ -993,7 +993,7 @@
    "oneLiner": "Put a time on a chore so the app holds the remembering, not either of you.",
    "whoFor": "For the jobs that slip because nobody is holding the schedule, like the bins or the plants.",
    "steps": [
-    "Open the Effort tab and tap a chore.",
+    "Open the Chores tab and tap a chore.",
     "Tap Add a reminder.",
     "Choose What time and, if you like, Which days, then tap Set the reminder.",
     "If the reminder is for you, Turn this off on the chore switches it off, and Turn it back on brings it back."
@@ -1005,9 +1005,9 @@
    ],
    "partnerSees": "Only the chore’s owner gets the reminder, and it never says who set it. The owner can switch it off whenever they like, and nobody is told. Both of you see the reminder time on the chore.",
    "countryNotes": null,
-   "where": "Effort → Any chore → Add a reminder",
+   "where": "Chores → Any chore → Add a reminder",
    "whereParts": [
-    "Effort",
+    "Chores",
     "Any chore",
     "Add a reminder"
    ]
@@ -1039,7 +1039,7 @@
    "oneLiner": "Log the whole week’s recurring chores in about 30 seconds.",
    "whoFor": "For weeks when ticking things off as you go didn’t happen, which is most weeks for most people.",
    "steps": [
-    "Open the Effort tab and tap Catch up on the week. It shows up when recurring chores are waiting to be confirmed.",
+    "Open the Chores tab and tap Catch up on the week. It shows up when recurring chores are waiting to be confirmed.",
     "Everything is already ticked against whoever usually looks after it. Untick anything that didn’t happen, and tap a name to change who did it. For your own, set how long it really took, in all.",
     "Tap Log these. If it was a quiet week, Log nothing this week is a fine answer too."
    ],
@@ -1049,9 +1049,9 @@
    ],
    "partnerSees": "Each of you logs your own. Anything you mark as your partner’s is not logged by you; it waits in their own catch-up to confirm. Unticked chores are not counted against anyone, and nobody is told about them.",
    "countryNotes": null,
-   "where": "Effort → Catch up on the week",
+   "where": "Chores → Catch up on the week",
    "whereParts": [
-    "Effort",
+    "Chores",
     "Catch up on the week"
    ]
   },
@@ -1083,7 +1083,7 @@
    "oneLiner": "A few private questions about the planning and remembering, so the part nobody sees gets counted.",
    "whoFor": "For couples where one of you seems to hold the school forms, the birthdays and the next dentist visit in your head.",
    "steps": [
-    "Open the Effort tab and, under Planning and remembering, tap Answer the questions. Once you’ve answered, the button reads Answer again or compare. It is also under Us, then Household → Who keeps track of what.",
+    "Open the Chores tab and, under Planning and remembering, tap Answer the questions. Once you’ve answered, the button reads Answer again or compare. It is also under Us, then Household → Who keeps track of what.",
     "Tap Start. Each card is one area of the house; tap the answer that feels true and the next card follows.",
     "Tap Doesn’t apply to us for anything that isn’t part of your life. You can stop and come back.",
     "Once you have both finished, the Planning and remembering card shows who holds each area."
@@ -1095,9 +1095,9 @@
    ],
    "partnerSees": "Nothing, until you have both finished. Neither of you sees the other’s answers before then, so there is no editing yours after seeing theirs. After that, you both see the same card. If someone leaves the household, every answer is cleared and the questions start again, so nothing said about one person is ever read as being about someone new.",
    "countryNotes": null,
-   "where": "Effort → Planning and remembering → Answer the questions",
+   "where": "Chores → Planning and remembering → Answer the questions",
    "whereParts": [
-    "Effort",
+    "Chores",
     "Planning and remembering",
     "Answer the questions"
    ]
@@ -1175,7 +1175,7 @@
    "oneLiner": "One shared list either of you can add to, which turns into a single expense when the shop is done.",
    "whoFor": "For couples who keep texting each other “we need milk”.",
    "steps": [
-    "Open the Effort tab and tap Shopping list, then type in Add something, add How much if you like, and tap Add.",
+    "Open the Chores tab and tap Shopping list, then type in Add something, add How much if you like, and tap Add.",
     "In the shop, tick things as they go in the trolley. Tap ✕ beside an item to take it off the list, and Undo puts it straight back. Press and hold an item to change it.",
     "Tap Done shopping, pick what you bought, enter the total, and tap Check the expense.",
     "Save the expense. Only then are those items cleared from the list."
@@ -1187,9 +1187,9 @@
    ],
    "partnerSees": "Your partner sees the list change straight away. The finished shop arrives as one ordinary expense, paid by whoever did the shop, after you have checked it.",
    "countryNotes": null,
-   "where": "Effort → Shopping list",
+   "where": "Chores → Shopping list",
    "whereParts": [
-    "Effort",
+    "Chores",
     "Shopping list"
    ]
   },
@@ -1222,7 +1222,7 @@
    "oneLiner": "The jobs a home needs now and then, like filters, gutters and alarms, timed for your seasons.",
    "whoFor": "For anyone whose smoke alarm battery is a surprise every year.",
    "steps": [
-    "Open the Effort tab and tap Home maintenance.",
+    "Open the Chores tab and tap Home maintenance.",
     "Under Your home, choose House or Apartment, and We own it or We rent. The checklist follows your answers.",
     "Tap Add on the jobs you want, choose who looks after each one, and tap Add to chores. Add your own covers anything missing.",
     "When a job is done, tap Done, put in when you started and finished, and tap Save. You can add what it cost, or leave it."
@@ -1233,9 +1233,9 @@
    ],
    "partnerSees": "Your partner sees the same checklist and the same chores. A job set to Either of you can be done by either of you.",
    "countryNotes": "The seasons come from your household’s country, and the months move by six for the southern hemisphere, so gutters land in the right autumn. You can change it under Seasons.",
-   "where": "Effort → Home maintenance",
+   "where": "Chores → Home maintenance",
    "whereParts": [
-    "Effort",
+    "Chores",
     "Home maintenance"
    ]
   },
@@ -1373,7 +1373,7 @@
     "The cost is posted as a regular bill, shared the way each child’s costs are.",
     "Whoever does a drop-off or pick-up gets the credit, whatever their relationship to the child."
    ],
-   "partnerSees": "Your partner sees the childcare, its regular bill, and the drop-off and pick-up chores on Effort. Stopping it archives the bill and the chores; past expenses and logs stay.",
+   "partnerSees": "Your partner sees the childcare, its regular bill, and the drop-off and pick-up chores on Chores. Stopping it archives the bill and the chores; past expenses and logs stay.",
    "countryNotes": null,
    "where": "Us → Household → Childcare",
    "whereParts": [
@@ -1510,7 +1510,7 @@
     "Under Costs, tap Add a cost, or Set a pets budget."
    ],
    "tips": [
-    "Each job is an ordinary chore on the Effort tab.",
+    "Each job is an ordinary chore on the Chores tab.",
     "Vaccinations come round every year, so that reminder repeats yearly."
    ],
    "partnerSees": "Your partner sees the same pets and chores. Vet and vaccination reminders go to both of you, the day before and on the day. Costs land in the Pets budget like any other expense.",
@@ -1910,7 +1910,7 @@
    "oneLiner": "Plan an occasion together: the date, the guests, the tasks, the menu and what it costs.",
    "whoFor": "For couples hosting Thanksgiving, Christmas, Easter, Diwali, Eid, Hanukkah, Lunar New Year, a birthday party or something of their own, who want the work visible and shared.",
    "steps": [
-    "Open Effort, then Hosting, and tap “Plan an occasion”.",
+    "Open Chores, then Hosting, and tap “Plan an occasion”.",
     "Pick the occasion and the date, and add guests and a budget if you like. Leave “Start with the usual tasks and menu” on for a ready-made list.",
     "Tap “Create the plan”, then give each task to one of you or to “Either of you”.",
     "Add to the menu and add costs. The menu goes on the shared shopping list too.",
@@ -1923,9 +1923,9 @@
    ],
    "partnerSees": "The same plan, with each person’s list side by side. Tasks are never counted against each other, and nobody is shown as doing the most.",
    "countryNotes": null,
-   "where": "Effort → Hosting",
+   "where": "Chores → Hosting",
    "whereParts": [
-    "Effort",
+    "Chores",
     "Hosting"
    ]
   },
@@ -2240,7 +2240,7 @@
    "oneLiner": "Type or say one line, like “groceries 30” or “dishes 20 min”, and EvenUS turns it into an expense, a chore or a reminder for you to check.",
    "whoFor": "For the moment you’ve just paid, cleaned or remembered something and don’t want to open a form. It works with your keyboard’s mic too.",
    "steps": [
-    "Open This week and tap the typing box under the headline, the one with a grey example of something to add. That box is Tell EvenUS. It’s on Money and Effort too.",
+    "Open This week and tap the typing box under the headline, the one with a grey example of something to add. That box is Tell EvenUS. It’s on Money and Chores too.",
     "Type a line, or tap the mic on your keyboard and say it: “bought groceries for 30”, “cleaned the bathroom yesterday”, “remind me to book the dentist Friday”.",
     "Tap the arrow to check it. A sheet shows what EvenUS understood, and asks you to check anything it filled in for you.",
     "Change what needs changing, or tap Edit details for the full form, then tap Save. Nothing is saved before that."
@@ -2483,7 +2483,7 @@
    "steps": [
     "Long-press an empty spot on your home screen, then tap Edit or + on iPhone, or Widgets on Android.",
     "Find EvenUS and add the size you want. The medium iPhone size has the Tell EvenUS button.",
-    "Tap a chore to open it, or Tell EvenUS to add something. The small iPhone size opens Effort.",
+    "Tap a chore to open it, or Tell EvenUS to add something. The small iPhone size opens Chores.",
     "To show amounts, open Us, then Preferences → Language, widget and privacy, and switch on Show amounts on widget."
    ],
    "tips": [
@@ -2578,7 +2578,7 @@
     "Say “Hey Siri, tell EvenUS”.",
     "When Siri asks what you’d like to tell EvenUS, say the words, like “I paid 30 for groceries”.",
     "EvenUS opens with it filled in. Check it and tap Save.",
-    "For a reminder, say “Hey Siri, add a reminder in EvenUS”, then what and when, like “book the dentist on Friday”. “Hey Siri, show my chores in EvenUS” opens Effort."
+    "For a reminder, say “Hey Siri, add a reminder in EvenUS”, then what and when, like “book the dentist on Friday”. “Hey Siri, show my chores in EvenUS” opens Chores."
    ],
    "tips": [
     "Say the details as a second turn, after Siri asks. Said in one sentence, “Hey Siri, tell EvenUS I paid 30 for groceries” doesn’t reach EvenUS, because Siri can’t carry free text in the opening phrase.",

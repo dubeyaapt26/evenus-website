@@ -7,7 +7,7 @@
   "answer": "Pets in EvenUS gives each pet in your home its own page. The jobs they need, such as feeding, walks or the litter tray, become ordinary chores with an owner or either of you. Vet visits and yearly vaccinations become reminders for both partners, and what the pet costs is recorded as a shared expense in the Pets budget.",
   "what": {
     "h2": "What does Pets do in EvenUS?",
-    "html": "<p><strong>It gathers everything one animal needs into a single place, built from parts of the app you already use.</strong> Pet care is daily, easy to underestimate and easy to drift onto one person: the walks before work, the litter tray, remembering the booster is due, noticing the food is running low.</p><p>Each pet has a name, a kind and, if you like, a birthday. Under What they need, EvenUS suggests the usual jobs for that kind of animal: for a dog, feeding, walks, grooming and flea and worm treatment; for a cat, feeding, the litter tray, grooming and flea treatment. You add the ones you want, and each becomes an ordinary chore on <a href=\"/features/chores-effort/\">Effort</a>, with a realistic time attached, so the minutes count like any other housework.</p><p>The vet and vaccinations become <a href=\"/features/household-reminders/\">reminders</a> for both of you, and the pet’s costs become shared expenses in the Pets category, which the <a href=\"/features/budgets/\">monthly budgets</a> already cover.</p>"
+    "html": "<p><strong>It gathers everything one animal needs into a single place, built from parts of the app you already use.</strong> Pet care is daily, easy to underestimate and easy to drift onto one person: the walks before work, the litter tray, remembering the booster is due, noticing the food is running low.</p><p>Each pet has a name, a kind and, if you like, a birthday. Under What they need, EvenUS suggests the usual jobs for that kind of animal: for a dog, feeding, walks, grooming and flea and worm treatment; for a cat, feeding, the litter tray, grooming and flea treatment. You add the ones you want, and each becomes an ordinary chore on <a href=\"/features/chores-effort/\">Chores</a>, with a realistic time attached, so the minutes count like any other housework.</p><p>The vet and vaccinations become <a href=\"/features/household-reminders/\">reminders</a> for both of you, and the pet’s costs become shared expenses in the Pets category, which the <a href=\"/features/budgets/\">monthly budgets</a> already cover.</p>"
   },
   "who": {
     "h2": "Who is Pets for?",
@@ -46,7 +46,7 @@
   "tips": {
     "h2": "Tips for sharing pet care",
     "items": [
-      "Each job is an ordinary chore on the Effort tab, so you can change its time, days or owner there.",
+      "Each job is an ordinary chore on the Chores tab, so you can change its time, days or owner there.",
       "Vaccinations come round every year, so that reminder repeats yearly. Book the vet visit and set it in the same sitting.",
       "Use Either of you for a walk you genuinely alternate, and a name for one that is really one person’s, so the plan matches the week.",
       "For a big vet bill, tap “Add a cost” from the pet’s page. The category and the pet are filled in, and it splits like any shared cost.",
@@ -56,13 +56,13 @@
   "extra": [
     {
       "h2": "How much time does a dog add to the week? An example",
-      "html": "<p>Alex and Sam add their dog, Biscuit. Feeding is suggested daily at about 10 minutes and the walk daily at about 40 minutes, so the two daily jobs alone come to nearly six hours a week. Grooming and flea and worm treatment add a little each month.</p><p>If Alex does every walk, that is close to five hours a week on Alex’s side of Effort, which the <a href=\"/features/fairness-score/\">household balance</a> counts like any other housework. Seeing the figure is often enough for a couple to decide, calmly, whether to keep it that way or take alternate mornings.</p>"
+      "html": "<p>Alex and Sam add their dog, Biscuit. Feeding is suggested daily at about 10 minutes and the walk daily at about 40 minutes, so the two daily jobs alone come to nearly six hours a week. Grooming and flea and worm treatment add a little each month.</p><p>If Alex does every walk, that is close to five hours a week on Alex’s side of Chores, which the <a href=\"/features/fairness-score/\">household balance</a> counts like any other housework. Seeing the figure is often enough for a couple to decide, calmly, whether to keep it that way or take alternate mornings.</p>"
     }
   ],
   "faqs": [
     {
       "q": "Can we share dog walks as a couple in EvenUS?",
-      "a": "Yes. Add the walk under What they need and choose a person or Either of you. It becomes an ordinary chore on Effort, and whoever does a walk ticks it off and gets the minutes."
+      "a": "Yes. Add the walk under What they need and choose a person or Either of you. It becomes an ordinary chore on Chores, and whoever does a walk ticks it off and gets the minutes."
     },
     {
       "q": "Does EvenUS remind us about vet appointments?",

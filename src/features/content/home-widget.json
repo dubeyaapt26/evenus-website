@@ -7,7 +7,7 @@
   "answer": "The EvenUS home-screen widget shows the next three of your own chores that come round today, and one line about what is left to even up, with the amount hidden unless you switch it on. It works on iPhone in small and medium sizes and on Android. The medium size adds a Tell EvenUS button for adding something in a few words.",
   "what": {
     "h2": "What does the EvenUS widget do?",
-    "html": "<p><strong>It puts today’s chores for you on your home screen, so you can see what comes round without opening EvenUS.</strong> A glance takes some of the remembering off your mind.</p><p>The widget lists up to three of your own chores for today, from the ones you set up in <a href=\"/features/chores-effort/\">Effort</a>, with a “+2 more” style line if there are others. Underneath is a single money line taken from the <a href=\"/features/settle-up/\">To even up</a> card. Unless you choose otherwise, it says “Amounts are hidden on this widget”. With amounts on, it reads like “To even up: $42 from Sam to Alex”, or “Nothing to even up right now”.</p><p>On the medium iPhone size and on wider Android widgets there is also a “Tell EvenUS” button. It opens <a href=\"/features/quick-add/\">Tell EvenUS</a>, where you type a line like “groceries 30” and check the draft before anything is saved.</p>"
+    "html": "<p><strong>It puts today’s chores for you on your home screen, so you can see what comes round without opening EvenUS.</strong> A glance takes some of the remembering off your mind.</p><p>The widget lists up to three of your own chores for today, from the ones you set up in <a href=\"/features/chores-effort/\">Chores</a>, with a “+2 more” style line if there are others. Underneath is a single money line taken from the <a href=\"/features/settle-up/\">To even up</a> card. Unless you choose otherwise, it says “Amounts are hidden on this widget”. With amounts on, it reads like “To even up: $42 from Sam to Alex”, or “Nothing to even up right now”.</p><p>On the medium iPhone size and on wider Android widgets there is also a “Tell EvenUS” button. It opens <a href=\"/features/quick-add/\">Tell EvenUS</a>, where you type a line like “groceries 30” and check the draft before anything is saved.</p>"
   },
   "who": {
     "h2": "Who is the widget for?",
@@ -27,7 +27,7 @@
       },
       {
         "name": "Use it from the home screen",
-        "text": "On the medium size, tap a chore to open it, or tap “Tell EvenUS” to add something. The small iPhone size is one tap target and opens Effort."
+        "text": "On the medium size, tap a chore to open it, or tap “Tell EvenUS” to add something. The small iPhone size is one tap target and opens Chores."
       },
       {
         "name": "Choose whether amounts show",
@@ -65,7 +65,7 @@
     },
     {
       "q": "Why does the small iPhone widget not have a Tell EvenUS button?",
-      "a": "The small iPhone size can only have one tap target, so tapping anywhere on it opens Effort. Choose the medium size if you want the Tell EvenUS button next to your chores."
+      "a": "The small iPhone size can only have one tap target, so tapping anywhere on it opens Chores. Choose the medium size if you want the Tell EvenUS button next to your chores."
     },
     {
       "q": "Do I need EvenUS Pro to use the widget?",

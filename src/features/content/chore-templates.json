@@ -4,22 +4,22 @@
   "seoTitle": "Household Chore List Template for Couples: EvenUS",
   "description": "Pick your home’s usual chores from a ready list and watch the weekly hours add up as you go. How chore templates work in EvenUS and what your partner sees.",
   "updated": "2026-10-15",
-  "answer": "Chore templates in EvenUS are a ready-made list of common household chores, each with a typical time and how often it comes round. You tap the ones that apply to your home, or take a common starting set, and the screen adds up the weekly hours as you pick. Tap the Add button and they appear on the shared Effort list on both phones.",
+  "answer": "Chore templates in EvenUS are a ready-made list of common household chores, each with a typical time and how often it comes round. You tap the ones that apply to your home, or take a common starting set, and the screen adds up the weekly hours as you pick. Tap the Add button and they appear on the shared Chores list on both phones.",
   "what": {
     "h2": "What do chore templates do?",
     "html": "<p><strong>They get your household’s chores into EvenUS in about the time it takes to read the list, and show how much work the house needs each week.</strong> Writing out every job by hand is where most chore systems stall: forty chores is a lot of typing, and the list you give up on halfway is the one that never gets used.</p><p>The templates cover the kitchen, cleaning, laundry, shopping, planning, admin, maintenance, pets and, for families, childcare. Each comes with a sensible number of minutes and a rhythm, such as every day or every 2 weeks, and some include a suggested “What does done look like?” so the standard is agreed from the start.</p><p>As you pick, the screen keeps a running total in hours a week. That figure is the work your house needs, before anyone logs a thing, and for many couples it is the first time anyone has seen it written down.</p>"
   },
   "who": {
     "h2": "Who are chore templates for?",
-    "html": "<p>A couple setting up <a href=\"/features/chores-effort/\">Effort</a> for the first time, or anyone who would rather not write out forty chores by hand. They also help when your home changes, for example after moving into a house with a garden or when a baby arrives, and you want to add a group of new jobs at once.</p>"
+    "html": "<p>A couple setting up <a href=\"/features/chores-effort/\">Chores</a> for the first time, or anyone who would rather not write out forty chores by hand. They also help when your home changes, for example after moving into a house with a garden or when a baby arrives, and you want to add a group of new jobs at once.</p>"
   },
   "steps": {
     "h2": "How do you set up chores from templates?",
-    "intro": "On the Effort tab, tap “Chore templates”, pick the chores that apply or tap “Use a common starting set”, then tap the Add button, which shows how many you picked, like “Add 12”.",
+    "intro": "On the Chores tab, tap “Chore templates”, pick the chores that apply or tap “Use a common starting set”, then tap the Add button, which shows how many you picked, like “Add 12”.",
     "items": [
       {
         "name": "Open the templates",
-        "text": "Open the Effort tab and tap “Chore templates”. If you have no chores yet, “Browse templates” opens the same list."
+        "text": "Open the Chores tab and tap “Chore templates”. If you have no chores yet, “Browse templates” opens the same list."
       },
       {
         "name": "Pick your chores",
@@ -31,7 +31,7 @@
       },
       {
         "name": "Add them",
-        "text": "Tap the Add button at the bottom. It shows how many you picked, like “Add 12”. The chores go onto the Effort list for both of you."
+        "text": "Tap the Add button at the bottom. It shows how many you picked, like “Add 12”. The chores go onto the Chores list for both of you."
       },
       {
         "name": "Give each chore an owner",
@@ -41,7 +41,7 @@
   },
   "partner": {
     "h2": "What does your partner see?",
-    "html": "<p><strong>The chores appear on your partner’s phone straight away, on the same Effort list.</strong> Adding them from templates is shown once in the <a href=\"/features/partner-activity/\">activity feed</a> rather than as a stream of separate entries.</p><p>A chore keeps the name it was added with, in the language the app was in at the time. A chore added in Hindi keeps its Hindi name on both phones. Nothing about the templates you browsed but did not add is shared.</p>"
+    "html": "<p><strong>The chores appear on your partner’s phone straight away, on the same Chores list.</strong> Adding them from templates is shown once in the <a href=\"/features/partner-activity/\">activity feed</a> rather than as a stream of separate entries.</p><p>A chore keeps the name it was added with, in the language the app was in at the time. A chore added in Hindi keeps its Hindi name on both phones. Nothing about the templates you browsed but did not add is shared.</p>"
   },
   "tips": {
     "h2": "Tips for choosing chore templates",
@@ -62,7 +62,7 @@
   "faqs": [
     {
       "q": "Who owns the chores I add from templates?",
-      "a": "Nobody, at first. Templates are added without an owner so neither of you is assigned work by default. Open each chore on the Effort tab and choose under Who owns this. Agreeing owners together tends to work better than one person deciding."
+      "a": "Nobody, at first. Templates are added without an owner so neither of you is assigned work by default. Open each chore on the Chores tab and choose under Who owns this. Agreeing owners together tends to work better than one person deciding."
     },
     {
       "q": "Can I change a template chore after adding it?",
