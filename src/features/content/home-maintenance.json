@@ -4,10 +4,10 @@
   "seoTitle": "Home Maintenance Checklist for Couples: EvenUS",
   "description": "A seasonal home maintenance checklist for your kind of home, from smoke alarms to gutters. Each job becomes a shared chore that turns up in its month.",
   "updated": "2026-10-15",
-  "answer": "Home maintenance in EvenUS is a checklist of the jobs a home needs now and then, such as testing smoke alarms, changing filters and clearing gutters. It follows your kind of home, whether you own or rent, and your hemisphere. Each job you keep becomes an ordinary chore with its month and an owner, so it turns up when it comes round and stays quiet the rest of the year.",
+  "answer": "Home maintenance in EvenUS is a checklist of the jobs a home needs now and then, such as testing smoke alarms, changing filters and clearing gutters. It follows your kind of home, whether you own or rent, and your hemisphere. Each job you keep becomes an ordinary chore with its month and an owner, so it turns up when it comes around and stays quiet the rest of the year.",
   "what": {
     "h2": "What does Home maintenance do?",
-    "html": "<p><strong>It puts the occasional jobs a home needs onto your shared chores, in the right month, so they stop relying on one person’s memory.</strong> Weekly chores get noticed because the bin is full. The yearly ones are different: nobody sees a dryer vent filling with lint, and the smoke alarm battery is a surprise every year.</p><p>Home maintenance starts from a built-in checklist chosen by your answers. A house gets gutters, a garden tidy and a roof check; an apartment does not. Owners see the water heater, the AC service and the chimney; renters see a yearly reminder to note anything to raise with the landlord.</p><p>Every job you add becomes an ordinary chore in <a href=\"/features/chores-effort/\">Chores</a>, with its month, an owner and an estimate.</p>"
+    "html": "<p><strong>It puts the occasional jobs a home needs onto your shared chores, in the right month, so they stop relying on one person’s memory.</strong> Weekly chores get noticed because the trash can is full. The yearly ones are different: nobody sees a dryer vent filling with lint, and the smoke alarm battery is a surprise every year.</p><p>Home maintenance starts from a built-in checklist chosen by your answers. A house gets gutters, a yard cleanup and a roof check; an apartment does not. Owners see the water heater, the AC service and the chimney; renters see a yearly reminder to note anything to raise with the landlord.</p><p>Every job you add becomes an ordinary chore in <a href=\"/features/chores-effort/\">Chores</a>, with its month, an owner and an estimate.</p>"
   },
   "who": {
     "h2": "Who is Home maintenance for?",
@@ -46,7 +46,7 @@
   "tips": {
     "h2": "Tips for keeping on top of house jobs",
     "items": [
-      "Each job becomes an ordinary chore with its month. It turns up when it comes round and stays quiet the rest of the year.",
+      "Each job becomes an ordinary chore with its month. It turns up when it comes around and stays quiet the rest of the year.",
       "Turn on “Snowy winters” if your winters freeze, to add the pipe and snow jobs.",
       "Give each job one owner where you can. “Either of you” is fine for quick jobs, but bigger ones tend to happen when someone holds them.",
       "Use “Rough cost each time” for jobs that need a professional, like a chimney sweep. A yearly cost can also go in <a href=\"/features/regular-bills/\">Regular bills</a>."
@@ -54,7 +54,7 @@
   },
   "country": {
     "h2": "Does it work in the southern hemisphere?",
-    "html": "<p><strong>Yes.</strong> The seasons come from your household’s country, and every month moves by six for the southern hemisphere, so the gutters land in the right autumn. The screen says which it is using, for example “Timed for the southern hemisphere.”</p><p>If your country’s default does not fit, change it under “Seasons” to “Northern” or “Southern”, or leave it on “From your country”. Snow jobs only appear with “Snowy winters” on.</p>"
+    "html": "<p><strong>Yes.</strong> The seasons come from your household’s country, and every month moves by six for the southern hemisphere, so the gutters land in the right fall. The screen says which it is using, for example “Timed for the southern hemisphere.”</p><p>If your country’s default does not fit, change it under “Seasons” to “Northern” or “Southern”, or leave it on “From your country”. Snow jobs only appear with “Snowy winters” on.</p>"
   },
   "extra": [
     {
@@ -65,7 +65,7 @@
   "faqs": [
     {
       "q": "Which jobs are on the home maintenance checklist?",
-      "a": "It depends on your home. Everyone gets jobs like testing the smoke and CO alarms, new alarm batteries and cleaning the dryer vent. Houses add gutters, garden tidies and a roof check, owners add things like the water heater, and renters get a landlord check."
+      "a": "It depends on your home. Everyone gets jobs like testing the smoke and CO alarms, new alarm batteries and cleaning the dryer vent. Houses add gutters, yard cleanups and a roof check, owners add things like the water heater, and renters get a landlord check."
     },
     {
       "q": "Can I add my own maintenance jobs?",

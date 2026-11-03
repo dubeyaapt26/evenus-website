@@ -1,17 +1,17 @@
 {
   "id": "receipt-scan",
-  "h1": "Scan a receipt: the total, shop and date read on your phone",
+  "h1": "Scan a receipt: the total, store and date read on your phone",
   "seoTitle": "Scan Receipts Into Shared Expenses: EvenUS",
-  "description": "Photograph a receipt and EvenUS reads the total, the shop and the date on your phone. You check it before saving, and the photo is never uploaded.",
+  "description": "Photograph a receipt and EvenUS reads the total, the store and the date on your phone. You check it before saving, and the photo is never uploaded.",
   "updated": "2026-10-15",
-  "answer": "Scan a receipt is how EvenUS turns a photo of a till slip into a shared expense. You take or choose a photo, and the phone itself reads the total, the shop and the date into the expense form. A note says where the amount came from. You check it, choose the split and tap Save expense. The photo stays on that phone and is never uploaded.",
+  "answer": "Scan a receipt is how EvenUS turns a photo of a till slip into a shared expense. You take or choose a photo, and the phone itself reads the total, the store and the date into the expense form. A note says where the amount came from. You check it, choose the split and tap Save expense. The photo stays on that phone and is never uploaded.",
   "what": {
     "h2": "What does Scan a receipt do?",
-    "html": "<p><strong>It reads the total, the shop and the date off a receipt photo and fills them into a new expense for you to check.</strong> A long supermarket slip has a dozen numbers on it, and typing the right one while packing bags is where mistakes creep in.</p><p>EvenUS looks for the line that is the total, in the wording shops actually use, such as “Grand Total”, “Amount Due”, “Summe” or “Total TTC”. It never takes the subtotal, the tax, the cash tendered or the change. If there is a tip, the amount includes it, because that is what left the account. A short note under the amount tells you how it was found, for example “Filled in from the receipt. Check the amount before saving.”</p><p>The reading happens on the phone, using the text recognition built into iOS and Android. Then it becomes an ordinary <a href=\"/features/shared-expenses/\">shared expense</a>, split the way you choose.</p>"
+    "html": "<p><strong>It reads the total, the store and the date off a receipt photo and fills them into a new expense for you to check.</strong> A long grocery receipt has a dozen numbers on it, and typing the right one while packing bags is where mistakes creep in.</p><p>EvenUS looks for the line that is the total, in the wording stores actually use, such as “Grand Total”, “Amount Due”, “Summe” or “Total TTC”. It never takes the subtotal, the tax, the cash tendered or the change. If there is a tip, the amount includes it, because that is what left the account. A short note under the amount tells you how it was found, for example “Filled in from the receipt. Check the amount before saving.”</p><p>The reading happens on the phone, using the text recognition built into iOS and Android. Then it becomes an ordinary <a href=\"/features/shared-expenses/\">shared expense</a>, split the way you choose.</p>"
   },
   "who": {
     "h2": "Who is Scan a receipt for?",
-    "html": "<p>For the big weekly shop, the dinner out with a tip, or the hardware store run with a slip as long as your arm. It suits the partner who keeps receipts in a pocket and the one who would rather point a camera than squint at small print.</p>"
+    "html": "<p>For the big weekly grocery run, the dinner out with a tip, or the hardware store run with a slip as long as your arm. It suits the partner who keeps receipts in a pocket and the one who would rather point a camera than squint at small print.</p>"
   },
   "steps": {
     "h2": "How do you scan a receipt in EvenUS?",

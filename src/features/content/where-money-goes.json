@@ -43,7 +43,7 @@
     "h2": "Tips for reading Where the money goes",
     "items": [
       "It needs both of you, and a month of shared costs to work from. Until then the screen explains what it is waiting for.",
-      "The last card lists what one month can’t see, like pensions and anything held before you lived together.",
+      "The last card lists what one month can’t see, like retirement accounts and anything held before you lived together.",
       "Money that leaves before the household sees it, such as child support or loan repayments, comes off income first when you record it in <a href=\"/features/support-payments/\">Money that’s already promised</a>.",
       "Pair it with the money side of the <a href=\"/features/fairness-score/\">household balance</a>, which measures how costs were shared against the split you chose."
     ]
@@ -51,7 +51,7 @@
   "extra": [
     {
       "h2": "What does one month not show?",
-      "html": "<p>The screen ends with three things a single month cannot see. Anything held before you lived together, like savings, property or loans you brought in. Pensions and long-term saving: time out of paid work costs money that shows up decades later. And whether the spare money is really spent on yourself, because free on paper is not always free in practice. These are left as plain words, as prompts for a conversation.</p>"
+      "html": "<p>The screen ends with three things a single month cannot see. Anything held before you lived together, like savings, property or loans you brought in. Retirement accounts and long-term saving: time out of paid work costs money that shows up decades later. And whether the spare money is really spent on yourself, because free on paper is not always free in practice. These are left as plain words, as prompts for a conversation.</p>"
     },
     {
       "h2": "A worked example",

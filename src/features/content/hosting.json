@@ -1,13 +1,13 @@
 {
   "id": "hosting",
-  "h1": "Hosting: plan an occasion together, from the guest list to the washing up",
+  "h1": "Hosting: plan an occasion together, from the guest list to the dishes",
   "seoTitle": "Holiday Hosting Planner for Couples: Hosting in EvenUS",
   "description": "Plan Thanksgiving, Diwali, Christmas or a birthday party together: date, guests, tasks, menu and budget in one shared plan, with the work visible.",
   "updated": "2026-10-15",
   "answer": "Hosting in EvenUS is a shared plan for an occasion a couple is hosting, such as Thanksgiving, Christmas, Diwali, Eid or a birthday party. It holds the date, the number of guests, a budget, who is doing which task, and the menu, which goes on the shared shopping list. Tasks count as household work for whoever does them, and nobody is shown as doing the most.",
   "what": {
     "h2": "What does Hosting do?",
-    "html": "<p><strong>It turns an occasion into one plan you can both see, so the work of hosting is shared rather than carried in one head.</strong> Hosting is mostly invisible work: the invitations, the menu, the big shop, the cleaning, the cooking, remembering who does not eat what. It often shows up only as tiredness on the day.</p><p>A plan collects the date, how many guests are coming, an optional budget and notes. Choose an occasion and it can start with the usual tasks and menu: for Thanksgiving that includes ordering the turkey, for Diwali the diyas, the sweets and the rangoli, for Lunar New Year the red envelopes and the dumplings. Every item can be changed or removed.</p><p>Each task is a one-off chore with a day, given to one of you or to “Either of you”. Menu items go on the shared <a href=\"/features/shopping-list/\">shopping list</a>. Costs you add are shared expenses tagged with the plan, so the budget adds itself up.</p>"
+    "html": "<p><strong>It turns an occasion into one plan you can both see, so the work of hosting is shared rather than carried in one head.</strong> Hosting is mostly invisible work: the invitations, the menu, the big grocery run, the cleaning, the cooking, remembering who does not eat what. It often shows up only as tiredness on the day.</p><p>A plan collects the date, how many guests are coming, an optional budget and notes. Choose an occasion and it can start with the usual tasks and menu: for Thanksgiving that includes ordering the turkey, for Diwali the diyas, the sweets and the rangoli, for Lunar New Year the red envelopes and the dumplings. Every item can be changed or removed.</p><p>Each task is a one-off chore with a day, given to one of you or to “Either of you”. Menu items go on the shared <a href=\"/features/shopping-list/\">shopping list</a>. Costs you add are shared expenses tagged with the plan, so the budget adds itself up.</p>"
   },
   "who": {
     "h2": "Who is Hosting for?",
@@ -51,9 +51,9 @@
     "h2": "Tips for hosting together",
     "items": [
       "Every task and menu item from the template can be changed or removed. Trim it to what your household actually does.",
-      "Hand over whole parts rather than single jobs: one of you takes the food from menu to shop to cooking, the other the house and the guests. <a href=\"/blog/sharing-cognitive-labor/\">Sharing cognitive labor</a> explains why.",
+      "Hand over whole parts rather than single jobs: one of you takes the food from menu to shopping to cooking, the other the house and the guests. <a href=\"/blog/sharing-cognitive-labor/\">Sharing cognitive labor</a> explains why.",
       "Put the planning on the list too, such as “Plan the menu” and “Send the invitations”. They are real work and count once done.",
-      "A shop made only of this plan’s menu items is tagged to the plan when you tap Done shopping, so the budget includes it."
+      "A shopping trip made only of this plan’s menu items is tagged to the plan when you tap Done shopping, so the budget includes it."
     ]
   },
   "extra": [

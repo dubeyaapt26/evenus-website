@@ -7,11 +7,11 @@
   "answer": "Hide my personal spending detail is a privacy setting in EvenUS that keeps what your own purchases were to yourself. With it on, anything marked as just yours shows to your partner as “A personal expense”, with the amount and who paid, but no title, notes or category. The amount still counts in your shared numbers, and shared costs stay visible to both of you.",
   "what": {
     "h2": "What does Hide my personal spending detail do?",
-    "html": "<p><strong>It lets a personal purchase stay personal without taking it out of the household record.</strong> With full titles in a shared app, the record can start to feel like a window into each other’s spending.</p><p>With the setting on, an expense that is all yours still appears in your partner’s list with its amount and who paid. If only part of an expense was yours, like a few things in a supermarket shop, the whole expense shows this way: its title, notes and category are hidden, and the full amount still counts. What it was stays on your side, in a record only you can read. Your partner’s phone never receives that detail.</p><p>The amount stays visible on purpose. It still counts in the shared numbers you both rely on, such as the <a href=\"/features/settle-up/\">Even up</a> card and the <a href=\"/features/fairness-score/\">household balance</a> (the fairness score).</p>"
+    "html": "<p><strong>It lets a personal purchase stay personal without taking it out of the household record.</strong> With full titles in a shared app, the record can start to feel like a window into each other’s spending.</p><p>With the setting on, an expense that is all yours still appears in your partner’s list with its amount and who paid. If only part of an expense was yours, like a few things from a grocery trip, the whole expense shows this way: its title, notes and category are hidden, and the full amount still counts. What it was stays on your side, in a record only you can read. Your partner’s phone never receives that detail.</p><p>The amount stays visible on purpose. It still counts in the shared numbers you both rely on, such as the <a href=\"/features/settle-up/\">Even up</a> card and the <a href=\"/features/fairness-score/\">household balance</a> (the fairness score).</p>"
   },
   "who": {
     "h2": "Who is Hide my personal spending detail for?",
-    "html": "<p>Anyone who would like a “my treat” or a personal buy to stay personal: a surprise for your partner, a hobby, or the part of the weekly shop that was just for you. It is a setting for each person: you decide for your own spending, and your partner decides for theirs.</p>"
+    "html": "<p>Anyone who would like a “my treat” or a personal buy to stay personal: a surprise for your partner, a hobby, or the part of the weekly grocery run that was just for you. It is a setting for each person: you decide for your own spending, and your partner decides for theirs.</p>"
   },
   "steps": {
     "h2": "How do you hide your personal spending detail?",
@@ -30,8 +30,8 @@
         "text": "When you add an expense that was only for you, under “How should it be shared?” set the split so it is all yours."
       },
       {
-        "name": "Mark the personal part of a mixed shop",
-        "text": "For a shop that was partly for you, tap “More options”, tick “Part of this was just for me” and enter how much."
+        "name": "Mark the personal part of a mixed grocery trip",
+        "text": "For a grocery trip that was partly for you, tap “More options”, check “Part of this was just for me” and enter how much."
       },
       {
         "name": "Save as usual",
@@ -46,7 +46,7 @@
   "tips": {
     "h2": "Tips for using personal spending privacy",
     "items": [
-      "On a mixed shop, use “Part of this was just for me” rather than two expenses. The whole expense then reads “A personal expense” to your partner, with its full amount, and its title, notes and category are hidden.",
+      "On a mixed grocery trip, use “Part of this was just for me” rather than two expenses. The whole expense then reads “A personal expense” to your partner, with its full amount, and its title, notes and category are hidden.",
       "You still see your own titles, notes and categories everywhere, including in your own export.",
       "Switch it off later and the detail goes back into the shared record. Activity entries already written as “a personal expense” stay that way."
     ]

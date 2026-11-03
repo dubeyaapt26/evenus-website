@@ -52,7 +52,7 @@
   "extra": [
     {
       "h2": "Why does evening up bring the household balance back to even?",
-      "html": "<p>The money part of the <a href=\"/features/fairness-score/\">household balance</a> reads what is still to even up between you, never who happened to pay this week. Say Alex and Sam split by income, 60 and 40. Sam buys groceries for 100 and Alex pays a 50 energy bill. Alex’s share of the 150 is 90 and Sam’s is 60, so the card shows 40 from Alex to Sam. Once Alex sends 40 and records it, the money side reads even again. Taking turns to pay reads exactly the same as splitting every bill at the till.</p>"
+      "html": "<p>The money part of the <a href=\"/features/fairness-score/\">household balance</a> reads what is still to even up between you, never who happened to pay this week. Say Alex and Sam split by income, 60 and 40. Sam buys groceries for 100 and Alex pays a 50 utility bill. Alex’s share of the 150 is 90 and Sam’s is 60, so the card shows 40 from Alex to Sam. Once Alex sends 40 and records it, the money side reads even again. Taking turns to pay reads exactly the same as splitting every bill at the till.</p>"
     }
   ],
   "faqs": [

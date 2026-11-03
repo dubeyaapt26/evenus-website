@@ -42,7 +42,7 @@
   "tips": {
     "h2": "Tips for running a joint account in EvenUS",
     "items": [
-      "Set up “Your standing order” with the amount and the day of the month, and EvenUS offers to record it each month. You still tap “Record it”, so nothing is entered that did not happen.",
+      "Set up “Your recurring transfer” with the amount and the day of the month, and EvenUS offers to record it each month. You still tap “Record it”, so nothing is entered that did not happen.",
       "Spending beyond what is in the account counts the way you aim to fund it, until the next top-up covers it.",
       "Log a top-up within 29 days of making it. The day you pick decides which money counts as oldest.",
       "Write down which bills come out of the joint account in a <a href=\"/features/money-agreement/\">Money agreement</a>."
@@ -51,7 +51,7 @@
   "extra": [
     {
       "h2": "Why oldest money first?",
-      "html": "<p>Because it matches how a shared account is really used. Say Sam puts in 600 on the 1st and Alex puts in 400 on the 15th. A 100 food shop on the 20th counts as paid by Sam, because Sam’s money was in the account first. Once Sam’s 600 has been spent, the next payments count as Alex’s. Each part adds up to the expense exactly.</p><p>Top-ups themselves are not spending: moving money into a shared account has not bought anything yet.</p>"
+      "html": "<p>Because it matches how a shared account is really used. Say Sam puts in 600 on the 1st and Alex puts in 400 on the 15th. A $100 grocery run on the 20th counts as paid by Sam, because Sam’s money was in the account first. Once Sam’s 600 has been spent, the next payments count as Alex’s. Each part adds up to the expense exactly.</p><p>Top-ups themselves are not spending: moving money into a shared account has not bought anything yet.</p>"
     },
     {
       "h2": "What happens when someone joins or leaves the household?",
@@ -61,7 +61,7 @@
   "faqs": [
     {
       "q": "Does EvenUS connect to our joint bank account?",
-      "a": "No. EvenUS never connects to a bank. You record each top-up yourself, with the day it went in, or tap Record it when your standing order comes round."
+      "a": "No. EvenUS never connects to a bank. You record each top-up yourself, with the day it went in, or tap Record it when your recurring transfer comes around."
     },
     {
       "q": "Who counts as paying for something bought from the joint account?",
