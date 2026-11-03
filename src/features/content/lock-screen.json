@@ -1,0 +1,84 @@
+{
+  "id": "lock-screen",
+  "h1": "Lock Screen and Control Center: add something without opening EvenUS",
+  "seoTitle": "EvenUS Lock Screen Widget and Control Center",
+  "description": "Put Tell EvenUS and Scan a receipt on your iPhone Lock Screen, and Speak and Scan in Control Center. Nothing about your money shows, only buttons.",
+  "updated": "2026-11-03",
+  "answer": "On iPhone, EvenUS can put Tell EvenUS and Scan a receipt on your Lock Screen, and Speak to EvenUS and Scan a receipt in Control Center or on the Action button. Each is one tap. They show nothing about you or your money, only buttons, and you check what EvenUS heard or read before anything is saved.",
+  "what": {
+    "h2": "What do the Lock Screen and Control Center buttons do?",
+    "html": "<p><strong>They let you start adding something the moment it happens, without finding the app.</strong> Pay for lunch, finish the bathroom, and a button is already under your thumb.</p><p>There are two places. On the <strong>Lock Screen</strong>, a small widget under the time gives you <a href=\"/features/quick-add/\">Tell EvenUS</a> or <a href=\"/features/receipt-scan/\">Scan a receipt</a>. Lock Screen widgets need iOS 16 or later. In <strong>Control Center</strong>, you can add a control for Speak to EvenUS or Scan a receipt, which needs iOS 18 or later. You can also put a control on the Action button.</p><p>Tapping one opens EvenUS ready to listen, or with the receipt scanner. It is a shortcut to the same drafts as the <a href=\"/features/add-button/\">Add button</a>, so you still check what it heard or read before anything is saved.</p>"
+  },
+  "who": {
+    "h2": "Who are the Lock Screen and Control Center buttons for?",
+    "html": "<p>For iPhone users who add things in the moment: at the till, in the kitchen, in the car. It is for adding something without finding the app first. Android users have a similar row of buttons on the <a href=\"/features/home-widget/\">home-screen widget</a>.</p>"
+  },
+  "steps": {
+    "h2": "How do you add EvenUS to your Lock Screen or Control Center?",
+    "intro": "Press and hold the Lock Screen to add a widget under the time, or use Add a Control in Control Center, then pick EvenUS.",
+    "items": [
+      {
+        "name": "Open Lock Screen settings",
+        "text": "Lock Screen: press and hold the Lock Screen, tap Customize, then tap the space under the time."
+      },
+      {
+        "name": "Pick an EvenUS button",
+        "text": "Choose EvenUS, then Tell EvenUS or Scan a receipt. Each is one tap."
+      },
+      {
+        "name": "Add a Control Center control",
+        "text": "Control Center: swipe down from the top right, tap +, then Add a Control, and search for EvenUS. You can also put a control on the Action button."
+      },
+      {
+        "name": "Tap one and check the draft",
+        "text": "Tap one: EvenUS opens ready to listen, or with the receipt scanner. You check what it heard or read before anything is saved."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see?",
+    "html": "<p><strong>Nothing from these buttons.</strong> Your partner sees only what you save, as with anything you add, and hears about it the way they chose in their <a href=\"/features/partner-activity/\">partner activity</a> setting.</p><p>The buttons are on your phone only. If your partner adds their own, they are theirs alone.</p>"
+  },
+  "tips": {
+    "h2": "Tips for the Lock Screen and Control Center",
+    "items": [
+      "They show nothing about you or your money: no chores, no amounts, no score. Only the buttons.",
+      "If you are signed out, EvenUS asks you to sign in first and then carries on where you were.",
+      "Lock Screen widgets need iOS 16 or later. Control Center controls need iOS 18 or later.",
+      "Saying “Hey Siri, tell EvenUS” is another hands-free route. See <a href=\"/features/siri-shortcuts/\">Siri on your iPhone</a>."
+    ]
+  },
+  "extra": [
+    {
+      "h2": "Why do these buttons show nothing about your money?",
+      "html": "<p>A Lock Screen is visible to anyone who glances at your phone, and a figure about how a household shares its work is not something either of you agreed to show them. So the buttons are only buttons. There is no list of chores, no amount and no score on them. The <a href=\"/features/fairness-score/\">household balance</a> stays inside the app.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Do the Lock Screen buttons work on Android?",
+      "a": "No. The Lock Screen widgets and Control Center controls are for iPhone. On Android, the home-screen widget has a row of Speak, Scan and Add buttons, and long-pressing the EvenUS icon offers shortcuts."
+    },
+    {
+      "q": "Which iPhone software do I need?",
+      "a": "Lock Screen widgets work on iOS 16 and later. Control Center controls, including the one you can put on the Action button, need iOS 18 or later. Older versions can still use the app itself."
+    },
+    {
+      "q": "Can someone see my EvenUS data from my Lock Screen?",
+      "a": "No. The Lock Screen and Control Center buttons show no chores, no amounts and no score. They are only buttons that open EvenUS, so nothing about you or your money is visible on a locked phone."
+    },
+    {
+      "q": "Does tapping a button save anything?",
+      "a": "No. A button opens EvenUS ready to listen, or with the receipt scanner. You check what it heard or read, and nothing is saved until you tap Save. A draft you close is discarded."
+    },
+    {
+      "q": "What if I am signed out of EvenUS?",
+      "a": "EvenUS asks you to sign in first, then carries on where you were, so the Speak or Scan you tapped is still waiting for you once you are in."
+    }
+  ],
+  "relatedPosts": [
+    "how-to-add-chores",
+    "tracking-shared-expenses",
+    "how-to-offload-your-mental-to-do-list-for-the-week"
+  ]
+}

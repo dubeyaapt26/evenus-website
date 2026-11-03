@@ -1,0 +1,89 @@
+{
+  "id": "add-button",
+  "h1": "The Add button: say it, scan it or type it from any tab",
+  "seoTitle": "The EvenUS Add Button: Speak, Scan or Type It",
+  "description": "One round + button in the middle of the EvenUS tab bar, on every tab. Say it, scan a receipt or type one line, then check the draft before it is saved.",
+  "updated": "2026-11-03",
+  "answer": "The Add button is the round + in the middle of the EvenUS tab bar, on every tab. It opens a sheet with Speak, Scan a receipt and Type it as the big choices, and Expense, Chore I did and Reminder for the full forms. Whatever you use, you check the draft before anything is saved.",
+  "what": {
+    "h2": "What does the Add button do?",
+    "html": "<p><strong>It puts every way of adding something one tap away, wherever you are in the app.</strong> You do not have to go back to a particular tab to find the typing box or the receipt scanner. The round + sits in the middle of the tab bar, and it is there on every tab.</p><p>Tapping it opens an Add sheet. The first row has three big choices: <strong>Speak</strong>, <strong>Scan a receipt</strong> and <strong>Type it</strong>. The first and third open <a href=\"/features/quick-add/\">Tell EvenUS</a>, where one line like “groceries 30” or “dishes 20 min” becomes a draft. The second opens the <a href=\"/features/receipt-scan/\">receipt scanner</a>, which reads the amount, the date and the shop on your phone. Below them are the full forms: <strong>Expense</strong>, <strong>Chore I did</strong> and <strong>Reminder</strong>.</p><p>Nothing is added by tapping a button alone. The sheet that follows shows what EvenUS understood, and nothing is saved until you tap Save.</p>"
+  },
+  "who": {
+    "h2": "Who is the Add button for?",
+    "html": "<p>For the moment you have just paid for something, done something around the home or remembered something, wherever you happen to be in the app. It suits the partner who would rather say a few words than open a form, and anyone who keeps meaning to log the shop and forgets by the evening.</p>"
+  },
+  "steps": {
+    "h2": "How do you add something with the Add button?",
+    "intro": "Tap the round + in the middle of the tab bar, choose Speak, Scan a receipt or Type it, check the draft and tap Save.",
+    "items": [
+      {
+        "name": "Tap the + button",
+        "text": "Tap the round + button in the middle of the tab bar. It is there on every tab."
+      },
+      {
+        "name": "Say it or type it",
+        "text": "Tap “Speak” and say one line, like groceries 30, or tap “Type it” and write it. Then tap the arrow."
+      },
+      {
+        "name": "Or scan a receipt",
+        "text": "Tap “Scan a receipt” to take a photo of a receipt. It is read on this phone, and the amount, the date and the shop are filled in for you."
+      },
+      {
+        "name": "Check, then save",
+        "text": "Check what EvenUS understood, change anything it guessed, then tap “Save”. Nothing is saved before that."
+      },
+      {
+        "name": "Or use a full form",
+        "text": "For the full forms, tap “Expense”, “Chore I did” or “Reminder” instead."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see?",
+    "html": "<p><strong>Your partner sees what you save, the same as from any form.</strong> They hear about it the way they chose in their <a href=\"/features/partner-activity/\">partner activity</a> setting, or not at all.</p><p>They never see what you said or typed, your recent saves on your phone, or anything you cancelled. A draft you close without saving simply disappears.</p>"
+  },
+  "tips": {
+    "h2": "Tips for using the Add button",
+    "items": [
+      "Under the typing box, your last few saves wait as small buttons under “Again today”. Tap one to add the same thing again for today, still with a check first.",
+      "Name the shop and EvenUS guesses the category, like DMart or Tesco for groceries and Uber or Shell for transport. The sheet says it is a guess, so you can change it.",
+      "Speaking uses your phone’s own speech recognition, on the phone itself where it offers that. The first time, your phone asks before EvenUS can use the microphone.",
+      "If speech is not available, you can always type the same line instead. You can also use the mic inside the Tell EvenUS box on This week.",
+      "On an iPhone you can also reach Speak and Scan from the <a href=\"/features/lock-screen/\">Lock Screen and Control Center</a>, and on Android from the <a href=\"/features/home-widget/\">home-screen widget</a>."
+    ]
+  },
+  "extra": [
+    {
+      "h2": "Why does everything still ask you to check first?",
+      "html": "<p>A wrongly read amount or category would quietly move both partners’ numbers, including the money half of the <a href=\"/features/fairness-score/\">household balance</a>. So whichever way you add something, a sheet shows what EvenUS understood and marks anything it guessed. Saying a line, typing it or scanning a receipt only makes the draft quicker to produce. You still decide what is saved.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Where is the Add button in EvenUS?",
+      "a": "It is the round + button in the middle of the tab bar. It is on every tab, so you can reach it from This week, Money, Chores, Fairness or Us without going back to a particular screen first."
+    },
+    {
+      "q": "Does the Add button save things straight away?",
+      "a": "No. Speak, Type it and Scan a receipt all open a sheet that shows what EvenUS understood. Nothing is saved until you check it and tap Save, and a draft you close is simply discarded."
+    },
+    {
+      "q": "Can my partner see what I said or typed into the Add button?",
+      "a": "No. Your partner sees only the expense, chore or reminder you save, the same as one made with a form. The words you said or typed, your recent saves on this phone and anything you cancelled stay with you."
+    },
+    {
+      "q": "Do I have to allow the microphone to use the Add button?",
+      "a": "Only to speak. The first time you tap Speak, your phone asks before EvenUS can use the microphone and speech recognition. If you decline, you can type the same line with Type it instead."
+    },
+    {
+      "q": "What are the small buttons under the typing box?",
+      "a": "They are your last few saves, shown as quick repeats under “Again today”. Tapping one opens the same expense or chore for today, with a check first, so a daily coffee or a regular chore takes one tap."
+    }
+  ],
+  "relatedPosts": [
+    "how-to-add-chores",
+    "tracking-shared-expenses",
+    "how-to-offload-your-mental-to-do-list-for-the-week"
+  ]
+}

@@ -6,7 +6,7 @@
     "data": "Use a demo household for the fictional couple Alex and Sam. No real names, emails, amounts or bank details.",
     "theme": "Switch Us → Preferences → Appearance to the theme given. Status bar: full battery, 9:41."
   },
-  "count": 164,
+  "count": 167,
   "shots": [
     {
       "feature": "shared-expenses",
@@ -2313,6 +2313,51 @@
       "recapture": true,
       "recaptureWhy": "New screenshot: not captured yet. The Household name and Time zone sections were added in round 19a, and round 21 shows the zone in force and the date a change takes over.",
       "seed": "Demo household Alex + Sam (paired), USD, created on a phone set to Europe/London; Sam has just changed the time zone to Asia/Kolkata on a Wednesday, so the change waits for the end of the week. Captured on Alex’s phone."
+    },
+    {
+      "feature": "add-button",
+      "n": 1,
+      "file": "add-button-1.webp",
+      "platform": "iOS",
+      "route": "/(tabs)",
+      "state": "The Add sheet open over the This week tab: Speak, Scan a receipt and Type it as the big row, then Expense, Chore I did and Reminder",
+      "theme": "light",
+      "alt": "The EvenUS Add sheet opened from the round + button in the middle of the tab bar, with Speak, Scan a receipt and Type it, and the Expense, Chore I did and Reminder forms below",
+      "caption": "One round button on every tab opens every way of adding.",
+      "language": "en",
+      "recapture": true,
+      "recaptureWhy": "New screenshot: not captured yet. Feature added in the 1.0 testing update (Nov 2026).",
+      "seed": "Demo household Alex + Sam (paired), USD. Captured on Alex’s phone."
+    },
+    {
+      "feature": "share-to-evenus",
+      "n": 1,
+      "file": "share-to-evenus-1.webp",
+      "platform": "Android",
+      "route": "/(tabs)/home",
+      "state": "Tell EvenUS open with a draft read from a shared bank message: amount, shop and day filled in, with the note asking to check the amount and the shop",
+      "theme": "light",
+      "alt": "Tell EvenUS showing a draft expense read from a shared bank message, with the note to check the amount and the shop before saving",
+      "caption": "A shared message opens as a draft, never as a saved expense.",
+      "language": "en",
+      "recapture": true,
+      "recaptureWhy": "New screenshot: not captured yet. Feature added in the 1.0 testing update (Nov 2026).",
+      "seed": "Demo household Alex + Sam (paired), USD. Captured on Alex’s phone."
+    },
+    {
+      "feature": "lock-screen",
+      "n": 1,
+      "file": "lock-screen-1.webp",
+      "platform": "iOS",
+      "route": "(iOS Lock Screen)",
+      "state": "iPhone Lock Screen with the EvenUS widget under the time showing Tell EvenUS and Scan a receipt buttons",
+      "theme": "light",
+      "alt": "An iPhone Lock Screen with the EvenUS widget under the time, offering Tell EvenUS and Scan a receipt buttons and nothing about money",
+      "caption": "Only buttons: no chores, amounts or score on a locked phone.",
+      "language": "en",
+      "recapture": true,
+      "recaptureWhy": "New screenshot: not captured yet. Feature added in the 1.0 testing update (Nov 2026).",
+      "seed": "Demo household Alex + Sam (paired), USD. Captured on Alex’s phone."
     }
   ]
 }

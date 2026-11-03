@@ -1,0 +1,89 @@
+{
+  "id": "share-to-evenus",
+  "h1": "Share to EvenUS: turn a bank message or receipt photo into a draft",
+  "seoTitle": "Share to EvenUS: Add Expenses From Any App",
+  "description": "Share a bank message, a chat line or a receipt photo from any app and EvenUS opens it as a draft expense to check before saving. iPhone and Android.",
+  "updated": "2026-11-03",
+  "answer": "Share to EvenUS lets you send text or a photo from any app straight into EvenUS. A bank message or a line from a chat opens in Tell EvenUS as a draft with the amount, shop and day. A photo is read as a receipt. You check the draft and tap Save. Nothing is saved before that.",
+  "what": {
+    "h2": "What does Share to EvenUS do?",
+    "html": "<p><strong>It lets an expense that is already on your phone become an EvenUS draft without retyping it.</strong> After you pay, the bank sends a message. A friend sends the amount in a chat. The bill is a photo in your gallery. Share puts each of those in front of EvenUS in two taps.</p><p>Text, such as a bank or UPI message or a WhatsApp line, opens <a href=\"/features/quick-add/\">Tell EvenUS</a> with the draft: the amount, the shop and the day it read. A note on the sheet says it was read from a bank message and asks you to check the amount and the shop. A photo is read as a <a href=\"/features/receipt-scan/\">receipt</a> and fills in the Add expense form.</p><p>It works on iPhone and on Android.</p>"
+  },
+  "who": {
+    "h2": "Who is Share to EvenUS for?",
+    "html": "<p>For anyone whose expenses arrive as messages and photos: the bank’s message after you pay, a line in a chat, a photo of the bill. If you would otherwise leave the message in your inbox meaning to log it later, this is the shorter route.</p>"
+  },
+  "steps": {
+    "h2": "How do you share something to EvenUS?",
+    "intro": "In the other app, tap Share on the message or photo, choose EvenUS, check the draft and tap Save.",
+    "items": [
+      {
+        "name": "Tap Share",
+        "text": "In the other app, press and hold the message or open the photo, then tap Share."
+      },
+      {
+        "name": "Choose EvenUS",
+        "text": "Choose EvenUS from the list. The first time on iPhone you may need to tap More and switch EvenUS on."
+      },
+      {
+        "name": "See the draft",
+        "text": "Text opens Tell EvenUS with the draft: the amount, the shop and the day it read. A photo is read as a receipt and fills in Add expense."
+      },
+      {
+        "name": "Check and save",
+        "text": "Check what it filled in, change anything that is wrong, and tap Save. Nothing is saved before that."
+      }
+    ]
+  },
+  "partner": {
+    "h2": "What does your partner see?",
+    "html": "<p><strong>Only the expense you save, as with any other.</strong> They never see the message you shared, the photo or your account details. They hear about the saved expense the way they chose in their <a href=\"/features/partner-activity/\">partner activity</a> setting.</p>"
+  },
+  "tips": {
+    "h2": "Tips for sharing into EvenUS",
+    "items": [
+      "Bank and UPI messages from Indian banks are read for the amount, the shop and the day. The account number, the reference and the balance are never kept.",
+      "A message about money coming in, a one-time password or a balance gives no draft. EvenUS says there was nothing to add.",
+      "A shared photo is read on this phone and never uploaded, like any receipt you scan.",
+      "EvenUS can read a photo of a receipt or a line of text. If you share another kind of file, it tells you it cannot read it.",
+      "If you would rather start inside the app, the <a href=\"/features/add-button/\">Add button</a> opens the same receipt scanner and Tell EvenUS."
+    ]
+  },
+  "country": {
+    "h2": "Which bank messages can EvenUS read?",
+    "html": "<p>Bank and UPI messages from Indian banks are read for the amount, the shop and the day. The account number, the reference and the balance are never kept. Other text, such as a line from a chat, opens in Tell EvenUS, which understands English, Hindi, Hinglish, Spanish, French, German and Portuguese. Every amount is recorded in your household’s currency.</p>"
+  },
+  "extra": [
+    {
+      "h2": "Why does it open a draft instead of saving?",
+      "html": "<p>A message can be read wrongly, or it can be about something you do not want to share. A shop name might be a payment app rather than the place you paid. So the draft always comes first, and you decide whether it is a shared expense, who paid and what to change. A message about money coming in, a one-time password or a balance gives no draft at all.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Does EvenUS read my messages in the background?",
+      "a": "No. EvenUS sees a message only when you share it to the app yourself. It does not watch your inbox or your chats, and nothing is added until you check the draft and tap Save."
+    },
+    {
+      "q": "What happens to the bank message after I share it?",
+      "a": "Your partner never sees it. The draft keeps the amount, the shop and the day. The account number, the reference and the balance in a bank message are never kept, and the original stays in the app you shared it from."
+    },
+    {
+      "q": "Why did EvenUS say there was nothing to add?",
+      "a": "EvenUS only makes a draft from a message about money you spent. A message about money coming in, a one-time password or a balance gives no draft, and it says there was nothing to add."
+    },
+    {
+      "q": "Is the receipt photo I share uploaded anywhere?",
+      "a": "No. A shared photo is read on your phone and never uploaded, in the same way as a receipt you scan from inside EvenUS. Your partner sees the expense you save, not the photo."
+    },
+    {
+      "q": "I cannot see EvenUS in the iPhone share list. What now?",
+      "a": "The first time on iPhone you may need to tap More at the end of the row of apps and switch EvenUS on. After that it appears with your other apps in the share list."
+    }
+  ],
+  "relatedPosts": [
+    "tracking-shared-expenses",
+    "how-to-automate-your-household-spending",
+    "how-to-split-bills"
+  ]
+}
