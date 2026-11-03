@@ -31,7 +31,7 @@
       },
       {
         "name": "Add the extras if they apply",
-        "text": "Tap “More options” to mark “Part of this was just for me” and enter how much, record “This was paid back” for money returned by work, insurance or a refund, or add a note you both see. Tick “This one’s for the kids” to tag a child’s cost."
+        "text": "Tap “More options” to mark “Part of this was just for me” and enter how much, record “This was paid back” for money returned by work, insurance or a refund, or add a note you both see. Check “This one’s for the kids” to tag a child’s cost."
       },
       {
         "name": "Save it",
@@ -46,9 +46,9 @@
   "tips": {
     "h2": "Tips for keeping shared expenses quick",
     "items": [
-      "Use “Part of this was just for me” for a mixed shop rather than splitting the receipt into two expenses. Only the rest is shared.",
+      "Use “Part of this was just for me” for a mixed grocery trip rather than splitting the receipt into two expenses. Only the rest is shared.",
       "Record refunds with “This was paid back”, so a returned item or a work claim does not distort the month.",
-      "For a long supermarket slip, <a href=\"/features/receipt-scan/\">scan the receipt</a> instead of typing. The photo is read on your phone and stays there.",
+      "For a long grocery receipt, <a href=\"/features/receipt-scan/\">scan the receipt</a> instead of typing. The photo is read on your phone and stays there.",
       "In a hurry, type one line into <a href=\"/features/quick-add/\">Tell EvenUS</a>, like “groceries 30”. It opens the same expense for you to check."
     ]
   },

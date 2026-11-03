@@ -31,7 +31,7 @@
       },
       {
         "name": "Keep logging",
-        "text": "Household work counts only what you have logged in Chores, so ticking off chores as you go keeps the figure honest."
+        "text": "Household work counts only what you have logged in Chores, so checking off chores as you go keeps the figure honest."
       }
     ]
   },
@@ -65,7 +65,7 @@
     },
     {
       "q": "Why does my household work show as zero?",
-      "a": "Household work counts only what you have logged in Chores, never a chore’s estimate. If you have not ticked anything off yet this week, it shows nothing. You can add a chore you did up to 31 days back."
+      "a": "Household work counts only what you have logged in Chores, never a chore’s estimate. If you have not checked anything off yet this week, it shows nothing. You can add a chore you did up to 31 days back."
     },
     {
       "q": "Can my partner change my hours?",

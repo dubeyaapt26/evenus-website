@@ -182,7 +182,7 @@ export function buildFeatures(ctx) {
   };
 
   const proNote = (f) => f.pro
-    ? `<p><strong>${esc(f.title)} is part of EvenUS Pro.</strong> Every household starts with a 7-day free week inside the app, with no card needed and nothing charged when it ends. After that, EvenUS Pro is $9.99 a month or $79.99 a year, and one subscription covers both of you, whoever pays. Subscribing during the free week ends the free days, and billing starts that day.</p><p>Without a subscription, nothing you have recorded is locked away: you can still read it all, add expenses, tick chores off, export your data and delete your account.</p>`
+    ? `<p><strong>${esc(f.title)} is part of EvenUS Pro.</strong> Every household starts with a 7-day free week inside the app, with no card needed and nothing charged when it ends. After that, EvenUS Pro is $9.99 a month or $79.99 a year, and one subscription covers both of you, whoever pays. Subscribing during the free week ends the free days, and billing starts that day.</p><p>Without a subscription, nothing you have recorded is locked away: you can still read it all, add expenses, check chores off, export your data and delete your account.</p>`
     : `<p><strong>${esc(f.title)} keeps working after the 7-day free week, whether or not you subscribe.</strong> The computed views, such as the <a href="${url('/features/fairness-score/')}">household balance</a> and <a href="${url('/features/weekly-idea/')}">this week’s idea</a>, are part of EvenUS Pro: $9.99 a month or $79.99 a year, with one subscription covering both partners. The free week needs no card, and nothing is charged when it ends.</p>`;
 
   const relatedFeatures = (f) => {

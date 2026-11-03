@@ -1,7 +1,7 @@
 {
   "id": "childcare",
   "h1": "Childcare: the cost and the drop-offs, shared and counted",
-  "seoTitle": "Split Childcare Costs and School Runs as a Couple",
+  "seoTitle": "Split Childcare Costs and School Drop-offs as a Couple",
   "description": "Add daycare, a nanny or a camp once in EvenUS: the cost becomes a shared regular bill, and drop-off and pick-up become chores for whoever does them.",
   "updated": "2026-10-15",
   "answer": "Childcare in EvenUS is where a couple sets up daycare, a nanny, a babysitter, an after-school club or a camp once. Its cost becomes a regular bill, shared the way each child’s costs are, and drop-off and pick-up become chores on the days the children go. Whoever does a run gets the credit, whatever their relationship to the child.",
@@ -41,13 +41,13 @@
   },
   "partner": {
     "h2": "What does your partner see?",
-    "html": "<p><strong>Your partner sees the childcare, its regular bill, and the drop-off and pick-up chores on Chores.</strong> The runs show who usually does each one, and either of you can tick a run off when you do it.</p><p>After the last day, or when you tap “Stop this childcare”, its regular bill and its drop-off and pick-up chores stop. Past expenses and logs stay, so the weeks you used it still count as they were.</p>"
+    "html": "<p><strong>Your partner sees the childcare, its regular bill, and the drop-off and pick-up chores on Chores.</strong> The runs show who usually does each one, and either of you can check a run off when you do it.</p><p>After the last day, or when you tap “Stop this childcare”, its regular bill and its drop-off and pick-up chores stop. Past expenses and logs stay, so the weeks you used it still count as they were.</p>"
   },
   "tips": {
     "h2": "Tips for sharing childcare",
     "items": [
       "The cost is posted as a regular bill, shared the way each child’s costs are. Change who pays for a child under Children and future bills follow.",
-      "Whoever does a drop-off or pick-up gets the credit, whatever their relationship to the child. Tick it off when you do it, even if it was not yours.",
+      "Whoever does a drop-off or pick-up gets the credit, whatever their relationship to the child. Check it off when you do it, even if it was not yours.",
       "Choose Not a chore for a run that does not need anyone, such as a nanny who comes to the house.",
       "A summer camp with a known end? Pick its last day when you add it, and nothing needs stopping by hand.",
       "Childcare is picked out in the <a href=\"/features/tax-year-summary/\">tax year summary</a>, which helps if your country offers childcare relief."
@@ -56,7 +56,7 @@
   "extra": [
     {
       "h2": "How do the cost and the runs work out? An example",
-      "html": "<p>Alex and Sam send their daughter Ida to Little Acorns daycare on Monday, Wednesday and Friday, at $1,200 a month paid by Alex on the 1st. Ida’s costs are shared like other costs, which for them means by income: Alex 60%, Sam 40%.</p><p>Each month the bill posts as an expense paid by Alex, with Sam’s share of $480 feeding the <a href=\"/features/settle-up/\">Even up</a> card. Sam usually does drop-off and Alex pick-up, so six runs a week appear on Chores. When Alex covers a Wednesday drop-off, Alex ticks it off and those minutes count for Alex.</p>"
+      "html": "<p>Alex and Sam send their daughter Ida to Little Acorns daycare on Monday, Wednesday and Friday, at $1,200 a month paid by Alex on the 1st. Ida’s costs are shared like other costs, which for them means by income: Alex 60%, Sam 40%.</p><p>Each month the bill posts as an expense paid by Alex, with Sam’s share of $480 feeding the <a href=\"/features/settle-up/\">Even up</a> card. Sam usually does drop-off and Alex pick-up, so six runs a week appear on Chores. When Alex covers a Wednesday drop-off, Alex checks it off and those minutes count for Alex.</p>"
     }
   ],
   "faqs": [

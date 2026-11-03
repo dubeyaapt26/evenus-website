@@ -31,7 +31,7 @@ export const AREAS = [
     'Notice when something is running low and get it on the list',
     'Decide what you will eat this week',
     'Spot that something in the home needs fixing, and arrange for it to be fixed',
-    'Know when the laundry, cleaning or trash need doing, without being asked',
+    'Know when the laundry, cleaning or trash needs doing, without being asked',
   ] },
   { id: 'money', name: 'Money and admin', qs: [
     'Keep track of bills, subscriptions and when they renew',
@@ -53,7 +53,7 @@ export const AREAS = [
   ] },
   { id: 'kids', name: 'Children', kids: true, qs: [
     'Know the school’s dates, forms and what to bring each day',
-    'Rearrange childcare, lifts and pick-ups when plans change',
+    'Rearrange childcare, rides and pick-ups when plans change',
     'Notice when the children have outgrown clothes or need something new',
     'Keep track of the children’s activities, homework and appointments',
   ] },

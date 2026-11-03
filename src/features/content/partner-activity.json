@@ -7,7 +7,7 @@
   "answer": "When your partner adds something is the EvenUS setting for how you hear about what your partner records in the shared household. You pick Daily summary, one line at 8 pm on days something was added, Every entry, a notice as it happens, or Off. Each of you chooses for yourself, neither can see the other's choice, and nothing is ever sent about something that was not done.",
   "what": {
     "h2": "What does When your partner adds something do?",
-    "html": "<p><strong>It decides how much of your partner's activity reaches your phone, from a single evening line to nothing at all.</strong> When two people share one record of expenses, chores and dates, some like to know as things land, and some would rather look in their own time. Both are reasonable, so each of you sets it separately.</p><p>Daily summary is the default. At 8 pm, on days your partner added something, you get one line, such as \"Today: Sam added 3 expenses ($182.40) and ticked off 4 chores.\" On a day with nothing added, nothing arrives, not even \"nothing today\".</p><p>Every entry sends a notice as each thing is added, such as \"Sam added Groceries · $30.00\". Off sends nothing, and everything stays in the app, on the shared lists and in the <a href=\"/features/activity-log/\">activity log</a>.</p>"
+    "html": "<p><strong>It decides how much of your partner's activity reaches your phone, from a single evening line to nothing at all.</strong> When two people share one record of expenses, chores and dates, some like to know as things land, and some would rather look in their own time. Both are reasonable, so each of you sets it separately.</p><p>Daily summary is the default. At 8 pm, on days your partner added something, you get one line, such as \"Today: Sam added 3 expenses ($182.40) and checked off 4 chores.\" On a day with nothing added, nothing arrives, not even \"nothing today\".</p><p>Every entry sends a notice as each thing is added, such as \"Sam added Groceries · $30.00\". Off sends nothing, and everything stays in the app, on the shared lists and in the <a href=\"/features/activity-log/\">activity log</a>.</p>"
   },
   "who": {
     "h2": "Who is this setting for?",
@@ -59,7 +59,7 @@
     },
     {
       "q": "Will EvenUS tell me when my partner has not done a chore?",
-      "a": "No. EvenUS never tells either of you what the other did not do. There is no setting for it, because that notification does not exist. Notices are only ever about something that was added or ticked off."
+      "a": "No. EvenUS never tells either of you what the other did not do. There is no setting for it, because that notification does not exist. Notices are only ever about something that was added or checked off."
     },
     {
       "q": "Why did I get one notice for several things my partner added?",
@@ -71,7 +71,7 @@
     },
     {
       "q": "Do these notifications need EvenUS Pro?",
-      "a": "No. When your partner adds something keeps working after the 7-day free week, with or without a subscription, along with adding expenses and ticking off chores."
+      "a": "No. When your partner adds something keeps working after the 7-day free week, with or without a subscription, along with adding expenses and checking off chores."
     }
   ],
   "relatedPosts": [

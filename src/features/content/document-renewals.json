@@ -23,7 +23,7 @@
       },
       {
         "name": "Pick Document and the type",
-        "text": "Pick Document. Under Which document choose Passport, Visa, Driving license, Insurance, Car car inspection / PUC, Warranty or Other."
+        "text": "Pick Document. Under Which document choose Passport, Visa, Driving license, Insurance, Car inspection / PUC, Warranty or Other."
       },
       {
         "name": "Say whose it is",
@@ -62,7 +62,7 @@
   "faqs": [
     {
       "q": "How far ahead does EvenUS remind me before a passport expires?",
-      "a": "By default, three months, one month and one week before the expiry date. You can untick any of these or add a notice on the day itself. Left as All day, each notice arrives at 9:00 am in your household's time zone."
+      "a": "By default, three months, one month and one week before the expiry date. You can uncheck any of these or add a notice on the day itself. Left as All day, each notice arrives at 9:00 am in your household's time zone."
     },
     {
       "q": "Can I add my child's passport?",

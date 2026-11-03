@@ -4,7 +4,7 @@
   "seoTitle": "Household Chore List Template for Couples: EvenUS",
   "description": "Pick your home’s usual chores from a ready list and watch the weekly hours add up as you go. How chore templates work in EvenUS and what your partner sees.",
   "updated": "2026-10-15",
-  "answer": "Chore templates in EvenUS are a ready-made list of common household chores, each with a typical time and how often it comes round. You tap the ones that apply to your home, or take a common starting set, and the screen adds up the weekly hours as you pick. Tap the Add button and they appear on the shared Chores list on both phones.",
+  "answer": "Chore templates in EvenUS are a ready-made list of common household chores, each with a typical time and how often it comes around. You tap the ones that apply to your home, or take a common starting set, and the screen adds up the weekly hours as you pick. Tap the Add button and they appear on the shared Chores list on both phones.",
   "what": {
     "h2": "What do chore templates do?",
     "html": "<p><strong>They get your household’s chores into EvenUS in about the time it takes to read the list, and show how much work the house needs each week.</strong> Writing out every job by hand is where most chore systems stall: forty chores is a lot of typing, and the list you give up on halfway is the one that never gets used.</p><p>The templates cover the kitchen, cleaning, laundry, shopping, planning, admin, maintenance, pets and, for families, childcare. Each comes with a sensible number of minutes and a rhythm, such as every day or every 2 weeks, and some include a suggested “What does done look like?” so the standard is agreed from the start.</p><p>As you pick, the screen keeps a running total in hours a week. That figure is the work your house needs, before anyone logs a thing, and for many couples it is the first time anyone has seen it written down.</p>"
@@ -27,7 +27,7 @@
       },
       {
         "name": "Check the weekly hours",
-        "text": "Watch the weekly hours add up at the bottom of the screen as you pick or untick chores."
+        "text": "Watch the weekly hours add up at the bottom of the screen as you pick or uncheck chores."
       },
       {
         "name": "Add them",
@@ -35,7 +35,7 @@
       },
       {
         "name": "Give each chore an owner",
-        "text": "Templates arrive without an owner. Open each chore and choose under “Who owns this?”, and adjust the minutes or how often it comes round if your home differs."
+        "text": "Templates arrive without an owner. Open each chore and choose under “Who owns this?”, and adjust the minutes or how often it comes around if your home differs."
       }
     ]
   },
@@ -66,7 +66,7 @@
     },
     {
       "q": "Can I change a template chore after adding it?",
-      "a": "Yes. Every chore added from a template is an ordinary chore. You can change its name, minutes, how often it comes round, its owner and what done looks like, or remove it from the list. Removing it keeps its history."
+      "a": "Yes. Every chore added from a template is an ordinary chore. You can change its name, minutes, how often it comes around, its owner and what done looks like, or remove it from the list. Removing it keeps its history."
     },
     {
       "q": "Why don’t I see any childcare templates?",

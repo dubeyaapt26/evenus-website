@@ -41,7 +41,7 @@
   },
   "partner": {
     "h2": "What does your partner see, and what stays private?",
-    "html": "<p><strong>Either of you can make a summary, and it covers the household’s shared spending.</strong> Making one does not notify your partner or change anything in the app.</p><p>Privacy works as it does everywhere else in EvenUS. If your partner uses <a href=\"/features/personal-spending-privacy/\">Hide my personal spending detail</a>, their hidden personal spending appears in your summary as “A personal expense”, without its title. Purely personal money, such as a treat marked as just yours or the personal part of a shop, is not shared spending and is left out altogether.</p>"
+    "html": "<p><strong>Either of you can make a summary, and it covers the household’s shared spending.</strong> Making one does not notify your partner or change anything in the app.</p><p>Privacy works as it does everywhere else in EvenUS. If your partner uses <a href=\"/features/personal-spending-privacy/\">Hide my personal spending detail</a>, their hidden personal spending appears in your summary as “A personal expense”, without its title. Purely personal money, such as a treat marked as just yours or the personal part of a grocery trip, is not shared spending and is left out altogether.</p>"
   },
   "tips": {
     "h2": "Tips for using the summary at tax time",

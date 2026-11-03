@@ -56,7 +56,7 @@
   "extra": [
     {
       "h2": "How does a week with time away work? An example",
-      "html": "<p>Sam is away on a work trip from Tuesday to Friday and adds it in Away before leaving. On Monday, Sam logs 20 minutes emptying the dishwasher; Alex logs an hour for the weekly grocery run. From Tuesday to Friday, Alex is home alone and logs the cooking and the school drop-off.</p><p>For that week, the household work line compares only Monday, Saturday and Sunday, the days both were home. Alex's logs from Tuesday to Friday are not counted against Sam, and Sam's Monday logs are not scaled up to a full week. The shared costs, including Sam's hotel and Alex's shop, are recorded and split as usual.</p>"
+      "html": "<p>Sam is away on a work trip from Tuesday to Friday and adds it in Away before leaving. On Monday, Sam logs 20 minutes emptying the dishwasher; Alex logs an hour for the weekly grocery run. From Tuesday to Friday, Alex is home alone and logs the cooking and the school drop-off.</p><p>For that week, the household work line compares only Monday, Saturday and Sunday, the days both were home. Alex's logs from Tuesday to Friday are not counted against Sam, and Sam's Monday logs are not scaled up to a full week. The shared costs, including Sam's hotel and Alex's grocery shopping, are recorded and split as usual.</p>"
     }
   ],
   "faqs": [

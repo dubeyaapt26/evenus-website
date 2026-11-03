@@ -7,11 +7,11 @@
   "answer": "Regular bills in EvenUS is a list of the household costs that come round again, such as rent, electricity, internet or a loan repayment. You add each bill once with its amount, how often it is due and the due day. EvenUS then records it as a shared expense each time it falls due, and shows both whose account it leaves and who keeps an eye on it.",
   "what": {
     "h2": "What do Regular bills do?",
-    "html": "<p><strong>They take the repeating costs off your to-do list: each bill is entered once and turns into a shared expense on its due day, split the way you set.</strong> Without it, the rent has to be typed in every month, and the one month nobody does it, the <a href=\"/features/settle-up/\">Even up</a> figure is quietly wrong.</p><p>Each bill also records two people who are often different: whose account the money leaves, and who keeps an eye on it. An automatic payment pays itself. Noticing that the broadband deal has ended, comparing providers, or chasing a payment that bounced is real work that usually goes unseen. The list shows both, side by side.</p>"
+    "html": "<p><strong>They take the repeating costs off your to-do list: each bill is entered once and turns into a shared expense on its due day, split the way you set.</strong> Without it, the rent has to be typed in every month, and the one month nobody does it, the <a href=\"/features/settle-up/\">Even up</a> figure is quietly wrong.</p><p>Each bill also records two people who are often different: whose account the money leaves, and who keeps an eye on it. An automatic payment pays itself. Noticing that the internet deal has ended, comparing providers, or chasing a payment that bounced is real work that usually goes unseen. The list shows both, side by side.</p>"
   },
   "who": {
     "h2": "Who are Regular bills for?",
-    "html": "<p>Households with costs that repeat monthly, quarterly or yearly, from rent and property tax to an EMI or a child’s club fees, and especially couples where one person quietly manages most of them.</p>"
+    "html": "<p>Households with costs that repeat monthly, quarterly or yearly, from rent, or property tax if you own, to a loan payment or a child’s club fees, and especially couples where one person quietly manages most of them.</p>"
   },
   "steps": {
     "h2": "How do you add a regular bill in EvenUS?",

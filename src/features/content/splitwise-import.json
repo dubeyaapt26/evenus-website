@@ -7,7 +7,7 @@
   "answer": "Import from Splitwise brings a couple’s Splitwise group into EvenUS. You export the group as a spreadsheet on the Splitwise website, choose the CSV in EvenUS, say which name is you, and check the list. Each cost arrives with who paid and how it was split, and Splitwise payments come in as settle-ups between you. The file is read on your phone and never uploaded.",
   "what": {
     "h2": "What does Import from Splitwise do?",
-    "html": "<p><strong>It reads a Splitwise group export and turns each row into an EvenUS expense or settle-up, keeping who paid and how it was split.</strong> Bringing your existing record across keeps the money side continuous from day one.</p><p>EvenUS reads the CSV on your phone. Each cost becomes a <a href=\"/features/shared-expenses/\">shared expense</a> with the same payer and the same shares: half each, split your own way, or all one person’s. Rows Splitwise marks as a Payment become settle-ups between you, so the history of evening up comes across too, and the <a href=\"/features/settle-up/\">Even up</a> card starts from where you actually are.</p><p>You see the whole list before anything is saved, and you can untick any row you would rather leave behind.</p>"
+    "html": "<p><strong>It reads a Splitwise group export and turns each row into an EvenUS expense or settle-up, keeping who paid and how it was split.</strong> Bringing your existing record across keeps the money side continuous from day one.</p><p>EvenUS reads the CSV on your phone. Each cost becomes a <a href=\"/features/shared-expenses/\">shared expense</a> with the same payer and the same shares: half each, split your own way, or all one person’s. Rows Splitwise marks as a Payment become settle-ups between you, so the history of evening up comes across too, and the <a href=\"/features/settle-up/\">Even up</a> card starts from where you actually are.</p><p>You see the whole list before anything is saved, and you can uncheck any row you would rather leave behind.</p>"
   },
   "who": {
     "h2": "Who is Import from Splitwise for?",
@@ -31,13 +31,13 @@
       },
       {
         "name": "Check the list and import",
-        "text": "Look through the list, untick anything you’d rather leave out, and tap Import."
+        "text": "Look through the list, uncheck anything you’d rather leave out, and tap Import."
       }
     ]
   },
   "partner": {
     "h2": "What does your partner see?",
-    "html": "<p><strong>Your partner sees the imported expenses and settle-ups, like any others, with one line in the <a href=\"/features/activity-log/\">activity feed</a> for the import, not a notice for each.</strong> Each imported expense shows “Added from: Splitwise”.</p><p>They never see the file itself. EvenUS reads it on your phone, saves only the rows you leave ticked, and keeps nothing else.</p>"
+    "html": "<p><strong>Your partner sees the imported expenses and settle-ups, like any others, with one line in the <a href=\"/features/activity-log/\">activity feed</a> for the import, not a notice for each.</strong> Each imported expense shows “Added from: Splitwise”.</p><p>They never see the file itself. EvenUS reads it on your phone, saves only the rows you leave checked, and keeps nothing else.</p>"
   },
   "tips": {
     "h2": "Tips for a smooth move from Splitwise",
