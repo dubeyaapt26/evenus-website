@@ -2240,7 +2240,7 @@
    "oneLiner": "Type or say one line, like “groceries 30” or “dishes 20 min”, and EvenUS turns it into an expense, a chore or a reminder for you to check.",
    "whoFor": "For the moment you’ve just paid, cleaned or remembered something and don’t want to open a form. It works with your keyboard’s mic too.",
    "steps": [
-    "Open This week and tap the typing box under the headline, the one with a gray example of something to add. That box is Tell EvenUS. It’s on Money and Chores too.",
+    "Open This week and tap the typing box under the headline, the one with a gray example of something to add. That box is Tell EvenUS.",
     "Type a line, or tap the mic on your keyboard and say it: “bought groceries for 30”, “cleaned the bathroom yesterday”, “remind me to book the dentist Friday”.",
     "Tap the arrow to check it. A sheet shows what EvenUS understood, and asks you to check anything it filled in for you.",
     "Change what needs changing, or tap Edit details for the full form, then tap Save. Nothing is saved before that."
