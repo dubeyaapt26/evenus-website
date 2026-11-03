@@ -3,7 +3,7 @@
   "h1": "Catch up on the week: log your recurring chores in about 30 seconds",
   "seoTitle": "Log a Week of Chores at Once: Catch Up in EvenUS",
   "description": "Forgot to tick chores off as you went? Catch up on the week logs your recurring housework in about 30 seconds. How it works and what your partner sees.",
-  "updated": "2026-10-15",
+  "updated": "2026-11-03",
   "answer": "Catch up on the week is a short screen in EvenUS that logs the week’s recurring chores in one go. Everything is already ticked against whoever usually looks after it, so you untick what did not happen, set how long your own chores really took, and tap Log these. Each of you confirms only your own, and nothing unticked is counted against anyone.",
   "what": {
     "h2": "What does Catch up on the week do?",
@@ -41,11 +41,12 @@
   },
   "partner": {
     "h2": "What does your partner see?",
-    "html": "<p><strong>Each of you logs your own, so your catch-up never records time on your partner’s behalf.</strong> Anything you mark as your partner’s is not logged by you; it waits in their own catch-up to confirm, with their own minutes. When you finish, the screen tells you how many are theirs to confirm on their phone.</p><p>Unticked chores are not counted against anyone, and nobody is told about them. Once saved, your partner sees what they would see for any tick: the chore as done this week, by you, with your minutes.</p>"
+    "html": "<p><strong>Each of you logs your own, so your catch-up never records time on your partner’s behalf.</strong> Anything you mark as your partner’s is not logged by you; it waits in their own catch-up to confirm, with their own minutes. When you finish, the screen tells you how many are theirs to confirm on their phone.</p><p>Unticked chores are not counted against anyone, and nobody is told about them. Once saved, your partner sees what they would see for any tick: the chore as done this week, by you, with your minutes.</p><p>The optional Saturday reminder is a note to you alone, on your phone. It is never about your partner, and nothing is sent to them.</p>"
   },
   "tips": {
     "h2": "Tips for a quick weekly catch-up",
     "items": [
+      "Want a note on Saturday evening to do this? Turn on the Saturday catch-up reminder in Us, under Preferences. It is off unless you turn it on, it is about your own week only, and it stays on this phone.",
       "Anything already logged this week is left out, so nothing is asked twice. Ticking as you go just makes the list shorter.",
       "You can undo any of these from the chores list.",
       "Give your recurring chores owners. Only owned chores are pre-ticked, so an unowned chore always starts unticked.",
@@ -75,6 +76,10 @@
     {
       "q": "What if I log something by mistake in the catch-up?",
       "a": "You can undo any of these from the chores list. Your own entries can also be changed or removed from Add a chore you did for 31 days, and a change shows in the activity feed."
+    },
+    {
+      "q": "What is the Saturday catch-up reminder?",
+      "a": "It is an opt-in note on Saturday at 6 pm that says “2 minutes: add anything you missed this week.” It is off unless you turn it on, in Us under Preferences, or when EvenUS asks about notifications. It is about your own week only and stays on this phone."
     }
   ],
   "relatedPosts": [

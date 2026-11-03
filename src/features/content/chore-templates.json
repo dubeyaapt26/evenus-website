@@ -3,7 +3,7 @@
   "h1": "Chore templates: set up your home’s chores in a couple of taps",
   "seoTitle": "Household Chore List Template for Couples: EvenUS",
   "description": "Pick your home’s usual chores from a ready list and watch the weekly hours add up as you go. How chore templates work in EvenUS and what your partner sees.",
-  "updated": "2026-10-15",
+  "updated": "2026-11-03",
   "answer": "Chore templates in EvenUS are a ready-made list of common household chores, each with a typical time and how often it comes round. You tap the ones that apply to your home, or take a common starting set, and the screen adds up the weekly hours as you pick. Tap the Add button and they appear on the shared Effort list on both phones.",
   "what": {
     "h2": "What do chore templates do?",
@@ -36,6 +36,10 @@
       {
         "name": "Give each chore an owner",
         "text": "Templates arrive without an owner. Open each chore and choose under “Who owns this?”, and adjust the minutes or how often it comes round if your home differs."
+      },
+      {
+        "name": "Or start at setup",
+        "text": "When you set up your household, a step called “What is home like?” offers a starter list too. You can skip it and come back to templates here whenever you like."
       }
     ]
   },
@@ -46,6 +50,7 @@
   "tips": {
     "h2": "Tips for choosing chore templates",
     "items": [
+      "At setup, “What is home like?” offers a starter list. Pick any that fit, such as flat or apartment, house, with children or with pets, then tap “Add these chores”. Or tap “Skip for now”.",
       "The hours are the work your house needs, before anyone logs a thing. That is often the most useful number to talk about together.",
       "Start with the common starting set and remove what does not apply. Chores already on your list are marked “Already on your list” and are never added twice.",
       "Everything added can be edited afterwards: the minutes, how often, and who owns it.",
@@ -75,6 +80,10 @@
     {
       "q": "Does the weekly hours figure count towards the household balance?",
       "a": "No. The hours on the templates screen describe the work your home needs. Only time either of you actually logs counts towards the household balance, never an estimate, so adding chores never changes anyone’s numbers on its own."
+    },
+    {
+      "q": "What is the “What is home like?” step at setup?",
+      "a": "It asks about your home so EvenUS can add a starter list of chores. You can pick more than one: flat or apartment, house, with children, with pets. Nobody owns the chores yet, you can change the list any time, and you can skip it."
     }
   ],
   "relatedPosts": [

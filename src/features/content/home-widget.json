@@ -3,11 +3,11 @@
   "h1": "Home-screen widget: today’s chores for you, without opening the app",
   "seoTitle": "Chore Widget for Your Home Screen: EvenUS Widget",
   "description": "See the chores that come round for you today, plus one calm money line, right on your iPhone or Android home screen. How to add it and what it shows.",
-  "updated": "2026-10-15",
-  "answer": "The EvenUS home-screen widget shows the next three of your own chores that come round today, and one line about what is left to even up, with the amount hidden unless you switch it on. It works on iPhone in small and medium sizes and on Android. The medium size adds a Tell EvenUS button for adding something in a few words.",
+  "updated": "2026-11-03",
+  "answer": "The EvenUS home-screen widget shows the next three of your own chores that come round today, and one line about what is left to even up, with the amount hidden unless you switch it on. It works on iPhone in small and medium sizes and on Android. The medium iPhone size adds a Tell EvenUS button, and the Android widget has Speak, Scan and Add buttons.",
   "what": {
     "h2": "What does the EvenUS widget do?",
-    "html": "<p><strong>It puts today’s chores for you on your home screen, so you can see what comes round without opening EvenUS.</strong> A glance takes some of the remembering off your mind.</p><p>The widget lists up to three of your own chores for today, from the ones you set up in <a href=\"/features/chores-effort/\">Effort</a>, with a “+2 more” style line if there are others. Underneath is a single money line taken from the <a href=\"/features/settle-up/\">To even up</a> card. Unless you choose otherwise, it says “Amounts are hidden on this widget”. With amounts on, it reads like “To even up: $42 from Sam to Alex”, or “Nothing to even up right now”.</p><p>On the medium iPhone size and on wider Android widgets there is also a “Tell EvenUS” button. It opens <a href=\"/features/quick-add/\">Tell EvenUS</a>, where you type a line like “groceries 30” and check the draft before anything is saved.</p>"
+    "html": "<p><strong>It puts today’s chores for you on your home screen, so you can see what comes round without opening EvenUS.</strong> A glance takes some of the remembering off your mind.</p><p>The widget lists up to three of your own chores for today, from the ones you set up in <a href=\"/features/chores-effort/\">Effort</a>, with a “+2 more” style line if there are others. Underneath is a single money line taken from the <a href=\"/features/settle-up/\">To even up</a> card. Unless you choose otherwise, it says “Amounts are hidden on this widget”. With amounts on, it reads like “To even up: $42 from Sam to Alex”, or “Nothing to even up right now”.</p><p>On the medium iPhone size there is also a “Tell EvenUS” button. It opens <a href=\"/features/quick-add/\">Tell EvenUS</a>, where you type a line like “groceries 30” and check the draft before anything is saved.</p><p>On Android, the row along the bottom of the widget has three buttons: <strong>Speak</strong>, <strong>Scan</strong> and <strong>Add</strong>. Speak talks to EvenUS, Scan reads a receipt, and Add lets you type something. Each one opens the app, and you check it before it is saved. On iPhone, the Lock Screen and Control Center have their own buttons: see <a href=\"/features/lock-screen/\">Lock Screen and Control Center</a>.</p>"
   },
   "who": {
     "h2": "Who is the widget for?",
@@ -27,7 +27,11 @@
       },
       {
         "name": "Use it from the home screen",
-        "text": "On the medium size, tap a chore to open it, or tap “Tell EvenUS” to add something. The small iPhone size is one tap target and opens Effort."
+        "text": "On the medium iPhone size, tap a chore to open it, or tap “Tell EvenUS” to add something. The small iPhone size is one tap target and opens Effort."
+      },
+      {
+        "name": "Use the Android buttons",
+        "text": "On Android, the row along the bottom has Speak, Scan and Add: talk to EvenUS, scan a receipt, or type something. Each one opens the app, and you check it before it is saved."
       },
       {
         "name": "Choose whether amounts show",

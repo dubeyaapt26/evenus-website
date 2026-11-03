@@ -3,7 +3,7 @@
   "h1": "Chore reminders: let the app hold the remembering, not either of you",
   "seoTitle": "Chore Reminders for Couples Without Nagging: EvenUS",
   "description": "Put a time on a chore and EvenUS reminds whoever owns it, without saying who set it. How chore reminders work, quiet hours, and what your partner sees.",
-  "updated": "2026-10-15",
+  "updated": "2026-11-03",
   "answer": "Chore reminders in EvenUS put a time on a chore so the app does the remembering. Either of you can set one, but only the chore’s owner is reminded, and the reminder never says who set it. It only arrives when the chore is about due, never after 9:30 pm or before 8 am, and the owner can switch it off whenever they like.",
   "what": {
     "h2": "What do chore reminders do?",
@@ -15,7 +15,7 @@
   },
   "steps": {
     "h2": "How do you set a chore reminder in EvenUS?",
-    "intro": "Open the chore on the Effort tab, tap “Add a reminder”, choose a time and, optionally, days, then tap “Set the reminder”.",
+    "intro": "Open the chore on the Effort tab, tap “Add a reminder”, choose a time and, optionally, days, then tap “Set the reminder”. When it arrives, tap Done to log the chore.",
     "items": [
       {
         "name": "Open the chore",
@@ -32,6 +32,10 @@
       {
         "name": "Switch it off or back on",
         "text": "If the reminder is for you, “Turn this off” on the chore switches it off, and “Turn it back on” brings it back. To change it, tap “Change the reminder”."
+      },
+      {
+        "name": "Tap Done on the reminder",
+        "text": "When the reminder arrives, tap its “Done” button. It opens that chore’s time sheet, so you can save the time in one tap. Nothing is saved until you tap Save there."
       }
     ]
   },
@@ -44,6 +48,7 @@
     "items": [
       "Leave the days blank and it only comes up when the chore is actually about due. Setting days narrows it down further, it never adds extra reminders.",
       "Nothing arrives after 9:30 pm or before 8 am, so pick a time in your waking day, such as 7:30 pm for the bins. On Android, a reminder can come a few minutes late while the phone is saving battery.",
+      "The reminder has a Done button. It opens the chore’s time sheet, and nothing is saved until you tap Save there. If you would rather leave it for later, just swipe the reminder away.",
       "A chore needs an owner first. Reminders live on the chore, not on either of you, so handing a chore over moves the reminder with it.",
       "For dates rather than chores, such as birthdays or a passport renewal, use <a href=\"/features/household-reminders/\">household reminders</a> instead."
     ]
@@ -70,6 +75,10 @@
     {
       "q": "Does EvenUS tell my partner if I turn a reminder off?",
       "a": "No. The owner can turn a reminder off whenever they like and nobody is told. The time stays visible on the chore, so turning it back on later is one tap with Turn it back on."
+    },
+    {
+      "q": "What does the Done button on a chore reminder do?",
+      "a": "It opens the time sheet for that chore, so you can log it without hunting for it in the app. Nothing is saved until you check the minutes and tap Save, and the reminder never says who set it."
     }
   ],
   "relatedPosts": [

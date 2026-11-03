@@ -3,7 +3,7 @@
   "h1": "Scan a receipt: the total, shop and date read on your phone",
   "seoTitle": "Scan Receipts Into Shared Expenses: EvenUS",
   "description": "Photograph a receipt and EvenUS reads the total, the shop and the date on your phone. You check it before saving, and the photo is never uploaded.",
-  "updated": "2026-10-15",
+  "updated": "2026-11-03",
   "answer": "Scan a receipt is how EvenUS turns a photo of a till slip into a shared expense. You take or choose a photo, and the phone itself reads the total, the shop and the date into the expense form. A note says where the amount came from. You check it, choose the split and tap Save expense. The photo stays on that phone and is never uploaded.",
   "what": {
     "h2": "What does Scan a receipt do?",
@@ -15,11 +15,11 @@
   },
   "steps": {
     "h2": "How do you scan a receipt in EvenUS?",
-    "intro": "Open the expense form, tap “Scan a receipt”, take or choose a photo, check what was filled in, and tap Save expense.",
+    "intro": "Tap + and “Scan a receipt” (or open the expense form), take or choose a photo, check what was filled in, and tap Save expense.",
     "items": [
       {
         "name": "Open the expense form",
-        "text": "Open Money and tap “Add an expense”, or use the receipt button in the Tell EvenUS field while it is empty."
+        "text": "Tap the round + button in the middle of the tab bar and choose “Scan a receipt”. Or open Money and tap “Add an expense”, or use the camera button in the Tell EvenUS field."
       },
       {
         "name": "Take or choose the photo",
@@ -45,7 +45,9 @@
       "A flat, well-lit photo of the whole slip reads best. If you see “Nothing readable on that one”, type the amount.",
       "If no line says “total”, it uses the largest price and says so. Give that one a closer look.",
       "To see the photo again, open the expense on the same phone and tap “Receipt saved on this phone”.",
-      "No receipt to hand? Type one line into <a href=\"/features/quick-add/\">Tell EvenUS</a>, like “dinner 64”, and check the draft."
+      "No receipt to hand? Type one line into <a href=\"/features/quick-add/\">Tell EvenUS</a>, like “dinner 64”, and check the draft.",
+      "Name the shop on the receipt and EvenUS guesses the category from it, like DMart or Tesco for groceries. A note says it is a guess, so you can change it.",
+      "A receipt photo shared from another app is read the same way. See <a href=\"/features/share-to-evenus/\">Share to EvenUS</a>."
     ]
   },
   "country": {

@@ -3,11 +3,11 @@
   "h1": "Tell EvenUS: type or say one line, and it becomes a draft to check",
   "seoTitle": "Quick Add Expenses and Chores: Tell EvenUS",
   "description": "Type or dictate one line like groceries 30 or dishes 20 min, and EvenUS drafts the expense, chore or reminder for you to check before saving.",
-  "updated": "2026-10-15",
+  "updated": "2026-11-03",
   "answer": "Tell EvenUS is the quick-add field in EvenUS. You type or dictate one ordinary line, such as “groceries 30”, “dishes 20 min” or “remind me to book the dentist Friday”, and it drafts an expense, a chore or a reminder. A sheet shows what it understood and which parts it filled in for you. Nothing is saved until you check it and tap Save.",
   "what": {
     "h2": "What does Tell EvenUS do?",
-    "html": "<p><strong>It turns one line of everyday words into a draft entry, so recording something takes a few seconds instead of a form.</strong></p><p>Tell EvenUS reads the line on your phone and works out what kind of thing it is: a <a href=\"/features/shared-expenses/\">shared expense</a> with an amount, a chore with minutes, a reminder with a day, items for the <a href=\"/features/shopping-list/\">shopping list</a>, or a document with an expiry date. It then shows you the draft. If it had to fill something in, like the day or who paid, the sheet says so in a line such as “Check who paid: it was filled in for you.”</p><p>It is a set of fixed rules, not an AI model. The same words always give the same draft, it works with no connection, and nothing you type leaves the phone until you save the entry itself.</p>"
+    "html": "<p><strong>It turns one line of everyday words into a draft entry, so recording something takes a few seconds instead of a form.</strong></p><p>Tell EvenUS reads the line on your phone and works out what kind of thing it is: a <a href=\"/features/shared-expenses/\">shared expense</a> with an amount, a chore with minutes, a reminder with a day, items for the <a href=\"/features/shopping-list/\">shopping list</a>, or a document with an expiry date. It then shows you the draft. If it had to fill something in, like the day or who paid, the sheet says so in a line such as “Check who paid: it was filled in for you.”</p><p>You can type the line or say it with the mic button inside the box, and the camera button beside it is always there for a receipt. From any tab, the round + button in the middle of the tab bar opens the same thing (see <a href=\"/features/add-button/\">the Add button</a>).</p><p>It is a set of fixed rules, not an AI model. The same words always give the same draft, it works with no connection, and nothing you type leaves the phone until you save the entry itself.</p>"
   },
   "who": {
     "h2": "Who is Tell EvenUS for?",
@@ -15,15 +15,15 @@
   },
   "steps": {
     "h2": "How do you use Tell EvenUS?",
-    "intro": "Tap the Tell EvenUS box on This week, type or say one line, tap the arrow, check the sheet and tap Save.",
+    "intro": "Tap the Tell EvenUS box on This week (or the + button on any tab), type or say one line, tap the arrow, check the sheet and tap Save.",
     "items": [
       {
         "name": "Open the field",
-        "text": "Open This week and tap the typing box under the headline, the one with a grey example of something to add. That box is Tell EvenUS. It’s on Money and Effort too."
+        "text": "Open This week and tap the typing box under the headline, the one with a grey example of something to add. That box is Tell EvenUS. It’s on Money and Effort too. On any tab, the round + button in the middle of the tab bar opens it as well: tap Type it, or Speak."
       },
       {
         "name": "Type or say one line",
-        "text": "Type a line, or tap the mic on your keyboard and say it: “bought groceries for 30”, “cleaned the bathroom yesterday”, “remind me to book the dentist Friday”."
+        "text": "Type a line, or tap the mic inside the box and say it: “bought groceries for 30”, “cleaned the bathroom yesterday”, “remind me to book the dentist Friday”. The words appear as you speak."
       },
       {
         "name": "Check what it understood",
@@ -45,7 +45,8 @@
       "Use your partner’s name to say they paid or did it, like “Sam paid rent 2100 yesterday”. A chore that belongs to your partner is logged by them, so the sheet offers to log it as yours or leave it for them.",
       "“Add milk and eggs to the list” puts both on the shopping list, and “passport expires 12 March 2028” sets reminders ahead of the date. Leave the document number out.",
       "Add a time to a chore, like “did the dishes 20 min yesterday 7pm”, and the minutes end at the time you said.",
-      "With the field empty, the receipt button beside it <a href=\"/features/receipt-scan/\">scans a receipt</a> instead."
+      "The receipt button in the box is always there, even when you have typed something. Your words become the description, and the amount and date come from the <a href=\"/features/receipt-scan/\">receipt</a>.",
+      "The first time you tap the mic, your phone asks before EvenUS can use the microphone and speech recognition. If you decline, or speech is not available, type the line instead."
     ]
   },
   "country": {
@@ -69,11 +70,15 @@
     },
     {
       "q": "Can I use Siri or my voice with Tell EvenUS?",
-      "a": "Yes. Tap the mic on your keyboard and say the line. On iPhone you can also say “Hey Siri, tell EvenUS”, and on Android long-press the EvenUS icon. Either way, the draft opens for you to check."
+      "a": "Yes. Tap the mic inside the Tell EvenUS box and say the line. Your keyboard’s own mic works too. On iPhone you can also say “Hey Siri, tell EvenUS”, and on Android long-press the EvenUS icon. Either way, the draft opens for you to check."
     },
     {
       "q": "Does Tell EvenUS keep working after the free week?",
       "a": "Yes. Tell EvenUS is not part of EvenUS Pro, so you can keep adding expenses, chores and reminders with it after the 7-day free week, whether or not you subscribe."
+    },
+    {
+      "q": "How do I get to Tell EvenUS from other tabs?",
+      "a": "Tap the round + button in the middle of the tab bar, which is there on every tab. Choose Type it to open the Tell EvenUS box, or Speak to start listening straight away. You check the draft before anything is saved."
     }
   ],
   "relatedPosts": [

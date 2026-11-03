@@ -3,7 +3,7 @@
   "h1": "When your partner adds something: a daily summary, every entry or nothing",
   "seoTitle": "Partner Notifications: Daily Summary or Every Entry",
   "description": "Choose how you hear about what your partner adds in EvenUS: one evening summary, a notice for every entry, or nothing at all. Your choice stays private.",
-  "updated": "2026-10-15",
+  "updated": "2026-11-03",
   "answer": "When your partner adds something is the EvenUS setting for how you hear about what your partner records in the shared household. You pick Daily summary, one line at 8 pm on days something was added, Every entry, a notice as it happens, or Off. Each of you chooses for yourself, neither can see the other's choice, and nothing is ever sent about something that was not done.",
   "what": {
     "h2": "What does When your partner adds something do?",
@@ -50,6 +50,10 @@
     {
       "h2": "What is kept off your lock screen?",
       "html": "<p>A lock screen is not a private place, so the notices hold back anything that would say more than your partner chose to share. If your partner has <a href=\"/features/personal-spending-privacy/\">Hide my personal spending detail</a> on, their personal expenses appear only as \"a personal expense\", with no title and no amount. A payment between you reads \"recorded a payment to you\", with no figure.</p><p>Quiet hours apply too. With Every entry, anything added after 9:30 pm waits until 8 am, and arrives together as one notice, such as \"Sam added 3 things\" with the first two named.</p>"
+    },
+    {
+      "h2": "Can you say thanks for something your partner added?",
+      "html": "<p>Yes, in one small way. On your partner’s expense or chore you can leave one of three reactions: a heart, a thank-you or a well done. Tap it again to take it back, or tap another to replace it. You can only react to your partner’s entries, not your own.</p><p>Your partner sees the reaction on the entry itself. The set is closed and positive only. There is no thumbs-down, no comment, no way to ask about an entry and no count, and EvenUS never asks anyone to react or says that they did not. A reaction does not arrive as a notification: it is seen in the app only. For longer words, see <a href=\"/features/thank-you-notes/\">thank-you notes</a>.</p>"
     }
   ],
   "faqs": [
@@ -72,6 +76,10 @@
     {
       "q": "Do these notifications need EvenUS Pro?",
       "a": "No. When your partner adds something keeps working after the 7-day free week, with or without a subscription, along with adding expenses and ticking off chores."
+    },
+    {
+      "q": "Does my partner get a notification when I react to their entry?",
+      "a": "No. A reaction is visible on the entry in the app only, so no phone buzzes with “someone reacted”. It is a small, positive thank-you: a heart, thanks or well done, with no counts and no way to react negatively."
     }
   ],
   "relatedPosts": [
