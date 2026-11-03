@@ -2,16 +2,16 @@
   "id": "savings-goals",
   "h1": "Savings goals: save towards something together and watch one bar fill",
   "seoTitle": "Couples Savings Goal Tracker: Savings Goals in EvenUS",
-  "description": "Set a shared savings goal for a holiday, a deposit or a new sofa, record what each of you puts in, and watch one household bar fill. Free in EvenUS.",
+  "description": "Set a shared savings goal for a vacation, a deposit or a new sofa, record what each of you puts in, and watch one household bar fill. Free in EvenUS.",
   "updated": "2026-10-15",
-  "answer": "Savings goals in EvenUS are things a couple is saving towards together, like a holiday, a deposit or a new sofa. You set what it is for and how much, with a date if there is one. Each of you records what you put in yourself, and one bar fills with the household total. With a date, EvenUS suggests a monthly pace split the way you share costs.",
+  "answer": "Savings goals in EvenUS are things a couple is saving towards together, like a vacation, a deposit or a new sofa. You set what it is for and how much, with a date if there is one. Each of you records what you put in yourself, and one bar fills with the household total. With a date, EvenUS suggests a monthly pace split the way you share costs.",
   "what": {
     "h2": "What do Savings goals do?",
     "html": "<p><strong>A savings goal gives the two of you one shared picture of something you are building towards, and how far along it is.</strong> Couples often save in different places, so each knows their own part and nobody sees the whole.</p><p>In EvenUS, a goal is a name, an amount and, if you like, a date. Each time either of you sets money aside for it, you tap “Put money in” and record your own amount. The bar fills with what the household has put in together, so you see the goal rather than a race between two contributions.</p><p>With a date, EvenUS turns what is left into a suggested amount a month and splits it the way you split shared costs in <a href=\"/features/money-mode/\">How costs split</a>. EvenUS never moves money: it is a record of what you set aside, wherever you keep it.</p>"
   },
   "who": {
     "h2": "Who are Savings goals for?",
-    "html": "<p>Couples saving for a holiday, a deposit or a new sofa who would like to watch it build up. They suit couples who keep their money separately, since each of you records from your own side, and couples with a <a href=\"/features/joint-account/\">joint account</a> who want a clear target alongside it.</p>"
+    "html": "<p>Couples saving for a vacation, a deposit or a new sofa who would like to watch it build up. They suit couples who keep their money separately, since each of you records from your own side, and couples with a <a href=\"/features/joint-account/\">joint account</a> who want a clear target alongside it.</p>"
   },
   "steps": {
     "h2": "How do you set up a savings goal in EvenUS?",

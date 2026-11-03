@@ -41,7 +41,7 @@
   },
   "partner": {
     "h2": "What does your partner see?",
-    "html": "<p><strong>Your partner sees the same children and the same answers you gave.</strong> Either of you can add or edit a child, and each change is noted in the <a href=\"/features/activity-log/\">activity log</a>.</p><p>These answers decide how costs are split, never how either of you is credited for the work: a step-parent who does the school run gets every minute of it, exactly as a parent would.</p>"
+    "html": "<p><strong>Your partner sees the same children and the same answers you gave.</strong> Either of you can add or edit a child, and each change is noted in the <a href=\"/features/activity-log/\">activity log</a>.</p><p>These answers decide how costs are split, never how either of you is credited for the work: a step-parent who does the school drop-off gets every minute of it, exactly as a parent would.</p>"
   },
   "tips": {
     "h2": "Tips for setting up children",
@@ -55,7 +55,7 @@
   "extra": [
     {
       "h2": "How does a stepchild's cost work out? A worked example",
-      "html": "<p>Alex’s son Leo, aged nine, lives with Alex and Sam full time. Under “Whose child?” they choose Mine, from a previous relationship, on Alex’s phone. Leo’s costs and everyday care start with Alex.</p><p>Sam pays $100 for Leo’s swimming lessons and tags the expense for Leo. Because Leo’s costs sit with Alex, the whole $100 counts as Alex’s share, and the <a href=\"/features/settle-up/\">Even up</a> card moves $100 towards Sam. If they later choose “Shared between us”, the next cost for Leo is split the way the rest of their money is split, and the care estimate is shared evenly. Whenever Sam logs a school run, those minutes count for Sam in full.</p>"
+      "html": "<p>Alex’s son Leo, aged nine, lives with Alex and Sam full time. Under “Whose child?” they choose Mine, from a previous relationship, on Alex’s phone. Leo’s costs and everyday care start with Alex.</p><p>Sam pays $100 for Leo’s swimming lessons and tags the expense for Leo. Because Leo’s costs sit with Alex, the whole $100 counts as Alex’s share, and the <a href=\"/features/settle-up/\">Even up</a> card moves $100 towards Sam. If they later choose “Shared between us”, the next cost for Leo is split the way the rest of their money is split, and the care estimate is shared evenly. Whenever Sam logs a school drop-off, those minutes count for Sam in full.</p>"
     }
   ],
   "faqs": [

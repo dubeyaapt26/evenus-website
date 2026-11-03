@@ -7,7 +7,7 @@
   "answer": "Chores is the shared housework list in EvenUS. You add the chores your home needs, give each one an owner and a usual time, and tick a chore off when it is done. Each tick records the minutes it really took, so both phones show the housework that actually happened, and the time half of the household balance is built from those minutes.",
   "what": {
     "h2": "What does Chores do?",
-    "html": "<p><strong>It turns the housework from something that happens quietly into something both of you can see, measured in real time rather than impressions.</strong> In most homes, a few jobs seem to do themselves: the bins go out, the sheets get changed. Someone is doing them, and usually only that person knows how long they take.</p><p>Chores is a tab with one list for the household. Each chore has a name, the minutes it usually takes, how often it comes round and who owns it, grouped into Today, Later this week and Further out. When you finish something, you tick it, and the minutes go into the week’s Housework logged.</p><p>Those minutes are the time half of the <a href=\"/features/fairness-score/\">household balance</a>. Only logged time counts, never the estimate, and entries that overlap count once.</p>"
+    "html": "<p><strong>It turns the housework from something that happens quietly into something both of you can see, measured in real time rather than impressions.</strong> In most homes, a few jobs seem to do themselves: the trash go out, the sheets get changed. Someone is doing them, and usually only that person knows how long they take.</p><p>Chores is a tab with one list for the household. Each chore has a name, the minutes it usually takes, how often it comes round and who owns it, grouped into Today, Later this week and Further out. When you finish something, you tick it, and the minutes go into the week’s Housework logged.</p><p>Those minutes are the time half of the <a href=\"/features/fairness-score/\">household balance</a>. Only logged time counts, never the estimate, and entries that overlap count once.</p>"
   },
   "who": {
     "h2": "Who is Chores for?",
@@ -55,7 +55,7 @@
   "extra": [
     {
       "h2": "Why does EvenUS count logged time instead of the number of chores?",
-      "html": "<p>A list of ticks treats every job as equal, and they are not. Cleaning the bathroom properly might take 40 minutes; taking out the bins takes five. If Alex does eight quick jobs and Sam does three long ones, a count says Alex did more, while the clock might say the opposite.</p><p>EvenUS also does not invent time on anyone’s behalf. The estimate pre-fills the “Done” button, but only minutes someone logs reach <a href=\"/features/time-of-your-own/\">time of your own</a> or the household balance. Someone who logged nothing shows nothing, rather than a guess.</p>"
+      "html": "<p>A list of ticks treats every job as equal, and they are not. Cleaning the bathroom properly might take 40 minutes; taking out the trash takes five. If Alex does eight quick jobs and Sam does three long ones, a count says Alex did more, while the clock might say the opposite.</p><p>EvenUS also does not invent time on anyone’s behalf. The estimate pre-fills the “Done” button, but only minutes someone logs reach <a href=\"/features/time-of-your-own/\">time of your own</a> or the household balance. Someone who logged nothing shows nothing, rather than a guess.</p>"
     }
   ],
   "faqs": [

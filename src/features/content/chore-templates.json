@@ -11,7 +11,7 @@
   },
   "who": {
     "h2": "Who are chore templates for?",
-    "html": "<p>A couple setting up <a href=\"/features/chores-effort/\">Chores</a> for the first time, or anyone who would rather not write out forty chores by hand. They also help when your home changes, for example after moving into a house with a garden or when a baby arrives, and you want to add a group of new jobs at once.</p>"
+    "html": "<p>A couple setting up <a href=\"/features/chores-effort/\">Chores</a> for the first time, or anyone who would rather not write out forty chores by hand. They also help when your home changes, for example after moving into a house with a yard or when a baby arrives, and you want to add a group of new jobs at once.</p>"
   },
   "steps": {
     "h2": "How do you set up chores from templates?",
@@ -70,7 +70,7 @@
     },
     {
       "q": "Why don’t I see any childcare templates?",
-      "a": "Childcare templates only show once you have added children under Us, then Household, then Children. The school run and similar jobs appear only with a child of school age, so the list fits your family."
+      "a": "Childcare templates only show once you have added children under Us, then Household, then Children. The school drop-off and similar jobs appear only with a child of school age, so the list fits your family."
     },
     {
       "q": "Does the weekly hours figure count towards the household balance?",

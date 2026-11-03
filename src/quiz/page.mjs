@@ -31,7 +31,7 @@ export const AREAS = [
     'Notice when something is running low and get it on the list',
     'Decide what you will eat this week',
     'Spot that something in the home needs fixing, and arrange for it to be fixed',
-    'Know when the laundry, cleaning or bins need doing, without being asked',
+    'Know when the laundry, cleaning or trash need doing, without being asked',
   ] },
   { id: 'money', name: 'Money and admin', qs: [
     'Keep track of bills, subscriptions and when they renew',
@@ -152,7 +152,7 @@ ${header}
   <section style="max-width:1180px;margin:0 auto;padding:16px 28px 8px">
     <div class="qz-wrap" style="font-size:16.5px;line-height:1.68;color:#4B504B">
       <h2 style="${H2}">What this quiz measures</h2>
-      <p style="${P}">Most chore lists count the doing, like the washing up or the school run. This quiz counts what comes before it. Someone has to notice the dishwasher tablets are nearly gone, decide which ones to buy and then check they actually arrived with the shopping. Researchers call it cognitive household labor, and the sociologist Allison Daminger describes it in four steps: anticipating a need, identifying the options, deciding, and monitoring the result (<em>American Sociological Review</em>, 2019).</p>
+      <p style="${P}">Most chore lists count the doing, like the dishes or the school drop-off. This quiz counts what comes before it. Someone has to notice the dishwasher pods are nearly gone, decide which ones to buy and then check they actually arrived with the shopping. Researchers call it cognitive household labor, and the sociologist Allison Daminger describes it in four steps: anticipating a need, identifying the options, deciding, and monitoring the result (<em>American Sociological Review</em>, 2019).</p>
       <p style="${P}">That work tends to pile up with one person, because it’s quicker for whoever already has the information to keep hold of it. It’s also hard to see from outside, so two people can honestly remember the same week quite differently.</p>
       <h2 style="${H2}">How to read your result</h2>
       <p style="${P}">Your result is the share of the noticing and planning that you feel sits with you, across the questions that apply to your home. Around 50% means it is roughly shared. At 70% or more, most of it runs through you at the moment. At 30% or less, most of it runs through your partner.</p>

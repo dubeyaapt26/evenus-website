@@ -7,7 +7,7 @@
   "answer": "Catch up on the week is a short screen in EvenUS that logs the week’s recurring chores in one go. Everything is already ticked against whoever usually looks after it, so you untick what did not happen, set how long your own chores really took, and tap Log these. Each of you confirms only your own, and nothing unticked is counted against anyone.",
   "what": {
     "h2": "What does Catch up on the week do?",
-    "html": "<p><strong>It turns a week of forgotten ticks into one quick confirmation, so the housework still gets recorded when nobody logged as they went.</strong> By Sunday, the dishes, the hoovering and three loads of laundry are done but not recorded, and logging them one by one feels like admin.</p><p>The catch-up screen, titled “What actually got done?”, builds the list for you. Every recurring chore still waiting this week appears, already ticked against whoever usually looks after it. Anything already logged is left out, so nothing is asked twice.</p><p>For your own chores, each row starts at the usual time, and you change it to what it really took. That matters because the <a href=\"/features/fairness-score/\">household balance</a> counts logged minutes, never estimates.</p>"
+    "html": "<p><strong>It turns a week of forgotten ticks into one quick confirmation, so the housework still gets recorded when nobody logged as they went.</strong> By Sunday, the dishes, the vacuuming and three loads of laundry are done but not recorded, and logging them one by one feels like admin.</p><p>The catch-up screen, titled “What actually got done?”, builds the list for you. Every recurring chore still waiting this week appears, already ticked against whoever usually looks after it. Anything already logged is left out, so nothing is asked twice.</p><p>For your own chores, each row starts at the usual time, and you change it to what it really took. That matters because the <a href=\"/features/fairness-score/\">household balance</a> counts logged minutes, never estimates.</p>"
   },
   "who": {
     "h2": "Who is Catch up on the week for?",
@@ -27,7 +27,7 @@
       },
       {
         "name": "Correct who did it",
-        "text": "Tap a name to change who did a chore, for example when your partner took the bins out on a week you usually do."
+        "text": "Tap a name to change who did a chore, for example when your partner took the trash out on a week you usually do."
       },
       {
         "name": "Set the real time for your own",

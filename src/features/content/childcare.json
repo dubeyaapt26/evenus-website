@@ -11,7 +11,7 @@
   },
   "who": {
     "h2": "Who is Childcare for?",
-    "html": "<p>Families paying for any regular childcare: a daycare or nursery, a nanny or babysitter, an after-school club, or a holiday camp. It is most useful where both the cost and the runs need sharing, such as a blended family where the cost follows one child’s parent but the runs are done by whoever is free.</p>"
+    "html": "<p>Families paying for any regular childcare: a daycare or preschool, a nanny or babysitter, an after-school club, or a summer camp. It is most useful where both the cost and the runs need sharing, such as a blended family where the cost follows one child’s parent but the runs are done by whoever is free.</p>"
   },
   "steps": {
     "h2": "How do you set up childcare in EvenUS?",
@@ -65,7 +65,7 @@
       "a": "The cost becomes a regular bill split the way the children’s costs are set: shared like other costs, carried by one of you, your own agreed shares, or covered by support. You set this once per child under Children."
     },
     {
-      "q": "Does the school run count as work in EvenUS?",
+      "q": "Does the school drop-off count as work in EvenUS?",
       "a": "Yes. Drop-off and pick-up are childcare chores on Chores. The time you log counts in full for you and takes the place of your own share of the background care estimate, so it is never counted twice."
     },
     {

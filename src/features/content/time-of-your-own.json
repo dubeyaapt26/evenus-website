@@ -7,11 +7,11 @@
   "answer": "Time of your own is the EvenUS view of free time. It starts from the 168 hours in a week, takes away sleep, eating and washing, paid work, travel, the household work each of you logged, looking after children, the planning you hold and any busy calendar time, and shows what is left for each of you, in real clock hours, line by line.",
   "what": {
     "h2": "What does Time of your own do?",
-    "html": "<p><strong>It shows how many hours in a week are genuinely yours, side by side with your partner’s, once everything that has to happen has happened.</strong> Counting chores alone can make a week look even when it does not feel even. If one of you works 50 hours and the other 25, splitting the washing up down the middle leaves very different evenings.</p><p>Time of your own looks at the whole week instead, and compares the hours left over. That figure is the time half of the <a href=\"/features/fairness-score/\">household balance</a>, which reads “Time 60%, money 40%” by default.</p><p>Pay never enters this view. An hour is an hour, whoever earns more.</p>"
+    "html": "<p><strong>It shows how many hours in a week are genuinely yours, side by side with your partner’s, once everything that has to happen has happened.</strong> Counting chores alone can make a week look even when it does not feel even. If one of you works 50 hours and the other 25, splitting the dishes down the middle leaves very different evenings.</p><p>Time of your own looks at the whole week instead, and compares the hours left over. That figure is the time half of the <a href=\"/features/fairness-score/\">household balance</a>, which reads “Time 60%, money 40%” by default.</p><p>Pay never enters this view. An hour is an hour, whoever earns more.</p>"
   },
   "who": {
     "h2": "Who is Time of your own for?",
-    "html": "<p>For couples who suspect the housework split looks even but the weeks do not feel it, common when one of you works long hours, does most of the school runs, or travels further each day. It also helps during <a href=\"/features/parental-leave/\">parental leave</a>, when paid work and travel drop for one of you and the care hours rise.</p>"
+    "html": "<p>For couples who suspect the housework split looks even but the weeks do not feel it, common when one of you works long hours, does most of the school drop-offs, or travels further each day. It also helps during <a href=\"/features/parental-leave/\">parental leave</a>, when paid work and travel drop for one of you and the care hours rise.</p>"
   },
   "steps": {
     "h2": "How do you use Time of your own?",

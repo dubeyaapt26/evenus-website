@@ -46,7 +46,7 @@
   "tips": {
     "h2": "Tips for using the summary at tax time",
     "items": [
-      "It is a record of what you spent together, not tax advice. Childcare and health are picked out because those are the lines people look for. Whether anything is claimable is for you and your adviser.",
+      "It is a record of what you spent together, not tax advice. Childcare and health are picked out because those are the lines people look for. Whether anything is claimable is for you and your advisor.",
       "The year is added up on EvenUS’s server when you tap, and the PDF and CSV are made on this phone.",
       "Open the CSV in any spreadsheet to filter by category or add your own notes before handing it over.",
       "Missing months? <a href=\"/features/statement-import/\">Import a bank statement</a> to add shared payments you never recorded, then make the summary again."
@@ -54,12 +54,12 @@
   },
   "country": {
     "h2": "Which tax years does it support?",
-    "html": "<p>The tax year follows your household’s country:</p><ul><li><strong>UK</strong>: 6 April to 5 April.</li><li><strong>India</strong>: 1 April to 31 March.</li><li><strong>Australia</strong>: 1 July to 30 June.</li><li><strong>US and Canada</strong>: 1 January to 31 December.</li></ul><p>Everywhere else it runs from 1 January, and you can change it on the screen. In the US, the childcare and health totals come with a note that these are often what dependent-care FSA, medical FSA and HSA claims ask about, and to check with your plan or a tax adviser.</p>"
+    "html": "<p>The tax year follows your household’s country:</p><ul><li><strong>UK</strong>: 6 April to 5 April.</li><li><strong>India</strong>: 1 April to 31 March.</li><li><strong>Australia</strong>: 1 July to 30 June.</li><li><strong>US and Canada</strong>: 1 January to 31 December.</li></ul><p>Everywhere else it runs from 1 January, and you can change it on the screen. In the US, the childcare and health totals come with a note that these are often what dependent-care FSA, medical FSA and HSA claims ask about, and to check with your plan or a tax advisor.</p>"
   },
   "faqs": [
     {
       "q": "Is the EvenUS tax-year summary tax advice?",
-      "a": "No. It is a record of what the two of you spent together over a tax year, grouped by category and by who paid. Childcare and health are picked out to save you looking, but whether anything is claimable is for you and a tax adviser."
+      "a": "No. It is a record of what the two of you spent together over a tax year, grouped by category and by who paid. Childcare and health are picked out to save you looking, but whether anything is claimable is for you and a tax advisor."
     },
     {
       "q": "Does the summary include my personal spending?",

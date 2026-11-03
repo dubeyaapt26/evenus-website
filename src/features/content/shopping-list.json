@@ -4,14 +4,14 @@
   "seoTitle": "Shared Shopping List for Couples: EvenUS",
   "description": "One shopping list you both add to, updated on both phones straight away. When the shop is done it becomes a single shared expense you check first.",
   "updated": "2026-10-15",
-  "answer": "The Shopping list in EvenUS is one shared list that either partner can add to, and it changes on both phones straight away. In the shop you tick things off as they go in the trolley. When you tap Done shopping and enter the total, it becomes one ordinary shared expense, paid by whoever did the shop, which you check before it is saved.",
+  "answer": "The Shopping list in EvenUS is one shared list that either partner can add to, and it changes on both phones straight away. In the shop you tick things off as they go in the cart. When you tap Done shopping and enter the total, it becomes one ordinary shared expense, paid by whoever did the shop, which you check before it is saved.",
   "what": {
     "h2": "What does the Shopping list do?",
-    "html": "<p><strong>It replaces the “we need milk” messages with one list you both see, and turns the finished shop into one expense without retyping anything.</strong> One of you notices the washing up liquid is low and adds it. The other is near the supermarket and sees it a moment later.</p><p>When the shop is done, the bought items become a single entry in <a href=\"/features/shared-expenses/\">Shared expenses</a>, filed under Groceries with a title made from the items, such as “Milk, eggs and bread”. It splits the way your household shares costs and feeds the <a href=\"/features/settle-up/\">Even up</a> card. A shop made only of one hosting plan’s menu items is tagged to that plan, so its budget includes it.</p><p>The list itself is just a list. EvenUS does not count who added items or who ticked them off.</p>"
+    "html": "<p><strong>It replaces the “we need milk” messages with one list you both see, and turns the finished shop into one expense without retyping anything.</strong> One of you notices the dish soap is low and adds it. The other is near the supermarket and sees it a moment later.</p><p>When the shop is done, the bought items become a single entry in <a href=\"/features/shared-expenses/\">Shared expenses</a>, filed under Groceries with a title made from the items, such as “Milk, eggs and bread”. It splits the way your household shares costs and feeds the <a href=\"/features/settle-up/\">Even up</a> card. A shop made only of one hosting plan’s menu items is tagged to that plan, so its budget includes it.</p><p>The list itself is just a list. EvenUS does not count who added items or who ticked them off.</p>"
   },
   "who": {
     "h2": "Who is the Shopping list for?",
-    "html": "<p>For couples who keep texting each other “we need milk”, and for households where one of you tends to notice what is running out. It also suits couples who take turns doing the big shop, because the expense lands with whoever paid.</p>"
+    "html": "<p>For couples who keep texting each other “we need milk”, and for households where one of you tends to notice what is running out. It also suits couples who take turns doing the big grocery run, because the expense lands with whoever paid.</p>"
   },
   "steps": {
     "h2": "How do you use the Shopping list?",
@@ -27,7 +27,7 @@
       },
       {
         "name": "Tick things off in the shop",
-        "text": "Tap each item as it goes in the trolley. Ticked items move under “In the trolley”, with no pop-up to dismiss. Tap ✕ beside an item to take it off the list, and Undo puts it straight back."
+        "text": "Tap each item as it goes in the cart. Ticked items move under “In the cart”, with no pop-up to dismiss. Tap ✕ beside an item to take it off the list, and Undo puts it straight back."
       },
       {
         "name": "Finish the shop",
