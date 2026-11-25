@@ -5,11 +5,13 @@
 // two can never disagree.
 // ---------------------------------------------------------------------------
 
+import { storeButtons } from '../stores.mjs';
+
 export const HUB = {
   h1: 'EvenUS features: everything the app does for a couple',
   seoTitle: 'EvenUS Features: Couples App for Chores and Money',
   description: 'Every EvenUS feature in one place: shared expenses, chore time, the mental load, the household balance, weekly ideas and private check-ins.',
-  updated: '2026-10-15',
+  updated: '2026-11-25',
   answer: 'EvenUS is a mobile app for couples who live together. It measures how time, money and the mental load are actually shared at home, explains the picture in plain words, and suggests one thing to move between you each week. These are its 66 features, in eight groups, each with a step-by-step page.',
 };
 
@@ -32,6 +34,8 @@ HUB.intro = `
 
 <h2 id="pricing">What does EvenUS cost?</h2>
 <p><strong>Every household starts with a 7-day free week inside the app, with no card needed, and nothing is charged when it ends.</strong> The free week is once per person, and a change of partner never starts a new one. If you subscribe during it, the free days end and billing starts that day. After that, EvenUS Pro is $9.99 a month or $79.99 a year (US dollar reference prices; the app stores show the price for your country). One subscription covers both of you, whoever pays. Six features are part of EvenUS Pro and are marked on their cards below. Everything else keeps working after the free week, and nothing you have recorded is ever locked away: you can always read it, add expenses, check chores off, export it and delete your account.</p>
+<p>EvenUS is on the App Store and Google Play.</p>
+${storeButtons()}
 `;
 
 HUB.compare = `
@@ -66,7 +70,7 @@ HUB.faqs = [
   { q: 'Does EvenUS track the mental load?', a: 'Yes. Each of you privately answers a few questions about who keeps track of each area of the house. Once both of you have finished, the planning hours count inside each person\'s time, and areas you see differently are shown side by side without deciding who is right.' },
   { q: 'Does EvenUS work in India?', a: 'Yes. Households can use rupees, with the Indian lakh format, settle up through any UPI app, import statements from HDFC, ICICI, SBI, Axis and Kotak, use the 1 April tax year, track household help, and type into Tell EvenUS in Hindi or Hinglish.' },
   { q: 'Which languages does the EvenUS app support?', a: 'English, Hindi, Spanish, French, German and Portuguese. Each partner chooses their own language, and notifications reach each of you in yours. Tell EvenUS understands all six, plus Hinglish typed in Latin letters.' },
-  { q: 'Is EvenUS available on iPhone and Android?', a: 'EvenUS is built for iPhone and Android, with Apple Watch and Wear OS support. It is in closed testing and not yet on the App Store or Google Play. To be told when it is, email support@evenus.app.' },
+  { q: 'Is EvenUS available on iPhone and Android?', a: 'Yes. EvenUS is on the App Store for iPhone and on Google Play for Android, with Apple Watch and Wear OS support. The first 7 days are free in the app, with no card.' },
 ];
 
 HUB.faqHtml = `

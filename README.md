@@ -148,8 +148,7 @@ seen. Everyone else gets the **join page**:
 - It is `noindex` (meta tag and `X-Robots-Tag`), `no-referrer`, and loads **no
   analytics at all** until the visitor accepts in the cookie banner; even then
   it reports `/join/` with the code stripped. The code is never in the title.
-- The store badges say "Coming soon" and are not links. When the app is
-  listed, turn them into links in `src/build.mjs` (search for "Invite landing").
+- The page links to both store listings (URLs live in `src/stores.mjs`).
 - On GitHub Pages there is no rewrite, so `/join/<CODE>` 404s there. Vercel
   is the host that matters for this.
 

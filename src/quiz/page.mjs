@@ -79,7 +79,7 @@ export function quizFaqLd() {
   return { '@type': 'FAQPage', mainEntity: FAQ.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) };
 }
 
-export function quizBody({ header, footer, url, betaForm, base }) {
+export function quizBody({ header, footer, url, storeButtons, base }) {
   let qn = 0;
   const fieldsets = AREAS.map((a) => `
       <fieldset class="qz-area" data-area="${a.id}"${a.kids ? ' data-kids' : ''}>
@@ -169,8 +169,8 @@ ${header}
   <section aria-labelledby="quiz-beta" style="max-width:1180px;margin:0 auto;padding:24px 28px clamp(64px,8vw,110px)">
     <div style="max-width:780px;background:#fff;border:1px solid #EDE8DC;border-radius:24px;padding:clamp(22px,4vw,36px)">
       <h2 id="quiz-beta" style="font-size:clamp(22px,2.6vw,30px);line-height:1.15;letter-spacing:-.03em;font-weight:700;color:#1B1F1D;margin:0 0 10px">See it week by week, not once</h2>
-      <p style="margin:0 0 20px;font-size:16px;line-height:1.6;color:#4B504B">The quiz is a one-off snapshot. The EvenUS app asks each of you privately who keeps track of each area, counts that time alongside chores and money, and suggests one thing to try each week. It is in closed testing now.</p>
-      ${betaForm('quiz', { base })}
+      <p style="margin:0 0 20px;font-size:16px;line-height:1.6;color:#4B504B">The quiz is a one-off snapshot. The EvenUS app asks each of you privately who keeps track of each area, counts that time alongside chores and money, and suggests one thing to try each week. It is on the App Store and Google Play, with 7 days free and no card.</p>
+      ${storeButtons()}
     </div>
   </section>
 ${footer}

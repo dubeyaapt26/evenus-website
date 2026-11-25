@@ -36,7 +36,7 @@ import { buildFeatures } from './dc/featurepages.mjs';
 import { HUB } from './features/hub.mjs';
 import { ENGINE_SOURCE, calculatorDemo, checkGolden, checkHomeDemo } from './calc/page.mjs';
 import { appLinkFiles } from './applinks.mjs';
-import { BETA_CSS, betaForm } from './beta.mjs';
+import { STORE_CSS, STORE_URLS, APP_STORE_URL, PLAY_STORE_URL, storeButtons } from './stores.mjs';
 import { QUIZ_PATH, quizBody, quizFaqLd } from './quiz/page.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
@@ -216,6 +216,9 @@ const APP = {
   applicationSubCategory: 'Household management',
   operatingSystem: 'iOS, Android',
   url: ORIGIN,
+  downloadUrl: STORE_URLS,
+  installUrl: STORE_URLS,
+  sameAs: STORE_URLS,
   publisher: { '@id': `${ORIGIN}/#organization` },
   description:
     'A mobile app for couples that measures how fairly money, time and mental load are shared in a household, then suggests one specific task to swap each week.',
@@ -231,21 +234,22 @@ const APP = {
   // zero here puts the word "Free" in a search listing for a $9.99 subscription —
   // the single worst place to be wrong about a price. Two offers, one per billing
   // period, because a 9.99-to-69 "range" would read as a range for one purchase.
-  // `LimitedAvailability` stays while the app is still in closed testing.
+  // `InStock`: the app is live on the App Store (6 Nov 2026) and Google Play (25 Nov 2026).
+  // Store URLs come from src/stores.mjs. No aggregateRating until there are real ratings.
   offers: [
     {
       '@type': 'Offer',
       name: 'Monthly subscription',
       price: '9.99',
       priceCurrency: 'USD',
-      availability: 'https://schema.org/LimitedAvailability',
+      availability: 'https://schema.org/InStock',
     },
     {
       '@type': 'Offer',
       name: 'Yearly subscription',
       price: '79.99',
       priceCurrency: 'USD',
-      availability: 'https://schema.org/LimitedAvailability',
+      availability: 'https://schema.org/InStock',
     },
   ],
 };
@@ -474,7 +478,7 @@ ${FONT_PRELOAD.replace(/\$\{BASE\}/g, BASE)}
 <style>${FONT_CSS.replace(/url\('\/fonts\//g, `url('${BASE}/fonts/`)}</style>
 ${helmet}
 ${A11Y}
-${BETA_CSS}
+${STORE_CSS}
 ${extraHead || ''}
 ${jsonld || ''}
 </head>
@@ -713,13 +717,17 @@ const FEATURES_FOR_POST = new Map();
 // --- Home ------------------------------------------------------------------
 {
   const r = renderDC(design, 'EvenUS Website.dc.html', {}, {}, openAll('faqs'));
-  // "Coming soon" badges with nowhere to go → the beta sign-up (src/beta.mjs).
+  // The placeholder store badges become real store links (src/stores.mjs).
   const getRe = /(<section id="get"[\s\S]*?)<div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:36px">[\s\S]*?Want in early\?[\s\S]*?<\/p>(\s*<\/section>)/;
   const rendered = routes(hookHome(r.body));
-  if (!getRe.test(rendered)) throw new Error('home: the #get section no longer has the badges this build replaces with the beta form');
-  const body = rendered.replace(getRe, (_m, head, tail) =>
-    head.replace('Your first 7 days are free.</p>', 'Your first 7 days are free. Join the beta and we\'ll email you an invite for your phone.</p>')
-    + `<div style="margin-top:32px;display:flex;justify-content:center">${betaForm('home', { base: BASE, align: 'center' })}</div>` + tail);
+  if (!getRe.test(rendered)) throw new Error('home: the #get section no longer has the placeholder badges this build replaces with the store links');
+  // Hero: the "Get the app" pill becomes the two store buttons (the header's
+  // "Get the app" still jumps to #get, which has the same two buttons).
+  const heroRe = /<a href="#get" style="display:inline-flex;align-items:center;gap:10px;background:#1B1F1D;[^"]*"[^>]*>Get the app<\/a>/;
+  if (!heroRe.test(rendered)) throw new Error('home: the hero "Get the app" button moved; this build swaps it for the store buttons');
+  const body = rendered.replace(heroRe, () => storeButtons()).replace(getRe, (_m, head, tail) =>
+    head.replace('Your first 7 days are free.</p>', 'Your first 7 days are free, with no card.</p>')
+    + `<div style="margin-top:32px">${storeButtons({ align: 'center' })}</div>` + tail);
   pageAt('/', shell({
     title: 'EvenUS',
     // ⚠️ The old title was the tagline, "A fairer share of everything", which
@@ -937,11 +945,11 @@ ${routes(stripPrototypeHandlers(header))}
     <section style="max-width:1180px;margin:0 auto;padding:0 28px clamp(56px,7vw,96px)">
       <div class="prose" style="max-width:780px;font-size:16.5px;line-height:1.68;color:#4B504B;text-wrap:pretty">
 ${p.html}
-${p.cat === 'Reviews' ? `<div style="margin:36px 0 8px;padding:24px 26px;background:#fff;border:1px solid #EDE8DC;border-radius:22px">
+<div style="margin:36px 0 8px;padding:24px 26px;background:#fff;border:1px solid #EDE8DC;border-radius:22px">
   <p style="margin:0 0 6px;font-weight:600;color:#1B1F1D">Want to try EvenUS with your partner?</p>
-  <p style="margin:0 0 16px;font-size:15px;color:#5E645F">It is in closed testing on iPhone and Android. Leave an email and we will send you both an invite. The first 7 days are free, with no card.</p>
-  ${betaForm('blog', { base: BASE })}
-</div>` : ''}
+  <p style="margin:0 0 16px;font-size:15px;color:#5E645F">EvenUS is on the App Store and Google Play. The first 7 days are free in the app, with no card, and one subscription covers both of you.</p>
+  ${storeButtons()}
+</div>
 ${p.cat === 'Money' ? `<p style="font-size:14.5px;color:#6B706A">General information, not financial advice. The <a href="${url('/disclaimer/')}">disclaimer</a> says when to talk to a professional instead.</p>` : ''}${p.cat === 'Reviews' ? `<p style="font-size:14.5px;color:#6B706A">EvenUS is our own app. We have no affiliate deals with any app on this page and earn nothing if you choose one of them. Prices change, so check the store listing before you pay.</p>` : ''}
       </div>
       ${AUTHOR_BOX}
@@ -1082,8 +1090,8 @@ ${demo[0]}
   <section aria-labelledby="calc-beta" style="max-width:1180px;margin:0 auto;padding:0 28px clamp(64px,8vw,110px)">
     <div style="max-width:780px;background:#fff;border:1px solid #EDE8DC;border-radius:24px;padding:clamp(22px,4vw,36px)">
       <h2 id="calc-beta" style="font-size:clamp(22px,2.6vw,30px);line-height:1.15;letter-spacing:-.03em;font-weight:700;color:#1B1F1D;margin:0 0 10px">Want this worked out from your real week?</h2>
-      <p style="margin:0 0 20px;font-size:16px;line-height:1.6;color:#4B504B">The calculator takes your guesses. The EvenUS app uses what the two of you actually log, keeps the money even as you go, and suggests one thing to try each week. It is in closed testing now.</p>
-      ${betaForm('calculator', { base: BASE })}
+      <p style="margin:0 0 20px;font-size:16px;line-height:1.6;color:#4B504B">The calculator takes your guesses. The EvenUS app uses what the two of you actually log, keeps the money even as you go, and suggests one thing to try each week. It is on the App Store and Google Play, with 7 days free and no card.</p>
+      ${storeButtons()}
     </div>
   </section>
 ${footer}
@@ -1111,7 +1119,7 @@ ${footer}
         description: 'Calculates each partner\'s free hours per week, the time balance, the money balance on shared costs and the overall fairness score, with the same formula as the EvenUS app.',
       }),
   }));
-  urlsExtra.push({ loc: path, pri: '0.9', lastmod: '2026-10-15' /* calculator: bump with its content */ });
+  urlsExtra.push({ loc: path, pri: '0.9', lastmod: '2026-11-25' /* calculator: bump with its content */ });
 }
 
 // --- The mental load quiz ----------------------------------------------------
@@ -1124,7 +1132,7 @@ ${footer}
   const header = homeHeaderElsewhere(/<header[\s\S]*?<\/header>/.exec(full)[0]);
   const footer = /<footer[\s\S]*?<\/footer>/.exec(full)[0];
   const path = QUIZ_PATH;
-  const body = quizBody({ header, footer, url, betaForm, base: BASE });
+  const body = quizBody({ header, footer, url, storeButtons, base: BASE });
   pageAt(path, shell({
     title: 'The mental load quiz for couples',
     seoTitle: 'Mental Load Quiz for Couples: Who Carries More? (Free)',
@@ -1148,7 +1156,7 @@ ${footer}
       },
       quizFaqLd()),
   }));
-  urlsExtra.push({ loc: path, pri: '0.9', lastmod: '2026-10-17' /* quiz: bump with its content */ });
+  urlsExtra.push({ loc: path, pri: '0.9', lastmod: '2026-11-25' /* quiz: bump with its content */ });
 }
 
 // --- Topic hubs -------------------------------------------------------------
@@ -1347,7 +1355,7 @@ ${routes(stripPrototypeHandlers(header))}
         <nav aria-label="Breadcrumb" style="font-size:12.5px;color:#8A8F89;margin-bottom:18px"><a href="${url('/')}" style="color:#8A8F89">Home</a> · About</nav>
         <h1 style="margin:0;font-size:clamp(30px,4.4vw,54px);line-height:1.06;letter-spacing:-.035em;font-weight:700;text-wrap:balance">About EvenUS and its founder, Aapt Dubey</h1>
         <p style="margin:22px 0 0;max-width:640px;font-size:17.5px;line-height:1.6;color:#5E645F;text-wrap:pretty"><strong style="color:#1B1F1D;font-weight:600">EvenUS is a couples app for iPhone and Android that measures how fairly money, time and mental load are shared at home, then suggests one task to swap each week. It was founded in India by Aapt Dubey, who writes the articles on this site.</strong></p>
-        <p style="margin:14px 0 0;max-width:640px;font-size:16px;line-height:1.6;color:#5E645F;text-wrap:pretty">It is in closed testing and not yet on the App Store or Google Play. The first 7 days are free with no card. After that it is $9.99 a month or $79.99 a year (US dollar reference prices), and one subscription covers both partners.</p>
+        <p style="margin:14px 0 0;max-width:640px;font-size:16px;line-height:1.6;color:#5E645F;text-wrap:pretty">It is available now on the <a href="${APP_STORE_URL}" rel="noopener">App Store</a> and <a href="${PLAY_STORE_URL}" rel="noopener">Google Play</a>. The first 7 days are free with no card. After that it is $9.99 a month or $79.99 a year (US dollar reference prices), and one subscription covers both partners.</p>
       </div>
     </section>
     <section style="max-width:1180px;margin:0 auto;padding:0 28px clamp(56px,7vw,96px)">
@@ -1495,7 +1503,7 @@ ${routes(stripPrototypeHandlers(header))}
           <button data-join-copy type="button" style="${BTN};background:#fff;color:#1B1F1D;border:1px solid #B9B3A5">Copy code</button>
         </div>
         <p data-join-status role="status" aria-live="polite" style="margin:12px 0 0;min-height:1.5em;font-size:14.5px;color:#2E6A5C;font-weight:600"></p>
-        <p style="margin:4px 0 0;font-size:14.5px;line-height:1.55;color:#5E645F">“Open in EvenUS” works once the app is on this phone. Codes work for seven days; if yours has run out, ask your partner to send a new one.</p>
+        <p style="margin:4px 0 0;font-size:14.5px;line-height:1.55;color:#5E645F">“Open in EvenUS” works once the app is installed on this phone. Codes work for seven days; if yours has run out, ask your partner to send a new one.</p>
       </div>
       <div data-join-none hidden>
         <h2 style="margin:0;font-size:19px;font-weight:700;letter-spacing:-.015em;color:#1B1F1D">This link has no complete code</h2>
@@ -1508,8 +1516,8 @@ ${routes(stripPrototypeHandlers(header))}
 
   <section aria-labelledby="join-get" style="max-width:640px;margin:0 auto;padding:36px 20px 8px">
     <h2 id="join-get" style="${H2}">Don’t have the app yet?</h2>
-    <p style="margin:0 0 20px;font-size:15.5px;line-height:1.6;color:#4B504B">EvenUS is in closed testing and is not on the app stores yet. Your first 7 days are free. Join the beta and we’ll email you an invite for your phone, then come back to this link to join your partner.</p>
-    ${betaForm('join', { base: BASE })}
+    <p style="margin:0 0 20px;font-size:15.5px;line-height:1.6;color:#4B504B">Install EvenUS from the App Store or Google Play, then open this link again so the app can pick up your partner’s invite. Your first 7 days are free, with no card.</p>
+    ${storeButtons()}
   </section>
 
   <section aria-labelledby="join-steps" style="max-width:640px;margin:0 auto;padding:36px 20px clamp(56px,8vw,96px)">
@@ -1571,7 +1579,7 @@ const urls = [
   { loc: '/', pri: '1.0' }, { loc: '/blog/', pri: '0.9' }, { loc: '/support/', pri: '0.7', lastmod: PAGE_SEO['/support/'][1] },
   { loc: '/privacy/', pri: '0.4', lastmod: PAGE_SEO['/privacy/'][1] }, { loc: '/terms/', pri: '0.4', lastmod: PAGE_SEO['/terms/'][1] },
   { loc: '/disclaimer/', pri: '0.3', lastmod: PAGE_SEO['/disclaimer/'][1] }, { loc: '/delete-account/', pri: '0.5', lastmod: PAGE_SEO['/delete-account/'][1] },
-  { loc: '/about/', pri: '0.8', lastmod: '2026-10-19' },
+  { loc: '/about/', pri: '0.8', lastmod: '2026-11-25' },
   ...urlsExtra,
   ...posts.map((p) => ({ loc: p.path, pri: '0.7', lastmod: p.updated || p.iso, image: p.hero?.jpg })),
 ];
@@ -1651,11 +1659,11 @@ ${p.updated || p.iso ? `<pubDate>${rfc(p.updated || p.iso)}</pubDate>` : ''}
 
 > A mobile app for couples that measures how fairly money, time and mental load are shared in a household, then suggests one specific task to swap each week.
 
-EvenUS is made by its founder, Aapt Dubey, based in India, who also writes the articles on this site. It runs on iPhone and Android.
+EvenUS is made by its founder, Aapt Dubey, based in India, who also writes the articles on this site. It runs on iPhone and Android, with Apple Watch and Wear OS companions.
 
 EvenUS measures discretionary time: the hours left in each partner's week once sleep, paid work, commuting and household work are subtracted. Money is measured on a separate axis and hours are never converted into currency. The mental load (planning and remembering) is counted as hours inside the time figure, once both partners have answered a short private set of questions.
 
-The app is in closed testing and is not yet on the app stores. Pricing: a 7-day free trial with no card required, then $9.99 a month or $79.99 a year. One subscription covers both partners. It requires both partners to take part.
+Availability: EvenUS is available now on the App Store for iPhone (${APP_STORE_URL}) and on Google Play for Android (${PLAY_STORE_URL}). Pricing: a 7-day free trial with no card required, then $9.99 a month or $79.99 a year. One subscription covers both partners. It requires both partners to take part.
 
 Facts that are commonly got wrong about it: it does not connect to a bank, it never shows one partner a score for the other person, weekly check-in answers are private and enforced as such in the database rules, and it has no streaks, badges, leaderboards or partner-nudging features. These are deliberate refusals rather than missing features.
 

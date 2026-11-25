@@ -274,56 +274,6 @@
   }
 
   /* ---------------------------------------------------------------------
-   * Beta sign-up (src/beta.mjs). Posts JSON to the joinBeta function and
-   * says what happened in the form's own status line. Nothing is kept in the
-   * browser.
-   * ------------------------------------------------------------------- */
-  function betaForms() {
-    Array.prototype.forEach.call(document.querySelectorAll('form[data-beta]'), function (form) {
-      var msg = form.querySelector('.beta-msg');
-      var go = form.querySelector('.beta-go');
-      function say(kind, text) { msg.setAttribute('data-kind', kind); msg.textContent = text; }
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var email = (form.elements.email.value || '').trim();
-        var picked = form.querySelector('input[name=platform]:checked');
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { say('err', 'Please enter a full email address.'); form.elements.email.focus(); return; }
-        if (!picked) { say('err', 'Which phone do you use? Pick one so we send the right invite.'); return; }
-        if (!form.elements.consent.checked) { say('err', 'Check the box so we may email you the invite.'); return; }
-        go.disabled = true;
-        say('', 'Sending…');
-        fetch(form.getAttribute('data-endpoint'), {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            email: email, platform: picked.value,
-            withPartner: form.elements.withPartner.checked, consent: true,
-            source: form.getAttribute('data-source'), website: form.elements.website.value,
-          }),
-        }).then(function (r) {
-          if (r.ok) {
-            form.classList.add('done');
-            say('ok', picked.value === 'ios'
-              ? 'You’re on the list. We’ll email your TestFlight invite for iPhone.'
-              : 'You’re on the list. We’ll email your invite to the Google Play beta' + (picked.value === 'both' ? ' and TestFlight for iPhone.' : '.'));
-            if (window.gtag) window.gtag('event', 'sign_up', { method: 'beta', source: form.getAttribute('data-source') });
-          } else if (r.status === 429) {
-            return r.json().catch(function () { return {}; }).then(function (b) {
-              say('err', b && b.reason === 'busy'
-                ? 'Lots of sign-ups at once just now. Please try again in a minute.'
-                : 'Too many sign-ups from this connection today. Please try again tomorrow, or email support@evenus.app.');
-            });
-          } else {
-            say('err', 'That didn’t go through. Check the address, or email support@evenus.app and we’ll add you.');
-          }
-        }).catch(function () {
-          say('err', 'Couldn’t reach us just now. Please try again, or email support@evenus.app.');
-        }).then(function () { go.disabled = false; });
-      });
-    });
-  }
-
-  /* ---------------------------------------------------------------------
    * Mental load quiz (src/quiz/page.mjs). Everything happens here, in the
    * browser: answers are never sent or stored. A partner link carries the
    * first person's answers after "#", which browsers keep to themselves.
@@ -483,5 +433,5 @@
     if (document.readyState !== 'loading') fn();
     else document.addEventListener('DOMContentLoaded', fn);
   }
-  ready(function () { calculator(); accordions(); blogFilter(); reveal(); consentBanner(); betaForms(); quiz(); });
+  ready(function () { calculator(); accordions(); blogFilter(); reveal(); consentBanner(); quiz(); });
 })();
